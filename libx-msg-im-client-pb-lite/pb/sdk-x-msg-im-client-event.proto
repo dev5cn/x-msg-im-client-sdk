@@ -1,0 +1,92 @@
+/*
+  Copyright 2019 www.dev5.cn, Inc. dev5@qq.com
+ 
+  This file is part of X-MSG-IM.
+ 
+  X-MSG-IM is free software: you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+
+  X-MSG-IM is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+ 
+  You should have received a copy of the GNU Affero General Public License
+  along with X-MSG-IM.  If not, see <https://www.gnu.org/licenses/>.
+ */
+syntax = "proto3";
+
+import "db-x-msg-im-client-common.proto";
+
+option java_package = "x.msg.pb";
+option java_outer_classname = "XmsgImSdkEventPb";
+
+message XmsgImSdkEventAdapter
+{
+    uint32 apiId = 1; 
+    XmsgImSdkEventType evnType = 2; 
+    XmsgImSdkEventNetNotice netNotice = 3; 
+    XmsgImSdkEventNetReq netReq = 4; 
+    XmsgImSdkEventNetRsp netRsp = 5; 
+    XmsgImSdkEventDbRsp dbRsp = 6; 
+    XmsgImSdkEventCxxLog cxxLog = 7; 
+    message XmsgImSdkEventNetNotice
+    {
+        string msg = 1; 
+        bytes dat = 2; 
+    }
+
+    message XmsgImSdkEventNetReq
+    {
+        uint32 tid = 1; 
+        string msg = 2; 
+        bytes dat = 3; 
+    }
+
+    message XmsgImSdkEventNetRsp
+    {
+        uint32 tid = 1; 
+        uint32 ret = 2; 
+        string desc = 3; 
+        string msg = 4; 
+        bytes dat = 5; 
+    }
+
+    message XmsgImSdkEventDbRsp
+    {
+        uint32 tid = 1; 
+        uint32 ret = 2; 
+        string desc = 3; 
+        XmsgImClientDbCrudRsp dat = 5; 
+    }
+
+    message XmsgImSdkEventCxxLog
+    {
+    	 uint32 lev = 1; 
+        string log = 2; 
+    }
+}
+
+message XmsgImSdkEventXmsgImAuth
+{
+    string evn = 1; 
+    uint32 times = 2; 
+    string addr = 3; 
+}
+
+message XmsgImSdkEventXmsgAp
+{
+    string evn = 1; 
+    uint32 times = 2; 
+    string addr = 3; 
+}
+
+enum XmsgImSdkEventType {
+    X_MSG_IM_SDK_EVENT_TYPE_NET_NOTICE = 0x00; 
+    X_MSG_IM_SDK_EVENT_TYPE_NET_REQ = 0x01; 
+    X_MSG_IM_SDK_EVENT_TYPE_NET_RSP = 0x02; 
+    X_MSG_IM_SDK_EVENT_TYPE_DB_RSP = 0x03; 
+    X_MSG_IM_SDK_EVENT_TYPE_CXX_LOG = 0x04; 
+}

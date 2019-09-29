@@ -1,0 +1,152 @@
+/*
+  Copyright 2019 www.dev5.cn, Inc. dev5@qq.com
+ 
+  This file is part of X-MSG-IM.
+ 
+  X-MSG-IM is free software: you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+
+  X-MSG-IM is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+ 
+  You should have received a copy of the GNU Affero General Public License
+  along with X-MSG-IM.  If not, see <https://www.gnu.org/licenses/>.
+ */
+syntax = "proto3";
+
+option java_package = "x.msg.pb";
+option java_outer_classname = "XmsgImGroupMsgPb";
+message XmsgImGroupSendMsgReq
+{
+    string cgt = 1; 
+    uint64 localMsgId = 2; 
+    XmsgImMsg msg = 3; 
+    map<string, string> ext = 4; 
+}
+
+message XmsgImGroupSendMsgRsp
+{
+    uint64 msgId = 1; 
+    string gcgt = 2; 
+    uint64 gts = 3; 
+    map<string, string> ext = 4; 
+}
+
+message XmsgImMsg
+{
+    string type = 1; 
+    XmsgImMsgText text = 2; 
+    XmsgImMsgHtml html = 3; 
+    XmsgImMsgImage image = 4; 
+    XmsgImMsgVoice voice = 5; 
+    XmsgImMsgVideo video = 6; 
+    XmsgImMsgMerge merge = 7; 
+    XmsgImMsgAt atx = 8; 
+}
+
+message XmsgImMsgText
+{
+    string text = 1; 
+}
+
+message XmsgImMsgHtml
+{
+    string html = 1; 
+}
+
+message XmsgImMsgImage
+{
+    string uri = 1; 
+}
+
+message XmsgImMsgVoice
+{
+    string uri = 1; 
+}
+
+message XmsgImMsgVideo
+{
+    string uri = 1; 
+}
+
+message XmsgImMsgMerge
+{
+    repeated XmsgImMsg msg = 1; 
+}
+
+message XmsgImMsgAt
+{
+    repeated string cgt = 2; 
+}
+
+message XmsgImGroupMsgNotice
+{
+    string gcgt = 1; 
+    string scgt = 2; 
+    uint64 msgId = 3; 
+    XmsgImMsg msg = 4; 
+    uint64 gts = 5; 
+    map<string, string> ext = 6; 
+}
+
+message XmsgImGroupMsgSyncReq
+{
+    string cgt = 1; 
+    uint64 msgId = 2; 
+    uint32 latest = 3; 
+}
+
+message XmsgImGroupMsgSyncRsp
+{
+    repeated XmsgImGroupMsgHistory msg = 1; 
+}
+
+message XmsgImGroupMsgHistory
+{
+    string scgt = 1; 
+    uint64 msgId = 2; 
+    XmsgImMsg msg = 3; 
+    uint64 gts = 4; 
+    bool isRead = 5; 
+}
+
+message XmsgImGroupMsgQueryReq
+{
+    string cgt = 1; 
+    uint64 msgId = 2; 
+    bool before = 3; 
+    uint32 pageSize = 4; 
+}
+
+message XmsgImGroupMsgQueryRsp
+{
+    message XmsgImGroupMsgQueryRspItem
+    {
+        string scgt = 1; 
+        uint64 msgId = 2; 
+        XmsgImMsg msg = 3; 
+        uint64 gts = 4; 
+    }
+    repeated XmsgImGroupMsgQueryRspItem msg = 1; 
+}
+message XmsgImGroupMsgReadReq
+{
+    string cgt = 1; 
+    uint64 msgId = 2; 
+}
+
+message XmsgImGroupMsgReadRsp
+{
+    map<string, string> ext = 1; 
+}
+
+message XmsgImGroupMsgReadNotice
+{
+    string cgt = 1; 
+    uint64 msgId = 2; 
+}
+

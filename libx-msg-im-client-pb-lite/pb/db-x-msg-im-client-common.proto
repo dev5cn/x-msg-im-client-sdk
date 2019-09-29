@@ -1,0 +1,59 @@
+/*
+  Copyright 2019 www.dev5.cn, Inc. dev5@qq.com
+ 
+  This file is part of X-MSG-IM.
+ 
+  X-MSG-IM is free software: you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+
+  X-MSG-IM is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+ 
+  You should have received a copy of the GNU Affero General Public License
+  along with X-MSG-IM.  If not, see <https://www.gnu.org/licenses/>.
+ */
+syntax = "proto3";
+
+option java_package = "x.msg.pb";
+option java_outer_classname = "XmsgImClientDbGlobalPb";
+message XmsgImClientDbCrudReq
+{
+    string sql = 1; 
+    repeated XmsgImClientDbRow row = 2; 
+}
+
+message XmsgImClientDbCrudRsp
+{
+    uint32 change = 1; 
+    map<string, uint32> column = 2; 
+    repeated XmsgImClientDbRow row = 4; 
+}
+
+message XmsgImClientDbRow
+{
+    repeated XmsgImClientDbFiled col = 1; 
+}
+
+message XmsgImClientDbFiled
+{
+    XmsgImClientDbFiledType type = 1; 
+    uint64 valInt = 2; 
+    string valText = 3; 
+    bytes valBlob = 4; 
+}
+
+enum XmsgImClientDbFiledType {
+    X_MSG_IM_CLIENT_DB_FILED_TYPE_BIGINT = 0x00; 
+    X_MSG_IM_CLIENT_DB_FILED_TYPE_TEXT = 0x01; 
+    X_MSG_IM_CLIENT_DB_FILED_TYPE_BLOB = 0x02; 
+    X_MSG_IM_CLIENT_DB_FILED_TYPE_NULL = 0x03; 
+}
+
+message XmsgImClientKv
+{
+    map<string, string> kv = 1; 
+}

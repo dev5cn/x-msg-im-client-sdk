@@ -1,0 +1,73 @@
+/*
+  Copyright 2019 www.dev5.cn, Inc. dev5@qq.com
+ 
+  This file is part of X-MSG-IM.
+ 
+  X-MSG-IM is free software: you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+
+  X-MSG-IM is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+ 
+  You should have received a copy of the GNU Affero General Public License
+  along with X-MSG-IM.  If not, see <https://www.gnu.org/licenses/>.
+ */
+syntax = "proto3";
+
+option java_package = "x.msg.pb";
+option java_outer_classname = "XmsgFilePb";
+message XmsgFileUploadSimpleReq
+{
+    string fileName = 1; 
+    uint64 fileSize = 2; 
+    map<string, string> ext = 3; 
+}
+
+message XmsgFileUploadSimpleRsp
+{
+    string fid = 1; 
+    string hashVal = 2; 
+    map<string, string> ext = 3; 
+}
+message XmsgFileDownloadSimpleReq
+{
+    string fid = 1; 
+    string cgt = 2; 
+    uint64 offset = 3; 
+    uint64 len = 4; 
+    map<string, string> ext = 5; 
+}
+
+message XmsgFileDownloadSimpleRsp
+{
+    string fileName = 1; 
+    uint64 fileSize = 2; 
+    string hashVal = 3; 
+    uint64 gts = 4; 
+    map<string, string> ext = 5; 
+}
+message XmsgFileUsrFileInfoQueryReq
+{
+    uint64 sts = 1; 
+    uint64 ets = 2; 
+    uint32 page = 3; 
+    uint32 pageSize = 4; 
+}
+
+message XmsgFileUsrFileInfoQueryRsp
+{
+    repeated XmsgFileUsrFileInfo fileInfo = 1; 
+}
+
+message XmsgFileUsrFileInfo
+{
+    string fid = 1; 
+    string fileName = 2; 
+    uint64 fileSize = 3; 
+    string hashVal = 4; 
+    uint64 gts = 5; 
+}

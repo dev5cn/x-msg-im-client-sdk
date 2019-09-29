@@ -1,0 +1,28 @@
+cmake_minimum_required(VERSION 2.8.12.2)
+
+ADD_DEFINITIONS(-D$ENV{PLAT})
+
+IF($ENV{PLAT} MATCHES "ANDROID")
+        ADD_DEFINITIONS(-DANDROID -DLINUX)
+	set(CMAKE_SYSTEM_NAME Android)
+        set(CMAKE_ANDROID_NDK $ENV{CMAKE_ANDROID_NDK})
+        set(CMAKE_SYSTEM_VERSION $ENV{CMAKE_SYSTEM_VERSION})
+        set(CMAKE_ANDROID_ARCH_ABI $ENV{CMAKE_ANDROID_ARCH_ABI})
+        set(CMAKE_ANDROID_STL_TYPE $ENV{CMAKE_ANDROID_STL_TYPE})
+ELSE ()
+        ADD_DEFINITIONS(-D$ENV{PLAT})
+ENDIF()
+
+INCLUDE_DIRECTORIES(../libx-msg-im-client-ffi)
+
+ADD_COMPILE_OPTIONS(-std=c++11 -fPIC -g3 -O3 -Wall)
+
+LINK_DIRECTORIES(../libx-msg-im-client-ffi)
+
+LINK_LIBRARIES(x-msg-im-client-ffi)
+
+FILE(GLOB SRC "./*.cpp")
+
+PROJECT(x-msg-im-client-jni)
+
+ADD_LIBRARY(x-msg-im-client-jni SHARED ${SRC})

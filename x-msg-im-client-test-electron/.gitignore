@@ -1,0 +1,6 @@
+/db/
+/*.so
+/*.dll
+/node_modules/
+/.vscode/
+

@@ -1,0 +1,6 @@
+[submodule "libmisc-java"]
+	path = libmisc-java
+	url = https://github.com/dev5cn/libmisc-java
+[submodule "libmisc-cpp"]
+	path = libmisc-cpp
+	url = https://github.com/dev5cn/libmisc-cpp

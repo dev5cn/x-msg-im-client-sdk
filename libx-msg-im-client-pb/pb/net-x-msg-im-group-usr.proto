@@ -1,0 +1,180 @@
+/*
+  Copyright 2019 www.dev5.cn, Inc. dev5@qq.com
+ 
+  This file is part of X-MSG-IM.
+ 
+  X-MSG-IM is free software: you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+
+  X-MSG-IM is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+ 
+  You should have received a copy of the GNU Affero General Public License
+  along with X-MSG-IM.  If not, see <https://www.gnu.org/licenses/>.
+ */
+syntax = "proto3";
+
+option java_package = "x.msg.pb";
+option java_outer_classname = "XmsgImGroupUsrPb";
+
+message XmsgImGroupUsrGroupQueryReq
+{
+    map<string, string> ext = 1; 
+}
+
+message XmsgImGroupUsrGroupQueryRsp
+{
+    repeated XmsgImGroupUsrGroupInfo group = 1; 
+}
+
+message XmsgImGroupUsrGroupInfo
+{
+    string cgt = 1; 
+    string name = 2; 
+    map<string, string> info = 3; 
+    uint64 ver = 4; 
+    uint64 gts = 5; 
+    uint64 uts = 6; 
+    bool usr2usr = 7; 
+}
+
+message XmsgImGroupCreateReq
+{
+    map<string, string> info = 1; 
+    repeated XmsgImGroupAddMember member = 2; 
+}
+
+message XmsgImGroupCreateRsp
+{
+    string cgt = 1; 
+    uint64 gts = 2; 
+}
+
+message XmsgImGroupAddMember
+{
+    string cgt = 1; 
+    map<string, string> info = 2; 
+}
+
+message XmsgImGroupSyncReq
+{
+    uint64 ver4usr = 1; 
+    map<string, string> ext = 2; 
+}
+
+message XmsgImGroupSyncRsp
+{
+    repeated XmsgImGroupSyncEvent event = 1; 
+}
+
+message XmsgImGroupSyncEvent
+{
+    string cgt = 1; 
+    string oper = 2; 
+    map<string, string> info = 3; 
+    uint64 ver4usr = 4; 
+    uint64 gts4usr = 5; 
+    uint64 uts4usr = 6; 
+    uint64 gts4group = 7; 
+}
+
+
+message XmsgImGroupSyncNotice
+{
+    XmsgImGroupSyncEvent event = 1; 
+}
+message XmsgImGroupSyncGroupReq
+{
+    string cgt = 1; 
+    uint64 ver = 2; 
+    map<string, string> ext = 3; 
+}
+
+message XmsgImGroupSyncGroupRsp
+{
+    XmsgImGroupSyncGroupEventInfo info = 1; 
+    repeated XmsgImGroupSyncGroupEventMember member = 2; 
+}
+
+message XmsgImGroupSyncGroupEventInfo
+{
+    map<string, string> info = 1; 
+    uint64 ver = 2; 
+    uint64 gts = 3; 
+    uint64 uts = 4; 
+}
+
+message XmsgImGroupSyncGroupEventMember
+{
+    string cgt = 1; 
+    string oper = 2; 
+    map<string, string> info = 3; 
+    uint64 ver = 4; 
+    uint64 gts = 5; 
+    uint64 uts = 6; 
+}
+
+message XmsgImGroupEventNotice
+{
+    XmsgImGroupSyncGroupEventInfo info = 1; 
+    XmsgImGroupSyncGroupEventMember member = 2; 
+}
+
+message XmsgImGroupInfoQueryReq
+{
+    string cgt = 1; 
+    bool member = 2; 
+}
+
+message XmsgImGroupInfoQueryRsp
+{
+    XmsgImGroupInfoSelfInfo info = 1; 
+    repeated XmsgImGroupInfoMember member = 2; 
+}
+
+message XmsgImGroupInfoSelfInfo
+{
+    string cgt = 1; 
+    bool enable = 2; 
+    map<string, string> info = 3; 
+    uint64 ver = 4; 
+    uint64 gts = 5; 
+    uint64 uts = 6; 
+}
+
+message XmsgImGroupInfoMember
+{
+    string cgt = 1; 
+    bool enable = 2; 
+    map<string, string> info = 3; 
+    uint64 ver = 4; 
+    uint64 gts = 5; 
+    uint64 uts = 6; 
+}
+message XmsgImGroupInfoUpdateReq
+{
+    string cgt = 1; 
+    map<string, string> upsert = 2; 
+    repeated string remove = 3; 
+}
+
+message XmsgImGroupInfoUpdateRsp
+{
+    map<string, string> ext = 1; 
+}
+
+message XmsgImGroupMsgRecvCfgReq
+{
+    string cgt = 1; 
+    string type = 2; 
+}
+
+message XmsgImGroupMsgRecvCfgRsp
+{
+    map<string, string> ext = 1; 
+}
+
