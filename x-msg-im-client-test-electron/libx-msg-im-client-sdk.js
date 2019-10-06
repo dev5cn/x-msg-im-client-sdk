@@ -44,9 +44,9 @@ var recvBuf; /* 本地tcp server上的接收缓冲区, 处理报文分片. */
 var netApids = new Map(); /* net-api实例管理, 相当于: hashmap<netApiId, object: { subEvnCallBack, subReqCallBack, transMap<tid, initTrans> }>. */
 var dbApiIds = new Map(); /* net-api实例管理, 相当于: hashmap<dbApiId, object: { transMap<tid, dbTrans> }>. */
 //
-DB_FILED_TYPE_BIGINT = 0x00; /* int or bigint. */
-DB_FILED_TYPE_TEXT = 0x01; /* text. */
-DB_FILED_TYPE_BLOB = 0x02; /* blob. */
+var DB_FILED_TYPE_BIGINT = 0x00; /* int or bigint. */
+var DB_FILED_TYPE_TEXT = 0x01; /* text. */
+var DB_FILED_TYPE_BLOB = 0x02; /* blob. */
 
 /** -------------------------------------------------------------------------------------------------------------------------------- */
 /**                                                                                                                                  */
@@ -472,7 +472,7 @@ function netApiTransEnd(trans)
 /** -------------------------------------------------------------------------------------------------------------------------------- */
 
 /* test for network api. */
-//function test4netApi()
+function test4netApi()
 {
     startupXmsgImClientFfi(() => {
         setSdkLogLevel("RECORD"); /* 设置底层日志级别. */
