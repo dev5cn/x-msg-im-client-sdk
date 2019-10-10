@@ -24,7 +24,6 @@ import misc.Crypto;
 import misc.Log;
 import misc.Misc;
 import x.msg.ap.TestXmsgImSdkEventXmsgAp;
-import x.msg.channel.status.TestXmsgChannelStatus;
 import x.msg.channel.status.TestXmsgChannelStatusPubGroupStatusNotice;
 import x.msg.channel.status.TestXmsgChannelStatusPubUsrStatusNotice;
 import x.msg.im.auth.TestXmsgImAuth;
@@ -68,7 +67,6 @@ public class Main
 
 	/** 接入地址. */
 	public static final String uri = "47.98.188.94:9001";
-//	public static final String uri = "127.0.0.1:8070";
 	/** 用户名. */
 	public static String usr = "usr03"; /* 可测试的用户名有: usr00 ~ usr09. */
 	/** 原始密码. */
@@ -86,18 +84,18 @@ public class Main
 	/** 文件服务地址. */
 	public static String fileService = null;
 
-	public static void main(String[] args)
+	public static final void main(String[] args) throws Exception
 	{
 		if (args.length > 0)
 			Main.usr = Misc.trim(args[0]);
 		//
-		Log.ignoreClass("org.apache");
-		XmsgImClientSdk.instance().setLogLevel("INFO");
+		Log.ignoreClass("apache");
+		XmsgImClientSdk.instance().setLogLevel("DEBUG");
 		XmsgImClientSdk.instance().subCxxLog(log -> Main.handleCxxLog(log));
 		XmsgImClientSdk.instance().init();
 		Misc.future(x -> XmsgImClientSdk.instance().loop());
 		//
-		if (!XmsgImClientDbApi.openDbGlobal("/home/xzwdev/桌面/db")) /* 打开全局数据库. */
+		if (!XmsgImClientDbApi.openDbGlobal("/home/dev5/db")) /* 打开全局数据库. */
 		{
 			Log.fault("open global database failed");
 			return;
@@ -171,7 +169,7 @@ public class Main
 		/** x-msg-channel-status. */
 		/**                                  */
 		/** -------------------------------- */
-		TestXmsgChannelStatus.test();
+		//TestXmsgChannelStatus.test();
 	}
 
 	public static final void main4netApi(String[] args)
@@ -181,7 +179,7 @@ public class Main
 		XmsgImClientSdk.instance().init(); /* sdk初始化. */
 		new Thread(() -> XmsgImClientSdk.instance().loop()).start(); /* 这里开启了一个线程, 我们认为这个线程就是sdk线程. */
 		//
-		XmsgImClientNetApi netApi = XmsgImClientNetApi.newApi("47.98.188.94:8080"); /* 通过指定的接入地址构造一个网络层的api实例. */
+		XmsgImClientNetApi netApi = XmsgImClientNetApi.newApi("47.98.188.94:9001"); /* 通过指定的接入地址构造一个网络层的api实例. */
 		//
 		netApi.subEvn(evn -> Log.info("got a net-api event, msg: %s, dat: %s", evn.getDescriptorForType().getName(), Misc.pb2str(evn)) /* 在sdk线程中. */); /* 订阅网络层api实例上的事件, 包括本地事件与网络通知. */
 		//
@@ -266,35 +264,6 @@ public class Main
 				Log.debug("row: %d, usr: %s, pwdSha256: %s, uts: %d", i, rsp.getStr(i, "usr"), rsp.getStr(i, "pwdSha256"), rsp.getLong(i, "uts"));
 			}
 		});
-	}
-
-	public static final void main4github(String[] args) throws Exception
-	{
-		if (args.length > 0)
-			Main.usr = Misc.trim(args[0]);
-		//
-		Log.ignoreClass("apache");
-		XmsgImClientSdk.instance().setLogLevel("DEBUG");
-		XmsgImClientSdk.instance().subCxxLog(log -> Main.handleCxxLog(log));
-		XmsgImClientSdk.instance().init();
-		Misc.future(x -> XmsgImClientSdk.instance().loop());
-		//
-		if (!XmsgImClientDbApi.openDbGlobal("/home/dev5/db")) /* 打开全局数据库. */
-		{
-			Log.fault("open global database failed");
-			return;
-		}
-		Log.info("open global database successful");
-		//
-		Main.netApi = XmsgImClientNetApi.newApi(Main.uri);
-		Main.netApi.subEvn(evn -> Main.handleEvent(evn));
-		Main.netApi.subReq((trans, req) -> Main.handleRequest(trans, req));
-		/** -------------------------------- */
-		/**                                  */
-		/** x-msg-im-auth. */
-		/**                                  */
-		/** -------------------------------- */
-		TestXmsgImAuth.test();
 	}
 
 	/** 处理net-api上的事件或通知. */
