@@ -23,7 +23,12 @@ import com.google.protobuf.Message;
 import misc.Crypto;
 import misc.Log;
 import misc.Misc;
+import x.msg.ap.TestXmsgImSdkEventXmsgAp;
+import x.msg.channel.status.TestXmsgChannelStatus;
+import x.msg.channel.status.TestXmsgChannelStatusPubGroupStatusNotice;
+import x.msg.channel.status.TestXmsgChannelStatusPubUsrStatusNotice;
 import x.msg.im.auth.TestXmsgImAuth;
+import x.msg.im.auth.TestXmsgImSdkEventXmsgImAuth;
 import x.msg.im.client.XmsgErrCode;
 import x.msg.im.client.XmsgImClientDbApi;
 import x.msg.im.client.XmsgImClientDbApi.XmsgImTbRow;
@@ -32,16 +37,20 @@ import x.msg.im.client.XmsgImClientNetApi.XmsgImClientNetTrans;
 import x.msg.im.client.XmsgImClientSdk;
 import x.msg.im.group.TestXmsgImGroup;
 import x.msg.im.group.TestXmsgImGroupMsgNotice;
-import x.msg.im.hlr.TestXmsgImHlrAttachSimpleReq;
+import x.msg.im.hlr.TestXmsgImHlrOtherClientAttachReq;
 import x.msg.im.org.TestXmsgImOrg;
 import x.msg.im.org.TestXmsgImOrgSyncPubReq;
+import x.msg.pb.PbXmsg.XmsgChannelStatusPubGroupStatusNotice;
+import x.msg.pb.PbXmsg.XmsgChannelStatusPubUsrStatusNotice;
 import x.msg.pb.PbXmsg.XmsgImAuthSimpleReq;
 import x.msg.pb.PbXmsg.XmsgImAuthSimpleRsp;
 import x.msg.pb.PbXmsg.XmsgImClientDbCrudReq;
 import x.msg.pb.PbXmsg.XmsgImGroupMsgNotice;
+import x.msg.pb.PbXmsg.XmsgImHlrOtherClientAttachReq;
 import x.msg.pb.PbXmsg.XmsgImOrgSyncPubReq;
 import x.msg.pb.PbXmsg.XmsgImSdkEventAdapter.XmsgImSdkEventCxxLog;
 import x.msg.pb.PbXmsg.XmsgImSdkEventXmsgAp;
+import x.msg.pb.PbXmsg.XmsgImSdkEventXmsgImAuth;
 
 /**
  * 
@@ -58,9 +67,10 @@ public class Main
 	}
 
 	/** 接入地址. */
-	public static final String uri = "47.98.188.94:8080";
+	public static final String uri = "47.98.188.94:9001";
+//	public static final String uri = "127.0.0.1:8070";
 	/** 用户名. */
-	public static String usr = "usr00"; /* 可测试的用户名有: usr00 ~ usr09. */
+	public static String usr = "usr03"; /* 可测试的用户名有: usr00 ~ usr09. */
 	/** 原始密码. */
 	public static final String pwd = "password"; /* 此密码适用于所有用户. */
 	/** net-api实例句柄. */
@@ -75,6 +85,94 @@ public class Main
 	public static String cgt = null;
 	/** 文件服务地址. */
 	public static String fileService = null;
+
+	public static void main(String[] args)
+	{
+		if (args.length > 0)
+			Main.usr = Misc.trim(args[0]);
+		//
+		Log.ignoreClass("org.apache");
+		XmsgImClientSdk.instance().setLogLevel("INFO");
+		XmsgImClientSdk.instance().subCxxLog(log -> Main.handleCxxLog(log));
+		XmsgImClientSdk.instance().init();
+		Misc.future(x -> XmsgImClientSdk.instance().loop());
+		//
+		if (!XmsgImClientDbApi.openDbGlobal("/home/xzwdev/桌面/db")) /* 打开全局数据库. */
+		{
+			Log.fault("open global database failed");
+			return;
+		}
+		Log.info("open global database successful");
+		//
+		Main.netApi = XmsgImClientNetApi.newApi(Main.uri);
+		Main.netApi.subEvn(evn -> Main.handleEvent(evn));
+		Main.netApi.subReq((trans, req) -> Main.handleRequest(trans, req));
+		/** -------------------------------- */
+		/**                                  */
+		/** x-msg-im-auth. */
+		/**                                  */
+		/** -------------------------------- */
+		TestXmsgImAuth.test();
+	}
+
+	/** attach成功后的test case. */
+	public static final void afterAttach()
+	{
+		/** -------------------------------- */
+		/**                                  */
+		/** 打开用户数据库. */
+		/**                                  */
+		/** -------------------------------- */
+		Main.dbApi = XmsgImClientDbApi.newApi(Main.cgt);
+		if (Main.dbApi == null)
+		{
+			Log.error("can not open usr database, cgt: %s", Main.cgt);
+			return;
+		}
+		Log.info("open usr database successful, cgt: %s", Main.cgt);
+		Main.dbApi.futureUsrOrg("select name from sqlite_master where type = 'table' order by name", (ret, desc, rst) ->
+		{
+			if (rst.rowSize() > 0)
+				return;
+			TestXmsgImOrg.createTables(); /* 创建一些必要的表. */
+		});
+		Main.dbApi.futureUsrDat("select name from sqlite_master where type = 'table' order by name", (ret, desc, rst) ->
+		{
+			if (rst.rowSize() > 0)
+				return;
+			TestXmsgImGroup.createTables(); /* 创建一些必要的表. */
+		});
+		/** -------------------------------- */
+		/**                                  */
+		/** x-msg-im-hlr. */
+		/**                                  */
+		/** -------------------------------- */
+		// TestXmsgImHlr.test();
+		/** -------------------------------- */
+		/**                                  */
+		/** x-msg-im-group. */
+		/**                                  */
+		/** -------------------------------- */
+		// TestXmsgImGroup.test();
+		/** -------------------------------- */
+		/**                                  */
+		/** x-msg-im-org. */
+		/**                                  */
+		/** -------------------------------- */
+		// TestXmsgImOrg.test();
+		/** -------------------------------- */
+		/**                                  */
+		/** x-msg-file. */
+		/**                                  */
+		/** -------------------------------- */
+		// TestXmsgFile.test();
+		/** -------------------------------- */
+		/**                                  */
+		/** x-msg-channel-status. */
+		/**                                  */
+		/** -------------------------------- */
+		TestXmsgChannelStatus.test();
+	}
 
 	public static final void main4netApi(String[] args)
 	{
@@ -170,7 +268,7 @@ public class Main
 		});
 	}
 
-	public static final void main(String[] args) throws Exception
+	public static final void main4github(String[] args) throws Exception
 	{
 		if (args.length > 0)
 			Main.usr = Misc.trim(args[0]);
@@ -199,76 +297,51 @@ public class Main
 		TestXmsgImAuth.test();
 	}
 
-	/** attach成功后的test case. */
-	public static final void afterAttach()
-	{
-		/** -------------------------------- */
-		/**                                  */
-		/** 打开用户数据库. */
-		/**                                  */
-		/** -------------------------------- */
-		Main.dbApi = XmsgImClientDbApi.newApi(Main.cgt);
-		if (Main.dbApi == null)
-		{
-			Log.error("can not open usr database, cgt: %s", Main.cgt);
-			return;
-		}
-		Log.info("open usr database successful, cgt: %s", Main.cgt);
-		Main.dbApi.futureUsrOrg("select name from sqlite_master where type = 'table' order by name", (ret, desc, rst) ->
-		{
-			if (rst.rowSize() > 0)
-				return;
-			TestXmsgImOrg.createTables(); /* 创建一些必要的表. */
-		});
-		Main.dbApi.futureUsrDat("select name from sqlite_master where type = 'table' order by name", (ret, desc, rst) ->
-		{
-			if (rst.rowSize() > 0)
-				return;
-			TestXmsgImGroup.createTables(); /* 创建一些必要的表. */
-		});
-		/** -------------------------------- */
-		/**                                  */
-		/** x-msg-im-hlr. */
-		/**                                  */
-		/** -------------------------------- */
-		// TestXmsgImHlr.test();
-		/** -------------------------------- */
-		/**                                  */
-		/** x-msg-im-group. */
-		/**                                  */
-		/** -------------------------------- */
-		// TestXmsgImGroup.test();
-		/** -------------------------------- */
-		/**                                  */
-		/** x-msg-im-org. */
-		/**                                  */
-		/** -------------------------------- */
-		// TestXmsgImOrg.test();
-		/** -------------------------------- */
-		/**                                  */
-		/** x-msg-file. */
-		/**                                  */
-		/** -------------------------------- */
-		// TestXmsgFile.test();
-	}
-
 	/** 处理net-api上的事件或通知. */
 	public static final void handleEvent(Message evn)
 	{
-		if (evn instanceof XmsgImSdkEventXmsgAp && ((XmsgImSdkEventXmsgAp) evn).getEvn().equals("estab") && Main.token != null)
+		if (evn instanceof XmsgImSdkEventXmsgAp)
 		{
-			Log.info("we will try attach again: %s", evn.getClass().getSimpleName());
-			TestXmsgImHlrAttachSimpleReq.test(Main.token);
+			TestXmsgImSdkEventXmsgAp.test(Misc.get(evn));
+			return;
+		}
+		if (evn instanceof XmsgImSdkEventXmsgImAuth)
+		{
+			TestXmsgImSdkEventXmsgImAuth.test(Misc.get(evn));
+			return;
 		}
 		if (evn instanceof XmsgImGroupMsgNotice)
+		{
 			TestXmsgImGroupMsgNotice.test(Misc.get(evn));
+			return;
+		}
+		if (evn instanceof XmsgChannelStatusPubUsrStatusNotice)
+		{
+			TestXmsgChannelStatusPubUsrStatusNotice.test(Misc.get(evn));
+			return;
+		}
+		if (evn instanceof XmsgChannelStatusPubGroupStatusNotice)
+		{
+			TestXmsgChannelStatusPubGroupStatusNotice.test(Misc.get(evn));
+			return;
+		}
+		Log.warn("unexpected evn(%s): %s", evn.getDescriptorForType().getName(), Misc.pb2str(evn));
 	}
 
 	/** 处理net-api上的网络请求. */
 	public static final void handleRequest(XmsgImClientNetTrans trans, Message req)
 	{
 		if (req instanceof XmsgImOrgSyncPubReq) /* x-msg-im-org下发组织架构增量. */
+		{
 			TestXmsgImOrgSyncPubReq.test(trans, Misc.get(req));
+			return;
+		}
+		if (req instanceof XmsgImHlrOtherClientAttachReq) /* 其它终端正在附着. */
+		{
+			TestXmsgImHlrOtherClientAttachReq.test(trans, Misc.get(req));
+			return;
+		}
+		Log.error("unexpected server side request message, req(%s): %s", req.getDescriptorForType().getName(), Misc.pb2str(req));
 	}
 
 	/** 从c++层上来的日志. */

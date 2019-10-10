@@ -22,6 +22,7 @@
 
 #include <google/protobuf/message.h>
 #include "cpp/db-x-msg-im-client-common.pb.h"
+#include "cpp/net-x-msg-channel-status.pb.h"
 #include "cpp/net-x-msg-file.pb.h"
 #include "cpp/net-x-msg-im-auth.pb.h"
 #include "cpp/net-x-msg-im-group-member.pb.h"

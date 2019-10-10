@@ -1,8 +1,8 @@
 cmake_minimum_required(VERSION 2.8.12.2)
-
+#
 IF($ENV{PLAT} MATCHES "ANDROID")
         ADD_DEFINITIONS(-DANDROID -DLINUX)
-	set(CMAKE_SYSTEM_NAME Android)
+		 set(CMAKE_SYSTEM_NAME Android)
         set(CMAKE_ANDROID_NDK $ENV{CMAKE_ANDROID_NDK})
         set(CMAKE_SYSTEM_VERSION $ENV{CMAKE_SYSTEM_VERSION})
         set(CMAKE_ANDROID_ARCH_ABI $ENV{CMAKE_ANDROID_ARCH_ABI})
@@ -10,14 +10,22 @@ IF($ENV{PLAT} MATCHES "ANDROID")
 ELSE ()
         ADD_DEFINITIONS(-D$ENV{PLAT})
 ENDIF()
-
-INCLUDE_DIRECTORIES(../libmisc-cpp/ ../libxsc-proto-client-cpp ../libx-msg-im-client-xsc ../libx-msg-im-client-core/ ../libx-msg-im-client-pb-lite $ENV{PROTOBUF}/include)
-
+#
+INCLUDE_DIRECTORIES(../libmisc-cpp/)
+INCLUDE_DIRECTORIES(../libxsc-proto-client-cpp)
+INCLUDE_DIRECTORIES(../libx-msg-im-client-xsc)
+INCLUDE_DIRECTORIES(../libx-msg-im-client-core)
+INCLUDE_DIRECTORIES(../libx-msg-im-client-pb-lite)
+INCLUDE_DIRECTORIES($ENV{PROTOBUF}/include)
+#
 ADD_COMPILE_OPTIONS(-std=c++11 -fPIC -g3 -O3 -Wall)
-
+ADD_DEFINITIONS(-Wno-builtin-macro-redefined)
+#
 FILE(GLOB SRC0 "./*.cpp")
 FILE(GLOB SRC1 "./*/*.cpp")
-
+#
 PROJECT(x-msg-im-client-net)
-
+#
 ADD_LIBRARY(x-msg-im-client-net STATIC ${SRC0} ${SRC1})
+INCLUDE(../__file__.cmake)
+REDEFINE_FILE_MACRO(x-msg-im-client-net)

@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.12.2)
-
+#
 IF($ENV{PLAT} MATCHES "ANDROID")
         ADD_DEFINITIONS(-DANDROID -DLINUX)
 	set(CMAKE_SYSTEM_NAME Android)
@@ -10,17 +10,22 @@ IF($ENV{PLAT} MATCHES "ANDROID")
 ELSE ()
         ADD_DEFINITIONS(-D$ENV{PLAT})
 ENDIF()
-
-INCLUDE_DIRECTORIES(../libmisc-cpp ../libx-msg-im-client-core ../libx-msg-im-client-pb-lite $ENV{PROTOBUF}/include)
-
+#
+INCLUDE_DIRECTORIES(../libmisc-cpp)
+INCLUDE_DIRECTORIES(../libx-msg-im-client-core)
+INCLUDE_DIRECTORIES(../libx-msg-im-client-pb-lite)
+INCLUDE_DIRECTORIES($ENV{PROTOBUF}/include)
+#
 SET(CMAKE_CXX_FLAGS "-std=c++11 -fPIC -g3 -O3 -Wall")
 SET(CMAKE_C_FLAGS "-fPIC -g3 -O3 -Wall")
-
+ADD_DEFINITIONS(-Wno-builtin-macro-redefined)
+#
 FILE(GLOB SRC1 "./*/*.cpp")
 FILE(GLOB SRC0 "./*.cpp")
 FILE(GLOB SRC2 "./*/*.c")
-
+#
 PROJECT(x-msg-im-client-db)
-
+#
 ADD_LIBRARY(x-msg-im-client-db STATIC ${SRC0} ${SRC1} ${SRC2})
-
+INCLUDE(../__file__.cmake)
+REDEFINE_FILE_MACRO(x-msg-im-client-db)

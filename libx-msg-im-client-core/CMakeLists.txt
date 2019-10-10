@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.12.2)
-
+#
 IF($ENV{PLAT} MATCHES "ANDROID")
         ADD_DEFINITIONS(-DANDROID -DLINUX)
 	set(CMAKE_SYSTEM_NAME Android)
@@ -10,14 +10,16 @@ IF($ENV{PLAT} MATCHES "ANDROID")
 ELSE ()
         ADD_DEFINITIONS(-D$ENV{PLAT})
 ENDIF()
-
+#
 INCLUDE_DIRECTORIES(../libmisc-cpp/)
-
+#
 ADD_COMPILE_OPTIONS(-std=c++11 -fPIC -g3 -O3 -Wall)
-
+ADD_DEFINITIONS(-Wno-builtin-macro-redefined)
+#
 FILE(GLOB SRC "./*.cpp")
-
+#
 PROJECT(x-msg-im-client-core)
-
+#
 ADD_LIBRARY(x-msg-im-client-core STATIC ${SRC})
-
+INCLUDE(../__file__.cmake)
+REDEFINE_FILE_MACRO(x-msg-im-client-core)

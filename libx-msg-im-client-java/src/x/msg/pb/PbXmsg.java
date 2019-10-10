@@ -17634,6 +17634,8068 @@ public final class PbXmsg {
 
   }
 
+  public interface XmsgChannelStatusQueryReqOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:XmsgChannelStatusQueryReq)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>repeated string cgt = 1;</code>
+     */
+    java.util.List<java.lang.String>
+        getCgtList();
+    /**
+     * <code>repeated string cgt = 1;</code>
+     */
+    int getCgtCount();
+    /**
+     * <code>repeated string cgt = 1;</code>
+     */
+    java.lang.String getCgt(int index);
+    /**
+     * <code>repeated string cgt = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getCgtBytes(int index);
+  }
+  /**
+   * Protobuf type {@code XmsgChannelStatusQueryReq}
+   */
+  public  static final class XmsgChannelStatusQueryReq extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:XmsgChannelStatusQueryReq)
+      XmsgChannelStatusQueryReqOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use XmsgChannelStatusQueryReq.newBuilder() to construct.
+    private XmsgChannelStatusQueryReq(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private XmsgChannelStatusQueryReq() {
+      cgt_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private XmsgChannelStatusQueryReq(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                cgt_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              cgt_.add(s);
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+          cgt_ = cgt_.getUnmodifiableView();
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return x.msg.pb.PbXmsg.internal_static_XmsgChannelStatusQueryReq_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return x.msg.pb.PbXmsg.internal_static_XmsgChannelStatusQueryReq_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              x.msg.pb.PbXmsg.XmsgChannelStatusQueryReq.class, x.msg.pb.PbXmsg.XmsgChannelStatusQueryReq.Builder.class);
+    }
+
+    public static final int CGT_FIELD_NUMBER = 1;
+    private com.google.protobuf.LazyStringList cgt_;
+    /**
+     * <code>repeated string cgt = 1;</code>
+     */
+    public com.google.protobuf.ProtocolStringList
+        getCgtList() {
+      return cgt_;
+    }
+    /**
+     * <code>repeated string cgt = 1;</code>
+     */
+    public int getCgtCount() {
+      return cgt_.size();
+    }
+    /**
+     * <code>repeated string cgt = 1;</code>
+     */
+    public java.lang.String getCgt(int index) {
+      return cgt_.get(index);
+    }
+    /**
+     * <code>repeated string cgt = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getCgtBytes(int index) {
+      return cgt_.getByteString(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      for (int i = 0; i < cgt_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, cgt_.getRaw(i));
+      }
+      unknownFields.writeTo(output);
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      {
+        int dataSize = 0;
+        for (int i = 0; i < cgt_.size(); i++) {
+          dataSize += computeStringSizeNoTag(cgt_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getCgtList().size();
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof x.msg.pb.PbXmsg.XmsgChannelStatusQueryReq)) {
+        return super.equals(obj);
+      }
+      x.msg.pb.PbXmsg.XmsgChannelStatusQueryReq other = (x.msg.pb.PbXmsg.XmsgChannelStatusQueryReq) obj;
+
+      boolean result = true;
+      result = result && getCgtList()
+          .equals(other.getCgtList());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getCgtCount() > 0) {
+        hash = (37 * hash) + CGT_FIELD_NUMBER;
+        hash = (53 * hash) + getCgtList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static x.msg.pb.PbXmsg.XmsgChannelStatusQueryReq parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static x.msg.pb.PbXmsg.XmsgChannelStatusQueryReq parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static x.msg.pb.PbXmsg.XmsgChannelStatusQueryReq parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static x.msg.pb.PbXmsg.XmsgChannelStatusQueryReq parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static x.msg.pb.PbXmsg.XmsgChannelStatusQueryReq parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static x.msg.pb.PbXmsg.XmsgChannelStatusQueryReq parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static x.msg.pb.PbXmsg.XmsgChannelStatusQueryReq parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static x.msg.pb.PbXmsg.XmsgChannelStatusQueryReq parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static x.msg.pb.PbXmsg.XmsgChannelStatusQueryReq parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static x.msg.pb.PbXmsg.XmsgChannelStatusQueryReq parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static x.msg.pb.PbXmsg.XmsgChannelStatusQueryReq parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static x.msg.pb.PbXmsg.XmsgChannelStatusQueryReq parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(x.msg.pb.PbXmsg.XmsgChannelStatusQueryReq prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code XmsgChannelStatusQueryReq}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:XmsgChannelStatusQueryReq)
+        x.msg.pb.PbXmsg.XmsgChannelStatusQueryReqOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return x.msg.pb.PbXmsg.internal_static_XmsgChannelStatusQueryReq_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return x.msg.pb.PbXmsg.internal_static_XmsgChannelStatusQueryReq_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                x.msg.pb.PbXmsg.XmsgChannelStatusQueryReq.class, x.msg.pb.PbXmsg.XmsgChannelStatusQueryReq.Builder.class);
+      }
+
+      // Construct using x.msg.pb.PbXmsg.XmsgChannelStatusQueryReq.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        cgt_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return x.msg.pb.PbXmsg.internal_static_XmsgChannelStatusQueryReq_descriptor;
+      }
+
+      public x.msg.pb.PbXmsg.XmsgChannelStatusQueryReq getDefaultInstanceForType() {
+        return x.msg.pb.PbXmsg.XmsgChannelStatusQueryReq.getDefaultInstance();
+      }
+
+      public x.msg.pb.PbXmsg.XmsgChannelStatusQueryReq build() {
+        x.msg.pb.PbXmsg.XmsgChannelStatusQueryReq result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public x.msg.pb.PbXmsg.XmsgChannelStatusQueryReq buildPartial() {
+        x.msg.pb.PbXmsg.XmsgChannelStatusQueryReq result = new x.msg.pb.PbXmsg.XmsgChannelStatusQueryReq(this);
+        int from_bitField0_ = bitField0_;
+        if (((bitField0_ & 0x00000001) == 0x00000001)) {
+          cgt_ = cgt_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.cgt_ = cgt_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof x.msg.pb.PbXmsg.XmsgChannelStatusQueryReq) {
+          return mergeFrom((x.msg.pb.PbXmsg.XmsgChannelStatusQueryReq)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(x.msg.pb.PbXmsg.XmsgChannelStatusQueryReq other) {
+        if (other == x.msg.pb.PbXmsg.XmsgChannelStatusQueryReq.getDefaultInstance()) return this;
+        if (!other.cgt_.isEmpty()) {
+          if (cgt_.isEmpty()) {
+            cgt_ = other.cgt_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureCgtIsMutable();
+            cgt_.addAll(other.cgt_);
+          }
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        x.msg.pb.PbXmsg.XmsgChannelStatusQueryReq parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (x.msg.pb.PbXmsg.XmsgChannelStatusQueryReq) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private com.google.protobuf.LazyStringList cgt_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensureCgtIsMutable() {
+        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+          cgt_ = new com.google.protobuf.LazyStringArrayList(cgt_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+      /**
+       * <code>repeated string cgt = 1;</code>
+       */
+      public com.google.protobuf.ProtocolStringList
+          getCgtList() {
+        return cgt_.getUnmodifiableView();
+      }
+      /**
+       * <code>repeated string cgt = 1;</code>
+       */
+      public int getCgtCount() {
+        return cgt_.size();
+      }
+      /**
+       * <code>repeated string cgt = 1;</code>
+       */
+      public java.lang.String getCgt(int index) {
+        return cgt_.get(index);
+      }
+      /**
+       * <code>repeated string cgt = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getCgtBytes(int index) {
+        return cgt_.getByteString(index);
+      }
+      /**
+       * <code>repeated string cgt = 1;</code>
+       */
+      public Builder setCgt(
+          int index, java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureCgtIsMutable();
+        cgt_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string cgt = 1;</code>
+       */
+      public Builder addCgt(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureCgtIsMutable();
+        cgt_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string cgt = 1;</code>
+       */
+      public Builder addAllCgt(
+          java.lang.Iterable<java.lang.String> values) {
+        ensureCgtIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, cgt_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string cgt = 1;</code>
+       */
+      public Builder clearCgt() {
+        cgt_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string cgt = 1;</code>
+       */
+      public Builder addCgtBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        ensureCgtIsMutable();
+        cgt_.add(value);
+        onChanged();
+        return this;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:XmsgChannelStatusQueryReq)
+    }
+
+    // @@protoc_insertion_point(class_scope:XmsgChannelStatusQueryReq)
+    private static final x.msg.pb.PbXmsg.XmsgChannelStatusQueryReq DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new x.msg.pb.PbXmsg.XmsgChannelStatusQueryReq();
+    }
+
+    public static x.msg.pb.PbXmsg.XmsgChannelStatusQueryReq getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<XmsgChannelStatusQueryReq>
+        PARSER = new com.google.protobuf.AbstractParser<XmsgChannelStatusQueryReq>() {
+      public XmsgChannelStatusQueryReq parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new XmsgChannelStatusQueryReq(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<XmsgChannelStatusQueryReq> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<XmsgChannelStatusQueryReq> getParserForType() {
+      return PARSER;
+    }
+
+    public x.msg.pb.PbXmsg.XmsgChannelStatusQueryReq getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface XmsgChannelStatusQueryRspOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:XmsgChannelStatusQueryRsp)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>map&lt;string, .XmsgChannelStatusUsrStatus&gt; usrStatus = 1;</code>
+     */
+    int getUsrStatusCount();
+    /**
+     * <code>map&lt;string, .XmsgChannelStatusUsrStatus&gt; usrStatus = 1;</code>
+     */
+    boolean containsUsrStatus(
+        java.lang.String key);
+    /**
+     * Use {@link #getUsrStatusMap()} instead.
+     */
+    @java.lang.Deprecated
+    java.util.Map<java.lang.String, x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus>
+    getUsrStatus();
+    /**
+     * <code>map&lt;string, .XmsgChannelStatusUsrStatus&gt; usrStatus = 1;</code>
+     */
+    java.util.Map<java.lang.String, x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus>
+    getUsrStatusMap();
+    /**
+     * <code>map&lt;string, .XmsgChannelStatusUsrStatus&gt; usrStatus = 1;</code>
+     */
+
+    x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus getUsrStatusOrDefault(
+        java.lang.String key,
+        x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus defaultValue);
+    /**
+     * <code>map&lt;string, .XmsgChannelStatusUsrStatus&gt; usrStatus = 1;</code>
+     */
+
+    x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus getUsrStatusOrThrow(
+        java.lang.String key);
+
+    /**
+     * <code>map&lt;string, .XmsgChannelStatusGroupStatus&gt; groupStatus = 2;</code>
+     */
+    int getGroupStatusCount();
+    /**
+     * <code>map&lt;string, .XmsgChannelStatusGroupStatus&gt; groupStatus = 2;</code>
+     */
+    boolean containsGroupStatus(
+        java.lang.String key);
+    /**
+     * Use {@link #getGroupStatusMap()} instead.
+     */
+    @java.lang.Deprecated
+    java.util.Map<java.lang.String, x.msg.pb.PbXmsg.XmsgChannelStatusGroupStatus>
+    getGroupStatus();
+    /**
+     * <code>map&lt;string, .XmsgChannelStatusGroupStatus&gt; groupStatus = 2;</code>
+     */
+    java.util.Map<java.lang.String, x.msg.pb.PbXmsg.XmsgChannelStatusGroupStatus>
+    getGroupStatusMap();
+    /**
+     * <code>map&lt;string, .XmsgChannelStatusGroupStatus&gt; groupStatus = 2;</code>
+     */
+
+    x.msg.pb.PbXmsg.XmsgChannelStatusGroupStatus getGroupStatusOrDefault(
+        java.lang.String key,
+        x.msg.pb.PbXmsg.XmsgChannelStatusGroupStatus defaultValue);
+    /**
+     * <code>map&lt;string, .XmsgChannelStatusGroupStatus&gt; groupStatus = 2;</code>
+     */
+
+    x.msg.pb.PbXmsg.XmsgChannelStatusGroupStatus getGroupStatusOrThrow(
+        java.lang.String key);
+  }
+  /**
+   * Protobuf type {@code XmsgChannelStatusQueryRsp}
+   */
+  public  static final class XmsgChannelStatusQueryRsp extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:XmsgChannelStatusQueryRsp)
+      XmsgChannelStatusQueryRspOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use XmsgChannelStatusQueryRsp.newBuilder() to construct.
+    private XmsgChannelStatusQueryRsp(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private XmsgChannelStatusQueryRsp() {
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private XmsgChannelStatusQueryRsp(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                usrStatus_ = com.google.protobuf.MapField.newMapField(
+                    UsrStatusDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000001;
+              }
+              com.google.protobuf.MapEntry<java.lang.String, x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus>
+              usrStatus__ = input.readMessage(
+                  UsrStatusDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              usrStatus_.getMutableMap().put(
+                  usrStatus__.getKey(), usrStatus__.getValue());
+              break;
+            }
+            case 18: {
+              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+                groupStatus_ = com.google.protobuf.MapField.newMapField(
+                    GroupStatusDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000002;
+              }
+              com.google.protobuf.MapEntry<java.lang.String, x.msg.pb.PbXmsg.XmsgChannelStatusGroupStatus>
+              groupStatus__ = input.readMessage(
+                  GroupStatusDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              groupStatus_.getMutableMap().put(
+                  groupStatus__.getKey(), groupStatus__.getValue());
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return x.msg.pb.PbXmsg.internal_static_XmsgChannelStatusQueryRsp_descriptor;
+    }
+
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapField internalGetMapField(
+        int number) {
+      switch (number) {
+        case 1:
+          return internalGetUsrStatus();
+        case 2:
+          return internalGetGroupStatus();
+        default:
+          throw new RuntimeException(
+              "Invalid map field number: " + number);
+      }
+    }
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return x.msg.pb.PbXmsg.internal_static_XmsgChannelStatusQueryRsp_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              x.msg.pb.PbXmsg.XmsgChannelStatusQueryRsp.class, x.msg.pb.PbXmsg.XmsgChannelStatusQueryRsp.Builder.class);
+    }
+
+    public static final int USRSTATUS_FIELD_NUMBER = 1;
+    private static final class UsrStatusDefaultEntryHolder {
+      static final com.google.protobuf.MapEntry<
+          java.lang.String, x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus> defaultEntry =
+              com.google.protobuf.MapEntry
+              .<java.lang.String, x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus>newDefaultInstance(
+                  x.msg.pb.PbXmsg.internal_static_XmsgChannelStatusQueryRsp_UsrStatusEntry_descriptor, 
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "",
+                  com.google.protobuf.WireFormat.FieldType.MESSAGE,
+                  x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus.getDefaultInstance());
+    }
+    private com.google.protobuf.MapField<
+        java.lang.String, x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus> usrStatus_;
+    private com.google.protobuf.MapField<java.lang.String, x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus>
+    internalGetUsrStatus() {
+      if (usrStatus_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            UsrStatusDefaultEntryHolder.defaultEntry);
+      }
+      return usrStatus_;
+    }
+
+    public int getUsrStatusCount() {
+      return internalGetUsrStatus().getMap().size();
+    }
+    /**
+     * <code>map&lt;string, .XmsgChannelStatusUsrStatus&gt; usrStatus = 1;</code>
+     */
+
+    public boolean containsUsrStatus(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      return internalGetUsrStatus().getMap().containsKey(key);
+    }
+    /**
+     * Use {@link #getUsrStatusMap()} instead.
+     */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus> getUsrStatus() {
+      return getUsrStatusMap();
+    }
+    /**
+     * <code>map&lt;string, .XmsgChannelStatusUsrStatus&gt; usrStatus = 1;</code>
+     */
+
+    public java.util.Map<java.lang.String, x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus> getUsrStatusMap() {
+      return internalGetUsrStatus().getMap();
+    }
+    /**
+     * <code>map&lt;string, .XmsgChannelStatusUsrStatus&gt; usrStatus = 1;</code>
+     */
+
+    public x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus getUsrStatusOrDefault(
+        java.lang.String key,
+        x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus defaultValue) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus> map =
+          internalGetUsrStatus().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <code>map&lt;string, .XmsgChannelStatusUsrStatus&gt; usrStatus = 1;</code>
+     */
+
+    public x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus getUsrStatusOrThrow(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus> map =
+          internalGetUsrStatus().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public static final int GROUPSTATUS_FIELD_NUMBER = 2;
+    private static final class GroupStatusDefaultEntryHolder {
+      static final com.google.protobuf.MapEntry<
+          java.lang.String, x.msg.pb.PbXmsg.XmsgChannelStatusGroupStatus> defaultEntry =
+              com.google.protobuf.MapEntry
+              .<java.lang.String, x.msg.pb.PbXmsg.XmsgChannelStatusGroupStatus>newDefaultInstance(
+                  x.msg.pb.PbXmsg.internal_static_XmsgChannelStatusQueryRsp_GroupStatusEntry_descriptor, 
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "",
+                  com.google.protobuf.WireFormat.FieldType.MESSAGE,
+                  x.msg.pb.PbXmsg.XmsgChannelStatusGroupStatus.getDefaultInstance());
+    }
+    private com.google.protobuf.MapField<
+        java.lang.String, x.msg.pb.PbXmsg.XmsgChannelStatusGroupStatus> groupStatus_;
+    private com.google.protobuf.MapField<java.lang.String, x.msg.pb.PbXmsg.XmsgChannelStatusGroupStatus>
+    internalGetGroupStatus() {
+      if (groupStatus_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            GroupStatusDefaultEntryHolder.defaultEntry);
+      }
+      return groupStatus_;
+    }
+
+    public int getGroupStatusCount() {
+      return internalGetGroupStatus().getMap().size();
+    }
+    /**
+     * <code>map&lt;string, .XmsgChannelStatusGroupStatus&gt; groupStatus = 2;</code>
+     */
+
+    public boolean containsGroupStatus(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      return internalGetGroupStatus().getMap().containsKey(key);
+    }
+    /**
+     * Use {@link #getGroupStatusMap()} instead.
+     */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, x.msg.pb.PbXmsg.XmsgChannelStatusGroupStatus> getGroupStatus() {
+      return getGroupStatusMap();
+    }
+    /**
+     * <code>map&lt;string, .XmsgChannelStatusGroupStatus&gt; groupStatus = 2;</code>
+     */
+
+    public java.util.Map<java.lang.String, x.msg.pb.PbXmsg.XmsgChannelStatusGroupStatus> getGroupStatusMap() {
+      return internalGetGroupStatus().getMap();
+    }
+    /**
+     * <code>map&lt;string, .XmsgChannelStatusGroupStatus&gt; groupStatus = 2;</code>
+     */
+
+    public x.msg.pb.PbXmsg.XmsgChannelStatusGroupStatus getGroupStatusOrDefault(
+        java.lang.String key,
+        x.msg.pb.PbXmsg.XmsgChannelStatusGroupStatus defaultValue) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, x.msg.pb.PbXmsg.XmsgChannelStatusGroupStatus> map =
+          internalGetGroupStatus().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <code>map&lt;string, .XmsgChannelStatusGroupStatus&gt; groupStatus = 2;</code>
+     */
+
+    public x.msg.pb.PbXmsg.XmsgChannelStatusGroupStatus getGroupStatusOrThrow(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, x.msg.pb.PbXmsg.XmsgChannelStatusGroupStatus> map =
+          internalGetGroupStatus().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      com.google.protobuf.GeneratedMessageV3
+        .serializeStringMapTo(
+          output,
+          internalGetUsrStatus(),
+          UsrStatusDefaultEntryHolder.defaultEntry,
+          1);
+      com.google.protobuf.GeneratedMessageV3
+        .serializeStringMapTo(
+          output,
+          internalGetGroupStatus(),
+          GroupStatusDefaultEntryHolder.defaultEntry,
+          2);
+      unknownFields.writeTo(output);
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (java.util.Map.Entry<java.lang.String, x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus> entry
+           : internalGetUsrStatus().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<java.lang.String, x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus>
+        usrStatus__ = UsrStatusDefaultEntryHolder.defaultEntry.newBuilderForType()
+            .setKey(entry.getKey())
+            .setValue(entry.getValue())
+            .build();
+        size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(1, usrStatus__);
+      }
+      for (java.util.Map.Entry<java.lang.String, x.msg.pb.PbXmsg.XmsgChannelStatusGroupStatus> entry
+           : internalGetGroupStatus().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<java.lang.String, x.msg.pb.PbXmsg.XmsgChannelStatusGroupStatus>
+        groupStatus__ = GroupStatusDefaultEntryHolder.defaultEntry.newBuilderForType()
+            .setKey(entry.getKey())
+            .setValue(entry.getValue())
+            .build();
+        size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(2, groupStatus__);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof x.msg.pb.PbXmsg.XmsgChannelStatusQueryRsp)) {
+        return super.equals(obj);
+      }
+      x.msg.pb.PbXmsg.XmsgChannelStatusQueryRsp other = (x.msg.pb.PbXmsg.XmsgChannelStatusQueryRsp) obj;
+
+      boolean result = true;
+      result = result && internalGetUsrStatus().equals(
+          other.internalGetUsrStatus());
+      result = result && internalGetGroupStatus().equals(
+          other.internalGetGroupStatus());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (!internalGetUsrStatus().getMap().isEmpty()) {
+        hash = (37 * hash) + USRSTATUS_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetUsrStatus().hashCode();
+      }
+      if (!internalGetGroupStatus().getMap().isEmpty()) {
+        hash = (37 * hash) + GROUPSTATUS_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetGroupStatus().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static x.msg.pb.PbXmsg.XmsgChannelStatusQueryRsp parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static x.msg.pb.PbXmsg.XmsgChannelStatusQueryRsp parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static x.msg.pb.PbXmsg.XmsgChannelStatusQueryRsp parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static x.msg.pb.PbXmsg.XmsgChannelStatusQueryRsp parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static x.msg.pb.PbXmsg.XmsgChannelStatusQueryRsp parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static x.msg.pb.PbXmsg.XmsgChannelStatusQueryRsp parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static x.msg.pb.PbXmsg.XmsgChannelStatusQueryRsp parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static x.msg.pb.PbXmsg.XmsgChannelStatusQueryRsp parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static x.msg.pb.PbXmsg.XmsgChannelStatusQueryRsp parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static x.msg.pb.PbXmsg.XmsgChannelStatusQueryRsp parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static x.msg.pb.PbXmsg.XmsgChannelStatusQueryRsp parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static x.msg.pb.PbXmsg.XmsgChannelStatusQueryRsp parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(x.msg.pb.PbXmsg.XmsgChannelStatusQueryRsp prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code XmsgChannelStatusQueryRsp}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:XmsgChannelStatusQueryRsp)
+        x.msg.pb.PbXmsg.XmsgChannelStatusQueryRspOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return x.msg.pb.PbXmsg.internal_static_XmsgChannelStatusQueryRsp_descriptor;
+      }
+
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapField internalGetMapField(
+          int number) {
+        switch (number) {
+          case 1:
+            return internalGetUsrStatus();
+          case 2:
+            return internalGetGroupStatus();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapField internalGetMutableMapField(
+          int number) {
+        switch (number) {
+          case 1:
+            return internalGetMutableUsrStatus();
+          case 2:
+            return internalGetMutableGroupStatus();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return x.msg.pb.PbXmsg.internal_static_XmsgChannelStatusQueryRsp_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                x.msg.pb.PbXmsg.XmsgChannelStatusQueryRsp.class, x.msg.pb.PbXmsg.XmsgChannelStatusQueryRsp.Builder.class);
+      }
+
+      // Construct using x.msg.pb.PbXmsg.XmsgChannelStatusQueryRsp.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        internalGetMutableUsrStatus().clear();
+        internalGetMutableGroupStatus().clear();
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return x.msg.pb.PbXmsg.internal_static_XmsgChannelStatusQueryRsp_descriptor;
+      }
+
+      public x.msg.pb.PbXmsg.XmsgChannelStatusQueryRsp getDefaultInstanceForType() {
+        return x.msg.pb.PbXmsg.XmsgChannelStatusQueryRsp.getDefaultInstance();
+      }
+
+      public x.msg.pb.PbXmsg.XmsgChannelStatusQueryRsp build() {
+        x.msg.pb.PbXmsg.XmsgChannelStatusQueryRsp result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public x.msg.pb.PbXmsg.XmsgChannelStatusQueryRsp buildPartial() {
+        x.msg.pb.PbXmsg.XmsgChannelStatusQueryRsp result = new x.msg.pb.PbXmsg.XmsgChannelStatusQueryRsp(this);
+        int from_bitField0_ = bitField0_;
+        result.usrStatus_ = internalGetUsrStatus();
+        result.usrStatus_.makeImmutable();
+        result.groupStatus_ = internalGetGroupStatus();
+        result.groupStatus_.makeImmutable();
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof x.msg.pb.PbXmsg.XmsgChannelStatusQueryRsp) {
+          return mergeFrom((x.msg.pb.PbXmsg.XmsgChannelStatusQueryRsp)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(x.msg.pb.PbXmsg.XmsgChannelStatusQueryRsp other) {
+        if (other == x.msg.pb.PbXmsg.XmsgChannelStatusQueryRsp.getDefaultInstance()) return this;
+        internalGetMutableUsrStatus().mergeFrom(
+            other.internalGetUsrStatus());
+        internalGetMutableGroupStatus().mergeFrom(
+            other.internalGetGroupStatus());
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        x.msg.pb.PbXmsg.XmsgChannelStatusQueryRsp parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (x.msg.pb.PbXmsg.XmsgChannelStatusQueryRsp) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private com.google.protobuf.MapField<
+          java.lang.String, x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus> usrStatus_;
+      private com.google.protobuf.MapField<java.lang.String, x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus>
+      internalGetUsrStatus() {
+        if (usrStatus_ == null) {
+          return com.google.protobuf.MapField.emptyMapField(
+              UsrStatusDefaultEntryHolder.defaultEntry);
+        }
+        return usrStatus_;
+      }
+      private com.google.protobuf.MapField<java.lang.String, x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus>
+      internalGetMutableUsrStatus() {
+        onChanged();;
+        if (usrStatus_ == null) {
+          usrStatus_ = com.google.protobuf.MapField.newMapField(
+              UsrStatusDefaultEntryHolder.defaultEntry);
+        }
+        if (!usrStatus_.isMutable()) {
+          usrStatus_ = usrStatus_.copy();
+        }
+        return usrStatus_;
+      }
+
+      public int getUsrStatusCount() {
+        return internalGetUsrStatus().getMap().size();
+      }
+      /**
+       * <code>map&lt;string, .XmsgChannelStatusUsrStatus&gt; usrStatus = 1;</code>
+       */
+
+      public boolean containsUsrStatus(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        return internalGetUsrStatus().getMap().containsKey(key);
+      }
+      /**
+       * Use {@link #getUsrStatusMap()} instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus> getUsrStatus() {
+        return getUsrStatusMap();
+      }
+      /**
+       * <code>map&lt;string, .XmsgChannelStatusUsrStatus&gt; usrStatus = 1;</code>
+       */
+
+      public java.util.Map<java.lang.String, x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus> getUsrStatusMap() {
+        return internalGetUsrStatus().getMap();
+      }
+      /**
+       * <code>map&lt;string, .XmsgChannelStatusUsrStatus&gt; usrStatus = 1;</code>
+       */
+
+      public x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus getUsrStatusOrDefault(
+          java.lang.String key,
+          x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus defaultValue) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus> map =
+            internalGetUsrStatus().getMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+      /**
+       * <code>map&lt;string, .XmsgChannelStatusUsrStatus&gt; usrStatus = 1;</code>
+       */
+
+      public x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus getUsrStatusOrThrow(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus> map =
+            internalGetUsrStatus().getMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+
+      public Builder clearUsrStatus() {
+        internalGetMutableUsrStatus().getMutableMap()
+            .clear();
+        return this;
+      }
+      /**
+       * <code>map&lt;string, .XmsgChannelStatusUsrStatus&gt; usrStatus = 1;</code>
+       */
+
+      public Builder removeUsrStatus(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutableUsrStatus().getMutableMap()
+            .remove(key);
+        return this;
+      }
+      /**
+       * Use alternate mutation accessors instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus>
+      getMutableUsrStatus() {
+        return internalGetMutableUsrStatus().getMutableMap();
+      }
+      /**
+       * <code>map&lt;string, .XmsgChannelStatusUsrStatus&gt; usrStatus = 1;</code>
+       */
+      public Builder putUsrStatus(
+          java.lang.String key,
+          x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus value) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        if (value == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutableUsrStatus().getMutableMap()
+            .put(key, value);
+        return this;
+      }
+      /**
+       * <code>map&lt;string, .XmsgChannelStatusUsrStatus&gt; usrStatus = 1;</code>
+       */
+
+      public Builder putAllUsrStatus(
+          java.util.Map<java.lang.String, x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus> values) {
+        internalGetMutableUsrStatus().getMutableMap()
+            .putAll(values);
+        return this;
+      }
+
+      private com.google.protobuf.MapField<
+          java.lang.String, x.msg.pb.PbXmsg.XmsgChannelStatusGroupStatus> groupStatus_;
+      private com.google.protobuf.MapField<java.lang.String, x.msg.pb.PbXmsg.XmsgChannelStatusGroupStatus>
+      internalGetGroupStatus() {
+        if (groupStatus_ == null) {
+          return com.google.protobuf.MapField.emptyMapField(
+              GroupStatusDefaultEntryHolder.defaultEntry);
+        }
+        return groupStatus_;
+      }
+      private com.google.protobuf.MapField<java.lang.String, x.msg.pb.PbXmsg.XmsgChannelStatusGroupStatus>
+      internalGetMutableGroupStatus() {
+        onChanged();;
+        if (groupStatus_ == null) {
+          groupStatus_ = com.google.protobuf.MapField.newMapField(
+              GroupStatusDefaultEntryHolder.defaultEntry);
+        }
+        if (!groupStatus_.isMutable()) {
+          groupStatus_ = groupStatus_.copy();
+        }
+        return groupStatus_;
+      }
+
+      public int getGroupStatusCount() {
+        return internalGetGroupStatus().getMap().size();
+      }
+      /**
+       * <code>map&lt;string, .XmsgChannelStatusGroupStatus&gt; groupStatus = 2;</code>
+       */
+
+      public boolean containsGroupStatus(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        return internalGetGroupStatus().getMap().containsKey(key);
+      }
+      /**
+       * Use {@link #getGroupStatusMap()} instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, x.msg.pb.PbXmsg.XmsgChannelStatusGroupStatus> getGroupStatus() {
+        return getGroupStatusMap();
+      }
+      /**
+       * <code>map&lt;string, .XmsgChannelStatusGroupStatus&gt; groupStatus = 2;</code>
+       */
+
+      public java.util.Map<java.lang.String, x.msg.pb.PbXmsg.XmsgChannelStatusGroupStatus> getGroupStatusMap() {
+        return internalGetGroupStatus().getMap();
+      }
+      /**
+       * <code>map&lt;string, .XmsgChannelStatusGroupStatus&gt; groupStatus = 2;</code>
+       */
+
+      public x.msg.pb.PbXmsg.XmsgChannelStatusGroupStatus getGroupStatusOrDefault(
+          java.lang.String key,
+          x.msg.pb.PbXmsg.XmsgChannelStatusGroupStatus defaultValue) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, x.msg.pb.PbXmsg.XmsgChannelStatusGroupStatus> map =
+            internalGetGroupStatus().getMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+      /**
+       * <code>map&lt;string, .XmsgChannelStatusGroupStatus&gt; groupStatus = 2;</code>
+       */
+
+      public x.msg.pb.PbXmsg.XmsgChannelStatusGroupStatus getGroupStatusOrThrow(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, x.msg.pb.PbXmsg.XmsgChannelStatusGroupStatus> map =
+            internalGetGroupStatus().getMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+
+      public Builder clearGroupStatus() {
+        internalGetMutableGroupStatus().getMutableMap()
+            .clear();
+        return this;
+      }
+      /**
+       * <code>map&lt;string, .XmsgChannelStatusGroupStatus&gt; groupStatus = 2;</code>
+       */
+
+      public Builder removeGroupStatus(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutableGroupStatus().getMutableMap()
+            .remove(key);
+        return this;
+      }
+      /**
+       * Use alternate mutation accessors instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, x.msg.pb.PbXmsg.XmsgChannelStatusGroupStatus>
+      getMutableGroupStatus() {
+        return internalGetMutableGroupStatus().getMutableMap();
+      }
+      /**
+       * <code>map&lt;string, .XmsgChannelStatusGroupStatus&gt; groupStatus = 2;</code>
+       */
+      public Builder putGroupStatus(
+          java.lang.String key,
+          x.msg.pb.PbXmsg.XmsgChannelStatusGroupStatus value) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        if (value == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutableGroupStatus().getMutableMap()
+            .put(key, value);
+        return this;
+      }
+      /**
+       * <code>map&lt;string, .XmsgChannelStatusGroupStatus&gt; groupStatus = 2;</code>
+       */
+
+      public Builder putAllGroupStatus(
+          java.util.Map<java.lang.String, x.msg.pb.PbXmsg.XmsgChannelStatusGroupStatus> values) {
+        internalGetMutableGroupStatus().getMutableMap()
+            .putAll(values);
+        return this;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:XmsgChannelStatusQueryRsp)
+    }
+
+    // @@protoc_insertion_point(class_scope:XmsgChannelStatusQueryRsp)
+    private static final x.msg.pb.PbXmsg.XmsgChannelStatusQueryRsp DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new x.msg.pb.PbXmsg.XmsgChannelStatusQueryRsp();
+    }
+
+    public static x.msg.pb.PbXmsg.XmsgChannelStatusQueryRsp getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<XmsgChannelStatusQueryRsp>
+        PARSER = new com.google.protobuf.AbstractParser<XmsgChannelStatusQueryRsp>() {
+      public XmsgChannelStatusQueryRsp parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new XmsgChannelStatusQueryRsp(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<XmsgChannelStatusQueryRsp> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<XmsgChannelStatusQueryRsp> getParserForType() {
+      return PARSER;
+    }
+
+    public x.msg.pb.PbXmsg.XmsgChannelStatusQueryRsp getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface XmsgChannelStatusSubReqOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:XmsgChannelStatusSubReq)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>repeated string cgt = 1;</code>
+     */
+    java.util.List<java.lang.String>
+        getCgtList();
+    /**
+     * <code>repeated string cgt = 1;</code>
+     */
+    int getCgtCount();
+    /**
+     * <code>repeated string cgt = 1;</code>
+     */
+    java.lang.String getCgt(int index);
+    /**
+     * <code>repeated string cgt = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getCgtBytes(int index);
+  }
+  /**
+   * Protobuf type {@code XmsgChannelStatusSubReq}
+   */
+  public  static final class XmsgChannelStatusSubReq extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:XmsgChannelStatusSubReq)
+      XmsgChannelStatusSubReqOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use XmsgChannelStatusSubReq.newBuilder() to construct.
+    private XmsgChannelStatusSubReq(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private XmsgChannelStatusSubReq() {
+      cgt_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private XmsgChannelStatusSubReq(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                cgt_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              cgt_.add(s);
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+          cgt_ = cgt_.getUnmodifiableView();
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return x.msg.pb.PbXmsg.internal_static_XmsgChannelStatusSubReq_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return x.msg.pb.PbXmsg.internal_static_XmsgChannelStatusSubReq_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              x.msg.pb.PbXmsg.XmsgChannelStatusSubReq.class, x.msg.pb.PbXmsg.XmsgChannelStatusSubReq.Builder.class);
+    }
+
+    public static final int CGT_FIELD_NUMBER = 1;
+    private com.google.protobuf.LazyStringList cgt_;
+    /**
+     * <code>repeated string cgt = 1;</code>
+     */
+    public com.google.protobuf.ProtocolStringList
+        getCgtList() {
+      return cgt_;
+    }
+    /**
+     * <code>repeated string cgt = 1;</code>
+     */
+    public int getCgtCount() {
+      return cgt_.size();
+    }
+    /**
+     * <code>repeated string cgt = 1;</code>
+     */
+    public java.lang.String getCgt(int index) {
+      return cgt_.get(index);
+    }
+    /**
+     * <code>repeated string cgt = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getCgtBytes(int index) {
+      return cgt_.getByteString(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      for (int i = 0; i < cgt_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, cgt_.getRaw(i));
+      }
+      unknownFields.writeTo(output);
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      {
+        int dataSize = 0;
+        for (int i = 0; i < cgt_.size(); i++) {
+          dataSize += computeStringSizeNoTag(cgt_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getCgtList().size();
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof x.msg.pb.PbXmsg.XmsgChannelStatusSubReq)) {
+        return super.equals(obj);
+      }
+      x.msg.pb.PbXmsg.XmsgChannelStatusSubReq other = (x.msg.pb.PbXmsg.XmsgChannelStatusSubReq) obj;
+
+      boolean result = true;
+      result = result && getCgtList()
+          .equals(other.getCgtList());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getCgtCount() > 0) {
+        hash = (37 * hash) + CGT_FIELD_NUMBER;
+        hash = (53 * hash) + getCgtList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static x.msg.pb.PbXmsg.XmsgChannelStatusSubReq parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static x.msg.pb.PbXmsg.XmsgChannelStatusSubReq parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static x.msg.pb.PbXmsg.XmsgChannelStatusSubReq parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static x.msg.pb.PbXmsg.XmsgChannelStatusSubReq parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static x.msg.pb.PbXmsg.XmsgChannelStatusSubReq parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static x.msg.pb.PbXmsg.XmsgChannelStatusSubReq parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static x.msg.pb.PbXmsg.XmsgChannelStatusSubReq parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static x.msg.pb.PbXmsg.XmsgChannelStatusSubReq parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static x.msg.pb.PbXmsg.XmsgChannelStatusSubReq parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static x.msg.pb.PbXmsg.XmsgChannelStatusSubReq parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static x.msg.pb.PbXmsg.XmsgChannelStatusSubReq parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static x.msg.pb.PbXmsg.XmsgChannelStatusSubReq parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(x.msg.pb.PbXmsg.XmsgChannelStatusSubReq prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code XmsgChannelStatusSubReq}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:XmsgChannelStatusSubReq)
+        x.msg.pb.PbXmsg.XmsgChannelStatusSubReqOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return x.msg.pb.PbXmsg.internal_static_XmsgChannelStatusSubReq_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return x.msg.pb.PbXmsg.internal_static_XmsgChannelStatusSubReq_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                x.msg.pb.PbXmsg.XmsgChannelStatusSubReq.class, x.msg.pb.PbXmsg.XmsgChannelStatusSubReq.Builder.class);
+      }
+
+      // Construct using x.msg.pb.PbXmsg.XmsgChannelStatusSubReq.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        cgt_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return x.msg.pb.PbXmsg.internal_static_XmsgChannelStatusSubReq_descriptor;
+      }
+
+      public x.msg.pb.PbXmsg.XmsgChannelStatusSubReq getDefaultInstanceForType() {
+        return x.msg.pb.PbXmsg.XmsgChannelStatusSubReq.getDefaultInstance();
+      }
+
+      public x.msg.pb.PbXmsg.XmsgChannelStatusSubReq build() {
+        x.msg.pb.PbXmsg.XmsgChannelStatusSubReq result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public x.msg.pb.PbXmsg.XmsgChannelStatusSubReq buildPartial() {
+        x.msg.pb.PbXmsg.XmsgChannelStatusSubReq result = new x.msg.pb.PbXmsg.XmsgChannelStatusSubReq(this);
+        int from_bitField0_ = bitField0_;
+        if (((bitField0_ & 0x00000001) == 0x00000001)) {
+          cgt_ = cgt_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.cgt_ = cgt_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof x.msg.pb.PbXmsg.XmsgChannelStatusSubReq) {
+          return mergeFrom((x.msg.pb.PbXmsg.XmsgChannelStatusSubReq)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(x.msg.pb.PbXmsg.XmsgChannelStatusSubReq other) {
+        if (other == x.msg.pb.PbXmsg.XmsgChannelStatusSubReq.getDefaultInstance()) return this;
+        if (!other.cgt_.isEmpty()) {
+          if (cgt_.isEmpty()) {
+            cgt_ = other.cgt_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureCgtIsMutable();
+            cgt_.addAll(other.cgt_);
+          }
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        x.msg.pb.PbXmsg.XmsgChannelStatusSubReq parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (x.msg.pb.PbXmsg.XmsgChannelStatusSubReq) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private com.google.protobuf.LazyStringList cgt_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensureCgtIsMutable() {
+        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+          cgt_ = new com.google.protobuf.LazyStringArrayList(cgt_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+      /**
+       * <code>repeated string cgt = 1;</code>
+       */
+      public com.google.protobuf.ProtocolStringList
+          getCgtList() {
+        return cgt_.getUnmodifiableView();
+      }
+      /**
+       * <code>repeated string cgt = 1;</code>
+       */
+      public int getCgtCount() {
+        return cgt_.size();
+      }
+      /**
+       * <code>repeated string cgt = 1;</code>
+       */
+      public java.lang.String getCgt(int index) {
+        return cgt_.get(index);
+      }
+      /**
+       * <code>repeated string cgt = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getCgtBytes(int index) {
+        return cgt_.getByteString(index);
+      }
+      /**
+       * <code>repeated string cgt = 1;</code>
+       */
+      public Builder setCgt(
+          int index, java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureCgtIsMutable();
+        cgt_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string cgt = 1;</code>
+       */
+      public Builder addCgt(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureCgtIsMutable();
+        cgt_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string cgt = 1;</code>
+       */
+      public Builder addAllCgt(
+          java.lang.Iterable<java.lang.String> values) {
+        ensureCgtIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, cgt_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string cgt = 1;</code>
+       */
+      public Builder clearCgt() {
+        cgt_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string cgt = 1;</code>
+       */
+      public Builder addCgtBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        ensureCgtIsMutable();
+        cgt_.add(value);
+        onChanged();
+        return this;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:XmsgChannelStatusSubReq)
+    }
+
+    // @@protoc_insertion_point(class_scope:XmsgChannelStatusSubReq)
+    private static final x.msg.pb.PbXmsg.XmsgChannelStatusSubReq DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new x.msg.pb.PbXmsg.XmsgChannelStatusSubReq();
+    }
+
+    public static x.msg.pb.PbXmsg.XmsgChannelStatusSubReq getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<XmsgChannelStatusSubReq>
+        PARSER = new com.google.protobuf.AbstractParser<XmsgChannelStatusSubReq>() {
+      public XmsgChannelStatusSubReq parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new XmsgChannelStatusSubReq(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<XmsgChannelStatusSubReq> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<XmsgChannelStatusSubReq> getParserForType() {
+      return PARSER;
+    }
+
+    public x.msg.pb.PbXmsg.XmsgChannelStatusSubReq getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface XmsgChannelStatusSubRspOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:XmsgChannelStatusSubRsp)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>map&lt;string, .XmsgChannelStatusUsrStatus&gt; usrStatus = 1;</code>
+     */
+    int getUsrStatusCount();
+    /**
+     * <code>map&lt;string, .XmsgChannelStatusUsrStatus&gt; usrStatus = 1;</code>
+     */
+    boolean containsUsrStatus(
+        java.lang.String key);
+    /**
+     * Use {@link #getUsrStatusMap()} instead.
+     */
+    @java.lang.Deprecated
+    java.util.Map<java.lang.String, x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus>
+    getUsrStatus();
+    /**
+     * <code>map&lt;string, .XmsgChannelStatusUsrStatus&gt; usrStatus = 1;</code>
+     */
+    java.util.Map<java.lang.String, x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus>
+    getUsrStatusMap();
+    /**
+     * <code>map&lt;string, .XmsgChannelStatusUsrStatus&gt; usrStatus = 1;</code>
+     */
+
+    x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus getUsrStatusOrDefault(
+        java.lang.String key,
+        x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus defaultValue);
+    /**
+     * <code>map&lt;string, .XmsgChannelStatusUsrStatus&gt; usrStatus = 1;</code>
+     */
+
+    x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus getUsrStatusOrThrow(
+        java.lang.String key);
+
+    /**
+     * <code>map&lt;string, .XmsgChannelStatusGroupStatus&gt; groupStatus = 2;</code>
+     */
+    int getGroupStatusCount();
+    /**
+     * <code>map&lt;string, .XmsgChannelStatusGroupStatus&gt; groupStatus = 2;</code>
+     */
+    boolean containsGroupStatus(
+        java.lang.String key);
+    /**
+     * Use {@link #getGroupStatusMap()} instead.
+     */
+    @java.lang.Deprecated
+    java.util.Map<java.lang.String, x.msg.pb.PbXmsg.XmsgChannelStatusGroupStatus>
+    getGroupStatus();
+    /**
+     * <code>map&lt;string, .XmsgChannelStatusGroupStatus&gt; groupStatus = 2;</code>
+     */
+    java.util.Map<java.lang.String, x.msg.pb.PbXmsg.XmsgChannelStatusGroupStatus>
+    getGroupStatusMap();
+    /**
+     * <code>map&lt;string, .XmsgChannelStatusGroupStatus&gt; groupStatus = 2;</code>
+     */
+
+    x.msg.pb.PbXmsg.XmsgChannelStatusGroupStatus getGroupStatusOrDefault(
+        java.lang.String key,
+        x.msg.pb.PbXmsg.XmsgChannelStatusGroupStatus defaultValue);
+    /**
+     * <code>map&lt;string, .XmsgChannelStatusGroupStatus&gt; groupStatus = 2;</code>
+     */
+
+    x.msg.pb.PbXmsg.XmsgChannelStatusGroupStatus getGroupStatusOrThrow(
+        java.lang.String key);
+  }
+  /**
+   * Protobuf type {@code XmsgChannelStatusSubRsp}
+   */
+  public  static final class XmsgChannelStatusSubRsp extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:XmsgChannelStatusSubRsp)
+      XmsgChannelStatusSubRspOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use XmsgChannelStatusSubRsp.newBuilder() to construct.
+    private XmsgChannelStatusSubRsp(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private XmsgChannelStatusSubRsp() {
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private XmsgChannelStatusSubRsp(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                usrStatus_ = com.google.protobuf.MapField.newMapField(
+                    UsrStatusDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000001;
+              }
+              com.google.protobuf.MapEntry<java.lang.String, x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus>
+              usrStatus__ = input.readMessage(
+                  UsrStatusDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              usrStatus_.getMutableMap().put(
+                  usrStatus__.getKey(), usrStatus__.getValue());
+              break;
+            }
+            case 18: {
+              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+                groupStatus_ = com.google.protobuf.MapField.newMapField(
+                    GroupStatusDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000002;
+              }
+              com.google.protobuf.MapEntry<java.lang.String, x.msg.pb.PbXmsg.XmsgChannelStatusGroupStatus>
+              groupStatus__ = input.readMessage(
+                  GroupStatusDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              groupStatus_.getMutableMap().put(
+                  groupStatus__.getKey(), groupStatus__.getValue());
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return x.msg.pb.PbXmsg.internal_static_XmsgChannelStatusSubRsp_descriptor;
+    }
+
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapField internalGetMapField(
+        int number) {
+      switch (number) {
+        case 1:
+          return internalGetUsrStatus();
+        case 2:
+          return internalGetGroupStatus();
+        default:
+          throw new RuntimeException(
+              "Invalid map field number: " + number);
+      }
+    }
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return x.msg.pb.PbXmsg.internal_static_XmsgChannelStatusSubRsp_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              x.msg.pb.PbXmsg.XmsgChannelStatusSubRsp.class, x.msg.pb.PbXmsg.XmsgChannelStatusSubRsp.Builder.class);
+    }
+
+    public static final int USRSTATUS_FIELD_NUMBER = 1;
+    private static final class UsrStatusDefaultEntryHolder {
+      static final com.google.protobuf.MapEntry<
+          java.lang.String, x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus> defaultEntry =
+              com.google.protobuf.MapEntry
+              .<java.lang.String, x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus>newDefaultInstance(
+                  x.msg.pb.PbXmsg.internal_static_XmsgChannelStatusSubRsp_UsrStatusEntry_descriptor, 
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "",
+                  com.google.protobuf.WireFormat.FieldType.MESSAGE,
+                  x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus.getDefaultInstance());
+    }
+    private com.google.protobuf.MapField<
+        java.lang.String, x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus> usrStatus_;
+    private com.google.protobuf.MapField<java.lang.String, x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus>
+    internalGetUsrStatus() {
+      if (usrStatus_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            UsrStatusDefaultEntryHolder.defaultEntry);
+      }
+      return usrStatus_;
+    }
+
+    public int getUsrStatusCount() {
+      return internalGetUsrStatus().getMap().size();
+    }
+    /**
+     * <code>map&lt;string, .XmsgChannelStatusUsrStatus&gt; usrStatus = 1;</code>
+     */
+
+    public boolean containsUsrStatus(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      return internalGetUsrStatus().getMap().containsKey(key);
+    }
+    /**
+     * Use {@link #getUsrStatusMap()} instead.
+     */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus> getUsrStatus() {
+      return getUsrStatusMap();
+    }
+    /**
+     * <code>map&lt;string, .XmsgChannelStatusUsrStatus&gt; usrStatus = 1;</code>
+     */
+
+    public java.util.Map<java.lang.String, x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus> getUsrStatusMap() {
+      return internalGetUsrStatus().getMap();
+    }
+    /**
+     * <code>map&lt;string, .XmsgChannelStatusUsrStatus&gt; usrStatus = 1;</code>
+     */
+
+    public x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus getUsrStatusOrDefault(
+        java.lang.String key,
+        x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus defaultValue) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus> map =
+          internalGetUsrStatus().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <code>map&lt;string, .XmsgChannelStatusUsrStatus&gt; usrStatus = 1;</code>
+     */
+
+    public x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus getUsrStatusOrThrow(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus> map =
+          internalGetUsrStatus().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public static final int GROUPSTATUS_FIELD_NUMBER = 2;
+    private static final class GroupStatusDefaultEntryHolder {
+      static final com.google.protobuf.MapEntry<
+          java.lang.String, x.msg.pb.PbXmsg.XmsgChannelStatusGroupStatus> defaultEntry =
+              com.google.protobuf.MapEntry
+              .<java.lang.String, x.msg.pb.PbXmsg.XmsgChannelStatusGroupStatus>newDefaultInstance(
+                  x.msg.pb.PbXmsg.internal_static_XmsgChannelStatusSubRsp_GroupStatusEntry_descriptor, 
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "",
+                  com.google.protobuf.WireFormat.FieldType.MESSAGE,
+                  x.msg.pb.PbXmsg.XmsgChannelStatusGroupStatus.getDefaultInstance());
+    }
+    private com.google.protobuf.MapField<
+        java.lang.String, x.msg.pb.PbXmsg.XmsgChannelStatusGroupStatus> groupStatus_;
+    private com.google.protobuf.MapField<java.lang.String, x.msg.pb.PbXmsg.XmsgChannelStatusGroupStatus>
+    internalGetGroupStatus() {
+      if (groupStatus_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            GroupStatusDefaultEntryHolder.defaultEntry);
+      }
+      return groupStatus_;
+    }
+
+    public int getGroupStatusCount() {
+      return internalGetGroupStatus().getMap().size();
+    }
+    /**
+     * <code>map&lt;string, .XmsgChannelStatusGroupStatus&gt; groupStatus = 2;</code>
+     */
+
+    public boolean containsGroupStatus(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      return internalGetGroupStatus().getMap().containsKey(key);
+    }
+    /**
+     * Use {@link #getGroupStatusMap()} instead.
+     */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, x.msg.pb.PbXmsg.XmsgChannelStatusGroupStatus> getGroupStatus() {
+      return getGroupStatusMap();
+    }
+    /**
+     * <code>map&lt;string, .XmsgChannelStatusGroupStatus&gt; groupStatus = 2;</code>
+     */
+
+    public java.util.Map<java.lang.String, x.msg.pb.PbXmsg.XmsgChannelStatusGroupStatus> getGroupStatusMap() {
+      return internalGetGroupStatus().getMap();
+    }
+    /**
+     * <code>map&lt;string, .XmsgChannelStatusGroupStatus&gt; groupStatus = 2;</code>
+     */
+
+    public x.msg.pb.PbXmsg.XmsgChannelStatusGroupStatus getGroupStatusOrDefault(
+        java.lang.String key,
+        x.msg.pb.PbXmsg.XmsgChannelStatusGroupStatus defaultValue) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, x.msg.pb.PbXmsg.XmsgChannelStatusGroupStatus> map =
+          internalGetGroupStatus().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <code>map&lt;string, .XmsgChannelStatusGroupStatus&gt; groupStatus = 2;</code>
+     */
+
+    public x.msg.pb.PbXmsg.XmsgChannelStatusGroupStatus getGroupStatusOrThrow(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, x.msg.pb.PbXmsg.XmsgChannelStatusGroupStatus> map =
+          internalGetGroupStatus().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      com.google.protobuf.GeneratedMessageV3
+        .serializeStringMapTo(
+          output,
+          internalGetUsrStatus(),
+          UsrStatusDefaultEntryHolder.defaultEntry,
+          1);
+      com.google.protobuf.GeneratedMessageV3
+        .serializeStringMapTo(
+          output,
+          internalGetGroupStatus(),
+          GroupStatusDefaultEntryHolder.defaultEntry,
+          2);
+      unknownFields.writeTo(output);
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (java.util.Map.Entry<java.lang.String, x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus> entry
+           : internalGetUsrStatus().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<java.lang.String, x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus>
+        usrStatus__ = UsrStatusDefaultEntryHolder.defaultEntry.newBuilderForType()
+            .setKey(entry.getKey())
+            .setValue(entry.getValue())
+            .build();
+        size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(1, usrStatus__);
+      }
+      for (java.util.Map.Entry<java.lang.String, x.msg.pb.PbXmsg.XmsgChannelStatusGroupStatus> entry
+           : internalGetGroupStatus().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<java.lang.String, x.msg.pb.PbXmsg.XmsgChannelStatusGroupStatus>
+        groupStatus__ = GroupStatusDefaultEntryHolder.defaultEntry.newBuilderForType()
+            .setKey(entry.getKey())
+            .setValue(entry.getValue())
+            .build();
+        size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(2, groupStatus__);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof x.msg.pb.PbXmsg.XmsgChannelStatusSubRsp)) {
+        return super.equals(obj);
+      }
+      x.msg.pb.PbXmsg.XmsgChannelStatusSubRsp other = (x.msg.pb.PbXmsg.XmsgChannelStatusSubRsp) obj;
+
+      boolean result = true;
+      result = result && internalGetUsrStatus().equals(
+          other.internalGetUsrStatus());
+      result = result && internalGetGroupStatus().equals(
+          other.internalGetGroupStatus());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (!internalGetUsrStatus().getMap().isEmpty()) {
+        hash = (37 * hash) + USRSTATUS_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetUsrStatus().hashCode();
+      }
+      if (!internalGetGroupStatus().getMap().isEmpty()) {
+        hash = (37 * hash) + GROUPSTATUS_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetGroupStatus().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static x.msg.pb.PbXmsg.XmsgChannelStatusSubRsp parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static x.msg.pb.PbXmsg.XmsgChannelStatusSubRsp parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static x.msg.pb.PbXmsg.XmsgChannelStatusSubRsp parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static x.msg.pb.PbXmsg.XmsgChannelStatusSubRsp parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static x.msg.pb.PbXmsg.XmsgChannelStatusSubRsp parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static x.msg.pb.PbXmsg.XmsgChannelStatusSubRsp parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static x.msg.pb.PbXmsg.XmsgChannelStatusSubRsp parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static x.msg.pb.PbXmsg.XmsgChannelStatusSubRsp parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static x.msg.pb.PbXmsg.XmsgChannelStatusSubRsp parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static x.msg.pb.PbXmsg.XmsgChannelStatusSubRsp parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static x.msg.pb.PbXmsg.XmsgChannelStatusSubRsp parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static x.msg.pb.PbXmsg.XmsgChannelStatusSubRsp parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(x.msg.pb.PbXmsg.XmsgChannelStatusSubRsp prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code XmsgChannelStatusSubRsp}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:XmsgChannelStatusSubRsp)
+        x.msg.pb.PbXmsg.XmsgChannelStatusSubRspOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return x.msg.pb.PbXmsg.internal_static_XmsgChannelStatusSubRsp_descriptor;
+      }
+
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapField internalGetMapField(
+          int number) {
+        switch (number) {
+          case 1:
+            return internalGetUsrStatus();
+          case 2:
+            return internalGetGroupStatus();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapField internalGetMutableMapField(
+          int number) {
+        switch (number) {
+          case 1:
+            return internalGetMutableUsrStatus();
+          case 2:
+            return internalGetMutableGroupStatus();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return x.msg.pb.PbXmsg.internal_static_XmsgChannelStatusSubRsp_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                x.msg.pb.PbXmsg.XmsgChannelStatusSubRsp.class, x.msg.pb.PbXmsg.XmsgChannelStatusSubRsp.Builder.class);
+      }
+
+      // Construct using x.msg.pb.PbXmsg.XmsgChannelStatusSubRsp.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        internalGetMutableUsrStatus().clear();
+        internalGetMutableGroupStatus().clear();
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return x.msg.pb.PbXmsg.internal_static_XmsgChannelStatusSubRsp_descriptor;
+      }
+
+      public x.msg.pb.PbXmsg.XmsgChannelStatusSubRsp getDefaultInstanceForType() {
+        return x.msg.pb.PbXmsg.XmsgChannelStatusSubRsp.getDefaultInstance();
+      }
+
+      public x.msg.pb.PbXmsg.XmsgChannelStatusSubRsp build() {
+        x.msg.pb.PbXmsg.XmsgChannelStatusSubRsp result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public x.msg.pb.PbXmsg.XmsgChannelStatusSubRsp buildPartial() {
+        x.msg.pb.PbXmsg.XmsgChannelStatusSubRsp result = new x.msg.pb.PbXmsg.XmsgChannelStatusSubRsp(this);
+        int from_bitField0_ = bitField0_;
+        result.usrStatus_ = internalGetUsrStatus();
+        result.usrStatus_.makeImmutable();
+        result.groupStatus_ = internalGetGroupStatus();
+        result.groupStatus_.makeImmutable();
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof x.msg.pb.PbXmsg.XmsgChannelStatusSubRsp) {
+          return mergeFrom((x.msg.pb.PbXmsg.XmsgChannelStatusSubRsp)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(x.msg.pb.PbXmsg.XmsgChannelStatusSubRsp other) {
+        if (other == x.msg.pb.PbXmsg.XmsgChannelStatusSubRsp.getDefaultInstance()) return this;
+        internalGetMutableUsrStatus().mergeFrom(
+            other.internalGetUsrStatus());
+        internalGetMutableGroupStatus().mergeFrom(
+            other.internalGetGroupStatus());
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        x.msg.pb.PbXmsg.XmsgChannelStatusSubRsp parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (x.msg.pb.PbXmsg.XmsgChannelStatusSubRsp) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private com.google.protobuf.MapField<
+          java.lang.String, x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus> usrStatus_;
+      private com.google.protobuf.MapField<java.lang.String, x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus>
+      internalGetUsrStatus() {
+        if (usrStatus_ == null) {
+          return com.google.protobuf.MapField.emptyMapField(
+              UsrStatusDefaultEntryHolder.defaultEntry);
+        }
+        return usrStatus_;
+      }
+      private com.google.protobuf.MapField<java.lang.String, x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus>
+      internalGetMutableUsrStatus() {
+        onChanged();;
+        if (usrStatus_ == null) {
+          usrStatus_ = com.google.protobuf.MapField.newMapField(
+              UsrStatusDefaultEntryHolder.defaultEntry);
+        }
+        if (!usrStatus_.isMutable()) {
+          usrStatus_ = usrStatus_.copy();
+        }
+        return usrStatus_;
+      }
+
+      public int getUsrStatusCount() {
+        return internalGetUsrStatus().getMap().size();
+      }
+      /**
+       * <code>map&lt;string, .XmsgChannelStatusUsrStatus&gt; usrStatus = 1;</code>
+       */
+
+      public boolean containsUsrStatus(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        return internalGetUsrStatus().getMap().containsKey(key);
+      }
+      /**
+       * Use {@link #getUsrStatusMap()} instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus> getUsrStatus() {
+        return getUsrStatusMap();
+      }
+      /**
+       * <code>map&lt;string, .XmsgChannelStatusUsrStatus&gt; usrStatus = 1;</code>
+       */
+
+      public java.util.Map<java.lang.String, x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus> getUsrStatusMap() {
+        return internalGetUsrStatus().getMap();
+      }
+      /**
+       * <code>map&lt;string, .XmsgChannelStatusUsrStatus&gt; usrStatus = 1;</code>
+       */
+
+      public x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus getUsrStatusOrDefault(
+          java.lang.String key,
+          x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus defaultValue) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus> map =
+            internalGetUsrStatus().getMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+      /**
+       * <code>map&lt;string, .XmsgChannelStatusUsrStatus&gt; usrStatus = 1;</code>
+       */
+
+      public x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus getUsrStatusOrThrow(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus> map =
+            internalGetUsrStatus().getMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+
+      public Builder clearUsrStatus() {
+        internalGetMutableUsrStatus().getMutableMap()
+            .clear();
+        return this;
+      }
+      /**
+       * <code>map&lt;string, .XmsgChannelStatusUsrStatus&gt; usrStatus = 1;</code>
+       */
+
+      public Builder removeUsrStatus(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutableUsrStatus().getMutableMap()
+            .remove(key);
+        return this;
+      }
+      /**
+       * Use alternate mutation accessors instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus>
+      getMutableUsrStatus() {
+        return internalGetMutableUsrStatus().getMutableMap();
+      }
+      /**
+       * <code>map&lt;string, .XmsgChannelStatusUsrStatus&gt; usrStatus = 1;</code>
+       */
+      public Builder putUsrStatus(
+          java.lang.String key,
+          x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus value) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        if (value == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutableUsrStatus().getMutableMap()
+            .put(key, value);
+        return this;
+      }
+      /**
+       * <code>map&lt;string, .XmsgChannelStatusUsrStatus&gt; usrStatus = 1;</code>
+       */
+
+      public Builder putAllUsrStatus(
+          java.util.Map<java.lang.String, x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus> values) {
+        internalGetMutableUsrStatus().getMutableMap()
+            .putAll(values);
+        return this;
+      }
+
+      private com.google.protobuf.MapField<
+          java.lang.String, x.msg.pb.PbXmsg.XmsgChannelStatusGroupStatus> groupStatus_;
+      private com.google.protobuf.MapField<java.lang.String, x.msg.pb.PbXmsg.XmsgChannelStatusGroupStatus>
+      internalGetGroupStatus() {
+        if (groupStatus_ == null) {
+          return com.google.protobuf.MapField.emptyMapField(
+              GroupStatusDefaultEntryHolder.defaultEntry);
+        }
+        return groupStatus_;
+      }
+      private com.google.protobuf.MapField<java.lang.String, x.msg.pb.PbXmsg.XmsgChannelStatusGroupStatus>
+      internalGetMutableGroupStatus() {
+        onChanged();;
+        if (groupStatus_ == null) {
+          groupStatus_ = com.google.protobuf.MapField.newMapField(
+              GroupStatusDefaultEntryHolder.defaultEntry);
+        }
+        if (!groupStatus_.isMutable()) {
+          groupStatus_ = groupStatus_.copy();
+        }
+        return groupStatus_;
+      }
+
+      public int getGroupStatusCount() {
+        return internalGetGroupStatus().getMap().size();
+      }
+      /**
+       * <code>map&lt;string, .XmsgChannelStatusGroupStatus&gt; groupStatus = 2;</code>
+       */
+
+      public boolean containsGroupStatus(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        return internalGetGroupStatus().getMap().containsKey(key);
+      }
+      /**
+       * Use {@link #getGroupStatusMap()} instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, x.msg.pb.PbXmsg.XmsgChannelStatusGroupStatus> getGroupStatus() {
+        return getGroupStatusMap();
+      }
+      /**
+       * <code>map&lt;string, .XmsgChannelStatusGroupStatus&gt; groupStatus = 2;</code>
+       */
+
+      public java.util.Map<java.lang.String, x.msg.pb.PbXmsg.XmsgChannelStatusGroupStatus> getGroupStatusMap() {
+        return internalGetGroupStatus().getMap();
+      }
+      /**
+       * <code>map&lt;string, .XmsgChannelStatusGroupStatus&gt; groupStatus = 2;</code>
+       */
+
+      public x.msg.pb.PbXmsg.XmsgChannelStatusGroupStatus getGroupStatusOrDefault(
+          java.lang.String key,
+          x.msg.pb.PbXmsg.XmsgChannelStatusGroupStatus defaultValue) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, x.msg.pb.PbXmsg.XmsgChannelStatusGroupStatus> map =
+            internalGetGroupStatus().getMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+      /**
+       * <code>map&lt;string, .XmsgChannelStatusGroupStatus&gt; groupStatus = 2;</code>
+       */
+
+      public x.msg.pb.PbXmsg.XmsgChannelStatusGroupStatus getGroupStatusOrThrow(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, x.msg.pb.PbXmsg.XmsgChannelStatusGroupStatus> map =
+            internalGetGroupStatus().getMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+
+      public Builder clearGroupStatus() {
+        internalGetMutableGroupStatus().getMutableMap()
+            .clear();
+        return this;
+      }
+      /**
+       * <code>map&lt;string, .XmsgChannelStatusGroupStatus&gt; groupStatus = 2;</code>
+       */
+
+      public Builder removeGroupStatus(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutableGroupStatus().getMutableMap()
+            .remove(key);
+        return this;
+      }
+      /**
+       * Use alternate mutation accessors instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, x.msg.pb.PbXmsg.XmsgChannelStatusGroupStatus>
+      getMutableGroupStatus() {
+        return internalGetMutableGroupStatus().getMutableMap();
+      }
+      /**
+       * <code>map&lt;string, .XmsgChannelStatusGroupStatus&gt; groupStatus = 2;</code>
+       */
+      public Builder putGroupStatus(
+          java.lang.String key,
+          x.msg.pb.PbXmsg.XmsgChannelStatusGroupStatus value) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        if (value == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutableGroupStatus().getMutableMap()
+            .put(key, value);
+        return this;
+      }
+      /**
+       * <code>map&lt;string, .XmsgChannelStatusGroupStatus&gt; groupStatus = 2;</code>
+       */
+
+      public Builder putAllGroupStatus(
+          java.util.Map<java.lang.String, x.msg.pb.PbXmsg.XmsgChannelStatusGroupStatus> values) {
+        internalGetMutableGroupStatus().getMutableMap()
+            .putAll(values);
+        return this;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:XmsgChannelStatusSubRsp)
+    }
+
+    // @@protoc_insertion_point(class_scope:XmsgChannelStatusSubRsp)
+    private static final x.msg.pb.PbXmsg.XmsgChannelStatusSubRsp DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new x.msg.pb.PbXmsg.XmsgChannelStatusSubRsp();
+    }
+
+    public static x.msg.pb.PbXmsg.XmsgChannelStatusSubRsp getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<XmsgChannelStatusSubRsp>
+        PARSER = new com.google.protobuf.AbstractParser<XmsgChannelStatusSubRsp>() {
+      public XmsgChannelStatusSubRsp parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new XmsgChannelStatusSubRsp(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<XmsgChannelStatusSubRsp> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<XmsgChannelStatusSubRsp> getParserForType() {
+      return PARSER;
+    }
+
+    public x.msg.pb.PbXmsg.XmsgChannelStatusSubRsp getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface XmsgChannelStatusUnSubReqOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:XmsgChannelStatusUnSubReq)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>repeated string cgt = 1;</code>
+     */
+    java.util.List<java.lang.String>
+        getCgtList();
+    /**
+     * <code>repeated string cgt = 1;</code>
+     */
+    int getCgtCount();
+    /**
+     * <code>repeated string cgt = 1;</code>
+     */
+    java.lang.String getCgt(int index);
+    /**
+     * <code>repeated string cgt = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getCgtBytes(int index);
+  }
+  /**
+   * Protobuf type {@code XmsgChannelStatusUnSubReq}
+   */
+  public  static final class XmsgChannelStatusUnSubReq extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:XmsgChannelStatusUnSubReq)
+      XmsgChannelStatusUnSubReqOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use XmsgChannelStatusUnSubReq.newBuilder() to construct.
+    private XmsgChannelStatusUnSubReq(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private XmsgChannelStatusUnSubReq() {
+      cgt_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private XmsgChannelStatusUnSubReq(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                cgt_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              cgt_.add(s);
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+          cgt_ = cgt_.getUnmodifiableView();
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return x.msg.pb.PbXmsg.internal_static_XmsgChannelStatusUnSubReq_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return x.msg.pb.PbXmsg.internal_static_XmsgChannelStatusUnSubReq_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              x.msg.pb.PbXmsg.XmsgChannelStatusUnSubReq.class, x.msg.pb.PbXmsg.XmsgChannelStatusUnSubReq.Builder.class);
+    }
+
+    public static final int CGT_FIELD_NUMBER = 1;
+    private com.google.protobuf.LazyStringList cgt_;
+    /**
+     * <code>repeated string cgt = 1;</code>
+     */
+    public com.google.protobuf.ProtocolStringList
+        getCgtList() {
+      return cgt_;
+    }
+    /**
+     * <code>repeated string cgt = 1;</code>
+     */
+    public int getCgtCount() {
+      return cgt_.size();
+    }
+    /**
+     * <code>repeated string cgt = 1;</code>
+     */
+    public java.lang.String getCgt(int index) {
+      return cgt_.get(index);
+    }
+    /**
+     * <code>repeated string cgt = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getCgtBytes(int index) {
+      return cgt_.getByteString(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      for (int i = 0; i < cgt_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, cgt_.getRaw(i));
+      }
+      unknownFields.writeTo(output);
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      {
+        int dataSize = 0;
+        for (int i = 0; i < cgt_.size(); i++) {
+          dataSize += computeStringSizeNoTag(cgt_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getCgtList().size();
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof x.msg.pb.PbXmsg.XmsgChannelStatusUnSubReq)) {
+        return super.equals(obj);
+      }
+      x.msg.pb.PbXmsg.XmsgChannelStatusUnSubReq other = (x.msg.pb.PbXmsg.XmsgChannelStatusUnSubReq) obj;
+
+      boolean result = true;
+      result = result && getCgtList()
+          .equals(other.getCgtList());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getCgtCount() > 0) {
+        hash = (37 * hash) + CGT_FIELD_NUMBER;
+        hash = (53 * hash) + getCgtList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static x.msg.pb.PbXmsg.XmsgChannelStatusUnSubReq parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static x.msg.pb.PbXmsg.XmsgChannelStatusUnSubReq parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static x.msg.pb.PbXmsg.XmsgChannelStatusUnSubReq parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static x.msg.pb.PbXmsg.XmsgChannelStatusUnSubReq parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static x.msg.pb.PbXmsg.XmsgChannelStatusUnSubReq parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static x.msg.pb.PbXmsg.XmsgChannelStatusUnSubReq parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static x.msg.pb.PbXmsg.XmsgChannelStatusUnSubReq parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static x.msg.pb.PbXmsg.XmsgChannelStatusUnSubReq parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static x.msg.pb.PbXmsg.XmsgChannelStatusUnSubReq parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static x.msg.pb.PbXmsg.XmsgChannelStatusUnSubReq parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static x.msg.pb.PbXmsg.XmsgChannelStatusUnSubReq parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static x.msg.pb.PbXmsg.XmsgChannelStatusUnSubReq parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(x.msg.pb.PbXmsg.XmsgChannelStatusUnSubReq prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code XmsgChannelStatusUnSubReq}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:XmsgChannelStatusUnSubReq)
+        x.msg.pb.PbXmsg.XmsgChannelStatusUnSubReqOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return x.msg.pb.PbXmsg.internal_static_XmsgChannelStatusUnSubReq_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return x.msg.pb.PbXmsg.internal_static_XmsgChannelStatusUnSubReq_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                x.msg.pb.PbXmsg.XmsgChannelStatusUnSubReq.class, x.msg.pb.PbXmsg.XmsgChannelStatusUnSubReq.Builder.class);
+      }
+
+      // Construct using x.msg.pb.PbXmsg.XmsgChannelStatusUnSubReq.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        cgt_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return x.msg.pb.PbXmsg.internal_static_XmsgChannelStatusUnSubReq_descriptor;
+      }
+
+      public x.msg.pb.PbXmsg.XmsgChannelStatusUnSubReq getDefaultInstanceForType() {
+        return x.msg.pb.PbXmsg.XmsgChannelStatusUnSubReq.getDefaultInstance();
+      }
+
+      public x.msg.pb.PbXmsg.XmsgChannelStatusUnSubReq build() {
+        x.msg.pb.PbXmsg.XmsgChannelStatusUnSubReq result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public x.msg.pb.PbXmsg.XmsgChannelStatusUnSubReq buildPartial() {
+        x.msg.pb.PbXmsg.XmsgChannelStatusUnSubReq result = new x.msg.pb.PbXmsg.XmsgChannelStatusUnSubReq(this);
+        int from_bitField0_ = bitField0_;
+        if (((bitField0_ & 0x00000001) == 0x00000001)) {
+          cgt_ = cgt_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.cgt_ = cgt_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof x.msg.pb.PbXmsg.XmsgChannelStatusUnSubReq) {
+          return mergeFrom((x.msg.pb.PbXmsg.XmsgChannelStatusUnSubReq)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(x.msg.pb.PbXmsg.XmsgChannelStatusUnSubReq other) {
+        if (other == x.msg.pb.PbXmsg.XmsgChannelStatusUnSubReq.getDefaultInstance()) return this;
+        if (!other.cgt_.isEmpty()) {
+          if (cgt_.isEmpty()) {
+            cgt_ = other.cgt_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureCgtIsMutable();
+            cgt_.addAll(other.cgt_);
+          }
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        x.msg.pb.PbXmsg.XmsgChannelStatusUnSubReq parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (x.msg.pb.PbXmsg.XmsgChannelStatusUnSubReq) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private com.google.protobuf.LazyStringList cgt_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensureCgtIsMutable() {
+        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+          cgt_ = new com.google.protobuf.LazyStringArrayList(cgt_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+      /**
+       * <code>repeated string cgt = 1;</code>
+       */
+      public com.google.protobuf.ProtocolStringList
+          getCgtList() {
+        return cgt_.getUnmodifiableView();
+      }
+      /**
+       * <code>repeated string cgt = 1;</code>
+       */
+      public int getCgtCount() {
+        return cgt_.size();
+      }
+      /**
+       * <code>repeated string cgt = 1;</code>
+       */
+      public java.lang.String getCgt(int index) {
+        return cgt_.get(index);
+      }
+      /**
+       * <code>repeated string cgt = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getCgtBytes(int index) {
+        return cgt_.getByteString(index);
+      }
+      /**
+       * <code>repeated string cgt = 1;</code>
+       */
+      public Builder setCgt(
+          int index, java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureCgtIsMutable();
+        cgt_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string cgt = 1;</code>
+       */
+      public Builder addCgt(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureCgtIsMutable();
+        cgt_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string cgt = 1;</code>
+       */
+      public Builder addAllCgt(
+          java.lang.Iterable<java.lang.String> values) {
+        ensureCgtIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, cgt_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string cgt = 1;</code>
+       */
+      public Builder clearCgt() {
+        cgt_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string cgt = 1;</code>
+       */
+      public Builder addCgtBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        ensureCgtIsMutable();
+        cgt_.add(value);
+        onChanged();
+        return this;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:XmsgChannelStatusUnSubReq)
+    }
+
+    // @@protoc_insertion_point(class_scope:XmsgChannelStatusUnSubReq)
+    private static final x.msg.pb.PbXmsg.XmsgChannelStatusUnSubReq DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new x.msg.pb.PbXmsg.XmsgChannelStatusUnSubReq();
+    }
+
+    public static x.msg.pb.PbXmsg.XmsgChannelStatusUnSubReq getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<XmsgChannelStatusUnSubReq>
+        PARSER = new com.google.protobuf.AbstractParser<XmsgChannelStatusUnSubReq>() {
+      public XmsgChannelStatusUnSubReq parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new XmsgChannelStatusUnSubReq(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<XmsgChannelStatusUnSubReq> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<XmsgChannelStatusUnSubReq> getParserForType() {
+      return PARSER;
+    }
+
+    public x.msg.pb.PbXmsg.XmsgChannelStatusUnSubReq getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface XmsgChannelStatusUnSubRspOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:XmsgChannelStatusUnSubRsp)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>map&lt;string, string&gt; ext = 1;</code>
+     */
+    int getExtCount();
+    /**
+     * <code>map&lt;string, string&gt; ext = 1;</code>
+     */
+    boolean containsExt(
+        java.lang.String key);
+    /**
+     * Use {@link #getExtMap()} instead.
+     */
+    @java.lang.Deprecated
+    java.util.Map<java.lang.String, java.lang.String>
+    getExt();
+    /**
+     * <code>map&lt;string, string&gt; ext = 1;</code>
+     */
+    java.util.Map<java.lang.String, java.lang.String>
+    getExtMap();
+    /**
+     * <code>map&lt;string, string&gt; ext = 1;</code>
+     */
+
+    java.lang.String getExtOrDefault(
+        java.lang.String key,
+        java.lang.String defaultValue);
+    /**
+     * <code>map&lt;string, string&gt; ext = 1;</code>
+     */
+
+    java.lang.String getExtOrThrow(
+        java.lang.String key);
+  }
+  /**
+   * Protobuf type {@code XmsgChannelStatusUnSubRsp}
+   */
+  public  static final class XmsgChannelStatusUnSubRsp extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:XmsgChannelStatusUnSubRsp)
+      XmsgChannelStatusUnSubRspOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use XmsgChannelStatusUnSubRsp.newBuilder() to construct.
+    private XmsgChannelStatusUnSubRsp(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private XmsgChannelStatusUnSubRsp() {
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private XmsgChannelStatusUnSubRsp(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                ext_ = com.google.protobuf.MapField.newMapField(
+                    ExtDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000001;
+              }
+              com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+              ext__ = input.readMessage(
+                  ExtDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              ext_.getMutableMap().put(
+                  ext__.getKey(), ext__.getValue());
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return x.msg.pb.PbXmsg.internal_static_XmsgChannelStatusUnSubRsp_descriptor;
+    }
+
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapField internalGetMapField(
+        int number) {
+      switch (number) {
+        case 1:
+          return internalGetExt();
+        default:
+          throw new RuntimeException(
+              "Invalid map field number: " + number);
+      }
+    }
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return x.msg.pb.PbXmsg.internal_static_XmsgChannelStatusUnSubRsp_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              x.msg.pb.PbXmsg.XmsgChannelStatusUnSubRsp.class, x.msg.pb.PbXmsg.XmsgChannelStatusUnSubRsp.Builder.class);
+    }
+
+    public static final int EXT_FIELD_NUMBER = 1;
+    private static final class ExtDefaultEntryHolder {
+      static final com.google.protobuf.MapEntry<
+          java.lang.String, java.lang.String> defaultEntry =
+              com.google.protobuf.MapEntry
+              .<java.lang.String, java.lang.String>newDefaultInstance(
+                  x.msg.pb.PbXmsg.internal_static_XmsgChannelStatusUnSubRsp_ExtEntry_descriptor, 
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "",
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "");
+    }
+    private com.google.protobuf.MapField<
+        java.lang.String, java.lang.String> ext_;
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+    internalGetExt() {
+      if (ext_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            ExtDefaultEntryHolder.defaultEntry);
+      }
+      return ext_;
+    }
+
+    public int getExtCount() {
+      return internalGetExt().getMap().size();
+    }
+    /**
+     * <code>map&lt;string, string&gt; ext = 1;</code>
+     */
+
+    public boolean containsExt(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      return internalGetExt().getMap().containsKey(key);
+    }
+    /**
+     * Use {@link #getExtMap()} instead.
+     */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getExt() {
+      return getExtMap();
+    }
+    /**
+     * <code>map&lt;string, string&gt; ext = 1;</code>
+     */
+
+    public java.util.Map<java.lang.String, java.lang.String> getExtMap() {
+      return internalGetExt().getMap();
+    }
+    /**
+     * <code>map&lt;string, string&gt; ext = 1;</code>
+     */
+
+    public java.lang.String getExtOrDefault(
+        java.lang.String key,
+        java.lang.String defaultValue) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetExt().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <code>map&lt;string, string&gt; ext = 1;</code>
+     */
+
+    public java.lang.String getExtOrThrow(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetExt().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      com.google.protobuf.GeneratedMessageV3
+        .serializeStringMapTo(
+          output,
+          internalGetExt(),
+          ExtDefaultEntryHolder.defaultEntry,
+          1);
+      unknownFields.writeTo(output);
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
+           : internalGetExt().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+        ext__ = ExtDefaultEntryHolder.defaultEntry.newBuilderForType()
+            .setKey(entry.getKey())
+            .setValue(entry.getValue())
+            .build();
+        size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(1, ext__);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof x.msg.pb.PbXmsg.XmsgChannelStatusUnSubRsp)) {
+        return super.equals(obj);
+      }
+      x.msg.pb.PbXmsg.XmsgChannelStatusUnSubRsp other = (x.msg.pb.PbXmsg.XmsgChannelStatusUnSubRsp) obj;
+
+      boolean result = true;
+      result = result && internalGetExt().equals(
+          other.internalGetExt());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (!internalGetExt().getMap().isEmpty()) {
+        hash = (37 * hash) + EXT_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetExt().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static x.msg.pb.PbXmsg.XmsgChannelStatusUnSubRsp parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static x.msg.pb.PbXmsg.XmsgChannelStatusUnSubRsp parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static x.msg.pb.PbXmsg.XmsgChannelStatusUnSubRsp parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static x.msg.pb.PbXmsg.XmsgChannelStatusUnSubRsp parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static x.msg.pb.PbXmsg.XmsgChannelStatusUnSubRsp parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static x.msg.pb.PbXmsg.XmsgChannelStatusUnSubRsp parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static x.msg.pb.PbXmsg.XmsgChannelStatusUnSubRsp parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static x.msg.pb.PbXmsg.XmsgChannelStatusUnSubRsp parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static x.msg.pb.PbXmsg.XmsgChannelStatusUnSubRsp parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static x.msg.pb.PbXmsg.XmsgChannelStatusUnSubRsp parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static x.msg.pb.PbXmsg.XmsgChannelStatusUnSubRsp parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static x.msg.pb.PbXmsg.XmsgChannelStatusUnSubRsp parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(x.msg.pb.PbXmsg.XmsgChannelStatusUnSubRsp prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code XmsgChannelStatusUnSubRsp}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:XmsgChannelStatusUnSubRsp)
+        x.msg.pb.PbXmsg.XmsgChannelStatusUnSubRspOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return x.msg.pb.PbXmsg.internal_static_XmsgChannelStatusUnSubRsp_descriptor;
+      }
+
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapField internalGetMapField(
+          int number) {
+        switch (number) {
+          case 1:
+            return internalGetExt();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapField internalGetMutableMapField(
+          int number) {
+        switch (number) {
+          case 1:
+            return internalGetMutableExt();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return x.msg.pb.PbXmsg.internal_static_XmsgChannelStatusUnSubRsp_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                x.msg.pb.PbXmsg.XmsgChannelStatusUnSubRsp.class, x.msg.pb.PbXmsg.XmsgChannelStatusUnSubRsp.Builder.class);
+      }
+
+      // Construct using x.msg.pb.PbXmsg.XmsgChannelStatusUnSubRsp.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        internalGetMutableExt().clear();
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return x.msg.pb.PbXmsg.internal_static_XmsgChannelStatusUnSubRsp_descriptor;
+      }
+
+      public x.msg.pb.PbXmsg.XmsgChannelStatusUnSubRsp getDefaultInstanceForType() {
+        return x.msg.pb.PbXmsg.XmsgChannelStatusUnSubRsp.getDefaultInstance();
+      }
+
+      public x.msg.pb.PbXmsg.XmsgChannelStatusUnSubRsp build() {
+        x.msg.pb.PbXmsg.XmsgChannelStatusUnSubRsp result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public x.msg.pb.PbXmsg.XmsgChannelStatusUnSubRsp buildPartial() {
+        x.msg.pb.PbXmsg.XmsgChannelStatusUnSubRsp result = new x.msg.pb.PbXmsg.XmsgChannelStatusUnSubRsp(this);
+        int from_bitField0_ = bitField0_;
+        result.ext_ = internalGetExt();
+        result.ext_.makeImmutable();
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof x.msg.pb.PbXmsg.XmsgChannelStatusUnSubRsp) {
+          return mergeFrom((x.msg.pb.PbXmsg.XmsgChannelStatusUnSubRsp)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(x.msg.pb.PbXmsg.XmsgChannelStatusUnSubRsp other) {
+        if (other == x.msg.pb.PbXmsg.XmsgChannelStatusUnSubRsp.getDefaultInstance()) return this;
+        internalGetMutableExt().mergeFrom(
+            other.internalGetExt());
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        x.msg.pb.PbXmsg.XmsgChannelStatusUnSubRsp parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (x.msg.pb.PbXmsg.XmsgChannelStatusUnSubRsp) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private com.google.protobuf.MapField<
+          java.lang.String, java.lang.String> ext_;
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      internalGetExt() {
+        if (ext_ == null) {
+          return com.google.protobuf.MapField.emptyMapField(
+              ExtDefaultEntryHolder.defaultEntry);
+        }
+        return ext_;
+      }
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      internalGetMutableExt() {
+        onChanged();;
+        if (ext_ == null) {
+          ext_ = com.google.protobuf.MapField.newMapField(
+              ExtDefaultEntryHolder.defaultEntry);
+        }
+        if (!ext_.isMutable()) {
+          ext_ = ext_.copy();
+        }
+        return ext_;
+      }
+
+      public int getExtCount() {
+        return internalGetExt().getMap().size();
+      }
+      /**
+       * <code>map&lt;string, string&gt; ext = 1;</code>
+       */
+
+      public boolean containsExt(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        return internalGetExt().getMap().containsKey(key);
+      }
+      /**
+       * Use {@link #getExtMap()} instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.String> getExt() {
+        return getExtMap();
+      }
+      /**
+       * <code>map&lt;string, string&gt; ext = 1;</code>
+       */
+
+      public java.util.Map<java.lang.String, java.lang.String> getExtMap() {
+        return internalGetExt().getMap();
+      }
+      /**
+       * <code>map&lt;string, string&gt; ext = 1;</code>
+       */
+
+      public java.lang.String getExtOrDefault(
+          java.lang.String key,
+          java.lang.String defaultValue) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, java.lang.String> map =
+            internalGetExt().getMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+      /**
+       * <code>map&lt;string, string&gt; ext = 1;</code>
+       */
+
+      public java.lang.String getExtOrThrow(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, java.lang.String> map =
+            internalGetExt().getMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+
+      public Builder clearExt() {
+        internalGetMutableExt().getMutableMap()
+            .clear();
+        return this;
+      }
+      /**
+       * <code>map&lt;string, string&gt; ext = 1;</code>
+       */
+
+      public Builder removeExt(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutableExt().getMutableMap()
+            .remove(key);
+        return this;
+      }
+      /**
+       * Use alternate mutation accessors instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.String>
+      getMutableExt() {
+        return internalGetMutableExt().getMutableMap();
+      }
+      /**
+       * <code>map&lt;string, string&gt; ext = 1;</code>
+       */
+      public Builder putExt(
+          java.lang.String key,
+          java.lang.String value) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        if (value == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutableExt().getMutableMap()
+            .put(key, value);
+        return this;
+      }
+      /**
+       * <code>map&lt;string, string&gt; ext = 1;</code>
+       */
+
+      public Builder putAllExt(
+          java.util.Map<java.lang.String, java.lang.String> values) {
+        internalGetMutableExt().getMutableMap()
+            .putAll(values);
+        return this;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:XmsgChannelStatusUnSubRsp)
+    }
+
+    // @@protoc_insertion_point(class_scope:XmsgChannelStatusUnSubRsp)
+    private static final x.msg.pb.PbXmsg.XmsgChannelStatusUnSubRsp DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new x.msg.pb.PbXmsg.XmsgChannelStatusUnSubRsp();
+    }
+
+    public static x.msg.pb.PbXmsg.XmsgChannelStatusUnSubRsp getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<XmsgChannelStatusUnSubRsp>
+        PARSER = new com.google.protobuf.AbstractParser<XmsgChannelStatusUnSubRsp>() {
+      public XmsgChannelStatusUnSubRsp parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new XmsgChannelStatusUnSubRsp(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<XmsgChannelStatusUnSubRsp> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<XmsgChannelStatusUnSubRsp> getParserForType() {
+      return PARSER;
+    }
+
+    public x.msg.pb.PbXmsg.XmsgChannelStatusUnSubRsp getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface XmsgChannelStatusPubUsrStatusNoticeOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:XmsgChannelStatusPubUsrStatusNotice)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string cgt = 1;</code>
+     */
+    java.lang.String getCgt();
+    /**
+     * <code>string cgt = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getCgtBytes();
+
+    /**
+     * <code>string plat = 2;</code>
+     */
+    java.lang.String getPlat();
+    /**
+     * <code>string plat = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getPlatBytes();
+
+    /**
+     * <code>string did = 3;</code>
+     */
+    java.lang.String getDid();
+    /**
+     * <code>string did = 3;</code>
+     */
+    com.google.protobuf.ByteString
+        getDidBytes();
+
+    /**
+     * <code>string status = 4;</code>
+     */
+    java.lang.String getStatus();
+    /**
+     * <code>string status = 4;</code>
+     */
+    com.google.protobuf.ByteString
+        getStatusBytes();
+  }
+  /**
+   * Protobuf type {@code XmsgChannelStatusPubUsrStatusNotice}
+   */
+  public  static final class XmsgChannelStatusPubUsrStatusNotice extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:XmsgChannelStatusPubUsrStatusNotice)
+      XmsgChannelStatusPubUsrStatusNoticeOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use XmsgChannelStatusPubUsrStatusNotice.newBuilder() to construct.
+    private XmsgChannelStatusPubUsrStatusNotice(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private XmsgChannelStatusPubUsrStatusNotice() {
+      cgt_ = "";
+      plat_ = "";
+      did_ = "";
+      status_ = "";
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private XmsgChannelStatusPubUsrStatusNotice(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              cgt_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              plat_ = s;
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              did_ = s;
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              status_ = s;
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return x.msg.pb.PbXmsg.internal_static_XmsgChannelStatusPubUsrStatusNotice_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return x.msg.pb.PbXmsg.internal_static_XmsgChannelStatusPubUsrStatusNotice_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              x.msg.pb.PbXmsg.XmsgChannelStatusPubUsrStatusNotice.class, x.msg.pb.PbXmsg.XmsgChannelStatusPubUsrStatusNotice.Builder.class);
+    }
+
+    public static final int CGT_FIELD_NUMBER = 1;
+    private volatile java.lang.Object cgt_;
+    /**
+     * <code>string cgt = 1;</code>
+     */
+    public java.lang.String getCgt() {
+      java.lang.Object ref = cgt_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        cgt_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string cgt = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getCgtBytes() {
+      java.lang.Object ref = cgt_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        cgt_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int PLAT_FIELD_NUMBER = 2;
+    private volatile java.lang.Object plat_;
+    /**
+     * <code>string plat = 2;</code>
+     */
+    public java.lang.String getPlat() {
+      java.lang.Object ref = plat_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        plat_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string plat = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getPlatBytes() {
+      java.lang.Object ref = plat_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        plat_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int DID_FIELD_NUMBER = 3;
+    private volatile java.lang.Object did_;
+    /**
+     * <code>string did = 3;</code>
+     */
+    public java.lang.String getDid() {
+      java.lang.Object ref = did_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        did_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string did = 3;</code>
+     */
+    public com.google.protobuf.ByteString
+        getDidBytes() {
+      java.lang.Object ref = did_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        did_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int STATUS_FIELD_NUMBER = 4;
+    private volatile java.lang.Object status_;
+    /**
+     * <code>string status = 4;</code>
+     */
+    public java.lang.String getStatus() {
+      java.lang.Object ref = status_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        status_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string status = 4;</code>
+     */
+    public com.google.protobuf.ByteString
+        getStatusBytes() {
+      java.lang.Object ref = status_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        status_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getCgtBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, cgt_);
+      }
+      if (!getPlatBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, plat_);
+      }
+      if (!getDidBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, did_);
+      }
+      if (!getStatusBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, status_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getCgtBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, cgt_);
+      }
+      if (!getPlatBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, plat_);
+      }
+      if (!getDidBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, did_);
+      }
+      if (!getStatusBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, status_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof x.msg.pb.PbXmsg.XmsgChannelStatusPubUsrStatusNotice)) {
+        return super.equals(obj);
+      }
+      x.msg.pb.PbXmsg.XmsgChannelStatusPubUsrStatusNotice other = (x.msg.pb.PbXmsg.XmsgChannelStatusPubUsrStatusNotice) obj;
+
+      boolean result = true;
+      result = result && getCgt()
+          .equals(other.getCgt());
+      result = result && getPlat()
+          .equals(other.getPlat());
+      result = result && getDid()
+          .equals(other.getDid());
+      result = result && getStatus()
+          .equals(other.getStatus());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + CGT_FIELD_NUMBER;
+      hash = (53 * hash) + getCgt().hashCode();
+      hash = (37 * hash) + PLAT_FIELD_NUMBER;
+      hash = (53 * hash) + getPlat().hashCode();
+      hash = (37 * hash) + DID_FIELD_NUMBER;
+      hash = (53 * hash) + getDid().hashCode();
+      hash = (37 * hash) + STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + getStatus().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static x.msg.pb.PbXmsg.XmsgChannelStatusPubUsrStatusNotice parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static x.msg.pb.PbXmsg.XmsgChannelStatusPubUsrStatusNotice parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static x.msg.pb.PbXmsg.XmsgChannelStatusPubUsrStatusNotice parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static x.msg.pb.PbXmsg.XmsgChannelStatusPubUsrStatusNotice parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static x.msg.pb.PbXmsg.XmsgChannelStatusPubUsrStatusNotice parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static x.msg.pb.PbXmsg.XmsgChannelStatusPubUsrStatusNotice parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static x.msg.pb.PbXmsg.XmsgChannelStatusPubUsrStatusNotice parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static x.msg.pb.PbXmsg.XmsgChannelStatusPubUsrStatusNotice parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static x.msg.pb.PbXmsg.XmsgChannelStatusPubUsrStatusNotice parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static x.msg.pb.PbXmsg.XmsgChannelStatusPubUsrStatusNotice parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static x.msg.pb.PbXmsg.XmsgChannelStatusPubUsrStatusNotice parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static x.msg.pb.PbXmsg.XmsgChannelStatusPubUsrStatusNotice parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(x.msg.pb.PbXmsg.XmsgChannelStatusPubUsrStatusNotice prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code XmsgChannelStatusPubUsrStatusNotice}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:XmsgChannelStatusPubUsrStatusNotice)
+        x.msg.pb.PbXmsg.XmsgChannelStatusPubUsrStatusNoticeOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return x.msg.pb.PbXmsg.internal_static_XmsgChannelStatusPubUsrStatusNotice_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return x.msg.pb.PbXmsg.internal_static_XmsgChannelStatusPubUsrStatusNotice_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                x.msg.pb.PbXmsg.XmsgChannelStatusPubUsrStatusNotice.class, x.msg.pb.PbXmsg.XmsgChannelStatusPubUsrStatusNotice.Builder.class);
+      }
+
+      // Construct using x.msg.pb.PbXmsg.XmsgChannelStatusPubUsrStatusNotice.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        cgt_ = "";
+
+        plat_ = "";
+
+        did_ = "";
+
+        status_ = "";
+
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return x.msg.pb.PbXmsg.internal_static_XmsgChannelStatusPubUsrStatusNotice_descriptor;
+      }
+
+      public x.msg.pb.PbXmsg.XmsgChannelStatusPubUsrStatusNotice getDefaultInstanceForType() {
+        return x.msg.pb.PbXmsg.XmsgChannelStatusPubUsrStatusNotice.getDefaultInstance();
+      }
+
+      public x.msg.pb.PbXmsg.XmsgChannelStatusPubUsrStatusNotice build() {
+        x.msg.pb.PbXmsg.XmsgChannelStatusPubUsrStatusNotice result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public x.msg.pb.PbXmsg.XmsgChannelStatusPubUsrStatusNotice buildPartial() {
+        x.msg.pb.PbXmsg.XmsgChannelStatusPubUsrStatusNotice result = new x.msg.pb.PbXmsg.XmsgChannelStatusPubUsrStatusNotice(this);
+        result.cgt_ = cgt_;
+        result.plat_ = plat_;
+        result.did_ = did_;
+        result.status_ = status_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof x.msg.pb.PbXmsg.XmsgChannelStatusPubUsrStatusNotice) {
+          return mergeFrom((x.msg.pb.PbXmsg.XmsgChannelStatusPubUsrStatusNotice)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(x.msg.pb.PbXmsg.XmsgChannelStatusPubUsrStatusNotice other) {
+        if (other == x.msg.pb.PbXmsg.XmsgChannelStatusPubUsrStatusNotice.getDefaultInstance()) return this;
+        if (!other.getCgt().isEmpty()) {
+          cgt_ = other.cgt_;
+          onChanged();
+        }
+        if (!other.getPlat().isEmpty()) {
+          plat_ = other.plat_;
+          onChanged();
+        }
+        if (!other.getDid().isEmpty()) {
+          did_ = other.did_;
+          onChanged();
+        }
+        if (!other.getStatus().isEmpty()) {
+          status_ = other.status_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        x.msg.pb.PbXmsg.XmsgChannelStatusPubUsrStatusNotice parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (x.msg.pb.PbXmsg.XmsgChannelStatusPubUsrStatusNotice) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object cgt_ = "";
+      /**
+       * <code>string cgt = 1;</code>
+       */
+      public java.lang.String getCgt() {
+        java.lang.Object ref = cgt_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          cgt_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string cgt = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getCgtBytes() {
+        java.lang.Object ref = cgt_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          cgt_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string cgt = 1;</code>
+       */
+      public Builder setCgt(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        cgt_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string cgt = 1;</code>
+       */
+      public Builder clearCgt() {
+        
+        cgt_ = getDefaultInstance().getCgt();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string cgt = 1;</code>
+       */
+      public Builder setCgtBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        cgt_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object plat_ = "";
+      /**
+       * <code>string plat = 2;</code>
+       */
+      public java.lang.String getPlat() {
+        java.lang.Object ref = plat_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          plat_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string plat = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getPlatBytes() {
+        java.lang.Object ref = plat_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          plat_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string plat = 2;</code>
+       */
+      public Builder setPlat(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        plat_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string plat = 2;</code>
+       */
+      public Builder clearPlat() {
+        
+        plat_ = getDefaultInstance().getPlat();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string plat = 2;</code>
+       */
+      public Builder setPlatBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        plat_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object did_ = "";
+      /**
+       * <code>string did = 3;</code>
+       */
+      public java.lang.String getDid() {
+        java.lang.Object ref = did_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          did_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string did = 3;</code>
+       */
+      public com.google.protobuf.ByteString
+          getDidBytes() {
+        java.lang.Object ref = did_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          did_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string did = 3;</code>
+       */
+      public Builder setDid(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        did_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string did = 3;</code>
+       */
+      public Builder clearDid() {
+        
+        did_ = getDefaultInstance().getDid();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string did = 3;</code>
+       */
+      public Builder setDidBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        did_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object status_ = "";
+      /**
+       * <code>string status = 4;</code>
+       */
+      public java.lang.String getStatus() {
+        java.lang.Object ref = status_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          status_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string status = 4;</code>
+       */
+      public com.google.protobuf.ByteString
+          getStatusBytes() {
+        java.lang.Object ref = status_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          status_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string status = 4;</code>
+       */
+      public Builder setStatus(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        status_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string status = 4;</code>
+       */
+      public Builder clearStatus() {
+        
+        status_ = getDefaultInstance().getStatus();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string status = 4;</code>
+       */
+      public Builder setStatusBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        status_ = value;
+        onChanged();
+        return this;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:XmsgChannelStatusPubUsrStatusNotice)
+    }
+
+    // @@protoc_insertion_point(class_scope:XmsgChannelStatusPubUsrStatusNotice)
+    private static final x.msg.pb.PbXmsg.XmsgChannelStatusPubUsrStatusNotice DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new x.msg.pb.PbXmsg.XmsgChannelStatusPubUsrStatusNotice();
+    }
+
+    public static x.msg.pb.PbXmsg.XmsgChannelStatusPubUsrStatusNotice getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<XmsgChannelStatusPubUsrStatusNotice>
+        PARSER = new com.google.protobuf.AbstractParser<XmsgChannelStatusPubUsrStatusNotice>() {
+      public XmsgChannelStatusPubUsrStatusNotice parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new XmsgChannelStatusPubUsrStatusNotice(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<XmsgChannelStatusPubUsrStatusNotice> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<XmsgChannelStatusPubUsrStatusNotice> getParserForType() {
+      return PARSER;
+    }
+
+    public x.msg.pb.PbXmsg.XmsgChannelStatusPubUsrStatusNotice getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface XmsgChannelStatusPubGroupStatusNoticeOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:XmsgChannelStatusPubGroupStatusNotice)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string cgt = 1;</code>
+     */
+    java.lang.String getCgt();
+    /**
+     * <code>string cgt = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getCgtBytes();
+
+    /**
+     * <code>string status = 2;</code>
+     */
+    java.lang.String getStatus();
+    /**
+     * <code>string status = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getStatusBytes();
+  }
+  /**
+   * Protobuf type {@code XmsgChannelStatusPubGroupStatusNotice}
+   */
+  public  static final class XmsgChannelStatusPubGroupStatusNotice extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:XmsgChannelStatusPubGroupStatusNotice)
+      XmsgChannelStatusPubGroupStatusNoticeOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use XmsgChannelStatusPubGroupStatusNotice.newBuilder() to construct.
+    private XmsgChannelStatusPubGroupStatusNotice(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private XmsgChannelStatusPubGroupStatusNotice() {
+      cgt_ = "";
+      status_ = "";
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private XmsgChannelStatusPubGroupStatusNotice(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              cgt_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              status_ = s;
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return x.msg.pb.PbXmsg.internal_static_XmsgChannelStatusPubGroupStatusNotice_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return x.msg.pb.PbXmsg.internal_static_XmsgChannelStatusPubGroupStatusNotice_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              x.msg.pb.PbXmsg.XmsgChannelStatusPubGroupStatusNotice.class, x.msg.pb.PbXmsg.XmsgChannelStatusPubGroupStatusNotice.Builder.class);
+    }
+
+    public static final int CGT_FIELD_NUMBER = 1;
+    private volatile java.lang.Object cgt_;
+    /**
+     * <code>string cgt = 1;</code>
+     */
+    public java.lang.String getCgt() {
+      java.lang.Object ref = cgt_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        cgt_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string cgt = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getCgtBytes() {
+      java.lang.Object ref = cgt_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        cgt_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int STATUS_FIELD_NUMBER = 2;
+    private volatile java.lang.Object status_;
+    /**
+     * <code>string status = 2;</code>
+     */
+    public java.lang.String getStatus() {
+      java.lang.Object ref = status_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        status_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string status = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getStatusBytes() {
+      java.lang.Object ref = status_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        status_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getCgtBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, cgt_);
+      }
+      if (!getStatusBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, status_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getCgtBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, cgt_);
+      }
+      if (!getStatusBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, status_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof x.msg.pb.PbXmsg.XmsgChannelStatusPubGroupStatusNotice)) {
+        return super.equals(obj);
+      }
+      x.msg.pb.PbXmsg.XmsgChannelStatusPubGroupStatusNotice other = (x.msg.pb.PbXmsg.XmsgChannelStatusPubGroupStatusNotice) obj;
+
+      boolean result = true;
+      result = result && getCgt()
+          .equals(other.getCgt());
+      result = result && getStatus()
+          .equals(other.getStatus());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + CGT_FIELD_NUMBER;
+      hash = (53 * hash) + getCgt().hashCode();
+      hash = (37 * hash) + STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + getStatus().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static x.msg.pb.PbXmsg.XmsgChannelStatusPubGroupStatusNotice parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static x.msg.pb.PbXmsg.XmsgChannelStatusPubGroupStatusNotice parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static x.msg.pb.PbXmsg.XmsgChannelStatusPubGroupStatusNotice parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static x.msg.pb.PbXmsg.XmsgChannelStatusPubGroupStatusNotice parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static x.msg.pb.PbXmsg.XmsgChannelStatusPubGroupStatusNotice parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static x.msg.pb.PbXmsg.XmsgChannelStatusPubGroupStatusNotice parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static x.msg.pb.PbXmsg.XmsgChannelStatusPubGroupStatusNotice parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static x.msg.pb.PbXmsg.XmsgChannelStatusPubGroupStatusNotice parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static x.msg.pb.PbXmsg.XmsgChannelStatusPubGroupStatusNotice parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static x.msg.pb.PbXmsg.XmsgChannelStatusPubGroupStatusNotice parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static x.msg.pb.PbXmsg.XmsgChannelStatusPubGroupStatusNotice parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static x.msg.pb.PbXmsg.XmsgChannelStatusPubGroupStatusNotice parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(x.msg.pb.PbXmsg.XmsgChannelStatusPubGroupStatusNotice prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code XmsgChannelStatusPubGroupStatusNotice}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:XmsgChannelStatusPubGroupStatusNotice)
+        x.msg.pb.PbXmsg.XmsgChannelStatusPubGroupStatusNoticeOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return x.msg.pb.PbXmsg.internal_static_XmsgChannelStatusPubGroupStatusNotice_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return x.msg.pb.PbXmsg.internal_static_XmsgChannelStatusPubGroupStatusNotice_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                x.msg.pb.PbXmsg.XmsgChannelStatusPubGroupStatusNotice.class, x.msg.pb.PbXmsg.XmsgChannelStatusPubGroupStatusNotice.Builder.class);
+      }
+
+      // Construct using x.msg.pb.PbXmsg.XmsgChannelStatusPubGroupStatusNotice.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        cgt_ = "";
+
+        status_ = "";
+
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return x.msg.pb.PbXmsg.internal_static_XmsgChannelStatusPubGroupStatusNotice_descriptor;
+      }
+
+      public x.msg.pb.PbXmsg.XmsgChannelStatusPubGroupStatusNotice getDefaultInstanceForType() {
+        return x.msg.pb.PbXmsg.XmsgChannelStatusPubGroupStatusNotice.getDefaultInstance();
+      }
+
+      public x.msg.pb.PbXmsg.XmsgChannelStatusPubGroupStatusNotice build() {
+        x.msg.pb.PbXmsg.XmsgChannelStatusPubGroupStatusNotice result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public x.msg.pb.PbXmsg.XmsgChannelStatusPubGroupStatusNotice buildPartial() {
+        x.msg.pb.PbXmsg.XmsgChannelStatusPubGroupStatusNotice result = new x.msg.pb.PbXmsg.XmsgChannelStatusPubGroupStatusNotice(this);
+        result.cgt_ = cgt_;
+        result.status_ = status_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof x.msg.pb.PbXmsg.XmsgChannelStatusPubGroupStatusNotice) {
+          return mergeFrom((x.msg.pb.PbXmsg.XmsgChannelStatusPubGroupStatusNotice)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(x.msg.pb.PbXmsg.XmsgChannelStatusPubGroupStatusNotice other) {
+        if (other == x.msg.pb.PbXmsg.XmsgChannelStatusPubGroupStatusNotice.getDefaultInstance()) return this;
+        if (!other.getCgt().isEmpty()) {
+          cgt_ = other.cgt_;
+          onChanged();
+        }
+        if (!other.getStatus().isEmpty()) {
+          status_ = other.status_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        x.msg.pb.PbXmsg.XmsgChannelStatusPubGroupStatusNotice parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (x.msg.pb.PbXmsg.XmsgChannelStatusPubGroupStatusNotice) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object cgt_ = "";
+      /**
+       * <code>string cgt = 1;</code>
+       */
+      public java.lang.String getCgt() {
+        java.lang.Object ref = cgt_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          cgt_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string cgt = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getCgtBytes() {
+        java.lang.Object ref = cgt_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          cgt_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string cgt = 1;</code>
+       */
+      public Builder setCgt(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        cgt_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string cgt = 1;</code>
+       */
+      public Builder clearCgt() {
+        
+        cgt_ = getDefaultInstance().getCgt();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string cgt = 1;</code>
+       */
+      public Builder setCgtBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        cgt_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object status_ = "";
+      /**
+       * <code>string status = 2;</code>
+       */
+      public java.lang.String getStatus() {
+        java.lang.Object ref = status_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          status_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string status = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getStatusBytes() {
+        java.lang.Object ref = status_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          status_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string status = 2;</code>
+       */
+      public Builder setStatus(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        status_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string status = 2;</code>
+       */
+      public Builder clearStatus() {
+        
+        status_ = getDefaultInstance().getStatus();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string status = 2;</code>
+       */
+      public Builder setStatusBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        status_ = value;
+        onChanged();
+        return this;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:XmsgChannelStatusPubGroupStatusNotice)
+    }
+
+    // @@protoc_insertion_point(class_scope:XmsgChannelStatusPubGroupStatusNotice)
+    private static final x.msg.pb.PbXmsg.XmsgChannelStatusPubGroupStatusNotice DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new x.msg.pb.PbXmsg.XmsgChannelStatusPubGroupStatusNotice();
+    }
+
+    public static x.msg.pb.PbXmsg.XmsgChannelStatusPubGroupStatusNotice getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<XmsgChannelStatusPubGroupStatusNotice>
+        PARSER = new com.google.protobuf.AbstractParser<XmsgChannelStatusPubGroupStatusNotice>() {
+      public XmsgChannelStatusPubGroupStatusNotice parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new XmsgChannelStatusPubGroupStatusNotice(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<XmsgChannelStatusPubGroupStatusNotice> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<XmsgChannelStatusPubGroupStatusNotice> getParserForType() {
+      return PARSER;
+    }
+
+    public x.msg.pb.PbXmsg.XmsgChannelStatusPubGroupStatusNotice getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface XmsgChannelStatusUsrStatusOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:XmsgChannelStatusUsrStatus)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>repeated .XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatus client = 2;</code>
+     */
+    java.util.List<x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatus> 
+        getClientList();
+    /**
+     * <code>repeated .XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatus client = 2;</code>
+     */
+    x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatus getClient(int index);
+    /**
+     * <code>repeated .XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatus client = 2;</code>
+     */
+    int getClientCount();
+    /**
+     * <code>repeated .XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatus client = 2;</code>
+     */
+    java.util.List<? extends x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatusOrBuilder> 
+        getClientOrBuilderList();
+    /**
+     * <code>repeated .XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatus client = 2;</code>
+     */
+    x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatusOrBuilder getClientOrBuilder(
+        int index);
+  }
+  /**
+   * Protobuf type {@code XmsgChannelStatusUsrStatus}
+   */
+  public  static final class XmsgChannelStatusUsrStatus extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:XmsgChannelStatusUsrStatus)
+      XmsgChannelStatusUsrStatusOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use XmsgChannelStatusUsrStatus.newBuilder() to construct.
+    private XmsgChannelStatusUsrStatus(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private XmsgChannelStatusUsrStatus() {
+      client_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private XmsgChannelStatusUsrStatus(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 18: {
+              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                client_ = new java.util.ArrayList<x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatus>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              client_.add(
+                  input.readMessage(x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatus.parser(), extensionRegistry));
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+          client_ = java.util.Collections.unmodifiableList(client_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return x.msg.pb.PbXmsg.internal_static_XmsgChannelStatusUsrStatus_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return x.msg.pb.PbXmsg.internal_static_XmsgChannelStatusUsrStatus_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus.class, x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus.Builder.class);
+    }
+
+    public interface XmsgChannelStatusUsrClientStatusOrBuilder extends
+        // @@protoc_insertion_point(interface_extends:XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatus)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       * <code>string plat = 1;</code>
+       */
+      java.lang.String getPlat();
+      /**
+       * <code>string plat = 1;</code>
+       */
+      com.google.protobuf.ByteString
+          getPlatBytes();
+
+      /**
+       * <code>string did = 2;</code>
+       */
+      java.lang.String getDid();
+      /**
+       * <code>string did = 2;</code>
+       */
+      com.google.protobuf.ByteString
+          getDidBytes();
+
+      /**
+       * <code>string status = 3;</code>
+       */
+      java.lang.String getStatus();
+      /**
+       * <code>string status = 3;</code>
+       */
+      com.google.protobuf.ByteString
+          getStatusBytes();
+    }
+    /**
+     * Protobuf type {@code XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatus}
+     */
+    public  static final class XmsgChannelStatusUsrClientStatus extends
+        com.google.protobuf.GeneratedMessageV3 implements
+        // @@protoc_insertion_point(message_implements:XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatus)
+        XmsgChannelStatusUsrClientStatusOrBuilder {
+    private static final long serialVersionUID = 0L;
+      // Use XmsgChannelStatusUsrClientStatus.newBuilder() to construct.
+      private XmsgChannelStatusUsrClientStatus(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+      private XmsgChannelStatusUsrClientStatus() {
+        plat_ = "";
+        did_ = "";
+        status_ = "";
+      }
+
+      @java.lang.Override
+      public final com.google.protobuf.UnknownFieldSet
+      getUnknownFields() {
+        return this.unknownFields;
+      }
+      private XmsgChannelStatusUsrClientStatus(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        this();
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        int mutable_bitField0_ = 0;
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+            com.google.protobuf.UnknownFieldSet.newBuilder();
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              default: {
+                if (!parseUnknownFieldProto3(
+                    input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+              case 10: {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                plat_ = s;
+                break;
+              }
+              case 18: {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                did_ = s;
+                break;
+              }
+              case 26: {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                status_ = s;
+                break;
+              }
+            }
+          }
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(this);
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(
+              e).setUnfinishedMessage(this);
+        } finally {
+          this.unknownFields = unknownFields.build();
+          makeExtensionsImmutable();
+        }
+      }
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return x.msg.pb.PbXmsg.internal_static_XmsgChannelStatusUsrStatus_XmsgChannelStatusUsrClientStatus_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return x.msg.pb.PbXmsg.internal_static_XmsgChannelStatusUsrStatus_XmsgChannelStatusUsrClientStatus_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatus.class, x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatus.Builder.class);
+      }
+
+      public static final int PLAT_FIELD_NUMBER = 1;
+      private volatile java.lang.Object plat_;
+      /**
+       * <code>string plat = 1;</code>
+       */
+      public java.lang.String getPlat() {
+        java.lang.Object ref = plat_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = 
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          plat_ = s;
+          return s;
+        }
+      }
+      /**
+       * <code>string plat = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getPlatBytes() {
+        java.lang.Object ref = plat_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          plat_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int DID_FIELD_NUMBER = 2;
+      private volatile java.lang.Object did_;
+      /**
+       * <code>string did = 2;</code>
+       */
+      public java.lang.String getDid() {
+        java.lang.Object ref = did_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = 
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          did_ = s;
+          return s;
+        }
+      }
+      /**
+       * <code>string did = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getDidBytes() {
+        java.lang.Object ref = did_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          did_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int STATUS_FIELD_NUMBER = 3;
+      private volatile java.lang.Object status_;
+      /**
+       * <code>string status = 3;</code>
+       */
+      public java.lang.String getStatus() {
+        java.lang.Object ref = status_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = 
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          status_ = s;
+          return s;
+        }
+      }
+      /**
+       * <code>string status = 3;</code>
+       */
+      public com.google.protobuf.ByteString
+          getStatusBytes() {
+        java.lang.Object ref = status_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          status_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      private byte memoizedIsInitialized = -1;
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      public void writeTo(com.google.protobuf.CodedOutputStream output)
+                          throws java.io.IOException {
+        if (!getPlatBytes().isEmpty()) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 1, plat_);
+        }
+        if (!getDidBytes().isEmpty()) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 2, did_);
+        }
+        if (!getStatusBytes().isEmpty()) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 3, status_);
+        }
+        unknownFields.writeTo(output);
+      }
+
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (!getPlatBytes().isEmpty()) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, plat_);
+        }
+        if (!getDidBytes().isEmpty()) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, did_);
+        }
+        if (!getStatusBytes().isEmpty()) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, status_);
+        }
+        size += unknownFields.getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+         return true;
+        }
+        if (!(obj instanceof x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatus)) {
+          return super.equals(obj);
+        }
+        x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatus other = (x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatus) obj;
+
+        boolean result = true;
+        result = result && getPlat()
+            .equals(other.getPlat());
+        result = result && getDid()
+            .equals(other.getDid());
+        result = result && getStatus()
+            .equals(other.getStatus());
+        result = result && unknownFields.equals(other.unknownFields);
+        return result;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + PLAT_FIELD_NUMBER;
+        hash = (53 * hash) + getPlat().hashCode();
+        hash = (37 * hash) + DID_FIELD_NUMBER;
+        hash = (53 * hash) + getDid().hashCode();
+        hash = (37 * hash) + STATUS_FIELD_NUMBER;
+        hash = (53 * hash) + getStatus().hashCode();
+        hash = (29 * hash) + unknownFields.hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatus parseFrom(
+          java.nio.ByteBuffer data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatus parseFrom(
+          java.nio.ByteBuffer data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatus parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatus parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatus parseFrom(byte[] data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatus parseFrom(
+          byte[] data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatus parseFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+      }
+      public static x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatus parseFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatus parseDelimitedFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input);
+      }
+      public static x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatus parseDelimitedFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatus parseFrom(
+          com.google.protobuf.CodedInputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+      }
+      public static x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatus parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+
+      public Builder newBuilderForType() { return newBuilder(); }
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+      public static Builder newBuilder(x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatus prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE
+            ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       * Protobuf type {@code XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatus}
+       */
+      public static final class Builder extends
+          com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+          // @@protoc_insertion_point(builder_implements:XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatus)
+          x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatusOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+          return x.msg.pb.PbXmsg.internal_static_XmsgChannelStatusUsrStatus_XmsgChannelStatusUsrClientStatus_descriptor;
+        }
+
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return x.msg.pb.PbXmsg.internal_static_XmsgChannelStatusUsrStatus_XmsgChannelStatusUsrClientStatus_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatus.class, x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatus.Builder.class);
+        }
+
+        // Construct using x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatus.newBuilder()
+        private Builder() {
+          maybeForceBuilderInitialization();
+        }
+
+        private Builder(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+          maybeForceBuilderInitialization();
+        }
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessageV3
+                  .alwaysUseFieldBuilders) {
+          }
+        }
+        public Builder clear() {
+          super.clear();
+          plat_ = "";
+
+          did_ = "";
+
+          status_ = "";
+
+          return this;
+        }
+
+        public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+          return x.msg.pb.PbXmsg.internal_static_XmsgChannelStatusUsrStatus_XmsgChannelStatusUsrClientStatus_descriptor;
+        }
+
+        public x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatus getDefaultInstanceForType() {
+          return x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatus.getDefaultInstance();
+        }
+
+        public x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatus build() {
+          x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatus result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        public x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatus buildPartial() {
+          x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatus result = new x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatus(this);
+          result.plat_ = plat_;
+          result.did_ = did_;
+          result.status_ = status_;
+          onBuilt();
+          return result;
+        }
+
+        public Builder clone() {
+          return (Builder) super.clone();
+        }
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            java.lang.Object value) {
+          return (Builder) super.setField(field, value);
+        }
+        public Builder clearField(
+            com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return (Builder) super.clearField(field);
+        }
+        public Builder clearOneof(
+            com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return (Builder) super.clearOneof(oneof);
+        }
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index, java.lang.Object value) {
+          return (Builder) super.setRepeatedField(field, index, value);
+        }
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            java.lang.Object value) {
+          return (Builder) super.addRepeatedField(field, value);
+        }
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other instanceof x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatus) {
+            return mergeFrom((x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatus)other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatus other) {
+          if (other == x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatus.getDefaultInstance()) return this;
+          if (!other.getPlat().isEmpty()) {
+            plat_ = other.plat_;
+            onChanged();
+          }
+          if (!other.getDid().isEmpty()) {
+            did_ = other.did_;
+            onChanged();
+          }
+          if (!other.getStatus().isEmpty()) {
+            status_ = other.status_;
+            onChanged();
+          }
+          this.mergeUnknownFields(other.unknownFields);
+          onChanged();
+          return this;
+        }
+
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatus parsedMessage = null;
+          try {
+            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            parsedMessage = (x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatus) e.getUnfinishedMessage();
+            throw e.unwrapIOException();
+          } finally {
+            if (parsedMessage != null) {
+              mergeFrom(parsedMessage);
+            }
+          }
+          return this;
+        }
+
+        private java.lang.Object plat_ = "";
+        /**
+         * <code>string plat = 1;</code>
+         */
+        public java.lang.String getPlat() {
+          java.lang.Object ref = plat_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            plat_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         * <code>string plat = 1;</code>
+         */
+        public com.google.protobuf.ByteString
+            getPlatBytes() {
+          java.lang.Object ref = plat_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
+                    (java.lang.String) ref);
+            plat_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         * <code>string plat = 1;</code>
+         */
+        public Builder setPlat(
+            java.lang.String value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  
+          plat_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>string plat = 1;</code>
+         */
+        public Builder clearPlat() {
+          
+          plat_ = getDefaultInstance().getPlat();
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>string plat = 1;</code>
+         */
+        public Builder setPlatBytes(
+            com.google.protobuf.ByteString value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+          
+          plat_ = value;
+          onChanged();
+          return this;
+        }
+
+        private java.lang.Object did_ = "";
+        /**
+         * <code>string did = 2;</code>
+         */
+        public java.lang.String getDid() {
+          java.lang.Object ref = did_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            did_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         * <code>string did = 2;</code>
+         */
+        public com.google.protobuf.ByteString
+            getDidBytes() {
+          java.lang.Object ref = did_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
+                    (java.lang.String) ref);
+            did_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         * <code>string did = 2;</code>
+         */
+        public Builder setDid(
+            java.lang.String value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  
+          did_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>string did = 2;</code>
+         */
+        public Builder clearDid() {
+          
+          did_ = getDefaultInstance().getDid();
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>string did = 2;</code>
+         */
+        public Builder setDidBytes(
+            com.google.protobuf.ByteString value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+          
+          did_ = value;
+          onChanged();
+          return this;
+        }
+
+        private java.lang.Object status_ = "";
+        /**
+         * <code>string status = 3;</code>
+         */
+        public java.lang.String getStatus() {
+          java.lang.Object ref = status_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            status_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         * <code>string status = 3;</code>
+         */
+        public com.google.protobuf.ByteString
+            getStatusBytes() {
+          java.lang.Object ref = status_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
+                    (java.lang.String) ref);
+            status_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         * <code>string status = 3;</code>
+         */
+        public Builder setStatus(
+            java.lang.String value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  
+          status_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>string status = 3;</code>
+         */
+        public Builder clearStatus() {
+          
+          status_ = getDefaultInstance().getStatus();
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>string status = 3;</code>
+         */
+        public Builder setStatusBytes(
+            com.google.protobuf.ByteString value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+          
+          status_ = value;
+          onChanged();
+          return this;
+        }
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFieldsProto3(unknownFields);
+        }
+
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+
+        // @@protoc_insertion_point(builder_scope:XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatus)
+      }
+
+      // @@protoc_insertion_point(class_scope:XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatus)
+      private static final x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatus DEFAULT_INSTANCE;
+      static {
+        DEFAULT_INSTANCE = new x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatus();
+      }
+
+      public static x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatus getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<XmsgChannelStatusUsrClientStatus>
+          PARSER = new com.google.protobuf.AbstractParser<XmsgChannelStatusUsrClientStatus>() {
+        public XmsgChannelStatusUsrClientStatus parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new XmsgChannelStatusUsrClientStatus(input, extensionRegistry);
+        }
+      };
+
+      public static com.google.protobuf.Parser<XmsgChannelStatusUsrClientStatus> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<XmsgChannelStatusUsrClientStatus> getParserForType() {
+        return PARSER;
+      }
+
+      public x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatus getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+
+    }
+
+    public static final int CLIENT_FIELD_NUMBER = 2;
+    private java.util.List<x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatus> client_;
+    /**
+     * <code>repeated .XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatus client = 2;</code>
+     */
+    public java.util.List<x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatus> getClientList() {
+      return client_;
+    }
+    /**
+     * <code>repeated .XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatus client = 2;</code>
+     */
+    public java.util.List<? extends x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatusOrBuilder> 
+        getClientOrBuilderList() {
+      return client_;
+    }
+    /**
+     * <code>repeated .XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatus client = 2;</code>
+     */
+    public int getClientCount() {
+      return client_.size();
+    }
+    /**
+     * <code>repeated .XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatus client = 2;</code>
+     */
+    public x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatus getClient(int index) {
+      return client_.get(index);
+    }
+    /**
+     * <code>repeated .XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatus client = 2;</code>
+     */
+    public x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatusOrBuilder getClientOrBuilder(
+        int index) {
+      return client_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      for (int i = 0; i < client_.size(); i++) {
+        output.writeMessage(2, client_.get(i));
+      }
+      unknownFields.writeTo(output);
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (int i = 0; i < client_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, client_.get(i));
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus)) {
+        return super.equals(obj);
+      }
+      x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus other = (x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus) obj;
+
+      boolean result = true;
+      result = result && getClientList()
+          .equals(other.getClientList());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getClientCount() > 0) {
+        hash = (37 * hash) + CLIENT_FIELD_NUMBER;
+        hash = (53 * hash) + getClientList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code XmsgChannelStatusUsrStatus}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:XmsgChannelStatusUsrStatus)
+        x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatusOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return x.msg.pb.PbXmsg.internal_static_XmsgChannelStatusUsrStatus_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return x.msg.pb.PbXmsg.internal_static_XmsgChannelStatusUsrStatus_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus.class, x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus.Builder.class);
+      }
+
+      // Construct using x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getClientFieldBuilder();
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        if (clientBuilder_ == null) {
+          client_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          clientBuilder_.clear();
+        }
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return x.msg.pb.PbXmsg.internal_static_XmsgChannelStatusUsrStatus_descriptor;
+      }
+
+      public x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus getDefaultInstanceForType() {
+        return x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus.getDefaultInstance();
+      }
+
+      public x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus build() {
+        x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus buildPartial() {
+        x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus result = new x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus(this);
+        int from_bitField0_ = bitField0_;
+        if (clientBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) == 0x00000001)) {
+            client_ = java.util.Collections.unmodifiableList(client_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.client_ = client_;
+        } else {
+          result.client_ = clientBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus) {
+          return mergeFrom((x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus other) {
+        if (other == x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus.getDefaultInstance()) return this;
+        if (clientBuilder_ == null) {
+          if (!other.client_.isEmpty()) {
+            if (client_.isEmpty()) {
+              client_ = other.client_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureClientIsMutable();
+              client_.addAll(other.client_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.client_.isEmpty()) {
+            if (clientBuilder_.isEmpty()) {
+              clientBuilder_.dispose();
+              clientBuilder_ = null;
+              client_ = other.client_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              clientBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getClientFieldBuilder() : null;
+            } else {
+              clientBuilder_.addAllMessages(other.client_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.util.List<x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatus> client_ =
+        java.util.Collections.emptyList();
+      private void ensureClientIsMutable() {
+        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+          client_ = new java.util.ArrayList<x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatus>(client_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatus, x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatus.Builder, x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatusOrBuilder> clientBuilder_;
+
+      /**
+       * <code>repeated .XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatus client = 2;</code>
+       */
+      public java.util.List<x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatus> getClientList() {
+        if (clientBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(client_);
+        } else {
+          return clientBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatus client = 2;</code>
+       */
+      public int getClientCount() {
+        if (clientBuilder_ == null) {
+          return client_.size();
+        } else {
+          return clientBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatus client = 2;</code>
+       */
+      public x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatus getClient(int index) {
+        if (clientBuilder_ == null) {
+          return client_.get(index);
+        } else {
+          return clientBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatus client = 2;</code>
+       */
+      public Builder setClient(
+          int index, x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatus value) {
+        if (clientBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureClientIsMutable();
+          client_.set(index, value);
+          onChanged();
+        } else {
+          clientBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatus client = 2;</code>
+       */
+      public Builder setClient(
+          int index, x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatus.Builder builderForValue) {
+        if (clientBuilder_ == null) {
+          ensureClientIsMutable();
+          client_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          clientBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatus client = 2;</code>
+       */
+      public Builder addClient(x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatus value) {
+        if (clientBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureClientIsMutable();
+          client_.add(value);
+          onChanged();
+        } else {
+          clientBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatus client = 2;</code>
+       */
+      public Builder addClient(
+          int index, x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatus value) {
+        if (clientBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureClientIsMutable();
+          client_.add(index, value);
+          onChanged();
+        } else {
+          clientBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatus client = 2;</code>
+       */
+      public Builder addClient(
+          x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatus.Builder builderForValue) {
+        if (clientBuilder_ == null) {
+          ensureClientIsMutable();
+          client_.add(builderForValue.build());
+          onChanged();
+        } else {
+          clientBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatus client = 2;</code>
+       */
+      public Builder addClient(
+          int index, x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatus.Builder builderForValue) {
+        if (clientBuilder_ == null) {
+          ensureClientIsMutable();
+          client_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          clientBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatus client = 2;</code>
+       */
+      public Builder addAllClient(
+          java.lang.Iterable<? extends x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatus> values) {
+        if (clientBuilder_ == null) {
+          ensureClientIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, client_);
+          onChanged();
+        } else {
+          clientBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatus client = 2;</code>
+       */
+      public Builder clearClient() {
+        if (clientBuilder_ == null) {
+          client_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          clientBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatus client = 2;</code>
+       */
+      public Builder removeClient(int index) {
+        if (clientBuilder_ == null) {
+          ensureClientIsMutable();
+          client_.remove(index);
+          onChanged();
+        } else {
+          clientBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatus client = 2;</code>
+       */
+      public x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatus.Builder getClientBuilder(
+          int index) {
+        return getClientFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatus client = 2;</code>
+       */
+      public x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatusOrBuilder getClientOrBuilder(
+          int index) {
+        if (clientBuilder_ == null) {
+          return client_.get(index);  } else {
+          return clientBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatus client = 2;</code>
+       */
+      public java.util.List<? extends x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatusOrBuilder> 
+           getClientOrBuilderList() {
+        if (clientBuilder_ != null) {
+          return clientBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(client_);
+        }
+      }
+      /**
+       * <code>repeated .XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatus client = 2;</code>
+       */
+      public x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatus.Builder addClientBuilder() {
+        return getClientFieldBuilder().addBuilder(
+            x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatus.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatus client = 2;</code>
+       */
+      public x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatus.Builder addClientBuilder(
+          int index) {
+        return getClientFieldBuilder().addBuilder(
+            index, x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatus.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatus client = 2;</code>
+       */
+      public java.util.List<x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatus.Builder> 
+           getClientBuilderList() {
+        return getClientFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatus, x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatus.Builder, x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatusOrBuilder> 
+          getClientFieldBuilder() {
+        if (clientBuilder_ == null) {
+          clientBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatus, x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatus.Builder, x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatusOrBuilder>(
+                  client_,
+                  ((bitField0_ & 0x00000001) == 0x00000001),
+                  getParentForChildren(),
+                  isClean());
+          client_ = null;
+        }
+        return clientBuilder_;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:XmsgChannelStatusUsrStatus)
+    }
+
+    // @@protoc_insertion_point(class_scope:XmsgChannelStatusUsrStatus)
+    private static final x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus();
+    }
+
+    public static x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<XmsgChannelStatusUsrStatus>
+        PARSER = new com.google.protobuf.AbstractParser<XmsgChannelStatusUsrStatus>() {
+      public XmsgChannelStatusUsrStatus parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new XmsgChannelStatusUsrStatus(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<XmsgChannelStatusUsrStatus> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<XmsgChannelStatusUsrStatus> getParserForType() {
+      return PARSER;
+    }
+
+    public x.msg.pb.PbXmsg.XmsgChannelStatusUsrStatus getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface XmsgChannelStatusGroupStatusOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:XmsgChannelStatusGroupStatus)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string status = 1;</code>
+     */
+    java.lang.String getStatus();
+    /**
+     * <code>string status = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getStatusBytes();
+  }
+  /**
+   * Protobuf type {@code XmsgChannelStatusGroupStatus}
+   */
+  public  static final class XmsgChannelStatusGroupStatus extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:XmsgChannelStatusGroupStatus)
+      XmsgChannelStatusGroupStatusOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use XmsgChannelStatusGroupStatus.newBuilder() to construct.
+    private XmsgChannelStatusGroupStatus(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private XmsgChannelStatusGroupStatus() {
+      status_ = "";
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private XmsgChannelStatusGroupStatus(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              status_ = s;
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return x.msg.pb.PbXmsg.internal_static_XmsgChannelStatusGroupStatus_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return x.msg.pb.PbXmsg.internal_static_XmsgChannelStatusGroupStatus_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              x.msg.pb.PbXmsg.XmsgChannelStatusGroupStatus.class, x.msg.pb.PbXmsg.XmsgChannelStatusGroupStatus.Builder.class);
+    }
+
+    public static final int STATUS_FIELD_NUMBER = 1;
+    private volatile java.lang.Object status_;
+    /**
+     * <code>string status = 1;</code>
+     */
+    public java.lang.String getStatus() {
+      java.lang.Object ref = status_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        status_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string status = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getStatusBytes() {
+      java.lang.Object ref = status_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        status_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getStatusBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, status_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getStatusBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, status_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof x.msg.pb.PbXmsg.XmsgChannelStatusGroupStatus)) {
+        return super.equals(obj);
+      }
+      x.msg.pb.PbXmsg.XmsgChannelStatusGroupStatus other = (x.msg.pb.PbXmsg.XmsgChannelStatusGroupStatus) obj;
+
+      boolean result = true;
+      result = result && getStatus()
+          .equals(other.getStatus());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + getStatus().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static x.msg.pb.PbXmsg.XmsgChannelStatusGroupStatus parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static x.msg.pb.PbXmsg.XmsgChannelStatusGroupStatus parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static x.msg.pb.PbXmsg.XmsgChannelStatusGroupStatus parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static x.msg.pb.PbXmsg.XmsgChannelStatusGroupStatus parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static x.msg.pb.PbXmsg.XmsgChannelStatusGroupStatus parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static x.msg.pb.PbXmsg.XmsgChannelStatusGroupStatus parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static x.msg.pb.PbXmsg.XmsgChannelStatusGroupStatus parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static x.msg.pb.PbXmsg.XmsgChannelStatusGroupStatus parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static x.msg.pb.PbXmsg.XmsgChannelStatusGroupStatus parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static x.msg.pb.PbXmsg.XmsgChannelStatusGroupStatus parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static x.msg.pb.PbXmsg.XmsgChannelStatusGroupStatus parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static x.msg.pb.PbXmsg.XmsgChannelStatusGroupStatus parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(x.msg.pb.PbXmsg.XmsgChannelStatusGroupStatus prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code XmsgChannelStatusGroupStatus}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:XmsgChannelStatusGroupStatus)
+        x.msg.pb.PbXmsg.XmsgChannelStatusGroupStatusOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return x.msg.pb.PbXmsg.internal_static_XmsgChannelStatusGroupStatus_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return x.msg.pb.PbXmsg.internal_static_XmsgChannelStatusGroupStatus_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                x.msg.pb.PbXmsg.XmsgChannelStatusGroupStatus.class, x.msg.pb.PbXmsg.XmsgChannelStatusGroupStatus.Builder.class);
+      }
+
+      // Construct using x.msg.pb.PbXmsg.XmsgChannelStatusGroupStatus.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        status_ = "";
+
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return x.msg.pb.PbXmsg.internal_static_XmsgChannelStatusGroupStatus_descriptor;
+      }
+
+      public x.msg.pb.PbXmsg.XmsgChannelStatusGroupStatus getDefaultInstanceForType() {
+        return x.msg.pb.PbXmsg.XmsgChannelStatusGroupStatus.getDefaultInstance();
+      }
+
+      public x.msg.pb.PbXmsg.XmsgChannelStatusGroupStatus build() {
+        x.msg.pb.PbXmsg.XmsgChannelStatusGroupStatus result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public x.msg.pb.PbXmsg.XmsgChannelStatusGroupStatus buildPartial() {
+        x.msg.pb.PbXmsg.XmsgChannelStatusGroupStatus result = new x.msg.pb.PbXmsg.XmsgChannelStatusGroupStatus(this);
+        result.status_ = status_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof x.msg.pb.PbXmsg.XmsgChannelStatusGroupStatus) {
+          return mergeFrom((x.msg.pb.PbXmsg.XmsgChannelStatusGroupStatus)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(x.msg.pb.PbXmsg.XmsgChannelStatusGroupStatus other) {
+        if (other == x.msg.pb.PbXmsg.XmsgChannelStatusGroupStatus.getDefaultInstance()) return this;
+        if (!other.getStatus().isEmpty()) {
+          status_ = other.status_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        x.msg.pb.PbXmsg.XmsgChannelStatusGroupStatus parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (x.msg.pb.PbXmsg.XmsgChannelStatusGroupStatus) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object status_ = "";
+      /**
+       * <code>string status = 1;</code>
+       */
+      public java.lang.String getStatus() {
+        java.lang.Object ref = status_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          status_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string status = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getStatusBytes() {
+        java.lang.Object ref = status_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          status_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string status = 1;</code>
+       */
+      public Builder setStatus(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        status_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string status = 1;</code>
+       */
+      public Builder clearStatus() {
+        
+        status_ = getDefaultInstance().getStatus();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string status = 1;</code>
+       */
+      public Builder setStatusBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        status_ = value;
+        onChanged();
+        return this;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:XmsgChannelStatusGroupStatus)
+    }
+
+    // @@protoc_insertion_point(class_scope:XmsgChannelStatusGroupStatus)
+    private static final x.msg.pb.PbXmsg.XmsgChannelStatusGroupStatus DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new x.msg.pb.PbXmsg.XmsgChannelStatusGroupStatus();
+    }
+
+    public static x.msg.pb.PbXmsg.XmsgChannelStatusGroupStatus getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<XmsgChannelStatusGroupStatus>
+        PARSER = new com.google.protobuf.AbstractParser<XmsgChannelStatusGroupStatus>() {
+      public XmsgChannelStatusGroupStatus parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new XmsgChannelStatusGroupStatus(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<XmsgChannelStatusGroupStatus> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<XmsgChannelStatusGroupStatus> getParserForType() {
+      return PARSER;
+    }
+
+    public x.msg.pb.PbXmsg.XmsgChannelStatusGroupStatus getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface XmsgClientTokenInfoOrBuilder extends
       // @@protoc_insertion_point(interface_extends:XmsgClientTokenInfo)
       com.google.protobuf.MessageOrBuilder {
@@ -94100,6 +102162,86 @@ public final class PbXmsg {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_XmsgImHlrGroupMsgRsp_ExtEntry_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_XmsgChannelStatusQueryReq_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_XmsgChannelStatusQueryReq_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_XmsgChannelStatusQueryRsp_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_XmsgChannelStatusQueryRsp_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_XmsgChannelStatusQueryRsp_UsrStatusEntry_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_XmsgChannelStatusQueryRsp_UsrStatusEntry_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_XmsgChannelStatusQueryRsp_GroupStatusEntry_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_XmsgChannelStatusQueryRsp_GroupStatusEntry_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_XmsgChannelStatusSubReq_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_XmsgChannelStatusSubReq_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_XmsgChannelStatusSubRsp_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_XmsgChannelStatusSubRsp_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_XmsgChannelStatusSubRsp_UsrStatusEntry_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_XmsgChannelStatusSubRsp_UsrStatusEntry_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_XmsgChannelStatusSubRsp_GroupStatusEntry_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_XmsgChannelStatusSubRsp_GroupStatusEntry_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_XmsgChannelStatusUnSubReq_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_XmsgChannelStatusUnSubReq_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_XmsgChannelStatusUnSubRsp_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_XmsgChannelStatusUnSubRsp_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_XmsgChannelStatusUnSubRsp_ExtEntry_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_XmsgChannelStatusUnSubRsp_ExtEntry_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_XmsgChannelStatusPubUsrStatusNotice_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_XmsgChannelStatusPubUsrStatusNotice_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_XmsgChannelStatusPubGroupStatusNotice_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_XmsgChannelStatusPubGroupStatusNotice_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_XmsgChannelStatusUsrStatus_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_XmsgChannelStatusUsrStatus_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_XmsgChannelStatusUsrStatus_XmsgChannelStatusUsrClientStatus_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_XmsgChannelStatusUsrStatus_XmsgChannelStatusUsrClientStatus_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_XmsgChannelStatusGroupStatus_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_XmsgChannelStatusGroupStatus_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_XmsgClientTokenInfo_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -94766,269 +102908,301 @@ public final class PbXmsg {
       "\002 \001(\t\022\013\n\003msg\030\003 \001(\t\022\013\n\003dat\030\004 \001(\014\"o\n\024XmsgI" +
       "mHlrGroupMsgRsp\022+\n\003ext\030\001 \003(\0132\036.XmsgImHlr" +
       "GroupMsgRsp.ExtEntry\032*\n\010ExtEntry\022\013\n\003key\030" +
-      "\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"h\n\023XmsgClientTo" +
-      "kenInfo\022\r\n\005token\030\001 \001(\t\022\013\n\003alg\030\002 \001(\t\022\014\n\004s" +
-      "lat\030\003 \001(\t\022\014\n\004plat\030\004 \001(\t\022\013\n\003did\030\005 \001(\t\022\014\n\004" +
-      "sign\030\006 \001(\t\"M\n\027XmsgImGroupMemberAddReq\022\013\n" +
-      "\003cgt\030\001 \001(\t\022%\n\006member\030\002 \003(\0132\025.XmsgImGroup" +
-      "AddMember\"u\n\027XmsgImGroupMemberAddRsp\022.\n\003" +
-      "ext\030\001 \003(\0132!.XmsgImGroupMemberAddRsp.ExtE" +
-      "ntry\032*\n\010ExtEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002" +
-      " \001(\t:\0028\001\"7\n\031XmsgImGroupMemberQueryReq\022\014\n" +
-      "\004gcgt\030\001 \001(\t\022\014\n\004mcgt\030\002 \003(\t\"C\n\031XmsgImGroup" +
-      "MemberQueryRsp\022&\n\006member\030\001 \003(\0132\026.XmsgImG" +
-      "roupInfoMember\"\260\001\n\032XmsgImGroupMemberUpda" +
-      "teReq\022\014\n\004gcgt\030\001 \001(\t\022\014\n\004mcgt\030\002 \001(\t\0227\n\006ups" +
-      "ert\030\003 \003(\0132\'.XmsgImGroupMemberUpdateReq.U" +
-      "psertEntry\022\016\n\006remove\030\004 \003(\t\032-\n\013UpsertEntr" +
-      "y\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"{\n\032Xms" +
-      "gImGroupMemberUpdateRsp\0221\n\003ext\030\001 \003(\0132$.X" +
-      "msgImGroupMemberUpdateRsp.ExtEntry\032*\n\010Ex" +
-      "tEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"8" +
-      "\n\032XmsgImGroupMemberDeleteReq\022\014\n\004gcgt\030\001 \001" +
-      "(\t\022\014\n\004mcgt\030\002 \003(\t\"{\n\032XmsgImGroupMemberDel" +
-      "eteRsp\0221\n\003ext\030\001 \003(\0132$.XmsgImGroupMemberD" +
-      "eleteRsp.ExtEntry\032*\n\010ExtEntry\022\013\n\003key\030\001 \001" +
-      "(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\345\005\n\025XmsgImSdkEvent" +
-      "Adapter\022\r\n\005apiId\030\001 \001(\r\022$\n\007evnType\030\002 \001(\0162" +
-      "\023.XmsgImSdkEventType\022A\n\tnetNotice\030\003 \001(\0132" +
-      "..XmsgImSdkEventAdapter.XmsgImSdkEventNe" +
-      "tNotice\022;\n\006netReq\030\004 \001(\0132+.XmsgImSdkEvent" +
-      "Adapter.XmsgImSdkEventNetReq\022;\n\006netRsp\030\005" +
-      " \001(\0132+.XmsgImSdkEventAdapter.XmsgImSdkEv" +
-      "entNetRsp\0229\n\005dbRsp\030\006 \001(\0132*.XmsgImSdkEven" +
-      "tAdapter.XmsgImSdkEventDbRsp\022;\n\006cxxLog\030\007" +
-      " \001(\0132+.XmsgImSdkEventAdapter.XmsgImSdkEv" +
-      "entCxxLog\0323\n\027XmsgImSdkEventNetNotice\022\013\n\003" +
-      "msg\030\001 \001(\t\022\013\n\003dat\030\002 \001(\014\032=\n\024XmsgImSdkEvent" +
-      "NetReq\022\013\n\003tid\030\001 \001(\r\022\013\n\003msg\030\002 \001(\t\022\013\n\003dat\030" +
-      "\003 \001(\014\032X\n\024XmsgImSdkEventNetRsp\022\013\n\003tid\030\001 \001" +
-      "(\r\022\013\n\003ret\030\002 \001(\r\022\014\n\004desc\030\003 \001(\t\022\013\n\003msg\030\004 \001" +
-      "(\t\022\013\n\003dat\030\005 \001(\014\032b\n\023XmsgImSdkEventDbRsp\022\013" +
-      "\n\003tid\030\001 \001(\r\022\013\n\003ret\030\002 \001(\r\022\014\n\004desc\030\003 \001(\t\022#" +
-      "\n\003dat\030\005 \001(\0132\026.XmsgImClientDbCrudRsp\0320\n\024X" +
-      "msgImSdkEventCxxLog\022\013\n\003lev\030\001 \001(\r\022\013\n\003log\030" +
-      "\002 \001(\t\"D\n\030XmsgImSdkEventXmsgImAuth\022\013\n\003evn" +
-      "\030\001 \001(\t\022\r\n\005times\030\002 \001(\r\022\014\n\004addr\030\003 \001(\t\"@\n\024X" +
-      "msgImSdkEventXmsgAp\022\013\n\003evn\030\001 \001(\t\022\r\n\005time" +
-      "s\030\002 \001(\r\022\014\n\004addr\030\003 \001(\t\"_\n\030XmsgImHlrAttach" +
-      "SimpleReq\022\r\n\005token\030\001 \001(\t\022\014\n\004salt\030\002 \001(\t\022\014" +
-      "\n\004sign\030\003 \001(\t\022\013\n\003alg\030\004 \001(\t\022\013\n\003ext\030\005 \001(\t\"4" +
-      "\n\030XmsgImHlrAttachSimpleRsp\022\013\n\003cgt\030\001 \001(\t\022" +
-      "\013\n\003ext\030\002 \001(\t\"\'\n\030XmsgImHlrDetachSimpleReq" +
-      "\022\013\n\003ext\030\001 \001(\t\"\'\n\030XmsgImHlrDetachSimpleRs" +
-      "p\022\013\n\003ext\030\001 \001(\t\"S\n\035XmsgImHlrOtherClientAt" +
-      "tachReq\022$\n\003dev\030\001 \001(\0132\027.XmsgImClientDevic" +
-      "eInfo\022\014\n\004host\030\002 \001(\t\"/\n\035XmsgImHlrOtherCli" +
-      "entAttachRsp\022\016\n\006action\030\001 \001(\t\"V\n XmsgImHl" +
-      "rOtherClientAttachNotice\022$\n\003dev\030\001 \001(\0132\027." +
-      "XmsgImClientDeviceInfo\022\014\n\004host\030\002 \001(\t\"d\n\023" +
-      "XmsgImAuthSimpleReq\022\013\n\003usr\030\001 \001(\t\022\014\n\004salt" +
-      "\030\002 \001(\t\022\014\n\004sign\030\003 \001(\t\022$\n\003dev\030\004 \001(\0132\027.Xmsg" +
-      "ImClientDeviceInfo\"\254\001\n\023XmsgImAuthSimpleR" +
-      "sp\022\r\n\005token\030\001 \001(\t\022\016\n\006secret\030\002 \001(\t\022\017\n\007exp" +
-      "ired\030\003 \001(\004\022+\n\006apAddr\030\004 \003(\0132\033.XmsgImClien" +
-      "tServiceAddress\022+\n\006fsAddr\030\005 \003(\0132\033.XmsgIm" +
-      "ClientServiceAddress\022\013\n\003ext\030\006 \001(\t\"M\n\026Xms" +
-      "gImClientDeviceInfo\022\014\n\004plat\030\001 \001(\t\022\013\n\003did" +
-      "\030\002 \001(\t\022\013\n\003ver\030\003 \001(\t\022\013\n\003ext\030\004 \001(\t\"b\n\032Xmsg" +
-      "ImClientServiceAddress\022\n\n\002ip\030\001 \001(\t\022\014\n\004po" +
-      "rt\030\002 \001(\r\022\016\n\006weight\030\003 \001(\r\022\r\n\005proto\030\004 \003(\t\022" +
-      "\013\n\003ext\030\005 \001(\t\"f\n\026XmsgImAuthRegSimpleReq\022\013" +
-      "\n\003usr\030\001 \001(\t\022\014\n\004salt\030\002 \001(\t\022\013\n\003pwd\030\003 \001(\t\022$" +
-      "\n\003dev\030\004 \001(\0132\027.XmsgImClientDeviceInfo\"%\n\026" +
-      "XmsgImAuthRegSimpleRsp\022\013\n\003ext\030\001 \001(\t\",\n\035X" +
-      "msgImHlrOtherUsrInfoQueryReq\022\013\n\003cgt\030\001 \003(" +
-      "\t\"\245\001\n\035XmsgImHlrOtherUsrInfoQueryRsp\022<\n\007u" +
-      "srInfo\030\001 \003(\0132+.XmsgImHlrOtherUsrInfoQuer" +
-      "yRsp.UsrInfoEntry\032F\n\014UsrInfoEntry\022\013\n\003key" +
-      "\030\001 \001(\t\022%\n\005value\030\002 \001(\0132\026.XmsgImHlrOtherUs" +
-      "rInfo:\0028\001\"t\n\025XmsgImHlrOtherUsrInfo\022.\n\004in" +
-      "fo\030\001 \003(\0132 .XmsgImHlrOtherUsrInfo.InfoEnt" +
-      "ry\032+\n\tInfoEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 " +
-      "\001(\t:\0028\001\"\231\001\n\027XmsgFileUploadSimpleReq\022\020\n\010f" +
-      "ileName\030\001 \001(\t\022\020\n\010fileSize\030\002 \001(\004\022.\n\003ext\030\003" +
-      " \003(\0132!.XmsgFileUploadSimpleReq.ExtEntry\032" +
-      "*\n\010ExtEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:" +
-      "\0028\001\"\223\001\n\027XmsgFileUploadSimpleRsp\022\013\n\003fid\030\001" +
-      " \001(\t\022\017\n\007hashVal\030\002 \001(\t\022.\n\003ext\030\003 \003(\0132!.Xms" +
-      "gFileUploadSimpleRsp.ExtEntry\032*\n\010ExtEntr" +
-      "y\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\260\001\n\031Xm" +
-      "sgFileDownloadSimpleReq\022\013\n\003fid\030\001 \001(\t\022\013\n\003" +
-      "cgt\030\002 \001(\t\022\016\n\006offset\030\003 \001(\004\022\013\n\003len\030\004 \001(\004\0220" +
-      "\n\003ext\030\005 \003(\0132#.XmsgFileDownloadSimpleReq." +
-      "ExtEntry\032*\n\010ExtEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005val" +
-      "ue\030\002 \001(\t:\0028\001\"\273\001\n\031XmsgFileDownloadSimpleR" +
-      "sp\022\020\n\010fileName\030\001 \001(\t\022\020\n\010fileSize\030\002 \001(\004\022\017" +
-      "\n\007hashVal\030\003 \001(\t\022\013\n\003gts\030\004 \001(\004\0220\n\003ext\030\005 \003(" +
-      "\0132#.XmsgFileDownloadSimpleRsp.ExtEntry\032*" +
-      "\n\010ExtEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\002" +
-      "8\001\"W\n\033XmsgFileUsrFileInfoQueryReq\022\013\n\003sts" +
-      "\030\001 \001(\004\022\013\n\003ets\030\002 \001(\004\022\014\n\004page\030\003 \001(\r\022\020\n\010pag" +
-      "eSize\030\004 \001(\r\"E\n\033XmsgFileUsrFileInfoQueryR" +
-      "sp\022&\n\010fileInfo\030\001 \003(\0132\024.XmsgFileUsrFileIn" +
-      "fo\"d\n\023XmsgFileUsrFileInfo\022\013\n\003fid\030\001 \001(\t\022\020" +
-      "\n\010fileName\030\002 \001(\t\022\020\n\010fileSize\030\003 \001(\004\022\017\n\007ha" +
-      "shVal\030\004 \001(\t\022\013\n\003gts\030\005 \001(\004\"\211\001\n\017XmsgImHlrUs" +
-      "rDat\022\013\n\003uid\030\001 \001(\t\022\013\n\003ver\030\002 \001(\004\022 \n\003pri\030\003 " +
-      "\001(\0132\023.XmsgImHlrUsrDatPri\022 \n\003pub\030\004 \001(\0132\023." +
-      "XmsgImHlrUsrDatPub\022\013\n\003gts\030\005 \001(\004\022\013\n\003uts\030\006" +
-      " \001(\004\"1\n\022XmsgImHlrUsrDatPri\022\016\n\006enable\030\001 \001" +
-      "(\010\022\013\n\003ext\030\005 \001(\014\"n\n\022XmsgImHlrUsrDatPub\022+\n" +
-      "\004info\030\001 \003(\0132\035.XmsgImHlrUsrDatPub.InfoEnt" +
-      "ry\032+\n\tInfoEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 " +
-      "\001(\t:\0028\001\"\'\n\030XmsgImHlrUsrInfoQueryReq\022\013\n\003e" +
-      "xt\030\001 \001(\t\"z\n\030XmsgImHlrUsrInfoQueryRsp\0221\n\004" +
-      "info\030\001 \003(\0132#.XmsgImHlrUsrInfoQueryRsp.In" +
-      "foEntry\032+\n\tInfoEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005val" +
-      "ue\030\002 \001(\t:\0028\001\"|\n\031XmsgImHlrUsrInfoUpdateRe" +
-      "q\0222\n\004info\030\001 \003(\0132$.XmsgImHlrUsrInfoUpdate" +
-      "Req.InfoEntry\032+\n\tInfoEntry\022\013\n\003key\030\001 \001(\t\022" +
-      "\r\n\005value\030\002 \001(\t:\0028\001\"(\n\031XmsgImHlrUsrInfoUp" +
-      "dateRsp\022\013\n\003ext\030\001 \001(\t\"E\n\025XmsgImClientDbCr" +
-      "udReq\022\013\n\003sql\030\001 \001(\t\022\037\n\003row\030\002 \003(\0132\022.XmsgIm" +
-      "ClientDbRow\"\253\001\n\025XmsgImClientDbCrudRsp\022\016\n" +
-      "\006change\030\001 \001(\r\0222\n\006column\030\002 \003(\0132\".XmsgImCl" +
-      "ientDbCrudRsp.ColumnEntry\022\037\n\003row\030\004 \003(\0132\022" +
-      ".XmsgImClientDbRow\032-\n\013ColumnEntry\022\013\n\003key" +
-      "\030\001 \001(\t\022\r\n\005value\030\002 \001(\r:\0028\001\"6\n\021XmsgImClien" +
-      "tDbRow\022!\n\003col\030\001 \003(\0132\024.XmsgImClientDbFile" +
-      "d\"o\n\023XmsgImClientDbFiled\022&\n\004type\030\001 \001(\0162\030" +
-      ".XmsgImClientDbFiledType\022\016\n\006valInt\030\002 \001(\004" +
-      "\022\017\n\007valText\030\003 \001(\t\022\017\n\007valBlob\030\004 \001(\014\"`\n\016Xm" +
-      "sgImClientKv\022#\n\002kv\030\001 \003(\0132\027.XmsgImClientK" +
-      "v.KvEntry\032)\n\007KvEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005val" +
-      "ue\030\002 \001(\t:\0028\001\"M\n\023XmsgImOrgSyncSubReq\022\020\n\010v" +
-      "er4dept\030\001 \001(\004\022\023\n\013ver4deptUsr\030\002 \001(\004\022\017\n\007ve" +
-      "r4usr\030\003 \001(\004\"_\n\023XmsgImOrgSyncSubRsp\022\026\n\016ve" +
-      "r4deptLatest\030\001 \001(\004\022\031\n\021ver4deptUsrLatest\030" +
-      "\002 \001(\004\022\025\n\rver4usrLatest\030\003 \001(\004\"5\n\023XmsgImOr" +
-      "gSyncPubReq\022\036\n\005event\030\001 \003(\0132\017.XmsgImOrgEv" +
-      "ent\"\"\n\023XmsgImOrgSyncPubRsp\022\013\n\003ext\030\001 \001(\t\"" +
-      "8\n\026XmsgImOrgChangedNotice\022\036\n\005event\030\001 \001(\013" +
-      "2\017.XmsgImOrgEvent\")\n\032XmsgImOrgNodeChildQ" +
-      "ueryReq\022\013\n\003cgt\030\001 \001(\t\"@\n\032XmsgImOrgNodeChi" +
-      "ldQueryRsp\022\"\n\005child\030\001 \003(\0132\023.XmsgImOrgNod" +
-      "eChild\":\n\034XmsgImOrgNodeDeptUsrQueryReq\022\014" +
-      "\n\004dcgt\030\001 \001(\t\022\014\n\004ucgt\030\002 \001(\t\"\205\001\n\034XmsgImOrg" +
-      "NodeDeptUsrQueryRsp\022\014\n\004name\030\002 \001(\t\022\016\n\006ena" +
-      "ble\030\003 \001(\010\022 \n\004info\030\004 \001(\0132\022.XmsgImOrgNodeI" +
-      "nfo\022\013\n\003ver\030\005 \001(\004\022\013\n\003gts\030\006 \001(\004\022\013\n\003uts\030\007 \001" +
-      "(\004\"$\n\025XmsgImOrgNodeQueryReq\022\013\n\003cgt\030\001 \001(\t" +
-      "\"\255\001\n\025XmsgImOrgNodeQueryRsp\022\013\n\003pgt\030\001 \001(\t\022" +
-      "\014\n\004name\030\002 \001(\t\022\016\n\006enable\030\003 \001(\010\022 \n\004type\030\004 " +
-      "\001(\0162\022.XmsgImOrgNodeType\022 \n\004info\030\005 \001(\0132\022." +
-      "XmsgImOrgNodeInfo\022\013\n\003ver\030\006 \001(\004\022\013\n\003gts\030\007 " +
-      "\001(\004\022\013\n\003uts\030\010 \001(\004\"}\n\016XmsgImOrgEvent\022!\n\004de" +
-      "pt\030\001 \001(\0132\023.XmsgImOrgEventDept\022\'\n\007deptUsr" +
-      "\030\002 \001(\0132\026.XmsgImOrgEventDeptUsr\022\037\n\003usr\030\003 " +
-      "\001(\0132\022.XmsgImOrgEventUsr\"\226\001\n\022XmsgImOrgEve" +
-      "ntDept\022\013\n\003cgt\030\001 \001(\t\022\014\n\004pcgt\030\002 \001(\t\022\014\n\004nam" +
-      "e\030\003 \001(\t\022\016\n\006enable\030\004 \001(\010\022 \n\004info\030\005 \001(\0132\022." +
-      "XmsgImOrgNodeInfo\022\013\n\003ver\030\006 \001(\004\022\013\n\003gts\030\007 " +
-      "\001(\004\022\013\n\003uts\030\010 \001(\004\"\232\001\n\025XmsgImOrgEventDeptU" +
-      "sr\022\014\n\004dcgt\030\001 \001(\t\022\014\n\004ucgt\030\002 \001(\t\022\014\n\004name\030\003" +
-      " \001(\t\022\016\n\006enable\030\004 \001(\010\022 \n\004info\030\005 \001(\0132\022.Xms" +
-      "gImOrgNodeInfo\022\013\n\003ver\030\006 \001(\004\022\013\n\003gts\030\007 \001(\004" +
-      "\022\013\n\003uts\030\010 \001(\004\"\207\001\n\021XmsgImOrgEventUsr\022\013\n\003c" +
-      "gt\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\022\016\n\006enable\030\003 \001(\010\022 " +
-      "\n\004info\030\004 \001(\0132\022.XmsgImOrgNodeInfo\022\013\n\003ver\030" +
-      "\005 \001(\004\022\013\n\003gts\030\006 \001(\004\022\013\n\003uts\030\007 \001(\004\"f\n\021XmsgI" +
-      "mOrgNodeInfo\022&\n\002kv\030\001 \003(\0132\032.XmsgImOrgNode" +
-      "Info.KvEntry\032)\n\007KvEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005" +
-      "value\030\002 \001(\t:\0028\001\"\252\001\n\022XmsgImOrgNodeChild\022\013" +
-      "\n\003cgt\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\022\016\n\006enable\030\003 \001(" +
-      "\010\022 \n\004type\030\004 \001(\0162\022.XmsgImOrgNodeType\022 \n\004i" +
-      "nfo\030\005 \001(\0132\022.XmsgImOrgNodeInfo\022\013\n\003ver\030\006 \001" +
-      "(\004\022\013\n\003gts\030\007 \001(\004\022\013\n\003uts\030\010 \001(\004\"}\n\033XmsgImGr" +
-      "oupUsrGroupQueryReq\0222\n\003ext\030\001 \003(\0132%.XmsgI" +
-      "mGroupUsrGroupQueryReq.ExtEntry\032*\n\010ExtEn" +
-      "try\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"F\n\033X" +
-      "msgImGroupUsrGroupQueryRsp\022\'\n\005group\030\001 \003(" +
-      "\0132\030.XmsgImGroupUsrGroupInfo\"\313\001\n\027XmsgImGr" +
-      "oupUsrGroupInfo\022\013\n\003cgt\030\001 \001(\t\022\014\n\004name\030\002 \001" +
-      "(\t\0220\n\004info\030\003 \003(\0132\".XmsgImGroupUsrGroupIn" +
-      "fo.InfoEntry\022\013\n\003ver\030\004 \001(\004\022\013\n\003gts\030\005 \001(\004\022\013" +
-      "\n\003uts\030\006 \001(\004\022\017\n\007usr2usr\030\007 \001(\010\032+\n\tInfoEntr" +
-      "y\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\231\001\n\024Xm" +
-      "sgImGroupCreateReq\022-\n\004info\030\001 \003(\0132\037.XmsgI" +
-      "mGroupCreateReq.InfoEntry\022%\n\006member\030\002 \003(" +
-      "\0132\025.XmsgImGroupAddMember\032+\n\tInfoEntry\022\013\n" +
-      "\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"0\n\024XmsgImG" +
-      "roupCreateRsp\022\013\n\003cgt\030\001 \001(\t\022\013\n\003gts\030\002 \001(\004\"" +
-      "\177\n\024XmsgImGroupAddMember\022\013\n\003cgt\030\001 \001(\t\022-\n\004" +
-      "info\030\002 \003(\0132\037.XmsgImGroupAddMember.InfoEn" +
-      "try\032+\n\tInfoEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002" +
-      " \001(\t:\0028\001\"|\n\022XmsgImGroupSyncReq\022\017\n\007ver4us" +
-      "r\030\001 \001(\004\022)\n\003ext\030\002 \003(\0132\034.XmsgImGroupSyncRe" +
+      "\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"(\n\031XmsgChannelS" +
+      "tatusQueryReq\022\013\n\003cgt\030\001 \003(\t\"\275\002\n\031XmsgChann" +
+      "elStatusQueryRsp\022<\n\tusrStatus\030\001 \003(\0132).Xm" +
+      "sgChannelStatusQueryRsp.UsrStatusEntry\022@" +
+      "\n\013groupStatus\030\002 \003(\0132+.XmsgChannelStatusQ" +
+      "ueryRsp.GroupStatusEntry\032M\n\016UsrStatusEnt" +
+      "ry\022\013\n\003key\030\001 \001(\t\022*\n\005value\030\002 \001(\0132\033.XmsgCha" +
+      "nnelStatusUsrStatus:\0028\001\032Q\n\020GroupStatusEn" +
+      "try\022\013\n\003key\030\001 \001(\t\022,\n\005value\030\002 \001(\0132\035.XmsgCh" +
+      "annelStatusGroupStatus:\0028\001\"&\n\027XmsgChanne" +
+      "lStatusSubReq\022\013\n\003cgt\030\001 \003(\t\"\267\002\n\027XmsgChann" +
+      "elStatusSubRsp\022:\n\tusrStatus\030\001 \003(\0132\'.Xmsg" +
+      "ChannelStatusSubRsp.UsrStatusEntry\022>\n\013gr" +
+      "oupStatus\030\002 \003(\0132).XmsgChannelStatusSubRs" +
+      "p.GroupStatusEntry\032M\n\016UsrStatusEntry\022\013\n\003" +
+      "key\030\001 \001(\t\022*\n\005value\030\002 \001(\0132\033.XmsgChannelSt" +
+      "atusUsrStatus:\0028\001\032Q\n\020GroupStatusEntry\022\013\n" +
+      "\003key\030\001 \001(\t\022,\n\005value\030\002 \001(\0132\035.XmsgChannelS" +
+      "tatusGroupStatus:\0028\001\"(\n\031XmsgChannelStatu" +
+      "sUnSubReq\022\013\n\003cgt\030\001 \003(\t\"y\n\031XmsgChannelSta" +
+      "tusUnSubRsp\0220\n\003ext\030\001 \003(\0132#.XmsgChannelSt" +
+      "atusUnSubRsp.ExtEntry\032*\n\010ExtEntry\022\013\n\003key" +
+      "\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"]\n#XmsgChannel" +
+      "StatusPubUsrStatusNotice\022\013\n\003cgt\030\001 \001(\t\022\014\n" +
+      "\004plat\030\002 \001(\t\022\013\n\003did\030\003 \001(\t\022\016\n\006status\030\004 \001(\t" +
+      "\"D\n%XmsgChannelStatusPubGroupStatusNotic" +
+      "e\022\013\n\003cgt\030\001 \001(\t\022\016\n\006status\030\002 \001(\t\"\271\001\n\032XmsgC" +
+      "hannelStatusUsrStatus\022L\n\006client\030\002 \003(\0132<." +
+      "XmsgChannelStatusUsrStatus.XmsgChannelSt" +
+      "atusUsrClientStatus\032M\n XmsgChannelStatus" +
+      "UsrClientStatus\022\014\n\004plat\030\001 \001(\t\022\013\n\003did\030\002 \001" +
+      "(\t\022\016\n\006status\030\003 \001(\t\".\n\034XmsgChannelStatusG" +
+      "roupStatus\022\016\n\006status\030\001 \001(\t\"h\n\023XmsgClient" +
+      "TokenInfo\022\r\n\005token\030\001 \001(\t\022\013\n\003alg\030\002 \001(\t\022\014\n" +
+      "\004slat\030\003 \001(\t\022\014\n\004plat\030\004 \001(\t\022\013\n\003did\030\005 \001(\t\022\014" +
+      "\n\004sign\030\006 \001(\t\"M\n\027XmsgImGroupMemberAddReq\022" +
+      "\013\n\003cgt\030\001 \001(\t\022%\n\006member\030\002 \003(\0132\025.XmsgImGro" +
+      "upAddMember\"u\n\027XmsgImGroupMemberAddRsp\022." +
+      "\n\003ext\030\001 \003(\0132!.XmsgImGroupMemberAddRsp.Ex" +
+      "tEntry\032*\n\010ExtEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value" +
+      "\030\002 \001(\t:\0028\001\"7\n\031XmsgImGroupMemberQueryReq\022" +
+      "\014\n\004gcgt\030\001 \001(\t\022\014\n\004mcgt\030\002 \003(\t\"C\n\031XmsgImGro" +
+      "upMemberQueryRsp\022&\n\006member\030\001 \003(\0132\026.XmsgI" +
+      "mGroupInfoMember\"\260\001\n\032XmsgImGroupMemberUp" +
+      "dateReq\022\014\n\004gcgt\030\001 \001(\t\022\014\n\004mcgt\030\002 \001(\t\0227\n\006u" +
+      "psert\030\003 \003(\0132\'.XmsgImGroupMemberUpdateReq" +
+      ".UpsertEntry\022\016\n\006remove\030\004 \003(\t\032-\n\013UpsertEn" +
+      "try\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"{\n\032X" +
+      "msgImGroupMemberUpdateRsp\0221\n\003ext\030\001 \003(\0132$" +
+      ".XmsgImGroupMemberUpdateRsp.ExtEntry\032*\n\010" +
+      "ExtEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001" +
+      "\"8\n\032XmsgImGroupMemberDeleteReq\022\014\n\004gcgt\030\001" +
+      " \001(\t\022\014\n\004mcgt\030\002 \003(\t\"{\n\032XmsgImGroupMemberD" +
+      "eleteRsp\0221\n\003ext\030\001 \003(\0132$.XmsgImGroupMembe" +
+      "rDeleteRsp.ExtEntry\032*\n\010ExtEntry\022\013\n\003key\030\001" +
+      " \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\345\005\n\025XmsgImSdkEve" +
+      "ntAdapter\022\r\n\005apiId\030\001 \001(\r\022$\n\007evnType\030\002 \001(" +
+      "\0162\023.XmsgImSdkEventType\022A\n\tnetNotice\030\003 \001(" +
+      "\0132..XmsgImSdkEventAdapter.XmsgImSdkEvent" +
+      "NetNotice\022;\n\006netReq\030\004 \001(\0132+.XmsgImSdkEve" +
+      "ntAdapter.XmsgImSdkEventNetReq\022;\n\006netRsp" +
+      "\030\005 \001(\0132+.XmsgImSdkEventAdapter.XmsgImSdk" +
+      "EventNetRsp\0229\n\005dbRsp\030\006 \001(\0132*.XmsgImSdkEv" +
+      "entAdapter.XmsgImSdkEventDbRsp\022;\n\006cxxLog" +
+      "\030\007 \001(\0132+.XmsgImSdkEventAdapter.XmsgImSdk" +
+      "EventCxxLog\0323\n\027XmsgImSdkEventNetNotice\022\013" +
+      "\n\003msg\030\001 \001(\t\022\013\n\003dat\030\002 \001(\014\032=\n\024XmsgImSdkEve" +
+      "ntNetReq\022\013\n\003tid\030\001 \001(\r\022\013\n\003msg\030\002 \001(\t\022\013\n\003da" +
+      "t\030\003 \001(\014\032X\n\024XmsgImSdkEventNetRsp\022\013\n\003tid\030\001" +
+      " \001(\r\022\013\n\003ret\030\002 \001(\r\022\014\n\004desc\030\003 \001(\t\022\013\n\003msg\030\004" +
+      " \001(\t\022\013\n\003dat\030\005 \001(\014\032b\n\023XmsgImSdkEventDbRsp" +
+      "\022\013\n\003tid\030\001 \001(\r\022\013\n\003ret\030\002 \001(\r\022\014\n\004desc\030\003 \001(\t" +
+      "\022#\n\003dat\030\005 \001(\0132\026.XmsgImClientDbCrudRsp\0320\n" +
+      "\024XmsgImSdkEventCxxLog\022\013\n\003lev\030\001 \001(\r\022\013\n\003lo" +
+      "g\030\002 \001(\t\"D\n\030XmsgImSdkEventXmsgImAuth\022\013\n\003e" +
+      "vn\030\001 \001(\t\022\r\n\005times\030\002 \001(\r\022\014\n\004addr\030\003 \001(\t\"@\n" +
+      "\024XmsgImSdkEventXmsgAp\022\013\n\003evn\030\001 \001(\t\022\r\n\005ti" +
+      "mes\030\002 \001(\r\022\014\n\004addr\030\003 \001(\t\"_\n\030XmsgImHlrAtta" +
+      "chSimpleReq\022\r\n\005token\030\001 \001(\t\022\014\n\004salt\030\002 \001(\t" +
+      "\022\014\n\004sign\030\003 \001(\t\022\013\n\003alg\030\004 \001(\t\022\013\n\003ext\030\005 \001(\t" +
+      "\"4\n\030XmsgImHlrAttachSimpleRsp\022\013\n\003cgt\030\001 \001(" +
+      "\t\022\013\n\003ext\030\002 \001(\t\"\'\n\030XmsgImHlrDetachSimpleR" +
+      "eq\022\013\n\003ext\030\001 \001(\t\"\'\n\030XmsgImHlrDetachSimple" +
+      "Rsp\022\013\n\003ext\030\001 \001(\t\"S\n\035XmsgImHlrOtherClient" +
+      "AttachReq\022$\n\003dev\030\001 \001(\0132\027.XmsgImClientDev" +
+      "iceInfo\022\014\n\004host\030\002 \001(\t\"/\n\035XmsgImHlrOtherC" +
+      "lientAttachRsp\022\016\n\006action\030\001 \001(\t\"V\n XmsgIm" +
+      "HlrOtherClientAttachNotice\022$\n\003dev\030\001 \001(\0132" +
+      "\027.XmsgImClientDeviceInfo\022\014\n\004host\030\002 \001(\t\"d" +
+      "\n\023XmsgImAuthSimpleReq\022\013\n\003usr\030\001 \001(\t\022\014\n\004sa" +
+      "lt\030\002 \001(\t\022\014\n\004sign\030\003 \001(\t\022$\n\003dev\030\004 \001(\0132\027.Xm" +
+      "sgImClientDeviceInfo\"\254\001\n\023XmsgImAuthSimpl" +
+      "eRsp\022\r\n\005token\030\001 \001(\t\022\016\n\006secret\030\002 \001(\t\022\017\n\007e" +
+      "xpired\030\003 \001(\004\022+\n\006apAddr\030\004 \003(\0132\033.XmsgImCli" +
+      "entServiceAddress\022+\n\006fsAddr\030\005 \003(\0132\033.Xmsg" +
+      "ImClientServiceAddress\022\013\n\003ext\030\006 \001(\t\"M\n\026X" +
+      "msgImClientDeviceInfo\022\014\n\004plat\030\001 \001(\t\022\013\n\003d" +
+      "id\030\002 \001(\t\022\013\n\003ver\030\003 \001(\t\022\013\n\003ext\030\004 \001(\t\"b\n\032Xm" +
+      "sgImClientServiceAddress\022\n\n\002ip\030\001 \001(\t\022\014\n\004" +
+      "port\030\002 \001(\r\022\016\n\006weight\030\003 \001(\r\022\r\n\005proto\030\004 \003(" +
+      "\t\022\013\n\003ext\030\005 \001(\t\"f\n\026XmsgImAuthRegSimpleReq" +
+      "\022\013\n\003usr\030\001 \001(\t\022\014\n\004salt\030\002 \001(\t\022\013\n\003pwd\030\003 \001(\t" +
+      "\022$\n\003dev\030\004 \001(\0132\027.XmsgImClientDeviceInfo\"%" +
+      "\n\026XmsgImAuthRegSimpleRsp\022\013\n\003ext\030\001 \001(\t\",\n" +
+      "\035XmsgImHlrOtherUsrInfoQueryReq\022\013\n\003cgt\030\001 " +
+      "\003(\t\"\245\001\n\035XmsgImHlrOtherUsrInfoQueryRsp\022<\n" +
+      "\007usrInfo\030\001 \003(\0132+.XmsgImHlrOtherUsrInfoQu" +
+      "eryRsp.UsrInfoEntry\032F\n\014UsrInfoEntry\022\013\n\003k" +
+      "ey\030\001 \001(\t\022%\n\005value\030\002 \001(\0132\026.XmsgImHlrOther" +
+      "UsrInfo:\0028\001\"t\n\025XmsgImHlrOtherUsrInfo\022.\n\004" +
+      "info\030\001 \003(\0132 .XmsgImHlrOtherUsrInfo.InfoE" +
+      "ntry\032+\n\tInfoEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030" +
+      "\002 \001(\t:\0028\001\"\231\001\n\027XmsgFileUploadSimpleReq\022\020\n" +
+      "\010fileName\030\001 \001(\t\022\020\n\010fileSize\030\002 \001(\004\022.\n\003ext" +
+      "\030\003 \003(\0132!.XmsgFileUploadSimpleReq.ExtEntr" +
+      "y\032*\n\010ExtEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(" +
+      "\t:\0028\001\"\223\001\n\027XmsgFileUploadSimpleRsp\022\013\n\003fid" +
+      "\030\001 \001(\t\022\017\n\007hashVal\030\002 \001(\t\022.\n\003ext\030\003 \003(\0132!.X" +
+      "msgFileUploadSimpleRsp.ExtEntry\032*\n\010ExtEn" +
+      "try\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\260\001\n\031" +
+      "XmsgFileDownloadSimpleReq\022\013\n\003fid\030\001 \001(\t\022\013" +
+      "\n\003cgt\030\002 \001(\t\022\016\n\006offset\030\003 \001(\004\022\013\n\003len\030\004 \001(\004" +
+      "\0220\n\003ext\030\005 \003(\0132#.XmsgFileDownloadSimpleRe" +
       "q.ExtEntry\032*\n\010ExtEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005v" +
-      "alue\030\002 \001(\t:\0028\001\":\n\022XmsgImGroupSyncRsp\022$\n\005" +
-      "event\030\001 \003(\0132\025.XmsgImGroupSyncEvent\"\323\001\n\024X" +
-      "msgImGroupSyncEvent\022\013\n\003cgt\030\001 \001(\t\022\014\n\004oper" +
-      "\030\002 \001(\t\022-\n\004info\030\003 \003(\0132\037.XmsgImGroupSyncEv" +
-      "ent.InfoEntry\022\017\n\007ver4usr\030\004 \001(\004\022\017\n\007gts4us" +
-      "r\030\005 \001(\004\022\017\n\007uts4usr\030\006 \001(\004\022\021\n\tgts4group\030\007 " +
-      "\001(\004\032+\n\tInfoEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002" +
-      " \001(\t:\0028\001\"=\n\025XmsgImGroupSyncNotice\022$\n\005eve" +
-      "nt\030\001 \001(\0132\025.XmsgImGroupSyncEvent\"\217\001\n\027Xmsg" +
-      "ImGroupSyncGroupReq\022\013\n\003cgt\030\001 \001(\t\022\013\n\003ver\030" +
-      "\002 \001(\004\022.\n\003ext\030\003 \003(\0132!.XmsgImGroupSyncGrou" +
-      "pReq.ExtEntry\032*\n\010ExtEntry\022\013\n\003key\030\001 \001(\t\022\r" +
-      "\n\005value\030\002 \001(\t:\0028\001\"y\n\027XmsgImGroupSyncGrou" +
-      "pRsp\022,\n\004info\030\001 \001(\0132\036.XmsgImGroupSyncGrou" +
-      "pEventInfo\0220\n\006member\030\002 \003(\0132 .XmsgImGroup" +
-      "SyncGroupEventMember\"\253\001\n\035XmsgImGroupSync" +
-      "GroupEventInfo\0226\n\004info\030\001 \003(\0132(.XmsgImGro" +
-      "upSyncGroupEventInfo.InfoEntry\022\013\n\003ver\030\002 " +
-      "\001(\004\022\013\n\003gts\030\003 \001(\004\022\013\n\003uts\030\004 \001(\004\032+\n\tInfoEnt" +
-      "ry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\312\001\n\037X" +
-      "msgImGroupSyncGroupEventMember\022\013\n\003cgt\030\001 " +
-      "\001(\t\022\014\n\004oper\030\002 \001(\t\0228\n\004info\030\003 \003(\0132*.XmsgIm" +
-      "GroupSyncGroupEventMember.InfoEntry\022\013\n\003v" +
-      "er\030\004 \001(\004\022\013\n\003gts\030\005 \001(\004\022\013\n\003uts\030\006 \001(\004\032+\n\tIn" +
-      "foEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"" +
-      "x\n\026XmsgImGroupEventNotice\022,\n\004info\030\001 \001(\0132" +
-      "\036.XmsgImGroupSyncGroupEventInfo\0220\n\006membe" +
-      "r\030\002 \001(\0132 .XmsgImGroupSyncGroupEventMembe" +
-      "r\"6\n\027XmsgImGroupInfoQueryReq\022\013\n\003cgt\030\001 \001(" +
-      "\t\022\016\n\006member\030\002 \001(\010\"i\n\027XmsgImGroupInfoQuer" +
-      "yRsp\022&\n\004info\030\001 \001(\0132\030.XmsgImGroupInfoSelf" +
-      "Info\022&\n\006member\030\002 \003(\0132\026.XmsgImGroupInfoMe" +
-      "mber\"\274\001\n\027XmsgImGroupInfoSelfInfo\022\013\n\003cgt\030" +
-      "\001 \001(\t\022\016\n\006enable\030\002 \001(\010\0220\n\004info\030\003 \003(\0132\".Xm" +
-      "sgImGroupInfoSelfInfo.InfoEntry\022\013\n\003ver\030\004" +
-      " \001(\004\022\013\n\003gts\030\005 \001(\004\022\013\n\003uts\030\006 \001(\004\032+\n\tInfoEn" +
-      "try\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\270\001\n\025" +
-      "XmsgImGroupInfoMember\022\013\n\003cgt\030\001 \001(\t\022\016\n\006en" +
-      "able\030\002 \001(\010\022.\n\004info\030\003 \003(\0132 .XmsgImGroupIn" +
-      "foMember.InfoEntry\022\013\n\003ver\030\004 \001(\004\022\013\n\003gts\030\005" +
-      " \001(\004\022\013\n\003uts\030\006 \001(\004\032+\n\tInfoEntry\022\013\n\003key\030\001 " +
-      "\001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\235\001\n\030XmsgImGroupIn" +
-      "foUpdateReq\022\013\n\003cgt\030\001 \001(\t\0225\n\006upsert\030\002 \003(\013" +
-      "2%.XmsgImGroupInfoUpdateReq.UpsertEntry\022" +
-      "\016\n\006remove\030\003 \003(\t\032-\n\013UpsertEntry\022\013\n\003key\030\001 " +
-      "\001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"w\n\030XmsgImGroupInf" +
-      "oUpdateRsp\022/\n\003ext\030\001 \003(\0132\".XmsgImGroupInf" +
-      "oUpdateRsp.ExtEntry\032*\n\010ExtEntry\022\013\n\003key\030\001" +
-      " \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"5\n\030XmsgImGroupMs" +
-      "gRecvCfgReq\022\013\n\003cgt\030\001 \001(\t\022\014\n\004type\030\002 \001(\t\"w" +
-      "\n\030XmsgImGroupMsgRecvCfgRsp\022/\n\003ext\030\001 \003(\0132" +
-      "\".XmsgImGroupMsgRecvCfgRsp.ExtEntry\032*\n\010E" +
-      "xtEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001*" +
-      "\317\001\n\022XmsgImSdkEventType\022&\n\"X_MSG_IM_SDK_E" +
-      "VENT_TYPE_NET_NOTICE\020\000\022#\n\037X_MSG_IM_SDK_E" +
-      "VENT_TYPE_NET_REQ\020\001\022#\n\037X_MSG_IM_SDK_EVEN" +
-      "T_TYPE_NET_RSP\020\002\022\"\n\036X_MSG_IM_SDK_EVENT_T" +
-      "YPE_DB_RSP\020\003\022#\n\037X_MSG_IM_SDK_EVENT_TYPE_" +
-      "CXX_LOG\020\004*\273\001\n\027XmsgImClientDbFiledType\022(\n" +
-      "$X_MSG_IM_CLIENT_DB_FILED_TYPE_BIGINT\020\000\022" +
-      "&\n\"X_MSG_IM_CLIENT_DB_FILED_TYPE_TEXT\020\001\022" +
-      "&\n\"X_MSG_IM_CLIENT_DB_FILED_TYPE_BLOB\020\002\022" +
-      "&\n\"X_MSG_IM_CLIENT_DB_FILED_TYPE_NULL\020\003*" +
-      "\177\n\021XmsgImOrgNodeType\022&\n\"X_MSG_IM_ORG_NOD" +
-      "E_TYPE__RESERVED__\020\000\022!\n\035X_MSG_IM_ORG_NOD" +
-      "E_TYPE_BRANCH\020\001\022\037\n\033X_MSG_IM_ORG_NODE_TYP" +
-      "E_LEAF\020\002B\022\n\010x.msg.pbB\006PbXmsgb\006proto3"
+      "alue\030\002 \001(\t:\0028\001\"\273\001\n\031XmsgFileDownloadSimpl" +
+      "eRsp\022\020\n\010fileName\030\001 \001(\t\022\020\n\010fileSize\030\002 \001(\004" +
+      "\022\017\n\007hashVal\030\003 \001(\t\022\013\n\003gts\030\004 \001(\004\0220\n\003ext\030\005 " +
+      "\003(\0132#.XmsgFileDownloadSimpleRsp.ExtEntry" +
+      "\032*\n\010ExtEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t" +
+      ":\0028\001\"W\n\033XmsgFileUsrFileInfoQueryReq\022\013\n\003s" +
+      "ts\030\001 \001(\004\022\013\n\003ets\030\002 \001(\004\022\014\n\004page\030\003 \001(\r\022\020\n\010p" +
+      "ageSize\030\004 \001(\r\"E\n\033XmsgFileUsrFileInfoQuer" +
+      "yRsp\022&\n\010fileInfo\030\001 \003(\0132\024.XmsgFileUsrFile" +
+      "Info\"d\n\023XmsgFileUsrFileInfo\022\013\n\003fid\030\001 \001(\t" +
+      "\022\020\n\010fileName\030\002 \001(\t\022\020\n\010fileSize\030\003 \001(\004\022\017\n\007" +
+      "hashVal\030\004 \001(\t\022\013\n\003gts\030\005 \001(\004\"\211\001\n\017XmsgImHlr" +
+      "UsrDat\022\013\n\003uid\030\001 \001(\t\022\013\n\003ver\030\002 \001(\004\022 \n\003pri\030" +
+      "\003 \001(\0132\023.XmsgImHlrUsrDatPri\022 \n\003pub\030\004 \001(\0132" +
+      "\023.XmsgImHlrUsrDatPub\022\013\n\003gts\030\005 \001(\004\022\013\n\003uts" +
+      "\030\006 \001(\004\"1\n\022XmsgImHlrUsrDatPri\022\016\n\006enable\030\001" +
+      " \001(\010\022\013\n\003ext\030\005 \001(\014\"n\n\022XmsgImHlrUsrDatPub\022" +
+      "+\n\004info\030\001 \003(\0132\035.XmsgImHlrUsrDatPub.InfoE" +
+      "ntry\032+\n\tInfoEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030" +
+      "\002 \001(\t:\0028\001\"\'\n\030XmsgImHlrUsrInfoQueryReq\022\013\n" +
+      "\003ext\030\001 \001(\t\"z\n\030XmsgImHlrUsrInfoQueryRsp\0221" +
+      "\n\004info\030\001 \003(\0132#.XmsgImHlrUsrInfoQueryRsp." +
+      "InfoEntry\032+\n\tInfoEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005v" +
+      "alue\030\002 \001(\t:\0028\001\"|\n\031XmsgImHlrUsrInfoUpdate" +
+      "Req\0222\n\004info\030\001 \003(\0132$.XmsgImHlrUsrInfoUpda" +
+      "teReq.InfoEntry\032+\n\tInfoEntry\022\013\n\003key\030\001 \001(" +
+      "\t\022\r\n\005value\030\002 \001(\t:\0028\001\"(\n\031XmsgImHlrUsrInfo" +
+      "UpdateRsp\022\013\n\003ext\030\001 \001(\t\"E\n\025XmsgImClientDb" +
+      "CrudReq\022\013\n\003sql\030\001 \001(\t\022\037\n\003row\030\002 \003(\0132\022.Xmsg" +
+      "ImClientDbRow\"\253\001\n\025XmsgImClientDbCrudRsp\022" +
+      "\016\n\006change\030\001 \001(\r\0222\n\006column\030\002 \003(\0132\".XmsgIm" +
+      "ClientDbCrudRsp.ColumnEntry\022\037\n\003row\030\004 \003(\013" +
+      "2\022.XmsgImClientDbRow\032-\n\013ColumnEntry\022\013\n\003k" +
+      "ey\030\001 \001(\t\022\r\n\005value\030\002 \001(\r:\0028\001\"6\n\021XmsgImCli" +
+      "entDbRow\022!\n\003col\030\001 \003(\0132\024.XmsgImClientDbFi" +
+      "led\"o\n\023XmsgImClientDbFiled\022&\n\004type\030\001 \001(\016" +
+      "2\030.XmsgImClientDbFiledType\022\016\n\006valInt\030\002 \001" +
+      "(\004\022\017\n\007valText\030\003 \001(\t\022\017\n\007valBlob\030\004 \001(\014\"`\n\016" +
+      "XmsgImClientKv\022#\n\002kv\030\001 \003(\0132\027.XmsgImClien" +
+      "tKv.KvEntry\032)\n\007KvEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005v" +
+      "alue\030\002 \001(\t:\0028\001\"M\n\023XmsgImOrgSyncSubReq\022\020\n" +
+      "\010ver4dept\030\001 \001(\004\022\023\n\013ver4deptUsr\030\002 \001(\004\022\017\n\007" +
+      "ver4usr\030\003 \001(\004\"_\n\023XmsgImOrgSyncSubRsp\022\026\n\016" +
+      "ver4deptLatest\030\001 \001(\004\022\031\n\021ver4deptUsrLates" +
+      "t\030\002 \001(\004\022\025\n\rver4usrLatest\030\003 \001(\004\"5\n\023XmsgIm" +
+      "OrgSyncPubReq\022\036\n\005event\030\001 \003(\0132\017.XmsgImOrg" +
+      "Event\"\"\n\023XmsgImOrgSyncPubRsp\022\013\n\003ext\030\001 \001(" +
+      "\t\"8\n\026XmsgImOrgChangedNotice\022\036\n\005event\030\001 \001" +
+      "(\0132\017.XmsgImOrgEvent\")\n\032XmsgImOrgNodeChil" +
+      "dQueryReq\022\013\n\003cgt\030\001 \001(\t\"@\n\032XmsgImOrgNodeC" +
+      "hildQueryRsp\022\"\n\005child\030\001 \003(\0132\023.XmsgImOrgN" +
+      "odeChild\":\n\034XmsgImOrgNodeDeptUsrQueryReq" +
+      "\022\014\n\004dcgt\030\001 \001(\t\022\014\n\004ucgt\030\002 \001(\t\"\205\001\n\034XmsgImO" +
+      "rgNodeDeptUsrQueryRsp\022\014\n\004name\030\002 \001(\t\022\016\n\006e" +
+      "nable\030\003 \001(\010\022 \n\004info\030\004 \001(\0132\022.XmsgImOrgNod" +
+      "eInfo\022\013\n\003ver\030\005 \001(\004\022\013\n\003gts\030\006 \001(\004\022\013\n\003uts\030\007" +
+      " \001(\004\"$\n\025XmsgImOrgNodeQueryReq\022\013\n\003cgt\030\001 \001" +
+      "(\t\"\255\001\n\025XmsgImOrgNodeQueryRsp\022\013\n\003pgt\030\001 \001(" +
+      "\t\022\014\n\004name\030\002 \001(\t\022\016\n\006enable\030\003 \001(\010\022 \n\004type\030" +
+      "\004 \001(\0162\022.XmsgImOrgNodeType\022 \n\004info\030\005 \001(\0132" +
+      "\022.XmsgImOrgNodeInfo\022\013\n\003ver\030\006 \001(\004\022\013\n\003gts\030" +
+      "\007 \001(\004\022\013\n\003uts\030\010 \001(\004\"}\n\016XmsgImOrgEvent\022!\n\004" +
+      "dept\030\001 \001(\0132\023.XmsgImOrgEventDept\022\'\n\007deptU" +
+      "sr\030\002 \001(\0132\026.XmsgImOrgEventDeptUsr\022\037\n\003usr\030" +
+      "\003 \001(\0132\022.XmsgImOrgEventUsr\"\226\001\n\022XmsgImOrgE" +
+      "ventDept\022\013\n\003cgt\030\001 \001(\t\022\014\n\004pcgt\030\002 \001(\t\022\014\n\004n" +
+      "ame\030\003 \001(\t\022\016\n\006enable\030\004 \001(\010\022 \n\004info\030\005 \001(\0132" +
+      "\022.XmsgImOrgNodeInfo\022\013\n\003ver\030\006 \001(\004\022\013\n\003gts\030" +
+      "\007 \001(\004\022\013\n\003uts\030\010 \001(\004\"\232\001\n\025XmsgImOrgEventDep" +
+      "tUsr\022\014\n\004dcgt\030\001 \001(\t\022\014\n\004ucgt\030\002 \001(\t\022\014\n\004name" +
+      "\030\003 \001(\t\022\016\n\006enable\030\004 \001(\010\022 \n\004info\030\005 \001(\0132\022.X" +
+      "msgImOrgNodeInfo\022\013\n\003ver\030\006 \001(\004\022\013\n\003gts\030\007 \001" +
+      "(\004\022\013\n\003uts\030\010 \001(\004\"\207\001\n\021XmsgImOrgEventUsr\022\013\n" +
+      "\003cgt\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\022\016\n\006enable\030\003 \001(\010" +
+      "\022 \n\004info\030\004 \001(\0132\022.XmsgImOrgNodeInfo\022\013\n\003ve" +
+      "r\030\005 \001(\004\022\013\n\003gts\030\006 \001(\004\022\013\n\003uts\030\007 \001(\004\"f\n\021Xms" +
+      "gImOrgNodeInfo\022&\n\002kv\030\001 \003(\0132\032.XmsgImOrgNo" +
+      "deInfo.KvEntry\032)\n\007KvEntry\022\013\n\003key\030\001 \001(\t\022\r" +
+      "\n\005value\030\002 \001(\t:\0028\001\"\252\001\n\022XmsgImOrgNodeChild" +
+      "\022\013\n\003cgt\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\022\016\n\006enable\030\003 " +
+      "\001(\010\022 \n\004type\030\004 \001(\0162\022.XmsgImOrgNodeType\022 \n" +
+      "\004info\030\005 \001(\0132\022.XmsgImOrgNodeInfo\022\013\n\003ver\030\006" +
+      " \001(\004\022\013\n\003gts\030\007 \001(\004\022\013\n\003uts\030\010 \001(\004\"}\n\033XmsgIm" +
+      "GroupUsrGroupQueryReq\0222\n\003ext\030\001 \003(\0132%.Xms" +
+      "gImGroupUsrGroupQueryReq.ExtEntry\032*\n\010Ext" +
+      "Entry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"F\n" +
+      "\033XmsgImGroupUsrGroupQueryRsp\022\'\n\005group\030\001 " +
+      "\003(\0132\030.XmsgImGroupUsrGroupInfo\"\313\001\n\027XmsgIm" +
+      "GroupUsrGroupInfo\022\013\n\003cgt\030\001 \001(\t\022\014\n\004name\030\002" +
+      " \001(\t\0220\n\004info\030\003 \003(\0132\".XmsgImGroupUsrGroup" +
+      "Info.InfoEntry\022\013\n\003ver\030\004 \001(\004\022\013\n\003gts\030\005 \001(\004" +
+      "\022\013\n\003uts\030\006 \001(\004\022\017\n\007usr2usr\030\007 \001(\010\032+\n\tInfoEn" +
+      "try\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\231\001\n\024" +
+      "XmsgImGroupCreateReq\022-\n\004info\030\001 \003(\0132\037.Xms" +
+      "gImGroupCreateReq.InfoEntry\022%\n\006member\030\002 " +
+      "\003(\0132\025.XmsgImGroupAddMember\032+\n\tInfoEntry\022" +
+      "\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"0\n\024XmsgI" +
+      "mGroupCreateRsp\022\013\n\003cgt\030\001 \001(\t\022\013\n\003gts\030\002 \001(" +
+      "\004\"\177\n\024XmsgImGroupAddMember\022\013\n\003cgt\030\001 \001(\t\022-" +
+      "\n\004info\030\002 \003(\0132\037.XmsgImGroupAddMember.Info" +
+      "Entry\032+\n\tInfoEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value" +
+      "\030\002 \001(\t:\0028\001\"|\n\022XmsgImGroupSyncReq\022\017\n\007ver4" +
+      "usr\030\001 \001(\004\022)\n\003ext\030\002 \003(\0132\034.XmsgImGroupSync" +
+      "Req.ExtEntry\032*\n\010ExtEntry\022\013\n\003key\030\001 \001(\t\022\r\n" +
+      "\005value\030\002 \001(\t:\0028\001\":\n\022XmsgImGroupSyncRsp\022$" +
+      "\n\005event\030\001 \003(\0132\025.XmsgImGroupSyncEvent\"\323\001\n" +
+      "\024XmsgImGroupSyncEvent\022\013\n\003cgt\030\001 \001(\t\022\014\n\004op" +
+      "er\030\002 \001(\t\022-\n\004info\030\003 \003(\0132\037.XmsgImGroupSync" +
+      "Event.InfoEntry\022\017\n\007ver4usr\030\004 \001(\004\022\017\n\007gts4" +
+      "usr\030\005 \001(\004\022\017\n\007uts4usr\030\006 \001(\004\022\021\n\tgts4group\030" +
+      "\007 \001(\004\032+\n\tInfoEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value" +
+      "\030\002 \001(\t:\0028\001\"=\n\025XmsgImGroupSyncNotice\022$\n\005e" +
+      "vent\030\001 \001(\0132\025.XmsgImGroupSyncEvent\"\217\001\n\027Xm" +
+      "sgImGroupSyncGroupReq\022\013\n\003cgt\030\001 \001(\t\022\013\n\003ve" +
+      "r\030\002 \001(\004\022.\n\003ext\030\003 \003(\0132!.XmsgImGroupSyncGr" +
+      "oupReq.ExtEntry\032*\n\010ExtEntry\022\013\n\003key\030\001 \001(\t" +
+      "\022\r\n\005value\030\002 \001(\t:\0028\001\"y\n\027XmsgImGroupSyncGr" +
+      "oupRsp\022,\n\004info\030\001 \001(\0132\036.XmsgImGroupSyncGr" +
+      "oupEventInfo\0220\n\006member\030\002 \003(\0132 .XmsgImGro" +
+      "upSyncGroupEventMember\"\253\001\n\035XmsgImGroupSy" +
+      "ncGroupEventInfo\0226\n\004info\030\001 \003(\0132(.XmsgImG" +
+      "roupSyncGroupEventInfo.InfoEntry\022\013\n\003ver\030" +
+      "\002 \001(\004\022\013\n\003gts\030\003 \001(\004\022\013\n\003uts\030\004 \001(\004\032+\n\tInfoE" +
+      "ntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\312\001\n" +
+      "\037XmsgImGroupSyncGroupEventMember\022\013\n\003cgt\030" +
+      "\001 \001(\t\022\014\n\004oper\030\002 \001(\t\0228\n\004info\030\003 \003(\0132*.Xmsg" +
+      "ImGroupSyncGroupEventMember.InfoEntry\022\013\n" +
+      "\003ver\030\004 \001(\004\022\013\n\003gts\030\005 \001(\004\022\013\n\003uts\030\006 \001(\004\032+\n\t" +
+      "InfoEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028" +
+      "\001\"x\n\026XmsgImGroupEventNotice\022,\n\004info\030\001 \001(" +
+      "\0132\036.XmsgImGroupSyncGroupEventInfo\0220\n\006mem" +
+      "ber\030\002 \001(\0132 .XmsgImGroupSyncGroupEventMem" +
+      "ber\"6\n\027XmsgImGroupInfoQueryReq\022\013\n\003cgt\030\001 " +
+      "\001(\t\022\016\n\006member\030\002 \001(\010\"i\n\027XmsgImGroupInfoQu" +
+      "eryRsp\022&\n\004info\030\001 \001(\0132\030.XmsgImGroupInfoSe" +
+      "lfInfo\022&\n\006member\030\002 \003(\0132\026.XmsgImGroupInfo" +
+      "Member\"\274\001\n\027XmsgImGroupInfoSelfInfo\022\013\n\003cg" +
+      "t\030\001 \001(\t\022\016\n\006enable\030\002 \001(\010\0220\n\004info\030\003 \003(\0132\"." +
+      "XmsgImGroupInfoSelfInfo.InfoEntry\022\013\n\003ver" +
+      "\030\004 \001(\004\022\013\n\003gts\030\005 \001(\004\022\013\n\003uts\030\006 \001(\004\032+\n\tInfo" +
+      "Entry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\270\001" +
+      "\n\025XmsgImGroupInfoMember\022\013\n\003cgt\030\001 \001(\t\022\016\n\006" +
+      "enable\030\002 \001(\010\022.\n\004info\030\003 \003(\0132 .XmsgImGroup" +
+      "InfoMember.InfoEntry\022\013\n\003ver\030\004 \001(\004\022\013\n\003gts" +
+      "\030\005 \001(\004\022\013\n\003uts\030\006 \001(\004\032+\n\tInfoEntry\022\013\n\003key\030" +
+      "\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\235\001\n\030XmsgImGroup" +
+      "InfoUpdateReq\022\013\n\003cgt\030\001 \001(\t\0225\n\006upsert\030\002 \003" +
+      "(\0132%.XmsgImGroupInfoUpdateReq.UpsertEntr" +
+      "y\022\016\n\006remove\030\003 \003(\t\032-\n\013UpsertEntry\022\013\n\003key\030" +
+      "\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"w\n\030XmsgImGroupI" +
+      "nfoUpdateRsp\022/\n\003ext\030\001 \003(\0132\".XmsgImGroupI" +
+      "nfoUpdateRsp.ExtEntry\032*\n\010ExtEntry\022\013\n\003key" +
+      "\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"5\n\030XmsgImGroup" +
+      "MsgRecvCfgReq\022\013\n\003cgt\030\001 \001(\t\022\014\n\004type\030\002 \001(\t" +
+      "\"w\n\030XmsgImGroupMsgRecvCfgRsp\022/\n\003ext\030\001 \003(" +
+      "\0132\".XmsgImGroupMsgRecvCfgRsp.ExtEntry\032*\n" +
+      "\010ExtEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028" +
+      "\001*\317\001\n\022XmsgImSdkEventType\022&\n\"X_MSG_IM_SDK" +
+      "_EVENT_TYPE_NET_NOTICE\020\000\022#\n\037X_MSG_IM_SDK" +
+      "_EVENT_TYPE_NET_REQ\020\001\022#\n\037X_MSG_IM_SDK_EV" +
+      "ENT_TYPE_NET_RSP\020\002\022\"\n\036X_MSG_IM_SDK_EVENT" +
+      "_TYPE_DB_RSP\020\003\022#\n\037X_MSG_IM_SDK_EVENT_TYP" +
+      "E_CXX_LOG\020\004*\273\001\n\027XmsgImClientDbFiledType\022" +
+      "(\n$X_MSG_IM_CLIENT_DB_FILED_TYPE_BIGINT\020" +
+      "\000\022&\n\"X_MSG_IM_CLIENT_DB_FILED_TYPE_TEXT\020" +
+      "\001\022&\n\"X_MSG_IM_CLIENT_DB_FILED_TYPE_BLOB\020" +
+      "\002\022&\n\"X_MSG_IM_CLIENT_DB_FILED_TYPE_NULL\020" +
+      "\003*\177\n\021XmsgImOrgNodeType\022&\n\"X_MSG_IM_ORG_N" +
+      "ODE_TYPE__RESERVED__\020\000\022!\n\035X_MSG_IM_ORG_N" +
+      "ODE_TYPE_BRANCH\020\001\022\037\n\033X_MSG_IM_ORG_NODE_T" +
+      "YPE_LEAF\020\002B\022\n\010x.msg.pbB\006PbXmsgb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -95204,20 +103378,116 @@ public final class PbXmsg {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImHlrGroupMsgRsp_ExtEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
-    internal_static_XmsgClientTokenInfo_descriptor =
+    internal_static_XmsgChannelStatusQueryReq_descriptor =
       getDescriptor().getMessageTypes().get(21);
+    internal_static_XmsgChannelStatusQueryReq_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_XmsgChannelStatusQueryReq_descriptor,
+        new java.lang.String[] { "Cgt", });
+    internal_static_XmsgChannelStatusQueryRsp_descriptor =
+      getDescriptor().getMessageTypes().get(22);
+    internal_static_XmsgChannelStatusQueryRsp_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_XmsgChannelStatusQueryRsp_descriptor,
+        new java.lang.String[] { "UsrStatus", "GroupStatus", });
+    internal_static_XmsgChannelStatusQueryRsp_UsrStatusEntry_descriptor =
+      internal_static_XmsgChannelStatusQueryRsp_descriptor.getNestedTypes().get(0);
+    internal_static_XmsgChannelStatusQueryRsp_UsrStatusEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_XmsgChannelStatusQueryRsp_UsrStatusEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
+    internal_static_XmsgChannelStatusQueryRsp_GroupStatusEntry_descriptor =
+      internal_static_XmsgChannelStatusQueryRsp_descriptor.getNestedTypes().get(1);
+    internal_static_XmsgChannelStatusQueryRsp_GroupStatusEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_XmsgChannelStatusQueryRsp_GroupStatusEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
+    internal_static_XmsgChannelStatusSubReq_descriptor =
+      getDescriptor().getMessageTypes().get(23);
+    internal_static_XmsgChannelStatusSubReq_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_XmsgChannelStatusSubReq_descriptor,
+        new java.lang.String[] { "Cgt", });
+    internal_static_XmsgChannelStatusSubRsp_descriptor =
+      getDescriptor().getMessageTypes().get(24);
+    internal_static_XmsgChannelStatusSubRsp_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_XmsgChannelStatusSubRsp_descriptor,
+        new java.lang.String[] { "UsrStatus", "GroupStatus", });
+    internal_static_XmsgChannelStatusSubRsp_UsrStatusEntry_descriptor =
+      internal_static_XmsgChannelStatusSubRsp_descriptor.getNestedTypes().get(0);
+    internal_static_XmsgChannelStatusSubRsp_UsrStatusEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_XmsgChannelStatusSubRsp_UsrStatusEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
+    internal_static_XmsgChannelStatusSubRsp_GroupStatusEntry_descriptor =
+      internal_static_XmsgChannelStatusSubRsp_descriptor.getNestedTypes().get(1);
+    internal_static_XmsgChannelStatusSubRsp_GroupStatusEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_XmsgChannelStatusSubRsp_GroupStatusEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
+    internal_static_XmsgChannelStatusUnSubReq_descriptor =
+      getDescriptor().getMessageTypes().get(25);
+    internal_static_XmsgChannelStatusUnSubReq_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_XmsgChannelStatusUnSubReq_descriptor,
+        new java.lang.String[] { "Cgt", });
+    internal_static_XmsgChannelStatusUnSubRsp_descriptor =
+      getDescriptor().getMessageTypes().get(26);
+    internal_static_XmsgChannelStatusUnSubRsp_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_XmsgChannelStatusUnSubRsp_descriptor,
+        new java.lang.String[] { "Ext", });
+    internal_static_XmsgChannelStatusUnSubRsp_ExtEntry_descriptor =
+      internal_static_XmsgChannelStatusUnSubRsp_descriptor.getNestedTypes().get(0);
+    internal_static_XmsgChannelStatusUnSubRsp_ExtEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_XmsgChannelStatusUnSubRsp_ExtEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
+    internal_static_XmsgChannelStatusPubUsrStatusNotice_descriptor =
+      getDescriptor().getMessageTypes().get(27);
+    internal_static_XmsgChannelStatusPubUsrStatusNotice_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_XmsgChannelStatusPubUsrStatusNotice_descriptor,
+        new java.lang.String[] { "Cgt", "Plat", "Did", "Status", });
+    internal_static_XmsgChannelStatusPubGroupStatusNotice_descriptor =
+      getDescriptor().getMessageTypes().get(28);
+    internal_static_XmsgChannelStatusPubGroupStatusNotice_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_XmsgChannelStatusPubGroupStatusNotice_descriptor,
+        new java.lang.String[] { "Cgt", "Status", });
+    internal_static_XmsgChannelStatusUsrStatus_descriptor =
+      getDescriptor().getMessageTypes().get(29);
+    internal_static_XmsgChannelStatusUsrStatus_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_XmsgChannelStatusUsrStatus_descriptor,
+        new java.lang.String[] { "Client", });
+    internal_static_XmsgChannelStatusUsrStatus_XmsgChannelStatusUsrClientStatus_descriptor =
+      internal_static_XmsgChannelStatusUsrStatus_descriptor.getNestedTypes().get(0);
+    internal_static_XmsgChannelStatusUsrStatus_XmsgChannelStatusUsrClientStatus_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_XmsgChannelStatusUsrStatus_XmsgChannelStatusUsrClientStatus_descriptor,
+        new java.lang.String[] { "Plat", "Did", "Status", });
+    internal_static_XmsgChannelStatusGroupStatus_descriptor =
+      getDescriptor().getMessageTypes().get(30);
+    internal_static_XmsgChannelStatusGroupStatus_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_XmsgChannelStatusGroupStatus_descriptor,
+        new java.lang.String[] { "Status", });
+    internal_static_XmsgClientTokenInfo_descriptor =
+      getDescriptor().getMessageTypes().get(31);
     internal_static_XmsgClientTokenInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgClientTokenInfo_descriptor,
         new java.lang.String[] { "Token", "Alg", "Slat", "Plat", "Did", "Sign", });
     internal_static_XmsgImGroupMemberAddReq_descriptor =
-      getDescriptor().getMessageTypes().get(22);
+      getDescriptor().getMessageTypes().get(32);
     internal_static_XmsgImGroupMemberAddReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImGroupMemberAddReq_descriptor,
         new java.lang.String[] { "Cgt", "Member", });
     internal_static_XmsgImGroupMemberAddRsp_descriptor =
-      getDescriptor().getMessageTypes().get(23);
+      getDescriptor().getMessageTypes().get(33);
     internal_static_XmsgImGroupMemberAddRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImGroupMemberAddRsp_descriptor,
@@ -95229,19 +103499,19 @@ public final class PbXmsg {
         internal_static_XmsgImGroupMemberAddRsp_ExtEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_XmsgImGroupMemberQueryReq_descriptor =
-      getDescriptor().getMessageTypes().get(24);
+      getDescriptor().getMessageTypes().get(34);
     internal_static_XmsgImGroupMemberQueryReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImGroupMemberQueryReq_descriptor,
         new java.lang.String[] { "Gcgt", "Mcgt", });
     internal_static_XmsgImGroupMemberQueryRsp_descriptor =
-      getDescriptor().getMessageTypes().get(25);
+      getDescriptor().getMessageTypes().get(35);
     internal_static_XmsgImGroupMemberQueryRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImGroupMemberQueryRsp_descriptor,
         new java.lang.String[] { "Member", });
     internal_static_XmsgImGroupMemberUpdateReq_descriptor =
-      getDescriptor().getMessageTypes().get(26);
+      getDescriptor().getMessageTypes().get(36);
     internal_static_XmsgImGroupMemberUpdateReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImGroupMemberUpdateReq_descriptor,
@@ -95253,7 +103523,7 @@ public final class PbXmsg {
         internal_static_XmsgImGroupMemberUpdateReq_UpsertEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_XmsgImGroupMemberUpdateRsp_descriptor =
-      getDescriptor().getMessageTypes().get(27);
+      getDescriptor().getMessageTypes().get(37);
     internal_static_XmsgImGroupMemberUpdateRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImGroupMemberUpdateRsp_descriptor,
@@ -95265,13 +103535,13 @@ public final class PbXmsg {
         internal_static_XmsgImGroupMemberUpdateRsp_ExtEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_XmsgImGroupMemberDeleteReq_descriptor =
-      getDescriptor().getMessageTypes().get(28);
+      getDescriptor().getMessageTypes().get(38);
     internal_static_XmsgImGroupMemberDeleteReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImGroupMemberDeleteReq_descriptor,
         new java.lang.String[] { "Gcgt", "Mcgt", });
     internal_static_XmsgImGroupMemberDeleteRsp_descriptor =
-      getDescriptor().getMessageTypes().get(29);
+      getDescriptor().getMessageTypes().get(39);
     internal_static_XmsgImGroupMemberDeleteRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImGroupMemberDeleteRsp_descriptor,
@@ -95283,7 +103553,7 @@ public final class PbXmsg {
         internal_static_XmsgImGroupMemberDeleteRsp_ExtEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_XmsgImSdkEventAdapter_descriptor =
-      getDescriptor().getMessageTypes().get(30);
+      getDescriptor().getMessageTypes().get(40);
     internal_static_XmsgImSdkEventAdapter_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImSdkEventAdapter_descriptor,
@@ -95319,103 +103589,103 @@ public final class PbXmsg {
         internal_static_XmsgImSdkEventAdapter_XmsgImSdkEventCxxLog_descriptor,
         new java.lang.String[] { "Lev", "Log", });
     internal_static_XmsgImSdkEventXmsgImAuth_descriptor =
-      getDescriptor().getMessageTypes().get(31);
+      getDescriptor().getMessageTypes().get(41);
     internal_static_XmsgImSdkEventXmsgImAuth_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImSdkEventXmsgImAuth_descriptor,
         new java.lang.String[] { "Evn", "Times", "Addr", });
     internal_static_XmsgImSdkEventXmsgAp_descriptor =
-      getDescriptor().getMessageTypes().get(32);
+      getDescriptor().getMessageTypes().get(42);
     internal_static_XmsgImSdkEventXmsgAp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImSdkEventXmsgAp_descriptor,
         new java.lang.String[] { "Evn", "Times", "Addr", });
     internal_static_XmsgImHlrAttachSimpleReq_descriptor =
-      getDescriptor().getMessageTypes().get(33);
+      getDescriptor().getMessageTypes().get(43);
     internal_static_XmsgImHlrAttachSimpleReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImHlrAttachSimpleReq_descriptor,
         new java.lang.String[] { "Token", "Salt", "Sign", "Alg", "Ext", });
     internal_static_XmsgImHlrAttachSimpleRsp_descriptor =
-      getDescriptor().getMessageTypes().get(34);
+      getDescriptor().getMessageTypes().get(44);
     internal_static_XmsgImHlrAttachSimpleRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImHlrAttachSimpleRsp_descriptor,
         new java.lang.String[] { "Cgt", "Ext", });
     internal_static_XmsgImHlrDetachSimpleReq_descriptor =
-      getDescriptor().getMessageTypes().get(35);
+      getDescriptor().getMessageTypes().get(45);
     internal_static_XmsgImHlrDetachSimpleReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImHlrDetachSimpleReq_descriptor,
         new java.lang.String[] { "Ext", });
     internal_static_XmsgImHlrDetachSimpleRsp_descriptor =
-      getDescriptor().getMessageTypes().get(36);
+      getDescriptor().getMessageTypes().get(46);
     internal_static_XmsgImHlrDetachSimpleRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImHlrDetachSimpleRsp_descriptor,
         new java.lang.String[] { "Ext", });
     internal_static_XmsgImHlrOtherClientAttachReq_descriptor =
-      getDescriptor().getMessageTypes().get(37);
+      getDescriptor().getMessageTypes().get(47);
     internal_static_XmsgImHlrOtherClientAttachReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImHlrOtherClientAttachReq_descriptor,
         new java.lang.String[] { "Dev", "Host", });
     internal_static_XmsgImHlrOtherClientAttachRsp_descriptor =
-      getDescriptor().getMessageTypes().get(38);
+      getDescriptor().getMessageTypes().get(48);
     internal_static_XmsgImHlrOtherClientAttachRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImHlrOtherClientAttachRsp_descriptor,
         new java.lang.String[] { "Action", });
     internal_static_XmsgImHlrOtherClientAttachNotice_descriptor =
-      getDescriptor().getMessageTypes().get(39);
+      getDescriptor().getMessageTypes().get(49);
     internal_static_XmsgImHlrOtherClientAttachNotice_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImHlrOtherClientAttachNotice_descriptor,
         new java.lang.String[] { "Dev", "Host", });
     internal_static_XmsgImAuthSimpleReq_descriptor =
-      getDescriptor().getMessageTypes().get(40);
+      getDescriptor().getMessageTypes().get(50);
     internal_static_XmsgImAuthSimpleReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImAuthSimpleReq_descriptor,
         new java.lang.String[] { "Usr", "Salt", "Sign", "Dev", });
     internal_static_XmsgImAuthSimpleRsp_descriptor =
-      getDescriptor().getMessageTypes().get(41);
+      getDescriptor().getMessageTypes().get(51);
     internal_static_XmsgImAuthSimpleRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImAuthSimpleRsp_descriptor,
         new java.lang.String[] { "Token", "Secret", "Expired", "ApAddr", "FsAddr", "Ext", });
     internal_static_XmsgImClientDeviceInfo_descriptor =
-      getDescriptor().getMessageTypes().get(42);
+      getDescriptor().getMessageTypes().get(52);
     internal_static_XmsgImClientDeviceInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImClientDeviceInfo_descriptor,
         new java.lang.String[] { "Plat", "Did", "Ver", "Ext", });
     internal_static_XmsgImClientServiceAddress_descriptor =
-      getDescriptor().getMessageTypes().get(43);
+      getDescriptor().getMessageTypes().get(53);
     internal_static_XmsgImClientServiceAddress_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImClientServiceAddress_descriptor,
         new java.lang.String[] { "Ip", "Port", "Weight", "Proto", "Ext", });
     internal_static_XmsgImAuthRegSimpleReq_descriptor =
-      getDescriptor().getMessageTypes().get(44);
+      getDescriptor().getMessageTypes().get(54);
     internal_static_XmsgImAuthRegSimpleReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImAuthRegSimpleReq_descriptor,
         new java.lang.String[] { "Usr", "Salt", "Pwd", "Dev", });
     internal_static_XmsgImAuthRegSimpleRsp_descriptor =
-      getDescriptor().getMessageTypes().get(45);
+      getDescriptor().getMessageTypes().get(55);
     internal_static_XmsgImAuthRegSimpleRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImAuthRegSimpleRsp_descriptor,
         new java.lang.String[] { "Ext", });
     internal_static_XmsgImHlrOtherUsrInfoQueryReq_descriptor =
-      getDescriptor().getMessageTypes().get(46);
+      getDescriptor().getMessageTypes().get(56);
     internal_static_XmsgImHlrOtherUsrInfoQueryReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImHlrOtherUsrInfoQueryReq_descriptor,
         new java.lang.String[] { "Cgt", });
     internal_static_XmsgImHlrOtherUsrInfoQueryRsp_descriptor =
-      getDescriptor().getMessageTypes().get(47);
+      getDescriptor().getMessageTypes().get(57);
     internal_static_XmsgImHlrOtherUsrInfoQueryRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImHlrOtherUsrInfoQueryRsp_descriptor,
@@ -95427,7 +103697,7 @@ public final class PbXmsg {
         internal_static_XmsgImHlrOtherUsrInfoQueryRsp_UsrInfoEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_XmsgImHlrOtherUsrInfo_descriptor =
-      getDescriptor().getMessageTypes().get(48);
+      getDescriptor().getMessageTypes().get(58);
     internal_static_XmsgImHlrOtherUsrInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImHlrOtherUsrInfo_descriptor,
@@ -95439,7 +103709,7 @@ public final class PbXmsg {
         internal_static_XmsgImHlrOtherUsrInfo_InfoEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_XmsgFileUploadSimpleReq_descriptor =
-      getDescriptor().getMessageTypes().get(49);
+      getDescriptor().getMessageTypes().get(59);
     internal_static_XmsgFileUploadSimpleReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgFileUploadSimpleReq_descriptor,
@@ -95451,7 +103721,7 @@ public final class PbXmsg {
         internal_static_XmsgFileUploadSimpleReq_ExtEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_XmsgFileUploadSimpleRsp_descriptor =
-      getDescriptor().getMessageTypes().get(50);
+      getDescriptor().getMessageTypes().get(60);
     internal_static_XmsgFileUploadSimpleRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgFileUploadSimpleRsp_descriptor,
@@ -95463,7 +103733,7 @@ public final class PbXmsg {
         internal_static_XmsgFileUploadSimpleRsp_ExtEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_XmsgFileDownloadSimpleReq_descriptor =
-      getDescriptor().getMessageTypes().get(51);
+      getDescriptor().getMessageTypes().get(61);
     internal_static_XmsgFileDownloadSimpleReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgFileDownloadSimpleReq_descriptor,
@@ -95475,7 +103745,7 @@ public final class PbXmsg {
         internal_static_XmsgFileDownloadSimpleReq_ExtEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_XmsgFileDownloadSimpleRsp_descriptor =
-      getDescriptor().getMessageTypes().get(52);
+      getDescriptor().getMessageTypes().get(62);
     internal_static_XmsgFileDownloadSimpleRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgFileDownloadSimpleRsp_descriptor,
@@ -95487,37 +103757,37 @@ public final class PbXmsg {
         internal_static_XmsgFileDownloadSimpleRsp_ExtEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_XmsgFileUsrFileInfoQueryReq_descriptor =
-      getDescriptor().getMessageTypes().get(53);
+      getDescriptor().getMessageTypes().get(63);
     internal_static_XmsgFileUsrFileInfoQueryReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgFileUsrFileInfoQueryReq_descriptor,
         new java.lang.String[] { "Sts", "Ets", "Page", "PageSize", });
     internal_static_XmsgFileUsrFileInfoQueryRsp_descriptor =
-      getDescriptor().getMessageTypes().get(54);
+      getDescriptor().getMessageTypes().get(64);
     internal_static_XmsgFileUsrFileInfoQueryRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgFileUsrFileInfoQueryRsp_descriptor,
         new java.lang.String[] { "FileInfo", });
     internal_static_XmsgFileUsrFileInfo_descriptor =
-      getDescriptor().getMessageTypes().get(55);
+      getDescriptor().getMessageTypes().get(65);
     internal_static_XmsgFileUsrFileInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgFileUsrFileInfo_descriptor,
         new java.lang.String[] { "Fid", "FileName", "FileSize", "HashVal", "Gts", });
     internal_static_XmsgImHlrUsrDat_descriptor =
-      getDescriptor().getMessageTypes().get(56);
+      getDescriptor().getMessageTypes().get(66);
     internal_static_XmsgImHlrUsrDat_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImHlrUsrDat_descriptor,
         new java.lang.String[] { "Uid", "Ver", "Pri", "Pub", "Gts", "Uts", });
     internal_static_XmsgImHlrUsrDatPri_descriptor =
-      getDescriptor().getMessageTypes().get(57);
+      getDescriptor().getMessageTypes().get(67);
     internal_static_XmsgImHlrUsrDatPri_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImHlrUsrDatPri_descriptor,
         new java.lang.String[] { "Enable", "Ext", });
     internal_static_XmsgImHlrUsrDatPub_descriptor =
-      getDescriptor().getMessageTypes().get(58);
+      getDescriptor().getMessageTypes().get(68);
     internal_static_XmsgImHlrUsrDatPub_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImHlrUsrDatPub_descriptor,
@@ -95529,13 +103799,13 @@ public final class PbXmsg {
         internal_static_XmsgImHlrUsrDatPub_InfoEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_XmsgImHlrUsrInfoQueryReq_descriptor =
-      getDescriptor().getMessageTypes().get(59);
+      getDescriptor().getMessageTypes().get(69);
     internal_static_XmsgImHlrUsrInfoQueryReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImHlrUsrInfoQueryReq_descriptor,
         new java.lang.String[] { "Ext", });
     internal_static_XmsgImHlrUsrInfoQueryRsp_descriptor =
-      getDescriptor().getMessageTypes().get(60);
+      getDescriptor().getMessageTypes().get(70);
     internal_static_XmsgImHlrUsrInfoQueryRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImHlrUsrInfoQueryRsp_descriptor,
@@ -95547,7 +103817,7 @@ public final class PbXmsg {
         internal_static_XmsgImHlrUsrInfoQueryRsp_InfoEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_XmsgImHlrUsrInfoUpdateReq_descriptor =
-      getDescriptor().getMessageTypes().get(61);
+      getDescriptor().getMessageTypes().get(71);
     internal_static_XmsgImHlrUsrInfoUpdateReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImHlrUsrInfoUpdateReq_descriptor,
@@ -95559,19 +103829,19 @@ public final class PbXmsg {
         internal_static_XmsgImHlrUsrInfoUpdateReq_InfoEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_XmsgImHlrUsrInfoUpdateRsp_descriptor =
-      getDescriptor().getMessageTypes().get(62);
+      getDescriptor().getMessageTypes().get(72);
     internal_static_XmsgImHlrUsrInfoUpdateRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImHlrUsrInfoUpdateRsp_descriptor,
         new java.lang.String[] { "Ext", });
     internal_static_XmsgImClientDbCrudReq_descriptor =
-      getDescriptor().getMessageTypes().get(63);
+      getDescriptor().getMessageTypes().get(73);
     internal_static_XmsgImClientDbCrudReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImClientDbCrudReq_descriptor,
         new java.lang.String[] { "Sql", "Row", });
     internal_static_XmsgImClientDbCrudRsp_descriptor =
-      getDescriptor().getMessageTypes().get(64);
+      getDescriptor().getMessageTypes().get(74);
     internal_static_XmsgImClientDbCrudRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImClientDbCrudRsp_descriptor,
@@ -95583,19 +103853,19 @@ public final class PbXmsg {
         internal_static_XmsgImClientDbCrudRsp_ColumnEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_XmsgImClientDbRow_descriptor =
-      getDescriptor().getMessageTypes().get(65);
+      getDescriptor().getMessageTypes().get(75);
     internal_static_XmsgImClientDbRow_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImClientDbRow_descriptor,
         new java.lang.String[] { "Col", });
     internal_static_XmsgImClientDbFiled_descriptor =
-      getDescriptor().getMessageTypes().get(66);
+      getDescriptor().getMessageTypes().get(76);
     internal_static_XmsgImClientDbFiled_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImClientDbFiled_descriptor,
         new java.lang.String[] { "Type", "ValInt", "ValText", "ValBlob", });
     internal_static_XmsgImClientKv_descriptor =
-      getDescriptor().getMessageTypes().get(67);
+      getDescriptor().getMessageTypes().get(77);
     internal_static_XmsgImClientKv_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImClientKv_descriptor,
@@ -95607,97 +103877,97 @@ public final class PbXmsg {
         internal_static_XmsgImClientKv_KvEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_XmsgImOrgSyncSubReq_descriptor =
-      getDescriptor().getMessageTypes().get(68);
+      getDescriptor().getMessageTypes().get(78);
     internal_static_XmsgImOrgSyncSubReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImOrgSyncSubReq_descriptor,
         new java.lang.String[] { "Ver4Dept", "Ver4DeptUsr", "Ver4Usr", });
     internal_static_XmsgImOrgSyncSubRsp_descriptor =
-      getDescriptor().getMessageTypes().get(69);
+      getDescriptor().getMessageTypes().get(79);
     internal_static_XmsgImOrgSyncSubRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImOrgSyncSubRsp_descriptor,
         new java.lang.String[] { "Ver4DeptLatest", "Ver4DeptUsrLatest", "Ver4UsrLatest", });
     internal_static_XmsgImOrgSyncPubReq_descriptor =
-      getDescriptor().getMessageTypes().get(70);
+      getDescriptor().getMessageTypes().get(80);
     internal_static_XmsgImOrgSyncPubReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImOrgSyncPubReq_descriptor,
         new java.lang.String[] { "Event", });
     internal_static_XmsgImOrgSyncPubRsp_descriptor =
-      getDescriptor().getMessageTypes().get(71);
+      getDescriptor().getMessageTypes().get(81);
     internal_static_XmsgImOrgSyncPubRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImOrgSyncPubRsp_descriptor,
         new java.lang.String[] { "Ext", });
     internal_static_XmsgImOrgChangedNotice_descriptor =
-      getDescriptor().getMessageTypes().get(72);
+      getDescriptor().getMessageTypes().get(82);
     internal_static_XmsgImOrgChangedNotice_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImOrgChangedNotice_descriptor,
         new java.lang.String[] { "Event", });
     internal_static_XmsgImOrgNodeChildQueryReq_descriptor =
-      getDescriptor().getMessageTypes().get(73);
+      getDescriptor().getMessageTypes().get(83);
     internal_static_XmsgImOrgNodeChildQueryReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImOrgNodeChildQueryReq_descriptor,
         new java.lang.String[] { "Cgt", });
     internal_static_XmsgImOrgNodeChildQueryRsp_descriptor =
-      getDescriptor().getMessageTypes().get(74);
+      getDescriptor().getMessageTypes().get(84);
     internal_static_XmsgImOrgNodeChildQueryRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImOrgNodeChildQueryRsp_descriptor,
         new java.lang.String[] { "Child", });
     internal_static_XmsgImOrgNodeDeptUsrQueryReq_descriptor =
-      getDescriptor().getMessageTypes().get(75);
+      getDescriptor().getMessageTypes().get(85);
     internal_static_XmsgImOrgNodeDeptUsrQueryReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImOrgNodeDeptUsrQueryReq_descriptor,
         new java.lang.String[] { "Dcgt", "Ucgt", });
     internal_static_XmsgImOrgNodeDeptUsrQueryRsp_descriptor =
-      getDescriptor().getMessageTypes().get(76);
+      getDescriptor().getMessageTypes().get(86);
     internal_static_XmsgImOrgNodeDeptUsrQueryRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImOrgNodeDeptUsrQueryRsp_descriptor,
         new java.lang.String[] { "Name", "Enable", "Info", "Ver", "Gts", "Uts", });
     internal_static_XmsgImOrgNodeQueryReq_descriptor =
-      getDescriptor().getMessageTypes().get(77);
+      getDescriptor().getMessageTypes().get(87);
     internal_static_XmsgImOrgNodeQueryReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImOrgNodeQueryReq_descriptor,
         new java.lang.String[] { "Cgt", });
     internal_static_XmsgImOrgNodeQueryRsp_descriptor =
-      getDescriptor().getMessageTypes().get(78);
+      getDescriptor().getMessageTypes().get(88);
     internal_static_XmsgImOrgNodeQueryRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImOrgNodeQueryRsp_descriptor,
         new java.lang.String[] { "Pgt", "Name", "Enable", "Type", "Info", "Ver", "Gts", "Uts", });
     internal_static_XmsgImOrgEvent_descriptor =
-      getDescriptor().getMessageTypes().get(79);
+      getDescriptor().getMessageTypes().get(89);
     internal_static_XmsgImOrgEvent_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImOrgEvent_descriptor,
         new java.lang.String[] { "Dept", "DeptUsr", "Usr", });
     internal_static_XmsgImOrgEventDept_descriptor =
-      getDescriptor().getMessageTypes().get(80);
+      getDescriptor().getMessageTypes().get(90);
     internal_static_XmsgImOrgEventDept_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImOrgEventDept_descriptor,
         new java.lang.String[] { "Cgt", "Pcgt", "Name", "Enable", "Info", "Ver", "Gts", "Uts", });
     internal_static_XmsgImOrgEventDeptUsr_descriptor =
-      getDescriptor().getMessageTypes().get(81);
+      getDescriptor().getMessageTypes().get(91);
     internal_static_XmsgImOrgEventDeptUsr_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImOrgEventDeptUsr_descriptor,
         new java.lang.String[] { "Dcgt", "Ucgt", "Name", "Enable", "Info", "Ver", "Gts", "Uts", });
     internal_static_XmsgImOrgEventUsr_descriptor =
-      getDescriptor().getMessageTypes().get(82);
+      getDescriptor().getMessageTypes().get(92);
     internal_static_XmsgImOrgEventUsr_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImOrgEventUsr_descriptor,
         new java.lang.String[] { "Cgt", "Name", "Enable", "Info", "Ver", "Gts", "Uts", });
     internal_static_XmsgImOrgNodeInfo_descriptor =
-      getDescriptor().getMessageTypes().get(83);
+      getDescriptor().getMessageTypes().get(93);
     internal_static_XmsgImOrgNodeInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImOrgNodeInfo_descriptor,
@@ -95709,13 +103979,13 @@ public final class PbXmsg {
         internal_static_XmsgImOrgNodeInfo_KvEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_XmsgImOrgNodeChild_descriptor =
-      getDescriptor().getMessageTypes().get(84);
+      getDescriptor().getMessageTypes().get(94);
     internal_static_XmsgImOrgNodeChild_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImOrgNodeChild_descriptor,
         new java.lang.String[] { "Cgt", "Name", "Enable", "Type", "Info", "Ver", "Gts", "Uts", });
     internal_static_XmsgImGroupUsrGroupQueryReq_descriptor =
-      getDescriptor().getMessageTypes().get(85);
+      getDescriptor().getMessageTypes().get(95);
     internal_static_XmsgImGroupUsrGroupQueryReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImGroupUsrGroupQueryReq_descriptor,
@@ -95727,13 +103997,13 @@ public final class PbXmsg {
         internal_static_XmsgImGroupUsrGroupQueryReq_ExtEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_XmsgImGroupUsrGroupQueryRsp_descriptor =
-      getDescriptor().getMessageTypes().get(86);
+      getDescriptor().getMessageTypes().get(96);
     internal_static_XmsgImGroupUsrGroupQueryRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImGroupUsrGroupQueryRsp_descriptor,
         new java.lang.String[] { "Group", });
     internal_static_XmsgImGroupUsrGroupInfo_descriptor =
-      getDescriptor().getMessageTypes().get(87);
+      getDescriptor().getMessageTypes().get(97);
     internal_static_XmsgImGroupUsrGroupInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImGroupUsrGroupInfo_descriptor,
@@ -95745,7 +104015,7 @@ public final class PbXmsg {
         internal_static_XmsgImGroupUsrGroupInfo_InfoEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_XmsgImGroupCreateReq_descriptor =
-      getDescriptor().getMessageTypes().get(88);
+      getDescriptor().getMessageTypes().get(98);
     internal_static_XmsgImGroupCreateReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImGroupCreateReq_descriptor,
@@ -95757,13 +104027,13 @@ public final class PbXmsg {
         internal_static_XmsgImGroupCreateReq_InfoEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_XmsgImGroupCreateRsp_descriptor =
-      getDescriptor().getMessageTypes().get(89);
+      getDescriptor().getMessageTypes().get(99);
     internal_static_XmsgImGroupCreateRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImGroupCreateRsp_descriptor,
         new java.lang.String[] { "Cgt", "Gts", });
     internal_static_XmsgImGroupAddMember_descriptor =
-      getDescriptor().getMessageTypes().get(90);
+      getDescriptor().getMessageTypes().get(100);
     internal_static_XmsgImGroupAddMember_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImGroupAddMember_descriptor,
@@ -95775,7 +104045,7 @@ public final class PbXmsg {
         internal_static_XmsgImGroupAddMember_InfoEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_XmsgImGroupSyncReq_descriptor =
-      getDescriptor().getMessageTypes().get(91);
+      getDescriptor().getMessageTypes().get(101);
     internal_static_XmsgImGroupSyncReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImGroupSyncReq_descriptor,
@@ -95787,13 +104057,13 @@ public final class PbXmsg {
         internal_static_XmsgImGroupSyncReq_ExtEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_XmsgImGroupSyncRsp_descriptor =
-      getDescriptor().getMessageTypes().get(92);
+      getDescriptor().getMessageTypes().get(102);
     internal_static_XmsgImGroupSyncRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImGroupSyncRsp_descriptor,
         new java.lang.String[] { "Event", });
     internal_static_XmsgImGroupSyncEvent_descriptor =
-      getDescriptor().getMessageTypes().get(93);
+      getDescriptor().getMessageTypes().get(103);
     internal_static_XmsgImGroupSyncEvent_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImGroupSyncEvent_descriptor,
@@ -95805,13 +104075,13 @@ public final class PbXmsg {
         internal_static_XmsgImGroupSyncEvent_InfoEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_XmsgImGroupSyncNotice_descriptor =
-      getDescriptor().getMessageTypes().get(94);
+      getDescriptor().getMessageTypes().get(104);
     internal_static_XmsgImGroupSyncNotice_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImGroupSyncNotice_descriptor,
         new java.lang.String[] { "Event", });
     internal_static_XmsgImGroupSyncGroupReq_descriptor =
-      getDescriptor().getMessageTypes().get(95);
+      getDescriptor().getMessageTypes().get(105);
     internal_static_XmsgImGroupSyncGroupReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImGroupSyncGroupReq_descriptor,
@@ -95823,13 +104093,13 @@ public final class PbXmsg {
         internal_static_XmsgImGroupSyncGroupReq_ExtEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_XmsgImGroupSyncGroupRsp_descriptor =
-      getDescriptor().getMessageTypes().get(96);
+      getDescriptor().getMessageTypes().get(106);
     internal_static_XmsgImGroupSyncGroupRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImGroupSyncGroupRsp_descriptor,
         new java.lang.String[] { "Info", "Member", });
     internal_static_XmsgImGroupSyncGroupEventInfo_descriptor =
-      getDescriptor().getMessageTypes().get(97);
+      getDescriptor().getMessageTypes().get(107);
     internal_static_XmsgImGroupSyncGroupEventInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImGroupSyncGroupEventInfo_descriptor,
@@ -95841,7 +104111,7 @@ public final class PbXmsg {
         internal_static_XmsgImGroupSyncGroupEventInfo_InfoEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_XmsgImGroupSyncGroupEventMember_descriptor =
-      getDescriptor().getMessageTypes().get(98);
+      getDescriptor().getMessageTypes().get(108);
     internal_static_XmsgImGroupSyncGroupEventMember_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImGroupSyncGroupEventMember_descriptor,
@@ -95853,25 +104123,25 @@ public final class PbXmsg {
         internal_static_XmsgImGroupSyncGroupEventMember_InfoEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_XmsgImGroupEventNotice_descriptor =
-      getDescriptor().getMessageTypes().get(99);
+      getDescriptor().getMessageTypes().get(109);
     internal_static_XmsgImGroupEventNotice_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImGroupEventNotice_descriptor,
         new java.lang.String[] { "Info", "Member", });
     internal_static_XmsgImGroupInfoQueryReq_descriptor =
-      getDescriptor().getMessageTypes().get(100);
+      getDescriptor().getMessageTypes().get(110);
     internal_static_XmsgImGroupInfoQueryReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImGroupInfoQueryReq_descriptor,
         new java.lang.String[] { "Cgt", "Member", });
     internal_static_XmsgImGroupInfoQueryRsp_descriptor =
-      getDescriptor().getMessageTypes().get(101);
+      getDescriptor().getMessageTypes().get(111);
     internal_static_XmsgImGroupInfoQueryRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImGroupInfoQueryRsp_descriptor,
         new java.lang.String[] { "Info", "Member", });
     internal_static_XmsgImGroupInfoSelfInfo_descriptor =
-      getDescriptor().getMessageTypes().get(102);
+      getDescriptor().getMessageTypes().get(112);
     internal_static_XmsgImGroupInfoSelfInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImGroupInfoSelfInfo_descriptor,
@@ -95883,7 +104153,7 @@ public final class PbXmsg {
         internal_static_XmsgImGroupInfoSelfInfo_InfoEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_XmsgImGroupInfoMember_descriptor =
-      getDescriptor().getMessageTypes().get(103);
+      getDescriptor().getMessageTypes().get(113);
     internal_static_XmsgImGroupInfoMember_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImGroupInfoMember_descriptor,
@@ -95895,7 +104165,7 @@ public final class PbXmsg {
         internal_static_XmsgImGroupInfoMember_InfoEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_XmsgImGroupInfoUpdateReq_descriptor =
-      getDescriptor().getMessageTypes().get(104);
+      getDescriptor().getMessageTypes().get(114);
     internal_static_XmsgImGroupInfoUpdateReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImGroupInfoUpdateReq_descriptor,
@@ -95907,7 +104177,7 @@ public final class PbXmsg {
         internal_static_XmsgImGroupInfoUpdateReq_UpsertEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_XmsgImGroupInfoUpdateRsp_descriptor =
-      getDescriptor().getMessageTypes().get(105);
+      getDescriptor().getMessageTypes().get(115);
     internal_static_XmsgImGroupInfoUpdateRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImGroupInfoUpdateRsp_descriptor,
@@ -95919,13 +104189,13 @@ public final class PbXmsg {
         internal_static_XmsgImGroupInfoUpdateRsp_ExtEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_XmsgImGroupMsgRecvCfgReq_descriptor =
-      getDescriptor().getMessageTypes().get(106);
+      getDescriptor().getMessageTypes().get(116);
     internal_static_XmsgImGroupMsgRecvCfgReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImGroupMsgRecvCfgReq_descriptor,
         new java.lang.String[] { "Cgt", "Type", });
     internal_static_XmsgImGroupMsgRecvCfgRsp_descriptor =
-      getDescriptor().getMessageTypes().get(107);
+      getDescriptor().getMessageTypes().get(117);
     internal_static_XmsgImGroupMsgRecvCfgRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImGroupMsgRecvCfgRsp_descriptor,

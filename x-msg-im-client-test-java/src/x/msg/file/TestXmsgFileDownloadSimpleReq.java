@@ -63,7 +63,7 @@ public class TestXmsgFileDownloadSimpleReq
 			/**                                  */
 			/** -------------------------------- */
 			XmsgFileDownloadSimpleReq.Builder req = XmsgFileDownloadSimpleReq.newBuilder();
-			req.setFid("c1ea63d6af9446238145ce210258ce22"); /* 文件唯一标识. */
+			req.setFid("09281a8fc5c94f30936806225344d971"); /* 文件唯一标识. */
 			req.setOffset(0); /* 偏移量, 这是半开区间, 类似于: new String(by, offset, len); */
 			req.setLen(0x10); /* 要下载的长度, 通过offset和len组合, 可以实现多线程下载. */
 			//

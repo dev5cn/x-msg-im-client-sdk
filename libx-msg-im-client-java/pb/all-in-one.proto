@@ -161,6 +161,61 @@ message XmsgImHlrGroupMsgRsp
 {
     map<string, string> ext = 1; 
 }
+message XmsgChannelStatusQueryReq
+{
+    repeated string cgt = 1; 
+}
+
+message XmsgChannelStatusQueryRsp
+{
+    map<string, XmsgChannelStatusUsrStatus> usrStatus = 1; 
+    map<string, XmsgChannelStatusGroupStatus> groupStatus = 2; 
+}
+message XmsgChannelStatusSubReq
+{
+    repeated string cgt = 1; 
+}
+
+message XmsgChannelStatusSubRsp
+{
+    map<string, XmsgChannelStatusUsrStatus> usrStatus = 1; 
+    map<string, XmsgChannelStatusGroupStatus> groupStatus = 2; 
+}
+message XmsgChannelStatusUnSubReq
+{
+    repeated string cgt = 1; 
+}
+
+message XmsgChannelStatusUnSubRsp
+{
+    map<string, string> ext = 1; 
+}
+message XmsgChannelStatusPubUsrStatusNotice
+{
+    string cgt = 1; 
+    string plat = 2; 
+    string did = 3; 
+    string status = 4; 
+}
+message XmsgChannelStatusPubGroupStatusNotice
+{
+    string cgt = 1; 
+    string status = 2; 
+}
+message XmsgChannelStatusUsrStatus
+{
+    message XmsgChannelStatusUsrClientStatus
+    {
+        string plat = 1; 
+        string did = 2; 
+        string status = 3; 
+    }
+    repeated XmsgChannelStatusUsrClientStatus client = 2; 
+}
+message XmsgChannelStatusGroupStatus
+{
+    string status = 1; 
+}
 message XmsgClientTokenInfo
 {
     string token = 1;

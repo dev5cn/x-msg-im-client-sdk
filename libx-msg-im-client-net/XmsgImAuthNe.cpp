@@ -183,7 +183,10 @@ bool XmsgImAuthNe::evnMsg(shared_ptr<XmsgImClientNetApi> netApi, shared_ptr<XscP
 	} else
 	{
 		if (pdu->transm.trans->dat != NULL) 
+		{
 			trans->endMsg = XmsgImTrans::newPbMsg(pdu->transm.trans->msg, pdu->transm.trans->dat, pdu->transm.trans->dlen);
+			LOG_ERROR("can not reflect a pb message from dat, msg: %s, x-msg-im-auth: %s", pdu->transm.trans->msg.c_str(), netApi->xmsgImAuthXscChannel->getAddress().c_str())
+		}
 	}
 	XmsgImClientCore::instance()->future([netApi, trans]
 	{
@@ -207,10 +210,24 @@ bool XmsgImAuthNe::evnClose(shared_ptr<XmsgImClientNetApi> netApi)
 void XmsgImAuthNe::intercept(shared_ptr<XmsgImClientNetApi> netApi, SptrXiti trans)
 {
 	netApi->authFinished = true; 
-	if (trans->raw)
+	if (trans->raw && !trans->rawMsgRsp->msg.empty()) 
+	{
 		trans->endMsg = XmsgImTrans::newPbMsg(trans->rawMsgRsp->msg, (uchar*) trans->rawMsgRsp->dat.data(), trans->rawMsgRsp->dat.length());
+		if (trans->endMsg == nullptr) 
+		{
+			LOG_ERROR("can not reflect a pb message from dat, msg: %s, x-msg-im-auth: %s", trans->rawMsgRsp->msg.c_str(), netApi->xmsgImAuthXscChannel->getAddress().c_str())
+			return;
+		}
+	}
 	if (trans->endMsg == nullptr)
+	{
+		LOG_DEBUG("may be have some one request failed, req: %s, ret: %04X, desc: %s, x-msg-im-auth: %s", 
+				(trans->raw ? trans->rawMsgReq->msg.c_str() : trans->beginMsg->GetDescriptor()->name().c_str()),
+				trans->ret,
+				trans->desc.c_str(),
+				netApi->xmsgImAuthXscChannel->getAddress().c_str())
 		return;
+	}
 	if (trans->endMsg->GetDescriptor()->name() != XmsgImAuthSimpleRsp::descriptor()->name())
 		return;
 	auto rsp = static_pointer_cast<XmsgImAuthSimpleRsp>(trans->endMsg);

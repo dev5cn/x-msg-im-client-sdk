@@ -1,8 +1,8 @@
 cmake_minimum_required(VERSION 2.8.12.2)
-
+#
 IF($ENV{PLAT} MATCHES "ANDROID")
         ADD_DEFINITIONS(-DANDROID -DLINUX)
-	set(CMAKE_SYSTEM_NAME Android)
+	    set(CMAKE_SYSTEM_NAME Android)
         set(CMAKE_ANDROID_NDK $ENV{CMAKE_ANDROID_NDK})
         set(CMAKE_SYSTEM_VERSION $ENV{CMAKE_SYSTEM_VERSION})
         set(CMAKE_ANDROID_ARCH_ABI $ENV{CMAKE_ANDROID_ARCH_ABI})
@@ -10,14 +10,16 @@ IF($ENV{PLAT} MATCHES "ANDROID")
 ELSE ()
         ADD_DEFINITIONS(-D$ENV{PLAT})
 ENDIF()
-
+#
 INCLUDE_DIRECTORIES($ENV{PROTOBUF}/include)
-
+#
 ADD_COMPILE_OPTIONS(-std=c++11 -fPIC -g3 -O3 -Wall)
-
+ADD_DEFINITIONS(-Wno-builtin-macro-redefined)
+#
 FILE(GLOB SRC "./*/*.cc")
-
+#
 PROJECT(x-msg-im-client-pb)
-
+#
 ADD_LIBRARY(x-msg-im-client-pb STATIC ${SRC})
-
+INCLUDE(../__file__.cmake)
+REDEFINE_FILE_MACRO(x-msg-im-client-pb)
