@@ -35,7 +35,8 @@ message XmsgImAuthSimpleRsp
     uint64 expired = 3; 
     repeated XmsgImClientServiceAddress apAddr = 4; 
     repeated XmsgImClientServiceAddress fsAddr = 5; 
-    string ext = 6; 
+    string cgt = 7; 
+    map<string, string> ext = 8; 
 }
 
 message XmsgImClientDeviceInfo
@@ -43,7 +44,7 @@ message XmsgImClientDeviceInfo
     string plat = 1; 
     string did = 2; 
     string ver = 3; 
-    string ext = 4; 
+    map<string, string> ext = 4; 
 }
 
 message XmsgImClientServiceAddress
@@ -52,7 +53,7 @@ message XmsgImClientServiceAddress
     uint32 port = 2; 
     uint32 weight = 3; 
     repeated string proto = 4; 
-    string ext = 5; 
+    map<string, string> ext = 5; 
 }
 
 message XmsgImAuthRegSimpleReq
@@ -65,5 +66,5 @@ message XmsgImAuthRegSimpleReq
 
 message XmsgImAuthRegSimpleRsp
 {
-    string ext = 1; 
+    map<string, string> ext = 1; 
 }

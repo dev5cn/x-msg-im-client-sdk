@@ -40,8 +40,8 @@ typedef struct
 #define XSC_TAG_TRANSM_PING																		0x80		
 #define XSC_TAG_TRANSM_PONG																		0xC0		
 #define XSC_TAG_TRANSM_HEADER																	0xC1		
-#define XSC_TAG_TRANSM_OOB																		0xC2		
-#define XSC_TAG_TRANSM_SECURITY																	0xC3		
+#define XSC_TAG_TRANSM_SECURITY																	0xC4		
+#define XSC_TAG_TRANSM_OOB																		0xC6		
 #define XSC_TAG_TRANS_BEGIN																		0x60		
 #define XSC_TAG_TRANS_END																		0x61		
 #define XSC_TAG_TRANS_UNIDIRECTION																0x66		

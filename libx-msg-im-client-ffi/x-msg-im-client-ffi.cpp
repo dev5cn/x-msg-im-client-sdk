@@ -143,7 +143,7 @@ void x_msg_im_client_sdk_net_del_api(int netApiId)
 	delXmsgImClientNetApi(netApiId);
 }
 
-int x_msg_im_client_sdk_net_future(int netApiId, const char* msg, const char* dat, int len)
+int x_msg_im_client_sdk_net_future(int netApiId, const char* msg, const char* dat, int len, const char* oob)
 {
 	shared_ptr<XmsgImClientNetApi> netApi = findXmsgImClientNetApi(netApiId);
 	if (netApi == nullptr)
@@ -174,7 +174,7 @@ int x_msg_im_client_sdk_net_future(int netApiId, const char* msg, const char* da
 			netRsp->set_dat(trans->rawMsgRsp->dat);
 		}
 		pushSdkEvent(adapter);
-	});
+	}, oob == NULL ? "" : oob);
 	return tid;
 }
 

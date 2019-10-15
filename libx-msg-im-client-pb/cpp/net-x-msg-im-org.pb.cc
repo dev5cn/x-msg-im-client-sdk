@@ -34,6 +34,11 @@ class XmsgImOrgSyncPubReqDefaultTypeInternal {
   ::google::protobuf::internal::ExplicitlyConstructed<XmsgImOrgSyncPubReq>
       _instance;
 } _XmsgImOrgSyncPubReq_default_instance_;
+class XmsgImOrgSyncPubRsp_ExtEntry_DoNotUseDefaultTypeInternal {
+ public:
+  ::google::protobuf::internal::ExplicitlyConstructed<XmsgImOrgSyncPubRsp_ExtEntry_DoNotUse>
+      _instance;
+} _XmsgImOrgSyncPubRsp_ExtEntry_DoNotUse_default_instance_;
 class XmsgImOrgSyncPubRspDefaultTypeInternal {
  public:
   ::google::protobuf::internal::ExplicitlyConstructed<XmsgImOrgSyncPubRsp>
@@ -174,6 +179,26 @@ void InitDefaultsXmsgImOrgSyncPubReq() {
   ::google::protobuf::GoogleOnceInit(&once, &InitDefaultsXmsgImOrgSyncPubReqImpl);
 }
 
+void InitDefaultsXmsgImOrgSyncPubRsp_ExtEntry_DoNotUseImpl() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+#ifdef GOOGLE_PROTOBUF_ENFORCE_UNIQUENESS
+  ::google::protobuf::internal::InitProtobufDefaultsForceUnique();
+#else
+  ::google::protobuf::internal::InitProtobufDefaults();
+#endif  // GOOGLE_PROTOBUF_ENFORCE_UNIQUENESS
+  {
+    void* ptr = &::_XmsgImOrgSyncPubRsp_ExtEntry_DoNotUse_default_instance_;
+    new (ptr) ::XmsgImOrgSyncPubRsp_ExtEntry_DoNotUse();
+  }
+  ::XmsgImOrgSyncPubRsp_ExtEntry_DoNotUse::InitAsDefaultInstance();
+}
+
+void InitDefaultsXmsgImOrgSyncPubRsp_ExtEntry_DoNotUse() {
+  static GOOGLE_PROTOBUF_DECLARE_ONCE(once);
+  ::google::protobuf::GoogleOnceInit(&once, &InitDefaultsXmsgImOrgSyncPubRsp_ExtEntry_DoNotUseImpl);
+}
+
 void InitDefaultsXmsgImOrgSyncPubRspImpl() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
@@ -182,6 +207,7 @@ void InitDefaultsXmsgImOrgSyncPubRspImpl() {
 #else
   ::google::protobuf::internal::InitProtobufDefaults();
 #endif  // GOOGLE_PROTOBUF_ENFORCE_UNIQUENESS
+  protobuf_net_2dx_2dmsg_2dim_2dorg_2eproto::InitDefaultsXmsgImOrgSyncPubRsp_ExtEntry_DoNotUse();
   {
     void* ptr = &::_XmsgImOrgSyncPubRsp_default_instance_;
     new (ptr) ::XmsgImOrgSyncPubRsp();
@@ -500,7 +526,7 @@ void InitDefaultsXmsgImOrgNodeChild() {
   ::google::protobuf::GoogleOnceInit(&once, &InitDefaultsXmsgImOrgNodeChildImpl);
 }
 
-::google::protobuf::Metadata file_level_metadata[18];
+::google::protobuf::Metadata file_level_metadata[19];
 const ::google::protobuf::EnumDescriptor* file_level_enum_descriptors[1];
 
 const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
@@ -526,6 +552,15 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::XmsgImOrgSyncPubReq, event_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::XmsgImOrgSyncPubRsp_ExtEntry_DoNotUse, _has_bits_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::XmsgImOrgSyncPubRsp_ExtEntry_DoNotUse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::XmsgImOrgSyncPubRsp_ExtEntry_DoNotUse, key_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::XmsgImOrgSyncPubRsp_ExtEntry_DoNotUse, value_),
+  0,
+  1,
   ~0u,  // no _has_bits_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::XmsgImOrgSyncPubRsp, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -666,27 +701,29 @@ static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_PROT
   { 0, -1, sizeof(::XmsgImOrgSyncSubReq)},
   { 8, -1, sizeof(::XmsgImOrgSyncSubRsp)},
   { 16, -1, sizeof(::XmsgImOrgSyncPubReq)},
-  { 22, -1, sizeof(::XmsgImOrgSyncPubRsp)},
-  { 28, -1, sizeof(::XmsgImOrgChangedNotice)},
-  { 34, -1, sizeof(::XmsgImOrgNodeChildQueryReq)},
-  { 40, -1, sizeof(::XmsgImOrgNodeChildQueryRsp)},
-  { 46, -1, sizeof(::XmsgImOrgNodeDeptUsrQueryReq)},
-  { 53, -1, sizeof(::XmsgImOrgNodeDeptUsrQueryRsp)},
-  { 64, -1, sizeof(::XmsgImOrgNodeQueryReq)},
-  { 70, -1, sizeof(::XmsgImOrgNodeQueryRsp)},
-  { 83, -1, sizeof(::XmsgImOrgEvent)},
-  { 91, -1, sizeof(::XmsgImOrgEventDept)},
-  { 104, -1, sizeof(::XmsgImOrgEventDeptUsr)},
-  { 117, -1, sizeof(::XmsgImOrgEventUsr)},
-  { 129, 136, sizeof(::XmsgImOrgNodeInfo_KvEntry_DoNotUse)},
-  { 138, -1, sizeof(::XmsgImOrgNodeInfo)},
-  { 144, -1, sizeof(::XmsgImOrgNodeChild)},
+  { 22, 29, sizeof(::XmsgImOrgSyncPubRsp_ExtEntry_DoNotUse)},
+  { 31, -1, sizeof(::XmsgImOrgSyncPubRsp)},
+  { 37, -1, sizeof(::XmsgImOrgChangedNotice)},
+  { 43, -1, sizeof(::XmsgImOrgNodeChildQueryReq)},
+  { 49, -1, sizeof(::XmsgImOrgNodeChildQueryRsp)},
+  { 55, -1, sizeof(::XmsgImOrgNodeDeptUsrQueryReq)},
+  { 62, -1, sizeof(::XmsgImOrgNodeDeptUsrQueryRsp)},
+  { 73, -1, sizeof(::XmsgImOrgNodeQueryReq)},
+  { 79, -1, sizeof(::XmsgImOrgNodeQueryRsp)},
+  { 92, -1, sizeof(::XmsgImOrgEvent)},
+  { 100, -1, sizeof(::XmsgImOrgEventDept)},
+  { 113, -1, sizeof(::XmsgImOrgEventDeptUsr)},
+  { 126, -1, sizeof(::XmsgImOrgEventUsr)},
+  { 138, 145, sizeof(::XmsgImOrgNodeInfo_KvEntry_DoNotUse)},
+  { 147, -1, sizeof(::XmsgImOrgNodeInfo)},
+  { 153, -1, sizeof(::XmsgImOrgNodeChild)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
   reinterpret_cast<const ::google::protobuf::Message*>(&::_XmsgImOrgSyncSubReq_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::_XmsgImOrgSyncSubRsp_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::_XmsgImOrgSyncPubReq_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&::_XmsgImOrgSyncPubRsp_ExtEntry_DoNotUse_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::_XmsgImOrgSyncPubRsp_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::_XmsgImOrgChangedNotice_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::_XmsgImOrgNodeChildQueryReq_default_instance_),
@@ -720,7 +757,7 @@ void protobuf_AssignDescriptorsOnce() {
 void protobuf_RegisterTypes(const ::std::string&) GOOGLE_PROTOBUF_ATTRIBUTE_COLD;
 void protobuf_RegisterTypes(const ::std::string&) {
   protobuf_AssignDescriptorsOnce();
-  ::google::protobuf::internal::RegisterAllTypes(file_level_metadata, 18);
+  ::google::protobuf::internal::RegisterAllTypes(file_level_metadata, 19);
 }
 
 void AddDescriptorsImpl() {
@@ -732,51 +769,52 @@ void AddDescriptorsImpl() {
       "SubRsp\022\026\n\016ver4deptLatest\030\001 \001(\004\022\031\n\021ver4de"
       "ptUsrLatest\030\002 \001(\004\022\025\n\rver4usrLatest\030\003 \001(\004"
       "\"5\n\023XmsgImOrgSyncPubReq\022\036\n\005event\030\001 \003(\0132\017"
-      ".XmsgImOrgEvent\"\"\n\023XmsgImOrgSyncPubRsp\022\013"
-      "\n\003ext\030\001 \001(\t\"8\n\026XmsgImOrgChangedNotice\022\036\n"
-      "\005event\030\001 \001(\0132\017.XmsgImOrgEvent\")\n\032XmsgImO"
-      "rgNodeChildQueryReq\022\013\n\003cgt\030\001 \001(\t\"@\n\032Xmsg"
-      "ImOrgNodeChildQueryRsp\022\"\n\005child\030\001 \003(\0132\023."
-      "XmsgImOrgNodeChild\":\n\034XmsgImOrgNodeDeptU"
-      "srQueryReq\022\014\n\004dcgt\030\001 \001(\t\022\014\n\004ucgt\030\002 \001(\t\"\205"
-      "\001\n\034XmsgImOrgNodeDeptUsrQueryRsp\022\014\n\004name\030"
-      "\002 \001(\t\022\016\n\006enable\030\003 \001(\010\022 \n\004info\030\004 \001(\0132\022.Xm"
-      "sgImOrgNodeInfo\022\013\n\003ver\030\005 \001(\004\022\013\n\003gts\030\006 \001("
-      "\004\022\013\n\003uts\030\007 \001(\004\"$\n\025XmsgImOrgNodeQueryReq\022"
-      "\013\n\003cgt\030\001 \001(\t\"\255\001\n\025XmsgImOrgNodeQueryRsp\022\013"
-      "\n\003pgt\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\022\016\n\006enable\030\003 \001("
-      "\010\022 \n\004type\030\004 \001(\0162\022.XmsgImOrgNodeType\022 \n\004i"
-      "nfo\030\005 \001(\0132\022.XmsgImOrgNodeInfo\022\013\n\003ver\030\006 \001"
-      "(\004\022\013\n\003gts\030\007 \001(\004\022\013\n\003uts\030\010 \001(\004\"}\n\016XmsgImOr"
-      "gEvent\022!\n\004dept\030\001 \001(\0132\023.XmsgImOrgEventDep"
-      "t\022\'\n\007deptUsr\030\002 \001(\0132\026.XmsgImOrgEventDeptU"
-      "sr\022\037\n\003usr\030\003 \001(\0132\022.XmsgImOrgEventUsr\"\226\001\n\022"
-      "XmsgImOrgEventDept\022\013\n\003cgt\030\001 \001(\t\022\014\n\004pcgt\030"
-      "\002 \001(\t\022\014\n\004name\030\003 \001(\t\022\016\n\006enable\030\004 \001(\010\022 \n\004i"
-      "nfo\030\005 \001(\0132\022.XmsgImOrgNodeInfo\022\013\n\003ver\030\006 \001"
-      "(\004\022\013\n\003gts\030\007 \001(\004\022\013\n\003uts\030\010 \001(\004\"\232\001\n\025XmsgImO"
-      "rgEventDeptUsr\022\014\n\004dcgt\030\001 \001(\t\022\014\n\004ucgt\030\002 \001"
-      "(\t\022\014\n\004name\030\003 \001(\t\022\016\n\006enable\030\004 \001(\010\022 \n\004info"
-      "\030\005 \001(\0132\022.XmsgImOrgNodeInfo\022\013\n\003ver\030\006 \001(\004\022"
-      "\013\n\003gts\030\007 \001(\004\022\013\n\003uts\030\010 \001(\004\"\207\001\n\021XmsgImOrgE"
-      "ventUsr\022\013\n\003cgt\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\022\016\n\006en"
-      "able\030\003 \001(\010\022 \n\004info\030\004 \001(\0132\022.XmsgImOrgNode"
-      "Info\022\013\n\003ver\030\005 \001(\004\022\013\n\003gts\030\006 \001(\004\022\013\n\003uts\030\007 "
-      "\001(\004\"f\n\021XmsgImOrgNodeInfo\022&\n\002kv\030\001 \003(\0132\032.X"
-      "msgImOrgNodeInfo.KvEntry\032)\n\007KvEntry\022\013\n\003k"
-      "ey\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\252\001\n\022XmsgImOr"
-      "gNodeChild\022\013\n\003cgt\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\022\016\n"
-      "\006enable\030\003 \001(\010\022 \n\004type\030\004 \001(\0162\022.XmsgImOrgN"
-      "odeType\022 \n\004info\030\005 \001(\0132\022.XmsgImOrgNodeInf"
-      "o\022\013\n\003ver\030\006 \001(\004\022\013\n\003gts\030\007 \001(\004\022\013\n\003uts\030\010 \001(\004"
-      "*\177\n\021XmsgImOrgNodeType\022&\n\"X_MSG_IM_ORG_NO"
-      "DE_TYPE__RESERVED__\020\000\022!\n\035X_MSG_IM_ORG_NO"
-      "DE_TYPE_BRANCH\020\001\022\037\n\033X_MSG_IM_ORG_NODE_TY"
-      "PE_LEAF\020\002B\027\n\010x.msg.pbB\013XmsgImOrgPbb\006prot"
-      "o3"
+      ".XmsgImOrgEvent\"m\n\023XmsgImOrgSyncPubRsp\022*"
+      "\n\003ext\030\001 \003(\0132\035.XmsgImOrgSyncPubRsp.ExtEnt"
+      "ry\032*\n\010ExtEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001"
+      "(\t:\0028\001\"8\n\026XmsgImOrgChangedNotice\022\036\n\005even"
+      "t\030\001 \001(\0132\017.XmsgImOrgEvent\")\n\032XmsgImOrgNod"
+      "eChildQueryReq\022\013\n\003cgt\030\001 \001(\t\"@\n\032XmsgImOrg"
+      "NodeChildQueryRsp\022\"\n\005child\030\001 \003(\0132\023.XmsgI"
+      "mOrgNodeChild\":\n\034XmsgImOrgNodeDeptUsrQue"
+      "ryReq\022\014\n\004dcgt\030\001 \001(\t\022\014\n\004ucgt\030\002 \001(\t\"\205\001\n\034Xm"
+      "sgImOrgNodeDeptUsrQueryRsp\022\014\n\004name\030\002 \001(\t"
+      "\022\016\n\006enable\030\003 \001(\010\022 \n\004info\030\004 \001(\0132\022.XmsgImO"
+      "rgNodeInfo\022\013\n\003ver\030\005 \001(\004\022\013\n\003gts\030\006 \001(\004\022\013\n\003"
+      "uts\030\007 \001(\004\"$\n\025XmsgImOrgNodeQueryReq\022\013\n\003cg"
+      "t\030\001 \001(\t\"\255\001\n\025XmsgImOrgNodeQueryRsp\022\013\n\003pgt"
+      "\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\022\016\n\006enable\030\003 \001(\010\022 \n\004"
+      "type\030\004 \001(\0162\022.XmsgImOrgNodeType\022 \n\004info\030\005"
+      " \001(\0132\022.XmsgImOrgNodeInfo\022\013\n\003ver\030\006 \001(\004\022\013\n"
+      "\003gts\030\007 \001(\004\022\013\n\003uts\030\010 \001(\004\"}\n\016XmsgImOrgEven"
+      "t\022!\n\004dept\030\001 \001(\0132\023.XmsgImOrgEventDept\022\'\n\007"
+      "deptUsr\030\002 \001(\0132\026.XmsgImOrgEventDeptUsr\022\037\n"
+      "\003usr\030\003 \001(\0132\022.XmsgImOrgEventUsr\"\226\001\n\022XmsgI"
+      "mOrgEventDept\022\013\n\003cgt\030\001 \001(\t\022\014\n\004pcgt\030\002 \001(\t"
+      "\022\014\n\004name\030\003 \001(\t\022\016\n\006enable\030\004 \001(\010\022 \n\004info\030\005"
+      " \001(\0132\022.XmsgImOrgNodeInfo\022\013\n\003ver\030\006 \001(\004\022\013\n"
+      "\003gts\030\007 \001(\004\022\013\n\003uts\030\010 \001(\004\"\232\001\n\025XmsgImOrgEve"
+      "ntDeptUsr\022\014\n\004dcgt\030\001 \001(\t\022\014\n\004ucgt\030\002 \001(\t\022\014\n"
+      "\004name\030\003 \001(\t\022\016\n\006enable\030\004 \001(\010\022 \n\004info\030\005 \001("
+      "\0132\022.XmsgImOrgNodeInfo\022\013\n\003ver\030\006 \001(\004\022\013\n\003gt"
+      "s\030\007 \001(\004\022\013\n\003uts\030\010 \001(\004\"\207\001\n\021XmsgImOrgEventU"
+      "sr\022\013\n\003cgt\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\022\016\n\006enable\030"
+      "\003 \001(\010\022 \n\004info\030\004 \001(\0132\022.XmsgImOrgNodeInfo\022"
+      "\013\n\003ver\030\005 \001(\004\022\013\n\003gts\030\006 \001(\004\022\013\n\003uts\030\007 \001(\004\"f"
+      "\n\021XmsgImOrgNodeInfo\022&\n\002kv\030\001 \003(\0132\032.XmsgIm"
+      "OrgNodeInfo.KvEntry\032)\n\007KvEntry\022\013\n\003key\030\001 "
+      "\001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\252\001\n\022XmsgImOrgNode"
+      "Child\022\013\n\003cgt\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\022\016\n\006enab"
+      "le\030\003 \001(\010\022 \n\004type\030\004 \001(\0162\022.XmsgImOrgNodeTy"
+      "pe\022 \n\004info\030\005 \001(\0132\022.XmsgImOrgNodeInfo\022\013\n\003"
+      "ver\030\006 \001(\004\022\013\n\003gts\030\007 \001(\004\022\013\n\003uts\030\010 \001(\004*\177\n\021X"
+      "msgImOrgNodeType\022&\n\"X_MSG_IM_ORG_NODE_TY"
+      "PE__RESERVED__\020\000\022!\n\035X_MSG_IM_ORG_NODE_TY"
+      "PE_BRANCH\020\001\022\037\n\033X_MSG_IM_ORG_NODE_TYPE_LE"
+      "AF\020\002B\027\n\010x.msg.pbB\013XmsgImOrgPbb\006proto3"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 1882);
+      descriptor, 1957);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "net-x-msg-im-org.proto", &protobuf_RegisterTypes);
 }
@@ -1683,6 +1721,23 @@ void XmsgImOrgSyncPubReq::InternalSwap(XmsgImOrgSyncPubReq* other) {
 
 // ===================================================================
 
+XmsgImOrgSyncPubRsp_ExtEntry_DoNotUse::XmsgImOrgSyncPubRsp_ExtEntry_DoNotUse() {}
+XmsgImOrgSyncPubRsp_ExtEntry_DoNotUse::XmsgImOrgSyncPubRsp_ExtEntry_DoNotUse(::google::protobuf::Arena* arena) : SuperType(arena) {}
+void XmsgImOrgSyncPubRsp_ExtEntry_DoNotUse::MergeFrom(const XmsgImOrgSyncPubRsp_ExtEntry_DoNotUse& other) {
+  MergeFromInternal(other);
+}
+::google::protobuf::Metadata XmsgImOrgSyncPubRsp_ExtEntry_DoNotUse::GetMetadata() const {
+  ::protobuf_net_2dx_2dmsg_2dim_2dorg_2eproto::protobuf_AssignDescriptorsOnce();
+  return ::protobuf_net_2dx_2dmsg_2dim_2dorg_2eproto::file_level_metadata[3];
+}
+void XmsgImOrgSyncPubRsp_ExtEntry_DoNotUse::MergeFrom(
+    const ::google::protobuf::Message& other) {
+  ::google::protobuf::Message::MergeFrom(other);
+}
+
+
+// ===================================================================
+
 void XmsgImOrgSyncPubRsp::InitAsDefaultInstance() {
 }
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
@@ -1702,15 +1757,11 @@ XmsgImOrgSyncPubRsp::XmsgImOrgSyncPubRsp(const XmsgImOrgSyncPubRsp& from)
       _internal_metadata_(NULL),
       _cached_size_(0) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ext_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.ext().size() > 0) {
-    ext_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.ext_);
-  }
+  ext_.MergeFrom(from.ext_);
   // @@protoc_insertion_point(copy_constructor:XmsgImOrgSyncPubRsp)
 }
 
 void XmsgImOrgSyncPubRsp::SharedCtor() {
-  ext_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   _cached_size_ = 0;
 }
 
@@ -1720,7 +1771,6 @@ XmsgImOrgSyncPubRsp::~XmsgImOrgSyncPubRsp() {
 }
 
 void XmsgImOrgSyncPubRsp::SharedDtor() {
-  ext_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 
 void XmsgImOrgSyncPubRsp::SetCachedSize(int size) const {
@@ -1752,7 +1802,7 @@ void XmsgImOrgSyncPubRsp::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ext_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  ext_.Clear();
   _internal_metadata_.Clear();
 }
 
@@ -1766,16 +1816,27 @@ bool XmsgImOrgSyncPubRsp::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // string ext = 1;
+      // map<string, string> ext = 1;
       case 1: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
             static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_ext()));
+          XmsgImOrgSyncPubRsp_ExtEntry_DoNotUse::Parser< ::google::protobuf::internal::MapField<
+              XmsgImOrgSyncPubRsp_ExtEntry_DoNotUse,
+              ::std::string, ::std::string,
+              ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+              ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+              0 >,
+            ::google::protobuf::Map< ::std::string, ::std::string > > parser(&ext_);
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+              input, &parser));
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->ext().data(), static_cast<int>(this->ext().length()),
+            parser.key().data(), static_cast<int>(parser.key().length()),
             ::google::protobuf::internal::WireFormatLite::PARSE,
-            "XmsgImOrgSyncPubRsp.ext"));
+            "XmsgImOrgSyncPubRsp.ExtEntry.key"));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            parser.value().data(), static_cast<int>(parser.value().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "XmsgImOrgSyncPubRsp.ExtEntry.value"));
         } else {
           goto handle_unusual;
         }
@@ -1808,14 +1869,57 @@ void XmsgImOrgSyncPubRsp::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string ext = 1;
-  if (this->ext().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->ext().data(), static_cast<int>(this->ext().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "XmsgImOrgSyncPubRsp.ext");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      1, this->ext(), output);
+  // map<string, string> ext = 1;
+  if (!this->ext().empty()) {
+    typedef ::google::protobuf::Map< ::std::string, ::std::string >::const_pointer
+        ConstPtr;
+    typedef ConstPtr SortItem;
+    typedef ::google::protobuf::internal::CompareByDerefFirst<SortItem> Less;
+    struct Utf8Check {
+      static void Check(ConstPtr p) {
+        ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+          p->first.data(), static_cast<int>(p->first.length()),
+          ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+          "XmsgImOrgSyncPubRsp.ExtEntry.key");
+        ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+          p->second.data(), static_cast<int>(p->second.length()),
+          ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+          "XmsgImOrgSyncPubRsp.ExtEntry.value");
+      }
+    };
+
+    if (output->IsSerializationDeterministic() &&
+        this->ext().size() > 1) {
+      ::google::protobuf::scoped_array<SortItem> items(
+          new SortItem[this->ext().size()]);
+      typedef ::google::protobuf::Map< ::std::string, ::std::string >::size_type size_type;
+      size_type n = 0;
+      for (::google::protobuf::Map< ::std::string, ::std::string >::const_iterator
+          it = this->ext().begin();
+          it != this->ext().end(); ++it, ++n) {
+        items[static_cast<ptrdiff_t>(n)] = SortItem(&*it);
+      }
+      ::std::sort(&items[0], &items[static_cast<ptrdiff_t>(n)], Less());
+      ::google::protobuf::scoped_ptr<XmsgImOrgSyncPubRsp_ExtEntry_DoNotUse> entry;
+      for (size_type i = 0; i < n; i++) {
+        entry.reset(ext_.NewEntryWrapper(
+            items[static_cast<ptrdiff_t>(i)]->first, items[static_cast<ptrdiff_t>(i)]->second));
+        ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+            1, *entry, output);
+        Utf8Check::Check(items[static_cast<ptrdiff_t>(i)]);
+      }
+    } else {
+      ::google::protobuf::scoped_ptr<XmsgImOrgSyncPubRsp_ExtEntry_DoNotUse> entry;
+      for (::google::protobuf::Map< ::std::string, ::std::string >::const_iterator
+          it = this->ext().begin();
+          it != this->ext().end(); ++it) {
+        entry.reset(ext_.NewEntryWrapper(
+            it->first, it->second));
+        ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+            1, *entry, output);
+        Utf8Check::Check(&*it);
+      }
+    }
   }
 
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
@@ -1832,15 +1936,61 @@ void XmsgImOrgSyncPubRsp::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string ext = 1;
-  if (this->ext().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->ext().data(), static_cast<int>(this->ext().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "XmsgImOrgSyncPubRsp.ext");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        1, this->ext(), target);
+  // map<string, string> ext = 1;
+  if (!this->ext().empty()) {
+    typedef ::google::protobuf::Map< ::std::string, ::std::string >::const_pointer
+        ConstPtr;
+    typedef ConstPtr SortItem;
+    typedef ::google::protobuf::internal::CompareByDerefFirst<SortItem> Less;
+    struct Utf8Check {
+      static void Check(ConstPtr p) {
+        ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+          p->first.data(), static_cast<int>(p->first.length()),
+          ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+          "XmsgImOrgSyncPubRsp.ExtEntry.key");
+        ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+          p->second.data(), static_cast<int>(p->second.length()),
+          ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+          "XmsgImOrgSyncPubRsp.ExtEntry.value");
+      }
+    };
+
+    if (deterministic &&
+        this->ext().size() > 1) {
+      ::google::protobuf::scoped_array<SortItem> items(
+          new SortItem[this->ext().size()]);
+      typedef ::google::protobuf::Map< ::std::string, ::std::string >::size_type size_type;
+      size_type n = 0;
+      for (::google::protobuf::Map< ::std::string, ::std::string >::const_iterator
+          it = this->ext().begin();
+          it != this->ext().end(); ++it, ++n) {
+        items[static_cast<ptrdiff_t>(n)] = SortItem(&*it);
+      }
+      ::std::sort(&items[0], &items[static_cast<ptrdiff_t>(n)], Less());
+      ::google::protobuf::scoped_ptr<XmsgImOrgSyncPubRsp_ExtEntry_DoNotUse> entry;
+      for (size_type i = 0; i < n; i++) {
+        entry.reset(ext_.NewEntryWrapper(
+            items[static_cast<ptrdiff_t>(i)]->first, items[static_cast<ptrdiff_t>(i)]->second));
+        target = ::google::protobuf::internal::WireFormatLite::
+                   InternalWriteMessageNoVirtualToArray(
+                       1, *entry, deterministic, target);
+;
+        Utf8Check::Check(items[static_cast<ptrdiff_t>(i)]);
+      }
+    } else {
+      ::google::protobuf::scoped_ptr<XmsgImOrgSyncPubRsp_ExtEntry_DoNotUse> entry;
+      for (::google::protobuf::Map< ::std::string, ::std::string >::const_iterator
+          it = this->ext().begin();
+          it != this->ext().end(); ++it) {
+        entry.reset(ext_.NewEntryWrapper(
+            it->first, it->second));
+        target = ::google::protobuf::internal::WireFormatLite::
+                   InternalWriteMessageNoVirtualToArray(
+                       1, *entry, deterministic, target);
+;
+        Utf8Check::Check(&*it);
+      }
+    }
   }
 
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
@@ -1860,11 +2010,18 @@ size_t XmsgImOrgSyncPubRsp::ByteSizeLong() const {
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
   }
-  // string ext = 1;
-  if (this->ext().size() > 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->ext());
+  // map<string, string> ext = 1;
+  total_size += 1 *
+      ::google::protobuf::internal::FromIntSize(this->ext_size());
+  {
+    ::google::protobuf::scoped_ptr<XmsgImOrgSyncPubRsp_ExtEntry_DoNotUse> entry;
+    for (::google::protobuf::Map< ::std::string, ::std::string >::const_iterator
+        it = this->ext().begin();
+        it != this->ext().end(); ++it) {
+      entry.reset(ext_.NewEntryWrapper(it->first, it->second));
+      total_size += ::google::protobuf::internal::WireFormatLite::
+          MessageSizeNoVirtual(*entry);
+    }
   }
 
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
@@ -1896,10 +2053,7 @@ void XmsgImOrgSyncPubRsp::MergeFrom(const XmsgImOrgSyncPubRsp& from) {
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.ext().size() > 0) {
-
-    ext_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.ext_);
-  }
+  ext_.MergeFrom(from.ext_);
 }
 
 void XmsgImOrgSyncPubRsp::CopyFrom(const ::google::protobuf::Message& from) {
@@ -6270,7 +6424,7 @@ void XmsgImOrgNodeInfo_KvEntry_DoNotUse::MergeFrom(const XmsgImOrgNodeInfo_KvEnt
 }
 ::google::protobuf::Metadata XmsgImOrgNodeInfo_KvEntry_DoNotUse::GetMetadata() const {
   ::protobuf_net_2dx_2dmsg_2dim_2dorg_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_net_2dx_2dmsg_2dim_2dorg_2eproto::file_level_metadata[15];
+  return ::protobuf_net_2dx_2dmsg_2dim_2dorg_2eproto::file_level_metadata[16];
 }
 void XmsgImOrgNodeInfo_KvEntry_DoNotUse::MergeFrom(
     const ::google::protobuf::Message& other) {

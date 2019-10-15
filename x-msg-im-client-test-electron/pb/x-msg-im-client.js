@@ -5337,12 +5337,2451 @@ $root.XmsgImHlrGroupMsgRsp = (function() {
     return XmsgImHlrGroupMsgRsp;
 })();
 
+$root.XmsgChannelStatusQueryReq = (function() {
+
+    /**
+     * Properties of a XmsgChannelStatusQueryReq.
+     * @exports IXmsgChannelStatusQueryReq
+     * @interface IXmsgChannelStatusQueryReq
+     * @property {Array.<string>|null} [cgt] XmsgChannelStatusQueryReq cgt
+     */
+
+    /**
+     * Constructs a new XmsgChannelStatusQueryReq.
+     * @exports XmsgChannelStatusQueryReq
+     * @classdesc Represents a XmsgChannelStatusQueryReq.
+     * @implements IXmsgChannelStatusQueryReq
+     * @constructor
+     * @param {IXmsgChannelStatusQueryReq=} [properties] Properties to set
+     */
+    function XmsgChannelStatusQueryReq(properties) {
+        this.cgt = [];
+        if (properties)
+            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                if (properties[keys[i]] != null)
+                    this[keys[i]] = properties[keys[i]];
+    }
+
+    /**
+     * XmsgChannelStatusQueryReq cgt.
+     * @member {Array.<string>} cgt
+     * @memberof XmsgChannelStatusQueryReq
+     * @instance
+     */
+    XmsgChannelStatusQueryReq.prototype.cgt = $util.emptyArray;
+
+    /**
+     * Creates a new XmsgChannelStatusQueryReq instance using the specified properties.
+     * @function create
+     * @memberof XmsgChannelStatusQueryReq
+     * @static
+     * @param {IXmsgChannelStatusQueryReq=} [properties] Properties to set
+     * @returns {XmsgChannelStatusQueryReq} XmsgChannelStatusQueryReq instance
+     */
+    XmsgChannelStatusQueryReq.create = function create(properties) {
+        return new XmsgChannelStatusQueryReq(properties);
+    };
+
+    /**
+     * Encodes the specified XmsgChannelStatusQueryReq message. Does not implicitly {@link XmsgChannelStatusQueryReq.verify|verify} messages.
+     * @function encode
+     * @memberof XmsgChannelStatusQueryReq
+     * @static
+     * @param {IXmsgChannelStatusQueryReq} message XmsgChannelStatusQueryReq message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    XmsgChannelStatusQueryReq.encode = function encode(message, writer) {
+        if (!writer)
+            writer = $Writer.create();
+        if (message.cgt != null && message.cgt.length)
+            for (var i = 0; i < message.cgt.length; ++i)
+                writer.uint32(/* id 1, wireType 2 =*/10).string(message.cgt[i]);
+        return writer;
+    };
+
+    /**
+     * Encodes the specified XmsgChannelStatusQueryReq message, length delimited. Does not implicitly {@link XmsgChannelStatusQueryReq.verify|verify} messages.
+     * @function encodeDelimited
+     * @memberof XmsgChannelStatusQueryReq
+     * @static
+     * @param {IXmsgChannelStatusQueryReq} message XmsgChannelStatusQueryReq message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    XmsgChannelStatusQueryReq.encodeDelimited = function encodeDelimited(message, writer) {
+        return this.encode(message, writer).ldelim();
+    };
+
+    /**
+     * Decodes a XmsgChannelStatusQueryReq message from the specified reader or buffer.
+     * @function decode
+     * @memberof XmsgChannelStatusQueryReq
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @param {number} [length] Message length if known beforehand
+     * @returns {XmsgChannelStatusQueryReq} XmsgChannelStatusQueryReq
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    XmsgChannelStatusQueryReq.decode = function decode(reader, length) {
+        if (!(reader instanceof $Reader))
+            reader = $Reader.create(reader);
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.XmsgChannelStatusQueryReq();
+        while (reader.pos < end) {
+            var tag = reader.uint32();
+            switch (tag >>> 3) {
+            case 1:
+                if (!(message.cgt && message.cgt.length))
+                    message.cgt = [];
+                message.cgt.push(reader.string());
+                break;
+            default:
+                reader.skipType(tag & 7);
+                break;
+            }
+        }
+        return message;
+    };
+
+    /**
+     * Decodes a XmsgChannelStatusQueryReq message from the specified reader or buffer, length delimited.
+     * @function decodeDelimited
+     * @memberof XmsgChannelStatusQueryReq
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @returns {XmsgChannelStatusQueryReq} XmsgChannelStatusQueryReq
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    XmsgChannelStatusQueryReq.decodeDelimited = function decodeDelimited(reader) {
+        if (!(reader instanceof $Reader))
+            reader = new $Reader(reader);
+        return this.decode(reader, reader.uint32());
+    };
+
+    /**
+     * Verifies a XmsgChannelStatusQueryReq message.
+     * @function verify
+     * @memberof XmsgChannelStatusQueryReq
+     * @static
+     * @param {Object.<string,*>} message Plain object to verify
+     * @returns {string|null} `null` if valid, otherwise the reason why it is not
+     */
+    XmsgChannelStatusQueryReq.verify = function verify(message) {
+        if (typeof message !== "object" || message === null)
+            return "object expected";
+        if (message.cgt != null && message.hasOwnProperty("cgt")) {
+            if (!Array.isArray(message.cgt))
+                return "cgt: array expected";
+            for (var i = 0; i < message.cgt.length; ++i)
+                if (!$util.isString(message.cgt[i]))
+                    return "cgt: string[] expected";
+        }
+        return null;
+    };
+
+    /**
+     * Creates a XmsgChannelStatusQueryReq message from a plain object. Also converts values to their respective internal types.
+     * @function fromObject
+     * @memberof XmsgChannelStatusQueryReq
+     * @static
+     * @param {Object.<string,*>} object Plain object
+     * @returns {XmsgChannelStatusQueryReq} XmsgChannelStatusQueryReq
+     */
+    XmsgChannelStatusQueryReq.fromObject = function fromObject(object) {
+        if (object instanceof $root.XmsgChannelStatusQueryReq)
+            return object;
+        var message = new $root.XmsgChannelStatusQueryReq();
+        if (object.cgt) {
+            if (!Array.isArray(object.cgt))
+                throw TypeError(".XmsgChannelStatusQueryReq.cgt: array expected");
+            message.cgt = [];
+            for (var i = 0; i < object.cgt.length; ++i)
+                message.cgt[i] = String(object.cgt[i]);
+        }
+        return message;
+    };
+
+    /**
+     * Creates a plain object from a XmsgChannelStatusQueryReq message. Also converts values to other types if specified.
+     * @function toObject
+     * @memberof XmsgChannelStatusQueryReq
+     * @static
+     * @param {XmsgChannelStatusQueryReq} message XmsgChannelStatusQueryReq
+     * @param {$protobuf.IConversionOptions} [options] Conversion options
+     * @returns {Object.<string,*>} Plain object
+     */
+    XmsgChannelStatusQueryReq.toObject = function toObject(message, options) {
+        if (!options)
+            options = {};
+        var object = {};
+        if (options.arrays || options.defaults)
+            object.cgt = [];
+        if (message.cgt && message.cgt.length) {
+            object.cgt = [];
+            for (var j = 0; j < message.cgt.length; ++j)
+                object.cgt[j] = message.cgt[j];
+        }
+        return object;
+    };
+
+    /**
+     * Converts this XmsgChannelStatusQueryReq to JSON.
+     * @function toJSON
+     * @memberof XmsgChannelStatusQueryReq
+     * @instance
+     * @returns {Object.<string,*>} JSON object
+     */
+    XmsgChannelStatusQueryReq.prototype.toJSON = function toJSON() {
+        return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+    };
+
+    return XmsgChannelStatusQueryReq;
+})();
+
+$root.XmsgChannelStatusQueryRsp = (function() {
+
+    /**
+     * Properties of a XmsgChannelStatusQueryRsp.
+     * @exports IXmsgChannelStatusQueryRsp
+     * @interface IXmsgChannelStatusQueryRsp
+     * @property {Object.<string,IXmsgChannelStatusUsrStatus>|null} [usrStatus] XmsgChannelStatusQueryRsp usrStatus
+     * @property {Object.<string,IXmsgChannelStatusGroupStatus>|null} [groupStatus] XmsgChannelStatusQueryRsp groupStatus
+     */
+
+    /**
+     * Constructs a new XmsgChannelStatusQueryRsp.
+     * @exports XmsgChannelStatusQueryRsp
+     * @classdesc Represents a XmsgChannelStatusQueryRsp.
+     * @implements IXmsgChannelStatusQueryRsp
+     * @constructor
+     * @param {IXmsgChannelStatusQueryRsp=} [properties] Properties to set
+     */
+    function XmsgChannelStatusQueryRsp(properties) {
+        this.usrStatus = {};
+        this.groupStatus = {};
+        if (properties)
+            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                if (properties[keys[i]] != null)
+                    this[keys[i]] = properties[keys[i]];
+    }
+
+    /**
+     * XmsgChannelStatusQueryRsp usrStatus.
+     * @member {Object.<string,IXmsgChannelStatusUsrStatus>} usrStatus
+     * @memberof XmsgChannelStatusQueryRsp
+     * @instance
+     */
+    XmsgChannelStatusQueryRsp.prototype.usrStatus = $util.emptyObject;
+
+    /**
+     * XmsgChannelStatusQueryRsp groupStatus.
+     * @member {Object.<string,IXmsgChannelStatusGroupStatus>} groupStatus
+     * @memberof XmsgChannelStatusQueryRsp
+     * @instance
+     */
+    XmsgChannelStatusQueryRsp.prototype.groupStatus = $util.emptyObject;
+
+    /**
+     * Creates a new XmsgChannelStatusQueryRsp instance using the specified properties.
+     * @function create
+     * @memberof XmsgChannelStatusQueryRsp
+     * @static
+     * @param {IXmsgChannelStatusQueryRsp=} [properties] Properties to set
+     * @returns {XmsgChannelStatusQueryRsp} XmsgChannelStatusQueryRsp instance
+     */
+    XmsgChannelStatusQueryRsp.create = function create(properties) {
+        return new XmsgChannelStatusQueryRsp(properties);
+    };
+
+    /**
+     * Encodes the specified XmsgChannelStatusQueryRsp message. Does not implicitly {@link XmsgChannelStatusQueryRsp.verify|verify} messages.
+     * @function encode
+     * @memberof XmsgChannelStatusQueryRsp
+     * @static
+     * @param {IXmsgChannelStatusQueryRsp} message XmsgChannelStatusQueryRsp message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    XmsgChannelStatusQueryRsp.encode = function encode(message, writer) {
+        if (!writer)
+            writer = $Writer.create();
+        if (message.usrStatus != null && message.hasOwnProperty("usrStatus"))
+            for (var keys = Object.keys(message.usrStatus), i = 0; i < keys.length; ++i) {
+                writer.uint32(/* id 1, wireType 2 =*/10).fork().uint32(/* id 1, wireType 2 =*/10).string(keys[i]);
+                $root.XmsgChannelStatusUsrStatus.encode(message.usrStatus[keys[i]], writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim().ldelim();
+            }
+        if (message.groupStatus != null && message.hasOwnProperty("groupStatus"))
+            for (var keys = Object.keys(message.groupStatus), i = 0; i < keys.length; ++i) {
+                writer.uint32(/* id 2, wireType 2 =*/18).fork().uint32(/* id 1, wireType 2 =*/10).string(keys[i]);
+                $root.XmsgChannelStatusGroupStatus.encode(message.groupStatus[keys[i]], writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim().ldelim();
+            }
+        return writer;
+    };
+
+    /**
+     * Encodes the specified XmsgChannelStatusQueryRsp message, length delimited. Does not implicitly {@link XmsgChannelStatusQueryRsp.verify|verify} messages.
+     * @function encodeDelimited
+     * @memberof XmsgChannelStatusQueryRsp
+     * @static
+     * @param {IXmsgChannelStatusQueryRsp} message XmsgChannelStatusQueryRsp message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    XmsgChannelStatusQueryRsp.encodeDelimited = function encodeDelimited(message, writer) {
+        return this.encode(message, writer).ldelim();
+    };
+
+    /**
+     * Decodes a XmsgChannelStatusQueryRsp message from the specified reader or buffer.
+     * @function decode
+     * @memberof XmsgChannelStatusQueryRsp
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @param {number} [length] Message length if known beforehand
+     * @returns {XmsgChannelStatusQueryRsp} XmsgChannelStatusQueryRsp
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    XmsgChannelStatusQueryRsp.decode = function decode(reader, length) {
+        if (!(reader instanceof $Reader))
+            reader = $Reader.create(reader);
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.XmsgChannelStatusQueryRsp(), key;
+        while (reader.pos < end) {
+            var tag = reader.uint32();
+            switch (tag >>> 3) {
+            case 1:
+                reader.skip().pos++;
+                if (message.usrStatus === $util.emptyObject)
+                    message.usrStatus = {};
+                key = reader.string();
+                reader.pos++;
+                message.usrStatus[key] = $root.XmsgChannelStatusUsrStatus.decode(reader, reader.uint32());
+                break;
+            case 2:
+                reader.skip().pos++;
+                if (message.groupStatus === $util.emptyObject)
+                    message.groupStatus = {};
+                key = reader.string();
+                reader.pos++;
+                message.groupStatus[key] = $root.XmsgChannelStatusGroupStatus.decode(reader, reader.uint32());
+                break;
+            default:
+                reader.skipType(tag & 7);
+                break;
+            }
+        }
+        return message;
+    };
+
+    /**
+     * Decodes a XmsgChannelStatusQueryRsp message from the specified reader or buffer, length delimited.
+     * @function decodeDelimited
+     * @memberof XmsgChannelStatusQueryRsp
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @returns {XmsgChannelStatusQueryRsp} XmsgChannelStatusQueryRsp
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    XmsgChannelStatusQueryRsp.decodeDelimited = function decodeDelimited(reader) {
+        if (!(reader instanceof $Reader))
+            reader = new $Reader(reader);
+        return this.decode(reader, reader.uint32());
+    };
+
+    /**
+     * Verifies a XmsgChannelStatusQueryRsp message.
+     * @function verify
+     * @memberof XmsgChannelStatusQueryRsp
+     * @static
+     * @param {Object.<string,*>} message Plain object to verify
+     * @returns {string|null} `null` if valid, otherwise the reason why it is not
+     */
+    XmsgChannelStatusQueryRsp.verify = function verify(message) {
+        if (typeof message !== "object" || message === null)
+            return "object expected";
+        if (message.usrStatus != null && message.hasOwnProperty("usrStatus")) {
+            if (!$util.isObject(message.usrStatus))
+                return "usrStatus: object expected";
+            var key = Object.keys(message.usrStatus);
+            for (var i = 0; i < key.length; ++i) {
+                var error = $root.XmsgChannelStatusUsrStatus.verify(message.usrStatus[key[i]]);
+                if (error)
+                    return "usrStatus." + error;
+            }
+        }
+        if (message.groupStatus != null && message.hasOwnProperty("groupStatus")) {
+            if (!$util.isObject(message.groupStatus))
+                return "groupStatus: object expected";
+            var key = Object.keys(message.groupStatus);
+            for (var i = 0; i < key.length; ++i) {
+                var error = $root.XmsgChannelStatusGroupStatus.verify(message.groupStatus[key[i]]);
+                if (error)
+                    return "groupStatus." + error;
+            }
+        }
+        return null;
+    };
+
+    /**
+     * Creates a XmsgChannelStatusQueryRsp message from a plain object. Also converts values to their respective internal types.
+     * @function fromObject
+     * @memberof XmsgChannelStatusQueryRsp
+     * @static
+     * @param {Object.<string,*>} object Plain object
+     * @returns {XmsgChannelStatusQueryRsp} XmsgChannelStatusQueryRsp
+     */
+    XmsgChannelStatusQueryRsp.fromObject = function fromObject(object) {
+        if (object instanceof $root.XmsgChannelStatusQueryRsp)
+            return object;
+        var message = new $root.XmsgChannelStatusQueryRsp();
+        if (object.usrStatus) {
+            if (typeof object.usrStatus !== "object")
+                throw TypeError(".XmsgChannelStatusQueryRsp.usrStatus: object expected");
+            message.usrStatus = {};
+            for (var keys = Object.keys(object.usrStatus), i = 0; i < keys.length; ++i) {
+                if (typeof object.usrStatus[keys[i]] !== "object")
+                    throw TypeError(".XmsgChannelStatusQueryRsp.usrStatus: object expected");
+                message.usrStatus[keys[i]] = $root.XmsgChannelStatusUsrStatus.fromObject(object.usrStatus[keys[i]]);
+            }
+        }
+        if (object.groupStatus) {
+            if (typeof object.groupStatus !== "object")
+                throw TypeError(".XmsgChannelStatusQueryRsp.groupStatus: object expected");
+            message.groupStatus = {};
+            for (var keys = Object.keys(object.groupStatus), i = 0; i < keys.length; ++i) {
+                if (typeof object.groupStatus[keys[i]] !== "object")
+                    throw TypeError(".XmsgChannelStatusQueryRsp.groupStatus: object expected");
+                message.groupStatus[keys[i]] = $root.XmsgChannelStatusGroupStatus.fromObject(object.groupStatus[keys[i]]);
+            }
+        }
+        return message;
+    };
+
+    /**
+     * Creates a plain object from a XmsgChannelStatusQueryRsp message. Also converts values to other types if specified.
+     * @function toObject
+     * @memberof XmsgChannelStatusQueryRsp
+     * @static
+     * @param {XmsgChannelStatusQueryRsp} message XmsgChannelStatusQueryRsp
+     * @param {$protobuf.IConversionOptions} [options] Conversion options
+     * @returns {Object.<string,*>} Plain object
+     */
+    XmsgChannelStatusQueryRsp.toObject = function toObject(message, options) {
+        if (!options)
+            options = {};
+        var object = {};
+        if (options.objects || options.defaults) {
+            object.usrStatus = {};
+            object.groupStatus = {};
+        }
+        var keys2;
+        if (message.usrStatus && (keys2 = Object.keys(message.usrStatus)).length) {
+            object.usrStatus = {};
+            for (var j = 0; j < keys2.length; ++j)
+                object.usrStatus[keys2[j]] = $root.XmsgChannelStatusUsrStatus.toObject(message.usrStatus[keys2[j]], options);
+        }
+        if (message.groupStatus && (keys2 = Object.keys(message.groupStatus)).length) {
+            object.groupStatus = {};
+            for (var j = 0; j < keys2.length; ++j)
+                object.groupStatus[keys2[j]] = $root.XmsgChannelStatusGroupStatus.toObject(message.groupStatus[keys2[j]], options);
+        }
+        return object;
+    };
+
+    /**
+     * Converts this XmsgChannelStatusQueryRsp to JSON.
+     * @function toJSON
+     * @memberof XmsgChannelStatusQueryRsp
+     * @instance
+     * @returns {Object.<string,*>} JSON object
+     */
+    XmsgChannelStatusQueryRsp.prototype.toJSON = function toJSON() {
+        return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+    };
+
+    return XmsgChannelStatusQueryRsp;
+})();
+
+$root.XmsgChannelStatusSubReq = (function() {
+
+    /**
+     * Properties of a XmsgChannelStatusSubReq.
+     * @exports IXmsgChannelStatusSubReq
+     * @interface IXmsgChannelStatusSubReq
+     * @property {Array.<string>|null} [cgt] XmsgChannelStatusSubReq cgt
+     */
+
+    /**
+     * Constructs a new XmsgChannelStatusSubReq.
+     * @exports XmsgChannelStatusSubReq
+     * @classdesc Represents a XmsgChannelStatusSubReq.
+     * @implements IXmsgChannelStatusSubReq
+     * @constructor
+     * @param {IXmsgChannelStatusSubReq=} [properties] Properties to set
+     */
+    function XmsgChannelStatusSubReq(properties) {
+        this.cgt = [];
+        if (properties)
+            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                if (properties[keys[i]] != null)
+                    this[keys[i]] = properties[keys[i]];
+    }
+
+    /**
+     * XmsgChannelStatusSubReq cgt.
+     * @member {Array.<string>} cgt
+     * @memberof XmsgChannelStatusSubReq
+     * @instance
+     */
+    XmsgChannelStatusSubReq.prototype.cgt = $util.emptyArray;
+
+    /**
+     * Creates a new XmsgChannelStatusSubReq instance using the specified properties.
+     * @function create
+     * @memberof XmsgChannelStatusSubReq
+     * @static
+     * @param {IXmsgChannelStatusSubReq=} [properties] Properties to set
+     * @returns {XmsgChannelStatusSubReq} XmsgChannelStatusSubReq instance
+     */
+    XmsgChannelStatusSubReq.create = function create(properties) {
+        return new XmsgChannelStatusSubReq(properties);
+    };
+
+    /**
+     * Encodes the specified XmsgChannelStatusSubReq message. Does not implicitly {@link XmsgChannelStatusSubReq.verify|verify} messages.
+     * @function encode
+     * @memberof XmsgChannelStatusSubReq
+     * @static
+     * @param {IXmsgChannelStatusSubReq} message XmsgChannelStatusSubReq message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    XmsgChannelStatusSubReq.encode = function encode(message, writer) {
+        if (!writer)
+            writer = $Writer.create();
+        if (message.cgt != null && message.cgt.length)
+            for (var i = 0; i < message.cgt.length; ++i)
+                writer.uint32(/* id 1, wireType 2 =*/10).string(message.cgt[i]);
+        return writer;
+    };
+
+    /**
+     * Encodes the specified XmsgChannelStatusSubReq message, length delimited. Does not implicitly {@link XmsgChannelStatusSubReq.verify|verify} messages.
+     * @function encodeDelimited
+     * @memberof XmsgChannelStatusSubReq
+     * @static
+     * @param {IXmsgChannelStatusSubReq} message XmsgChannelStatusSubReq message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    XmsgChannelStatusSubReq.encodeDelimited = function encodeDelimited(message, writer) {
+        return this.encode(message, writer).ldelim();
+    };
+
+    /**
+     * Decodes a XmsgChannelStatusSubReq message from the specified reader or buffer.
+     * @function decode
+     * @memberof XmsgChannelStatusSubReq
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @param {number} [length] Message length if known beforehand
+     * @returns {XmsgChannelStatusSubReq} XmsgChannelStatusSubReq
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    XmsgChannelStatusSubReq.decode = function decode(reader, length) {
+        if (!(reader instanceof $Reader))
+            reader = $Reader.create(reader);
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.XmsgChannelStatusSubReq();
+        while (reader.pos < end) {
+            var tag = reader.uint32();
+            switch (tag >>> 3) {
+            case 1:
+                if (!(message.cgt && message.cgt.length))
+                    message.cgt = [];
+                message.cgt.push(reader.string());
+                break;
+            default:
+                reader.skipType(tag & 7);
+                break;
+            }
+        }
+        return message;
+    };
+
+    /**
+     * Decodes a XmsgChannelStatusSubReq message from the specified reader or buffer, length delimited.
+     * @function decodeDelimited
+     * @memberof XmsgChannelStatusSubReq
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @returns {XmsgChannelStatusSubReq} XmsgChannelStatusSubReq
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    XmsgChannelStatusSubReq.decodeDelimited = function decodeDelimited(reader) {
+        if (!(reader instanceof $Reader))
+            reader = new $Reader(reader);
+        return this.decode(reader, reader.uint32());
+    };
+
+    /**
+     * Verifies a XmsgChannelStatusSubReq message.
+     * @function verify
+     * @memberof XmsgChannelStatusSubReq
+     * @static
+     * @param {Object.<string,*>} message Plain object to verify
+     * @returns {string|null} `null` if valid, otherwise the reason why it is not
+     */
+    XmsgChannelStatusSubReq.verify = function verify(message) {
+        if (typeof message !== "object" || message === null)
+            return "object expected";
+        if (message.cgt != null && message.hasOwnProperty("cgt")) {
+            if (!Array.isArray(message.cgt))
+                return "cgt: array expected";
+            for (var i = 0; i < message.cgt.length; ++i)
+                if (!$util.isString(message.cgt[i]))
+                    return "cgt: string[] expected";
+        }
+        return null;
+    };
+
+    /**
+     * Creates a XmsgChannelStatusSubReq message from a plain object. Also converts values to their respective internal types.
+     * @function fromObject
+     * @memberof XmsgChannelStatusSubReq
+     * @static
+     * @param {Object.<string,*>} object Plain object
+     * @returns {XmsgChannelStatusSubReq} XmsgChannelStatusSubReq
+     */
+    XmsgChannelStatusSubReq.fromObject = function fromObject(object) {
+        if (object instanceof $root.XmsgChannelStatusSubReq)
+            return object;
+        var message = new $root.XmsgChannelStatusSubReq();
+        if (object.cgt) {
+            if (!Array.isArray(object.cgt))
+                throw TypeError(".XmsgChannelStatusSubReq.cgt: array expected");
+            message.cgt = [];
+            for (var i = 0; i < object.cgt.length; ++i)
+                message.cgt[i] = String(object.cgt[i]);
+        }
+        return message;
+    };
+
+    /**
+     * Creates a plain object from a XmsgChannelStatusSubReq message. Also converts values to other types if specified.
+     * @function toObject
+     * @memberof XmsgChannelStatusSubReq
+     * @static
+     * @param {XmsgChannelStatusSubReq} message XmsgChannelStatusSubReq
+     * @param {$protobuf.IConversionOptions} [options] Conversion options
+     * @returns {Object.<string,*>} Plain object
+     */
+    XmsgChannelStatusSubReq.toObject = function toObject(message, options) {
+        if (!options)
+            options = {};
+        var object = {};
+        if (options.arrays || options.defaults)
+            object.cgt = [];
+        if (message.cgt && message.cgt.length) {
+            object.cgt = [];
+            for (var j = 0; j < message.cgt.length; ++j)
+                object.cgt[j] = message.cgt[j];
+        }
+        return object;
+    };
+
+    /**
+     * Converts this XmsgChannelStatusSubReq to JSON.
+     * @function toJSON
+     * @memberof XmsgChannelStatusSubReq
+     * @instance
+     * @returns {Object.<string,*>} JSON object
+     */
+    XmsgChannelStatusSubReq.prototype.toJSON = function toJSON() {
+        return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+    };
+
+    return XmsgChannelStatusSubReq;
+})();
+
+$root.XmsgChannelStatusSubRsp = (function() {
+
+    /**
+     * Properties of a XmsgChannelStatusSubRsp.
+     * @exports IXmsgChannelStatusSubRsp
+     * @interface IXmsgChannelStatusSubRsp
+     * @property {Object.<string,IXmsgChannelStatusUsrStatus>|null} [usrStatus] XmsgChannelStatusSubRsp usrStatus
+     * @property {Object.<string,IXmsgChannelStatusGroupStatus>|null} [groupStatus] XmsgChannelStatusSubRsp groupStatus
+     */
+
+    /**
+     * Constructs a new XmsgChannelStatusSubRsp.
+     * @exports XmsgChannelStatusSubRsp
+     * @classdesc Represents a XmsgChannelStatusSubRsp.
+     * @implements IXmsgChannelStatusSubRsp
+     * @constructor
+     * @param {IXmsgChannelStatusSubRsp=} [properties] Properties to set
+     */
+    function XmsgChannelStatusSubRsp(properties) {
+        this.usrStatus = {};
+        this.groupStatus = {};
+        if (properties)
+            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                if (properties[keys[i]] != null)
+                    this[keys[i]] = properties[keys[i]];
+    }
+
+    /**
+     * XmsgChannelStatusSubRsp usrStatus.
+     * @member {Object.<string,IXmsgChannelStatusUsrStatus>} usrStatus
+     * @memberof XmsgChannelStatusSubRsp
+     * @instance
+     */
+    XmsgChannelStatusSubRsp.prototype.usrStatus = $util.emptyObject;
+
+    /**
+     * XmsgChannelStatusSubRsp groupStatus.
+     * @member {Object.<string,IXmsgChannelStatusGroupStatus>} groupStatus
+     * @memberof XmsgChannelStatusSubRsp
+     * @instance
+     */
+    XmsgChannelStatusSubRsp.prototype.groupStatus = $util.emptyObject;
+
+    /**
+     * Creates a new XmsgChannelStatusSubRsp instance using the specified properties.
+     * @function create
+     * @memberof XmsgChannelStatusSubRsp
+     * @static
+     * @param {IXmsgChannelStatusSubRsp=} [properties] Properties to set
+     * @returns {XmsgChannelStatusSubRsp} XmsgChannelStatusSubRsp instance
+     */
+    XmsgChannelStatusSubRsp.create = function create(properties) {
+        return new XmsgChannelStatusSubRsp(properties);
+    };
+
+    /**
+     * Encodes the specified XmsgChannelStatusSubRsp message. Does not implicitly {@link XmsgChannelStatusSubRsp.verify|verify} messages.
+     * @function encode
+     * @memberof XmsgChannelStatusSubRsp
+     * @static
+     * @param {IXmsgChannelStatusSubRsp} message XmsgChannelStatusSubRsp message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    XmsgChannelStatusSubRsp.encode = function encode(message, writer) {
+        if (!writer)
+            writer = $Writer.create();
+        if (message.usrStatus != null && message.hasOwnProperty("usrStatus"))
+            for (var keys = Object.keys(message.usrStatus), i = 0; i < keys.length; ++i) {
+                writer.uint32(/* id 1, wireType 2 =*/10).fork().uint32(/* id 1, wireType 2 =*/10).string(keys[i]);
+                $root.XmsgChannelStatusUsrStatus.encode(message.usrStatus[keys[i]], writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim().ldelim();
+            }
+        if (message.groupStatus != null && message.hasOwnProperty("groupStatus"))
+            for (var keys = Object.keys(message.groupStatus), i = 0; i < keys.length; ++i) {
+                writer.uint32(/* id 2, wireType 2 =*/18).fork().uint32(/* id 1, wireType 2 =*/10).string(keys[i]);
+                $root.XmsgChannelStatusGroupStatus.encode(message.groupStatus[keys[i]], writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim().ldelim();
+            }
+        return writer;
+    };
+
+    /**
+     * Encodes the specified XmsgChannelStatusSubRsp message, length delimited. Does not implicitly {@link XmsgChannelStatusSubRsp.verify|verify} messages.
+     * @function encodeDelimited
+     * @memberof XmsgChannelStatusSubRsp
+     * @static
+     * @param {IXmsgChannelStatusSubRsp} message XmsgChannelStatusSubRsp message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    XmsgChannelStatusSubRsp.encodeDelimited = function encodeDelimited(message, writer) {
+        return this.encode(message, writer).ldelim();
+    };
+
+    /**
+     * Decodes a XmsgChannelStatusSubRsp message from the specified reader or buffer.
+     * @function decode
+     * @memberof XmsgChannelStatusSubRsp
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @param {number} [length] Message length if known beforehand
+     * @returns {XmsgChannelStatusSubRsp} XmsgChannelStatusSubRsp
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    XmsgChannelStatusSubRsp.decode = function decode(reader, length) {
+        if (!(reader instanceof $Reader))
+            reader = $Reader.create(reader);
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.XmsgChannelStatusSubRsp(), key;
+        while (reader.pos < end) {
+            var tag = reader.uint32();
+            switch (tag >>> 3) {
+            case 1:
+                reader.skip().pos++;
+                if (message.usrStatus === $util.emptyObject)
+                    message.usrStatus = {};
+                key = reader.string();
+                reader.pos++;
+                message.usrStatus[key] = $root.XmsgChannelStatusUsrStatus.decode(reader, reader.uint32());
+                break;
+            case 2:
+                reader.skip().pos++;
+                if (message.groupStatus === $util.emptyObject)
+                    message.groupStatus = {};
+                key = reader.string();
+                reader.pos++;
+                message.groupStatus[key] = $root.XmsgChannelStatusGroupStatus.decode(reader, reader.uint32());
+                break;
+            default:
+                reader.skipType(tag & 7);
+                break;
+            }
+        }
+        return message;
+    };
+
+    /**
+     * Decodes a XmsgChannelStatusSubRsp message from the specified reader or buffer, length delimited.
+     * @function decodeDelimited
+     * @memberof XmsgChannelStatusSubRsp
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @returns {XmsgChannelStatusSubRsp} XmsgChannelStatusSubRsp
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    XmsgChannelStatusSubRsp.decodeDelimited = function decodeDelimited(reader) {
+        if (!(reader instanceof $Reader))
+            reader = new $Reader(reader);
+        return this.decode(reader, reader.uint32());
+    };
+
+    /**
+     * Verifies a XmsgChannelStatusSubRsp message.
+     * @function verify
+     * @memberof XmsgChannelStatusSubRsp
+     * @static
+     * @param {Object.<string,*>} message Plain object to verify
+     * @returns {string|null} `null` if valid, otherwise the reason why it is not
+     */
+    XmsgChannelStatusSubRsp.verify = function verify(message) {
+        if (typeof message !== "object" || message === null)
+            return "object expected";
+        if (message.usrStatus != null && message.hasOwnProperty("usrStatus")) {
+            if (!$util.isObject(message.usrStatus))
+                return "usrStatus: object expected";
+            var key = Object.keys(message.usrStatus);
+            for (var i = 0; i < key.length; ++i) {
+                var error = $root.XmsgChannelStatusUsrStatus.verify(message.usrStatus[key[i]]);
+                if (error)
+                    return "usrStatus." + error;
+            }
+        }
+        if (message.groupStatus != null && message.hasOwnProperty("groupStatus")) {
+            if (!$util.isObject(message.groupStatus))
+                return "groupStatus: object expected";
+            var key = Object.keys(message.groupStatus);
+            for (var i = 0; i < key.length; ++i) {
+                var error = $root.XmsgChannelStatusGroupStatus.verify(message.groupStatus[key[i]]);
+                if (error)
+                    return "groupStatus." + error;
+            }
+        }
+        return null;
+    };
+
+    /**
+     * Creates a XmsgChannelStatusSubRsp message from a plain object. Also converts values to their respective internal types.
+     * @function fromObject
+     * @memberof XmsgChannelStatusSubRsp
+     * @static
+     * @param {Object.<string,*>} object Plain object
+     * @returns {XmsgChannelStatusSubRsp} XmsgChannelStatusSubRsp
+     */
+    XmsgChannelStatusSubRsp.fromObject = function fromObject(object) {
+        if (object instanceof $root.XmsgChannelStatusSubRsp)
+            return object;
+        var message = new $root.XmsgChannelStatusSubRsp();
+        if (object.usrStatus) {
+            if (typeof object.usrStatus !== "object")
+                throw TypeError(".XmsgChannelStatusSubRsp.usrStatus: object expected");
+            message.usrStatus = {};
+            for (var keys = Object.keys(object.usrStatus), i = 0; i < keys.length; ++i) {
+                if (typeof object.usrStatus[keys[i]] !== "object")
+                    throw TypeError(".XmsgChannelStatusSubRsp.usrStatus: object expected");
+                message.usrStatus[keys[i]] = $root.XmsgChannelStatusUsrStatus.fromObject(object.usrStatus[keys[i]]);
+            }
+        }
+        if (object.groupStatus) {
+            if (typeof object.groupStatus !== "object")
+                throw TypeError(".XmsgChannelStatusSubRsp.groupStatus: object expected");
+            message.groupStatus = {};
+            for (var keys = Object.keys(object.groupStatus), i = 0; i < keys.length; ++i) {
+                if (typeof object.groupStatus[keys[i]] !== "object")
+                    throw TypeError(".XmsgChannelStatusSubRsp.groupStatus: object expected");
+                message.groupStatus[keys[i]] = $root.XmsgChannelStatusGroupStatus.fromObject(object.groupStatus[keys[i]]);
+            }
+        }
+        return message;
+    };
+
+    /**
+     * Creates a plain object from a XmsgChannelStatusSubRsp message. Also converts values to other types if specified.
+     * @function toObject
+     * @memberof XmsgChannelStatusSubRsp
+     * @static
+     * @param {XmsgChannelStatusSubRsp} message XmsgChannelStatusSubRsp
+     * @param {$protobuf.IConversionOptions} [options] Conversion options
+     * @returns {Object.<string,*>} Plain object
+     */
+    XmsgChannelStatusSubRsp.toObject = function toObject(message, options) {
+        if (!options)
+            options = {};
+        var object = {};
+        if (options.objects || options.defaults) {
+            object.usrStatus = {};
+            object.groupStatus = {};
+        }
+        var keys2;
+        if (message.usrStatus && (keys2 = Object.keys(message.usrStatus)).length) {
+            object.usrStatus = {};
+            for (var j = 0; j < keys2.length; ++j)
+                object.usrStatus[keys2[j]] = $root.XmsgChannelStatusUsrStatus.toObject(message.usrStatus[keys2[j]], options);
+        }
+        if (message.groupStatus && (keys2 = Object.keys(message.groupStatus)).length) {
+            object.groupStatus = {};
+            for (var j = 0; j < keys2.length; ++j)
+                object.groupStatus[keys2[j]] = $root.XmsgChannelStatusGroupStatus.toObject(message.groupStatus[keys2[j]], options);
+        }
+        return object;
+    };
+
+    /**
+     * Converts this XmsgChannelStatusSubRsp to JSON.
+     * @function toJSON
+     * @memberof XmsgChannelStatusSubRsp
+     * @instance
+     * @returns {Object.<string,*>} JSON object
+     */
+    XmsgChannelStatusSubRsp.prototype.toJSON = function toJSON() {
+        return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+    };
+
+    return XmsgChannelStatusSubRsp;
+})();
+
+$root.XmsgChannelStatusUnSubReq = (function() {
+
+    /**
+     * Properties of a XmsgChannelStatusUnSubReq.
+     * @exports IXmsgChannelStatusUnSubReq
+     * @interface IXmsgChannelStatusUnSubReq
+     * @property {Array.<string>|null} [cgt] XmsgChannelStatusUnSubReq cgt
+     */
+
+    /**
+     * Constructs a new XmsgChannelStatusUnSubReq.
+     * @exports XmsgChannelStatusUnSubReq
+     * @classdesc Represents a XmsgChannelStatusUnSubReq.
+     * @implements IXmsgChannelStatusUnSubReq
+     * @constructor
+     * @param {IXmsgChannelStatusUnSubReq=} [properties] Properties to set
+     */
+    function XmsgChannelStatusUnSubReq(properties) {
+        this.cgt = [];
+        if (properties)
+            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                if (properties[keys[i]] != null)
+                    this[keys[i]] = properties[keys[i]];
+    }
+
+    /**
+     * XmsgChannelStatusUnSubReq cgt.
+     * @member {Array.<string>} cgt
+     * @memberof XmsgChannelStatusUnSubReq
+     * @instance
+     */
+    XmsgChannelStatusUnSubReq.prototype.cgt = $util.emptyArray;
+
+    /**
+     * Creates a new XmsgChannelStatusUnSubReq instance using the specified properties.
+     * @function create
+     * @memberof XmsgChannelStatusUnSubReq
+     * @static
+     * @param {IXmsgChannelStatusUnSubReq=} [properties] Properties to set
+     * @returns {XmsgChannelStatusUnSubReq} XmsgChannelStatusUnSubReq instance
+     */
+    XmsgChannelStatusUnSubReq.create = function create(properties) {
+        return new XmsgChannelStatusUnSubReq(properties);
+    };
+
+    /**
+     * Encodes the specified XmsgChannelStatusUnSubReq message. Does not implicitly {@link XmsgChannelStatusUnSubReq.verify|verify} messages.
+     * @function encode
+     * @memberof XmsgChannelStatusUnSubReq
+     * @static
+     * @param {IXmsgChannelStatusUnSubReq} message XmsgChannelStatusUnSubReq message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    XmsgChannelStatusUnSubReq.encode = function encode(message, writer) {
+        if (!writer)
+            writer = $Writer.create();
+        if (message.cgt != null && message.cgt.length)
+            for (var i = 0; i < message.cgt.length; ++i)
+                writer.uint32(/* id 1, wireType 2 =*/10).string(message.cgt[i]);
+        return writer;
+    };
+
+    /**
+     * Encodes the specified XmsgChannelStatusUnSubReq message, length delimited. Does not implicitly {@link XmsgChannelStatusUnSubReq.verify|verify} messages.
+     * @function encodeDelimited
+     * @memberof XmsgChannelStatusUnSubReq
+     * @static
+     * @param {IXmsgChannelStatusUnSubReq} message XmsgChannelStatusUnSubReq message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    XmsgChannelStatusUnSubReq.encodeDelimited = function encodeDelimited(message, writer) {
+        return this.encode(message, writer).ldelim();
+    };
+
+    /**
+     * Decodes a XmsgChannelStatusUnSubReq message from the specified reader or buffer.
+     * @function decode
+     * @memberof XmsgChannelStatusUnSubReq
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @param {number} [length] Message length if known beforehand
+     * @returns {XmsgChannelStatusUnSubReq} XmsgChannelStatusUnSubReq
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    XmsgChannelStatusUnSubReq.decode = function decode(reader, length) {
+        if (!(reader instanceof $Reader))
+            reader = $Reader.create(reader);
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.XmsgChannelStatusUnSubReq();
+        while (reader.pos < end) {
+            var tag = reader.uint32();
+            switch (tag >>> 3) {
+            case 1:
+                if (!(message.cgt && message.cgt.length))
+                    message.cgt = [];
+                message.cgt.push(reader.string());
+                break;
+            default:
+                reader.skipType(tag & 7);
+                break;
+            }
+        }
+        return message;
+    };
+
+    /**
+     * Decodes a XmsgChannelStatusUnSubReq message from the specified reader or buffer, length delimited.
+     * @function decodeDelimited
+     * @memberof XmsgChannelStatusUnSubReq
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @returns {XmsgChannelStatusUnSubReq} XmsgChannelStatusUnSubReq
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    XmsgChannelStatusUnSubReq.decodeDelimited = function decodeDelimited(reader) {
+        if (!(reader instanceof $Reader))
+            reader = new $Reader(reader);
+        return this.decode(reader, reader.uint32());
+    };
+
+    /**
+     * Verifies a XmsgChannelStatusUnSubReq message.
+     * @function verify
+     * @memberof XmsgChannelStatusUnSubReq
+     * @static
+     * @param {Object.<string,*>} message Plain object to verify
+     * @returns {string|null} `null` if valid, otherwise the reason why it is not
+     */
+    XmsgChannelStatusUnSubReq.verify = function verify(message) {
+        if (typeof message !== "object" || message === null)
+            return "object expected";
+        if (message.cgt != null && message.hasOwnProperty("cgt")) {
+            if (!Array.isArray(message.cgt))
+                return "cgt: array expected";
+            for (var i = 0; i < message.cgt.length; ++i)
+                if (!$util.isString(message.cgt[i]))
+                    return "cgt: string[] expected";
+        }
+        return null;
+    };
+
+    /**
+     * Creates a XmsgChannelStatusUnSubReq message from a plain object. Also converts values to their respective internal types.
+     * @function fromObject
+     * @memberof XmsgChannelStatusUnSubReq
+     * @static
+     * @param {Object.<string,*>} object Plain object
+     * @returns {XmsgChannelStatusUnSubReq} XmsgChannelStatusUnSubReq
+     */
+    XmsgChannelStatusUnSubReq.fromObject = function fromObject(object) {
+        if (object instanceof $root.XmsgChannelStatusUnSubReq)
+            return object;
+        var message = new $root.XmsgChannelStatusUnSubReq();
+        if (object.cgt) {
+            if (!Array.isArray(object.cgt))
+                throw TypeError(".XmsgChannelStatusUnSubReq.cgt: array expected");
+            message.cgt = [];
+            for (var i = 0; i < object.cgt.length; ++i)
+                message.cgt[i] = String(object.cgt[i]);
+        }
+        return message;
+    };
+
+    /**
+     * Creates a plain object from a XmsgChannelStatusUnSubReq message. Also converts values to other types if specified.
+     * @function toObject
+     * @memberof XmsgChannelStatusUnSubReq
+     * @static
+     * @param {XmsgChannelStatusUnSubReq} message XmsgChannelStatusUnSubReq
+     * @param {$protobuf.IConversionOptions} [options] Conversion options
+     * @returns {Object.<string,*>} Plain object
+     */
+    XmsgChannelStatusUnSubReq.toObject = function toObject(message, options) {
+        if (!options)
+            options = {};
+        var object = {};
+        if (options.arrays || options.defaults)
+            object.cgt = [];
+        if (message.cgt && message.cgt.length) {
+            object.cgt = [];
+            for (var j = 0; j < message.cgt.length; ++j)
+                object.cgt[j] = message.cgt[j];
+        }
+        return object;
+    };
+
+    /**
+     * Converts this XmsgChannelStatusUnSubReq to JSON.
+     * @function toJSON
+     * @memberof XmsgChannelStatusUnSubReq
+     * @instance
+     * @returns {Object.<string,*>} JSON object
+     */
+    XmsgChannelStatusUnSubReq.prototype.toJSON = function toJSON() {
+        return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+    };
+
+    return XmsgChannelStatusUnSubReq;
+})();
+
+$root.XmsgChannelStatusUnSubRsp = (function() {
+
+    /**
+     * Properties of a XmsgChannelStatusUnSubRsp.
+     * @exports IXmsgChannelStatusUnSubRsp
+     * @interface IXmsgChannelStatusUnSubRsp
+     * @property {Object.<string,string>|null} [ext] XmsgChannelStatusUnSubRsp ext
+     */
+
+    /**
+     * Constructs a new XmsgChannelStatusUnSubRsp.
+     * @exports XmsgChannelStatusUnSubRsp
+     * @classdesc Represents a XmsgChannelStatusUnSubRsp.
+     * @implements IXmsgChannelStatusUnSubRsp
+     * @constructor
+     * @param {IXmsgChannelStatusUnSubRsp=} [properties] Properties to set
+     */
+    function XmsgChannelStatusUnSubRsp(properties) {
+        this.ext = {};
+        if (properties)
+            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                if (properties[keys[i]] != null)
+                    this[keys[i]] = properties[keys[i]];
+    }
+
+    /**
+     * XmsgChannelStatusUnSubRsp ext.
+     * @member {Object.<string,string>} ext
+     * @memberof XmsgChannelStatusUnSubRsp
+     * @instance
+     */
+    XmsgChannelStatusUnSubRsp.prototype.ext = $util.emptyObject;
+
+    /**
+     * Creates a new XmsgChannelStatusUnSubRsp instance using the specified properties.
+     * @function create
+     * @memberof XmsgChannelStatusUnSubRsp
+     * @static
+     * @param {IXmsgChannelStatusUnSubRsp=} [properties] Properties to set
+     * @returns {XmsgChannelStatusUnSubRsp} XmsgChannelStatusUnSubRsp instance
+     */
+    XmsgChannelStatusUnSubRsp.create = function create(properties) {
+        return new XmsgChannelStatusUnSubRsp(properties);
+    };
+
+    /**
+     * Encodes the specified XmsgChannelStatusUnSubRsp message. Does not implicitly {@link XmsgChannelStatusUnSubRsp.verify|verify} messages.
+     * @function encode
+     * @memberof XmsgChannelStatusUnSubRsp
+     * @static
+     * @param {IXmsgChannelStatusUnSubRsp} message XmsgChannelStatusUnSubRsp message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    XmsgChannelStatusUnSubRsp.encode = function encode(message, writer) {
+        if (!writer)
+            writer = $Writer.create();
+        if (message.ext != null && message.hasOwnProperty("ext"))
+            for (var keys = Object.keys(message.ext), i = 0; i < keys.length; ++i)
+                writer.uint32(/* id 1, wireType 2 =*/10).fork().uint32(/* id 1, wireType 2 =*/10).string(keys[i]).uint32(/* id 2, wireType 2 =*/18).string(message.ext[keys[i]]).ldelim();
+        return writer;
+    };
+
+    /**
+     * Encodes the specified XmsgChannelStatusUnSubRsp message, length delimited. Does not implicitly {@link XmsgChannelStatusUnSubRsp.verify|verify} messages.
+     * @function encodeDelimited
+     * @memberof XmsgChannelStatusUnSubRsp
+     * @static
+     * @param {IXmsgChannelStatusUnSubRsp} message XmsgChannelStatusUnSubRsp message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    XmsgChannelStatusUnSubRsp.encodeDelimited = function encodeDelimited(message, writer) {
+        return this.encode(message, writer).ldelim();
+    };
+
+    /**
+     * Decodes a XmsgChannelStatusUnSubRsp message from the specified reader or buffer.
+     * @function decode
+     * @memberof XmsgChannelStatusUnSubRsp
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @param {number} [length] Message length if known beforehand
+     * @returns {XmsgChannelStatusUnSubRsp} XmsgChannelStatusUnSubRsp
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    XmsgChannelStatusUnSubRsp.decode = function decode(reader, length) {
+        if (!(reader instanceof $Reader))
+            reader = $Reader.create(reader);
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.XmsgChannelStatusUnSubRsp(), key;
+        while (reader.pos < end) {
+            var tag = reader.uint32();
+            switch (tag >>> 3) {
+            case 1:
+                reader.skip().pos++;
+                if (message.ext === $util.emptyObject)
+                    message.ext = {};
+                key = reader.string();
+                reader.pos++;
+                message.ext[key] = reader.string();
+                break;
+            default:
+                reader.skipType(tag & 7);
+                break;
+            }
+        }
+        return message;
+    };
+
+    /**
+     * Decodes a XmsgChannelStatusUnSubRsp message from the specified reader or buffer, length delimited.
+     * @function decodeDelimited
+     * @memberof XmsgChannelStatusUnSubRsp
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @returns {XmsgChannelStatusUnSubRsp} XmsgChannelStatusUnSubRsp
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    XmsgChannelStatusUnSubRsp.decodeDelimited = function decodeDelimited(reader) {
+        if (!(reader instanceof $Reader))
+            reader = new $Reader(reader);
+        return this.decode(reader, reader.uint32());
+    };
+
+    /**
+     * Verifies a XmsgChannelStatusUnSubRsp message.
+     * @function verify
+     * @memberof XmsgChannelStatusUnSubRsp
+     * @static
+     * @param {Object.<string,*>} message Plain object to verify
+     * @returns {string|null} `null` if valid, otherwise the reason why it is not
+     */
+    XmsgChannelStatusUnSubRsp.verify = function verify(message) {
+        if (typeof message !== "object" || message === null)
+            return "object expected";
+        if (message.ext != null && message.hasOwnProperty("ext")) {
+            if (!$util.isObject(message.ext))
+                return "ext: object expected";
+            var key = Object.keys(message.ext);
+            for (var i = 0; i < key.length; ++i)
+                if (!$util.isString(message.ext[key[i]]))
+                    return "ext: string{k:string} expected";
+        }
+        return null;
+    };
+
+    /**
+     * Creates a XmsgChannelStatusUnSubRsp message from a plain object. Also converts values to their respective internal types.
+     * @function fromObject
+     * @memberof XmsgChannelStatusUnSubRsp
+     * @static
+     * @param {Object.<string,*>} object Plain object
+     * @returns {XmsgChannelStatusUnSubRsp} XmsgChannelStatusUnSubRsp
+     */
+    XmsgChannelStatusUnSubRsp.fromObject = function fromObject(object) {
+        if (object instanceof $root.XmsgChannelStatusUnSubRsp)
+            return object;
+        var message = new $root.XmsgChannelStatusUnSubRsp();
+        if (object.ext) {
+            if (typeof object.ext !== "object")
+                throw TypeError(".XmsgChannelStatusUnSubRsp.ext: object expected");
+            message.ext = {};
+            for (var keys = Object.keys(object.ext), i = 0; i < keys.length; ++i)
+                message.ext[keys[i]] = String(object.ext[keys[i]]);
+        }
+        return message;
+    };
+
+    /**
+     * Creates a plain object from a XmsgChannelStatusUnSubRsp message. Also converts values to other types if specified.
+     * @function toObject
+     * @memberof XmsgChannelStatusUnSubRsp
+     * @static
+     * @param {XmsgChannelStatusUnSubRsp} message XmsgChannelStatusUnSubRsp
+     * @param {$protobuf.IConversionOptions} [options] Conversion options
+     * @returns {Object.<string,*>} Plain object
+     */
+    XmsgChannelStatusUnSubRsp.toObject = function toObject(message, options) {
+        if (!options)
+            options = {};
+        var object = {};
+        if (options.objects || options.defaults)
+            object.ext = {};
+        var keys2;
+        if (message.ext && (keys2 = Object.keys(message.ext)).length) {
+            object.ext = {};
+            for (var j = 0; j < keys2.length; ++j)
+                object.ext[keys2[j]] = message.ext[keys2[j]];
+        }
+        return object;
+    };
+
+    /**
+     * Converts this XmsgChannelStatusUnSubRsp to JSON.
+     * @function toJSON
+     * @memberof XmsgChannelStatusUnSubRsp
+     * @instance
+     * @returns {Object.<string,*>} JSON object
+     */
+    XmsgChannelStatusUnSubRsp.prototype.toJSON = function toJSON() {
+        return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+    };
+
+    return XmsgChannelStatusUnSubRsp;
+})();
+
+$root.XmsgChannelStatusPubUsrStatusNotice = (function() {
+
+    /**
+     * Properties of a XmsgChannelStatusPubUsrStatusNotice.
+     * @exports IXmsgChannelStatusPubUsrStatusNotice
+     * @interface IXmsgChannelStatusPubUsrStatusNotice
+     * @property {string|null} [cgt] XmsgChannelStatusPubUsrStatusNotice cgt
+     * @property {string|null} [plat] XmsgChannelStatusPubUsrStatusNotice plat
+     * @property {string|null} [did] XmsgChannelStatusPubUsrStatusNotice did
+     * @property {string|null} [status] XmsgChannelStatusPubUsrStatusNotice status
+     */
+
+    /**
+     * Constructs a new XmsgChannelStatusPubUsrStatusNotice.
+     * @exports XmsgChannelStatusPubUsrStatusNotice
+     * @classdesc Represents a XmsgChannelStatusPubUsrStatusNotice.
+     * @implements IXmsgChannelStatusPubUsrStatusNotice
+     * @constructor
+     * @param {IXmsgChannelStatusPubUsrStatusNotice=} [properties] Properties to set
+     */
+    function XmsgChannelStatusPubUsrStatusNotice(properties) {
+        if (properties)
+            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                if (properties[keys[i]] != null)
+                    this[keys[i]] = properties[keys[i]];
+    }
+
+    /**
+     * XmsgChannelStatusPubUsrStatusNotice cgt.
+     * @member {string} cgt
+     * @memberof XmsgChannelStatusPubUsrStatusNotice
+     * @instance
+     */
+    XmsgChannelStatusPubUsrStatusNotice.prototype.cgt = "";
+
+    /**
+     * XmsgChannelStatusPubUsrStatusNotice plat.
+     * @member {string} plat
+     * @memberof XmsgChannelStatusPubUsrStatusNotice
+     * @instance
+     */
+    XmsgChannelStatusPubUsrStatusNotice.prototype.plat = "";
+
+    /**
+     * XmsgChannelStatusPubUsrStatusNotice did.
+     * @member {string} did
+     * @memberof XmsgChannelStatusPubUsrStatusNotice
+     * @instance
+     */
+    XmsgChannelStatusPubUsrStatusNotice.prototype.did = "";
+
+    /**
+     * XmsgChannelStatusPubUsrStatusNotice status.
+     * @member {string} status
+     * @memberof XmsgChannelStatusPubUsrStatusNotice
+     * @instance
+     */
+    XmsgChannelStatusPubUsrStatusNotice.prototype.status = "";
+
+    /**
+     * Creates a new XmsgChannelStatusPubUsrStatusNotice instance using the specified properties.
+     * @function create
+     * @memberof XmsgChannelStatusPubUsrStatusNotice
+     * @static
+     * @param {IXmsgChannelStatusPubUsrStatusNotice=} [properties] Properties to set
+     * @returns {XmsgChannelStatusPubUsrStatusNotice} XmsgChannelStatusPubUsrStatusNotice instance
+     */
+    XmsgChannelStatusPubUsrStatusNotice.create = function create(properties) {
+        return new XmsgChannelStatusPubUsrStatusNotice(properties);
+    };
+
+    /**
+     * Encodes the specified XmsgChannelStatusPubUsrStatusNotice message. Does not implicitly {@link XmsgChannelStatusPubUsrStatusNotice.verify|verify} messages.
+     * @function encode
+     * @memberof XmsgChannelStatusPubUsrStatusNotice
+     * @static
+     * @param {IXmsgChannelStatusPubUsrStatusNotice} message XmsgChannelStatusPubUsrStatusNotice message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    XmsgChannelStatusPubUsrStatusNotice.encode = function encode(message, writer) {
+        if (!writer)
+            writer = $Writer.create();
+        if (message.cgt != null && message.hasOwnProperty("cgt"))
+            writer.uint32(/* id 1, wireType 2 =*/10).string(message.cgt);
+        if (message.plat != null && message.hasOwnProperty("plat"))
+            writer.uint32(/* id 2, wireType 2 =*/18).string(message.plat);
+        if (message.did != null && message.hasOwnProperty("did"))
+            writer.uint32(/* id 3, wireType 2 =*/26).string(message.did);
+        if (message.status != null && message.hasOwnProperty("status"))
+            writer.uint32(/* id 4, wireType 2 =*/34).string(message.status);
+        return writer;
+    };
+
+    /**
+     * Encodes the specified XmsgChannelStatusPubUsrStatusNotice message, length delimited. Does not implicitly {@link XmsgChannelStatusPubUsrStatusNotice.verify|verify} messages.
+     * @function encodeDelimited
+     * @memberof XmsgChannelStatusPubUsrStatusNotice
+     * @static
+     * @param {IXmsgChannelStatusPubUsrStatusNotice} message XmsgChannelStatusPubUsrStatusNotice message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    XmsgChannelStatusPubUsrStatusNotice.encodeDelimited = function encodeDelimited(message, writer) {
+        return this.encode(message, writer).ldelim();
+    };
+
+    /**
+     * Decodes a XmsgChannelStatusPubUsrStatusNotice message from the specified reader or buffer.
+     * @function decode
+     * @memberof XmsgChannelStatusPubUsrStatusNotice
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @param {number} [length] Message length if known beforehand
+     * @returns {XmsgChannelStatusPubUsrStatusNotice} XmsgChannelStatusPubUsrStatusNotice
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    XmsgChannelStatusPubUsrStatusNotice.decode = function decode(reader, length) {
+        if (!(reader instanceof $Reader))
+            reader = $Reader.create(reader);
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.XmsgChannelStatusPubUsrStatusNotice();
+        while (reader.pos < end) {
+            var tag = reader.uint32();
+            switch (tag >>> 3) {
+            case 1:
+                message.cgt = reader.string();
+                break;
+            case 2:
+                message.plat = reader.string();
+                break;
+            case 3:
+                message.did = reader.string();
+                break;
+            case 4:
+                message.status = reader.string();
+                break;
+            default:
+                reader.skipType(tag & 7);
+                break;
+            }
+        }
+        return message;
+    };
+
+    /**
+     * Decodes a XmsgChannelStatusPubUsrStatusNotice message from the specified reader or buffer, length delimited.
+     * @function decodeDelimited
+     * @memberof XmsgChannelStatusPubUsrStatusNotice
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @returns {XmsgChannelStatusPubUsrStatusNotice} XmsgChannelStatusPubUsrStatusNotice
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    XmsgChannelStatusPubUsrStatusNotice.decodeDelimited = function decodeDelimited(reader) {
+        if (!(reader instanceof $Reader))
+            reader = new $Reader(reader);
+        return this.decode(reader, reader.uint32());
+    };
+
+    /**
+     * Verifies a XmsgChannelStatusPubUsrStatusNotice message.
+     * @function verify
+     * @memberof XmsgChannelStatusPubUsrStatusNotice
+     * @static
+     * @param {Object.<string,*>} message Plain object to verify
+     * @returns {string|null} `null` if valid, otherwise the reason why it is not
+     */
+    XmsgChannelStatusPubUsrStatusNotice.verify = function verify(message) {
+        if (typeof message !== "object" || message === null)
+            return "object expected";
+        if (message.cgt != null && message.hasOwnProperty("cgt"))
+            if (!$util.isString(message.cgt))
+                return "cgt: string expected";
+        if (message.plat != null && message.hasOwnProperty("plat"))
+            if (!$util.isString(message.plat))
+                return "plat: string expected";
+        if (message.did != null && message.hasOwnProperty("did"))
+            if (!$util.isString(message.did))
+                return "did: string expected";
+        if (message.status != null && message.hasOwnProperty("status"))
+            if (!$util.isString(message.status))
+                return "status: string expected";
+        return null;
+    };
+
+    /**
+     * Creates a XmsgChannelStatusPubUsrStatusNotice message from a plain object. Also converts values to their respective internal types.
+     * @function fromObject
+     * @memberof XmsgChannelStatusPubUsrStatusNotice
+     * @static
+     * @param {Object.<string,*>} object Plain object
+     * @returns {XmsgChannelStatusPubUsrStatusNotice} XmsgChannelStatusPubUsrStatusNotice
+     */
+    XmsgChannelStatusPubUsrStatusNotice.fromObject = function fromObject(object) {
+        if (object instanceof $root.XmsgChannelStatusPubUsrStatusNotice)
+            return object;
+        var message = new $root.XmsgChannelStatusPubUsrStatusNotice();
+        if (object.cgt != null)
+            message.cgt = String(object.cgt);
+        if (object.plat != null)
+            message.plat = String(object.plat);
+        if (object.did != null)
+            message.did = String(object.did);
+        if (object.status != null)
+            message.status = String(object.status);
+        return message;
+    };
+
+    /**
+     * Creates a plain object from a XmsgChannelStatusPubUsrStatusNotice message. Also converts values to other types if specified.
+     * @function toObject
+     * @memberof XmsgChannelStatusPubUsrStatusNotice
+     * @static
+     * @param {XmsgChannelStatusPubUsrStatusNotice} message XmsgChannelStatusPubUsrStatusNotice
+     * @param {$protobuf.IConversionOptions} [options] Conversion options
+     * @returns {Object.<string,*>} Plain object
+     */
+    XmsgChannelStatusPubUsrStatusNotice.toObject = function toObject(message, options) {
+        if (!options)
+            options = {};
+        var object = {};
+        if (options.defaults) {
+            object.cgt = "";
+            object.plat = "";
+            object.did = "";
+            object.status = "";
+        }
+        if (message.cgt != null && message.hasOwnProperty("cgt"))
+            object.cgt = message.cgt;
+        if (message.plat != null && message.hasOwnProperty("plat"))
+            object.plat = message.plat;
+        if (message.did != null && message.hasOwnProperty("did"))
+            object.did = message.did;
+        if (message.status != null && message.hasOwnProperty("status"))
+            object.status = message.status;
+        return object;
+    };
+
+    /**
+     * Converts this XmsgChannelStatusPubUsrStatusNotice to JSON.
+     * @function toJSON
+     * @memberof XmsgChannelStatusPubUsrStatusNotice
+     * @instance
+     * @returns {Object.<string,*>} JSON object
+     */
+    XmsgChannelStatusPubUsrStatusNotice.prototype.toJSON = function toJSON() {
+        return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+    };
+
+    return XmsgChannelStatusPubUsrStatusNotice;
+})();
+
+$root.XmsgChannelStatusPubGroupStatusNotice = (function() {
+
+    /**
+     * Properties of a XmsgChannelStatusPubGroupStatusNotice.
+     * @exports IXmsgChannelStatusPubGroupStatusNotice
+     * @interface IXmsgChannelStatusPubGroupStatusNotice
+     * @property {string|null} [cgt] XmsgChannelStatusPubGroupStatusNotice cgt
+     * @property {string|null} [status] XmsgChannelStatusPubGroupStatusNotice status
+     */
+
+    /**
+     * Constructs a new XmsgChannelStatusPubGroupStatusNotice.
+     * @exports XmsgChannelStatusPubGroupStatusNotice
+     * @classdesc Represents a XmsgChannelStatusPubGroupStatusNotice.
+     * @implements IXmsgChannelStatusPubGroupStatusNotice
+     * @constructor
+     * @param {IXmsgChannelStatusPubGroupStatusNotice=} [properties] Properties to set
+     */
+    function XmsgChannelStatusPubGroupStatusNotice(properties) {
+        if (properties)
+            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                if (properties[keys[i]] != null)
+                    this[keys[i]] = properties[keys[i]];
+    }
+
+    /**
+     * XmsgChannelStatusPubGroupStatusNotice cgt.
+     * @member {string} cgt
+     * @memberof XmsgChannelStatusPubGroupStatusNotice
+     * @instance
+     */
+    XmsgChannelStatusPubGroupStatusNotice.prototype.cgt = "";
+
+    /**
+     * XmsgChannelStatusPubGroupStatusNotice status.
+     * @member {string} status
+     * @memberof XmsgChannelStatusPubGroupStatusNotice
+     * @instance
+     */
+    XmsgChannelStatusPubGroupStatusNotice.prototype.status = "";
+
+    /**
+     * Creates a new XmsgChannelStatusPubGroupStatusNotice instance using the specified properties.
+     * @function create
+     * @memberof XmsgChannelStatusPubGroupStatusNotice
+     * @static
+     * @param {IXmsgChannelStatusPubGroupStatusNotice=} [properties] Properties to set
+     * @returns {XmsgChannelStatusPubGroupStatusNotice} XmsgChannelStatusPubGroupStatusNotice instance
+     */
+    XmsgChannelStatusPubGroupStatusNotice.create = function create(properties) {
+        return new XmsgChannelStatusPubGroupStatusNotice(properties);
+    };
+
+    /**
+     * Encodes the specified XmsgChannelStatusPubGroupStatusNotice message. Does not implicitly {@link XmsgChannelStatusPubGroupStatusNotice.verify|verify} messages.
+     * @function encode
+     * @memberof XmsgChannelStatusPubGroupStatusNotice
+     * @static
+     * @param {IXmsgChannelStatusPubGroupStatusNotice} message XmsgChannelStatusPubGroupStatusNotice message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    XmsgChannelStatusPubGroupStatusNotice.encode = function encode(message, writer) {
+        if (!writer)
+            writer = $Writer.create();
+        if (message.cgt != null && message.hasOwnProperty("cgt"))
+            writer.uint32(/* id 1, wireType 2 =*/10).string(message.cgt);
+        if (message.status != null && message.hasOwnProperty("status"))
+            writer.uint32(/* id 2, wireType 2 =*/18).string(message.status);
+        return writer;
+    };
+
+    /**
+     * Encodes the specified XmsgChannelStatusPubGroupStatusNotice message, length delimited. Does not implicitly {@link XmsgChannelStatusPubGroupStatusNotice.verify|verify} messages.
+     * @function encodeDelimited
+     * @memberof XmsgChannelStatusPubGroupStatusNotice
+     * @static
+     * @param {IXmsgChannelStatusPubGroupStatusNotice} message XmsgChannelStatusPubGroupStatusNotice message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    XmsgChannelStatusPubGroupStatusNotice.encodeDelimited = function encodeDelimited(message, writer) {
+        return this.encode(message, writer).ldelim();
+    };
+
+    /**
+     * Decodes a XmsgChannelStatusPubGroupStatusNotice message from the specified reader or buffer.
+     * @function decode
+     * @memberof XmsgChannelStatusPubGroupStatusNotice
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @param {number} [length] Message length if known beforehand
+     * @returns {XmsgChannelStatusPubGroupStatusNotice} XmsgChannelStatusPubGroupStatusNotice
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    XmsgChannelStatusPubGroupStatusNotice.decode = function decode(reader, length) {
+        if (!(reader instanceof $Reader))
+            reader = $Reader.create(reader);
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.XmsgChannelStatusPubGroupStatusNotice();
+        while (reader.pos < end) {
+            var tag = reader.uint32();
+            switch (tag >>> 3) {
+            case 1:
+                message.cgt = reader.string();
+                break;
+            case 2:
+                message.status = reader.string();
+                break;
+            default:
+                reader.skipType(tag & 7);
+                break;
+            }
+        }
+        return message;
+    };
+
+    /**
+     * Decodes a XmsgChannelStatusPubGroupStatusNotice message from the specified reader or buffer, length delimited.
+     * @function decodeDelimited
+     * @memberof XmsgChannelStatusPubGroupStatusNotice
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @returns {XmsgChannelStatusPubGroupStatusNotice} XmsgChannelStatusPubGroupStatusNotice
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    XmsgChannelStatusPubGroupStatusNotice.decodeDelimited = function decodeDelimited(reader) {
+        if (!(reader instanceof $Reader))
+            reader = new $Reader(reader);
+        return this.decode(reader, reader.uint32());
+    };
+
+    /**
+     * Verifies a XmsgChannelStatusPubGroupStatusNotice message.
+     * @function verify
+     * @memberof XmsgChannelStatusPubGroupStatusNotice
+     * @static
+     * @param {Object.<string,*>} message Plain object to verify
+     * @returns {string|null} `null` if valid, otherwise the reason why it is not
+     */
+    XmsgChannelStatusPubGroupStatusNotice.verify = function verify(message) {
+        if (typeof message !== "object" || message === null)
+            return "object expected";
+        if (message.cgt != null && message.hasOwnProperty("cgt"))
+            if (!$util.isString(message.cgt))
+                return "cgt: string expected";
+        if (message.status != null && message.hasOwnProperty("status"))
+            if (!$util.isString(message.status))
+                return "status: string expected";
+        return null;
+    };
+
+    /**
+     * Creates a XmsgChannelStatusPubGroupStatusNotice message from a plain object. Also converts values to their respective internal types.
+     * @function fromObject
+     * @memberof XmsgChannelStatusPubGroupStatusNotice
+     * @static
+     * @param {Object.<string,*>} object Plain object
+     * @returns {XmsgChannelStatusPubGroupStatusNotice} XmsgChannelStatusPubGroupStatusNotice
+     */
+    XmsgChannelStatusPubGroupStatusNotice.fromObject = function fromObject(object) {
+        if (object instanceof $root.XmsgChannelStatusPubGroupStatusNotice)
+            return object;
+        var message = new $root.XmsgChannelStatusPubGroupStatusNotice();
+        if (object.cgt != null)
+            message.cgt = String(object.cgt);
+        if (object.status != null)
+            message.status = String(object.status);
+        return message;
+    };
+
+    /**
+     * Creates a plain object from a XmsgChannelStatusPubGroupStatusNotice message. Also converts values to other types if specified.
+     * @function toObject
+     * @memberof XmsgChannelStatusPubGroupStatusNotice
+     * @static
+     * @param {XmsgChannelStatusPubGroupStatusNotice} message XmsgChannelStatusPubGroupStatusNotice
+     * @param {$protobuf.IConversionOptions} [options] Conversion options
+     * @returns {Object.<string,*>} Plain object
+     */
+    XmsgChannelStatusPubGroupStatusNotice.toObject = function toObject(message, options) {
+        if (!options)
+            options = {};
+        var object = {};
+        if (options.defaults) {
+            object.cgt = "";
+            object.status = "";
+        }
+        if (message.cgt != null && message.hasOwnProperty("cgt"))
+            object.cgt = message.cgt;
+        if (message.status != null && message.hasOwnProperty("status"))
+            object.status = message.status;
+        return object;
+    };
+
+    /**
+     * Converts this XmsgChannelStatusPubGroupStatusNotice to JSON.
+     * @function toJSON
+     * @memberof XmsgChannelStatusPubGroupStatusNotice
+     * @instance
+     * @returns {Object.<string,*>} JSON object
+     */
+    XmsgChannelStatusPubGroupStatusNotice.prototype.toJSON = function toJSON() {
+        return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+    };
+
+    return XmsgChannelStatusPubGroupStatusNotice;
+})();
+
+$root.XmsgChannelStatusUsrStatus = (function() {
+
+    /**
+     * Properties of a XmsgChannelStatusUsrStatus.
+     * @exports IXmsgChannelStatusUsrStatus
+     * @interface IXmsgChannelStatusUsrStatus
+     * @property {Array.<XmsgChannelStatusUsrStatus.IXmsgChannelStatusUsrClientStatus>|null} [client] XmsgChannelStatusUsrStatus client
+     */
+
+    /**
+     * Constructs a new XmsgChannelStatusUsrStatus.
+     * @exports XmsgChannelStatusUsrStatus
+     * @classdesc Represents a XmsgChannelStatusUsrStatus.
+     * @implements IXmsgChannelStatusUsrStatus
+     * @constructor
+     * @param {IXmsgChannelStatusUsrStatus=} [properties] Properties to set
+     */
+    function XmsgChannelStatusUsrStatus(properties) {
+        this.client = [];
+        if (properties)
+            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                if (properties[keys[i]] != null)
+                    this[keys[i]] = properties[keys[i]];
+    }
+
+    /**
+     * XmsgChannelStatusUsrStatus client.
+     * @member {Array.<XmsgChannelStatusUsrStatus.IXmsgChannelStatusUsrClientStatus>} client
+     * @memberof XmsgChannelStatusUsrStatus
+     * @instance
+     */
+    XmsgChannelStatusUsrStatus.prototype.client = $util.emptyArray;
+
+    /**
+     * Creates a new XmsgChannelStatusUsrStatus instance using the specified properties.
+     * @function create
+     * @memberof XmsgChannelStatusUsrStatus
+     * @static
+     * @param {IXmsgChannelStatusUsrStatus=} [properties] Properties to set
+     * @returns {XmsgChannelStatusUsrStatus} XmsgChannelStatusUsrStatus instance
+     */
+    XmsgChannelStatusUsrStatus.create = function create(properties) {
+        return new XmsgChannelStatusUsrStatus(properties);
+    };
+
+    /**
+     * Encodes the specified XmsgChannelStatusUsrStatus message. Does not implicitly {@link XmsgChannelStatusUsrStatus.verify|verify} messages.
+     * @function encode
+     * @memberof XmsgChannelStatusUsrStatus
+     * @static
+     * @param {IXmsgChannelStatusUsrStatus} message XmsgChannelStatusUsrStatus message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    XmsgChannelStatusUsrStatus.encode = function encode(message, writer) {
+        if (!writer)
+            writer = $Writer.create();
+        if (message.client != null && message.client.length)
+            for (var i = 0; i < message.client.length; ++i)
+                $root.XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatus.encode(message.client[i], writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+        return writer;
+    };
+
+    /**
+     * Encodes the specified XmsgChannelStatusUsrStatus message, length delimited. Does not implicitly {@link XmsgChannelStatusUsrStatus.verify|verify} messages.
+     * @function encodeDelimited
+     * @memberof XmsgChannelStatusUsrStatus
+     * @static
+     * @param {IXmsgChannelStatusUsrStatus} message XmsgChannelStatusUsrStatus message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    XmsgChannelStatusUsrStatus.encodeDelimited = function encodeDelimited(message, writer) {
+        return this.encode(message, writer).ldelim();
+    };
+
+    /**
+     * Decodes a XmsgChannelStatusUsrStatus message from the specified reader or buffer.
+     * @function decode
+     * @memberof XmsgChannelStatusUsrStatus
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @param {number} [length] Message length if known beforehand
+     * @returns {XmsgChannelStatusUsrStatus} XmsgChannelStatusUsrStatus
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    XmsgChannelStatusUsrStatus.decode = function decode(reader, length) {
+        if (!(reader instanceof $Reader))
+            reader = $Reader.create(reader);
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.XmsgChannelStatusUsrStatus();
+        while (reader.pos < end) {
+            var tag = reader.uint32();
+            switch (tag >>> 3) {
+            case 2:
+                if (!(message.client && message.client.length))
+                    message.client = [];
+                message.client.push($root.XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatus.decode(reader, reader.uint32()));
+                break;
+            default:
+                reader.skipType(tag & 7);
+                break;
+            }
+        }
+        return message;
+    };
+
+    /**
+     * Decodes a XmsgChannelStatusUsrStatus message from the specified reader or buffer, length delimited.
+     * @function decodeDelimited
+     * @memberof XmsgChannelStatusUsrStatus
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @returns {XmsgChannelStatusUsrStatus} XmsgChannelStatusUsrStatus
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    XmsgChannelStatusUsrStatus.decodeDelimited = function decodeDelimited(reader) {
+        if (!(reader instanceof $Reader))
+            reader = new $Reader(reader);
+        return this.decode(reader, reader.uint32());
+    };
+
+    /**
+     * Verifies a XmsgChannelStatusUsrStatus message.
+     * @function verify
+     * @memberof XmsgChannelStatusUsrStatus
+     * @static
+     * @param {Object.<string,*>} message Plain object to verify
+     * @returns {string|null} `null` if valid, otherwise the reason why it is not
+     */
+    XmsgChannelStatusUsrStatus.verify = function verify(message) {
+        if (typeof message !== "object" || message === null)
+            return "object expected";
+        if (message.client != null && message.hasOwnProperty("client")) {
+            if (!Array.isArray(message.client))
+                return "client: array expected";
+            for (var i = 0; i < message.client.length; ++i) {
+                var error = $root.XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatus.verify(message.client[i]);
+                if (error)
+                    return "client." + error;
+            }
+        }
+        return null;
+    };
+
+    /**
+     * Creates a XmsgChannelStatusUsrStatus message from a plain object. Also converts values to their respective internal types.
+     * @function fromObject
+     * @memberof XmsgChannelStatusUsrStatus
+     * @static
+     * @param {Object.<string,*>} object Plain object
+     * @returns {XmsgChannelStatusUsrStatus} XmsgChannelStatusUsrStatus
+     */
+    XmsgChannelStatusUsrStatus.fromObject = function fromObject(object) {
+        if (object instanceof $root.XmsgChannelStatusUsrStatus)
+            return object;
+        var message = new $root.XmsgChannelStatusUsrStatus();
+        if (object.client) {
+            if (!Array.isArray(object.client))
+                throw TypeError(".XmsgChannelStatusUsrStatus.client: array expected");
+            message.client = [];
+            for (var i = 0; i < object.client.length; ++i) {
+                if (typeof object.client[i] !== "object")
+                    throw TypeError(".XmsgChannelStatusUsrStatus.client: object expected");
+                message.client[i] = $root.XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatus.fromObject(object.client[i]);
+            }
+        }
+        return message;
+    };
+
+    /**
+     * Creates a plain object from a XmsgChannelStatusUsrStatus message. Also converts values to other types if specified.
+     * @function toObject
+     * @memberof XmsgChannelStatusUsrStatus
+     * @static
+     * @param {XmsgChannelStatusUsrStatus} message XmsgChannelStatusUsrStatus
+     * @param {$protobuf.IConversionOptions} [options] Conversion options
+     * @returns {Object.<string,*>} Plain object
+     */
+    XmsgChannelStatusUsrStatus.toObject = function toObject(message, options) {
+        if (!options)
+            options = {};
+        var object = {};
+        if (options.arrays || options.defaults)
+            object.client = [];
+        if (message.client && message.client.length) {
+            object.client = [];
+            for (var j = 0; j < message.client.length; ++j)
+                object.client[j] = $root.XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatus.toObject(message.client[j], options);
+        }
+        return object;
+    };
+
+    /**
+     * Converts this XmsgChannelStatusUsrStatus to JSON.
+     * @function toJSON
+     * @memberof XmsgChannelStatusUsrStatus
+     * @instance
+     * @returns {Object.<string,*>} JSON object
+     */
+    XmsgChannelStatusUsrStatus.prototype.toJSON = function toJSON() {
+        return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+    };
+
+    XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatus = (function() {
+
+        /**
+         * Properties of a XmsgChannelStatusUsrClientStatus.
+         * @memberof XmsgChannelStatusUsrStatus
+         * @interface IXmsgChannelStatusUsrClientStatus
+         * @property {string|null} [plat] XmsgChannelStatusUsrClientStatus plat
+         * @property {string|null} [did] XmsgChannelStatusUsrClientStatus did
+         * @property {string|null} [status] XmsgChannelStatusUsrClientStatus status
+         */
+
+        /**
+         * Constructs a new XmsgChannelStatusUsrClientStatus.
+         * @memberof XmsgChannelStatusUsrStatus
+         * @classdesc Represents a XmsgChannelStatusUsrClientStatus.
+         * @implements IXmsgChannelStatusUsrClientStatus
+         * @constructor
+         * @param {XmsgChannelStatusUsrStatus.IXmsgChannelStatusUsrClientStatus=} [properties] Properties to set
+         */
+        function XmsgChannelStatusUsrClientStatus(properties) {
+            if (properties)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null)
+                        this[keys[i]] = properties[keys[i]];
+        }
+
+        /**
+         * XmsgChannelStatusUsrClientStatus plat.
+         * @member {string} plat
+         * @memberof XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatus
+         * @instance
+         */
+        XmsgChannelStatusUsrClientStatus.prototype.plat = "";
+
+        /**
+         * XmsgChannelStatusUsrClientStatus did.
+         * @member {string} did
+         * @memberof XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatus
+         * @instance
+         */
+        XmsgChannelStatusUsrClientStatus.prototype.did = "";
+
+        /**
+         * XmsgChannelStatusUsrClientStatus status.
+         * @member {string} status
+         * @memberof XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatus
+         * @instance
+         */
+        XmsgChannelStatusUsrClientStatus.prototype.status = "";
+
+        /**
+         * Creates a new XmsgChannelStatusUsrClientStatus instance using the specified properties.
+         * @function create
+         * @memberof XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatus
+         * @static
+         * @param {XmsgChannelStatusUsrStatus.IXmsgChannelStatusUsrClientStatus=} [properties] Properties to set
+         * @returns {XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatus} XmsgChannelStatusUsrClientStatus instance
+         */
+        XmsgChannelStatusUsrClientStatus.create = function create(properties) {
+            return new XmsgChannelStatusUsrClientStatus(properties);
+        };
+
+        /**
+         * Encodes the specified XmsgChannelStatusUsrClientStatus message. Does not implicitly {@link XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatus.verify|verify} messages.
+         * @function encode
+         * @memberof XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatus
+         * @static
+         * @param {XmsgChannelStatusUsrStatus.IXmsgChannelStatusUsrClientStatus} message XmsgChannelStatusUsrClientStatus message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        XmsgChannelStatusUsrClientStatus.encode = function encode(message, writer) {
+            if (!writer)
+                writer = $Writer.create();
+            if (message.plat != null && message.hasOwnProperty("plat"))
+                writer.uint32(/* id 1, wireType 2 =*/10).string(message.plat);
+            if (message.did != null && message.hasOwnProperty("did"))
+                writer.uint32(/* id 2, wireType 2 =*/18).string(message.did);
+            if (message.status != null && message.hasOwnProperty("status"))
+                writer.uint32(/* id 3, wireType 2 =*/26).string(message.status);
+            return writer;
+        };
+
+        /**
+         * Encodes the specified XmsgChannelStatusUsrClientStatus message, length delimited. Does not implicitly {@link XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatus.verify|verify} messages.
+         * @function encodeDelimited
+         * @memberof XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatus
+         * @static
+         * @param {XmsgChannelStatusUsrStatus.IXmsgChannelStatusUsrClientStatus} message XmsgChannelStatusUsrClientStatus message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        XmsgChannelStatusUsrClientStatus.encodeDelimited = function encodeDelimited(message, writer) {
+            return this.encode(message, writer).ldelim();
+        };
+
+        /**
+         * Decodes a XmsgChannelStatusUsrClientStatus message from the specified reader or buffer.
+         * @function decode
+         * @memberof XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatus
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @param {number} [length] Message length if known beforehand
+         * @returns {XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatus} XmsgChannelStatusUsrClientStatus
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        XmsgChannelStatusUsrClientStatus.decode = function decode(reader, length) {
+            if (!(reader instanceof $Reader))
+                reader = $Reader.create(reader);
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatus();
+            while (reader.pos < end) {
+                var tag = reader.uint32();
+                switch (tag >>> 3) {
+                case 1:
+                    message.plat = reader.string();
+                    break;
+                case 2:
+                    message.did = reader.string();
+                    break;
+                case 3:
+                    message.status = reader.string();
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+                }
+            }
+            return message;
+        };
+
+        /**
+         * Decodes a XmsgChannelStatusUsrClientStatus message from the specified reader or buffer, length delimited.
+         * @function decodeDelimited
+         * @memberof XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatus
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @returns {XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatus} XmsgChannelStatusUsrClientStatus
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        XmsgChannelStatusUsrClientStatus.decodeDelimited = function decodeDelimited(reader) {
+            if (!(reader instanceof $Reader))
+                reader = new $Reader(reader);
+            return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Verifies a XmsgChannelStatusUsrClientStatus message.
+         * @function verify
+         * @memberof XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatus
+         * @static
+         * @param {Object.<string,*>} message Plain object to verify
+         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+         */
+        XmsgChannelStatusUsrClientStatus.verify = function verify(message) {
+            if (typeof message !== "object" || message === null)
+                return "object expected";
+            if (message.plat != null && message.hasOwnProperty("plat"))
+                if (!$util.isString(message.plat))
+                    return "plat: string expected";
+            if (message.did != null && message.hasOwnProperty("did"))
+                if (!$util.isString(message.did))
+                    return "did: string expected";
+            if (message.status != null && message.hasOwnProperty("status"))
+                if (!$util.isString(message.status))
+                    return "status: string expected";
+            return null;
+        };
+
+        /**
+         * Creates a XmsgChannelStatusUsrClientStatus message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatus
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatus} XmsgChannelStatusUsrClientStatus
+         */
+        XmsgChannelStatusUsrClientStatus.fromObject = function fromObject(object) {
+            if (object instanceof $root.XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatus)
+                return object;
+            var message = new $root.XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatus();
+            if (object.plat != null)
+                message.plat = String(object.plat);
+            if (object.did != null)
+                message.did = String(object.did);
+            if (object.status != null)
+                message.status = String(object.status);
+            return message;
+        };
+
+        /**
+         * Creates a plain object from a XmsgChannelStatusUsrClientStatus message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatus
+         * @static
+         * @param {XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatus} message XmsgChannelStatusUsrClientStatus
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        XmsgChannelStatusUsrClientStatus.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.defaults) {
+                object.plat = "";
+                object.did = "";
+                object.status = "";
+            }
+            if (message.plat != null && message.hasOwnProperty("plat"))
+                object.plat = message.plat;
+            if (message.did != null && message.hasOwnProperty("did"))
+                object.did = message.did;
+            if (message.status != null && message.hasOwnProperty("status"))
+                object.status = message.status;
+            return object;
+        };
+
+        /**
+         * Converts this XmsgChannelStatusUsrClientStatus to JSON.
+         * @function toJSON
+         * @memberof XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatus
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        XmsgChannelStatusUsrClientStatus.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        return XmsgChannelStatusUsrClientStatus;
+    })();
+
+    return XmsgChannelStatusUsrStatus;
+})();
+
+$root.XmsgChannelStatusGroupStatus = (function() {
+
+    /**
+     * Properties of a XmsgChannelStatusGroupStatus.
+     * @exports IXmsgChannelStatusGroupStatus
+     * @interface IXmsgChannelStatusGroupStatus
+     * @property {string|null} [status] XmsgChannelStatusGroupStatus status
+     */
+
+    /**
+     * Constructs a new XmsgChannelStatusGroupStatus.
+     * @exports XmsgChannelStatusGroupStatus
+     * @classdesc Represents a XmsgChannelStatusGroupStatus.
+     * @implements IXmsgChannelStatusGroupStatus
+     * @constructor
+     * @param {IXmsgChannelStatusGroupStatus=} [properties] Properties to set
+     */
+    function XmsgChannelStatusGroupStatus(properties) {
+        if (properties)
+            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                if (properties[keys[i]] != null)
+                    this[keys[i]] = properties[keys[i]];
+    }
+
+    /**
+     * XmsgChannelStatusGroupStatus status.
+     * @member {string} status
+     * @memberof XmsgChannelStatusGroupStatus
+     * @instance
+     */
+    XmsgChannelStatusGroupStatus.prototype.status = "";
+
+    /**
+     * Creates a new XmsgChannelStatusGroupStatus instance using the specified properties.
+     * @function create
+     * @memberof XmsgChannelStatusGroupStatus
+     * @static
+     * @param {IXmsgChannelStatusGroupStatus=} [properties] Properties to set
+     * @returns {XmsgChannelStatusGroupStatus} XmsgChannelStatusGroupStatus instance
+     */
+    XmsgChannelStatusGroupStatus.create = function create(properties) {
+        return new XmsgChannelStatusGroupStatus(properties);
+    };
+
+    /**
+     * Encodes the specified XmsgChannelStatusGroupStatus message. Does not implicitly {@link XmsgChannelStatusGroupStatus.verify|verify} messages.
+     * @function encode
+     * @memberof XmsgChannelStatusGroupStatus
+     * @static
+     * @param {IXmsgChannelStatusGroupStatus} message XmsgChannelStatusGroupStatus message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    XmsgChannelStatusGroupStatus.encode = function encode(message, writer) {
+        if (!writer)
+            writer = $Writer.create();
+        if (message.status != null && message.hasOwnProperty("status"))
+            writer.uint32(/* id 1, wireType 2 =*/10).string(message.status);
+        return writer;
+    };
+
+    /**
+     * Encodes the specified XmsgChannelStatusGroupStatus message, length delimited. Does not implicitly {@link XmsgChannelStatusGroupStatus.verify|verify} messages.
+     * @function encodeDelimited
+     * @memberof XmsgChannelStatusGroupStatus
+     * @static
+     * @param {IXmsgChannelStatusGroupStatus} message XmsgChannelStatusGroupStatus message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    XmsgChannelStatusGroupStatus.encodeDelimited = function encodeDelimited(message, writer) {
+        return this.encode(message, writer).ldelim();
+    };
+
+    /**
+     * Decodes a XmsgChannelStatusGroupStatus message from the specified reader or buffer.
+     * @function decode
+     * @memberof XmsgChannelStatusGroupStatus
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @param {number} [length] Message length if known beforehand
+     * @returns {XmsgChannelStatusGroupStatus} XmsgChannelStatusGroupStatus
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    XmsgChannelStatusGroupStatus.decode = function decode(reader, length) {
+        if (!(reader instanceof $Reader))
+            reader = $Reader.create(reader);
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.XmsgChannelStatusGroupStatus();
+        while (reader.pos < end) {
+            var tag = reader.uint32();
+            switch (tag >>> 3) {
+            case 1:
+                message.status = reader.string();
+                break;
+            default:
+                reader.skipType(tag & 7);
+                break;
+            }
+        }
+        return message;
+    };
+
+    /**
+     * Decodes a XmsgChannelStatusGroupStatus message from the specified reader or buffer, length delimited.
+     * @function decodeDelimited
+     * @memberof XmsgChannelStatusGroupStatus
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @returns {XmsgChannelStatusGroupStatus} XmsgChannelStatusGroupStatus
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    XmsgChannelStatusGroupStatus.decodeDelimited = function decodeDelimited(reader) {
+        if (!(reader instanceof $Reader))
+            reader = new $Reader(reader);
+        return this.decode(reader, reader.uint32());
+    };
+
+    /**
+     * Verifies a XmsgChannelStatusGroupStatus message.
+     * @function verify
+     * @memberof XmsgChannelStatusGroupStatus
+     * @static
+     * @param {Object.<string,*>} message Plain object to verify
+     * @returns {string|null} `null` if valid, otherwise the reason why it is not
+     */
+    XmsgChannelStatusGroupStatus.verify = function verify(message) {
+        if (typeof message !== "object" || message === null)
+            return "object expected";
+        if (message.status != null && message.hasOwnProperty("status"))
+            if (!$util.isString(message.status))
+                return "status: string expected";
+        return null;
+    };
+
+    /**
+     * Creates a XmsgChannelStatusGroupStatus message from a plain object. Also converts values to their respective internal types.
+     * @function fromObject
+     * @memberof XmsgChannelStatusGroupStatus
+     * @static
+     * @param {Object.<string,*>} object Plain object
+     * @returns {XmsgChannelStatusGroupStatus} XmsgChannelStatusGroupStatus
+     */
+    XmsgChannelStatusGroupStatus.fromObject = function fromObject(object) {
+        if (object instanceof $root.XmsgChannelStatusGroupStatus)
+            return object;
+        var message = new $root.XmsgChannelStatusGroupStatus();
+        if (object.status != null)
+            message.status = String(object.status);
+        return message;
+    };
+
+    /**
+     * Creates a plain object from a XmsgChannelStatusGroupStatus message. Also converts values to other types if specified.
+     * @function toObject
+     * @memberof XmsgChannelStatusGroupStatus
+     * @static
+     * @param {XmsgChannelStatusGroupStatus} message XmsgChannelStatusGroupStatus
+     * @param {$protobuf.IConversionOptions} [options] Conversion options
+     * @returns {Object.<string,*>} Plain object
+     */
+    XmsgChannelStatusGroupStatus.toObject = function toObject(message, options) {
+        if (!options)
+            options = {};
+        var object = {};
+        if (options.defaults)
+            object.status = "";
+        if (message.status != null && message.hasOwnProperty("status"))
+            object.status = message.status;
+        return object;
+    };
+
+    /**
+     * Converts this XmsgChannelStatusGroupStatus to JSON.
+     * @function toJSON
+     * @memberof XmsgChannelStatusGroupStatus
+     * @instance
+     * @returns {Object.<string,*>} JSON object
+     */
+    XmsgChannelStatusGroupStatus.prototype.toJSON = function toJSON() {
+        return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+    };
+
+    return XmsgChannelStatusGroupStatus;
+})();
+
 $root.XmsgClientTokenInfo = (function() {
 
     /**
      * Properties of a XmsgClientTokenInfo.
      * @exports IXmsgClientTokenInfo
      * @interface IXmsgClientTokenInfo
+     * @property {string|null} [cgt] XmsgClientTokenInfo cgt
      * @property {string|null} [token] XmsgClientTokenInfo token
      * @property {string|null} [alg] XmsgClientTokenInfo alg
      * @property {string|null} [slat] XmsgClientTokenInfo slat
@@ -5365,6 +7804,14 @@ $root.XmsgClientTokenInfo = (function() {
                 if (properties[keys[i]] != null)
                     this[keys[i]] = properties[keys[i]];
     }
+
+    /**
+     * XmsgClientTokenInfo cgt.
+     * @member {string} cgt
+     * @memberof XmsgClientTokenInfo
+     * @instance
+     */
+    XmsgClientTokenInfo.prototype.cgt = "";
 
     /**
      * XmsgClientTokenInfo token.
@@ -5438,18 +7885,20 @@ $root.XmsgClientTokenInfo = (function() {
     XmsgClientTokenInfo.encode = function encode(message, writer) {
         if (!writer)
             writer = $Writer.create();
+        if (message.cgt != null && message.hasOwnProperty("cgt"))
+            writer.uint32(/* id 1, wireType 2 =*/10).string(message.cgt);
         if (message.token != null && message.hasOwnProperty("token"))
-            writer.uint32(/* id 1, wireType 2 =*/10).string(message.token);
+            writer.uint32(/* id 2, wireType 2 =*/18).string(message.token);
         if (message.alg != null && message.hasOwnProperty("alg"))
-            writer.uint32(/* id 2, wireType 2 =*/18).string(message.alg);
+            writer.uint32(/* id 3, wireType 2 =*/26).string(message.alg);
         if (message.slat != null && message.hasOwnProperty("slat"))
-            writer.uint32(/* id 3, wireType 2 =*/26).string(message.slat);
+            writer.uint32(/* id 4, wireType 2 =*/34).string(message.slat);
         if (message.plat != null && message.hasOwnProperty("plat"))
-            writer.uint32(/* id 4, wireType 2 =*/34).string(message.plat);
+            writer.uint32(/* id 5, wireType 2 =*/42).string(message.plat);
         if (message.did != null && message.hasOwnProperty("did"))
-            writer.uint32(/* id 5, wireType 2 =*/42).string(message.did);
+            writer.uint32(/* id 6, wireType 2 =*/50).string(message.did);
         if (message.sign != null && message.hasOwnProperty("sign"))
-            writer.uint32(/* id 6, wireType 2 =*/50).string(message.sign);
+            writer.uint32(/* id 7, wireType 2 =*/58).string(message.sign);
         return writer;
     };
 
@@ -5485,21 +7934,24 @@ $root.XmsgClientTokenInfo = (function() {
             var tag = reader.uint32();
             switch (tag >>> 3) {
             case 1:
-                message.token = reader.string();
+                message.cgt = reader.string();
                 break;
             case 2:
-                message.alg = reader.string();
+                message.token = reader.string();
                 break;
             case 3:
-                message.slat = reader.string();
+                message.alg = reader.string();
                 break;
             case 4:
-                message.plat = reader.string();
+                message.slat = reader.string();
                 break;
             case 5:
-                message.did = reader.string();
+                message.plat = reader.string();
                 break;
             case 6:
+                message.did = reader.string();
+                break;
+            case 7:
                 message.sign = reader.string();
                 break;
             default:
@@ -5537,6 +7989,9 @@ $root.XmsgClientTokenInfo = (function() {
     XmsgClientTokenInfo.verify = function verify(message) {
         if (typeof message !== "object" || message === null)
             return "object expected";
+        if (message.cgt != null && message.hasOwnProperty("cgt"))
+            if (!$util.isString(message.cgt))
+                return "cgt: string expected";
         if (message.token != null && message.hasOwnProperty("token"))
             if (!$util.isString(message.token))
                 return "token: string expected";
@@ -5570,6 +8025,8 @@ $root.XmsgClientTokenInfo = (function() {
         if (object instanceof $root.XmsgClientTokenInfo)
             return object;
         var message = new $root.XmsgClientTokenInfo();
+        if (object.cgt != null)
+            message.cgt = String(object.cgt);
         if (object.token != null)
             message.token = String(object.token);
         if (object.alg != null)
@@ -5599,6 +8056,7 @@ $root.XmsgClientTokenInfo = (function() {
             options = {};
         var object = {};
         if (options.defaults) {
+            object.cgt = "";
             object.token = "";
             object.alg = "";
             object.slat = "";
@@ -5606,6 +8064,8 @@ $root.XmsgClientTokenInfo = (function() {
             object.did = "";
             object.sign = "";
         }
+        if (message.cgt != null && message.hasOwnProperty("cgt"))
+            object.cgt = message.cgt;
         if (message.token != null && message.hasOwnProperty("token"))
             object.token = message.token;
         if (message.alg != null && message.hasOwnProperty("alg"))
@@ -9524,7 +11984,8 @@ $root.XmsgImHlrAttachSimpleReq = (function() {
      * @property {string|null} [salt] XmsgImHlrAttachSimpleReq salt
      * @property {string|null} [sign] XmsgImHlrAttachSimpleReq sign
      * @property {string|null} [alg] XmsgImHlrAttachSimpleReq alg
-     * @property {string|null} [ext] XmsgImHlrAttachSimpleReq ext
+     * @property {string|null} [cgt] XmsgImHlrAttachSimpleReq cgt
+     * @property {Object.<string,string>|null} [ext] XmsgImHlrAttachSimpleReq ext
      */
 
     /**
@@ -9536,6 +11997,7 @@ $root.XmsgImHlrAttachSimpleReq = (function() {
      * @param {IXmsgImHlrAttachSimpleReq=} [properties] Properties to set
      */
     function XmsgImHlrAttachSimpleReq(properties) {
+        this.ext = {};
         if (properties)
             for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                 if (properties[keys[i]] != null)
@@ -9575,12 +12037,20 @@ $root.XmsgImHlrAttachSimpleReq = (function() {
     XmsgImHlrAttachSimpleReq.prototype.alg = "";
 
     /**
-     * XmsgImHlrAttachSimpleReq ext.
-     * @member {string} ext
+     * XmsgImHlrAttachSimpleReq cgt.
+     * @member {string} cgt
      * @memberof XmsgImHlrAttachSimpleReq
      * @instance
      */
-    XmsgImHlrAttachSimpleReq.prototype.ext = "";
+    XmsgImHlrAttachSimpleReq.prototype.cgt = "";
+
+    /**
+     * XmsgImHlrAttachSimpleReq ext.
+     * @member {Object.<string,string>} ext
+     * @memberof XmsgImHlrAttachSimpleReq
+     * @instance
+     */
+    XmsgImHlrAttachSimpleReq.prototype.ext = $util.emptyObject;
 
     /**
      * Creates a new XmsgImHlrAttachSimpleReq instance using the specified properties.
@@ -9614,8 +12084,11 @@ $root.XmsgImHlrAttachSimpleReq = (function() {
             writer.uint32(/* id 3, wireType 2 =*/26).string(message.sign);
         if (message.alg != null && message.hasOwnProperty("alg"))
             writer.uint32(/* id 4, wireType 2 =*/34).string(message.alg);
+        if (message.cgt != null && message.hasOwnProperty("cgt"))
+            writer.uint32(/* id 5, wireType 2 =*/42).string(message.cgt);
         if (message.ext != null && message.hasOwnProperty("ext"))
-            writer.uint32(/* id 5, wireType 2 =*/42).string(message.ext);
+            for (var keys = Object.keys(message.ext), i = 0; i < keys.length; ++i)
+                writer.uint32(/* id 6, wireType 2 =*/50).fork().uint32(/* id 1, wireType 2 =*/10).string(keys[i]).uint32(/* id 2, wireType 2 =*/18).string(message.ext[keys[i]]).ldelim();
         return writer;
     };
 
@@ -9646,7 +12119,7 @@ $root.XmsgImHlrAttachSimpleReq = (function() {
     XmsgImHlrAttachSimpleReq.decode = function decode(reader, length) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
-        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.XmsgImHlrAttachSimpleReq();
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.XmsgImHlrAttachSimpleReq(), key;
         while (reader.pos < end) {
             var tag = reader.uint32();
             switch (tag >>> 3) {
@@ -9663,7 +12136,15 @@ $root.XmsgImHlrAttachSimpleReq = (function() {
                 message.alg = reader.string();
                 break;
             case 5:
-                message.ext = reader.string();
+                message.cgt = reader.string();
+                break;
+            case 6:
+                reader.skip().pos++;
+                if (message.ext === $util.emptyObject)
+                    message.ext = {};
+                key = reader.string();
+                reader.pos++;
+                message.ext[key] = reader.string();
                 break;
             default:
                 reader.skipType(tag & 7);
@@ -9712,9 +12193,17 @@ $root.XmsgImHlrAttachSimpleReq = (function() {
         if (message.alg != null && message.hasOwnProperty("alg"))
             if (!$util.isString(message.alg))
                 return "alg: string expected";
-        if (message.ext != null && message.hasOwnProperty("ext"))
-            if (!$util.isString(message.ext))
-                return "ext: string expected";
+        if (message.cgt != null && message.hasOwnProperty("cgt"))
+            if (!$util.isString(message.cgt))
+                return "cgt: string expected";
+        if (message.ext != null && message.hasOwnProperty("ext")) {
+            if (!$util.isObject(message.ext))
+                return "ext: object expected";
+            var key = Object.keys(message.ext);
+            for (var i = 0; i < key.length; ++i)
+                if (!$util.isString(message.ext[key[i]]))
+                    return "ext: string{k:string} expected";
+        }
         return null;
     };
 
@@ -9738,8 +12227,15 @@ $root.XmsgImHlrAttachSimpleReq = (function() {
             message.sign = String(object.sign);
         if (object.alg != null)
             message.alg = String(object.alg);
-        if (object.ext != null)
-            message.ext = String(object.ext);
+        if (object.cgt != null)
+            message.cgt = String(object.cgt);
+        if (object.ext) {
+            if (typeof object.ext !== "object")
+                throw TypeError(".XmsgImHlrAttachSimpleReq.ext: object expected");
+            message.ext = {};
+            for (var keys = Object.keys(object.ext), i = 0; i < keys.length; ++i)
+                message.ext[keys[i]] = String(object.ext[keys[i]]);
+        }
         return message;
     };
 
@@ -9756,12 +12252,14 @@ $root.XmsgImHlrAttachSimpleReq = (function() {
         if (!options)
             options = {};
         var object = {};
+        if (options.objects || options.defaults)
+            object.ext = {};
         if (options.defaults) {
             object.token = "";
             object.salt = "";
             object.sign = "";
             object.alg = "";
-            object.ext = "";
+            object.cgt = "";
         }
         if (message.token != null && message.hasOwnProperty("token"))
             object.token = message.token;
@@ -9771,8 +12269,14 @@ $root.XmsgImHlrAttachSimpleReq = (function() {
             object.sign = message.sign;
         if (message.alg != null && message.hasOwnProperty("alg"))
             object.alg = message.alg;
-        if (message.ext != null && message.hasOwnProperty("ext"))
-            object.ext = message.ext;
+        if (message.cgt != null && message.hasOwnProperty("cgt"))
+            object.cgt = message.cgt;
+        var keys2;
+        if (message.ext && (keys2 = Object.keys(message.ext)).length) {
+            object.ext = {};
+            for (var j = 0; j < keys2.length; ++j)
+                object.ext[keys2[j]] = message.ext[keys2[j]];
+        }
         return object;
     };
 
@@ -9796,8 +12300,7 @@ $root.XmsgImHlrAttachSimpleRsp = (function() {
      * Properties of a XmsgImHlrAttachSimpleRsp.
      * @exports IXmsgImHlrAttachSimpleRsp
      * @interface IXmsgImHlrAttachSimpleRsp
-     * @property {string|null} [cgt] XmsgImHlrAttachSimpleRsp cgt
-     * @property {string|null} [ext] XmsgImHlrAttachSimpleRsp ext
+     * @property {Object.<string,string>|null} [ext] XmsgImHlrAttachSimpleRsp ext
      */
 
     /**
@@ -9809,6 +12312,7 @@ $root.XmsgImHlrAttachSimpleRsp = (function() {
      * @param {IXmsgImHlrAttachSimpleRsp=} [properties] Properties to set
      */
     function XmsgImHlrAttachSimpleRsp(properties) {
+        this.ext = {};
         if (properties)
             for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                 if (properties[keys[i]] != null)
@@ -9816,20 +12320,12 @@ $root.XmsgImHlrAttachSimpleRsp = (function() {
     }
 
     /**
-     * XmsgImHlrAttachSimpleRsp cgt.
-     * @member {string} cgt
-     * @memberof XmsgImHlrAttachSimpleRsp
-     * @instance
-     */
-    XmsgImHlrAttachSimpleRsp.prototype.cgt = "";
-
-    /**
      * XmsgImHlrAttachSimpleRsp ext.
-     * @member {string} ext
+     * @member {Object.<string,string>} ext
      * @memberof XmsgImHlrAttachSimpleRsp
      * @instance
      */
-    XmsgImHlrAttachSimpleRsp.prototype.ext = "";
+    XmsgImHlrAttachSimpleRsp.prototype.ext = $util.emptyObject;
 
     /**
      * Creates a new XmsgImHlrAttachSimpleRsp instance using the specified properties.
@@ -9855,10 +12351,9 @@ $root.XmsgImHlrAttachSimpleRsp = (function() {
     XmsgImHlrAttachSimpleRsp.encode = function encode(message, writer) {
         if (!writer)
             writer = $Writer.create();
-        if (message.cgt != null && message.hasOwnProperty("cgt"))
-            writer.uint32(/* id 1, wireType 2 =*/10).string(message.cgt);
         if (message.ext != null && message.hasOwnProperty("ext"))
-            writer.uint32(/* id 2, wireType 2 =*/18).string(message.ext);
+            for (var keys = Object.keys(message.ext), i = 0; i < keys.length; ++i)
+                writer.uint32(/* id 1, wireType 2 =*/10).fork().uint32(/* id 1, wireType 2 =*/10).string(keys[i]).uint32(/* id 2, wireType 2 =*/18).string(message.ext[keys[i]]).ldelim();
         return writer;
     };
 
@@ -9889,15 +12384,17 @@ $root.XmsgImHlrAttachSimpleRsp = (function() {
     XmsgImHlrAttachSimpleRsp.decode = function decode(reader, length) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
-        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.XmsgImHlrAttachSimpleRsp();
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.XmsgImHlrAttachSimpleRsp(), key;
         while (reader.pos < end) {
             var tag = reader.uint32();
             switch (tag >>> 3) {
             case 1:
-                message.cgt = reader.string();
-                break;
-            case 2:
-                message.ext = reader.string();
+                reader.skip().pos++;
+                if (message.ext === $util.emptyObject)
+                    message.ext = {};
+                key = reader.string();
+                reader.pos++;
+                message.ext[key] = reader.string();
                 break;
             default:
                 reader.skipType(tag & 7);
@@ -9934,12 +12431,14 @@ $root.XmsgImHlrAttachSimpleRsp = (function() {
     XmsgImHlrAttachSimpleRsp.verify = function verify(message) {
         if (typeof message !== "object" || message === null)
             return "object expected";
-        if (message.cgt != null && message.hasOwnProperty("cgt"))
-            if (!$util.isString(message.cgt))
-                return "cgt: string expected";
-        if (message.ext != null && message.hasOwnProperty("ext"))
-            if (!$util.isString(message.ext))
-                return "ext: string expected";
+        if (message.ext != null && message.hasOwnProperty("ext")) {
+            if (!$util.isObject(message.ext))
+                return "ext: object expected";
+            var key = Object.keys(message.ext);
+            for (var i = 0; i < key.length; ++i)
+                if (!$util.isString(message.ext[key[i]]))
+                    return "ext: string{k:string} expected";
+        }
         return null;
     };
 
@@ -9955,10 +12454,13 @@ $root.XmsgImHlrAttachSimpleRsp = (function() {
         if (object instanceof $root.XmsgImHlrAttachSimpleRsp)
             return object;
         var message = new $root.XmsgImHlrAttachSimpleRsp();
-        if (object.cgt != null)
-            message.cgt = String(object.cgt);
-        if (object.ext != null)
-            message.ext = String(object.ext);
+        if (object.ext) {
+            if (typeof object.ext !== "object")
+                throw TypeError(".XmsgImHlrAttachSimpleRsp.ext: object expected");
+            message.ext = {};
+            for (var keys = Object.keys(object.ext), i = 0; i < keys.length; ++i)
+                message.ext[keys[i]] = String(object.ext[keys[i]]);
+        }
         return message;
     };
 
@@ -9975,14 +12477,14 @@ $root.XmsgImHlrAttachSimpleRsp = (function() {
         if (!options)
             options = {};
         var object = {};
-        if (options.defaults) {
-            object.cgt = "";
-            object.ext = "";
+        if (options.objects || options.defaults)
+            object.ext = {};
+        var keys2;
+        if (message.ext && (keys2 = Object.keys(message.ext)).length) {
+            object.ext = {};
+            for (var j = 0; j < keys2.length; ++j)
+                object.ext[keys2[j]] = message.ext[keys2[j]];
         }
-        if (message.cgt != null && message.hasOwnProperty("cgt"))
-            object.cgt = message.cgt;
-        if (message.ext != null && message.hasOwnProperty("ext"))
-            object.ext = message.ext;
         return object;
     };
 
@@ -10006,7 +12508,7 @@ $root.XmsgImHlrDetachSimpleReq = (function() {
      * Properties of a XmsgImHlrDetachSimpleReq.
      * @exports IXmsgImHlrDetachSimpleReq
      * @interface IXmsgImHlrDetachSimpleReq
-     * @property {string|null} [ext] XmsgImHlrDetachSimpleReq ext
+     * @property {Object.<string,string>|null} [ext] XmsgImHlrDetachSimpleReq ext
      */
 
     /**
@@ -10018,6 +12520,7 @@ $root.XmsgImHlrDetachSimpleReq = (function() {
      * @param {IXmsgImHlrDetachSimpleReq=} [properties] Properties to set
      */
     function XmsgImHlrDetachSimpleReq(properties) {
+        this.ext = {};
         if (properties)
             for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                 if (properties[keys[i]] != null)
@@ -10026,11 +12529,11 @@ $root.XmsgImHlrDetachSimpleReq = (function() {
 
     /**
      * XmsgImHlrDetachSimpleReq ext.
-     * @member {string} ext
+     * @member {Object.<string,string>} ext
      * @memberof XmsgImHlrDetachSimpleReq
      * @instance
      */
-    XmsgImHlrDetachSimpleReq.prototype.ext = "";
+    XmsgImHlrDetachSimpleReq.prototype.ext = $util.emptyObject;
 
     /**
      * Creates a new XmsgImHlrDetachSimpleReq instance using the specified properties.
@@ -10057,7 +12560,8 @@ $root.XmsgImHlrDetachSimpleReq = (function() {
         if (!writer)
             writer = $Writer.create();
         if (message.ext != null && message.hasOwnProperty("ext"))
-            writer.uint32(/* id 1, wireType 2 =*/10).string(message.ext);
+            for (var keys = Object.keys(message.ext), i = 0; i < keys.length; ++i)
+                writer.uint32(/* id 1, wireType 2 =*/10).fork().uint32(/* id 1, wireType 2 =*/10).string(keys[i]).uint32(/* id 2, wireType 2 =*/18).string(message.ext[keys[i]]).ldelim();
         return writer;
     };
 
@@ -10088,12 +12592,17 @@ $root.XmsgImHlrDetachSimpleReq = (function() {
     XmsgImHlrDetachSimpleReq.decode = function decode(reader, length) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
-        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.XmsgImHlrDetachSimpleReq();
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.XmsgImHlrDetachSimpleReq(), key;
         while (reader.pos < end) {
             var tag = reader.uint32();
             switch (tag >>> 3) {
             case 1:
-                message.ext = reader.string();
+                reader.skip().pos++;
+                if (message.ext === $util.emptyObject)
+                    message.ext = {};
+                key = reader.string();
+                reader.pos++;
+                message.ext[key] = reader.string();
                 break;
             default:
                 reader.skipType(tag & 7);
@@ -10130,9 +12639,14 @@ $root.XmsgImHlrDetachSimpleReq = (function() {
     XmsgImHlrDetachSimpleReq.verify = function verify(message) {
         if (typeof message !== "object" || message === null)
             return "object expected";
-        if (message.ext != null && message.hasOwnProperty("ext"))
-            if (!$util.isString(message.ext))
-                return "ext: string expected";
+        if (message.ext != null && message.hasOwnProperty("ext")) {
+            if (!$util.isObject(message.ext))
+                return "ext: object expected";
+            var key = Object.keys(message.ext);
+            for (var i = 0; i < key.length; ++i)
+                if (!$util.isString(message.ext[key[i]]))
+                    return "ext: string{k:string} expected";
+        }
         return null;
     };
 
@@ -10148,8 +12662,13 @@ $root.XmsgImHlrDetachSimpleReq = (function() {
         if (object instanceof $root.XmsgImHlrDetachSimpleReq)
             return object;
         var message = new $root.XmsgImHlrDetachSimpleReq();
-        if (object.ext != null)
-            message.ext = String(object.ext);
+        if (object.ext) {
+            if (typeof object.ext !== "object")
+                throw TypeError(".XmsgImHlrDetachSimpleReq.ext: object expected");
+            message.ext = {};
+            for (var keys = Object.keys(object.ext), i = 0; i < keys.length; ++i)
+                message.ext[keys[i]] = String(object.ext[keys[i]]);
+        }
         return message;
     };
 
@@ -10166,10 +12685,14 @@ $root.XmsgImHlrDetachSimpleReq = (function() {
         if (!options)
             options = {};
         var object = {};
-        if (options.defaults)
-            object.ext = "";
-        if (message.ext != null && message.hasOwnProperty("ext"))
-            object.ext = message.ext;
+        if (options.objects || options.defaults)
+            object.ext = {};
+        var keys2;
+        if (message.ext && (keys2 = Object.keys(message.ext)).length) {
+            object.ext = {};
+            for (var j = 0; j < keys2.length; ++j)
+                object.ext[keys2[j]] = message.ext[keys2[j]];
+        }
         return object;
     };
 
@@ -10193,7 +12716,7 @@ $root.XmsgImHlrDetachSimpleRsp = (function() {
      * Properties of a XmsgImHlrDetachSimpleRsp.
      * @exports IXmsgImHlrDetachSimpleRsp
      * @interface IXmsgImHlrDetachSimpleRsp
-     * @property {string|null} [ext] XmsgImHlrDetachSimpleRsp ext
+     * @property {Object.<string,string>|null} [ext] XmsgImHlrDetachSimpleRsp ext
      */
 
     /**
@@ -10205,6 +12728,7 @@ $root.XmsgImHlrDetachSimpleRsp = (function() {
      * @param {IXmsgImHlrDetachSimpleRsp=} [properties] Properties to set
      */
     function XmsgImHlrDetachSimpleRsp(properties) {
+        this.ext = {};
         if (properties)
             for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                 if (properties[keys[i]] != null)
@@ -10213,11 +12737,11 @@ $root.XmsgImHlrDetachSimpleRsp = (function() {
 
     /**
      * XmsgImHlrDetachSimpleRsp ext.
-     * @member {string} ext
+     * @member {Object.<string,string>} ext
      * @memberof XmsgImHlrDetachSimpleRsp
      * @instance
      */
-    XmsgImHlrDetachSimpleRsp.prototype.ext = "";
+    XmsgImHlrDetachSimpleRsp.prototype.ext = $util.emptyObject;
 
     /**
      * Creates a new XmsgImHlrDetachSimpleRsp instance using the specified properties.
@@ -10244,7 +12768,8 @@ $root.XmsgImHlrDetachSimpleRsp = (function() {
         if (!writer)
             writer = $Writer.create();
         if (message.ext != null && message.hasOwnProperty("ext"))
-            writer.uint32(/* id 1, wireType 2 =*/10).string(message.ext);
+            for (var keys = Object.keys(message.ext), i = 0; i < keys.length; ++i)
+                writer.uint32(/* id 1, wireType 2 =*/10).fork().uint32(/* id 1, wireType 2 =*/10).string(keys[i]).uint32(/* id 2, wireType 2 =*/18).string(message.ext[keys[i]]).ldelim();
         return writer;
     };
 
@@ -10275,12 +12800,17 @@ $root.XmsgImHlrDetachSimpleRsp = (function() {
     XmsgImHlrDetachSimpleRsp.decode = function decode(reader, length) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
-        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.XmsgImHlrDetachSimpleRsp();
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.XmsgImHlrDetachSimpleRsp(), key;
         while (reader.pos < end) {
             var tag = reader.uint32();
             switch (tag >>> 3) {
             case 1:
-                message.ext = reader.string();
+                reader.skip().pos++;
+                if (message.ext === $util.emptyObject)
+                    message.ext = {};
+                key = reader.string();
+                reader.pos++;
+                message.ext[key] = reader.string();
                 break;
             default:
                 reader.skipType(tag & 7);
@@ -10317,9 +12847,14 @@ $root.XmsgImHlrDetachSimpleRsp = (function() {
     XmsgImHlrDetachSimpleRsp.verify = function verify(message) {
         if (typeof message !== "object" || message === null)
             return "object expected";
-        if (message.ext != null && message.hasOwnProperty("ext"))
-            if (!$util.isString(message.ext))
-                return "ext: string expected";
+        if (message.ext != null && message.hasOwnProperty("ext")) {
+            if (!$util.isObject(message.ext))
+                return "ext: object expected";
+            var key = Object.keys(message.ext);
+            for (var i = 0; i < key.length; ++i)
+                if (!$util.isString(message.ext[key[i]]))
+                    return "ext: string{k:string} expected";
+        }
         return null;
     };
 
@@ -10335,8 +12870,13 @@ $root.XmsgImHlrDetachSimpleRsp = (function() {
         if (object instanceof $root.XmsgImHlrDetachSimpleRsp)
             return object;
         var message = new $root.XmsgImHlrDetachSimpleRsp();
-        if (object.ext != null)
-            message.ext = String(object.ext);
+        if (object.ext) {
+            if (typeof object.ext !== "object")
+                throw TypeError(".XmsgImHlrDetachSimpleRsp.ext: object expected");
+            message.ext = {};
+            for (var keys = Object.keys(object.ext), i = 0; i < keys.length; ++i)
+                message.ext[keys[i]] = String(object.ext[keys[i]]);
+        }
         return message;
     };
 
@@ -10353,10 +12893,14 @@ $root.XmsgImHlrDetachSimpleRsp = (function() {
         if (!options)
             options = {};
         var object = {};
-        if (options.defaults)
-            object.ext = "";
-        if (message.ext != null && message.hasOwnProperty("ext"))
-            object.ext = message.ext;
+        if (options.objects || options.defaults)
+            object.ext = {};
+        var keys2;
+        if (message.ext && (keys2 = Object.keys(message.ext)).length) {
+            object.ext = {};
+            for (var j = 0; j < keys2.length; ++j)
+                object.ext[keys2[j]] = message.ext[keys2[j]];
+        }
         return object;
     };
 
@@ -11261,7 +13805,8 @@ $root.XmsgImAuthSimpleRsp = (function() {
      * @property {number|Long|null} [expired] XmsgImAuthSimpleRsp expired
      * @property {Array.<IXmsgImClientServiceAddress>|null} [apAddr] XmsgImAuthSimpleRsp apAddr
      * @property {Array.<IXmsgImClientServiceAddress>|null} [fsAddr] XmsgImAuthSimpleRsp fsAddr
-     * @property {string|null} [ext] XmsgImAuthSimpleRsp ext
+     * @property {string|null} [cgt] XmsgImAuthSimpleRsp cgt
+     * @property {Object.<string,string>|null} [ext] XmsgImAuthSimpleRsp ext
      */
 
     /**
@@ -11275,6 +13820,7 @@ $root.XmsgImAuthSimpleRsp = (function() {
     function XmsgImAuthSimpleRsp(properties) {
         this.apAddr = [];
         this.fsAddr = [];
+        this.ext = {};
         if (properties)
             for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                 if (properties[keys[i]] != null)
@@ -11322,12 +13868,20 @@ $root.XmsgImAuthSimpleRsp = (function() {
     XmsgImAuthSimpleRsp.prototype.fsAddr = $util.emptyArray;
 
     /**
-     * XmsgImAuthSimpleRsp ext.
-     * @member {string} ext
+     * XmsgImAuthSimpleRsp cgt.
+     * @member {string} cgt
      * @memberof XmsgImAuthSimpleRsp
      * @instance
      */
-    XmsgImAuthSimpleRsp.prototype.ext = "";
+    XmsgImAuthSimpleRsp.prototype.cgt = "";
+
+    /**
+     * XmsgImAuthSimpleRsp ext.
+     * @member {Object.<string,string>} ext
+     * @memberof XmsgImAuthSimpleRsp
+     * @instance
+     */
+    XmsgImAuthSimpleRsp.prototype.ext = $util.emptyObject;
 
     /**
      * Creates a new XmsgImAuthSimpleRsp instance using the specified properties.
@@ -11365,8 +13919,11 @@ $root.XmsgImAuthSimpleRsp = (function() {
         if (message.fsAddr != null && message.fsAddr.length)
             for (var i = 0; i < message.fsAddr.length; ++i)
                 $root.XmsgImClientServiceAddress.encode(message.fsAddr[i], writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
+        if (message.cgt != null && message.hasOwnProperty("cgt"))
+            writer.uint32(/* id 7, wireType 2 =*/58).string(message.cgt);
         if (message.ext != null && message.hasOwnProperty("ext"))
-            writer.uint32(/* id 6, wireType 2 =*/50).string(message.ext);
+            for (var keys = Object.keys(message.ext), i = 0; i < keys.length; ++i)
+                writer.uint32(/* id 8, wireType 2 =*/66).fork().uint32(/* id 1, wireType 2 =*/10).string(keys[i]).uint32(/* id 2, wireType 2 =*/18).string(message.ext[keys[i]]).ldelim();
         return writer;
     };
 
@@ -11397,7 +13954,7 @@ $root.XmsgImAuthSimpleRsp = (function() {
     XmsgImAuthSimpleRsp.decode = function decode(reader, length) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
-        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.XmsgImAuthSimpleRsp();
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.XmsgImAuthSimpleRsp(), key;
         while (reader.pos < end) {
             var tag = reader.uint32();
             switch (tag >>> 3) {
@@ -11420,8 +13977,16 @@ $root.XmsgImAuthSimpleRsp = (function() {
                     message.fsAddr = [];
                 message.fsAddr.push($root.XmsgImClientServiceAddress.decode(reader, reader.uint32()));
                 break;
-            case 6:
-                message.ext = reader.string();
+            case 7:
+                message.cgt = reader.string();
+                break;
+            case 8:
+                reader.skip().pos++;
+                if (message.ext === $util.emptyObject)
+                    message.ext = {};
+                key = reader.string();
+                reader.pos++;
+                message.ext[key] = reader.string();
                 break;
             default:
                 reader.skipType(tag & 7);
@@ -11485,9 +14050,17 @@ $root.XmsgImAuthSimpleRsp = (function() {
                     return "fsAddr." + error;
             }
         }
-        if (message.ext != null && message.hasOwnProperty("ext"))
-            if (!$util.isString(message.ext))
-                return "ext: string expected";
+        if (message.cgt != null && message.hasOwnProperty("cgt"))
+            if (!$util.isString(message.cgt))
+                return "cgt: string expected";
+        if (message.ext != null && message.hasOwnProperty("ext")) {
+            if (!$util.isObject(message.ext))
+                return "ext: object expected";
+            var key = Object.keys(message.ext);
+            for (var i = 0; i < key.length; ++i)
+                if (!$util.isString(message.ext[key[i]]))
+                    return "ext: string{k:string} expected";
+        }
         return null;
     };
 
@@ -11536,8 +14109,15 @@ $root.XmsgImAuthSimpleRsp = (function() {
                 message.fsAddr[i] = $root.XmsgImClientServiceAddress.fromObject(object.fsAddr[i]);
             }
         }
-        if (object.ext != null)
-            message.ext = String(object.ext);
+        if (object.cgt != null)
+            message.cgt = String(object.cgt);
+        if (object.ext) {
+            if (typeof object.ext !== "object")
+                throw TypeError(".XmsgImAuthSimpleRsp.ext: object expected");
+            message.ext = {};
+            for (var keys = Object.keys(object.ext), i = 0; i < keys.length; ++i)
+                message.ext[keys[i]] = String(object.ext[keys[i]]);
+        }
         return message;
     };
 
@@ -11558,6 +14138,8 @@ $root.XmsgImAuthSimpleRsp = (function() {
             object.apAddr = [];
             object.fsAddr = [];
         }
+        if (options.objects || options.defaults)
+            object.ext = {};
         if (options.defaults) {
             object.token = "";
             object.secret = "";
@@ -11566,7 +14148,7 @@ $root.XmsgImAuthSimpleRsp = (function() {
                 object.expired = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : long;
             } else
                 object.expired = options.longs === String ? "0" : 0;
-            object.ext = "";
+            object.cgt = "";
         }
         if (message.token != null && message.hasOwnProperty("token"))
             object.token = message.token;
@@ -11587,8 +14169,14 @@ $root.XmsgImAuthSimpleRsp = (function() {
             for (var j = 0; j < message.fsAddr.length; ++j)
                 object.fsAddr[j] = $root.XmsgImClientServiceAddress.toObject(message.fsAddr[j], options);
         }
-        if (message.ext != null && message.hasOwnProperty("ext"))
-            object.ext = message.ext;
+        if (message.cgt != null && message.hasOwnProperty("cgt"))
+            object.cgt = message.cgt;
+        var keys2;
+        if (message.ext && (keys2 = Object.keys(message.ext)).length) {
+            object.ext = {};
+            for (var j = 0; j < keys2.length; ++j)
+                object.ext[keys2[j]] = message.ext[keys2[j]];
+        }
         return object;
     };
 
@@ -11615,7 +14203,7 @@ $root.XmsgImClientDeviceInfo = (function() {
      * @property {string|null} [plat] XmsgImClientDeviceInfo plat
      * @property {string|null} [did] XmsgImClientDeviceInfo did
      * @property {string|null} [ver] XmsgImClientDeviceInfo ver
-     * @property {string|null} [ext] XmsgImClientDeviceInfo ext
+     * @property {Object.<string,string>|null} [ext] XmsgImClientDeviceInfo ext
      */
 
     /**
@@ -11627,6 +14215,7 @@ $root.XmsgImClientDeviceInfo = (function() {
      * @param {IXmsgImClientDeviceInfo=} [properties] Properties to set
      */
     function XmsgImClientDeviceInfo(properties) {
+        this.ext = {};
         if (properties)
             for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                 if (properties[keys[i]] != null)
@@ -11659,11 +14248,11 @@ $root.XmsgImClientDeviceInfo = (function() {
 
     /**
      * XmsgImClientDeviceInfo ext.
-     * @member {string} ext
+     * @member {Object.<string,string>} ext
      * @memberof XmsgImClientDeviceInfo
      * @instance
      */
-    XmsgImClientDeviceInfo.prototype.ext = "";
+    XmsgImClientDeviceInfo.prototype.ext = $util.emptyObject;
 
     /**
      * Creates a new XmsgImClientDeviceInfo instance using the specified properties.
@@ -11696,7 +14285,8 @@ $root.XmsgImClientDeviceInfo = (function() {
         if (message.ver != null && message.hasOwnProperty("ver"))
             writer.uint32(/* id 3, wireType 2 =*/26).string(message.ver);
         if (message.ext != null && message.hasOwnProperty("ext"))
-            writer.uint32(/* id 4, wireType 2 =*/34).string(message.ext);
+            for (var keys = Object.keys(message.ext), i = 0; i < keys.length; ++i)
+                writer.uint32(/* id 4, wireType 2 =*/34).fork().uint32(/* id 1, wireType 2 =*/10).string(keys[i]).uint32(/* id 2, wireType 2 =*/18).string(message.ext[keys[i]]).ldelim();
         return writer;
     };
 
@@ -11727,7 +14317,7 @@ $root.XmsgImClientDeviceInfo = (function() {
     XmsgImClientDeviceInfo.decode = function decode(reader, length) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
-        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.XmsgImClientDeviceInfo();
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.XmsgImClientDeviceInfo(), key;
         while (reader.pos < end) {
             var tag = reader.uint32();
             switch (tag >>> 3) {
@@ -11741,7 +14331,12 @@ $root.XmsgImClientDeviceInfo = (function() {
                 message.ver = reader.string();
                 break;
             case 4:
-                message.ext = reader.string();
+                reader.skip().pos++;
+                if (message.ext === $util.emptyObject)
+                    message.ext = {};
+                key = reader.string();
+                reader.pos++;
+                message.ext[key] = reader.string();
                 break;
             default:
                 reader.skipType(tag & 7);
@@ -11787,9 +14382,14 @@ $root.XmsgImClientDeviceInfo = (function() {
         if (message.ver != null && message.hasOwnProperty("ver"))
             if (!$util.isString(message.ver))
                 return "ver: string expected";
-        if (message.ext != null && message.hasOwnProperty("ext"))
-            if (!$util.isString(message.ext))
-                return "ext: string expected";
+        if (message.ext != null && message.hasOwnProperty("ext")) {
+            if (!$util.isObject(message.ext))
+                return "ext: object expected";
+            var key = Object.keys(message.ext);
+            for (var i = 0; i < key.length; ++i)
+                if (!$util.isString(message.ext[key[i]]))
+                    return "ext: string{k:string} expected";
+        }
         return null;
     };
 
@@ -11811,8 +14411,13 @@ $root.XmsgImClientDeviceInfo = (function() {
             message.did = String(object.did);
         if (object.ver != null)
             message.ver = String(object.ver);
-        if (object.ext != null)
-            message.ext = String(object.ext);
+        if (object.ext) {
+            if (typeof object.ext !== "object")
+                throw TypeError(".XmsgImClientDeviceInfo.ext: object expected");
+            message.ext = {};
+            for (var keys = Object.keys(object.ext), i = 0; i < keys.length; ++i)
+                message.ext[keys[i]] = String(object.ext[keys[i]]);
+        }
         return message;
     };
 
@@ -11829,11 +14434,12 @@ $root.XmsgImClientDeviceInfo = (function() {
         if (!options)
             options = {};
         var object = {};
+        if (options.objects || options.defaults)
+            object.ext = {};
         if (options.defaults) {
             object.plat = "";
             object.did = "";
             object.ver = "";
-            object.ext = "";
         }
         if (message.plat != null && message.hasOwnProperty("plat"))
             object.plat = message.plat;
@@ -11841,8 +14447,12 @@ $root.XmsgImClientDeviceInfo = (function() {
             object.did = message.did;
         if (message.ver != null && message.hasOwnProperty("ver"))
             object.ver = message.ver;
-        if (message.ext != null && message.hasOwnProperty("ext"))
-            object.ext = message.ext;
+        var keys2;
+        if (message.ext && (keys2 = Object.keys(message.ext)).length) {
+            object.ext = {};
+            for (var j = 0; j < keys2.length; ++j)
+                object.ext[keys2[j]] = message.ext[keys2[j]];
+        }
         return object;
     };
 
@@ -11870,7 +14480,7 @@ $root.XmsgImClientServiceAddress = (function() {
      * @property {number|null} [port] XmsgImClientServiceAddress port
      * @property {number|null} [weight] XmsgImClientServiceAddress weight
      * @property {Array.<string>|null} [proto] XmsgImClientServiceAddress proto
-     * @property {string|null} [ext] XmsgImClientServiceAddress ext
+     * @property {Object.<string,string>|null} [ext] XmsgImClientServiceAddress ext
      */
 
     /**
@@ -11883,6 +14493,7 @@ $root.XmsgImClientServiceAddress = (function() {
      */
     function XmsgImClientServiceAddress(properties) {
         this.proto = [];
+        this.ext = {};
         if (properties)
             for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                 if (properties[keys[i]] != null)
@@ -11923,11 +14534,11 @@ $root.XmsgImClientServiceAddress = (function() {
 
     /**
      * XmsgImClientServiceAddress ext.
-     * @member {string} ext
+     * @member {Object.<string,string>} ext
      * @memberof XmsgImClientServiceAddress
      * @instance
      */
-    XmsgImClientServiceAddress.prototype.ext = "";
+    XmsgImClientServiceAddress.prototype.ext = $util.emptyObject;
 
     /**
      * Creates a new XmsgImClientServiceAddress instance using the specified properties.
@@ -11963,7 +14574,8 @@ $root.XmsgImClientServiceAddress = (function() {
             for (var i = 0; i < message.proto.length; ++i)
                 writer.uint32(/* id 4, wireType 2 =*/34).string(message.proto[i]);
         if (message.ext != null && message.hasOwnProperty("ext"))
-            writer.uint32(/* id 5, wireType 2 =*/42).string(message.ext);
+            for (var keys = Object.keys(message.ext), i = 0; i < keys.length; ++i)
+                writer.uint32(/* id 5, wireType 2 =*/42).fork().uint32(/* id 1, wireType 2 =*/10).string(keys[i]).uint32(/* id 2, wireType 2 =*/18).string(message.ext[keys[i]]).ldelim();
         return writer;
     };
 
@@ -11994,7 +14606,7 @@ $root.XmsgImClientServiceAddress = (function() {
     XmsgImClientServiceAddress.decode = function decode(reader, length) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
-        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.XmsgImClientServiceAddress();
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.XmsgImClientServiceAddress(), key;
         while (reader.pos < end) {
             var tag = reader.uint32();
             switch (tag >>> 3) {
@@ -12013,7 +14625,12 @@ $root.XmsgImClientServiceAddress = (function() {
                 message.proto.push(reader.string());
                 break;
             case 5:
-                message.ext = reader.string();
+                reader.skip().pos++;
+                if (message.ext === $util.emptyObject)
+                    message.ext = {};
+                key = reader.string();
+                reader.pos++;
+                message.ext[key] = reader.string();
                 break;
             default:
                 reader.skipType(tag & 7);
@@ -12066,9 +14683,14 @@ $root.XmsgImClientServiceAddress = (function() {
                 if (!$util.isString(message.proto[i]))
                     return "proto: string[] expected";
         }
-        if (message.ext != null && message.hasOwnProperty("ext"))
-            if (!$util.isString(message.ext))
-                return "ext: string expected";
+        if (message.ext != null && message.hasOwnProperty("ext")) {
+            if (!$util.isObject(message.ext))
+                return "ext: object expected";
+            var key = Object.keys(message.ext);
+            for (var i = 0; i < key.length; ++i)
+                if (!$util.isString(message.ext[key[i]]))
+                    return "ext: string{k:string} expected";
+        }
         return null;
     };
 
@@ -12097,8 +14719,13 @@ $root.XmsgImClientServiceAddress = (function() {
             for (var i = 0; i < object.proto.length; ++i)
                 message.proto[i] = String(object.proto[i]);
         }
-        if (object.ext != null)
-            message.ext = String(object.ext);
+        if (object.ext) {
+            if (typeof object.ext !== "object")
+                throw TypeError(".XmsgImClientServiceAddress.ext: object expected");
+            message.ext = {};
+            for (var keys = Object.keys(object.ext), i = 0; i < keys.length; ++i)
+                message.ext[keys[i]] = String(object.ext[keys[i]]);
+        }
         return message;
     };
 
@@ -12117,11 +14744,12 @@ $root.XmsgImClientServiceAddress = (function() {
         var object = {};
         if (options.arrays || options.defaults)
             object.proto = [];
+        if (options.objects || options.defaults)
+            object.ext = {};
         if (options.defaults) {
             object.ip = "";
             object.port = 0;
             object.weight = 0;
-            object.ext = "";
         }
         if (message.ip != null && message.hasOwnProperty("ip"))
             object.ip = message.ip;
@@ -12134,8 +14762,12 @@ $root.XmsgImClientServiceAddress = (function() {
             for (var j = 0; j < message.proto.length; ++j)
                 object.proto[j] = message.proto[j];
         }
-        if (message.ext != null && message.hasOwnProperty("ext"))
-            object.ext = message.ext;
+        var keys2;
+        if (message.ext && (keys2 = Object.keys(message.ext)).length) {
+            object.ext = {};
+            for (var j = 0; j < keys2.length; ++j)
+                object.ext[keys2[j]] = message.ext[keys2[j]];
+        }
         return object;
     };
 
@@ -12418,7 +15050,7 @@ $root.XmsgImAuthRegSimpleRsp = (function() {
      * Properties of a XmsgImAuthRegSimpleRsp.
      * @exports IXmsgImAuthRegSimpleRsp
      * @interface IXmsgImAuthRegSimpleRsp
-     * @property {string|null} [ext] XmsgImAuthRegSimpleRsp ext
+     * @property {Object.<string,string>|null} [ext] XmsgImAuthRegSimpleRsp ext
      */
 
     /**
@@ -12430,6 +15062,7 @@ $root.XmsgImAuthRegSimpleRsp = (function() {
      * @param {IXmsgImAuthRegSimpleRsp=} [properties] Properties to set
      */
     function XmsgImAuthRegSimpleRsp(properties) {
+        this.ext = {};
         if (properties)
             for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                 if (properties[keys[i]] != null)
@@ -12438,11 +15071,11 @@ $root.XmsgImAuthRegSimpleRsp = (function() {
 
     /**
      * XmsgImAuthRegSimpleRsp ext.
-     * @member {string} ext
+     * @member {Object.<string,string>} ext
      * @memberof XmsgImAuthRegSimpleRsp
      * @instance
      */
-    XmsgImAuthRegSimpleRsp.prototype.ext = "";
+    XmsgImAuthRegSimpleRsp.prototype.ext = $util.emptyObject;
 
     /**
      * Creates a new XmsgImAuthRegSimpleRsp instance using the specified properties.
@@ -12469,7 +15102,8 @@ $root.XmsgImAuthRegSimpleRsp = (function() {
         if (!writer)
             writer = $Writer.create();
         if (message.ext != null && message.hasOwnProperty("ext"))
-            writer.uint32(/* id 1, wireType 2 =*/10).string(message.ext);
+            for (var keys = Object.keys(message.ext), i = 0; i < keys.length; ++i)
+                writer.uint32(/* id 1, wireType 2 =*/10).fork().uint32(/* id 1, wireType 2 =*/10).string(keys[i]).uint32(/* id 2, wireType 2 =*/18).string(message.ext[keys[i]]).ldelim();
         return writer;
     };
 
@@ -12500,12 +15134,17 @@ $root.XmsgImAuthRegSimpleRsp = (function() {
     XmsgImAuthRegSimpleRsp.decode = function decode(reader, length) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
-        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.XmsgImAuthRegSimpleRsp();
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.XmsgImAuthRegSimpleRsp(), key;
         while (reader.pos < end) {
             var tag = reader.uint32();
             switch (tag >>> 3) {
             case 1:
-                message.ext = reader.string();
+                reader.skip().pos++;
+                if (message.ext === $util.emptyObject)
+                    message.ext = {};
+                key = reader.string();
+                reader.pos++;
+                message.ext[key] = reader.string();
                 break;
             default:
                 reader.skipType(tag & 7);
@@ -12542,9 +15181,14 @@ $root.XmsgImAuthRegSimpleRsp = (function() {
     XmsgImAuthRegSimpleRsp.verify = function verify(message) {
         if (typeof message !== "object" || message === null)
             return "object expected";
-        if (message.ext != null && message.hasOwnProperty("ext"))
-            if (!$util.isString(message.ext))
-                return "ext: string expected";
+        if (message.ext != null && message.hasOwnProperty("ext")) {
+            if (!$util.isObject(message.ext))
+                return "ext: object expected";
+            var key = Object.keys(message.ext);
+            for (var i = 0; i < key.length; ++i)
+                if (!$util.isString(message.ext[key[i]]))
+                    return "ext: string{k:string} expected";
+        }
         return null;
     };
 
@@ -12560,8 +15204,13 @@ $root.XmsgImAuthRegSimpleRsp = (function() {
         if (object instanceof $root.XmsgImAuthRegSimpleRsp)
             return object;
         var message = new $root.XmsgImAuthRegSimpleRsp();
-        if (object.ext != null)
-            message.ext = String(object.ext);
+        if (object.ext) {
+            if (typeof object.ext !== "object")
+                throw TypeError(".XmsgImAuthRegSimpleRsp.ext: object expected");
+            message.ext = {};
+            for (var keys = Object.keys(object.ext), i = 0; i < keys.length; ++i)
+                message.ext[keys[i]] = String(object.ext[keys[i]]);
+        }
         return message;
     };
 
@@ -12578,10 +15227,14 @@ $root.XmsgImAuthRegSimpleRsp = (function() {
         if (!options)
             options = {};
         var object = {};
-        if (options.defaults)
-            object.ext = "";
-        if (message.ext != null && message.hasOwnProperty("ext"))
-            object.ext = message.ext;
+        if (options.objects || options.defaults)
+            object.ext = {};
+        var keys2;
+        if (message.ext && (keys2 = Object.keys(message.ext)).length) {
+            object.ext = {};
+            for (var j = 0; j < keys2.length; ++j)
+                object.ext[keys2[j]] = message.ext[keys2[j]];
+        }
         return object;
     };
 
@@ -15976,7 +18629,7 @@ $root.XmsgImHlrUsrInfoQueryReq = (function() {
      * Properties of a XmsgImHlrUsrInfoQueryReq.
      * @exports IXmsgImHlrUsrInfoQueryReq
      * @interface IXmsgImHlrUsrInfoQueryReq
-     * @property {string|null} [ext] XmsgImHlrUsrInfoQueryReq ext
+     * @property {Object.<string,string>|null} [ext] XmsgImHlrUsrInfoQueryReq ext
      */
 
     /**
@@ -15988,6 +18641,7 @@ $root.XmsgImHlrUsrInfoQueryReq = (function() {
      * @param {IXmsgImHlrUsrInfoQueryReq=} [properties] Properties to set
      */
     function XmsgImHlrUsrInfoQueryReq(properties) {
+        this.ext = {};
         if (properties)
             for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                 if (properties[keys[i]] != null)
@@ -15996,11 +18650,11 @@ $root.XmsgImHlrUsrInfoQueryReq = (function() {
 
     /**
      * XmsgImHlrUsrInfoQueryReq ext.
-     * @member {string} ext
+     * @member {Object.<string,string>} ext
      * @memberof XmsgImHlrUsrInfoQueryReq
      * @instance
      */
-    XmsgImHlrUsrInfoQueryReq.prototype.ext = "";
+    XmsgImHlrUsrInfoQueryReq.prototype.ext = $util.emptyObject;
 
     /**
      * Creates a new XmsgImHlrUsrInfoQueryReq instance using the specified properties.
@@ -16027,7 +18681,8 @@ $root.XmsgImHlrUsrInfoQueryReq = (function() {
         if (!writer)
             writer = $Writer.create();
         if (message.ext != null && message.hasOwnProperty("ext"))
-            writer.uint32(/* id 1, wireType 2 =*/10).string(message.ext);
+            for (var keys = Object.keys(message.ext), i = 0; i < keys.length; ++i)
+                writer.uint32(/* id 1, wireType 2 =*/10).fork().uint32(/* id 1, wireType 2 =*/10).string(keys[i]).uint32(/* id 2, wireType 2 =*/18).string(message.ext[keys[i]]).ldelim();
         return writer;
     };
 
@@ -16058,12 +18713,17 @@ $root.XmsgImHlrUsrInfoQueryReq = (function() {
     XmsgImHlrUsrInfoQueryReq.decode = function decode(reader, length) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
-        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.XmsgImHlrUsrInfoQueryReq();
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.XmsgImHlrUsrInfoQueryReq(), key;
         while (reader.pos < end) {
             var tag = reader.uint32();
             switch (tag >>> 3) {
             case 1:
-                message.ext = reader.string();
+                reader.skip().pos++;
+                if (message.ext === $util.emptyObject)
+                    message.ext = {};
+                key = reader.string();
+                reader.pos++;
+                message.ext[key] = reader.string();
                 break;
             default:
                 reader.skipType(tag & 7);
@@ -16100,9 +18760,14 @@ $root.XmsgImHlrUsrInfoQueryReq = (function() {
     XmsgImHlrUsrInfoQueryReq.verify = function verify(message) {
         if (typeof message !== "object" || message === null)
             return "object expected";
-        if (message.ext != null && message.hasOwnProperty("ext"))
-            if (!$util.isString(message.ext))
-                return "ext: string expected";
+        if (message.ext != null && message.hasOwnProperty("ext")) {
+            if (!$util.isObject(message.ext))
+                return "ext: object expected";
+            var key = Object.keys(message.ext);
+            for (var i = 0; i < key.length; ++i)
+                if (!$util.isString(message.ext[key[i]]))
+                    return "ext: string{k:string} expected";
+        }
         return null;
     };
 
@@ -16118,8 +18783,13 @@ $root.XmsgImHlrUsrInfoQueryReq = (function() {
         if (object instanceof $root.XmsgImHlrUsrInfoQueryReq)
             return object;
         var message = new $root.XmsgImHlrUsrInfoQueryReq();
-        if (object.ext != null)
-            message.ext = String(object.ext);
+        if (object.ext) {
+            if (typeof object.ext !== "object")
+                throw TypeError(".XmsgImHlrUsrInfoQueryReq.ext: object expected");
+            message.ext = {};
+            for (var keys = Object.keys(object.ext), i = 0; i < keys.length; ++i)
+                message.ext[keys[i]] = String(object.ext[keys[i]]);
+        }
         return message;
     };
 
@@ -16136,10 +18806,14 @@ $root.XmsgImHlrUsrInfoQueryReq = (function() {
         if (!options)
             options = {};
         var object = {};
-        if (options.defaults)
-            object.ext = "";
-        if (message.ext != null && message.hasOwnProperty("ext"))
-            object.ext = message.ext;
+        if (options.objects || options.defaults)
+            object.ext = {};
+        var keys2;
+        if (message.ext && (keys2 = Object.keys(message.ext)).length) {
+            object.ext = {};
+            for (var j = 0; j < keys2.length; ++j)
+                object.ext[keys2[j]] = message.ext[keys2[j]];
+        }
         return object;
     };
 
@@ -16579,7 +19253,7 @@ $root.XmsgImHlrUsrInfoUpdateRsp = (function() {
      * Properties of a XmsgImHlrUsrInfoUpdateRsp.
      * @exports IXmsgImHlrUsrInfoUpdateRsp
      * @interface IXmsgImHlrUsrInfoUpdateRsp
-     * @property {string|null} [ext] XmsgImHlrUsrInfoUpdateRsp ext
+     * @property {Object.<string,string>|null} [ext] XmsgImHlrUsrInfoUpdateRsp ext
      */
 
     /**
@@ -16591,6 +19265,7 @@ $root.XmsgImHlrUsrInfoUpdateRsp = (function() {
      * @param {IXmsgImHlrUsrInfoUpdateRsp=} [properties] Properties to set
      */
     function XmsgImHlrUsrInfoUpdateRsp(properties) {
+        this.ext = {};
         if (properties)
             for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                 if (properties[keys[i]] != null)
@@ -16599,11 +19274,11 @@ $root.XmsgImHlrUsrInfoUpdateRsp = (function() {
 
     /**
      * XmsgImHlrUsrInfoUpdateRsp ext.
-     * @member {string} ext
+     * @member {Object.<string,string>} ext
      * @memberof XmsgImHlrUsrInfoUpdateRsp
      * @instance
      */
-    XmsgImHlrUsrInfoUpdateRsp.prototype.ext = "";
+    XmsgImHlrUsrInfoUpdateRsp.prototype.ext = $util.emptyObject;
 
     /**
      * Creates a new XmsgImHlrUsrInfoUpdateRsp instance using the specified properties.
@@ -16630,7 +19305,8 @@ $root.XmsgImHlrUsrInfoUpdateRsp = (function() {
         if (!writer)
             writer = $Writer.create();
         if (message.ext != null && message.hasOwnProperty("ext"))
-            writer.uint32(/* id 1, wireType 2 =*/10).string(message.ext);
+            for (var keys = Object.keys(message.ext), i = 0; i < keys.length; ++i)
+                writer.uint32(/* id 1, wireType 2 =*/10).fork().uint32(/* id 1, wireType 2 =*/10).string(keys[i]).uint32(/* id 2, wireType 2 =*/18).string(message.ext[keys[i]]).ldelim();
         return writer;
     };
 
@@ -16661,12 +19337,17 @@ $root.XmsgImHlrUsrInfoUpdateRsp = (function() {
     XmsgImHlrUsrInfoUpdateRsp.decode = function decode(reader, length) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
-        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.XmsgImHlrUsrInfoUpdateRsp();
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.XmsgImHlrUsrInfoUpdateRsp(), key;
         while (reader.pos < end) {
             var tag = reader.uint32();
             switch (tag >>> 3) {
             case 1:
-                message.ext = reader.string();
+                reader.skip().pos++;
+                if (message.ext === $util.emptyObject)
+                    message.ext = {};
+                key = reader.string();
+                reader.pos++;
+                message.ext[key] = reader.string();
                 break;
             default:
                 reader.skipType(tag & 7);
@@ -16703,9 +19384,14 @@ $root.XmsgImHlrUsrInfoUpdateRsp = (function() {
     XmsgImHlrUsrInfoUpdateRsp.verify = function verify(message) {
         if (typeof message !== "object" || message === null)
             return "object expected";
-        if (message.ext != null && message.hasOwnProperty("ext"))
-            if (!$util.isString(message.ext))
-                return "ext: string expected";
+        if (message.ext != null && message.hasOwnProperty("ext")) {
+            if (!$util.isObject(message.ext))
+                return "ext: object expected";
+            var key = Object.keys(message.ext);
+            for (var i = 0; i < key.length; ++i)
+                if (!$util.isString(message.ext[key[i]]))
+                    return "ext: string{k:string} expected";
+        }
         return null;
     };
 
@@ -16721,8 +19407,13 @@ $root.XmsgImHlrUsrInfoUpdateRsp = (function() {
         if (object instanceof $root.XmsgImHlrUsrInfoUpdateRsp)
             return object;
         var message = new $root.XmsgImHlrUsrInfoUpdateRsp();
-        if (object.ext != null)
-            message.ext = String(object.ext);
+        if (object.ext) {
+            if (typeof object.ext !== "object")
+                throw TypeError(".XmsgImHlrUsrInfoUpdateRsp.ext: object expected");
+            message.ext = {};
+            for (var keys = Object.keys(object.ext), i = 0; i < keys.length; ++i)
+                message.ext[keys[i]] = String(object.ext[keys[i]]);
+        }
         return message;
     };
 
@@ -16739,10 +19430,14 @@ $root.XmsgImHlrUsrInfoUpdateRsp = (function() {
         if (!options)
             options = {};
         var object = {};
-        if (options.defaults)
-            object.ext = "";
-        if (message.ext != null && message.hasOwnProperty("ext"))
-            object.ext = message.ext;
+        if (options.objects || options.defaults)
+            object.ext = {};
+        var keys2;
+        if (message.ext && (keys2 = Object.keys(message.ext)).length) {
+            object.ext = {};
+            for (var j = 0; j < keys2.length; ++j)
+                object.ext[keys2[j]] = message.ext[keys2[j]];
+        }
         return object;
     };
 
@@ -18762,7 +21457,7 @@ $root.XmsgImOrgSyncPubRsp = (function() {
      * Properties of a XmsgImOrgSyncPubRsp.
      * @exports IXmsgImOrgSyncPubRsp
      * @interface IXmsgImOrgSyncPubRsp
-     * @property {string|null} [ext] XmsgImOrgSyncPubRsp ext
+     * @property {Object.<string,string>|null} [ext] XmsgImOrgSyncPubRsp ext
      */
 
     /**
@@ -18774,6 +21469,7 @@ $root.XmsgImOrgSyncPubRsp = (function() {
      * @param {IXmsgImOrgSyncPubRsp=} [properties] Properties to set
      */
     function XmsgImOrgSyncPubRsp(properties) {
+        this.ext = {};
         if (properties)
             for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                 if (properties[keys[i]] != null)
@@ -18782,11 +21478,11 @@ $root.XmsgImOrgSyncPubRsp = (function() {
 
     /**
      * XmsgImOrgSyncPubRsp ext.
-     * @member {string} ext
+     * @member {Object.<string,string>} ext
      * @memberof XmsgImOrgSyncPubRsp
      * @instance
      */
-    XmsgImOrgSyncPubRsp.prototype.ext = "";
+    XmsgImOrgSyncPubRsp.prototype.ext = $util.emptyObject;
 
     /**
      * Creates a new XmsgImOrgSyncPubRsp instance using the specified properties.
@@ -18813,7 +21509,8 @@ $root.XmsgImOrgSyncPubRsp = (function() {
         if (!writer)
             writer = $Writer.create();
         if (message.ext != null && message.hasOwnProperty("ext"))
-            writer.uint32(/* id 1, wireType 2 =*/10).string(message.ext);
+            for (var keys = Object.keys(message.ext), i = 0; i < keys.length; ++i)
+                writer.uint32(/* id 1, wireType 2 =*/10).fork().uint32(/* id 1, wireType 2 =*/10).string(keys[i]).uint32(/* id 2, wireType 2 =*/18).string(message.ext[keys[i]]).ldelim();
         return writer;
     };
 
@@ -18844,12 +21541,17 @@ $root.XmsgImOrgSyncPubRsp = (function() {
     XmsgImOrgSyncPubRsp.decode = function decode(reader, length) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
-        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.XmsgImOrgSyncPubRsp();
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.XmsgImOrgSyncPubRsp(), key;
         while (reader.pos < end) {
             var tag = reader.uint32();
             switch (tag >>> 3) {
             case 1:
-                message.ext = reader.string();
+                reader.skip().pos++;
+                if (message.ext === $util.emptyObject)
+                    message.ext = {};
+                key = reader.string();
+                reader.pos++;
+                message.ext[key] = reader.string();
                 break;
             default:
                 reader.skipType(tag & 7);
@@ -18886,9 +21588,14 @@ $root.XmsgImOrgSyncPubRsp = (function() {
     XmsgImOrgSyncPubRsp.verify = function verify(message) {
         if (typeof message !== "object" || message === null)
             return "object expected";
-        if (message.ext != null && message.hasOwnProperty("ext"))
-            if (!$util.isString(message.ext))
-                return "ext: string expected";
+        if (message.ext != null && message.hasOwnProperty("ext")) {
+            if (!$util.isObject(message.ext))
+                return "ext: object expected";
+            var key = Object.keys(message.ext);
+            for (var i = 0; i < key.length; ++i)
+                if (!$util.isString(message.ext[key[i]]))
+                    return "ext: string{k:string} expected";
+        }
         return null;
     };
 
@@ -18904,8 +21611,13 @@ $root.XmsgImOrgSyncPubRsp = (function() {
         if (object instanceof $root.XmsgImOrgSyncPubRsp)
             return object;
         var message = new $root.XmsgImOrgSyncPubRsp();
-        if (object.ext != null)
-            message.ext = String(object.ext);
+        if (object.ext) {
+            if (typeof object.ext !== "object")
+                throw TypeError(".XmsgImOrgSyncPubRsp.ext: object expected");
+            message.ext = {};
+            for (var keys = Object.keys(object.ext), i = 0; i < keys.length; ++i)
+                message.ext[keys[i]] = String(object.ext[keys[i]]);
+        }
         return message;
     };
 
@@ -18922,10 +21634,14 @@ $root.XmsgImOrgSyncPubRsp = (function() {
         if (!options)
             options = {};
         var object = {};
-        if (options.defaults)
-            object.ext = "";
-        if (message.ext != null && message.hasOwnProperty("ext"))
-            object.ext = message.ext;
+        if (options.objects || options.defaults)
+            object.ext = {};
+        var keys2;
+        if (message.ext && (keys2 = Object.keys(message.ext)).length) {
+            object.ext = {};
+            for (var j = 0; j < keys2.length; ++j)
+                object.ext[keys2[j]] = message.ext[keys2[j]];
+        }
         return object;
     };
 

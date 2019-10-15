@@ -51,12 +51,13 @@ public class TestXmsgFileDownloadSimpleReq
 			/**                                  */
 			/** -------------------------------- */
 			XmsgClientTokenInfo.Builder b = XmsgClientTokenInfo.newBuilder();
+			b.setCgt(Main.cgt);
 			b.setToken(Main.token);
 			b.setAlg("sha256");
 			b.setSlat(Crypto.gen0aAkey128());
 			b.setPlat("linux");
 			b.setDid("0.0.0.0");
-			b.setSign(Crypto.sha256StrLowerCase(Main.token + b.getSlat() + Main.secret + b.getPlat() + b.getDid()));
+			b.setSign(Crypto.sha256StrLowerCase(Main.cgt + Main.token + b.getSlat() + Main.secret + b.getPlat() + b.getDid()));
 			/** -------------------------------- */
 			/**                                  */
 			/** 文件下载请求. */

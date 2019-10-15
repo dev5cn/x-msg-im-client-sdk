@@ -218,12 +218,13 @@ message XmsgChannelStatusGroupStatus
 }
 message XmsgClientTokenInfo
 {
-    string token = 1;
-    string alg = 2;
-    string slat = 3;
-    string plat = 4;
-    string did = 5;
-    string sign = 6;  
+	string cgt = 1;
+    string token = 2;
+    string alg = 3;
+    string slat = 4;
+    string plat = 5;
+    string did = 6;
+    string sign = 7;  
 }
 message XmsgImGroupMemberAddReq
 {
@@ -340,23 +341,23 @@ message XmsgImHlrAttachSimpleReq
     string salt = 2; 
     string sign = 3; 
     string alg = 4; 
-    string ext = 5; 
+    string cgt = 5; 
+    map<string, string> ext = 6; 
 }
 
 message XmsgImHlrAttachSimpleRsp
 {
-    string cgt = 1; 
-    string ext = 2; 
+    map<string, string> ext = 1; 
 }
 
 message XmsgImHlrDetachSimpleReq
 {
-    string ext = 1; 
+    map<string, string> ext = 1; 
 }
 
 message XmsgImHlrDetachSimpleRsp
 {
-    string ext = 1; 
+    map<string, string> ext = 1; 
 }
 
 message XmsgImHlrOtherClientAttachReq
@@ -390,7 +391,8 @@ message XmsgImAuthSimpleRsp
     uint64 expired = 3; 
     repeated XmsgImClientServiceAddress apAddr = 4; 
     repeated XmsgImClientServiceAddress fsAddr = 5; 
-    string ext = 6; 
+    string cgt = 7; 
+    map<string, string> ext = 8; 
 }
 
 message XmsgImClientDeviceInfo
@@ -398,7 +400,7 @@ message XmsgImClientDeviceInfo
     string plat = 1; 
     string did = 2; 
     string ver = 3; 
-    string ext = 4; 
+    map<string, string> ext = 4; 
 }
 
 message XmsgImClientServiceAddress
@@ -407,7 +409,7 @@ message XmsgImClientServiceAddress
     uint32 port = 2; 
     uint32 weight = 3; 
     repeated string proto = 4; 
-    string ext = 5; 
+    map<string, string> ext = 5; 
 }
 
 message XmsgImAuthRegSimpleReq
@@ -420,7 +422,7 @@ message XmsgImAuthRegSimpleReq
 
 message XmsgImAuthRegSimpleRsp
 {
-    string ext = 1; 
+    map<string, string> ext = 1; 
 }
 message XmsgImHlrOtherUsrInfoQueryReq
 {
@@ -511,7 +513,7 @@ message XmsgImHlrUsrDatPub
 
 message XmsgImHlrUsrInfoQueryReq
 {
-    string ext = 1; 
+    map<string, string> ext = 1; 
 }
 
 message XmsgImHlrUsrInfoQueryRsp
@@ -526,7 +528,7 @@ message XmsgImHlrUsrInfoUpdateReq
 
 message XmsgImHlrUsrInfoUpdateRsp
 {
-    string ext = 1; 
+    map<string, string> ext = 1; 
 }
 message XmsgImClientDbCrudReq
 {
@@ -585,7 +587,7 @@ message XmsgImOrgSyncPubReq
 
 message XmsgImOrgSyncPubRsp
 {
-    string ext = 1; 
+    map<string, string> ext = 1; 
 }
 message XmsgImOrgChangedNotice
 {

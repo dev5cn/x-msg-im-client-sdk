@@ -28,23 +28,23 @@ message XmsgImHlrAttachSimpleReq
     string salt = 2; 
     string sign = 3; 
     string alg = 4; 
-    string ext = 5; 
+    string cgt = 5; 
+    map<string, string> ext = 6; 
 }
 
 message XmsgImHlrAttachSimpleRsp
 {
-    string cgt = 1; 
-    string ext = 2; 
+    map<string, string> ext = 1; 
 }
 
 message XmsgImHlrDetachSimpleReq
 {
-    string ext = 1; 
+    map<string, string> ext = 1; 
 }
 
 message XmsgImHlrDetachSimpleRsp
 {
-    string ext = 1; 
+    map<string, string> ext = 1; 
 }
 
 message XmsgImHlrOtherClientAttachReq

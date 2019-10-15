@@ -40,7 +40,7 @@ namespace protobuf_net_2dx_2dmsg_2dim_2dorg_2eproto {
 struct TableStruct {
   static const ::google::protobuf::internal::ParseTableField entries[];
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[];
-  static const ::google::protobuf::internal::ParseTable schema[18];
+  static const ::google::protobuf::internal::ParseTable schema[19];
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
   static const ::google::protobuf::uint32 offsets[];
@@ -52,6 +52,8 @@ void InitDefaultsXmsgImOrgSyncSubRspImpl();
 void InitDefaultsXmsgImOrgSyncSubRsp();
 void InitDefaultsXmsgImOrgSyncPubReqImpl();
 void InitDefaultsXmsgImOrgSyncPubReq();
+void InitDefaultsXmsgImOrgSyncPubRsp_ExtEntry_DoNotUseImpl();
+void InitDefaultsXmsgImOrgSyncPubRsp_ExtEntry_DoNotUse();
 void InitDefaultsXmsgImOrgSyncPubRspImpl();
 void InitDefaultsXmsgImOrgSyncPubRsp();
 void InitDefaultsXmsgImOrgChangedNoticeImpl();
@@ -86,6 +88,7 @@ inline void InitDefaults() {
   InitDefaultsXmsgImOrgSyncSubReq();
   InitDefaultsXmsgImOrgSyncSubRsp();
   InitDefaultsXmsgImOrgSyncPubReq();
+  InitDefaultsXmsgImOrgSyncPubRsp_ExtEntry_DoNotUse();
   InitDefaultsXmsgImOrgSyncPubRsp();
   InitDefaultsXmsgImOrgChangedNotice();
   InitDefaultsXmsgImOrgNodeChildQueryReq();
@@ -151,6 +154,9 @@ extern XmsgImOrgSyncPubReqDefaultTypeInternal _XmsgImOrgSyncPubReq_default_insta
 class XmsgImOrgSyncPubRsp;
 class XmsgImOrgSyncPubRspDefaultTypeInternal;
 extern XmsgImOrgSyncPubRspDefaultTypeInternal _XmsgImOrgSyncPubRsp_default_instance_;
+class XmsgImOrgSyncPubRsp_ExtEntry_DoNotUse;
+class XmsgImOrgSyncPubRsp_ExtEntry_DoNotUseDefaultTypeInternal;
+extern XmsgImOrgSyncPubRsp_ExtEntry_DoNotUseDefaultTypeInternal _XmsgImOrgSyncPubRsp_ExtEntry_DoNotUse_default_instance_;
 class XmsgImOrgSyncSubReq;
 class XmsgImOrgSyncSubReqDefaultTypeInternal;
 extern XmsgImOrgSyncSubReqDefaultTypeInternal _XmsgImOrgSyncSubReq_default_instance_;
@@ -513,6 +519,27 @@ class XmsgImOrgSyncPubReq : public ::google::protobuf::Message /* @@protoc_inser
 };
 // -------------------------------------------------------------------
 
+class XmsgImOrgSyncPubRsp_ExtEntry_DoNotUse : public ::google::protobuf::internal::MapEntry<XmsgImOrgSyncPubRsp_ExtEntry_DoNotUse, 
+    ::std::string, ::std::string,
+    ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+    ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+    0 > {
+public:
+  typedef ::google::protobuf::internal::MapEntry<XmsgImOrgSyncPubRsp_ExtEntry_DoNotUse, 
+    ::std::string, ::std::string,
+    ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+    ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+    0 > SuperType;
+  XmsgImOrgSyncPubRsp_ExtEntry_DoNotUse();
+  XmsgImOrgSyncPubRsp_ExtEntry_DoNotUse(::google::protobuf::Arena* arena);
+  void MergeFrom(const XmsgImOrgSyncPubRsp_ExtEntry_DoNotUse& other);
+  static const XmsgImOrgSyncPubRsp_ExtEntry_DoNotUse* internal_default_instance() { return reinterpret_cast<const XmsgImOrgSyncPubRsp_ExtEntry_DoNotUse*>(&_XmsgImOrgSyncPubRsp_ExtEntry_DoNotUse_default_instance_); }
+  void MergeFrom(const ::google::protobuf::Message& other) PROTOBUF_FINAL;
+  ::google::protobuf::Metadata GetMetadata() const;
+};
+
+// -------------------------------------------------------------------
+
 class XmsgImOrgSyncPubRsp : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:XmsgImOrgSyncPubRsp) */ {
  public:
   XmsgImOrgSyncPubRsp();
@@ -548,7 +575,7 @@ class XmsgImOrgSyncPubRsp : public ::google::protobuf::Message /* @@protoc_inser
                &_XmsgImOrgSyncPubRsp_default_instance_);
   }
   static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
-    3;
+    4;
 
   void Swap(XmsgImOrgSyncPubRsp* other);
   friend void swap(XmsgImOrgSyncPubRsp& a, XmsgImOrgSyncPubRsp& b) {
@@ -593,27 +620,28 @@ class XmsgImOrgSyncPubRsp : public ::google::protobuf::Message /* @@protoc_inser
 
   // nested types ----------------------------------------------------
 
+
   // accessors -------------------------------------------------------
 
-  // string ext = 1;
+  // map<string, string> ext = 1;
+  int ext_size() const;
   void clear_ext();
   static const int kExtFieldNumber = 1;
-  const ::std::string& ext() const;
-  void set_ext(const ::std::string& value);
-  #if LANG_CXX11
-  void set_ext(::std::string&& value);
-  #endif
-  void set_ext(const char* value);
-  void set_ext(const char* value, size_t size);
-  ::std::string* mutable_ext();
-  ::std::string* release_ext();
-  void set_allocated_ext(::std::string* ext);
+  const ::google::protobuf::Map< ::std::string, ::std::string >&
+      ext() const;
+  ::google::protobuf::Map< ::std::string, ::std::string >*
+      mutable_ext();
 
   // @@protoc_insertion_point(class_scope:XmsgImOrgSyncPubRsp)
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::google::protobuf::internal::ArenaStringPtr ext_;
+  ::google::protobuf::internal::MapField<
+      XmsgImOrgSyncPubRsp_ExtEntry_DoNotUse,
+      ::std::string, ::std::string,
+      ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+      ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+      0 > ext_;
   mutable int _cached_size_;
   friend struct ::protobuf_net_2dx_2dmsg_2dim_2dorg_2eproto::TableStruct;
   friend void ::protobuf_net_2dx_2dmsg_2dim_2dorg_2eproto::InitDefaultsXmsgImOrgSyncPubRspImpl();
@@ -655,7 +683,7 @@ class XmsgImOrgChangedNotice : public ::google::protobuf::Message /* @@protoc_in
                &_XmsgImOrgChangedNotice_default_instance_);
   }
   static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
-    4;
+    5;
 
   void Swap(XmsgImOrgChangedNotice* other);
   friend void swap(XmsgImOrgChangedNotice& a, XmsgImOrgChangedNotice& b) {
@@ -757,7 +785,7 @@ class XmsgImOrgNodeChildQueryReq : public ::google::protobuf::Message /* @@proto
                &_XmsgImOrgNodeChildQueryReq_default_instance_);
   }
   static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
-    5;
+    6;
 
   void Swap(XmsgImOrgNodeChildQueryReq* other);
   friend void swap(XmsgImOrgNodeChildQueryReq& a, XmsgImOrgNodeChildQueryReq& b) {
@@ -864,7 +892,7 @@ class XmsgImOrgNodeChildQueryRsp : public ::google::protobuf::Message /* @@proto
                &_XmsgImOrgNodeChildQueryRsp_default_instance_);
   }
   static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
-    6;
+    7;
 
   void Swap(XmsgImOrgNodeChildQueryRsp* other);
   friend void swap(XmsgImOrgNodeChildQueryRsp& a, XmsgImOrgNodeChildQueryRsp& b) {
@@ -969,7 +997,7 @@ class XmsgImOrgNodeDeptUsrQueryReq : public ::google::protobuf::Message /* @@pro
                &_XmsgImOrgNodeDeptUsrQueryReq_default_instance_);
   }
   static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
-    7;
+    8;
 
   void Swap(XmsgImOrgNodeDeptUsrQueryReq* other);
   friend void swap(XmsgImOrgNodeDeptUsrQueryReq& a, XmsgImOrgNodeDeptUsrQueryReq& b) {
@@ -1091,7 +1119,7 @@ class XmsgImOrgNodeDeptUsrQueryRsp : public ::google::protobuf::Message /* @@pro
                &_XmsgImOrgNodeDeptUsrQueryRsp_default_instance_);
   }
   static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
-    8;
+    9;
 
   void Swap(XmsgImOrgNodeDeptUsrQueryRsp* other);
   friend void swap(XmsgImOrgNodeDeptUsrQueryRsp& a, XmsgImOrgNodeDeptUsrQueryRsp& b) {
@@ -1236,7 +1264,7 @@ class XmsgImOrgNodeQueryReq : public ::google::protobuf::Message /* @@protoc_ins
                &_XmsgImOrgNodeQueryReq_default_instance_);
   }
   static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
-    9;
+    10;
 
   void Swap(XmsgImOrgNodeQueryReq* other);
   friend void swap(XmsgImOrgNodeQueryReq& a, XmsgImOrgNodeQueryReq& b) {
@@ -1343,7 +1371,7 @@ class XmsgImOrgNodeQueryRsp : public ::google::protobuf::Message /* @@protoc_ins
                &_XmsgImOrgNodeQueryRsp_default_instance_);
   }
   static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
-    10;
+    11;
 
   void Swap(XmsgImOrgNodeQueryRsp* other);
   friend void swap(XmsgImOrgNodeQueryRsp& a, XmsgImOrgNodeQueryRsp& b) {
@@ -1510,7 +1538,7 @@ class XmsgImOrgEvent : public ::google::protobuf::Message /* @@protoc_insertion_
                &_XmsgImOrgEvent_default_instance_);
   }
   static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
-    11;
+    12;
 
   void Swap(XmsgImOrgEvent* other);
   friend void swap(XmsgImOrgEvent& a, XmsgImOrgEvent& b) {
@@ -1632,7 +1660,7 @@ class XmsgImOrgEventDept : public ::google::protobuf::Message /* @@protoc_insert
                &_XmsgImOrgEventDept_default_instance_);
   }
   static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
-    12;
+    13;
 
   void Swap(XmsgImOrgEventDept* other);
   friend void swap(XmsgImOrgEventDept& a, XmsgImOrgEventDept& b) {
@@ -1807,7 +1835,7 @@ class XmsgImOrgEventDeptUsr : public ::google::protobuf::Message /* @@protoc_ins
                &_XmsgImOrgEventDeptUsr_default_instance_);
   }
   static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
-    13;
+    14;
 
   void Swap(XmsgImOrgEventDeptUsr* other);
   friend void swap(XmsgImOrgEventDeptUsr& a, XmsgImOrgEventDeptUsr& b) {
@@ -1982,7 +2010,7 @@ class XmsgImOrgEventUsr : public ::google::protobuf::Message /* @@protoc_inserti
                &_XmsgImOrgEventUsr_default_instance_);
   }
   static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
-    14;
+    15;
 
   void Swap(XmsgImOrgEventUsr* other);
   friend void swap(XmsgImOrgEventUsr& a, XmsgImOrgEventUsr& b) {
@@ -2163,7 +2191,7 @@ class XmsgImOrgNodeInfo : public ::google::protobuf::Message /* @@protoc_inserti
                &_XmsgImOrgNodeInfo_default_instance_);
   }
   static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
-    16;
+    17;
 
   void Swap(XmsgImOrgNodeInfo* other);
   friend void swap(XmsgImOrgNodeInfo& a, XmsgImOrgNodeInfo& b) {
@@ -2271,7 +2299,7 @@ class XmsgImOrgNodeChild : public ::google::protobuf::Message /* @@protoc_insert
                &_XmsgImOrgNodeChild_default_instance_);
   }
   static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
-    17;
+    18;
 
   void Swap(XmsgImOrgNodeChild* other);
   friend void swap(XmsgImOrgNodeChild& a, XmsgImOrgNodeChild& b) {
@@ -2536,59 +2564,26 @@ XmsgImOrgSyncPubReq::event() const {
 
 // -------------------------------------------------------------------
 
+// -------------------------------------------------------------------
+
 // XmsgImOrgSyncPubRsp
 
-// string ext = 1;
+// map<string, string> ext = 1;
+inline int XmsgImOrgSyncPubRsp::ext_size() const {
+  return ext_.size();
+}
 inline void XmsgImOrgSyncPubRsp::clear_ext() {
-  ext_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  ext_.Clear();
 }
-inline const ::std::string& XmsgImOrgSyncPubRsp::ext() const {
-  // @@protoc_insertion_point(field_get:XmsgImOrgSyncPubRsp.ext)
-  return ext_.GetNoArena();
+inline const ::google::protobuf::Map< ::std::string, ::std::string >&
+XmsgImOrgSyncPubRsp::ext() const {
+  // @@protoc_insertion_point(field_map:XmsgImOrgSyncPubRsp.ext)
+  return ext_.GetMap();
 }
-inline void XmsgImOrgSyncPubRsp::set_ext(const ::std::string& value) {
-  
-  ext_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:XmsgImOrgSyncPubRsp.ext)
-}
-#if LANG_CXX11
-inline void XmsgImOrgSyncPubRsp::set_ext(::std::string&& value) {
-  
-  ext_.SetNoArena(
-    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:XmsgImOrgSyncPubRsp.ext)
-}
-#endif
-inline void XmsgImOrgSyncPubRsp::set_ext(const char* value) {
-  GOOGLE_DCHECK(value != NULL);
-  
-  ext_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:XmsgImOrgSyncPubRsp.ext)
-}
-inline void XmsgImOrgSyncPubRsp::set_ext(const char* value, size_t size) {
-  
-  ext_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:XmsgImOrgSyncPubRsp.ext)
-}
-inline ::std::string* XmsgImOrgSyncPubRsp::mutable_ext() {
-  
-  // @@protoc_insertion_point(field_mutable:XmsgImOrgSyncPubRsp.ext)
-  return ext_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline ::std::string* XmsgImOrgSyncPubRsp::release_ext() {
-  // @@protoc_insertion_point(field_release:XmsgImOrgSyncPubRsp.ext)
-  
-  return ext_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline void XmsgImOrgSyncPubRsp::set_allocated_ext(::std::string* ext) {
-  if (ext != NULL) {
-    
-  } else {
-    
-  }
-  ext_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ext);
-  // @@protoc_insertion_point(field_set_allocated:XmsgImOrgSyncPubRsp.ext)
+inline ::google::protobuf::Map< ::std::string, ::std::string >*
+XmsgImOrgSyncPubRsp::mutable_ext() {
+  // @@protoc_insertion_point(field_mutable_map:XmsgImOrgSyncPubRsp.ext)
+  return ext_.MutableMap();
 }
 
 // -------------------------------------------------------------------
@@ -4461,6 +4456,8 @@ inline void XmsgImOrgNodeChild::set_uts(::google::protobuf::uint64 value) {
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

@@ -83,6 +83,8 @@ public class Main
 	public static String cgt = null;
 	/** 文件服务地址. */
 	public static String fileService = null;
+	/** 是否首次附着. */
+	public static boolean firstAttach = true;
 
 	public static final void main(String[] args) throws Exception
 	{
@@ -169,7 +171,7 @@ public class Main
 		/** x-msg-channel-status. */
 		/**                                  */
 		/** -------------------------------- */
-		//TestXmsgChannelStatus.test();
+		// TestXmsgChannelStatus.test();
 	}
 
 	public static final void main4netApi(String[] args)

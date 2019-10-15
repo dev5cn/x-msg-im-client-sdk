@@ -136,9 +136,23 @@ class XmsgClientTokenInfo : public ::google::protobuf::Message /* @@protoc_inser
 
   // accessors -------------------------------------------------------
 
-  // string token = 1;
+  // string cgt = 1;
+  void clear_cgt();
+  static const int kCgtFieldNumber = 1;
+  const ::std::string& cgt() const;
+  void set_cgt(const ::std::string& value);
+  #if LANG_CXX11
+  void set_cgt(::std::string&& value);
+  #endif
+  void set_cgt(const char* value);
+  void set_cgt(const char* value, size_t size);
+  ::std::string* mutable_cgt();
+  ::std::string* release_cgt();
+  void set_allocated_cgt(::std::string* cgt);
+
+  // string token = 2;
   void clear_token();
-  static const int kTokenFieldNumber = 1;
+  static const int kTokenFieldNumber = 2;
   const ::std::string& token() const;
   void set_token(const ::std::string& value);
   #if LANG_CXX11
@@ -150,9 +164,9 @@ class XmsgClientTokenInfo : public ::google::protobuf::Message /* @@protoc_inser
   ::std::string* release_token();
   void set_allocated_token(::std::string* token);
 
-  // string alg = 2;
+  // string alg = 3;
   void clear_alg();
-  static const int kAlgFieldNumber = 2;
+  static const int kAlgFieldNumber = 3;
   const ::std::string& alg() const;
   void set_alg(const ::std::string& value);
   #if LANG_CXX11
@@ -164,9 +178,9 @@ class XmsgClientTokenInfo : public ::google::protobuf::Message /* @@protoc_inser
   ::std::string* release_alg();
   void set_allocated_alg(::std::string* alg);
 
-  // string slat = 3;
+  // string slat = 4;
   void clear_slat();
-  static const int kSlatFieldNumber = 3;
+  static const int kSlatFieldNumber = 4;
   const ::std::string& slat() const;
   void set_slat(const ::std::string& value);
   #if LANG_CXX11
@@ -178,9 +192,9 @@ class XmsgClientTokenInfo : public ::google::protobuf::Message /* @@protoc_inser
   ::std::string* release_slat();
   void set_allocated_slat(::std::string* slat);
 
-  // string plat = 4;
+  // string plat = 5;
   void clear_plat();
-  static const int kPlatFieldNumber = 4;
+  static const int kPlatFieldNumber = 5;
   const ::std::string& plat() const;
   void set_plat(const ::std::string& value);
   #if LANG_CXX11
@@ -192,9 +206,9 @@ class XmsgClientTokenInfo : public ::google::protobuf::Message /* @@protoc_inser
   ::std::string* release_plat();
   void set_allocated_plat(::std::string* plat);
 
-  // string did = 5;
+  // string did = 6;
   void clear_did();
-  static const int kDidFieldNumber = 5;
+  static const int kDidFieldNumber = 6;
   const ::std::string& did() const;
   void set_did(const ::std::string& value);
   #if LANG_CXX11
@@ -206,9 +220,9 @@ class XmsgClientTokenInfo : public ::google::protobuf::Message /* @@protoc_inser
   ::std::string* release_did();
   void set_allocated_did(::std::string* did);
 
-  // string sign = 6;
+  // string sign = 7;
   void clear_sign();
-  static const int kSignFieldNumber = 6;
+  static const int kSignFieldNumber = 7;
   const ::std::string& sign() const;
   void set_sign(const ::std::string& value);
   #if LANG_CXX11
@@ -224,6 +238,7 @@ class XmsgClientTokenInfo : public ::google::protobuf::Message /* @@protoc_inser
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::ArenaStringPtr cgt_;
   ::google::protobuf::internal::ArenaStringPtr token_;
   ::google::protobuf::internal::ArenaStringPtr alg_;
   ::google::protobuf::internal::ArenaStringPtr slat_;
@@ -245,7 +260,60 @@ class XmsgClientTokenInfo : public ::google::protobuf::Message /* @@protoc_inser
 #endif  // __GNUC__
 // XmsgClientTokenInfo
 
-// string token = 1;
+// string cgt = 1;
+inline void XmsgClientTokenInfo::clear_cgt() {
+  cgt_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& XmsgClientTokenInfo::cgt() const {
+  // @@protoc_insertion_point(field_get:XmsgClientTokenInfo.cgt)
+  return cgt_.GetNoArena();
+}
+inline void XmsgClientTokenInfo::set_cgt(const ::std::string& value) {
+  
+  cgt_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:XmsgClientTokenInfo.cgt)
+}
+#if LANG_CXX11
+inline void XmsgClientTokenInfo::set_cgt(::std::string&& value) {
+  
+  cgt_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:XmsgClientTokenInfo.cgt)
+}
+#endif
+inline void XmsgClientTokenInfo::set_cgt(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  cgt_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:XmsgClientTokenInfo.cgt)
+}
+inline void XmsgClientTokenInfo::set_cgt(const char* value, size_t size) {
+  
+  cgt_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:XmsgClientTokenInfo.cgt)
+}
+inline ::std::string* XmsgClientTokenInfo::mutable_cgt() {
+  
+  // @@protoc_insertion_point(field_mutable:XmsgClientTokenInfo.cgt)
+  return cgt_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* XmsgClientTokenInfo::release_cgt() {
+  // @@protoc_insertion_point(field_release:XmsgClientTokenInfo.cgt)
+  
+  return cgt_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void XmsgClientTokenInfo::set_allocated_cgt(::std::string* cgt) {
+  if (cgt != NULL) {
+    
+  } else {
+    
+  }
+  cgt_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), cgt);
+  // @@protoc_insertion_point(field_set_allocated:XmsgClientTokenInfo.cgt)
+}
+
+// string token = 2;
 inline void XmsgClientTokenInfo::clear_token() {
   token_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
@@ -298,7 +366,7 @@ inline void XmsgClientTokenInfo::set_allocated_token(::std::string* token) {
   // @@protoc_insertion_point(field_set_allocated:XmsgClientTokenInfo.token)
 }
 
-// string alg = 2;
+// string alg = 3;
 inline void XmsgClientTokenInfo::clear_alg() {
   alg_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
@@ -351,7 +419,7 @@ inline void XmsgClientTokenInfo::set_allocated_alg(::std::string* alg) {
   // @@protoc_insertion_point(field_set_allocated:XmsgClientTokenInfo.alg)
 }
 
-// string slat = 3;
+// string slat = 4;
 inline void XmsgClientTokenInfo::clear_slat() {
   slat_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
@@ -404,7 +472,7 @@ inline void XmsgClientTokenInfo::set_allocated_slat(::std::string* slat) {
   // @@protoc_insertion_point(field_set_allocated:XmsgClientTokenInfo.slat)
 }
 
-// string plat = 4;
+// string plat = 5;
 inline void XmsgClientTokenInfo::clear_plat() {
   plat_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
@@ -457,7 +525,7 @@ inline void XmsgClientTokenInfo::set_allocated_plat(::std::string* plat) {
   // @@protoc_insertion_point(field_set_allocated:XmsgClientTokenInfo.plat)
 }
 
-// string did = 5;
+// string did = 6;
 inline void XmsgClientTokenInfo::clear_did() {
   did_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
@@ -510,7 +578,7 @@ inline void XmsgClientTokenInfo::set_allocated_did(::std::string* did) {
   // @@protoc_insertion_point(field_set_allocated:XmsgClientTokenInfo.did)
 }
 
-// string sign = 6;
+// string sign = 7;
 inline void XmsgClientTokenInfo::clear_sign() {
   sign_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }

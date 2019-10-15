@@ -45,7 +45,7 @@ message XmsgImHlrUsrDatPub
 
 message XmsgImHlrUsrInfoQueryReq
 {
-    string ext = 1; 
+    map<string, string> ext = 1; 
 }
 
 message XmsgImHlrUsrInfoQueryRsp
@@ -60,5 +60,5 @@ message XmsgImHlrUsrInfoUpdateReq
 
 message XmsgImHlrUsrInfoUpdateRsp
 {
-    string ext = 1; 
+    map<string, string> ext = 1; 
 }

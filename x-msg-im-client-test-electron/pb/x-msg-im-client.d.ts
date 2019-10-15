@@ -2192,8 +2192,1052 @@ export class XmsgImHlrGroupMsgRsp implements IXmsgImHlrGroupMsgRsp {
     public toJSON(): { [k: string]: any };
 }
 
+/** Properties of a XmsgChannelStatusQueryReq. */
+export interface IXmsgChannelStatusQueryReq {
+
+    /** XmsgChannelStatusQueryReq cgt */
+    cgt?: (string[]|null);
+}
+
+/** Represents a XmsgChannelStatusQueryReq. */
+export class XmsgChannelStatusQueryReq implements IXmsgChannelStatusQueryReq {
+
+    /**
+     * Constructs a new XmsgChannelStatusQueryReq.
+     * @param [properties] Properties to set
+     */
+    constructor(properties?: IXmsgChannelStatusQueryReq);
+
+    /** XmsgChannelStatusQueryReq cgt. */
+    public cgt: string[];
+
+    /**
+     * Creates a new XmsgChannelStatusQueryReq instance using the specified properties.
+     * @param [properties] Properties to set
+     * @returns XmsgChannelStatusQueryReq instance
+     */
+    public static create(properties?: IXmsgChannelStatusQueryReq): XmsgChannelStatusQueryReq;
+
+    /**
+     * Encodes the specified XmsgChannelStatusQueryReq message. Does not implicitly {@link XmsgChannelStatusQueryReq.verify|verify} messages.
+     * @param message XmsgChannelStatusQueryReq message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encode(message: IXmsgChannelStatusQueryReq, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Encodes the specified XmsgChannelStatusQueryReq message, length delimited. Does not implicitly {@link XmsgChannelStatusQueryReq.verify|verify} messages.
+     * @param message XmsgChannelStatusQueryReq message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encodeDelimited(message: IXmsgChannelStatusQueryReq, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Decodes a XmsgChannelStatusQueryReq message from the specified reader or buffer.
+     * @param reader Reader or buffer to decode from
+     * @param [length] Message length if known beforehand
+     * @returns XmsgChannelStatusQueryReq
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): XmsgChannelStatusQueryReq;
+
+    /**
+     * Decodes a XmsgChannelStatusQueryReq message from the specified reader or buffer, length delimited.
+     * @param reader Reader or buffer to decode from
+     * @returns XmsgChannelStatusQueryReq
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): XmsgChannelStatusQueryReq;
+
+    /**
+     * Verifies a XmsgChannelStatusQueryReq message.
+     * @param message Plain object to verify
+     * @returns `null` if valid, otherwise the reason why it is not
+     */
+    public static verify(message: { [k: string]: any }): (string|null);
+
+    /**
+     * Creates a XmsgChannelStatusQueryReq message from a plain object. Also converts values to their respective internal types.
+     * @param object Plain object
+     * @returns XmsgChannelStatusQueryReq
+     */
+    public static fromObject(object: { [k: string]: any }): XmsgChannelStatusQueryReq;
+
+    /**
+     * Creates a plain object from a XmsgChannelStatusQueryReq message. Also converts values to other types if specified.
+     * @param message XmsgChannelStatusQueryReq
+     * @param [options] Conversion options
+     * @returns Plain object
+     */
+    public static toObject(message: XmsgChannelStatusQueryReq, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+    /**
+     * Converts this XmsgChannelStatusQueryReq to JSON.
+     * @returns JSON object
+     */
+    public toJSON(): { [k: string]: any };
+}
+
+/** Properties of a XmsgChannelStatusQueryRsp. */
+export interface IXmsgChannelStatusQueryRsp {
+
+    /** XmsgChannelStatusQueryRsp usrStatus */
+    usrStatus?: ({ [k: string]: IXmsgChannelStatusUsrStatus }|null);
+
+    /** XmsgChannelStatusQueryRsp groupStatus */
+    groupStatus?: ({ [k: string]: IXmsgChannelStatusGroupStatus }|null);
+}
+
+/** Represents a XmsgChannelStatusQueryRsp. */
+export class XmsgChannelStatusQueryRsp implements IXmsgChannelStatusQueryRsp {
+
+    /**
+     * Constructs a new XmsgChannelStatusQueryRsp.
+     * @param [properties] Properties to set
+     */
+    constructor(properties?: IXmsgChannelStatusQueryRsp);
+
+    /** XmsgChannelStatusQueryRsp usrStatus. */
+    public usrStatus: { [k: string]: IXmsgChannelStatusUsrStatus };
+
+    /** XmsgChannelStatusQueryRsp groupStatus. */
+    public groupStatus: { [k: string]: IXmsgChannelStatusGroupStatus };
+
+    /**
+     * Creates a new XmsgChannelStatusQueryRsp instance using the specified properties.
+     * @param [properties] Properties to set
+     * @returns XmsgChannelStatusQueryRsp instance
+     */
+    public static create(properties?: IXmsgChannelStatusQueryRsp): XmsgChannelStatusQueryRsp;
+
+    /**
+     * Encodes the specified XmsgChannelStatusQueryRsp message. Does not implicitly {@link XmsgChannelStatusQueryRsp.verify|verify} messages.
+     * @param message XmsgChannelStatusQueryRsp message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encode(message: IXmsgChannelStatusQueryRsp, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Encodes the specified XmsgChannelStatusQueryRsp message, length delimited. Does not implicitly {@link XmsgChannelStatusQueryRsp.verify|verify} messages.
+     * @param message XmsgChannelStatusQueryRsp message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encodeDelimited(message: IXmsgChannelStatusQueryRsp, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Decodes a XmsgChannelStatusQueryRsp message from the specified reader or buffer.
+     * @param reader Reader or buffer to decode from
+     * @param [length] Message length if known beforehand
+     * @returns XmsgChannelStatusQueryRsp
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): XmsgChannelStatusQueryRsp;
+
+    /**
+     * Decodes a XmsgChannelStatusQueryRsp message from the specified reader or buffer, length delimited.
+     * @param reader Reader or buffer to decode from
+     * @returns XmsgChannelStatusQueryRsp
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): XmsgChannelStatusQueryRsp;
+
+    /**
+     * Verifies a XmsgChannelStatusQueryRsp message.
+     * @param message Plain object to verify
+     * @returns `null` if valid, otherwise the reason why it is not
+     */
+    public static verify(message: { [k: string]: any }): (string|null);
+
+    /**
+     * Creates a XmsgChannelStatusQueryRsp message from a plain object. Also converts values to their respective internal types.
+     * @param object Plain object
+     * @returns XmsgChannelStatusQueryRsp
+     */
+    public static fromObject(object: { [k: string]: any }): XmsgChannelStatusQueryRsp;
+
+    /**
+     * Creates a plain object from a XmsgChannelStatusQueryRsp message. Also converts values to other types if specified.
+     * @param message XmsgChannelStatusQueryRsp
+     * @param [options] Conversion options
+     * @returns Plain object
+     */
+    public static toObject(message: XmsgChannelStatusQueryRsp, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+    /**
+     * Converts this XmsgChannelStatusQueryRsp to JSON.
+     * @returns JSON object
+     */
+    public toJSON(): { [k: string]: any };
+}
+
+/** Properties of a XmsgChannelStatusSubReq. */
+export interface IXmsgChannelStatusSubReq {
+
+    /** XmsgChannelStatusSubReq cgt */
+    cgt?: (string[]|null);
+}
+
+/** Represents a XmsgChannelStatusSubReq. */
+export class XmsgChannelStatusSubReq implements IXmsgChannelStatusSubReq {
+
+    /**
+     * Constructs a new XmsgChannelStatusSubReq.
+     * @param [properties] Properties to set
+     */
+    constructor(properties?: IXmsgChannelStatusSubReq);
+
+    /** XmsgChannelStatusSubReq cgt. */
+    public cgt: string[];
+
+    /**
+     * Creates a new XmsgChannelStatusSubReq instance using the specified properties.
+     * @param [properties] Properties to set
+     * @returns XmsgChannelStatusSubReq instance
+     */
+    public static create(properties?: IXmsgChannelStatusSubReq): XmsgChannelStatusSubReq;
+
+    /**
+     * Encodes the specified XmsgChannelStatusSubReq message. Does not implicitly {@link XmsgChannelStatusSubReq.verify|verify} messages.
+     * @param message XmsgChannelStatusSubReq message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encode(message: IXmsgChannelStatusSubReq, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Encodes the specified XmsgChannelStatusSubReq message, length delimited. Does not implicitly {@link XmsgChannelStatusSubReq.verify|verify} messages.
+     * @param message XmsgChannelStatusSubReq message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encodeDelimited(message: IXmsgChannelStatusSubReq, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Decodes a XmsgChannelStatusSubReq message from the specified reader or buffer.
+     * @param reader Reader or buffer to decode from
+     * @param [length] Message length if known beforehand
+     * @returns XmsgChannelStatusSubReq
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): XmsgChannelStatusSubReq;
+
+    /**
+     * Decodes a XmsgChannelStatusSubReq message from the specified reader or buffer, length delimited.
+     * @param reader Reader or buffer to decode from
+     * @returns XmsgChannelStatusSubReq
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): XmsgChannelStatusSubReq;
+
+    /**
+     * Verifies a XmsgChannelStatusSubReq message.
+     * @param message Plain object to verify
+     * @returns `null` if valid, otherwise the reason why it is not
+     */
+    public static verify(message: { [k: string]: any }): (string|null);
+
+    /**
+     * Creates a XmsgChannelStatusSubReq message from a plain object. Also converts values to their respective internal types.
+     * @param object Plain object
+     * @returns XmsgChannelStatusSubReq
+     */
+    public static fromObject(object: { [k: string]: any }): XmsgChannelStatusSubReq;
+
+    /**
+     * Creates a plain object from a XmsgChannelStatusSubReq message. Also converts values to other types if specified.
+     * @param message XmsgChannelStatusSubReq
+     * @param [options] Conversion options
+     * @returns Plain object
+     */
+    public static toObject(message: XmsgChannelStatusSubReq, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+    /**
+     * Converts this XmsgChannelStatusSubReq to JSON.
+     * @returns JSON object
+     */
+    public toJSON(): { [k: string]: any };
+}
+
+/** Properties of a XmsgChannelStatusSubRsp. */
+export interface IXmsgChannelStatusSubRsp {
+
+    /** XmsgChannelStatusSubRsp usrStatus */
+    usrStatus?: ({ [k: string]: IXmsgChannelStatusUsrStatus }|null);
+
+    /** XmsgChannelStatusSubRsp groupStatus */
+    groupStatus?: ({ [k: string]: IXmsgChannelStatusGroupStatus }|null);
+}
+
+/** Represents a XmsgChannelStatusSubRsp. */
+export class XmsgChannelStatusSubRsp implements IXmsgChannelStatusSubRsp {
+
+    /**
+     * Constructs a new XmsgChannelStatusSubRsp.
+     * @param [properties] Properties to set
+     */
+    constructor(properties?: IXmsgChannelStatusSubRsp);
+
+    /** XmsgChannelStatusSubRsp usrStatus. */
+    public usrStatus: { [k: string]: IXmsgChannelStatusUsrStatus };
+
+    /** XmsgChannelStatusSubRsp groupStatus. */
+    public groupStatus: { [k: string]: IXmsgChannelStatusGroupStatus };
+
+    /**
+     * Creates a new XmsgChannelStatusSubRsp instance using the specified properties.
+     * @param [properties] Properties to set
+     * @returns XmsgChannelStatusSubRsp instance
+     */
+    public static create(properties?: IXmsgChannelStatusSubRsp): XmsgChannelStatusSubRsp;
+
+    /**
+     * Encodes the specified XmsgChannelStatusSubRsp message. Does not implicitly {@link XmsgChannelStatusSubRsp.verify|verify} messages.
+     * @param message XmsgChannelStatusSubRsp message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encode(message: IXmsgChannelStatusSubRsp, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Encodes the specified XmsgChannelStatusSubRsp message, length delimited. Does not implicitly {@link XmsgChannelStatusSubRsp.verify|verify} messages.
+     * @param message XmsgChannelStatusSubRsp message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encodeDelimited(message: IXmsgChannelStatusSubRsp, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Decodes a XmsgChannelStatusSubRsp message from the specified reader or buffer.
+     * @param reader Reader or buffer to decode from
+     * @param [length] Message length if known beforehand
+     * @returns XmsgChannelStatusSubRsp
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): XmsgChannelStatusSubRsp;
+
+    /**
+     * Decodes a XmsgChannelStatusSubRsp message from the specified reader or buffer, length delimited.
+     * @param reader Reader or buffer to decode from
+     * @returns XmsgChannelStatusSubRsp
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): XmsgChannelStatusSubRsp;
+
+    /**
+     * Verifies a XmsgChannelStatusSubRsp message.
+     * @param message Plain object to verify
+     * @returns `null` if valid, otherwise the reason why it is not
+     */
+    public static verify(message: { [k: string]: any }): (string|null);
+
+    /**
+     * Creates a XmsgChannelStatusSubRsp message from a plain object. Also converts values to their respective internal types.
+     * @param object Plain object
+     * @returns XmsgChannelStatusSubRsp
+     */
+    public static fromObject(object: { [k: string]: any }): XmsgChannelStatusSubRsp;
+
+    /**
+     * Creates a plain object from a XmsgChannelStatusSubRsp message. Also converts values to other types if specified.
+     * @param message XmsgChannelStatusSubRsp
+     * @param [options] Conversion options
+     * @returns Plain object
+     */
+    public static toObject(message: XmsgChannelStatusSubRsp, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+    /**
+     * Converts this XmsgChannelStatusSubRsp to JSON.
+     * @returns JSON object
+     */
+    public toJSON(): { [k: string]: any };
+}
+
+/** Properties of a XmsgChannelStatusUnSubReq. */
+export interface IXmsgChannelStatusUnSubReq {
+
+    /** XmsgChannelStatusUnSubReq cgt */
+    cgt?: (string[]|null);
+}
+
+/** Represents a XmsgChannelStatusUnSubReq. */
+export class XmsgChannelStatusUnSubReq implements IXmsgChannelStatusUnSubReq {
+
+    /**
+     * Constructs a new XmsgChannelStatusUnSubReq.
+     * @param [properties] Properties to set
+     */
+    constructor(properties?: IXmsgChannelStatusUnSubReq);
+
+    /** XmsgChannelStatusUnSubReq cgt. */
+    public cgt: string[];
+
+    /**
+     * Creates a new XmsgChannelStatusUnSubReq instance using the specified properties.
+     * @param [properties] Properties to set
+     * @returns XmsgChannelStatusUnSubReq instance
+     */
+    public static create(properties?: IXmsgChannelStatusUnSubReq): XmsgChannelStatusUnSubReq;
+
+    /**
+     * Encodes the specified XmsgChannelStatusUnSubReq message. Does not implicitly {@link XmsgChannelStatusUnSubReq.verify|verify} messages.
+     * @param message XmsgChannelStatusUnSubReq message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encode(message: IXmsgChannelStatusUnSubReq, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Encodes the specified XmsgChannelStatusUnSubReq message, length delimited. Does not implicitly {@link XmsgChannelStatusUnSubReq.verify|verify} messages.
+     * @param message XmsgChannelStatusUnSubReq message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encodeDelimited(message: IXmsgChannelStatusUnSubReq, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Decodes a XmsgChannelStatusUnSubReq message from the specified reader or buffer.
+     * @param reader Reader or buffer to decode from
+     * @param [length] Message length if known beforehand
+     * @returns XmsgChannelStatusUnSubReq
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): XmsgChannelStatusUnSubReq;
+
+    /**
+     * Decodes a XmsgChannelStatusUnSubReq message from the specified reader or buffer, length delimited.
+     * @param reader Reader or buffer to decode from
+     * @returns XmsgChannelStatusUnSubReq
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): XmsgChannelStatusUnSubReq;
+
+    /**
+     * Verifies a XmsgChannelStatusUnSubReq message.
+     * @param message Plain object to verify
+     * @returns `null` if valid, otherwise the reason why it is not
+     */
+    public static verify(message: { [k: string]: any }): (string|null);
+
+    /**
+     * Creates a XmsgChannelStatusUnSubReq message from a plain object. Also converts values to their respective internal types.
+     * @param object Plain object
+     * @returns XmsgChannelStatusUnSubReq
+     */
+    public static fromObject(object: { [k: string]: any }): XmsgChannelStatusUnSubReq;
+
+    /**
+     * Creates a plain object from a XmsgChannelStatusUnSubReq message. Also converts values to other types if specified.
+     * @param message XmsgChannelStatusUnSubReq
+     * @param [options] Conversion options
+     * @returns Plain object
+     */
+    public static toObject(message: XmsgChannelStatusUnSubReq, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+    /**
+     * Converts this XmsgChannelStatusUnSubReq to JSON.
+     * @returns JSON object
+     */
+    public toJSON(): { [k: string]: any };
+}
+
+/** Properties of a XmsgChannelStatusUnSubRsp. */
+export interface IXmsgChannelStatusUnSubRsp {
+
+    /** XmsgChannelStatusUnSubRsp ext */
+    ext?: ({ [k: string]: string }|null);
+}
+
+/** Represents a XmsgChannelStatusUnSubRsp. */
+export class XmsgChannelStatusUnSubRsp implements IXmsgChannelStatusUnSubRsp {
+
+    /**
+     * Constructs a new XmsgChannelStatusUnSubRsp.
+     * @param [properties] Properties to set
+     */
+    constructor(properties?: IXmsgChannelStatusUnSubRsp);
+
+    /** XmsgChannelStatusUnSubRsp ext. */
+    public ext: { [k: string]: string };
+
+    /**
+     * Creates a new XmsgChannelStatusUnSubRsp instance using the specified properties.
+     * @param [properties] Properties to set
+     * @returns XmsgChannelStatusUnSubRsp instance
+     */
+    public static create(properties?: IXmsgChannelStatusUnSubRsp): XmsgChannelStatusUnSubRsp;
+
+    /**
+     * Encodes the specified XmsgChannelStatusUnSubRsp message. Does not implicitly {@link XmsgChannelStatusUnSubRsp.verify|verify} messages.
+     * @param message XmsgChannelStatusUnSubRsp message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encode(message: IXmsgChannelStatusUnSubRsp, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Encodes the specified XmsgChannelStatusUnSubRsp message, length delimited. Does not implicitly {@link XmsgChannelStatusUnSubRsp.verify|verify} messages.
+     * @param message XmsgChannelStatusUnSubRsp message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encodeDelimited(message: IXmsgChannelStatusUnSubRsp, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Decodes a XmsgChannelStatusUnSubRsp message from the specified reader or buffer.
+     * @param reader Reader or buffer to decode from
+     * @param [length] Message length if known beforehand
+     * @returns XmsgChannelStatusUnSubRsp
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): XmsgChannelStatusUnSubRsp;
+
+    /**
+     * Decodes a XmsgChannelStatusUnSubRsp message from the specified reader or buffer, length delimited.
+     * @param reader Reader or buffer to decode from
+     * @returns XmsgChannelStatusUnSubRsp
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): XmsgChannelStatusUnSubRsp;
+
+    /**
+     * Verifies a XmsgChannelStatusUnSubRsp message.
+     * @param message Plain object to verify
+     * @returns `null` if valid, otherwise the reason why it is not
+     */
+    public static verify(message: { [k: string]: any }): (string|null);
+
+    /**
+     * Creates a XmsgChannelStatusUnSubRsp message from a plain object. Also converts values to their respective internal types.
+     * @param object Plain object
+     * @returns XmsgChannelStatusUnSubRsp
+     */
+    public static fromObject(object: { [k: string]: any }): XmsgChannelStatusUnSubRsp;
+
+    /**
+     * Creates a plain object from a XmsgChannelStatusUnSubRsp message. Also converts values to other types if specified.
+     * @param message XmsgChannelStatusUnSubRsp
+     * @param [options] Conversion options
+     * @returns Plain object
+     */
+    public static toObject(message: XmsgChannelStatusUnSubRsp, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+    /**
+     * Converts this XmsgChannelStatusUnSubRsp to JSON.
+     * @returns JSON object
+     */
+    public toJSON(): { [k: string]: any };
+}
+
+/** Properties of a XmsgChannelStatusPubUsrStatusNotice. */
+export interface IXmsgChannelStatusPubUsrStatusNotice {
+
+    /** XmsgChannelStatusPubUsrStatusNotice cgt */
+    cgt?: (string|null);
+
+    /** XmsgChannelStatusPubUsrStatusNotice plat */
+    plat?: (string|null);
+
+    /** XmsgChannelStatusPubUsrStatusNotice did */
+    did?: (string|null);
+
+    /** XmsgChannelStatusPubUsrStatusNotice status */
+    status?: (string|null);
+}
+
+/** Represents a XmsgChannelStatusPubUsrStatusNotice. */
+export class XmsgChannelStatusPubUsrStatusNotice implements IXmsgChannelStatusPubUsrStatusNotice {
+
+    /**
+     * Constructs a new XmsgChannelStatusPubUsrStatusNotice.
+     * @param [properties] Properties to set
+     */
+    constructor(properties?: IXmsgChannelStatusPubUsrStatusNotice);
+
+    /** XmsgChannelStatusPubUsrStatusNotice cgt. */
+    public cgt: string;
+
+    /** XmsgChannelStatusPubUsrStatusNotice plat. */
+    public plat: string;
+
+    /** XmsgChannelStatusPubUsrStatusNotice did. */
+    public did: string;
+
+    /** XmsgChannelStatusPubUsrStatusNotice status. */
+    public status: string;
+
+    /**
+     * Creates a new XmsgChannelStatusPubUsrStatusNotice instance using the specified properties.
+     * @param [properties] Properties to set
+     * @returns XmsgChannelStatusPubUsrStatusNotice instance
+     */
+    public static create(properties?: IXmsgChannelStatusPubUsrStatusNotice): XmsgChannelStatusPubUsrStatusNotice;
+
+    /**
+     * Encodes the specified XmsgChannelStatusPubUsrStatusNotice message. Does not implicitly {@link XmsgChannelStatusPubUsrStatusNotice.verify|verify} messages.
+     * @param message XmsgChannelStatusPubUsrStatusNotice message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encode(message: IXmsgChannelStatusPubUsrStatusNotice, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Encodes the specified XmsgChannelStatusPubUsrStatusNotice message, length delimited. Does not implicitly {@link XmsgChannelStatusPubUsrStatusNotice.verify|verify} messages.
+     * @param message XmsgChannelStatusPubUsrStatusNotice message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encodeDelimited(message: IXmsgChannelStatusPubUsrStatusNotice, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Decodes a XmsgChannelStatusPubUsrStatusNotice message from the specified reader or buffer.
+     * @param reader Reader or buffer to decode from
+     * @param [length] Message length if known beforehand
+     * @returns XmsgChannelStatusPubUsrStatusNotice
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): XmsgChannelStatusPubUsrStatusNotice;
+
+    /**
+     * Decodes a XmsgChannelStatusPubUsrStatusNotice message from the specified reader or buffer, length delimited.
+     * @param reader Reader or buffer to decode from
+     * @returns XmsgChannelStatusPubUsrStatusNotice
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): XmsgChannelStatusPubUsrStatusNotice;
+
+    /**
+     * Verifies a XmsgChannelStatusPubUsrStatusNotice message.
+     * @param message Plain object to verify
+     * @returns `null` if valid, otherwise the reason why it is not
+     */
+    public static verify(message: { [k: string]: any }): (string|null);
+
+    /**
+     * Creates a XmsgChannelStatusPubUsrStatusNotice message from a plain object. Also converts values to their respective internal types.
+     * @param object Plain object
+     * @returns XmsgChannelStatusPubUsrStatusNotice
+     */
+    public static fromObject(object: { [k: string]: any }): XmsgChannelStatusPubUsrStatusNotice;
+
+    /**
+     * Creates a plain object from a XmsgChannelStatusPubUsrStatusNotice message. Also converts values to other types if specified.
+     * @param message XmsgChannelStatusPubUsrStatusNotice
+     * @param [options] Conversion options
+     * @returns Plain object
+     */
+    public static toObject(message: XmsgChannelStatusPubUsrStatusNotice, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+    /**
+     * Converts this XmsgChannelStatusPubUsrStatusNotice to JSON.
+     * @returns JSON object
+     */
+    public toJSON(): { [k: string]: any };
+}
+
+/** Properties of a XmsgChannelStatusPubGroupStatusNotice. */
+export interface IXmsgChannelStatusPubGroupStatusNotice {
+
+    /** XmsgChannelStatusPubGroupStatusNotice cgt */
+    cgt?: (string|null);
+
+    /** XmsgChannelStatusPubGroupStatusNotice status */
+    status?: (string|null);
+}
+
+/** Represents a XmsgChannelStatusPubGroupStatusNotice. */
+export class XmsgChannelStatusPubGroupStatusNotice implements IXmsgChannelStatusPubGroupStatusNotice {
+
+    /**
+     * Constructs a new XmsgChannelStatusPubGroupStatusNotice.
+     * @param [properties] Properties to set
+     */
+    constructor(properties?: IXmsgChannelStatusPubGroupStatusNotice);
+
+    /** XmsgChannelStatusPubGroupStatusNotice cgt. */
+    public cgt: string;
+
+    /** XmsgChannelStatusPubGroupStatusNotice status. */
+    public status: string;
+
+    /**
+     * Creates a new XmsgChannelStatusPubGroupStatusNotice instance using the specified properties.
+     * @param [properties] Properties to set
+     * @returns XmsgChannelStatusPubGroupStatusNotice instance
+     */
+    public static create(properties?: IXmsgChannelStatusPubGroupStatusNotice): XmsgChannelStatusPubGroupStatusNotice;
+
+    /**
+     * Encodes the specified XmsgChannelStatusPubGroupStatusNotice message. Does not implicitly {@link XmsgChannelStatusPubGroupStatusNotice.verify|verify} messages.
+     * @param message XmsgChannelStatusPubGroupStatusNotice message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encode(message: IXmsgChannelStatusPubGroupStatusNotice, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Encodes the specified XmsgChannelStatusPubGroupStatusNotice message, length delimited. Does not implicitly {@link XmsgChannelStatusPubGroupStatusNotice.verify|verify} messages.
+     * @param message XmsgChannelStatusPubGroupStatusNotice message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encodeDelimited(message: IXmsgChannelStatusPubGroupStatusNotice, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Decodes a XmsgChannelStatusPubGroupStatusNotice message from the specified reader or buffer.
+     * @param reader Reader or buffer to decode from
+     * @param [length] Message length if known beforehand
+     * @returns XmsgChannelStatusPubGroupStatusNotice
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): XmsgChannelStatusPubGroupStatusNotice;
+
+    /**
+     * Decodes a XmsgChannelStatusPubGroupStatusNotice message from the specified reader or buffer, length delimited.
+     * @param reader Reader or buffer to decode from
+     * @returns XmsgChannelStatusPubGroupStatusNotice
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): XmsgChannelStatusPubGroupStatusNotice;
+
+    /**
+     * Verifies a XmsgChannelStatusPubGroupStatusNotice message.
+     * @param message Plain object to verify
+     * @returns `null` if valid, otherwise the reason why it is not
+     */
+    public static verify(message: { [k: string]: any }): (string|null);
+
+    /**
+     * Creates a XmsgChannelStatusPubGroupStatusNotice message from a plain object. Also converts values to their respective internal types.
+     * @param object Plain object
+     * @returns XmsgChannelStatusPubGroupStatusNotice
+     */
+    public static fromObject(object: { [k: string]: any }): XmsgChannelStatusPubGroupStatusNotice;
+
+    /**
+     * Creates a plain object from a XmsgChannelStatusPubGroupStatusNotice message. Also converts values to other types if specified.
+     * @param message XmsgChannelStatusPubGroupStatusNotice
+     * @param [options] Conversion options
+     * @returns Plain object
+     */
+    public static toObject(message: XmsgChannelStatusPubGroupStatusNotice, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+    /**
+     * Converts this XmsgChannelStatusPubGroupStatusNotice to JSON.
+     * @returns JSON object
+     */
+    public toJSON(): { [k: string]: any };
+}
+
+/** Properties of a XmsgChannelStatusUsrStatus. */
+export interface IXmsgChannelStatusUsrStatus {
+
+    /** XmsgChannelStatusUsrStatus client */
+    client?: (XmsgChannelStatusUsrStatus.IXmsgChannelStatusUsrClientStatus[]|null);
+}
+
+/** Represents a XmsgChannelStatusUsrStatus. */
+export class XmsgChannelStatusUsrStatus implements IXmsgChannelStatusUsrStatus {
+
+    /**
+     * Constructs a new XmsgChannelStatusUsrStatus.
+     * @param [properties] Properties to set
+     */
+    constructor(properties?: IXmsgChannelStatusUsrStatus);
+
+    /** XmsgChannelStatusUsrStatus client. */
+    public client: XmsgChannelStatusUsrStatus.IXmsgChannelStatusUsrClientStatus[];
+
+    /**
+     * Creates a new XmsgChannelStatusUsrStatus instance using the specified properties.
+     * @param [properties] Properties to set
+     * @returns XmsgChannelStatusUsrStatus instance
+     */
+    public static create(properties?: IXmsgChannelStatusUsrStatus): XmsgChannelStatusUsrStatus;
+
+    /**
+     * Encodes the specified XmsgChannelStatusUsrStatus message. Does not implicitly {@link XmsgChannelStatusUsrStatus.verify|verify} messages.
+     * @param message XmsgChannelStatusUsrStatus message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encode(message: IXmsgChannelStatusUsrStatus, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Encodes the specified XmsgChannelStatusUsrStatus message, length delimited. Does not implicitly {@link XmsgChannelStatusUsrStatus.verify|verify} messages.
+     * @param message XmsgChannelStatusUsrStatus message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encodeDelimited(message: IXmsgChannelStatusUsrStatus, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Decodes a XmsgChannelStatusUsrStatus message from the specified reader or buffer.
+     * @param reader Reader or buffer to decode from
+     * @param [length] Message length if known beforehand
+     * @returns XmsgChannelStatusUsrStatus
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): XmsgChannelStatusUsrStatus;
+
+    /**
+     * Decodes a XmsgChannelStatusUsrStatus message from the specified reader or buffer, length delimited.
+     * @param reader Reader or buffer to decode from
+     * @returns XmsgChannelStatusUsrStatus
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): XmsgChannelStatusUsrStatus;
+
+    /**
+     * Verifies a XmsgChannelStatusUsrStatus message.
+     * @param message Plain object to verify
+     * @returns `null` if valid, otherwise the reason why it is not
+     */
+    public static verify(message: { [k: string]: any }): (string|null);
+
+    /**
+     * Creates a XmsgChannelStatusUsrStatus message from a plain object. Also converts values to their respective internal types.
+     * @param object Plain object
+     * @returns XmsgChannelStatusUsrStatus
+     */
+    public static fromObject(object: { [k: string]: any }): XmsgChannelStatusUsrStatus;
+
+    /**
+     * Creates a plain object from a XmsgChannelStatusUsrStatus message. Also converts values to other types if specified.
+     * @param message XmsgChannelStatusUsrStatus
+     * @param [options] Conversion options
+     * @returns Plain object
+     */
+    public static toObject(message: XmsgChannelStatusUsrStatus, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+    /**
+     * Converts this XmsgChannelStatusUsrStatus to JSON.
+     * @returns JSON object
+     */
+    public toJSON(): { [k: string]: any };
+}
+
+export namespace XmsgChannelStatusUsrStatus {
+
+    /** Properties of a XmsgChannelStatusUsrClientStatus. */
+    interface IXmsgChannelStatusUsrClientStatus {
+
+        /** XmsgChannelStatusUsrClientStatus plat */
+        plat?: (string|null);
+
+        /** XmsgChannelStatusUsrClientStatus did */
+        did?: (string|null);
+
+        /** XmsgChannelStatusUsrClientStatus status */
+        status?: (string|null);
+    }
+
+    /** Represents a XmsgChannelStatusUsrClientStatus. */
+    class XmsgChannelStatusUsrClientStatus implements IXmsgChannelStatusUsrClientStatus {
+
+        /**
+         * Constructs a new XmsgChannelStatusUsrClientStatus.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: XmsgChannelStatusUsrStatus.IXmsgChannelStatusUsrClientStatus);
+
+        /** XmsgChannelStatusUsrClientStatus plat. */
+        public plat: string;
+
+        /** XmsgChannelStatusUsrClientStatus did. */
+        public did: string;
+
+        /** XmsgChannelStatusUsrClientStatus status. */
+        public status: string;
+
+        /**
+         * Creates a new XmsgChannelStatusUsrClientStatus instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns XmsgChannelStatusUsrClientStatus instance
+         */
+        public static create(properties?: XmsgChannelStatusUsrStatus.IXmsgChannelStatusUsrClientStatus): XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatus;
+
+        /**
+         * Encodes the specified XmsgChannelStatusUsrClientStatus message. Does not implicitly {@link XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatus.verify|verify} messages.
+         * @param message XmsgChannelStatusUsrClientStatus message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: XmsgChannelStatusUsrStatus.IXmsgChannelStatusUsrClientStatus, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified XmsgChannelStatusUsrClientStatus message, length delimited. Does not implicitly {@link XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatus.verify|verify} messages.
+         * @param message XmsgChannelStatusUsrClientStatus message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: XmsgChannelStatusUsrStatus.IXmsgChannelStatusUsrClientStatus, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a XmsgChannelStatusUsrClientStatus message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns XmsgChannelStatusUsrClientStatus
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatus;
+
+        /**
+         * Decodes a XmsgChannelStatusUsrClientStatus message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns XmsgChannelStatusUsrClientStatus
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatus;
+
+        /**
+         * Verifies a XmsgChannelStatusUsrClientStatus message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a XmsgChannelStatusUsrClientStatus message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns XmsgChannelStatusUsrClientStatus
+         */
+        public static fromObject(object: { [k: string]: any }): XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatus;
+
+        /**
+         * Creates a plain object from a XmsgChannelStatusUsrClientStatus message. Also converts values to other types if specified.
+         * @param message XmsgChannelStatusUsrClientStatus
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: XmsgChannelStatusUsrStatus.XmsgChannelStatusUsrClientStatus, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this XmsgChannelStatusUsrClientStatus to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+}
+
+/** Properties of a XmsgChannelStatusGroupStatus. */
+export interface IXmsgChannelStatusGroupStatus {
+
+    /** XmsgChannelStatusGroupStatus status */
+    status?: (string|null);
+}
+
+/** Represents a XmsgChannelStatusGroupStatus. */
+export class XmsgChannelStatusGroupStatus implements IXmsgChannelStatusGroupStatus {
+
+    /**
+     * Constructs a new XmsgChannelStatusGroupStatus.
+     * @param [properties] Properties to set
+     */
+    constructor(properties?: IXmsgChannelStatusGroupStatus);
+
+    /** XmsgChannelStatusGroupStatus status. */
+    public status: string;
+
+    /**
+     * Creates a new XmsgChannelStatusGroupStatus instance using the specified properties.
+     * @param [properties] Properties to set
+     * @returns XmsgChannelStatusGroupStatus instance
+     */
+    public static create(properties?: IXmsgChannelStatusGroupStatus): XmsgChannelStatusGroupStatus;
+
+    /**
+     * Encodes the specified XmsgChannelStatusGroupStatus message. Does not implicitly {@link XmsgChannelStatusGroupStatus.verify|verify} messages.
+     * @param message XmsgChannelStatusGroupStatus message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encode(message: IXmsgChannelStatusGroupStatus, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Encodes the specified XmsgChannelStatusGroupStatus message, length delimited. Does not implicitly {@link XmsgChannelStatusGroupStatus.verify|verify} messages.
+     * @param message XmsgChannelStatusGroupStatus message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encodeDelimited(message: IXmsgChannelStatusGroupStatus, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Decodes a XmsgChannelStatusGroupStatus message from the specified reader or buffer.
+     * @param reader Reader or buffer to decode from
+     * @param [length] Message length if known beforehand
+     * @returns XmsgChannelStatusGroupStatus
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): XmsgChannelStatusGroupStatus;
+
+    /**
+     * Decodes a XmsgChannelStatusGroupStatus message from the specified reader or buffer, length delimited.
+     * @param reader Reader or buffer to decode from
+     * @returns XmsgChannelStatusGroupStatus
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): XmsgChannelStatusGroupStatus;
+
+    /**
+     * Verifies a XmsgChannelStatusGroupStatus message.
+     * @param message Plain object to verify
+     * @returns `null` if valid, otherwise the reason why it is not
+     */
+    public static verify(message: { [k: string]: any }): (string|null);
+
+    /**
+     * Creates a XmsgChannelStatusGroupStatus message from a plain object. Also converts values to their respective internal types.
+     * @param object Plain object
+     * @returns XmsgChannelStatusGroupStatus
+     */
+    public static fromObject(object: { [k: string]: any }): XmsgChannelStatusGroupStatus;
+
+    /**
+     * Creates a plain object from a XmsgChannelStatusGroupStatus message. Also converts values to other types if specified.
+     * @param message XmsgChannelStatusGroupStatus
+     * @param [options] Conversion options
+     * @returns Plain object
+     */
+    public static toObject(message: XmsgChannelStatusGroupStatus, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+    /**
+     * Converts this XmsgChannelStatusGroupStatus to JSON.
+     * @returns JSON object
+     */
+    public toJSON(): { [k: string]: any };
+}
+
 /** Properties of a XmsgClientTokenInfo. */
 export interface IXmsgClientTokenInfo {
+
+    /** XmsgClientTokenInfo cgt */
+    cgt?: (string|null);
 
     /** XmsgClientTokenInfo token */
     token?: (string|null);
@@ -2222,6 +3266,9 @@ export class XmsgClientTokenInfo implements IXmsgClientTokenInfo {
      * @param [properties] Properties to set
      */
     constructor(properties?: IXmsgClientTokenInfo);
+
+    /** XmsgClientTokenInfo cgt. */
+    public cgt: string;
 
     /** XmsgClientTokenInfo token. */
     public token: string;
@@ -3957,8 +5004,11 @@ export class XmsgImHlrAttachSimpleReq implements IXmsgImHlrAttachSimpleReq {
     /** XmsgImHlrAttachSimpleReq alg. */
     public alg: string;
 
+    /** XmsgImHlrAttachSimpleReq cgt. */
+    public cgt: string;
+
     /** XmsgImHlrAttachSimpleReq ext. */
-    public ext: string;
+    public ext: { [k: string]: string };
 
     /**
      * Creates a new XmsgImHlrAttachSimpleReq instance using the specified properties.
@@ -4040,11 +5090,8 @@ export class XmsgImHlrAttachSimpleRsp implements IXmsgImHlrAttachSimpleRsp {
      */
     constructor(properties?: IXmsgImHlrAttachSimpleRsp);
 
-    /** XmsgImHlrAttachSimpleRsp cgt. */
-    public cgt: string;
-
     /** XmsgImHlrAttachSimpleRsp ext. */
-    public ext: string;
+    public ext: { [k: string]: string };
 
     /**
      * Creates a new XmsgImHlrAttachSimpleRsp instance using the specified properties.
@@ -4127,7 +5174,7 @@ export class XmsgImHlrDetachSimpleReq implements IXmsgImHlrDetachSimpleReq {
     constructor(properties?: IXmsgImHlrDetachSimpleReq);
 
     /** XmsgImHlrDetachSimpleReq ext. */
-    public ext: string;
+    public ext: { [k: string]: string };
 
     /**
      * Creates a new XmsgImHlrDetachSimpleReq instance using the specified properties.
@@ -4210,7 +5257,7 @@ export class XmsgImHlrDetachSimpleRsp implements IXmsgImHlrDetachSimpleRsp {
     constructor(properties?: IXmsgImHlrDetachSimpleRsp);
 
     /** XmsgImHlrDetachSimpleRsp ext. */
-    public ext: string;
+    public ext: { [k: string]: string };
 
     /**
      * Creates a new XmsgImHlrDetachSimpleRsp instance using the specified properties.
@@ -4654,8 +5701,11 @@ export class XmsgImAuthSimpleRsp implements IXmsgImAuthSimpleRsp {
     /** XmsgImAuthSimpleRsp fsAddr. */
     public fsAddr: IXmsgImClientServiceAddress[];
 
+    /** XmsgImAuthSimpleRsp cgt. */
+    public cgt: string;
+
     /** XmsgImAuthSimpleRsp ext. */
-    public ext: string;
+    public ext: { [k: string]: string };
 
     /**
      * Creates a new XmsgImAuthSimpleRsp instance using the specified properties.
@@ -4747,7 +5797,7 @@ export class XmsgImClientDeviceInfo implements IXmsgImClientDeviceInfo {
     public ver: string;
 
     /** XmsgImClientDeviceInfo ext. */
-    public ext: string;
+    public ext: { [k: string]: string };
 
     /**
      * Creates a new XmsgImClientDeviceInfo instance using the specified properties.
@@ -4842,7 +5892,7 @@ export class XmsgImClientServiceAddress implements IXmsgImClientServiceAddress {
     public proto: string[];
 
     /** XmsgImClientServiceAddress ext. */
-    public ext: string;
+    public ext: { [k: string]: string };
 
     /**
      * Creates a new XmsgImClientServiceAddress instance using the specified properties.
@@ -5017,7 +6067,7 @@ export class XmsgImAuthRegSimpleRsp implements IXmsgImAuthRegSimpleRsp {
     constructor(properties?: IXmsgImAuthRegSimpleRsp);
 
     /** XmsgImAuthRegSimpleRsp ext. */
-    public ext: string;
+    public ext: { [k: string]: string };
 
     /**
      * Creates a new XmsgImAuthRegSimpleRsp instance using the specified properties.
@@ -6254,7 +7304,7 @@ export class XmsgImHlrUsrInfoQueryReq implements IXmsgImHlrUsrInfoQueryReq {
     constructor(properties?: IXmsgImHlrUsrInfoQueryReq);
 
     /** XmsgImHlrUsrInfoQueryReq ext. */
-    public ext: string;
+    public ext: { [k: string]: string };
 
     /**
      * Creates a new XmsgImHlrUsrInfoQueryReq instance using the specified properties.
@@ -6503,7 +7553,7 @@ export class XmsgImHlrUsrInfoUpdateRsp implements IXmsgImHlrUsrInfoUpdateRsp {
     constructor(properties?: IXmsgImHlrUsrInfoUpdateRsp);
 
     /** XmsgImHlrUsrInfoUpdateRsp ext. */
-    public ext: string;
+    public ext: { [k: string]: string };
 
     /**
      * Creates a new XmsgImHlrUsrInfoUpdateRsp instance using the specified properties.
@@ -7296,7 +8346,7 @@ export class XmsgImOrgSyncPubRsp implements IXmsgImOrgSyncPubRsp {
     constructor(properties?: IXmsgImOrgSyncPubRsp);
 
     /** XmsgImOrgSyncPubRsp ext. */
-    public ext: string;
+    public ext: { [k: string]: string };
 
     /**
      * Creates a new XmsgImOrgSyncPubRsp instance using the specified properties.

@@ -54,6 +54,7 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::XmsgClientTokenInfo, cgt_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::XmsgClientTokenInfo, token_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::XmsgClientTokenInfo, alg_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::XmsgClientTokenInfo, slat_),
@@ -91,14 +92,14 @@ void protobuf_RegisterTypes(const ::std::string&) {
 void AddDescriptorsImpl() {
   InitDefaults();
   static const char descriptor[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
-      "\n\032net-x-msg-token-info.proto\"h\n\023XmsgClie"
-      "ntTokenInfo\022\r\n\005token\030\001 \001(\t\022\013\n\003alg\030\002 \001(\t\022"
-      "\014\n\004slat\030\003 \001(\t\022\014\n\004plat\030\004 \001(\t\022\013\n\003did\030\005 \001(\t"
-      "\022\014\n\004sign\030\006 \001(\tB\033\n\010x.msg.pbB\017XmsgTokenInf"
-      "oPbb\006proto3"
+      "\n\032net-x-msg-token-info.proto\"u\n\023XmsgClie"
+      "ntTokenInfo\022\013\n\003cgt\030\001 \001(\t\022\r\n\005token\030\002 \001(\t\022"
+      "\013\n\003alg\030\003 \001(\t\022\014\n\004slat\030\004 \001(\t\022\014\n\004plat\030\005 \001(\t"
+      "\022\013\n\003did\030\006 \001(\t\022\014\n\004sign\030\007 \001(\tB\033\n\010x.msg.pbB"
+      "\017XmsgTokenInfoPbb\006proto3"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 171);
+      descriptor, 184);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "net-x-msg-token-info.proto", &protobuf_RegisterTypes);
 }
@@ -120,6 +121,7 @@ struct StaticDescriptorInitializer {
 void XmsgClientTokenInfo::InitAsDefaultInstance() {
 }
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int XmsgClientTokenInfo::kCgtFieldNumber;
 const int XmsgClientTokenInfo::kTokenFieldNumber;
 const int XmsgClientTokenInfo::kAlgFieldNumber;
 const int XmsgClientTokenInfo::kSlatFieldNumber;
@@ -141,6 +143,10 @@ XmsgClientTokenInfo::XmsgClientTokenInfo(const XmsgClientTokenInfo& from)
       _internal_metadata_(NULL),
       _cached_size_(0) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
+  cgt_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.cgt().size() > 0) {
+    cgt_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.cgt_);
+  }
   token_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   if (from.token().size() > 0) {
     token_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.token_);
@@ -169,6 +175,7 @@ XmsgClientTokenInfo::XmsgClientTokenInfo(const XmsgClientTokenInfo& from)
 }
 
 void XmsgClientTokenInfo::SharedCtor() {
+  cgt_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   token_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   alg_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   slat_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
@@ -184,6 +191,7 @@ XmsgClientTokenInfo::~XmsgClientTokenInfo() {
 }
 
 void XmsgClientTokenInfo::SharedDtor() {
+  cgt_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   token_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   alg_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   slat_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
@@ -221,6 +229,7 @@ void XmsgClientTokenInfo::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  cgt_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   token_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   alg_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   slat_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
@@ -240,10 +249,26 @@ bool XmsgClientTokenInfo::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // string token = 1;
+      // string cgt = 1;
       case 1: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
             static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_cgt()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->cgt().data(), static_cast<int>(this->cgt().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "XmsgClientTokenInfo.cgt"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // string token = 2;
+      case 2: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(18u /* 18 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadString(
                 input, this->mutable_token()));
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
@@ -256,10 +281,10 @@ bool XmsgClientTokenInfo::MergePartialFromCodedStream(
         break;
       }
 
-      // string alg = 2;
-      case 2: {
+      // string alg = 3;
+      case 3: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(18u /* 18 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(26u /* 26 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadString(
                 input, this->mutable_alg()));
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
@@ -272,10 +297,10 @@ bool XmsgClientTokenInfo::MergePartialFromCodedStream(
         break;
       }
 
-      // string slat = 3;
-      case 3: {
+      // string slat = 4;
+      case 4: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(26u /* 26 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(34u /* 34 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadString(
                 input, this->mutable_slat()));
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
@@ -288,10 +313,10 @@ bool XmsgClientTokenInfo::MergePartialFromCodedStream(
         break;
       }
 
-      // string plat = 4;
-      case 4: {
+      // string plat = 5;
+      case 5: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(34u /* 34 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(42u /* 42 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadString(
                 input, this->mutable_plat()));
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
@@ -304,10 +329,10 @@ bool XmsgClientTokenInfo::MergePartialFromCodedStream(
         break;
       }
 
-      // string did = 5;
-      case 5: {
+      // string did = 6;
+      case 6: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(42u /* 42 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(50u /* 50 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadString(
                 input, this->mutable_did()));
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
@@ -320,10 +345,10 @@ bool XmsgClientTokenInfo::MergePartialFromCodedStream(
         break;
       }
 
-      // string sign = 6;
-      case 6: {
+      // string sign = 7;
+      case 7: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(50u /* 50 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(58u /* 58 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadString(
                 input, this->mutable_sign()));
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
@@ -362,64 +387,74 @@ void XmsgClientTokenInfo::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string token = 1;
+  // string cgt = 1;
+  if (this->cgt().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->cgt().data(), static_cast<int>(this->cgt().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "XmsgClientTokenInfo.cgt");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      1, this->cgt(), output);
+  }
+
+  // string token = 2;
   if (this->token().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->token().data(), static_cast<int>(this->token().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
       "XmsgClientTokenInfo.token");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      1, this->token(), output);
+      2, this->token(), output);
   }
 
-  // string alg = 2;
+  // string alg = 3;
   if (this->alg().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->alg().data(), static_cast<int>(this->alg().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
       "XmsgClientTokenInfo.alg");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      2, this->alg(), output);
+      3, this->alg(), output);
   }
 
-  // string slat = 3;
+  // string slat = 4;
   if (this->slat().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->slat().data(), static_cast<int>(this->slat().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
       "XmsgClientTokenInfo.slat");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      3, this->slat(), output);
+      4, this->slat(), output);
   }
 
-  // string plat = 4;
+  // string plat = 5;
   if (this->plat().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->plat().data(), static_cast<int>(this->plat().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
       "XmsgClientTokenInfo.plat");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      4, this->plat(), output);
+      5, this->plat(), output);
   }
 
-  // string did = 5;
+  // string did = 6;
   if (this->did().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->did().data(), static_cast<int>(this->did().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
       "XmsgClientTokenInfo.did");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      5, this->did(), output);
+      6, this->did(), output);
   }
 
-  // string sign = 6;
+  // string sign = 7;
   if (this->sign().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->sign().data(), static_cast<int>(this->sign().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
       "XmsgClientTokenInfo.sign");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      6, this->sign(), output);
+      7, this->sign(), output);
   }
 
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
@@ -436,7 +471,18 @@ void XmsgClientTokenInfo::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string token = 1;
+  // string cgt = 1;
+  if (this->cgt().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->cgt().data(), static_cast<int>(this->cgt().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "XmsgClientTokenInfo.cgt");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        1, this->cgt(), target);
+  }
+
+  // string token = 2;
   if (this->token().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->token().data(), static_cast<int>(this->token().length()),
@@ -444,10 +490,10 @@ void XmsgClientTokenInfo::SerializeWithCachedSizes(
       "XmsgClientTokenInfo.token");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        1, this->token(), target);
+        2, this->token(), target);
   }
 
-  // string alg = 2;
+  // string alg = 3;
   if (this->alg().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->alg().data(), static_cast<int>(this->alg().length()),
@@ -455,10 +501,10 @@ void XmsgClientTokenInfo::SerializeWithCachedSizes(
       "XmsgClientTokenInfo.alg");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        2, this->alg(), target);
+        3, this->alg(), target);
   }
 
-  // string slat = 3;
+  // string slat = 4;
   if (this->slat().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->slat().data(), static_cast<int>(this->slat().length()),
@@ -466,10 +512,10 @@ void XmsgClientTokenInfo::SerializeWithCachedSizes(
       "XmsgClientTokenInfo.slat");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        3, this->slat(), target);
+        4, this->slat(), target);
   }
 
-  // string plat = 4;
+  // string plat = 5;
   if (this->plat().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->plat().data(), static_cast<int>(this->plat().length()),
@@ -477,10 +523,10 @@ void XmsgClientTokenInfo::SerializeWithCachedSizes(
       "XmsgClientTokenInfo.plat");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        4, this->plat(), target);
+        5, this->plat(), target);
   }
 
-  // string did = 5;
+  // string did = 6;
   if (this->did().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->did().data(), static_cast<int>(this->did().length()),
@@ -488,10 +534,10 @@ void XmsgClientTokenInfo::SerializeWithCachedSizes(
       "XmsgClientTokenInfo.did");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        5, this->did(), target);
+        6, this->did(), target);
   }
 
-  // string sign = 6;
+  // string sign = 7;
   if (this->sign().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->sign().data(), static_cast<int>(this->sign().length()),
@@ -499,7 +545,7 @@ void XmsgClientTokenInfo::SerializeWithCachedSizes(
       "XmsgClientTokenInfo.sign");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        6, this->sign(), target);
+        7, this->sign(), target);
   }
 
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
@@ -519,42 +565,49 @@ size_t XmsgClientTokenInfo::ByteSizeLong() const {
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
   }
-  // string token = 1;
+  // string cgt = 1;
+  if (this->cgt().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->cgt());
+  }
+
+  // string token = 2;
   if (this->token().size() > 0) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::StringSize(
         this->token());
   }
 
-  // string alg = 2;
+  // string alg = 3;
   if (this->alg().size() > 0) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::StringSize(
         this->alg());
   }
 
-  // string slat = 3;
+  // string slat = 4;
   if (this->slat().size() > 0) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::StringSize(
         this->slat());
   }
 
-  // string plat = 4;
+  // string plat = 5;
   if (this->plat().size() > 0) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::StringSize(
         this->plat());
   }
 
-  // string did = 5;
+  // string did = 6;
   if (this->did().size() > 0) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::StringSize(
         this->did());
   }
 
-  // string sign = 6;
+  // string sign = 7;
   if (this->sign().size() > 0) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::StringSize(
@@ -590,6 +643,10 @@ void XmsgClientTokenInfo::MergeFrom(const XmsgClientTokenInfo& from) {
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from.cgt().size() > 0) {
+
+    cgt_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.cgt_);
+  }
   if (from.token().size() > 0) {
 
     token_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.token_);
@@ -640,6 +697,7 @@ void XmsgClientTokenInfo::Swap(XmsgClientTokenInfo* other) {
 }
 void XmsgClientTokenInfo::InternalSwap(XmsgClientTokenInfo* other) {
   using std::swap;
+  cgt_.Swap(&other->cgt_);
   token_.Swap(&other->token_);
   alg_.Swap(&other->alg_);
   slat_.Swap(&other->slat_);

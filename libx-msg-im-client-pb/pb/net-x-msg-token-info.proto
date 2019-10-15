@@ -22,10 +22,11 @@ option java_package = "x.msg.pb";
 option java_outer_classname = "XmsgTokenInfoPb";
 message XmsgClientTokenInfo
 {
-    string token = 1;
-    string alg = 2;
-    string slat = 3;
-    string plat = 4;
-    string did = 5;
-    string sign = 6;  
+	string cgt = 1;
+    string token = 2;
+    string alg = 3;
+    string slat = 4;
+    string plat = 5;
+    string did = 6;
+    string sign = 7;  
 }

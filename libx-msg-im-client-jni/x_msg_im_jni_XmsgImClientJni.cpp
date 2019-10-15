@@ -50,7 +50,7 @@ JNIEXPORT void JNICALL Java_x_msg_im_jni_XmsgImClientJni_x_1msg_1im_1client_1sdk
 	x_msg_im_client_sdk_net_del_api(netApiId);
 }
 
-JNIEXPORT jint JNICALL Java_x_msg_im_jni_XmsgImClientJni_x_1msg_1im_1client_1sdk_1net_1future(JNIEnv* env, jclass cls, jint netApiId, jstring xmsg, jbyteArray xdat)
+JNIEXPORT jint JNICALL Java_x_msg_im_jni_XmsgImClientJni_x_1msg_1im_1client_1sdk_1net_1future(JNIEnv* env, jclass cls, jint netApiId, jstring xmsg, jbyteArray xdat, jstring xoob)
 {
 	if (xmsg == NULL)
 		return -1;
@@ -58,7 +58,8 @@ JNIEXPORT jint JNICALL Java_x_msg_im_jni_XmsgImClientJni_x_1msg_1im_1client_1sdk
 	const char* msg = env->GetStringUTFChars(xmsg, &copy);
 	jbyte* dat = xdat == NULL ? NULL : env->GetByteArrayElements(xdat, &copy);
 	int len = xdat == NULL ? 0 : env->GetArrayLength(xdat);
-	int ret = x_msg_im_client_sdk_net_future(netApiId, msg, (const char*) dat, len);
+	const char* oob = (xoob == NULL ? NULL : env->GetStringUTFChars(xoob, &copy));
+	int ret = x_msg_im_client_sdk_net_future(netApiId, msg, (const char*) dat, len, oob);
 	if (xdat != NULL)
 		env->ReleaseByteArrayElements(xdat, dat, 0);
 	return ret;

@@ -49,13 +49,13 @@ public class TestXmsgImOrgSyncPubReq
 		if (req.getEventList().isEmpty())
 		{
 			XmsgImOrgSyncPubRsp.Builder rsp = XmsgImOrgSyncPubRsp.newBuilder();
-			rsp.setExt("exception");
+			rsp.getExtMap().put("exception", "true");
 			trans.end(rsp.build());
 			Log.fault("it`s a bug, req: %s", Misc.pb2str(req));
 			return;
 		}
 		XmsgImOrgSyncPubRsp.Builder rsp = XmsgImOrgSyncPubRsp.newBuilder();
-		rsp.setExt("accept");
+		rsp.getExtMap().put("accept", "true");
 		trans.end(rsp.build());
 		//
 		if (req.getEventList().get(0).hasDept()) /* 这一页全是dept. */

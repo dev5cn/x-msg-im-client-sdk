@@ -39,7 +39,7 @@ JNIEXPORT void JNICALL Java_x_msg_im_jni_XmsgImClientJni_x_1msg_1im_1client_1sdk
   (JNIEnv *, jclass, jint);
 
 JNIEXPORT jint JNICALL Java_x_msg_im_jni_XmsgImClientJni_x_1msg_1im_1client_1sdk_1net_1future
-  (JNIEnv *, jclass, jint, jstring, jbyteArray);
+  (JNIEnv *, jclass, jint, jstring, jbyteArray, jstring);
 
 JNIEXPORT void JNICALL Java_x_msg_im_jni_XmsgImClientJni_x_1msg_1im_1client_1sdk_1net_1end_1trans
   (JNIEnv *, jclass, jint, jint, jstring, jstring, jbyteArray);

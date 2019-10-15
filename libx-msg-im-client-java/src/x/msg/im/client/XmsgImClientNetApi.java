@@ -66,7 +66,12 @@ public class XmsgImClientNetApi
 
 	public final boolean future(Message msg, TripletConsumer<XmsgErrCode, String, Message> cb)
 	{
-		int tid = XmsgImClientJni.x_msg_im_client_sdk_net_future(this.netApiId, msg.getDescriptorForType().getName(), msg.toByteArray());
+		return this.future(msg, cb, null);
+	}
+
+	public final boolean future(Message msg, TripletConsumer<XmsgErrCode, String, Message> cb, String oob)
+	{
+		int tid = XmsgImClientJni.x_msg_im_client_sdk_net_future(this.netApiId, msg.getDescriptorForType().getName(), msg.toByteArray(), oob);
 		if (tid < 0)
 		{
 			Log.error("something error, msg: %s", Misc.pb2str(msg));

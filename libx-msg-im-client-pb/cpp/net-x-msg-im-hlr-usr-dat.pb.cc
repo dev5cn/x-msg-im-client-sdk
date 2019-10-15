@@ -39,6 +39,11 @@ class XmsgImHlrUsrDatPubDefaultTypeInternal {
   ::google::protobuf::internal::ExplicitlyConstructed<XmsgImHlrUsrDatPub>
       _instance;
 } _XmsgImHlrUsrDatPub_default_instance_;
+class XmsgImHlrUsrInfoQueryReq_ExtEntry_DoNotUseDefaultTypeInternal {
+ public:
+  ::google::protobuf::internal::ExplicitlyConstructed<XmsgImHlrUsrInfoQueryReq_ExtEntry_DoNotUse>
+      _instance;
+} _XmsgImHlrUsrInfoQueryReq_ExtEntry_DoNotUse_default_instance_;
 class XmsgImHlrUsrInfoQueryReqDefaultTypeInternal {
  public:
   ::google::protobuf::internal::ExplicitlyConstructed<XmsgImHlrUsrInfoQueryReq>
@@ -64,6 +69,11 @@ class XmsgImHlrUsrInfoUpdateReqDefaultTypeInternal {
   ::google::protobuf::internal::ExplicitlyConstructed<XmsgImHlrUsrInfoUpdateReq>
       _instance;
 } _XmsgImHlrUsrInfoUpdateReq_default_instance_;
+class XmsgImHlrUsrInfoUpdateRsp_ExtEntry_DoNotUseDefaultTypeInternal {
+ public:
+  ::google::protobuf::internal::ExplicitlyConstructed<XmsgImHlrUsrInfoUpdateRsp_ExtEntry_DoNotUse>
+      _instance;
+} _XmsgImHlrUsrInfoUpdateRsp_ExtEntry_DoNotUse_default_instance_;
 class XmsgImHlrUsrInfoUpdateRspDefaultTypeInternal {
  public:
   ::google::protobuf::internal::ExplicitlyConstructed<XmsgImHlrUsrInfoUpdateRsp>
@@ -156,6 +166,26 @@ void InitDefaultsXmsgImHlrUsrDatPub() {
   ::google::protobuf::GoogleOnceInit(&once, &InitDefaultsXmsgImHlrUsrDatPubImpl);
 }
 
+void InitDefaultsXmsgImHlrUsrInfoQueryReq_ExtEntry_DoNotUseImpl() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+#ifdef GOOGLE_PROTOBUF_ENFORCE_UNIQUENESS
+  ::google::protobuf::internal::InitProtobufDefaultsForceUnique();
+#else
+  ::google::protobuf::internal::InitProtobufDefaults();
+#endif  // GOOGLE_PROTOBUF_ENFORCE_UNIQUENESS
+  {
+    void* ptr = &::_XmsgImHlrUsrInfoQueryReq_ExtEntry_DoNotUse_default_instance_;
+    new (ptr) ::XmsgImHlrUsrInfoQueryReq_ExtEntry_DoNotUse();
+  }
+  ::XmsgImHlrUsrInfoQueryReq_ExtEntry_DoNotUse::InitAsDefaultInstance();
+}
+
+void InitDefaultsXmsgImHlrUsrInfoQueryReq_ExtEntry_DoNotUse() {
+  static GOOGLE_PROTOBUF_DECLARE_ONCE(once);
+  ::google::protobuf::GoogleOnceInit(&once, &InitDefaultsXmsgImHlrUsrInfoQueryReq_ExtEntry_DoNotUseImpl);
+}
+
 void InitDefaultsXmsgImHlrUsrInfoQueryReqImpl() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
@@ -164,6 +194,7 @@ void InitDefaultsXmsgImHlrUsrInfoQueryReqImpl() {
 #else
   ::google::protobuf::internal::InitProtobufDefaults();
 #endif  // GOOGLE_PROTOBUF_ENFORCE_UNIQUENESS
+  protobuf_net_2dx_2dmsg_2dim_2dhlr_2dusr_2ddat_2eproto::InitDefaultsXmsgImHlrUsrInfoQueryReq_ExtEntry_DoNotUse();
   {
     void* ptr = &::_XmsgImHlrUsrInfoQueryReq_default_instance_;
     new (ptr) ::XmsgImHlrUsrInfoQueryReq();
@@ -261,6 +292,26 @@ void InitDefaultsXmsgImHlrUsrInfoUpdateReq() {
   ::google::protobuf::GoogleOnceInit(&once, &InitDefaultsXmsgImHlrUsrInfoUpdateReqImpl);
 }
 
+void InitDefaultsXmsgImHlrUsrInfoUpdateRsp_ExtEntry_DoNotUseImpl() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+#ifdef GOOGLE_PROTOBUF_ENFORCE_UNIQUENESS
+  ::google::protobuf::internal::InitProtobufDefaultsForceUnique();
+#else
+  ::google::protobuf::internal::InitProtobufDefaults();
+#endif  // GOOGLE_PROTOBUF_ENFORCE_UNIQUENESS
+  {
+    void* ptr = &::_XmsgImHlrUsrInfoUpdateRsp_ExtEntry_DoNotUse_default_instance_;
+    new (ptr) ::XmsgImHlrUsrInfoUpdateRsp_ExtEntry_DoNotUse();
+  }
+  ::XmsgImHlrUsrInfoUpdateRsp_ExtEntry_DoNotUse::InitAsDefaultInstance();
+}
+
+void InitDefaultsXmsgImHlrUsrInfoUpdateRsp_ExtEntry_DoNotUse() {
+  static GOOGLE_PROTOBUF_DECLARE_ONCE(once);
+  ::google::protobuf::GoogleOnceInit(&once, &InitDefaultsXmsgImHlrUsrInfoUpdateRsp_ExtEntry_DoNotUseImpl);
+}
+
 void InitDefaultsXmsgImHlrUsrInfoUpdateRspImpl() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
@@ -269,6 +320,7 @@ void InitDefaultsXmsgImHlrUsrInfoUpdateRspImpl() {
 #else
   ::google::protobuf::internal::InitProtobufDefaults();
 #endif  // GOOGLE_PROTOBUF_ENFORCE_UNIQUENESS
+  protobuf_net_2dx_2dmsg_2dim_2dhlr_2dusr_2ddat_2eproto::InitDefaultsXmsgImHlrUsrInfoUpdateRsp_ExtEntry_DoNotUse();
   {
     void* ptr = &::_XmsgImHlrUsrInfoUpdateRsp_default_instance_;
     new (ptr) ::XmsgImHlrUsrInfoUpdateRsp();
@@ -282,7 +334,7 @@ void InitDefaultsXmsgImHlrUsrInfoUpdateRsp() {
   ::google::protobuf::GoogleOnceInit(&once, &InitDefaultsXmsgImHlrUsrInfoUpdateRspImpl);
 }
 
-::google::protobuf::Metadata file_level_metadata[10];
+::google::protobuf::Metadata file_level_metadata[12];
 
 const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
   ~0u,  // no _has_bits_
@@ -318,6 +370,15 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::XmsgImHlrUsrDatPub, info_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::XmsgImHlrUsrInfoQueryReq_ExtEntry_DoNotUse, _has_bits_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::XmsgImHlrUsrInfoQueryReq_ExtEntry_DoNotUse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::XmsgImHlrUsrInfoQueryReq_ExtEntry_DoNotUse, key_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::XmsgImHlrUsrInfoQueryReq_ExtEntry_DoNotUse, value_),
+  0,
+  1,
   ~0u,  // no _has_bits_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::XmsgImHlrUsrInfoQueryReq, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -354,6 +415,15 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::XmsgImHlrUsrInfoUpdateReq, info_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::XmsgImHlrUsrInfoUpdateRsp_ExtEntry_DoNotUse, _has_bits_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::XmsgImHlrUsrInfoUpdateRsp_ExtEntry_DoNotUse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::XmsgImHlrUsrInfoUpdateRsp_ExtEntry_DoNotUse, key_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::XmsgImHlrUsrInfoUpdateRsp_ExtEntry_DoNotUse, value_),
+  0,
+  1,
   ~0u,  // no _has_bits_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::XmsgImHlrUsrInfoUpdateRsp, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -366,12 +436,14 @@ static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_PROT
   { 11, -1, sizeof(::XmsgImHlrUsrDatPri)},
   { 18, 25, sizeof(::XmsgImHlrUsrDatPub_InfoEntry_DoNotUse)},
   { 27, -1, sizeof(::XmsgImHlrUsrDatPub)},
-  { 33, -1, sizeof(::XmsgImHlrUsrInfoQueryReq)},
-  { 39, 46, sizeof(::XmsgImHlrUsrInfoQueryRsp_InfoEntry_DoNotUse)},
-  { 48, -1, sizeof(::XmsgImHlrUsrInfoQueryRsp)},
-  { 54, 61, sizeof(::XmsgImHlrUsrInfoUpdateReq_InfoEntry_DoNotUse)},
-  { 63, -1, sizeof(::XmsgImHlrUsrInfoUpdateReq)},
-  { 69, -1, sizeof(::XmsgImHlrUsrInfoUpdateRsp)},
+  { 33, 40, sizeof(::XmsgImHlrUsrInfoQueryReq_ExtEntry_DoNotUse)},
+  { 42, -1, sizeof(::XmsgImHlrUsrInfoQueryReq)},
+  { 48, 55, sizeof(::XmsgImHlrUsrInfoQueryRsp_InfoEntry_DoNotUse)},
+  { 57, -1, sizeof(::XmsgImHlrUsrInfoQueryRsp)},
+  { 63, 70, sizeof(::XmsgImHlrUsrInfoUpdateReq_InfoEntry_DoNotUse)},
+  { 72, -1, sizeof(::XmsgImHlrUsrInfoUpdateReq)},
+  { 78, 85, sizeof(::XmsgImHlrUsrInfoUpdateRsp_ExtEntry_DoNotUse)},
+  { 87, -1, sizeof(::XmsgImHlrUsrInfoUpdateRsp)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -379,11 +451,13 @@ static ::google::protobuf::Message const * const file_default_instances[] = {
   reinterpret_cast<const ::google::protobuf::Message*>(&::_XmsgImHlrUsrDatPri_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::_XmsgImHlrUsrDatPub_InfoEntry_DoNotUse_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::_XmsgImHlrUsrDatPub_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&::_XmsgImHlrUsrInfoQueryReq_ExtEntry_DoNotUse_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::_XmsgImHlrUsrInfoQueryReq_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::_XmsgImHlrUsrInfoQueryRsp_InfoEntry_DoNotUse_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::_XmsgImHlrUsrInfoQueryRsp_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::_XmsgImHlrUsrInfoUpdateReq_InfoEntry_DoNotUse_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::_XmsgImHlrUsrInfoUpdateReq_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&::_XmsgImHlrUsrInfoUpdateRsp_ExtEntry_DoNotUse_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::_XmsgImHlrUsrInfoUpdateRsp_default_instance_),
 };
 
@@ -403,7 +477,7 @@ void protobuf_AssignDescriptorsOnce() {
 void protobuf_RegisterTypes(const ::std::string&) GOOGLE_PROTOBUF_ATTRIBUTE_COLD;
 void protobuf_RegisterTypes(const ::std::string&) {
   protobuf_AssignDescriptorsOnce();
-  ::google::protobuf::internal::RegisterAllTypes(file_level_metadata, 10);
+  ::google::protobuf::internal::RegisterAllTypes(file_level_metadata, 12);
 }
 
 void AddDescriptorsImpl() {
@@ -417,19 +491,23 @@ void AddDescriptorsImpl() {
       "able\030\001 \001(\010\022\013\n\003ext\030\005 \001(\014\"n\n\022XmsgImHlrUsrD"
       "atPub\022+\n\004info\030\001 \003(\0132\035.XmsgImHlrUsrDatPub"
       ".InfoEntry\032+\n\tInfoEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005"
-      "value\030\002 \001(\t:\0028\001\"\'\n\030XmsgImHlrUsrInfoQuery"
-      "Req\022\013\n\003ext\030\001 \001(\t\"z\n\030XmsgImHlrUsrInfoQuer"
+      "value\030\002 \001(\t:\0028\001\"w\n\030XmsgImHlrUsrInfoQuery"
+      "Req\022/\n\003ext\030\001 \003(\0132\".XmsgImHlrUsrInfoQuery"
+      "Req.ExtEntry\032*\n\010ExtEntry\022\013\n\003key\030\001 \001(\t\022\r\n"
+      "\005value\030\002 \001(\t:\0028\001\"z\n\030XmsgImHlrUsrInfoQuer"
       "yRsp\0221\n\004info\030\001 \003(\0132#.XmsgImHlrUsrInfoQue"
       "ryRsp.InfoEntry\032+\n\tInfoEntry\022\013\n\003key\030\001 \001("
       "\t\022\r\n\005value\030\002 \001(\t:\0028\001\"|\n\031XmsgImHlrUsrInfo"
       "UpdateReq\0222\n\004info\030\001 \003(\0132$.XmsgImHlrUsrIn"
       "foUpdateReq.InfoEntry\032+\n\tInfoEntry\022\013\n\003ke"
-      "y\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"(\n\031XmsgImHlrU"
-      "srInfoUpdateRsp\022\013\n\003ext\030\001 \001(\tB\035\n\010x.msg.pb"
-      "B\021XmsgImHlrUsrDatPbb\006proto3"
+      "y\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"y\n\031XmsgImHlrU"
+      "srInfoUpdateRsp\0220\n\003ext\030\001 \003(\0132#.XmsgImHlr"
+      "UsrInfoUpdateRsp.ExtEntry\032*\n\010ExtEntry\022\013\n"
+      "\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001B\035\n\010x.msg.p"
+      "bB\021XmsgImHlrUsrDatPbb\006proto3"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 707);
+      descriptor, 868);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "net-x-msg-im-hlr-usr-dat.proto", &protobuf_RegisterTypes);
 }
@@ -1572,6 +1650,23 @@ void XmsgImHlrUsrDatPub::InternalSwap(XmsgImHlrUsrDatPub* other) {
 
 // ===================================================================
 
+XmsgImHlrUsrInfoQueryReq_ExtEntry_DoNotUse::XmsgImHlrUsrInfoQueryReq_ExtEntry_DoNotUse() {}
+XmsgImHlrUsrInfoQueryReq_ExtEntry_DoNotUse::XmsgImHlrUsrInfoQueryReq_ExtEntry_DoNotUse(::google::protobuf::Arena* arena) : SuperType(arena) {}
+void XmsgImHlrUsrInfoQueryReq_ExtEntry_DoNotUse::MergeFrom(const XmsgImHlrUsrInfoQueryReq_ExtEntry_DoNotUse& other) {
+  MergeFromInternal(other);
+}
+::google::protobuf::Metadata XmsgImHlrUsrInfoQueryReq_ExtEntry_DoNotUse::GetMetadata() const {
+  ::protobuf_net_2dx_2dmsg_2dim_2dhlr_2dusr_2ddat_2eproto::protobuf_AssignDescriptorsOnce();
+  return ::protobuf_net_2dx_2dmsg_2dim_2dhlr_2dusr_2ddat_2eproto::file_level_metadata[4];
+}
+void XmsgImHlrUsrInfoQueryReq_ExtEntry_DoNotUse::MergeFrom(
+    const ::google::protobuf::Message& other) {
+  ::google::protobuf::Message::MergeFrom(other);
+}
+
+
+// ===================================================================
+
 void XmsgImHlrUsrInfoQueryReq::InitAsDefaultInstance() {
 }
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
@@ -1591,15 +1686,11 @@ XmsgImHlrUsrInfoQueryReq::XmsgImHlrUsrInfoQueryReq(const XmsgImHlrUsrInfoQueryRe
       _internal_metadata_(NULL),
       _cached_size_(0) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ext_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.ext().size() > 0) {
-    ext_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.ext_);
-  }
+  ext_.MergeFrom(from.ext_);
   // @@protoc_insertion_point(copy_constructor:XmsgImHlrUsrInfoQueryReq)
 }
 
 void XmsgImHlrUsrInfoQueryReq::SharedCtor() {
-  ext_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   _cached_size_ = 0;
 }
 
@@ -1609,7 +1700,6 @@ XmsgImHlrUsrInfoQueryReq::~XmsgImHlrUsrInfoQueryReq() {
 }
 
 void XmsgImHlrUsrInfoQueryReq::SharedDtor() {
-  ext_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 
 void XmsgImHlrUsrInfoQueryReq::SetCachedSize(int size) const {
@@ -1641,7 +1731,7 @@ void XmsgImHlrUsrInfoQueryReq::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ext_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  ext_.Clear();
   _internal_metadata_.Clear();
 }
 
@@ -1655,16 +1745,27 @@ bool XmsgImHlrUsrInfoQueryReq::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // string ext = 1;
+      // map<string, string> ext = 1;
       case 1: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
             static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_ext()));
+          XmsgImHlrUsrInfoQueryReq_ExtEntry_DoNotUse::Parser< ::google::protobuf::internal::MapField<
+              XmsgImHlrUsrInfoQueryReq_ExtEntry_DoNotUse,
+              ::std::string, ::std::string,
+              ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+              ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+              0 >,
+            ::google::protobuf::Map< ::std::string, ::std::string > > parser(&ext_);
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+              input, &parser));
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->ext().data(), static_cast<int>(this->ext().length()),
+            parser.key().data(), static_cast<int>(parser.key().length()),
             ::google::protobuf::internal::WireFormatLite::PARSE,
-            "XmsgImHlrUsrInfoQueryReq.ext"));
+            "XmsgImHlrUsrInfoQueryReq.ExtEntry.key"));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            parser.value().data(), static_cast<int>(parser.value().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "XmsgImHlrUsrInfoQueryReq.ExtEntry.value"));
         } else {
           goto handle_unusual;
         }
@@ -1697,14 +1798,57 @@ void XmsgImHlrUsrInfoQueryReq::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string ext = 1;
-  if (this->ext().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->ext().data(), static_cast<int>(this->ext().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "XmsgImHlrUsrInfoQueryReq.ext");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      1, this->ext(), output);
+  // map<string, string> ext = 1;
+  if (!this->ext().empty()) {
+    typedef ::google::protobuf::Map< ::std::string, ::std::string >::const_pointer
+        ConstPtr;
+    typedef ConstPtr SortItem;
+    typedef ::google::protobuf::internal::CompareByDerefFirst<SortItem> Less;
+    struct Utf8Check {
+      static void Check(ConstPtr p) {
+        ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+          p->first.data(), static_cast<int>(p->first.length()),
+          ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+          "XmsgImHlrUsrInfoQueryReq.ExtEntry.key");
+        ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+          p->second.data(), static_cast<int>(p->second.length()),
+          ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+          "XmsgImHlrUsrInfoQueryReq.ExtEntry.value");
+      }
+    };
+
+    if (output->IsSerializationDeterministic() &&
+        this->ext().size() > 1) {
+      ::google::protobuf::scoped_array<SortItem> items(
+          new SortItem[this->ext().size()]);
+      typedef ::google::protobuf::Map< ::std::string, ::std::string >::size_type size_type;
+      size_type n = 0;
+      for (::google::protobuf::Map< ::std::string, ::std::string >::const_iterator
+          it = this->ext().begin();
+          it != this->ext().end(); ++it, ++n) {
+        items[static_cast<ptrdiff_t>(n)] = SortItem(&*it);
+      }
+      ::std::sort(&items[0], &items[static_cast<ptrdiff_t>(n)], Less());
+      ::google::protobuf::scoped_ptr<XmsgImHlrUsrInfoQueryReq_ExtEntry_DoNotUse> entry;
+      for (size_type i = 0; i < n; i++) {
+        entry.reset(ext_.NewEntryWrapper(
+            items[static_cast<ptrdiff_t>(i)]->first, items[static_cast<ptrdiff_t>(i)]->second));
+        ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+            1, *entry, output);
+        Utf8Check::Check(items[static_cast<ptrdiff_t>(i)]);
+      }
+    } else {
+      ::google::protobuf::scoped_ptr<XmsgImHlrUsrInfoQueryReq_ExtEntry_DoNotUse> entry;
+      for (::google::protobuf::Map< ::std::string, ::std::string >::const_iterator
+          it = this->ext().begin();
+          it != this->ext().end(); ++it) {
+        entry.reset(ext_.NewEntryWrapper(
+            it->first, it->second));
+        ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+            1, *entry, output);
+        Utf8Check::Check(&*it);
+      }
+    }
   }
 
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
@@ -1721,15 +1865,61 @@ void XmsgImHlrUsrInfoQueryReq::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string ext = 1;
-  if (this->ext().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->ext().data(), static_cast<int>(this->ext().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "XmsgImHlrUsrInfoQueryReq.ext");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        1, this->ext(), target);
+  // map<string, string> ext = 1;
+  if (!this->ext().empty()) {
+    typedef ::google::protobuf::Map< ::std::string, ::std::string >::const_pointer
+        ConstPtr;
+    typedef ConstPtr SortItem;
+    typedef ::google::protobuf::internal::CompareByDerefFirst<SortItem> Less;
+    struct Utf8Check {
+      static void Check(ConstPtr p) {
+        ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+          p->first.data(), static_cast<int>(p->first.length()),
+          ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+          "XmsgImHlrUsrInfoQueryReq.ExtEntry.key");
+        ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+          p->second.data(), static_cast<int>(p->second.length()),
+          ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+          "XmsgImHlrUsrInfoQueryReq.ExtEntry.value");
+      }
+    };
+
+    if (deterministic &&
+        this->ext().size() > 1) {
+      ::google::protobuf::scoped_array<SortItem> items(
+          new SortItem[this->ext().size()]);
+      typedef ::google::protobuf::Map< ::std::string, ::std::string >::size_type size_type;
+      size_type n = 0;
+      for (::google::protobuf::Map< ::std::string, ::std::string >::const_iterator
+          it = this->ext().begin();
+          it != this->ext().end(); ++it, ++n) {
+        items[static_cast<ptrdiff_t>(n)] = SortItem(&*it);
+      }
+      ::std::sort(&items[0], &items[static_cast<ptrdiff_t>(n)], Less());
+      ::google::protobuf::scoped_ptr<XmsgImHlrUsrInfoQueryReq_ExtEntry_DoNotUse> entry;
+      for (size_type i = 0; i < n; i++) {
+        entry.reset(ext_.NewEntryWrapper(
+            items[static_cast<ptrdiff_t>(i)]->first, items[static_cast<ptrdiff_t>(i)]->second));
+        target = ::google::protobuf::internal::WireFormatLite::
+                   InternalWriteMessageNoVirtualToArray(
+                       1, *entry, deterministic, target);
+;
+        Utf8Check::Check(items[static_cast<ptrdiff_t>(i)]);
+      }
+    } else {
+      ::google::protobuf::scoped_ptr<XmsgImHlrUsrInfoQueryReq_ExtEntry_DoNotUse> entry;
+      for (::google::protobuf::Map< ::std::string, ::std::string >::const_iterator
+          it = this->ext().begin();
+          it != this->ext().end(); ++it) {
+        entry.reset(ext_.NewEntryWrapper(
+            it->first, it->second));
+        target = ::google::protobuf::internal::WireFormatLite::
+                   InternalWriteMessageNoVirtualToArray(
+                       1, *entry, deterministic, target);
+;
+        Utf8Check::Check(&*it);
+      }
+    }
   }
 
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
@@ -1749,11 +1939,18 @@ size_t XmsgImHlrUsrInfoQueryReq::ByteSizeLong() const {
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
   }
-  // string ext = 1;
-  if (this->ext().size() > 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->ext());
+  // map<string, string> ext = 1;
+  total_size += 1 *
+      ::google::protobuf::internal::FromIntSize(this->ext_size());
+  {
+    ::google::protobuf::scoped_ptr<XmsgImHlrUsrInfoQueryReq_ExtEntry_DoNotUse> entry;
+    for (::google::protobuf::Map< ::std::string, ::std::string >::const_iterator
+        it = this->ext().begin();
+        it != this->ext().end(); ++it) {
+      entry.reset(ext_.NewEntryWrapper(it->first, it->second));
+      total_size += ::google::protobuf::internal::WireFormatLite::
+          MessageSizeNoVirtual(*entry);
+    }
   }
 
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
@@ -1785,10 +1982,7 @@ void XmsgImHlrUsrInfoQueryReq::MergeFrom(const XmsgImHlrUsrInfoQueryReq& from) {
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.ext().size() > 0) {
-
-    ext_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.ext_);
-  }
+  ext_.MergeFrom(from.ext_);
 }
 
 void XmsgImHlrUsrInfoQueryReq::CopyFrom(const ::google::protobuf::Message& from) {
@@ -1835,7 +2029,7 @@ void XmsgImHlrUsrInfoQueryRsp_InfoEntry_DoNotUse::MergeFrom(const XmsgImHlrUsrIn
 }
 ::google::protobuf::Metadata XmsgImHlrUsrInfoQueryRsp_InfoEntry_DoNotUse::GetMetadata() const {
   ::protobuf_net_2dx_2dmsg_2dim_2dhlr_2dusr_2ddat_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_net_2dx_2dmsg_2dim_2dhlr_2dusr_2ddat_2eproto::file_level_metadata[5];
+  return ::protobuf_net_2dx_2dmsg_2dim_2dhlr_2dusr_2ddat_2eproto::file_level_metadata[6];
 }
 void XmsgImHlrUsrInfoQueryRsp_InfoEntry_DoNotUse::MergeFrom(
     const ::google::protobuf::Message& other) {
@@ -2207,7 +2401,7 @@ void XmsgImHlrUsrInfoUpdateReq_InfoEntry_DoNotUse::MergeFrom(const XmsgImHlrUsrI
 }
 ::google::protobuf::Metadata XmsgImHlrUsrInfoUpdateReq_InfoEntry_DoNotUse::GetMetadata() const {
   ::protobuf_net_2dx_2dmsg_2dim_2dhlr_2dusr_2ddat_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_net_2dx_2dmsg_2dim_2dhlr_2dusr_2ddat_2eproto::file_level_metadata[7];
+  return ::protobuf_net_2dx_2dmsg_2dim_2dhlr_2dusr_2ddat_2eproto::file_level_metadata[8];
 }
 void XmsgImHlrUsrInfoUpdateReq_InfoEntry_DoNotUse::MergeFrom(
     const ::google::protobuf::Message& other) {
@@ -2572,6 +2766,23 @@ void XmsgImHlrUsrInfoUpdateReq::InternalSwap(XmsgImHlrUsrInfoUpdateReq* other) {
 
 // ===================================================================
 
+XmsgImHlrUsrInfoUpdateRsp_ExtEntry_DoNotUse::XmsgImHlrUsrInfoUpdateRsp_ExtEntry_DoNotUse() {}
+XmsgImHlrUsrInfoUpdateRsp_ExtEntry_DoNotUse::XmsgImHlrUsrInfoUpdateRsp_ExtEntry_DoNotUse(::google::protobuf::Arena* arena) : SuperType(arena) {}
+void XmsgImHlrUsrInfoUpdateRsp_ExtEntry_DoNotUse::MergeFrom(const XmsgImHlrUsrInfoUpdateRsp_ExtEntry_DoNotUse& other) {
+  MergeFromInternal(other);
+}
+::google::protobuf::Metadata XmsgImHlrUsrInfoUpdateRsp_ExtEntry_DoNotUse::GetMetadata() const {
+  ::protobuf_net_2dx_2dmsg_2dim_2dhlr_2dusr_2ddat_2eproto::protobuf_AssignDescriptorsOnce();
+  return ::protobuf_net_2dx_2dmsg_2dim_2dhlr_2dusr_2ddat_2eproto::file_level_metadata[10];
+}
+void XmsgImHlrUsrInfoUpdateRsp_ExtEntry_DoNotUse::MergeFrom(
+    const ::google::protobuf::Message& other) {
+  ::google::protobuf::Message::MergeFrom(other);
+}
+
+
+// ===================================================================
+
 void XmsgImHlrUsrInfoUpdateRsp::InitAsDefaultInstance() {
 }
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
@@ -2591,15 +2802,11 @@ XmsgImHlrUsrInfoUpdateRsp::XmsgImHlrUsrInfoUpdateRsp(const XmsgImHlrUsrInfoUpdat
       _internal_metadata_(NULL),
       _cached_size_(0) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ext_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.ext().size() > 0) {
-    ext_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.ext_);
-  }
+  ext_.MergeFrom(from.ext_);
   // @@protoc_insertion_point(copy_constructor:XmsgImHlrUsrInfoUpdateRsp)
 }
 
 void XmsgImHlrUsrInfoUpdateRsp::SharedCtor() {
-  ext_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   _cached_size_ = 0;
 }
 
@@ -2609,7 +2816,6 @@ XmsgImHlrUsrInfoUpdateRsp::~XmsgImHlrUsrInfoUpdateRsp() {
 }
 
 void XmsgImHlrUsrInfoUpdateRsp::SharedDtor() {
-  ext_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 
 void XmsgImHlrUsrInfoUpdateRsp::SetCachedSize(int size) const {
@@ -2641,7 +2847,7 @@ void XmsgImHlrUsrInfoUpdateRsp::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ext_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  ext_.Clear();
   _internal_metadata_.Clear();
 }
 
@@ -2655,16 +2861,27 @@ bool XmsgImHlrUsrInfoUpdateRsp::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // string ext = 1;
+      // map<string, string> ext = 1;
       case 1: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
             static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_ext()));
+          XmsgImHlrUsrInfoUpdateRsp_ExtEntry_DoNotUse::Parser< ::google::protobuf::internal::MapField<
+              XmsgImHlrUsrInfoUpdateRsp_ExtEntry_DoNotUse,
+              ::std::string, ::std::string,
+              ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+              ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+              0 >,
+            ::google::protobuf::Map< ::std::string, ::std::string > > parser(&ext_);
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+              input, &parser));
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->ext().data(), static_cast<int>(this->ext().length()),
+            parser.key().data(), static_cast<int>(parser.key().length()),
             ::google::protobuf::internal::WireFormatLite::PARSE,
-            "XmsgImHlrUsrInfoUpdateRsp.ext"));
+            "XmsgImHlrUsrInfoUpdateRsp.ExtEntry.key"));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            parser.value().data(), static_cast<int>(parser.value().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "XmsgImHlrUsrInfoUpdateRsp.ExtEntry.value"));
         } else {
           goto handle_unusual;
         }
@@ -2697,14 +2914,57 @@ void XmsgImHlrUsrInfoUpdateRsp::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string ext = 1;
-  if (this->ext().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->ext().data(), static_cast<int>(this->ext().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "XmsgImHlrUsrInfoUpdateRsp.ext");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      1, this->ext(), output);
+  // map<string, string> ext = 1;
+  if (!this->ext().empty()) {
+    typedef ::google::protobuf::Map< ::std::string, ::std::string >::const_pointer
+        ConstPtr;
+    typedef ConstPtr SortItem;
+    typedef ::google::protobuf::internal::CompareByDerefFirst<SortItem> Less;
+    struct Utf8Check {
+      static void Check(ConstPtr p) {
+        ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+          p->first.data(), static_cast<int>(p->first.length()),
+          ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+          "XmsgImHlrUsrInfoUpdateRsp.ExtEntry.key");
+        ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+          p->second.data(), static_cast<int>(p->second.length()),
+          ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+          "XmsgImHlrUsrInfoUpdateRsp.ExtEntry.value");
+      }
+    };
+
+    if (output->IsSerializationDeterministic() &&
+        this->ext().size() > 1) {
+      ::google::protobuf::scoped_array<SortItem> items(
+          new SortItem[this->ext().size()]);
+      typedef ::google::protobuf::Map< ::std::string, ::std::string >::size_type size_type;
+      size_type n = 0;
+      for (::google::protobuf::Map< ::std::string, ::std::string >::const_iterator
+          it = this->ext().begin();
+          it != this->ext().end(); ++it, ++n) {
+        items[static_cast<ptrdiff_t>(n)] = SortItem(&*it);
+      }
+      ::std::sort(&items[0], &items[static_cast<ptrdiff_t>(n)], Less());
+      ::google::protobuf::scoped_ptr<XmsgImHlrUsrInfoUpdateRsp_ExtEntry_DoNotUse> entry;
+      for (size_type i = 0; i < n; i++) {
+        entry.reset(ext_.NewEntryWrapper(
+            items[static_cast<ptrdiff_t>(i)]->first, items[static_cast<ptrdiff_t>(i)]->second));
+        ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+            1, *entry, output);
+        Utf8Check::Check(items[static_cast<ptrdiff_t>(i)]);
+      }
+    } else {
+      ::google::protobuf::scoped_ptr<XmsgImHlrUsrInfoUpdateRsp_ExtEntry_DoNotUse> entry;
+      for (::google::protobuf::Map< ::std::string, ::std::string >::const_iterator
+          it = this->ext().begin();
+          it != this->ext().end(); ++it) {
+        entry.reset(ext_.NewEntryWrapper(
+            it->first, it->second));
+        ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+            1, *entry, output);
+        Utf8Check::Check(&*it);
+      }
+    }
   }
 
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
@@ -2721,15 +2981,61 @@ void XmsgImHlrUsrInfoUpdateRsp::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string ext = 1;
-  if (this->ext().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->ext().data(), static_cast<int>(this->ext().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "XmsgImHlrUsrInfoUpdateRsp.ext");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        1, this->ext(), target);
+  // map<string, string> ext = 1;
+  if (!this->ext().empty()) {
+    typedef ::google::protobuf::Map< ::std::string, ::std::string >::const_pointer
+        ConstPtr;
+    typedef ConstPtr SortItem;
+    typedef ::google::protobuf::internal::CompareByDerefFirst<SortItem> Less;
+    struct Utf8Check {
+      static void Check(ConstPtr p) {
+        ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+          p->first.data(), static_cast<int>(p->first.length()),
+          ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+          "XmsgImHlrUsrInfoUpdateRsp.ExtEntry.key");
+        ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+          p->second.data(), static_cast<int>(p->second.length()),
+          ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+          "XmsgImHlrUsrInfoUpdateRsp.ExtEntry.value");
+      }
+    };
+
+    if (deterministic &&
+        this->ext().size() > 1) {
+      ::google::protobuf::scoped_array<SortItem> items(
+          new SortItem[this->ext().size()]);
+      typedef ::google::protobuf::Map< ::std::string, ::std::string >::size_type size_type;
+      size_type n = 0;
+      for (::google::protobuf::Map< ::std::string, ::std::string >::const_iterator
+          it = this->ext().begin();
+          it != this->ext().end(); ++it, ++n) {
+        items[static_cast<ptrdiff_t>(n)] = SortItem(&*it);
+      }
+      ::std::sort(&items[0], &items[static_cast<ptrdiff_t>(n)], Less());
+      ::google::protobuf::scoped_ptr<XmsgImHlrUsrInfoUpdateRsp_ExtEntry_DoNotUse> entry;
+      for (size_type i = 0; i < n; i++) {
+        entry.reset(ext_.NewEntryWrapper(
+            items[static_cast<ptrdiff_t>(i)]->first, items[static_cast<ptrdiff_t>(i)]->second));
+        target = ::google::protobuf::internal::WireFormatLite::
+                   InternalWriteMessageNoVirtualToArray(
+                       1, *entry, deterministic, target);
+;
+        Utf8Check::Check(items[static_cast<ptrdiff_t>(i)]);
+      }
+    } else {
+      ::google::protobuf::scoped_ptr<XmsgImHlrUsrInfoUpdateRsp_ExtEntry_DoNotUse> entry;
+      for (::google::protobuf::Map< ::std::string, ::std::string >::const_iterator
+          it = this->ext().begin();
+          it != this->ext().end(); ++it) {
+        entry.reset(ext_.NewEntryWrapper(
+            it->first, it->second));
+        target = ::google::protobuf::internal::WireFormatLite::
+                   InternalWriteMessageNoVirtualToArray(
+                       1, *entry, deterministic, target);
+;
+        Utf8Check::Check(&*it);
+      }
+    }
   }
 
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
@@ -2749,11 +3055,18 @@ size_t XmsgImHlrUsrInfoUpdateRsp::ByteSizeLong() const {
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
   }
-  // string ext = 1;
-  if (this->ext().size() > 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->ext());
+  // map<string, string> ext = 1;
+  total_size += 1 *
+      ::google::protobuf::internal::FromIntSize(this->ext_size());
+  {
+    ::google::protobuf::scoped_ptr<XmsgImHlrUsrInfoUpdateRsp_ExtEntry_DoNotUse> entry;
+    for (::google::protobuf::Map< ::std::string, ::std::string >::const_iterator
+        it = this->ext().begin();
+        it != this->ext().end(); ++it) {
+      entry.reset(ext_.NewEntryWrapper(it->first, it->second));
+      total_size += ::google::protobuf::internal::WireFormatLite::
+          MessageSizeNoVirtual(*entry);
+    }
   }
 
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
@@ -2785,10 +3098,7 @@ void XmsgImHlrUsrInfoUpdateRsp::MergeFrom(const XmsgImHlrUsrInfoUpdateRsp& from)
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.ext().size() > 0) {
-
-    ext_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.ext_);
-  }
+  ext_.MergeFrom(from.ext_);
 }
 
 void XmsgImHlrUsrInfoUpdateRsp::CopyFrom(const ::google::protobuf::Message& from) {

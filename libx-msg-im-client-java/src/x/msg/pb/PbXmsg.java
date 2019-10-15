@@ -25701,61 +25701,71 @@ public final class PbXmsg {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string token = 1;</code>
+     * <code>string cgt = 1;</code>
+     */
+    java.lang.String getCgt();
+    /**
+     * <code>string cgt = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getCgtBytes();
+
+    /**
+     * <code>string token = 2;</code>
      */
     java.lang.String getToken();
     /**
-     * <code>string token = 1;</code>
+     * <code>string token = 2;</code>
      */
     com.google.protobuf.ByteString
         getTokenBytes();
 
     /**
-     * <code>string alg = 2;</code>
+     * <code>string alg = 3;</code>
      */
     java.lang.String getAlg();
     /**
-     * <code>string alg = 2;</code>
+     * <code>string alg = 3;</code>
      */
     com.google.protobuf.ByteString
         getAlgBytes();
 
     /**
-     * <code>string slat = 3;</code>
+     * <code>string slat = 4;</code>
      */
     java.lang.String getSlat();
     /**
-     * <code>string slat = 3;</code>
+     * <code>string slat = 4;</code>
      */
     com.google.protobuf.ByteString
         getSlatBytes();
 
     /**
-     * <code>string plat = 4;</code>
+     * <code>string plat = 5;</code>
      */
     java.lang.String getPlat();
     /**
-     * <code>string plat = 4;</code>
+     * <code>string plat = 5;</code>
      */
     com.google.protobuf.ByteString
         getPlatBytes();
 
     /**
-     * <code>string did = 5;</code>
+     * <code>string did = 6;</code>
      */
     java.lang.String getDid();
     /**
-     * <code>string did = 5;</code>
+     * <code>string did = 6;</code>
      */
     com.google.protobuf.ByteString
         getDidBytes();
 
     /**
-     * <code>string sign = 6;</code>
+     * <code>string sign = 7;</code>
      */
     java.lang.String getSign();
     /**
-     * <code>string sign = 6;</code>
+     * <code>string sign = 7;</code>
      */
     com.google.protobuf.ByteString
         getSignBytes();
@@ -25773,6 +25783,7 @@ public final class PbXmsg {
       super(builder);
     }
     private XmsgClientTokenInfo() {
+      cgt_ = "";
       token_ = "";
       alg_ = "";
       slat_ = "";
@@ -25815,34 +25826,40 @@ public final class PbXmsg {
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              token_ = s;
+              cgt_ = s;
               break;
             }
             case 18: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              alg_ = s;
+              token_ = s;
               break;
             }
             case 26: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              slat_ = s;
+              alg_ = s;
               break;
             }
             case 34: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              plat_ = s;
+              slat_ = s;
               break;
             }
             case 42: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              did_ = s;
+              plat_ = s;
               break;
             }
             case 50: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              did_ = s;
+              break;
+            }
+            case 58: {
               java.lang.String s = input.readStringRequireUtf8();
 
               sign_ = s;
@@ -25872,10 +25889,44 @@ public final class PbXmsg {
               x.msg.pb.PbXmsg.XmsgClientTokenInfo.class, x.msg.pb.PbXmsg.XmsgClientTokenInfo.Builder.class);
     }
 
-    public static final int TOKEN_FIELD_NUMBER = 1;
+    public static final int CGT_FIELD_NUMBER = 1;
+    private volatile java.lang.Object cgt_;
+    /**
+     * <code>string cgt = 1;</code>
+     */
+    public java.lang.String getCgt() {
+      java.lang.Object ref = cgt_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        cgt_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string cgt = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getCgtBytes() {
+      java.lang.Object ref = cgt_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        cgt_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int TOKEN_FIELD_NUMBER = 2;
     private volatile java.lang.Object token_;
     /**
-     * <code>string token = 1;</code>
+     * <code>string token = 2;</code>
      */
     public java.lang.String getToken() {
       java.lang.Object ref = token_;
@@ -25890,7 +25941,7 @@ public final class PbXmsg {
       }
     }
     /**
-     * <code>string token = 1;</code>
+     * <code>string token = 2;</code>
      */
     public com.google.protobuf.ByteString
         getTokenBytes() {
@@ -25906,10 +25957,10 @@ public final class PbXmsg {
       }
     }
 
-    public static final int ALG_FIELD_NUMBER = 2;
+    public static final int ALG_FIELD_NUMBER = 3;
     private volatile java.lang.Object alg_;
     /**
-     * <code>string alg = 2;</code>
+     * <code>string alg = 3;</code>
      */
     public java.lang.String getAlg() {
       java.lang.Object ref = alg_;
@@ -25924,7 +25975,7 @@ public final class PbXmsg {
       }
     }
     /**
-     * <code>string alg = 2;</code>
+     * <code>string alg = 3;</code>
      */
     public com.google.protobuf.ByteString
         getAlgBytes() {
@@ -25940,10 +25991,10 @@ public final class PbXmsg {
       }
     }
 
-    public static final int SLAT_FIELD_NUMBER = 3;
+    public static final int SLAT_FIELD_NUMBER = 4;
     private volatile java.lang.Object slat_;
     /**
-     * <code>string slat = 3;</code>
+     * <code>string slat = 4;</code>
      */
     public java.lang.String getSlat() {
       java.lang.Object ref = slat_;
@@ -25958,7 +26009,7 @@ public final class PbXmsg {
       }
     }
     /**
-     * <code>string slat = 3;</code>
+     * <code>string slat = 4;</code>
      */
     public com.google.protobuf.ByteString
         getSlatBytes() {
@@ -25974,10 +26025,10 @@ public final class PbXmsg {
       }
     }
 
-    public static final int PLAT_FIELD_NUMBER = 4;
+    public static final int PLAT_FIELD_NUMBER = 5;
     private volatile java.lang.Object plat_;
     /**
-     * <code>string plat = 4;</code>
+     * <code>string plat = 5;</code>
      */
     public java.lang.String getPlat() {
       java.lang.Object ref = plat_;
@@ -25992,7 +26043,7 @@ public final class PbXmsg {
       }
     }
     /**
-     * <code>string plat = 4;</code>
+     * <code>string plat = 5;</code>
      */
     public com.google.protobuf.ByteString
         getPlatBytes() {
@@ -26008,10 +26059,10 @@ public final class PbXmsg {
       }
     }
 
-    public static final int DID_FIELD_NUMBER = 5;
+    public static final int DID_FIELD_NUMBER = 6;
     private volatile java.lang.Object did_;
     /**
-     * <code>string did = 5;</code>
+     * <code>string did = 6;</code>
      */
     public java.lang.String getDid() {
       java.lang.Object ref = did_;
@@ -26026,7 +26077,7 @@ public final class PbXmsg {
       }
     }
     /**
-     * <code>string did = 5;</code>
+     * <code>string did = 6;</code>
      */
     public com.google.protobuf.ByteString
         getDidBytes() {
@@ -26042,10 +26093,10 @@ public final class PbXmsg {
       }
     }
 
-    public static final int SIGN_FIELD_NUMBER = 6;
+    public static final int SIGN_FIELD_NUMBER = 7;
     private volatile java.lang.Object sign_;
     /**
-     * <code>string sign = 6;</code>
+     * <code>string sign = 7;</code>
      */
     public java.lang.String getSign() {
       java.lang.Object ref = sign_;
@@ -26060,7 +26111,7 @@ public final class PbXmsg {
       }
     }
     /**
-     * <code>string sign = 6;</code>
+     * <code>string sign = 7;</code>
      */
     public com.google.protobuf.ByteString
         getSignBytes() {
@@ -26088,23 +26139,26 @@ public final class PbXmsg {
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      if (!getCgtBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, cgt_);
+      }
       if (!getTokenBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, token_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, token_);
       }
       if (!getAlgBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, alg_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, alg_);
       }
       if (!getSlatBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, slat_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, slat_);
       }
       if (!getPlatBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, plat_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, plat_);
       }
       if (!getDidBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, did_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, did_);
       }
       if (!getSignBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, sign_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, sign_);
       }
       unknownFields.writeTo(output);
     }
@@ -26114,23 +26168,26 @@ public final class PbXmsg {
       if (size != -1) return size;
 
       size = 0;
+      if (!getCgtBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, cgt_);
+      }
       if (!getTokenBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, token_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, token_);
       }
       if (!getAlgBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, alg_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, alg_);
       }
       if (!getSlatBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, slat_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, slat_);
       }
       if (!getPlatBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, plat_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, plat_);
       }
       if (!getDidBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, did_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, did_);
       }
       if (!getSignBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, sign_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, sign_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -26148,6 +26205,8 @@ public final class PbXmsg {
       x.msg.pb.PbXmsg.XmsgClientTokenInfo other = (x.msg.pb.PbXmsg.XmsgClientTokenInfo) obj;
 
       boolean result = true;
+      result = result && getCgt()
+          .equals(other.getCgt());
       result = result && getToken()
           .equals(other.getToken());
       result = result && getAlg()
@@ -26171,6 +26230,8 @@ public final class PbXmsg {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + CGT_FIELD_NUMBER;
+      hash = (53 * hash) + getCgt().hashCode();
       hash = (37 * hash) + TOKEN_FIELD_NUMBER;
       hash = (53 * hash) + getToken().hashCode();
       hash = (37 * hash) + ALG_FIELD_NUMBER;
@@ -26312,6 +26373,8 @@ public final class PbXmsg {
       }
       public Builder clear() {
         super.clear();
+        cgt_ = "";
+
         token_ = "";
 
         alg_ = "";
@@ -26346,6 +26409,7 @@ public final class PbXmsg {
 
       public x.msg.pb.PbXmsg.XmsgClientTokenInfo buildPartial() {
         x.msg.pb.PbXmsg.XmsgClientTokenInfo result = new x.msg.pb.PbXmsg.XmsgClientTokenInfo(this);
+        result.cgt_ = cgt_;
         result.token_ = token_;
         result.alg_ = alg_;
         result.slat_ = slat_;
@@ -26393,6 +26457,10 @@ public final class PbXmsg {
 
       public Builder mergeFrom(x.msg.pb.PbXmsg.XmsgClientTokenInfo other) {
         if (other == x.msg.pb.PbXmsg.XmsgClientTokenInfo.getDefaultInstance()) return this;
+        if (!other.getCgt().isEmpty()) {
+          cgt_ = other.cgt_;
+          onChanged();
+        }
         if (!other.getToken().isEmpty()) {
           token_ = other.token_;
           onChanged();
@@ -26444,9 +26512,78 @@ public final class PbXmsg {
         return this;
       }
 
+      private java.lang.Object cgt_ = "";
+      /**
+       * <code>string cgt = 1;</code>
+       */
+      public java.lang.String getCgt() {
+        java.lang.Object ref = cgt_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          cgt_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string cgt = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getCgtBytes() {
+        java.lang.Object ref = cgt_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          cgt_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string cgt = 1;</code>
+       */
+      public Builder setCgt(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        cgt_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string cgt = 1;</code>
+       */
+      public Builder clearCgt() {
+        
+        cgt_ = getDefaultInstance().getCgt();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string cgt = 1;</code>
+       */
+      public Builder setCgtBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        cgt_ = value;
+        onChanged();
+        return this;
+      }
+
       private java.lang.Object token_ = "";
       /**
-       * <code>string token = 1;</code>
+       * <code>string token = 2;</code>
        */
       public java.lang.String getToken() {
         java.lang.Object ref = token_;
@@ -26461,7 +26598,7 @@ public final class PbXmsg {
         }
       }
       /**
-       * <code>string token = 1;</code>
+       * <code>string token = 2;</code>
        */
       public com.google.protobuf.ByteString
           getTokenBytes() {
@@ -26477,7 +26614,7 @@ public final class PbXmsg {
         }
       }
       /**
-       * <code>string token = 1;</code>
+       * <code>string token = 2;</code>
        */
       public Builder setToken(
           java.lang.String value) {
@@ -26490,7 +26627,7 @@ public final class PbXmsg {
         return this;
       }
       /**
-       * <code>string token = 1;</code>
+       * <code>string token = 2;</code>
        */
       public Builder clearToken() {
         
@@ -26499,7 +26636,7 @@ public final class PbXmsg {
         return this;
       }
       /**
-       * <code>string token = 1;</code>
+       * <code>string token = 2;</code>
        */
       public Builder setTokenBytes(
           com.google.protobuf.ByteString value) {
@@ -26515,7 +26652,7 @@ public final class PbXmsg {
 
       private java.lang.Object alg_ = "";
       /**
-       * <code>string alg = 2;</code>
+       * <code>string alg = 3;</code>
        */
       public java.lang.String getAlg() {
         java.lang.Object ref = alg_;
@@ -26530,7 +26667,7 @@ public final class PbXmsg {
         }
       }
       /**
-       * <code>string alg = 2;</code>
+       * <code>string alg = 3;</code>
        */
       public com.google.protobuf.ByteString
           getAlgBytes() {
@@ -26546,7 +26683,7 @@ public final class PbXmsg {
         }
       }
       /**
-       * <code>string alg = 2;</code>
+       * <code>string alg = 3;</code>
        */
       public Builder setAlg(
           java.lang.String value) {
@@ -26559,7 +26696,7 @@ public final class PbXmsg {
         return this;
       }
       /**
-       * <code>string alg = 2;</code>
+       * <code>string alg = 3;</code>
        */
       public Builder clearAlg() {
         
@@ -26568,7 +26705,7 @@ public final class PbXmsg {
         return this;
       }
       /**
-       * <code>string alg = 2;</code>
+       * <code>string alg = 3;</code>
        */
       public Builder setAlgBytes(
           com.google.protobuf.ByteString value) {
@@ -26584,7 +26721,7 @@ public final class PbXmsg {
 
       private java.lang.Object slat_ = "";
       /**
-       * <code>string slat = 3;</code>
+       * <code>string slat = 4;</code>
        */
       public java.lang.String getSlat() {
         java.lang.Object ref = slat_;
@@ -26599,7 +26736,7 @@ public final class PbXmsg {
         }
       }
       /**
-       * <code>string slat = 3;</code>
+       * <code>string slat = 4;</code>
        */
       public com.google.protobuf.ByteString
           getSlatBytes() {
@@ -26615,7 +26752,7 @@ public final class PbXmsg {
         }
       }
       /**
-       * <code>string slat = 3;</code>
+       * <code>string slat = 4;</code>
        */
       public Builder setSlat(
           java.lang.String value) {
@@ -26628,7 +26765,7 @@ public final class PbXmsg {
         return this;
       }
       /**
-       * <code>string slat = 3;</code>
+       * <code>string slat = 4;</code>
        */
       public Builder clearSlat() {
         
@@ -26637,7 +26774,7 @@ public final class PbXmsg {
         return this;
       }
       /**
-       * <code>string slat = 3;</code>
+       * <code>string slat = 4;</code>
        */
       public Builder setSlatBytes(
           com.google.protobuf.ByteString value) {
@@ -26653,7 +26790,7 @@ public final class PbXmsg {
 
       private java.lang.Object plat_ = "";
       /**
-       * <code>string plat = 4;</code>
+       * <code>string plat = 5;</code>
        */
       public java.lang.String getPlat() {
         java.lang.Object ref = plat_;
@@ -26668,7 +26805,7 @@ public final class PbXmsg {
         }
       }
       /**
-       * <code>string plat = 4;</code>
+       * <code>string plat = 5;</code>
        */
       public com.google.protobuf.ByteString
           getPlatBytes() {
@@ -26684,7 +26821,7 @@ public final class PbXmsg {
         }
       }
       /**
-       * <code>string plat = 4;</code>
+       * <code>string plat = 5;</code>
        */
       public Builder setPlat(
           java.lang.String value) {
@@ -26697,7 +26834,7 @@ public final class PbXmsg {
         return this;
       }
       /**
-       * <code>string plat = 4;</code>
+       * <code>string plat = 5;</code>
        */
       public Builder clearPlat() {
         
@@ -26706,7 +26843,7 @@ public final class PbXmsg {
         return this;
       }
       /**
-       * <code>string plat = 4;</code>
+       * <code>string plat = 5;</code>
        */
       public Builder setPlatBytes(
           com.google.protobuf.ByteString value) {
@@ -26722,7 +26859,7 @@ public final class PbXmsg {
 
       private java.lang.Object did_ = "";
       /**
-       * <code>string did = 5;</code>
+       * <code>string did = 6;</code>
        */
       public java.lang.String getDid() {
         java.lang.Object ref = did_;
@@ -26737,7 +26874,7 @@ public final class PbXmsg {
         }
       }
       /**
-       * <code>string did = 5;</code>
+       * <code>string did = 6;</code>
        */
       public com.google.protobuf.ByteString
           getDidBytes() {
@@ -26753,7 +26890,7 @@ public final class PbXmsg {
         }
       }
       /**
-       * <code>string did = 5;</code>
+       * <code>string did = 6;</code>
        */
       public Builder setDid(
           java.lang.String value) {
@@ -26766,7 +26903,7 @@ public final class PbXmsg {
         return this;
       }
       /**
-       * <code>string did = 5;</code>
+       * <code>string did = 6;</code>
        */
       public Builder clearDid() {
         
@@ -26775,7 +26912,7 @@ public final class PbXmsg {
         return this;
       }
       /**
-       * <code>string did = 5;</code>
+       * <code>string did = 6;</code>
        */
       public Builder setDidBytes(
           com.google.protobuf.ByteString value) {
@@ -26791,7 +26928,7 @@ public final class PbXmsg {
 
       private java.lang.Object sign_ = "";
       /**
-       * <code>string sign = 6;</code>
+       * <code>string sign = 7;</code>
        */
       public java.lang.String getSign() {
         java.lang.Object ref = sign_;
@@ -26806,7 +26943,7 @@ public final class PbXmsg {
         }
       }
       /**
-       * <code>string sign = 6;</code>
+       * <code>string sign = 7;</code>
        */
       public com.google.protobuf.ByteString
           getSignBytes() {
@@ -26822,7 +26959,7 @@ public final class PbXmsg {
         }
       }
       /**
-       * <code>string sign = 6;</code>
+       * <code>string sign = 7;</code>
        */
       public Builder setSign(
           java.lang.String value) {
@@ -26835,7 +26972,7 @@ public final class PbXmsg {
         return this;
       }
       /**
-       * <code>string sign = 6;</code>
+       * <code>string sign = 7;</code>
        */
       public Builder clearSign() {
         
@@ -26844,7 +26981,7 @@ public final class PbXmsg {
         return this;
       }
       /**
-       * <code>string sign = 6;</code>
+       * <code>string sign = 7;</code>
        */
       public Builder setSignBytes(
           com.google.protobuf.ByteString value) {
@@ -39788,14 +39925,48 @@ public final class PbXmsg {
         getAlgBytes();
 
     /**
-     * <code>string ext = 5;</code>
+     * <code>string cgt = 5;</code>
      */
-    java.lang.String getExt();
+    java.lang.String getCgt();
     /**
-     * <code>string ext = 5;</code>
+     * <code>string cgt = 5;</code>
      */
     com.google.protobuf.ByteString
-        getExtBytes();
+        getCgtBytes();
+
+    /**
+     * <code>map&lt;string, string&gt; ext = 6;</code>
+     */
+    int getExtCount();
+    /**
+     * <code>map&lt;string, string&gt; ext = 6;</code>
+     */
+    boolean containsExt(
+        java.lang.String key);
+    /**
+     * Use {@link #getExtMap()} instead.
+     */
+    @java.lang.Deprecated
+    java.util.Map<java.lang.String, java.lang.String>
+    getExt();
+    /**
+     * <code>map&lt;string, string&gt; ext = 6;</code>
+     */
+    java.util.Map<java.lang.String, java.lang.String>
+    getExtMap();
+    /**
+     * <code>map&lt;string, string&gt; ext = 6;</code>
+     */
+
+    java.lang.String getExtOrDefault(
+        java.lang.String key,
+        java.lang.String defaultValue);
+    /**
+     * <code>map&lt;string, string&gt; ext = 6;</code>
+     */
+
+    java.lang.String getExtOrThrow(
+        java.lang.String key);
   }
   /**
    * Protobuf type {@code XmsgImHlrAttachSimpleReq}
@@ -39814,7 +39985,7 @@ public final class PbXmsg {
       salt_ = "";
       sign_ = "";
       alg_ = "";
-      ext_ = "";
+      cgt_ = "";
     }
 
     @java.lang.Override
@@ -39875,7 +40046,20 @@ public final class PbXmsg {
             case 42: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              ext_ = s;
+              cgt_ = s;
+              break;
+            }
+            case 50: {
+              if (!((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+                ext_ = com.google.protobuf.MapField.newMapField(
+                    ExtDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000020;
+              }
+              com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+              ext__ = input.readMessage(
+                  ExtDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              ext_.getMutableMap().put(
+                  ext__.getKey(), ext__.getValue());
               break;
             }
           }
@@ -39895,6 +40079,17 @@ public final class PbXmsg {
       return x.msg.pb.PbXmsg.internal_static_XmsgImHlrAttachSimpleReq_descriptor;
     }
 
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapField internalGetMapField(
+        int number) {
+      switch (number) {
+        case 6:
+          return internalGetExt();
+        default:
+          throw new RuntimeException(
+              "Invalid map field number: " + number);
+      }
+    }
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return x.msg.pb.PbXmsg.internal_static_XmsgImHlrAttachSimpleReq_fieldAccessorTable
@@ -39902,6 +40097,7 @@ public final class PbXmsg {
               x.msg.pb.PbXmsg.XmsgImHlrAttachSimpleReq.class, x.msg.pb.PbXmsg.XmsgImHlrAttachSimpleReq.Builder.class);
     }
 
+    private int bitField0_;
     public static final int TOKEN_FIELD_NUMBER = 1;
     private volatile java.lang.Object token_;
     /**
@@ -40038,38 +40234,114 @@ public final class PbXmsg {
       }
     }
 
-    public static final int EXT_FIELD_NUMBER = 5;
-    private volatile java.lang.Object ext_;
+    public static final int CGT_FIELD_NUMBER = 5;
+    private volatile java.lang.Object cgt_;
     /**
-     * <code>string ext = 5;</code>
+     * <code>string cgt = 5;</code>
      */
-    public java.lang.String getExt() {
-      java.lang.Object ref = ext_;
+    public java.lang.String getCgt() {
+      java.lang.Object ref = cgt_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        ext_ = s;
+        cgt_ = s;
         return s;
       }
     }
     /**
-     * <code>string ext = 5;</code>
+     * <code>string cgt = 5;</code>
      */
     public com.google.protobuf.ByteString
-        getExtBytes() {
-      java.lang.Object ref = ext_;
+        getCgtBytes() {
+      java.lang.Object ref = cgt_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        ext_ = b;
+        cgt_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
+    }
+
+    public static final int EXT_FIELD_NUMBER = 6;
+    private static final class ExtDefaultEntryHolder {
+      static final com.google.protobuf.MapEntry<
+          java.lang.String, java.lang.String> defaultEntry =
+              com.google.protobuf.MapEntry
+              .<java.lang.String, java.lang.String>newDefaultInstance(
+                  x.msg.pb.PbXmsg.internal_static_XmsgImHlrAttachSimpleReq_ExtEntry_descriptor, 
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "",
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "");
+    }
+    private com.google.protobuf.MapField<
+        java.lang.String, java.lang.String> ext_;
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+    internalGetExt() {
+      if (ext_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            ExtDefaultEntryHolder.defaultEntry);
+      }
+      return ext_;
+    }
+
+    public int getExtCount() {
+      return internalGetExt().getMap().size();
+    }
+    /**
+     * <code>map&lt;string, string&gt; ext = 6;</code>
+     */
+
+    public boolean containsExt(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      return internalGetExt().getMap().containsKey(key);
+    }
+    /**
+     * Use {@link #getExtMap()} instead.
+     */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getExt() {
+      return getExtMap();
+    }
+    /**
+     * <code>map&lt;string, string&gt; ext = 6;</code>
+     */
+
+    public java.util.Map<java.lang.String, java.lang.String> getExtMap() {
+      return internalGetExt().getMap();
+    }
+    /**
+     * <code>map&lt;string, string&gt; ext = 6;</code>
+     */
+
+    public java.lang.String getExtOrDefault(
+        java.lang.String key,
+        java.lang.String defaultValue) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetExt().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <code>map&lt;string, string&gt; ext = 6;</code>
+     */
+
+    public java.lang.String getExtOrThrow(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetExt().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -40096,9 +40368,15 @@ public final class PbXmsg {
       if (!getAlgBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, alg_);
       }
-      if (!getExtBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, ext_);
+      if (!getCgtBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, cgt_);
       }
+      com.google.protobuf.GeneratedMessageV3
+        .serializeStringMapTo(
+          output,
+          internalGetExt(),
+          ExtDefaultEntryHolder.defaultEntry,
+          6);
       unknownFields.writeTo(output);
     }
 
@@ -40119,8 +40397,18 @@ public final class PbXmsg {
       if (!getAlgBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, alg_);
       }
-      if (!getExtBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, ext_);
+      if (!getCgtBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, cgt_);
+      }
+      for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
+           : internalGetExt().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+        ext__ = ExtDefaultEntryHolder.defaultEntry.newBuilderForType()
+            .setKey(entry.getKey())
+            .setValue(entry.getValue())
+            .build();
+        size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(6, ext__);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -40146,8 +40434,10 @@ public final class PbXmsg {
           .equals(other.getSign());
       result = result && getAlg()
           .equals(other.getAlg());
-      result = result && getExt()
-          .equals(other.getExt());
+      result = result && getCgt()
+          .equals(other.getCgt());
+      result = result && internalGetExt().equals(
+          other.internalGetExt());
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -40167,8 +40457,12 @@ public final class PbXmsg {
       hash = (53 * hash) + getSign().hashCode();
       hash = (37 * hash) + ALG_FIELD_NUMBER;
       hash = (53 * hash) + getAlg().hashCode();
-      hash = (37 * hash) + EXT_FIELD_NUMBER;
-      hash = (53 * hash) + getExt().hashCode();
+      hash = (37 * hash) + CGT_FIELD_NUMBER;
+      hash = (53 * hash) + getCgt().hashCode();
+      if (!internalGetExt().getMap().isEmpty()) {
+        hash = (37 * hash) + EXT_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetExt().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -40274,6 +40568,28 @@ public final class PbXmsg {
         return x.msg.pb.PbXmsg.internal_static_XmsgImHlrAttachSimpleReq_descriptor;
       }
 
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapField internalGetMapField(
+          int number) {
+        switch (number) {
+          case 6:
+            return internalGetExt();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapField internalGetMutableMapField(
+          int number) {
+        switch (number) {
+          case 6:
+            return internalGetMutableExt();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return x.msg.pb.PbXmsg.internal_static_XmsgImHlrAttachSimpleReq_fieldAccessorTable
@@ -40306,8 +40622,9 @@ public final class PbXmsg {
 
         alg_ = "";
 
-        ext_ = "";
+        cgt_ = "";
 
+        internalGetMutableExt().clear();
         return this;
       }
 
@@ -40330,11 +40647,16 @@ public final class PbXmsg {
 
       public x.msg.pb.PbXmsg.XmsgImHlrAttachSimpleReq buildPartial() {
         x.msg.pb.PbXmsg.XmsgImHlrAttachSimpleReq result = new x.msg.pb.PbXmsg.XmsgImHlrAttachSimpleReq(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
         result.token_ = token_;
         result.salt_ = salt_;
         result.sign_ = sign_;
         result.alg_ = alg_;
-        result.ext_ = ext_;
+        result.cgt_ = cgt_;
+        result.ext_ = internalGetExt();
+        result.ext_.makeImmutable();
+        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -40392,10 +40714,12 @@ public final class PbXmsg {
           alg_ = other.alg_;
           onChanged();
         }
-        if (!other.getExt().isEmpty()) {
-          ext_ = other.ext_;
+        if (!other.getCgt().isEmpty()) {
+          cgt_ = other.cgt_;
           onChanged();
         }
+        internalGetMutableExt().mergeFrom(
+            other.internalGetExt());
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -40422,6 +40746,7 @@ public final class PbXmsg {
         }
         return this;
       }
+      private int bitField0_;
 
       private java.lang.Object token_ = "";
       /**
@@ -40699,72 +41024,195 @@ public final class PbXmsg {
         return this;
       }
 
-      private java.lang.Object ext_ = "";
+      private java.lang.Object cgt_ = "";
       /**
-       * <code>string ext = 5;</code>
+       * <code>string cgt = 5;</code>
        */
-      public java.lang.String getExt() {
-        java.lang.Object ref = ext_;
+      public java.lang.String getCgt() {
+        java.lang.Object ref = cgt_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          ext_ = s;
+          cgt_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>string ext = 5;</code>
+       * <code>string cgt = 5;</code>
        */
       public com.google.protobuf.ByteString
-          getExtBytes() {
-        java.lang.Object ref = ext_;
+          getCgtBytes() {
+        java.lang.Object ref = cgt_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          ext_ = b;
+          cgt_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>string ext = 5;</code>
+       * <code>string cgt = 5;</code>
        */
-      public Builder setExt(
+      public Builder setCgt(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        ext_ = value;
+        cgt_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string ext = 5;</code>
+       * <code>string cgt = 5;</code>
        */
-      public Builder clearExt() {
+      public Builder clearCgt() {
         
-        ext_ = getDefaultInstance().getExt();
+        cgt_ = getDefaultInstance().getCgt();
         onChanged();
         return this;
       }
       /**
-       * <code>string ext = 5;</code>
+       * <code>string cgt = 5;</code>
        */
-      public Builder setExtBytes(
+      public Builder setCgtBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        ext_ = value;
+        cgt_ = value;
         onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.MapField<
+          java.lang.String, java.lang.String> ext_;
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      internalGetExt() {
+        if (ext_ == null) {
+          return com.google.protobuf.MapField.emptyMapField(
+              ExtDefaultEntryHolder.defaultEntry);
+        }
+        return ext_;
+      }
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      internalGetMutableExt() {
+        onChanged();;
+        if (ext_ == null) {
+          ext_ = com.google.protobuf.MapField.newMapField(
+              ExtDefaultEntryHolder.defaultEntry);
+        }
+        if (!ext_.isMutable()) {
+          ext_ = ext_.copy();
+        }
+        return ext_;
+      }
+
+      public int getExtCount() {
+        return internalGetExt().getMap().size();
+      }
+      /**
+       * <code>map&lt;string, string&gt; ext = 6;</code>
+       */
+
+      public boolean containsExt(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        return internalGetExt().getMap().containsKey(key);
+      }
+      /**
+       * Use {@link #getExtMap()} instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.String> getExt() {
+        return getExtMap();
+      }
+      /**
+       * <code>map&lt;string, string&gt; ext = 6;</code>
+       */
+
+      public java.util.Map<java.lang.String, java.lang.String> getExtMap() {
+        return internalGetExt().getMap();
+      }
+      /**
+       * <code>map&lt;string, string&gt; ext = 6;</code>
+       */
+
+      public java.lang.String getExtOrDefault(
+          java.lang.String key,
+          java.lang.String defaultValue) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, java.lang.String> map =
+            internalGetExt().getMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+      /**
+       * <code>map&lt;string, string&gt; ext = 6;</code>
+       */
+
+      public java.lang.String getExtOrThrow(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, java.lang.String> map =
+            internalGetExt().getMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+
+      public Builder clearExt() {
+        internalGetMutableExt().getMutableMap()
+            .clear();
+        return this;
+      }
+      /**
+       * <code>map&lt;string, string&gt; ext = 6;</code>
+       */
+
+      public Builder removeExt(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutableExt().getMutableMap()
+            .remove(key);
+        return this;
+      }
+      /**
+       * Use alternate mutation accessors instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.String>
+      getMutableExt() {
+        return internalGetMutableExt().getMutableMap();
+      }
+      /**
+       * <code>map&lt;string, string&gt; ext = 6;</code>
+       */
+      public Builder putExt(
+          java.lang.String key,
+          java.lang.String value) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        if (value == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutableExt().getMutableMap()
+            .put(key, value);
+        return this;
+      }
+      /**
+       * <code>map&lt;string, string&gt; ext = 6;</code>
+       */
+
+      public Builder putAllExt(
+          java.util.Map<java.lang.String, java.lang.String> values) {
+        internalGetMutableExt().getMutableMap()
+            .putAll(values);
         return this;
       }
       public final Builder setUnknownFields(
@@ -40821,24 +41269,38 @@ public final class PbXmsg {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string cgt = 1;</code>
+     * <code>map&lt;string, string&gt; ext = 1;</code>
      */
-    java.lang.String getCgt();
+    int getExtCount();
     /**
-     * <code>string cgt = 1;</code>
+     * <code>map&lt;string, string&gt; ext = 1;</code>
      */
-    com.google.protobuf.ByteString
-        getCgtBytes();
+    boolean containsExt(
+        java.lang.String key);
+    /**
+     * Use {@link #getExtMap()} instead.
+     */
+    @java.lang.Deprecated
+    java.util.Map<java.lang.String, java.lang.String>
+    getExt();
+    /**
+     * <code>map&lt;string, string&gt; ext = 1;</code>
+     */
+    java.util.Map<java.lang.String, java.lang.String>
+    getExtMap();
+    /**
+     * <code>map&lt;string, string&gt; ext = 1;</code>
+     */
 
+    java.lang.String getExtOrDefault(
+        java.lang.String key,
+        java.lang.String defaultValue);
     /**
-     * <code>string ext = 2;</code>
+     * <code>map&lt;string, string&gt; ext = 1;</code>
      */
-    java.lang.String getExt();
-    /**
-     * <code>string ext = 2;</code>
-     */
-    com.google.protobuf.ByteString
-        getExtBytes();
+
+    java.lang.String getExtOrThrow(
+        java.lang.String key);
   }
   /**
    * Protobuf type {@code XmsgImHlrAttachSimpleRsp}
@@ -40853,8 +41315,6 @@ public final class PbXmsg {
       super(builder);
     }
     private XmsgImHlrAttachSimpleRsp() {
-      cgt_ = "";
-      ext_ = "";
     }
 
     @java.lang.Override
@@ -40889,15 +41349,16 @@ public final class PbXmsg {
               break;
             }
             case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              cgt_ = s;
-              break;
-            }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              ext_ = s;
+              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                ext_ = com.google.protobuf.MapField.newMapField(
+                    ExtDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000001;
+              }
+              com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+              ext__ = input.readMessage(
+                  ExtDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              ext_.getMutableMap().put(
+                  ext__.getKey(), ext__.getValue());
               break;
             }
           }
@@ -40917,6 +41378,17 @@ public final class PbXmsg {
       return x.msg.pb.PbXmsg.internal_static_XmsgImHlrAttachSimpleRsp_descriptor;
     }
 
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapField internalGetMapField(
+        int number) {
+      switch (number) {
+        case 1:
+          return internalGetExt();
+        default:
+          throw new RuntimeException(
+              "Invalid map field number: " + number);
+      }
+    }
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return x.msg.pb.PbXmsg.internal_static_XmsgImHlrAttachSimpleRsp_fieldAccessorTable
@@ -40924,72 +41396,80 @@ public final class PbXmsg {
               x.msg.pb.PbXmsg.XmsgImHlrAttachSimpleRsp.class, x.msg.pb.PbXmsg.XmsgImHlrAttachSimpleRsp.Builder.class);
     }
 
-    public static final int CGT_FIELD_NUMBER = 1;
-    private volatile java.lang.Object cgt_;
-    /**
-     * <code>string cgt = 1;</code>
-     */
-    public java.lang.String getCgt() {
-      java.lang.Object ref = cgt_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        cgt_ = s;
-        return s;
-      }
+    public static final int EXT_FIELD_NUMBER = 1;
+    private static final class ExtDefaultEntryHolder {
+      static final com.google.protobuf.MapEntry<
+          java.lang.String, java.lang.String> defaultEntry =
+              com.google.protobuf.MapEntry
+              .<java.lang.String, java.lang.String>newDefaultInstance(
+                  x.msg.pb.PbXmsg.internal_static_XmsgImHlrAttachSimpleRsp_ExtEntry_descriptor, 
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "",
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "");
     }
-    /**
-     * <code>string cgt = 1;</code>
-     */
-    public com.google.protobuf.ByteString
-        getCgtBytes() {
-      java.lang.Object ref = cgt_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        cgt_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
+    private com.google.protobuf.MapField<
+        java.lang.String, java.lang.String> ext_;
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+    internalGetExt() {
+      if (ext_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            ExtDefaultEntryHolder.defaultEntry);
       }
+      return ext_;
     }
 
-    public static final int EXT_FIELD_NUMBER = 2;
-    private volatile java.lang.Object ext_;
-    /**
-     * <code>string ext = 2;</code>
-     */
-    public java.lang.String getExt() {
-      java.lang.Object ref = ext_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        ext_ = s;
-        return s;
-      }
+    public int getExtCount() {
+      return internalGetExt().getMap().size();
     }
     /**
-     * <code>string ext = 2;</code>
+     * <code>map&lt;string, string&gt; ext = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getExtBytes() {
-      java.lang.Object ref = ext_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        ext_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
+
+    public boolean containsExt(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      return internalGetExt().getMap().containsKey(key);
+    }
+    /**
+     * Use {@link #getExtMap()} instead.
+     */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getExt() {
+      return getExtMap();
+    }
+    /**
+     * <code>map&lt;string, string&gt; ext = 1;</code>
+     */
+
+    public java.util.Map<java.lang.String, java.lang.String> getExtMap() {
+      return internalGetExt().getMap();
+    }
+    /**
+     * <code>map&lt;string, string&gt; ext = 1;</code>
+     */
+
+    public java.lang.String getExtOrDefault(
+        java.lang.String key,
+        java.lang.String defaultValue) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetExt().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <code>map&lt;string, string&gt; ext = 1;</code>
+     */
+
+    public java.lang.String getExtOrThrow(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetExt().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
       }
+      return map.get(key);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -41004,12 +41484,12 @@ public final class PbXmsg {
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getCgtBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, cgt_);
-      }
-      if (!getExtBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, ext_);
-      }
+      com.google.protobuf.GeneratedMessageV3
+        .serializeStringMapTo(
+          output,
+          internalGetExt(),
+          ExtDefaultEntryHolder.defaultEntry,
+          1);
       unknownFields.writeTo(output);
     }
 
@@ -41018,11 +41498,15 @@ public final class PbXmsg {
       if (size != -1) return size;
 
       size = 0;
-      if (!getCgtBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, cgt_);
-      }
-      if (!getExtBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, ext_);
+      for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
+           : internalGetExt().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+        ext__ = ExtDefaultEntryHolder.defaultEntry.newBuilderForType()
+            .setKey(entry.getKey())
+            .setValue(entry.getValue())
+            .build();
+        size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(1, ext__);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -41040,10 +41524,8 @@ public final class PbXmsg {
       x.msg.pb.PbXmsg.XmsgImHlrAttachSimpleRsp other = (x.msg.pb.PbXmsg.XmsgImHlrAttachSimpleRsp) obj;
 
       boolean result = true;
-      result = result && getCgt()
-          .equals(other.getCgt());
-      result = result && getExt()
-          .equals(other.getExt());
+      result = result && internalGetExt().equals(
+          other.internalGetExt());
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -41055,10 +41537,10 @@ public final class PbXmsg {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + CGT_FIELD_NUMBER;
-      hash = (53 * hash) + getCgt().hashCode();
-      hash = (37 * hash) + EXT_FIELD_NUMBER;
-      hash = (53 * hash) + getExt().hashCode();
+      if (!internalGetExt().getMap().isEmpty()) {
+        hash = (37 * hash) + EXT_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetExt().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -41164,6 +41646,28 @@ public final class PbXmsg {
         return x.msg.pb.PbXmsg.internal_static_XmsgImHlrAttachSimpleRsp_descriptor;
       }
 
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapField internalGetMapField(
+          int number) {
+        switch (number) {
+          case 1:
+            return internalGetExt();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapField internalGetMutableMapField(
+          int number) {
+        switch (number) {
+          case 1:
+            return internalGetMutableExt();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return x.msg.pb.PbXmsg.internal_static_XmsgImHlrAttachSimpleRsp_fieldAccessorTable
@@ -41188,10 +41692,7 @@ public final class PbXmsg {
       }
       public Builder clear() {
         super.clear();
-        cgt_ = "";
-
-        ext_ = "";
-
+        internalGetMutableExt().clear();
         return this;
       }
 
@@ -41214,8 +41715,9 @@ public final class PbXmsg {
 
       public x.msg.pb.PbXmsg.XmsgImHlrAttachSimpleRsp buildPartial() {
         x.msg.pb.PbXmsg.XmsgImHlrAttachSimpleRsp result = new x.msg.pb.PbXmsg.XmsgImHlrAttachSimpleRsp(this);
-        result.cgt_ = cgt_;
-        result.ext_ = ext_;
+        int from_bitField0_ = bitField0_;
+        result.ext_ = internalGetExt();
+        result.ext_.makeImmutable();
         onBuilt();
         return result;
       }
@@ -41257,14 +41759,8 @@ public final class PbXmsg {
 
       public Builder mergeFrom(x.msg.pb.PbXmsg.XmsgImHlrAttachSimpleRsp other) {
         if (other == x.msg.pb.PbXmsg.XmsgImHlrAttachSimpleRsp.getDefaultInstance()) return this;
-        if (!other.getCgt().isEmpty()) {
-          cgt_ = other.cgt_;
-          onChanged();
-        }
-        if (!other.getExt().isEmpty()) {
-          ext_ = other.ext_;
-          onChanged();
-        }
+        internalGetMutableExt().mergeFrom(
+            other.internalGetExt());
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -41291,142 +41787,128 @@ public final class PbXmsg {
         }
         return this;
       }
+      private int bitField0_;
 
-      private java.lang.Object cgt_ = "";
-      /**
-       * <code>string cgt = 1;</code>
-       */
-      public java.lang.String getCgt() {
-        java.lang.Object ref = cgt_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          cgt_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
+      private com.google.protobuf.MapField<
+          java.lang.String, java.lang.String> ext_;
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      internalGetExt() {
+        if (ext_ == null) {
+          return com.google.protobuf.MapField.emptyMapField(
+              ExtDefaultEntryHolder.defaultEntry);
         }
+        return ext_;
       }
-      /**
-       * <code>string cgt = 1;</code>
-       */
-      public com.google.protobuf.ByteString
-          getCgtBytes() {
-        java.lang.Object ref = cgt_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          cgt_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      internalGetMutableExt() {
+        onChanged();;
+        if (ext_ == null) {
+          ext_ = com.google.protobuf.MapField.newMapField(
+              ExtDefaultEntryHolder.defaultEntry);
         }
-      }
-      /**
-       * <code>string cgt = 1;</code>
-       */
-      public Builder setCgt(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        cgt_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string cgt = 1;</code>
-       */
-      public Builder clearCgt() {
-        
-        cgt_ = getDefaultInstance().getCgt();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string cgt = 1;</code>
-       */
-      public Builder setCgtBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        cgt_ = value;
-        onChanged();
-        return this;
+        if (!ext_.isMutable()) {
+          ext_ = ext_.copy();
+        }
+        return ext_;
       }
 
-      private java.lang.Object ext_ = "";
+      public int getExtCount() {
+        return internalGetExt().getMap().size();
+      }
       /**
-       * <code>string ext = 2;</code>
+       * <code>map&lt;string, string&gt; ext = 1;</code>
        */
-      public java.lang.String getExt() {
-        java.lang.Object ref = ext_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          ext_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
+
+      public boolean containsExt(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        return internalGetExt().getMap().containsKey(key);
+      }
+      /**
+       * Use {@link #getExtMap()} instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.String> getExt() {
+        return getExtMap();
+      }
+      /**
+       * <code>map&lt;string, string&gt; ext = 1;</code>
+       */
+
+      public java.util.Map<java.lang.String, java.lang.String> getExtMap() {
+        return internalGetExt().getMap();
+      }
+      /**
+       * <code>map&lt;string, string&gt; ext = 1;</code>
+       */
+
+      public java.lang.String getExtOrDefault(
+          java.lang.String key,
+          java.lang.String defaultValue) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, java.lang.String> map =
+            internalGetExt().getMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+      /**
+       * <code>map&lt;string, string&gt; ext = 1;</code>
+       */
+
+      public java.lang.String getExtOrThrow(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, java.lang.String> map =
+            internalGetExt().getMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
         }
+        return map.get(key);
       }
-      /**
-       * <code>string ext = 2;</code>
-       */
-      public com.google.protobuf.ByteString
-          getExtBytes() {
-        java.lang.Object ref = ext_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          ext_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string ext = 2;</code>
-       */
-      public Builder setExt(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        ext_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string ext = 2;</code>
-       */
+
       public Builder clearExt() {
-        
-        ext_ = getDefaultInstance().getExt();
-        onChanged();
+        internalGetMutableExt().getMutableMap()
+            .clear();
         return this;
       }
       /**
-       * <code>string ext = 2;</code>
+       * <code>map&lt;string, string&gt; ext = 1;</code>
        */
-      public Builder setExtBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        ext_ = value;
-        onChanged();
+
+      public Builder removeExt(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutableExt().getMutableMap()
+            .remove(key);
+        return this;
+      }
+      /**
+       * Use alternate mutation accessors instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.String>
+      getMutableExt() {
+        return internalGetMutableExt().getMutableMap();
+      }
+      /**
+       * <code>map&lt;string, string&gt; ext = 1;</code>
+       */
+      public Builder putExt(
+          java.lang.String key,
+          java.lang.String value) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        if (value == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutableExt().getMutableMap()
+            .put(key, value);
+        return this;
+      }
+      /**
+       * <code>map&lt;string, string&gt; ext = 1;</code>
+       */
+
+      public Builder putAllExt(
+          java.util.Map<java.lang.String, java.lang.String> values) {
+        internalGetMutableExt().getMutableMap()
+            .putAll(values);
         return this;
       }
       public final Builder setUnknownFields(
@@ -41483,14 +41965,38 @@ public final class PbXmsg {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string ext = 1;</code>
+     * <code>map&lt;string, string&gt; ext = 1;</code>
      */
-    java.lang.String getExt();
+    int getExtCount();
     /**
-     * <code>string ext = 1;</code>
+     * <code>map&lt;string, string&gt; ext = 1;</code>
      */
-    com.google.protobuf.ByteString
-        getExtBytes();
+    boolean containsExt(
+        java.lang.String key);
+    /**
+     * Use {@link #getExtMap()} instead.
+     */
+    @java.lang.Deprecated
+    java.util.Map<java.lang.String, java.lang.String>
+    getExt();
+    /**
+     * <code>map&lt;string, string&gt; ext = 1;</code>
+     */
+    java.util.Map<java.lang.String, java.lang.String>
+    getExtMap();
+    /**
+     * <code>map&lt;string, string&gt; ext = 1;</code>
+     */
+
+    java.lang.String getExtOrDefault(
+        java.lang.String key,
+        java.lang.String defaultValue);
+    /**
+     * <code>map&lt;string, string&gt; ext = 1;</code>
+     */
+
+    java.lang.String getExtOrThrow(
+        java.lang.String key);
   }
   /**
    * Protobuf type {@code XmsgImHlrDetachSimpleReq}
@@ -41505,7 +42011,6 @@ public final class PbXmsg {
       super(builder);
     }
     private XmsgImHlrDetachSimpleReq() {
-      ext_ = "";
     }
 
     @java.lang.Override
@@ -41540,9 +42045,16 @@ public final class PbXmsg {
               break;
             }
             case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              ext_ = s;
+              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                ext_ = com.google.protobuf.MapField.newMapField(
+                    ExtDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000001;
+              }
+              com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+              ext__ = input.readMessage(
+                  ExtDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              ext_.getMutableMap().put(
+                  ext__.getKey(), ext__.getValue());
               break;
             }
           }
@@ -41562,6 +42074,17 @@ public final class PbXmsg {
       return x.msg.pb.PbXmsg.internal_static_XmsgImHlrDetachSimpleReq_descriptor;
     }
 
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapField internalGetMapField(
+        int number) {
+      switch (number) {
+        case 1:
+          return internalGetExt();
+        default:
+          throw new RuntimeException(
+              "Invalid map field number: " + number);
+      }
+    }
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return x.msg.pb.PbXmsg.internal_static_XmsgImHlrDetachSimpleReq_fieldAccessorTable
@@ -41570,37 +42093,79 @@ public final class PbXmsg {
     }
 
     public static final int EXT_FIELD_NUMBER = 1;
-    private volatile java.lang.Object ext_;
-    /**
-     * <code>string ext = 1;</code>
-     */
-    public java.lang.String getExt() {
-      java.lang.Object ref = ext_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        ext_ = s;
-        return s;
+    private static final class ExtDefaultEntryHolder {
+      static final com.google.protobuf.MapEntry<
+          java.lang.String, java.lang.String> defaultEntry =
+              com.google.protobuf.MapEntry
+              .<java.lang.String, java.lang.String>newDefaultInstance(
+                  x.msg.pb.PbXmsg.internal_static_XmsgImHlrDetachSimpleReq_ExtEntry_descriptor, 
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "",
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "");
+    }
+    private com.google.protobuf.MapField<
+        java.lang.String, java.lang.String> ext_;
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+    internalGetExt() {
+      if (ext_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            ExtDefaultEntryHolder.defaultEntry);
       }
+      return ext_;
+    }
+
+    public int getExtCount() {
+      return internalGetExt().getMap().size();
     }
     /**
-     * <code>string ext = 1;</code>
+     * <code>map&lt;string, string&gt; ext = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getExtBytes() {
-      java.lang.Object ref = ext_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        ext_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
+
+    public boolean containsExt(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      return internalGetExt().getMap().containsKey(key);
+    }
+    /**
+     * Use {@link #getExtMap()} instead.
+     */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getExt() {
+      return getExtMap();
+    }
+    /**
+     * <code>map&lt;string, string&gt; ext = 1;</code>
+     */
+
+    public java.util.Map<java.lang.String, java.lang.String> getExtMap() {
+      return internalGetExt().getMap();
+    }
+    /**
+     * <code>map&lt;string, string&gt; ext = 1;</code>
+     */
+
+    public java.lang.String getExtOrDefault(
+        java.lang.String key,
+        java.lang.String defaultValue) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetExt().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <code>map&lt;string, string&gt; ext = 1;</code>
+     */
+
+    public java.lang.String getExtOrThrow(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetExt().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
       }
+      return map.get(key);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -41615,9 +42180,12 @@ public final class PbXmsg {
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getExtBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, ext_);
-      }
+      com.google.protobuf.GeneratedMessageV3
+        .serializeStringMapTo(
+          output,
+          internalGetExt(),
+          ExtDefaultEntryHolder.defaultEntry,
+          1);
       unknownFields.writeTo(output);
     }
 
@@ -41626,8 +42194,15 @@ public final class PbXmsg {
       if (size != -1) return size;
 
       size = 0;
-      if (!getExtBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, ext_);
+      for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
+           : internalGetExt().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+        ext__ = ExtDefaultEntryHolder.defaultEntry.newBuilderForType()
+            .setKey(entry.getKey())
+            .setValue(entry.getValue())
+            .build();
+        size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(1, ext__);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -41645,8 +42220,8 @@ public final class PbXmsg {
       x.msg.pb.PbXmsg.XmsgImHlrDetachSimpleReq other = (x.msg.pb.PbXmsg.XmsgImHlrDetachSimpleReq) obj;
 
       boolean result = true;
-      result = result && getExt()
-          .equals(other.getExt());
+      result = result && internalGetExt().equals(
+          other.internalGetExt());
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -41658,8 +42233,10 @@ public final class PbXmsg {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + EXT_FIELD_NUMBER;
-      hash = (53 * hash) + getExt().hashCode();
+      if (!internalGetExt().getMap().isEmpty()) {
+        hash = (37 * hash) + EXT_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetExt().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -41765,6 +42342,28 @@ public final class PbXmsg {
         return x.msg.pb.PbXmsg.internal_static_XmsgImHlrDetachSimpleReq_descriptor;
       }
 
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapField internalGetMapField(
+          int number) {
+        switch (number) {
+          case 1:
+            return internalGetExt();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapField internalGetMutableMapField(
+          int number) {
+        switch (number) {
+          case 1:
+            return internalGetMutableExt();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return x.msg.pb.PbXmsg.internal_static_XmsgImHlrDetachSimpleReq_fieldAccessorTable
@@ -41789,8 +42388,7 @@ public final class PbXmsg {
       }
       public Builder clear() {
         super.clear();
-        ext_ = "";
-
+        internalGetMutableExt().clear();
         return this;
       }
 
@@ -41813,7 +42411,9 @@ public final class PbXmsg {
 
       public x.msg.pb.PbXmsg.XmsgImHlrDetachSimpleReq buildPartial() {
         x.msg.pb.PbXmsg.XmsgImHlrDetachSimpleReq result = new x.msg.pb.PbXmsg.XmsgImHlrDetachSimpleReq(this);
-        result.ext_ = ext_;
+        int from_bitField0_ = bitField0_;
+        result.ext_ = internalGetExt();
+        result.ext_.makeImmutable();
         onBuilt();
         return result;
       }
@@ -41855,10 +42455,8 @@ public final class PbXmsg {
 
       public Builder mergeFrom(x.msg.pb.PbXmsg.XmsgImHlrDetachSimpleReq other) {
         if (other == x.msg.pb.PbXmsg.XmsgImHlrDetachSimpleReq.getDefaultInstance()) return this;
-        if (!other.getExt().isEmpty()) {
-          ext_ = other.ext_;
-          onChanged();
-        }
+        internalGetMutableExt().mergeFrom(
+            other.internalGetExt());
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -41885,73 +42483,128 @@ public final class PbXmsg {
         }
         return this;
       }
+      private int bitField0_;
 
-      private java.lang.Object ext_ = "";
-      /**
-       * <code>string ext = 1;</code>
-       */
-      public java.lang.String getExt() {
-        java.lang.Object ref = ext_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          ext_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
+      private com.google.protobuf.MapField<
+          java.lang.String, java.lang.String> ext_;
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      internalGetExt() {
+        if (ext_ == null) {
+          return com.google.protobuf.MapField.emptyMapField(
+              ExtDefaultEntryHolder.defaultEntry);
         }
+        return ext_;
       }
-      /**
-       * <code>string ext = 1;</code>
-       */
-      public com.google.protobuf.ByteString
-          getExtBytes() {
-        java.lang.Object ref = ext_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          ext_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      internalGetMutableExt() {
+        onChanged();;
+        if (ext_ == null) {
+          ext_ = com.google.protobuf.MapField.newMapField(
+              ExtDefaultEntryHolder.defaultEntry);
         }
+        if (!ext_.isMutable()) {
+          ext_ = ext_.copy();
+        }
+        return ext_;
+      }
+
+      public int getExtCount() {
+        return internalGetExt().getMap().size();
       }
       /**
-       * <code>string ext = 1;</code>
+       * <code>map&lt;string, string&gt; ext = 1;</code>
        */
-      public Builder setExt(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        ext_ = value;
-        onChanged();
-        return this;
+
+      public boolean containsExt(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        return internalGetExt().getMap().containsKey(key);
       }
       /**
-       * <code>string ext = 1;</code>
+       * Use {@link #getExtMap()} instead.
        */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.String> getExt() {
+        return getExtMap();
+      }
+      /**
+       * <code>map&lt;string, string&gt; ext = 1;</code>
+       */
+
+      public java.util.Map<java.lang.String, java.lang.String> getExtMap() {
+        return internalGetExt().getMap();
+      }
+      /**
+       * <code>map&lt;string, string&gt; ext = 1;</code>
+       */
+
+      public java.lang.String getExtOrDefault(
+          java.lang.String key,
+          java.lang.String defaultValue) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, java.lang.String> map =
+            internalGetExt().getMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+      /**
+       * <code>map&lt;string, string&gt; ext = 1;</code>
+       */
+
+      public java.lang.String getExtOrThrow(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, java.lang.String> map =
+            internalGetExt().getMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+
       public Builder clearExt() {
-        
-        ext_ = getDefaultInstance().getExt();
-        onChanged();
+        internalGetMutableExt().getMutableMap()
+            .clear();
         return this;
       }
       /**
-       * <code>string ext = 1;</code>
+       * <code>map&lt;string, string&gt; ext = 1;</code>
        */
-      public Builder setExtBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        ext_ = value;
-        onChanged();
+
+      public Builder removeExt(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutableExt().getMutableMap()
+            .remove(key);
+        return this;
+      }
+      /**
+       * Use alternate mutation accessors instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.String>
+      getMutableExt() {
+        return internalGetMutableExt().getMutableMap();
+      }
+      /**
+       * <code>map&lt;string, string&gt; ext = 1;</code>
+       */
+      public Builder putExt(
+          java.lang.String key,
+          java.lang.String value) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        if (value == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutableExt().getMutableMap()
+            .put(key, value);
+        return this;
+      }
+      /**
+       * <code>map&lt;string, string&gt; ext = 1;</code>
+       */
+
+      public Builder putAllExt(
+          java.util.Map<java.lang.String, java.lang.String> values) {
+        internalGetMutableExt().getMutableMap()
+            .putAll(values);
         return this;
       }
       public final Builder setUnknownFields(
@@ -42008,14 +42661,38 @@ public final class PbXmsg {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string ext = 1;</code>
+     * <code>map&lt;string, string&gt; ext = 1;</code>
      */
-    java.lang.String getExt();
+    int getExtCount();
     /**
-     * <code>string ext = 1;</code>
+     * <code>map&lt;string, string&gt; ext = 1;</code>
      */
-    com.google.protobuf.ByteString
-        getExtBytes();
+    boolean containsExt(
+        java.lang.String key);
+    /**
+     * Use {@link #getExtMap()} instead.
+     */
+    @java.lang.Deprecated
+    java.util.Map<java.lang.String, java.lang.String>
+    getExt();
+    /**
+     * <code>map&lt;string, string&gt; ext = 1;</code>
+     */
+    java.util.Map<java.lang.String, java.lang.String>
+    getExtMap();
+    /**
+     * <code>map&lt;string, string&gt; ext = 1;</code>
+     */
+
+    java.lang.String getExtOrDefault(
+        java.lang.String key,
+        java.lang.String defaultValue);
+    /**
+     * <code>map&lt;string, string&gt; ext = 1;</code>
+     */
+
+    java.lang.String getExtOrThrow(
+        java.lang.String key);
   }
   /**
    * Protobuf type {@code XmsgImHlrDetachSimpleRsp}
@@ -42030,7 +42707,6 @@ public final class PbXmsg {
       super(builder);
     }
     private XmsgImHlrDetachSimpleRsp() {
-      ext_ = "";
     }
 
     @java.lang.Override
@@ -42065,9 +42741,16 @@ public final class PbXmsg {
               break;
             }
             case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              ext_ = s;
+              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                ext_ = com.google.protobuf.MapField.newMapField(
+                    ExtDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000001;
+              }
+              com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+              ext__ = input.readMessage(
+                  ExtDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              ext_.getMutableMap().put(
+                  ext__.getKey(), ext__.getValue());
               break;
             }
           }
@@ -42087,6 +42770,17 @@ public final class PbXmsg {
       return x.msg.pb.PbXmsg.internal_static_XmsgImHlrDetachSimpleRsp_descriptor;
     }
 
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapField internalGetMapField(
+        int number) {
+      switch (number) {
+        case 1:
+          return internalGetExt();
+        default:
+          throw new RuntimeException(
+              "Invalid map field number: " + number);
+      }
+    }
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return x.msg.pb.PbXmsg.internal_static_XmsgImHlrDetachSimpleRsp_fieldAccessorTable
@@ -42095,37 +42789,79 @@ public final class PbXmsg {
     }
 
     public static final int EXT_FIELD_NUMBER = 1;
-    private volatile java.lang.Object ext_;
-    /**
-     * <code>string ext = 1;</code>
-     */
-    public java.lang.String getExt() {
-      java.lang.Object ref = ext_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        ext_ = s;
-        return s;
+    private static final class ExtDefaultEntryHolder {
+      static final com.google.protobuf.MapEntry<
+          java.lang.String, java.lang.String> defaultEntry =
+              com.google.protobuf.MapEntry
+              .<java.lang.String, java.lang.String>newDefaultInstance(
+                  x.msg.pb.PbXmsg.internal_static_XmsgImHlrDetachSimpleRsp_ExtEntry_descriptor, 
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "",
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "");
+    }
+    private com.google.protobuf.MapField<
+        java.lang.String, java.lang.String> ext_;
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+    internalGetExt() {
+      if (ext_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            ExtDefaultEntryHolder.defaultEntry);
       }
+      return ext_;
+    }
+
+    public int getExtCount() {
+      return internalGetExt().getMap().size();
     }
     /**
-     * <code>string ext = 1;</code>
+     * <code>map&lt;string, string&gt; ext = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getExtBytes() {
-      java.lang.Object ref = ext_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        ext_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
+
+    public boolean containsExt(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      return internalGetExt().getMap().containsKey(key);
+    }
+    /**
+     * Use {@link #getExtMap()} instead.
+     */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getExt() {
+      return getExtMap();
+    }
+    /**
+     * <code>map&lt;string, string&gt; ext = 1;</code>
+     */
+
+    public java.util.Map<java.lang.String, java.lang.String> getExtMap() {
+      return internalGetExt().getMap();
+    }
+    /**
+     * <code>map&lt;string, string&gt; ext = 1;</code>
+     */
+
+    public java.lang.String getExtOrDefault(
+        java.lang.String key,
+        java.lang.String defaultValue) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetExt().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <code>map&lt;string, string&gt; ext = 1;</code>
+     */
+
+    public java.lang.String getExtOrThrow(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetExt().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
       }
+      return map.get(key);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -42140,9 +42876,12 @@ public final class PbXmsg {
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getExtBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, ext_);
-      }
+      com.google.protobuf.GeneratedMessageV3
+        .serializeStringMapTo(
+          output,
+          internalGetExt(),
+          ExtDefaultEntryHolder.defaultEntry,
+          1);
       unknownFields.writeTo(output);
     }
 
@@ -42151,8 +42890,15 @@ public final class PbXmsg {
       if (size != -1) return size;
 
       size = 0;
-      if (!getExtBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, ext_);
+      for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
+           : internalGetExt().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+        ext__ = ExtDefaultEntryHolder.defaultEntry.newBuilderForType()
+            .setKey(entry.getKey())
+            .setValue(entry.getValue())
+            .build();
+        size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(1, ext__);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -42170,8 +42916,8 @@ public final class PbXmsg {
       x.msg.pb.PbXmsg.XmsgImHlrDetachSimpleRsp other = (x.msg.pb.PbXmsg.XmsgImHlrDetachSimpleRsp) obj;
 
       boolean result = true;
-      result = result && getExt()
-          .equals(other.getExt());
+      result = result && internalGetExt().equals(
+          other.internalGetExt());
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -42183,8 +42929,10 @@ public final class PbXmsg {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + EXT_FIELD_NUMBER;
-      hash = (53 * hash) + getExt().hashCode();
+      if (!internalGetExt().getMap().isEmpty()) {
+        hash = (37 * hash) + EXT_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetExt().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -42290,6 +43038,28 @@ public final class PbXmsg {
         return x.msg.pb.PbXmsg.internal_static_XmsgImHlrDetachSimpleRsp_descriptor;
       }
 
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapField internalGetMapField(
+          int number) {
+        switch (number) {
+          case 1:
+            return internalGetExt();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapField internalGetMutableMapField(
+          int number) {
+        switch (number) {
+          case 1:
+            return internalGetMutableExt();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return x.msg.pb.PbXmsg.internal_static_XmsgImHlrDetachSimpleRsp_fieldAccessorTable
@@ -42314,8 +43084,7 @@ public final class PbXmsg {
       }
       public Builder clear() {
         super.clear();
-        ext_ = "";
-
+        internalGetMutableExt().clear();
         return this;
       }
 
@@ -42338,7 +43107,9 @@ public final class PbXmsg {
 
       public x.msg.pb.PbXmsg.XmsgImHlrDetachSimpleRsp buildPartial() {
         x.msg.pb.PbXmsg.XmsgImHlrDetachSimpleRsp result = new x.msg.pb.PbXmsg.XmsgImHlrDetachSimpleRsp(this);
-        result.ext_ = ext_;
+        int from_bitField0_ = bitField0_;
+        result.ext_ = internalGetExt();
+        result.ext_.makeImmutable();
         onBuilt();
         return result;
       }
@@ -42380,10 +43151,8 @@ public final class PbXmsg {
 
       public Builder mergeFrom(x.msg.pb.PbXmsg.XmsgImHlrDetachSimpleRsp other) {
         if (other == x.msg.pb.PbXmsg.XmsgImHlrDetachSimpleRsp.getDefaultInstance()) return this;
-        if (!other.getExt().isEmpty()) {
-          ext_ = other.ext_;
-          onChanged();
-        }
+        internalGetMutableExt().mergeFrom(
+            other.internalGetExt());
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -42410,73 +43179,128 @@ public final class PbXmsg {
         }
         return this;
       }
+      private int bitField0_;
 
-      private java.lang.Object ext_ = "";
-      /**
-       * <code>string ext = 1;</code>
-       */
-      public java.lang.String getExt() {
-        java.lang.Object ref = ext_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          ext_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
+      private com.google.protobuf.MapField<
+          java.lang.String, java.lang.String> ext_;
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      internalGetExt() {
+        if (ext_ == null) {
+          return com.google.protobuf.MapField.emptyMapField(
+              ExtDefaultEntryHolder.defaultEntry);
         }
+        return ext_;
       }
-      /**
-       * <code>string ext = 1;</code>
-       */
-      public com.google.protobuf.ByteString
-          getExtBytes() {
-        java.lang.Object ref = ext_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          ext_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      internalGetMutableExt() {
+        onChanged();;
+        if (ext_ == null) {
+          ext_ = com.google.protobuf.MapField.newMapField(
+              ExtDefaultEntryHolder.defaultEntry);
         }
+        if (!ext_.isMutable()) {
+          ext_ = ext_.copy();
+        }
+        return ext_;
+      }
+
+      public int getExtCount() {
+        return internalGetExt().getMap().size();
       }
       /**
-       * <code>string ext = 1;</code>
+       * <code>map&lt;string, string&gt; ext = 1;</code>
        */
-      public Builder setExt(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        ext_ = value;
-        onChanged();
-        return this;
+
+      public boolean containsExt(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        return internalGetExt().getMap().containsKey(key);
       }
       /**
-       * <code>string ext = 1;</code>
+       * Use {@link #getExtMap()} instead.
        */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.String> getExt() {
+        return getExtMap();
+      }
+      /**
+       * <code>map&lt;string, string&gt; ext = 1;</code>
+       */
+
+      public java.util.Map<java.lang.String, java.lang.String> getExtMap() {
+        return internalGetExt().getMap();
+      }
+      /**
+       * <code>map&lt;string, string&gt; ext = 1;</code>
+       */
+
+      public java.lang.String getExtOrDefault(
+          java.lang.String key,
+          java.lang.String defaultValue) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, java.lang.String> map =
+            internalGetExt().getMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+      /**
+       * <code>map&lt;string, string&gt; ext = 1;</code>
+       */
+
+      public java.lang.String getExtOrThrow(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, java.lang.String> map =
+            internalGetExt().getMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+
       public Builder clearExt() {
-        
-        ext_ = getDefaultInstance().getExt();
-        onChanged();
+        internalGetMutableExt().getMutableMap()
+            .clear();
         return this;
       }
       /**
-       * <code>string ext = 1;</code>
+       * <code>map&lt;string, string&gt; ext = 1;</code>
        */
-      public Builder setExtBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        ext_ = value;
-        onChanged();
+
+      public Builder removeExt(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutableExt().getMutableMap()
+            .remove(key);
+        return this;
+      }
+      /**
+       * Use alternate mutation accessors instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.String>
+      getMutableExt() {
+        return internalGetMutableExt().getMutableMap();
+      }
+      /**
+       * <code>map&lt;string, string&gt; ext = 1;</code>
+       */
+      public Builder putExt(
+          java.lang.String key,
+          java.lang.String value) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        if (value == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutableExt().getMutableMap()
+            .put(key, value);
+        return this;
+      }
+      /**
+       * <code>map&lt;string, string&gt; ext = 1;</code>
+       */
+
+      public Builder putAllExt(
+          java.util.Map<java.lang.String, java.lang.String> values) {
+        internalGetMutableExt().getMutableMap()
+            .putAll(values);
         return this;
       }
       public final Builder setUnknownFields(
@@ -45562,14 +46386,48 @@ public final class PbXmsg {
         int index);
 
     /**
-     * <code>string ext = 6;</code>
+     * <code>string cgt = 7;</code>
      */
-    java.lang.String getExt();
+    java.lang.String getCgt();
     /**
-     * <code>string ext = 6;</code>
+     * <code>string cgt = 7;</code>
      */
     com.google.protobuf.ByteString
-        getExtBytes();
+        getCgtBytes();
+
+    /**
+     * <code>map&lt;string, string&gt; ext = 8;</code>
+     */
+    int getExtCount();
+    /**
+     * <code>map&lt;string, string&gt; ext = 8;</code>
+     */
+    boolean containsExt(
+        java.lang.String key);
+    /**
+     * Use {@link #getExtMap()} instead.
+     */
+    @java.lang.Deprecated
+    java.util.Map<java.lang.String, java.lang.String>
+    getExt();
+    /**
+     * <code>map&lt;string, string&gt; ext = 8;</code>
+     */
+    java.util.Map<java.lang.String, java.lang.String>
+    getExtMap();
+    /**
+     * <code>map&lt;string, string&gt; ext = 8;</code>
+     */
+
+    java.lang.String getExtOrDefault(
+        java.lang.String key,
+        java.lang.String defaultValue);
+    /**
+     * <code>map&lt;string, string&gt; ext = 8;</code>
+     */
+
+    java.lang.String getExtOrThrow(
+        java.lang.String key);
   }
   /**
    * Protobuf type {@code XmsgImAuthSimpleRsp}
@@ -45589,7 +46447,7 @@ public final class PbXmsg {
       expired_ = 0L;
       apAddr_ = java.util.Collections.emptyList();
       fsAddr_ = java.util.Collections.emptyList();
-      ext_ = "";
+      cgt_ = "";
     }
 
     @java.lang.Override
@@ -45658,10 +46516,23 @@ public final class PbXmsg {
                   input.readMessage(x.msg.pb.PbXmsg.XmsgImClientServiceAddress.parser(), extensionRegistry));
               break;
             }
-            case 50: {
+            case 58: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              ext_ = s;
+              cgt_ = s;
+              break;
+            }
+            case 66: {
+              if (!((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
+                ext_ = com.google.protobuf.MapField.newMapField(
+                    ExtDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000040;
+              }
+              com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+              ext__ = input.readMessage(
+                  ExtDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              ext_.getMutableMap().put(
+                  ext__.getKey(), ext__.getValue());
               break;
             }
           }
@@ -45687,6 +46558,17 @@ public final class PbXmsg {
       return x.msg.pb.PbXmsg.internal_static_XmsgImAuthSimpleRsp_descriptor;
     }
 
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapField internalGetMapField(
+        int number) {
+      switch (number) {
+        case 8:
+          return internalGetExt();
+        default:
+          throw new RuntimeException(
+              "Invalid map field number: " + number);
+      }
+    }
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return x.msg.pb.PbXmsg.internal_static_XmsgImAuthSimpleRsp_fieldAccessorTable
@@ -45842,38 +46724,114 @@ public final class PbXmsg {
       return fsAddr_.get(index);
     }
 
-    public static final int EXT_FIELD_NUMBER = 6;
-    private volatile java.lang.Object ext_;
+    public static final int CGT_FIELD_NUMBER = 7;
+    private volatile java.lang.Object cgt_;
     /**
-     * <code>string ext = 6;</code>
+     * <code>string cgt = 7;</code>
      */
-    public java.lang.String getExt() {
-      java.lang.Object ref = ext_;
+    public java.lang.String getCgt() {
+      java.lang.Object ref = cgt_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        ext_ = s;
+        cgt_ = s;
         return s;
       }
     }
     /**
-     * <code>string ext = 6;</code>
+     * <code>string cgt = 7;</code>
      */
     public com.google.protobuf.ByteString
-        getExtBytes() {
-      java.lang.Object ref = ext_;
+        getCgtBytes() {
+      java.lang.Object ref = cgt_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        ext_ = b;
+        cgt_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
+    }
+
+    public static final int EXT_FIELD_NUMBER = 8;
+    private static final class ExtDefaultEntryHolder {
+      static final com.google.protobuf.MapEntry<
+          java.lang.String, java.lang.String> defaultEntry =
+              com.google.protobuf.MapEntry
+              .<java.lang.String, java.lang.String>newDefaultInstance(
+                  x.msg.pb.PbXmsg.internal_static_XmsgImAuthSimpleRsp_ExtEntry_descriptor, 
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "",
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "");
+    }
+    private com.google.protobuf.MapField<
+        java.lang.String, java.lang.String> ext_;
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+    internalGetExt() {
+      if (ext_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            ExtDefaultEntryHolder.defaultEntry);
+      }
+      return ext_;
+    }
+
+    public int getExtCount() {
+      return internalGetExt().getMap().size();
+    }
+    /**
+     * <code>map&lt;string, string&gt; ext = 8;</code>
+     */
+
+    public boolean containsExt(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      return internalGetExt().getMap().containsKey(key);
+    }
+    /**
+     * Use {@link #getExtMap()} instead.
+     */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getExt() {
+      return getExtMap();
+    }
+    /**
+     * <code>map&lt;string, string&gt; ext = 8;</code>
+     */
+
+    public java.util.Map<java.lang.String, java.lang.String> getExtMap() {
+      return internalGetExt().getMap();
+    }
+    /**
+     * <code>map&lt;string, string&gt; ext = 8;</code>
+     */
+
+    public java.lang.String getExtOrDefault(
+        java.lang.String key,
+        java.lang.String defaultValue) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetExt().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <code>map&lt;string, string&gt; ext = 8;</code>
+     */
+
+    public java.lang.String getExtOrThrow(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetExt().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -45903,9 +46861,15 @@ public final class PbXmsg {
       for (int i = 0; i < fsAddr_.size(); i++) {
         output.writeMessage(5, fsAddr_.get(i));
       }
-      if (!getExtBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, ext_);
+      if (!getCgtBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, cgt_);
       }
+      com.google.protobuf.GeneratedMessageV3
+        .serializeStringMapTo(
+          output,
+          internalGetExt(),
+          ExtDefaultEntryHolder.defaultEntry,
+          8);
       unknownFields.writeTo(output);
     }
 
@@ -45932,8 +46896,18 @@ public final class PbXmsg {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(5, fsAddr_.get(i));
       }
-      if (!getExtBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, ext_);
+      if (!getCgtBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, cgt_);
+      }
+      for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
+           : internalGetExt().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+        ext__ = ExtDefaultEntryHolder.defaultEntry.newBuilderForType()
+            .setKey(entry.getKey())
+            .setValue(entry.getValue())
+            .build();
+        size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(8, ext__);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -45961,8 +46935,10 @@ public final class PbXmsg {
           .equals(other.getApAddrList());
       result = result && getFsAddrList()
           .equals(other.getFsAddrList());
-      result = result && getExt()
-          .equals(other.getExt());
+      result = result && getCgt()
+          .equals(other.getCgt());
+      result = result && internalGetExt().equals(
+          other.internalGetExt());
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -45989,8 +46965,12 @@ public final class PbXmsg {
         hash = (37 * hash) + FSADDR_FIELD_NUMBER;
         hash = (53 * hash) + getFsAddrList().hashCode();
       }
-      hash = (37 * hash) + EXT_FIELD_NUMBER;
-      hash = (53 * hash) + getExt().hashCode();
+      hash = (37 * hash) + CGT_FIELD_NUMBER;
+      hash = (53 * hash) + getCgt().hashCode();
+      if (!internalGetExt().getMap().isEmpty()) {
+        hash = (37 * hash) + EXT_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetExt().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -46096,6 +47076,28 @@ public final class PbXmsg {
         return x.msg.pb.PbXmsg.internal_static_XmsgImAuthSimpleRsp_descriptor;
       }
 
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapField internalGetMapField(
+          int number) {
+        switch (number) {
+          case 8:
+            return internalGetExt();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapField internalGetMutableMapField(
+          int number) {
+        switch (number) {
+          case 8:
+            return internalGetMutableExt();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return x.msg.pb.PbXmsg.internal_static_XmsgImAuthSimpleRsp_fieldAccessorTable
@@ -46140,8 +47142,9 @@ public final class PbXmsg {
         } else {
           fsAddrBuilder_.clear();
         }
-        ext_ = "";
+        cgt_ = "";
 
+        internalGetMutableExt().clear();
         return this;
       }
 
@@ -46187,7 +47190,9 @@ public final class PbXmsg {
         } else {
           result.fsAddr_ = fsAddrBuilder_.build();
         }
-        result.ext_ = ext_;
+        result.cgt_ = cgt_;
+        result.ext_ = internalGetExt();
+        result.ext_.makeImmutable();
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -46293,10 +47298,12 @@ public final class PbXmsg {
             }
           }
         }
-        if (!other.getExt().isEmpty()) {
-          ext_ = other.ext_;
+        if (!other.getCgt().isEmpty()) {
+          cgt_ = other.cgt_;
           onChanged();
         }
+        internalGetMutableExt().mergeFrom(
+            other.internalGetExt());
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -46969,72 +47976,195 @@ public final class PbXmsg {
         return fsAddrBuilder_;
       }
 
-      private java.lang.Object ext_ = "";
+      private java.lang.Object cgt_ = "";
       /**
-       * <code>string ext = 6;</code>
+       * <code>string cgt = 7;</code>
        */
-      public java.lang.String getExt() {
-        java.lang.Object ref = ext_;
+      public java.lang.String getCgt() {
+        java.lang.Object ref = cgt_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          ext_ = s;
+          cgt_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>string ext = 6;</code>
+       * <code>string cgt = 7;</code>
        */
       public com.google.protobuf.ByteString
-          getExtBytes() {
-        java.lang.Object ref = ext_;
+          getCgtBytes() {
+        java.lang.Object ref = cgt_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          ext_ = b;
+          cgt_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>string ext = 6;</code>
+       * <code>string cgt = 7;</code>
        */
-      public Builder setExt(
+      public Builder setCgt(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        ext_ = value;
+        cgt_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string ext = 6;</code>
+       * <code>string cgt = 7;</code>
        */
-      public Builder clearExt() {
+      public Builder clearCgt() {
         
-        ext_ = getDefaultInstance().getExt();
+        cgt_ = getDefaultInstance().getCgt();
         onChanged();
         return this;
       }
       /**
-       * <code>string ext = 6;</code>
+       * <code>string cgt = 7;</code>
        */
-      public Builder setExtBytes(
+      public Builder setCgtBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        ext_ = value;
+        cgt_ = value;
         onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.MapField<
+          java.lang.String, java.lang.String> ext_;
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      internalGetExt() {
+        if (ext_ == null) {
+          return com.google.protobuf.MapField.emptyMapField(
+              ExtDefaultEntryHolder.defaultEntry);
+        }
+        return ext_;
+      }
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      internalGetMutableExt() {
+        onChanged();;
+        if (ext_ == null) {
+          ext_ = com.google.protobuf.MapField.newMapField(
+              ExtDefaultEntryHolder.defaultEntry);
+        }
+        if (!ext_.isMutable()) {
+          ext_ = ext_.copy();
+        }
+        return ext_;
+      }
+
+      public int getExtCount() {
+        return internalGetExt().getMap().size();
+      }
+      /**
+       * <code>map&lt;string, string&gt; ext = 8;</code>
+       */
+
+      public boolean containsExt(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        return internalGetExt().getMap().containsKey(key);
+      }
+      /**
+       * Use {@link #getExtMap()} instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.String> getExt() {
+        return getExtMap();
+      }
+      /**
+       * <code>map&lt;string, string&gt; ext = 8;</code>
+       */
+
+      public java.util.Map<java.lang.String, java.lang.String> getExtMap() {
+        return internalGetExt().getMap();
+      }
+      /**
+       * <code>map&lt;string, string&gt; ext = 8;</code>
+       */
+
+      public java.lang.String getExtOrDefault(
+          java.lang.String key,
+          java.lang.String defaultValue) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, java.lang.String> map =
+            internalGetExt().getMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+      /**
+       * <code>map&lt;string, string&gt; ext = 8;</code>
+       */
+
+      public java.lang.String getExtOrThrow(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, java.lang.String> map =
+            internalGetExt().getMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+
+      public Builder clearExt() {
+        internalGetMutableExt().getMutableMap()
+            .clear();
+        return this;
+      }
+      /**
+       * <code>map&lt;string, string&gt; ext = 8;</code>
+       */
+
+      public Builder removeExt(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutableExt().getMutableMap()
+            .remove(key);
+        return this;
+      }
+      /**
+       * Use alternate mutation accessors instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.String>
+      getMutableExt() {
+        return internalGetMutableExt().getMutableMap();
+      }
+      /**
+       * <code>map&lt;string, string&gt; ext = 8;</code>
+       */
+      public Builder putExt(
+          java.lang.String key,
+          java.lang.String value) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        if (value == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutableExt().getMutableMap()
+            .put(key, value);
+        return this;
+      }
+      /**
+       * <code>map&lt;string, string&gt; ext = 8;</code>
+       */
+
+      public Builder putAllExt(
+          java.util.Map<java.lang.String, java.lang.String> values) {
+        internalGetMutableExt().getMutableMap()
+            .putAll(values);
         return this;
       }
       public final Builder setUnknownFields(
@@ -47121,14 +48251,38 @@ public final class PbXmsg {
         getVerBytes();
 
     /**
-     * <code>string ext = 4;</code>
+     * <code>map&lt;string, string&gt; ext = 4;</code>
      */
-    java.lang.String getExt();
+    int getExtCount();
     /**
-     * <code>string ext = 4;</code>
+     * <code>map&lt;string, string&gt; ext = 4;</code>
      */
-    com.google.protobuf.ByteString
-        getExtBytes();
+    boolean containsExt(
+        java.lang.String key);
+    /**
+     * Use {@link #getExtMap()} instead.
+     */
+    @java.lang.Deprecated
+    java.util.Map<java.lang.String, java.lang.String>
+    getExt();
+    /**
+     * <code>map&lt;string, string&gt; ext = 4;</code>
+     */
+    java.util.Map<java.lang.String, java.lang.String>
+    getExtMap();
+    /**
+     * <code>map&lt;string, string&gt; ext = 4;</code>
+     */
+
+    java.lang.String getExtOrDefault(
+        java.lang.String key,
+        java.lang.String defaultValue);
+    /**
+     * <code>map&lt;string, string&gt; ext = 4;</code>
+     */
+
+    java.lang.String getExtOrThrow(
+        java.lang.String key);
   }
   /**
    * Protobuf type {@code XmsgImClientDeviceInfo}
@@ -47146,7 +48300,6 @@ public final class PbXmsg {
       plat_ = "";
       did_ = "";
       ver_ = "";
-      ext_ = "";
     }
 
     @java.lang.Override
@@ -47199,9 +48352,16 @@ public final class PbXmsg {
               break;
             }
             case 34: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              ext_ = s;
+              if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+                ext_ = com.google.protobuf.MapField.newMapField(
+                    ExtDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000008;
+              }
+              com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+              ext__ = input.readMessage(
+                  ExtDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              ext_.getMutableMap().put(
+                  ext__.getKey(), ext__.getValue());
               break;
             }
           }
@@ -47221,6 +48381,17 @@ public final class PbXmsg {
       return x.msg.pb.PbXmsg.internal_static_XmsgImClientDeviceInfo_descriptor;
     }
 
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapField internalGetMapField(
+        int number) {
+      switch (number) {
+        case 4:
+          return internalGetExt();
+        default:
+          throw new RuntimeException(
+              "Invalid map field number: " + number);
+      }
+    }
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return x.msg.pb.PbXmsg.internal_static_XmsgImClientDeviceInfo_fieldAccessorTable
@@ -47228,6 +48399,7 @@ public final class PbXmsg {
               x.msg.pb.PbXmsg.XmsgImClientDeviceInfo.class, x.msg.pb.PbXmsg.XmsgImClientDeviceInfo.Builder.class);
     }
 
+    private int bitField0_;
     public static final int PLAT_FIELD_NUMBER = 1;
     private volatile java.lang.Object plat_;
     /**
@@ -47331,37 +48503,79 @@ public final class PbXmsg {
     }
 
     public static final int EXT_FIELD_NUMBER = 4;
-    private volatile java.lang.Object ext_;
-    /**
-     * <code>string ext = 4;</code>
-     */
-    public java.lang.String getExt() {
-      java.lang.Object ref = ext_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        ext_ = s;
-        return s;
+    private static final class ExtDefaultEntryHolder {
+      static final com.google.protobuf.MapEntry<
+          java.lang.String, java.lang.String> defaultEntry =
+              com.google.protobuf.MapEntry
+              .<java.lang.String, java.lang.String>newDefaultInstance(
+                  x.msg.pb.PbXmsg.internal_static_XmsgImClientDeviceInfo_ExtEntry_descriptor, 
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "",
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "");
+    }
+    private com.google.protobuf.MapField<
+        java.lang.String, java.lang.String> ext_;
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+    internalGetExt() {
+      if (ext_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            ExtDefaultEntryHolder.defaultEntry);
       }
+      return ext_;
+    }
+
+    public int getExtCount() {
+      return internalGetExt().getMap().size();
     }
     /**
-     * <code>string ext = 4;</code>
+     * <code>map&lt;string, string&gt; ext = 4;</code>
      */
-    public com.google.protobuf.ByteString
-        getExtBytes() {
-      java.lang.Object ref = ext_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        ext_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
+
+    public boolean containsExt(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      return internalGetExt().getMap().containsKey(key);
+    }
+    /**
+     * Use {@link #getExtMap()} instead.
+     */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getExt() {
+      return getExtMap();
+    }
+    /**
+     * <code>map&lt;string, string&gt; ext = 4;</code>
+     */
+
+    public java.util.Map<java.lang.String, java.lang.String> getExtMap() {
+      return internalGetExt().getMap();
+    }
+    /**
+     * <code>map&lt;string, string&gt; ext = 4;</code>
+     */
+
+    public java.lang.String getExtOrDefault(
+        java.lang.String key,
+        java.lang.String defaultValue) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetExt().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <code>map&lt;string, string&gt; ext = 4;</code>
+     */
+
+    public java.lang.String getExtOrThrow(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetExt().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
       }
+      return map.get(key);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -47385,9 +48599,12 @@ public final class PbXmsg {
       if (!getVerBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, ver_);
       }
-      if (!getExtBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, ext_);
-      }
+      com.google.protobuf.GeneratedMessageV3
+        .serializeStringMapTo(
+          output,
+          internalGetExt(),
+          ExtDefaultEntryHolder.defaultEntry,
+          4);
       unknownFields.writeTo(output);
     }
 
@@ -47405,8 +48622,15 @@ public final class PbXmsg {
       if (!getVerBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, ver_);
       }
-      if (!getExtBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, ext_);
+      for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
+           : internalGetExt().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+        ext__ = ExtDefaultEntryHolder.defaultEntry.newBuilderForType()
+            .setKey(entry.getKey())
+            .setValue(entry.getValue())
+            .build();
+        size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(4, ext__);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -47430,8 +48654,8 @@ public final class PbXmsg {
           .equals(other.getDid());
       result = result && getVer()
           .equals(other.getVer());
-      result = result && getExt()
-          .equals(other.getExt());
+      result = result && internalGetExt().equals(
+          other.internalGetExt());
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -47449,8 +48673,10 @@ public final class PbXmsg {
       hash = (53 * hash) + getDid().hashCode();
       hash = (37 * hash) + VER_FIELD_NUMBER;
       hash = (53 * hash) + getVer().hashCode();
-      hash = (37 * hash) + EXT_FIELD_NUMBER;
-      hash = (53 * hash) + getExt().hashCode();
+      if (!internalGetExt().getMap().isEmpty()) {
+        hash = (37 * hash) + EXT_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetExt().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -47556,6 +48782,28 @@ public final class PbXmsg {
         return x.msg.pb.PbXmsg.internal_static_XmsgImClientDeviceInfo_descriptor;
       }
 
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapField internalGetMapField(
+          int number) {
+        switch (number) {
+          case 4:
+            return internalGetExt();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapField internalGetMutableMapField(
+          int number) {
+        switch (number) {
+          case 4:
+            return internalGetMutableExt();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return x.msg.pb.PbXmsg.internal_static_XmsgImClientDeviceInfo_fieldAccessorTable
@@ -47586,8 +48834,7 @@ public final class PbXmsg {
 
         ver_ = "";
 
-        ext_ = "";
-
+        internalGetMutableExt().clear();
         return this;
       }
 
@@ -47610,10 +48857,14 @@ public final class PbXmsg {
 
       public x.msg.pb.PbXmsg.XmsgImClientDeviceInfo buildPartial() {
         x.msg.pb.PbXmsg.XmsgImClientDeviceInfo result = new x.msg.pb.PbXmsg.XmsgImClientDeviceInfo(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
         result.plat_ = plat_;
         result.did_ = did_;
         result.ver_ = ver_;
-        result.ext_ = ext_;
+        result.ext_ = internalGetExt();
+        result.ext_.makeImmutable();
+        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -47667,10 +48918,8 @@ public final class PbXmsg {
           ver_ = other.ver_;
           onChanged();
         }
-        if (!other.getExt().isEmpty()) {
-          ext_ = other.ext_;
-          onChanged();
-        }
+        internalGetMutableExt().mergeFrom(
+            other.internalGetExt());
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -47697,6 +48946,7 @@ public final class PbXmsg {
         }
         return this;
       }
+      private int bitField0_;
 
       private java.lang.Object plat_ = "";
       /**
@@ -47905,72 +49155,126 @@ public final class PbXmsg {
         return this;
       }
 
-      private java.lang.Object ext_ = "";
-      /**
-       * <code>string ext = 4;</code>
-       */
-      public java.lang.String getExt() {
-        java.lang.Object ref = ext_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          ext_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
+      private com.google.protobuf.MapField<
+          java.lang.String, java.lang.String> ext_;
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      internalGetExt() {
+        if (ext_ == null) {
+          return com.google.protobuf.MapField.emptyMapField(
+              ExtDefaultEntryHolder.defaultEntry);
         }
+        return ext_;
       }
-      /**
-       * <code>string ext = 4;</code>
-       */
-      public com.google.protobuf.ByteString
-          getExtBytes() {
-        java.lang.Object ref = ext_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          ext_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      internalGetMutableExt() {
+        onChanged();;
+        if (ext_ == null) {
+          ext_ = com.google.protobuf.MapField.newMapField(
+              ExtDefaultEntryHolder.defaultEntry);
         }
+        if (!ext_.isMutable()) {
+          ext_ = ext_.copy();
+        }
+        return ext_;
+      }
+
+      public int getExtCount() {
+        return internalGetExt().getMap().size();
       }
       /**
-       * <code>string ext = 4;</code>
+       * <code>map&lt;string, string&gt; ext = 4;</code>
        */
-      public Builder setExt(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        ext_ = value;
-        onChanged();
-        return this;
+
+      public boolean containsExt(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        return internalGetExt().getMap().containsKey(key);
       }
       /**
-       * <code>string ext = 4;</code>
+       * Use {@link #getExtMap()} instead.
        */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.String> getExt() {
+        return getExtMap();
+      }
+      /**
+       * <code>map&lt;string, string&gt; ext = 4;</code>
+       */
+
+      public java.util.Map<java.lang.String, java.lang.String> getExtMap() {
+        return internalGetExt().getMap();
+      }
+      /**
+       * <code>map&lt;string, string&gt; ext = 4;</code>
+       */
+
+      public java.lang.String getExtOrDefault(
+          java.lang.String key,
+          java.lang.String defaultValue) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, java.lang.String> map =
+            internalGetExt().getMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+      /**
+       * <code>map&lt;string, string&gt; ext = 4;</code>
+       */
+
+      public java.lang.String getExtOrThrow(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, java.lang.String> map =
+            internalGetExt().getMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+
       public Builder clearExt() {
-        
-        ext_ = getDefaultInstance().getExt();
-        onChanged();
+        internalGetMutableExt().getMutableMap()
+            .clear();
         return this;
       }
       /**
-       * <code>string ext = 4;</code>
+       * <code>map&lt;string, string&gt; ext = 4;</code>
        */
-      public Builder setExtBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        ext_ = value;
-        onChanged();
+
+      public Builder removeExt(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutableExt().getMutableMap()
+            .remove(key);
+        return this;
+      }
+      /**
+       * Use alternate mutation accessors instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.String>
+      getMutableExt() {
+        return internalGetMutableExt().getMutableMap();
+      }
+      /**
+       * <code>map&lt;string, string&gt; ext = 4;</code>
+       */
+      public Builder putExt(
+          java.lang.String key,
+          java.lang.String value) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        if (value == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutableExt().getMutableMap()
+            .put(key, value);
+        return this;
+      }
+      /**
+       * <code>map&lt;string, string&gt; ext = 4;</code>
+       */
+
+      public Builder putAllExt(
+          java.util.Map<java.lang.String, java.lang.String> values) {
+        internalGetMutableExt().getMutableMap()
+            .putAll(values);
         return this;
       }
       public final Builder setUnknownFields(
@@ -48066,14 +49370,38 @@ public final class PbXmsg {
         getProtoBytes(int index);
 
     /**
-     * <code>string ext = 5;</code>
+     * <code>map&lt;string, string&gt; ext = 5;</code>
      */
-    java.lang.String getExt();
+    int getExtCount();
     /**
-     * <code>string ext = 5;</code>
+     * <code>map&lt;string, string&gt; ext = 5;</code>
      */
-    com.google.protobuf.ByteString
-        getExtBytes();
+    boolean containsExt(
+        java.lang.String key);
+    /**
+     * Use {@link #getExtMap()} instead.
+     */
+    @java.lang.Deprecated
+    java.util.Map<java.lang.String, java.lang.String>
+    getExt();
+    /**
+     * <code>map&lt;string, string&gt; ext = 5;</code>
+     */
+    java.util.Map<java.lang.String, java.lang.String>
+    getExtMap();
+    /**
+     * <code>map&lt;string, string&gt; ext = 5;</code>
+     */
+
+    java.lang.String getExtOrDefault(
+        java.lang.String key,
+        java.lang.String defaultValue);
+    /**
+     * <code>map&lt;string, string&gt; ext = 5;</code>
+     */
+
+    java.lang.String getExtOrThrow(
+        java.lang.String key);
   }
   /**
    * Protobuf type {@code XmsgImClientServiceAddress}
@@ -48092,7 +49420,6 @@ public final class PbXmsg {
       port_ = 0;
       weight_ = 0;
       proto_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      ext_ = "";
     }
 
     @java.lang.Override
@@ -48152,9 +49479,16 @@ public final class PbXmsg {
               break;
             }
             case 42: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              ext_ = s;
+              if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+                ext_ = com.google.protobuf.MapField.newMapField(
+                    ExtDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000010;
+              }
+              com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+              ext__ = input.readMessage(
+                  ExtDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              ext_.getMutableMap().put(
+                  ext__.getKey(), ext__.getValue());
               break;
             }
           }
@@ -48177,6 +49511,17 @@ public final class PbXmsg {
       return x.msg.pb.PbXmsg.internal_static_XmsgImClientServiceAddress_descriptor;
     }
 
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapField internalGetMapField(
+        int number) {
+      switch (number) {
+        case 5:
+          return internalGetExt();
+        default:
+          throw new RuntimeException(
+              "Invalid map field number: " + number);
+      }
+    }
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return x.msg.pb.PbXmsg.internal_static_XmsgImClientServiceAddress_fieldAccessorTable
@@ -48267,37 +49612,79 @@ public final class PbXmsg {
     }
 
     public static final int EXT_FIELD_NUMBER = 5;
-    private volatile java.lang.Object ext_;
-    /**
-     * <code>string ext = 5;</code>
-     */
-    public java.lang.String getExt() {
-      java.lang.Object ref = ext_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        ext_ = s;
-        return s;
+    private static final class ExtDefaultEntryHolder {
+      static final com.google.protobuf.MapEntry<
+          java.lang.String, java.lang.String> defaultEntry =
+              com.google.protobuf.MapEntry
+              .<java.lang.String, java.lang.String>newDefaultInstance(
+                  x.msg.pb.PbXmsg.internal_static_XmsgImClientServiceAddress_ExtEntry_descriptor, 
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "",
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "");
+    }
+    private com.google.protobuf.MapField<
+        java.lang.String, java.lang.String> ext_;
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+    internalGetExt() {
+      if (ext_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            ExtDefaultEntryHolder.defaultEntry);
       }
+      return ext_;
+    }
+
+    public int getExtCount() {
+      return internalGetExt().getMap().size();
     }
     /**
-     * <code>string ext = 5;</code>
+     * <code>map&lt;string, string&gt; ext = 5;</code>
      */
-    public com.google.protobuf.ByteString
-        getExtBytes() {
-      java.lang.Object ref = ext_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        ext_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
+
+    public boolean containsExt(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      return internalGetExt().getMap().containsKey(key);
+    }
+    /**
+     * Use {@link #getExtMap()} instead.
+     */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getExt() {
+      return getExtMap();
+    }
+    /**
+     * <code>map&lt;string, string&gt; ext = 5;</code>
+     */
+
+    public java.util.Map<java.lang.String, java.lang.String> getExtMap() {
+      return internalGetExt().getMap();
+    }
+    /**
+     * <code>map&lt;string, string&gt; ext = 5;</code>
+     */
+
+    public java.lang.String getExtOrDefault(
+        java.lang.String key,
+        java.lang.String defaultValue) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetExt().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <code>map&lt;string, string&gt; ext = 5;</code>
+     */
+
+    public java.lang.String getExtOrThrow(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetExt().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
       }
+      return map.get(key);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -48324,9 +49711,12 @@ public final class PbXmsg {
       for (int i = 0; i < proto_.size(); i++) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, proto_.getRaw(i));
       }
-      if (!getExtBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, ext_);
-      }
+      com.google.protobuf.GeneratedMessageV3
+        .serializeStringMapTo(
+          output,
+          internalGetExt(),
+          ExtDefaultEntryHolder.defaultEntry,
+          5);
       unknownFields.writeTo(output);
     }
 
@@ -48354,8 +49744,15 @@ public final class PbXmsg {
         size += dataSize;
         size += 1 * getProtoList().size();
       }
-      if (!getExtBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, ext_);
+      for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
+           : internalGetExt().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+        ext__ = ExtDefaultEntryHolder.defaultEntry.newBuilderForType()
+            .setKey(entry.getKey())
+            .setValue(entry.getValue())
+            .build();
+        size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(5, ext__);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -48381,8 +49778,8 @@ public final class PbXmsg {
           == other.getWeight());
       result = result && getProtoList()
           .equals(other.getProtoList());
-      result = result && getExt()
-          .equals(other.getExt());
+      result = result && internalGetExt().equals(
+          other.internalGetExt());
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -48404,8 +49801,10 @@ public final class PbXmsg {
         hash = (37 * hash) + PROTO_FIELD_NUMBER;
         hash = (53 * hash) + getProtoList().hashCode();
       }
-      hash = (37 * hash) + EXT_FIELD_NUMBER;
-      hash = (53 * hash) + getExt().hashCode();
+      if (!internalGetExt().getMap().isEmpty()) {
+        hash = (37 * hash) + EXT_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetExt().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -48511,6 +49910,28 @@ public final class PbXmsg {
         return x.msg.pb.PbXmsg.internal_static_XmsgImClientServiceAddress_descriptor;
       }
 
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapField internalGetMapField(
+          int number) {
+        switch (number) {
+          case 5:
+            return internalGetExt();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapField internalGetMutableMapField(
+          int number) {
+        switch (number) {
+          case 5:
+            return internalGetMutableExt();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return x.msg.pb.PbXmsg.internal_static_XmsgImClientServiceAddress_fieldAccessorTable
@@ -48543,8 +49964,7 @@ public final class PbXmsg {
 
         proto_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000008);
-        ext_ = "";
-
+        internalGetMutableExt().clear();
         return this;
       }
 
@@ -48577,7 +49997,8 @@ public final class PbXmsg {
           bitField0_ = (bitField0_ & ~0x00000008);
         }
         result.proto_ = proto_;
-        result.ext_ = ext_;
+        result.ext_ = internalGetExt();
+        result.ext_.makeImmutable();
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -48640,10 +50061,8 @@ public final class PbXmsg {
           }
           onChanged();
         }
-        if (!other.getExt().isEmpty()) {
-          ext_ = other.ext_;
-          onChanged();
-        }
+        internalGetMutableExt().mergeFrom(
+            other.internalGetExt());
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -48887,72 +50306,126 @@ public final class PbXmsg {
         return this;
       }
 
-      private java.lang.Object ext_ = "";
-      /**
-       * <code>string ext = 5;</code>
-       */
-      public java.lang.String getExt() {
-        java.lang.Object ref = ext_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          ext_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
+      private com.google.protobuf.MapField<
+          java.lang.String, java.lang.String> ext_;
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      internalGetExt() {
+        if (ext_ == null) {
+          return com.google.protobuf.MapField.emptyMapField(
+              ExtDefaultEntryHolder.defaultEntry);
         }
+        return ext_;
       }
-      /**
-       * <code>string ext = 5;</code>
-       */
-      public com.google.protobuf.ByteString
-          getExtBytes() {
-        java.lang.Object ref = ext_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          ext_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      internalGetMutableExt() {
+        onChanged();;
+        if (ext_ == null) {
+          ext_ = com.google.protobuf.MapField.newMapField(
+              ExtDefaultEntryHolder.defaultEntry);
         }
+        if (!ext_.isMutable()) {
+          ext_ = ext_.copy();
+        }
+        return ext_;
+      }
+
+      public int getExtCount() {
+        return internalGetExt().getMap().size();
       }
       /**
-       * <code>string ext = 5;</code>
+       * <code>map&lt;string, string&gt; ext = 5;</code>
        */
-      public Builder setExt(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        ext_ = value;
-        onChanged();
-        return this;
+
+      public boolean containsExt(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        return internalGetExt().getMap().containsKey(key);
       }
       /**
-       * <code>string ext = 5;</code>
+       * Use {@link #getExtMap()} instead.
        */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.String> getExt() {
+        return getExtMap();
+      }
+      /**
+       * <code>map&lt;string, string&gt; ext = 5;</code>
+       */
+
+      public java.util.Map<java.lang.String, java.lang.String> getExtMap() {
+        return internalGetExt().getMap();
+      }
+      /**
+       * <code>map&lt;string, string&gt; ext = 5;</code>
+       */
+
+      public java.lang.String getExtOrDefault(
+          java.lang.String key,
+          java.lang.String defaultValue) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, java.lang.String> map =
+            internalGetExt().getMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+      /**
+       * <code>map&lt;string, string&gt; ext = 5;</code>
+       */
+
+      public java.lang.String getExtOrThrow(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, java.lang.String> map =
+            internalGetExt().getMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+
       public Builder clearExt() {
-        
-        ext_ = getDefaultInstance().getExt();
-        onChanged();
+        internalGetMutableExt().getMutableMap()
+            .clear();
         return this;
       }
       /**
-       * <code>string ext = 5;</code>
+       * <code>map&lt;string, string&gt; ext = 5;</code>
        */
-      public Builder setExtBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        ext_ = value;
-        onChanged();
+
+      public Builder removeExt(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutableExt().getMutableMap()
+            .remove(key);
+        return this;
+      }
+      /**
+       * Use alternate mutation accessors instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.String>
+      getMutableExt() {
+        return internalGetMutableExt().getMutableMap();
+      }
+      /**
+       * <code>map&lt;string, string&gt; ext = 5;</code>
+       */
+      public Builder putExt(
+          java.lang.String key,
+          java.lang.String value) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        if (value == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutableExt().getMutableMap()
+            .put(key, value);
+        return this;
+      }
+      /**
+       * <code>map&lt;string, string&gt; ext = 5;</code>
+       */
+
+      public Builder putAllExt(
+          java.util.Map<java.lang.String, java.lang.String> values) {
+        internalGetMutableExt().getMutableMap()
+            .putAll(values);
         return this;
       }
       public final Builder setUnknownFields(
@@ -50002,14 +51475,38 @@ public final class PbXmsg {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string ext = 1;</code>
+     * <code>map&lt;string, string&gt; ext = 1;</code>
      */
-    java.lang.String getExt();
+    int getExtCount();
     /**
-     * <code>string ext = 1;</code>
+     * <code>map&lt;string, string&gt; ext = 1;</code>
      */
-    com.google.protobuf.ByteString
-        getExtBytes();
+    boolean containsExt(
+        java.lang.String key);
+    /**
+     * Use {@link #getExtMap()} instead.
+     */
+    @java.lang.Deprecated
+    java.util.Map<java.lang.String, java.lang.String>
+    getExt();
+    /**
+     * <code>map&lt;string, string&gt; ext = 1;</code>
+     */
+    java.util.Map<java.lang.String, java.lang.String>
+    getExtMap();
+    /**
+     * <code>map&lt;string, string&gt; ext = 1;</code>
+     */
+
+    java.lang.String getExtOrDefault(
+        java.lang.String key,
+        java.lang.String defaultValue);
+    /**
+     * <code>map&lt;string, string&gt; ext = 1;</code>
+     */
+
+    java.lang.String getExtOrThrow(
+        java.lang.String key);
   }
   /**
    * Protobuf type {@code XmsgImAuthRegSimpleRsp}
@@ -50024,7 +51521,6 @@ public final class PbXmsg {
       super(builder);
     }
     private XmsgImAuthRegSimpleRsp() {
-      ext_ = "";
     }
 
     @java.lang.Override
@@ -50059,9 +51555,16 @@ public final class PbXmsg {
               break;
             }
             case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              ext_ = s;
+              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                ext_ = com.google.protobuf.MapField.newMapField(
+                    ExtDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000001;
+              }
+              com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+              ext__ = input.readMessage(
+                  ExtDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              ext_.getMutableMap().put(
+                  ext__.getKey(), ext__.getValue());
               break;
             }
           }
@@ -50081,6 +51584,17 @@ public final class PbXmsg {
       return x.msg.pb.PbXmsg.internal_static_XmsgImAuthRegSimpleRsp_descriptor;
     }
 
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapField internalGetMapField(
+        int number) {
+      switch (number) {
+        case 1:
+          return internalGetExt();
+        default:
+          throw new RuntimeException(
+              "Invalid map field number: " + number);
+      }
+    }
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return x.msg.pb.PbXmsg.internal_static_XmsgImAuthRegSimpleRsp_fieldAccessorTable
@@ -50089,37 +51603,79 @@ public final class PbXmsg {
     }
 
     public static final int EXT_FIELD_NUMBER = 1;
-    private volatile java.lang.Object ext_;
-    /**
-     * <code>string ext = 1;</code>
-     */
-    public java.lang.String getExt() {
-      java.lang.Object ref = ext_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        ext_ = s;
-        return s;
+    private static final class ExtDefaultEntryHolder {
+      static final com.google.protobuf.MapEntry<
+          java.lang.String, java.lang.String> defaultEntry =
+              com.google.protobuf.MapEntry
+              .<java.lang.String, java.lang.String>newDefaultInstance(
+                  x.msg.pb.PbXmsg.internal_static_XmsgImAuthRegSimpleRsp_ExtEntry_descriptor, 
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "",
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "");
+    }
+    private com.google.protobuf.MapField<
+        java.lang.String, java.lang.String> ext_;
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+    internalGetExt() {
+      if (ext_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            ExtDefaultEntryHolder.defaultEntry);
       }
+      return ext_;
+    }
+
+    public int getExtCount() {
+      return internalGetExt().getMap().size();
     }
     /**
-     * <code>string ext = 1;</code>
+     * <code>map&lt;string, string&gt; ext = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getExtBytes() {
-      java.lang.Object ref = ext_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        ext_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
+
+    public boolean containsExt(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      return internalGetExt().getMap().containsKey(key);
+    }
+    /**
+     * Use {@link #getExtMap()} instead.
+     */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getExt() {
+      return getExtMap();
+    }
+    /**
+     * <code>map&lt;string, string&gt; ext = 1;</code>
+     */
+
+    public java.util.Map<java.lang.String, java.lang.String> getExtMap() {
+      return internalGetExt().getMap();
+    }
+    /**
+     * <code>map&lt;string, string&gt; ext = 1;</code>
+     */
+
+    public java.lang.String getExtOrDefault(
+        java.lang.String key,
+        java.lang.String defaultValue) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetExt().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <code>map&lt;string, string&gt; ext = 1;</code>
+     */
+
+    public java.lang.String getExtOrThrow(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetExt().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
       }
+      return map.get(key);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -50134,9 +51690,12 @@ public final class PbXmsg {
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getExtBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, ext_);
-      }
+      com.google.protobuf.GeneratedMessageV3
+        .serializeStringMapTo(
+          output,
+          internalGetExt(),
+          ExtDefaultEntryHolder.defaultEntry,
+          1);
       unknownFields.writeTo(output);
     }
 
@@ -50145,8 +51704,15 @@ public final class PbXmsg {
       if (size != -1) return size;
 
       size = 0;
-      if (!getExtBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, ext_);
+      for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
+           : internalGetExt().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+        ext__ = ExtDefaultEntryHolder.defaultEntry.newBuilderForType()
+            .setKey(entry.getKey())
+            .setValue(entry.getValue())
+            .build();
+        size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(1, ext__);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -50164,8 +51730,8 @@ public final class PbXmsg {
       x.msg.pb.PbXmsg.XmsgImAuthRegSimpleRsp other = (x.msg.pb.PbXmsg.XmsgImAuthRegSimpleRsp) obj;
 
       boolean result = true;
-      result = result && getExt()
-          .equals(other.getExt());
+      result = result && internalGetExt().equals(
+          other.internalGetExt());
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -50177,8 +51743,10 @@ public final class PbXmsg {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + EXT_FIELD_NUMBER;
-      hash = (53 * hash) + getExt().hashCode();
+      if (!internalGetExt().getMap().isEmpty()) {
+        hash = (37 * hash) + EXT_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetExt().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -50284,6 +51852,28 @@ public final class PbXmsg {
         return x.msg.pb.PbXmsg.internal_static_XmsgImAuthRegSimpleRsp_descriptor;
       }
 
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapField internalGetMapField(
+          int number) {
+        switch (number) {
+          case 1:
+            return internalGetExt();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapField internalGetMutableMapField(
+          int number) {
+        switch (number) {
+          case 1:
+            return internalGetMutableExt();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return x.msg.pb.PbXmsg.internal_static_XmsgImAuthRegSimpleRsp_fieldAccessorTable
@@ -50308,8 +51898,7 @@ public final class PbXmsg {
       }
       public Builder clear() {
         super.clear();
-        ext_ = "";
-
+        internalGetMutableExt().clear();
         return this;
       }
 
@@ -50332,7 +51921,9 @@ public final class PbXmsg {
 
       public x.msg.pb.PbXmsg.XmsgImAuthRegSimpleRsp buildPartial() {
         x.msg.pb.PbXmsg.XmsgImAuthRegSimpleRsp result = new x.msg.pb.PbXmsg.XmsgImAuthRegSimpleRsp(this);
-        result.ext_ = ext_;
+        int from_bitField0_ = bitField0_;
+        result.ext_ = internalGetExt();
+        result.ext_.makeImmutable();
         onBuilt();
         return result;
       }
@@ -50374,10 +51965,8 @@ public final class PbXmsg {
 
       public Builder mergeFrom(x.msg.pb.PbXmsg.XmsgImAuthRegSimpleRsp other) {
         if (other == x.msg.pb.PbXmsg.XmsgImAuthRegSimpleRsp.getDefaultInstance()) return this;
-        if (!other.getExt().isEmpty()) {
-          ext_ = other.ext_;
-          onChanged();
-        }
+        internalGetMutableExt().mergeFrom(
+            other.internalGetExt());
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -50404,73 +51993,128 @@ public final class PbXmsg {
         }
         return this;
       }
+      private int bitField0_;
 
-      private java.lang.Object ext_ = "";
-      /**
-       * <code>string ext = 1;</code>
-       */
-      public java.lang.String getExt() {
-        java.lang.Object ref = ext_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          ext_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
+      private com.google.protobuf.MapField<
+          java.lang.String, java.lang.String> ext_;
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      internalGetExt() {
+        if (ext_ == null) {
+          return com.google.protobuf.MapField.emptyMapField(
+              ExtDefaultEntryHolder.defaultEntry);
         }
+        return ext_;
       }
-      /**
-       * <code>string ext = 1;</code>
-       */
-      public com.google.protobuf.ByteString
-          getExtBytes() {
-        java.lang.Object ref = ext_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          ext_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      internalGetMutableExt() {
+        onChanged();;
+        if (ext_ == null) {
+          ext_ = com.google.protobuf.MapField.newMapField(
+              ExtDefaultEntryHolder.defaultEntry);
         }
+        if (!ext_.isMutable()) {
+          ext_ = ext_.copy();
+        }
+        return ext_;
+      }
+
+      public int getExtCount() {
+        return internalGetExt().getMap().size();
       }
       /**
-       * <code>string ext = 1;</code>
+       * <code>map&lt;string, string&gt; ext = 1;</code>
        */
-      public Builder setExt(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        ext_ = value;
-        onChanged();
-        return this;
+
+      public boolean containsExt(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        return internalGetExt().getMap().containsKey(key);
       }
       /**
-       * <code>string ext = 1;</code>
+       * Use {@link #getExtMap()} instead.
        */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.String> getExt() {
+        return getExtMap();
+      }
+      /**
+       * <code>map&lt;string, string&gt; ext = 1;</code>
+       */
+
+      public java.util.Map<java.lang.String, java.lang.String> getExtMap() {
+        return internalGetExt().getMap();
+      }
+      /**
+       * <code>map&lt;string, string&gt; ext = 1;</code>
+       */
+
+      public java.lang.String getExtOrDefault(
+          java.lang.String key,
+          java.lang.String defaultValue) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, java.lang.String> map =
+            internalGetExt().getMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+      /**
+       * <code>map&lt;string, string&gt; ext = 1;</code>
+       */
+
+      public java.lang.String getExtOrThrow(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, java.lang.String> map =
+            internalGetExt().getMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+
       public Builder clearExt() {
-        
-        ext_ = getDefaultInstance().getExt();
-        onChanged();
+        internalGetMutableExt().getMutableMap()
+            .clear();
         return this;
       }
       /**
-       * <code>string ext = 1;</code>
+       * <code>map&lt;string, string&gt; ext = 1;</code>
        */
-      public Builder setExtBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        ext_ = value;
-        onChanged();
+
+      public Builder removeExt(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutableExt().getMutableMap()
+            .remove(key);
+        return this;
+      }
+      /**
+       * Use alternate mutation accessors instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.String>
+      getMutableExt() {
+        return internalGetMutableExt().getMutableMap();
+      }
+      /**
+       * <code>map&lt;string, string&gt; ext = 1;</code>
+       */
+      public Builder putExt(
+          java.lang.String key,
+          java.lang.String value) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        if (value == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutableExt().getMutableMap()
+            .put(key, value);
+        return this;
+      }
+      /**
+       * <code>map&lt;string, string&gt; ext = 1;</code>
+       */
+
+      public Builder putAllExt(
+          java.util.Map<java.lang.String, java.lang.String> values) {
+        internalGetMutableExt().getMutableMap()
+            .putAll(values);
         return this;
       }
       public final Builder setUnknownFields(
@@ -61218,14 +62862,38 @@ public final class PbXmsg {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string ext = 1;</code>
+     * <code>map&lt;string, string&gt; ext = 1;</code>
      */
-    java.lang.String getExt();
+    int getExtCount();
     /**
-     * <code>string ext = 1;</code>
+     * <code>map&lt;string, string&gt; ext = 1;</code>
      */
-    com.google.protobuf.ByteString
-        getExtBytes();
+    boolean containsExt(
+        java.lang.String key);
+    /**
+     * Use {@link #getExtMap()} instead.
+     */
+    @java.lang.Deprecated
+    java.util.Map<java.lang.String, java.lang.String>
+    getExt();
+    /**
+     * <code>map&lt;string, string&gt; ext = 1;</code>
+     */
+    java.util.Map<java.lang.String, java.lang.String>
+    getExtMap();
+    /**
+     * <code>map&lt;string, string&gt; ext = 1;</code>
+     */
+
+    java.lang.String getExtOrDefault(
+        java.lang.String key,
+        java.lang.String defaultValue);
+    /**
+     * <code>map&lt;string, string&gt; ext = 1;</code>
+     */
+
+    java.lang.String getExtOrThrow(
+        java.lang.String key);
   }
   /**
    * Protobuf type {@code XmsgImHlrUsrInfoQueryReq}
@@ -61240,7 +62908,6 @@ public final class PbXmsg {
       super(builder);
     }
     private XmsgImHlrUsrInfoQueryReq() {
-      ext_ = "";
     }
 
     @java.lang.Override
@@ -61275,9 +62942,16 @@ public final class PbXmsg {
               break;
             }
             case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              ext_ = s;
+              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                ext_ = com.google.protobuf.MapField.newMapField(
+                    ExtDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000001;
+              }
+              com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+              ext__ = input.readMessage(
+                  ExtDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              ext_.getMutableMap().put(
+                  ext__.getKey(), ext__.getValue());
               break;
             }
           }
@@ -61297,6 +62971,17 @@ public final class PbXmsg {
       return x.msg.pb.PbXmsg.internal_static_XmsgImHlrUsrInfoQueryReq_descriptor;
     }
 
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapField internalGetMapField(
+        int number) {
+      switch (number) {
+        case 1:
+          return internalGetExt();
+        default:
+          throw new RuntimeException(
+              "Invalid map field number: " + number);
+      }
+    }
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return x.msg.pb.PbXmsg.internal_static_XmsgImHlrUsrInfoQueryReq_fieldAccessorTable
@@ -61305,37 +62990,79 @@ public final class PbXmsg {
     }
 
     public static final int EXT_FIELD_NUMBER = 1;
-    private volatile java.lang.Object ext_;
-    /**
-     * <code>string ext = 1;</code>
-     */
-    public java.lang.String getExt() {
-      java.lang.Object ref = ext_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        ext_ = s;
-        return s;
+    private static final class ExtDefaultEntryHolder {
+      static final com.google.protobuf.MapEntry<
+          java.lang.String, java.lang.String> defaultEntry =
+              com.google.protobuf.MapEntry
+              .<java.lang.String, java.lang.String>newDefaultInstance(
+                  x.msg.pb.PbXmsg.internal_static_XmsgImHlrUsrInfoQueryReq_ExtEntry_descriptor, 
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "",
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "");
+    }
+    private com.google.protobuf.MapField<
+        java.lang.String, java.lang.String> ext_;
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+    internalGetExt() {
+      if (ext_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            ExtDefaultEntryHolder.defaultEntry);
       }
+      return ext_;
+    }
+
+    public int getExtCount() {
+      return internalGetExt().getMap().size();
     }
     /**
-     * <code>string ext = 1;</code>
+     * <code>map&lt;string, string&gt; ext = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getExtBytes() {
-      java.lang.Object ref = ext_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        ext_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
+
+    public boolean containsExt(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      return internalGetExt().getMap().containsKey(key);
+    }
+    /**
+     * Use {@link #getExtMap()} instead.
+     */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getExt() {
+      return getExtMap();
+    }
+    /**
+     * <code>map&lt;string, string&gt; ext = 1;</code>
+     */
+
+    public java.util.Map<java.lang.String, java.lang.String> getExtMap() {
+      return internalGetExt().getMap();
+    }
+    /**
+     * <code>map&lt;string, string&gt; ext = 1;</code>
+     */
+
+    public java.lang.String getExtOrDefault(
+        java.lang.String key,
+        java.lang.String defaultValue) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetExt().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <code>map&lt;string, string&gt; ext = 1;</code>
+     */
+
+    public java.lang.String getExtOrThrow(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetExt().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
       }
+      return map.get(key);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -61350,9 +63077,12 @@ public final class PbXmsg {
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getExtBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, ext_);
-      }
+      com.google.protobuf.GeneratedMessageV3
+        .serializeStringMapTo(
+          output,
+          internalGetExt(),
+          ExtDefaultEntryHolder.defaultEntry,
+          1);
       unknownFields.writeTo(output);
     }
 
@@ -61361,8 +63091,15 @@ public final class PbXmsg {
       if (size != -1) return size;
 
       size = 0;
-      if (!getExtBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, ext_);
+      for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
+           : internalGetExt().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+        ext__ = ExtDefaultEntryHolder.defaultEntry.newBuilderForType()
+            .setKey(entry.getKey())
+            .setValue(entry.getValue())
+            .build();
+        size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(1, ext__);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -61380,8 +63117,8 @@ public final class PbXmsg {
       x.msg.pb.PbXmsg.XmsgImHlrUsrInfoQueryReq other = (x.msg.pb.PbXmsg.XmsgImHlrUsrInfoQueryReq) obj;
 
       boolean result = true;
-      result = result && getExt()
-          .equals(other.getExt());
+      result = result && internalGetExt().equals(
+          other.internalGetExt());
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -61393,8 +63130,10 @@ public final class PbXmsg {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + EXT_FIELD_NUMBER;
-      hash = (53 * hash) + getExt().hashCode();
+      if (!internalGetExt().getMap().isEmpty()) {
+        hash = (37 * hash) + EXT_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetExt().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -61500,6 +63239,28 @@ public final class PbXmsg {
         return x.msg.pb.PbXmsg.internal_static_XmsgImHlrUsrInfoQueryReq_descriptor;
       }
 
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapField internalGetMapField(
+          int number) {
+        switch (number) {
+          case 1:
+            return internalGetExt();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapField internalGetMutableMapField(
+          int number) {
+        switch (number) {
+          case 1:
+            return internalGetMutableExt();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return x.msg.pb.PbXmsg.internal_static_XmsgImHlrUsrInfoQueryReq_fieldAccessorTable
@@ -61524,8 +63285,7 @@ public final class PbXmsg {
       }
       public Builder clear() {
         super.clear();
-        ext_ = "";
-
+        internalGetMutableExt().clear();
         return this;
       }
 
@@ -61548,7 +63308,9 @@ public final class PbXmsg {
 
       public x.msg.pb.PbXmsg.XmsgImHlrUsrInfoQueryReq buildPartial() {
         x.msg.pb.PbXmsg.XmsgImHlrUsrInfoQueryReq result = new x.msg.pb.PbXmsg.XmsgImHlrUsrInfoQueryReq(this);
-        result.ext_ = ext_;
+        int from_bitField0_ = bitField0_;
+        result.ext_ = internalGetExt();
+        result.ext_.makeImmutable();
         onBuilt();
         return result;
       }
@@ -61590,10 +63352,8 @@ public final class PbXmsg {
 
       public Builder mergeFrom(x.msg.pb.PbXmsg.XmsgImHlrUsrInfoQueryReq other) {
         if (other == x.msg.pb.PbXmsg.XmsgImHlrUsrInfoQueryReq.getDefaultInstance()) return this;
-        if (!other.getExt().isEmpty()) {
-          ext_ = other.ext_;
-          onChanged();
-        }
+        internalGetMutableExt().mergeFrom(
+            other.internalGetExt());
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -61620,73 +63380,128 @@ public final class PbXmsg {
         }
         return this;
       }
+      private int bitField0_;
 
-      private java.lang.Object ext_ = "";
-      /**
-       * <code>string ext = 1;</code>
-       */
-      public java.lang.String getExt() {
-        java.lang.Object ref = ext_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          ext_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
+      private com.google.protobuf.MapField<
+          java.lang.String, java.lang.String> ext_;
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      internalGetExt() {
+        if (ext_ == null) {
+          return com.google.protobuf.MapField.emptyMapField(
+              ExtDefaultEntryHolder.defaultEntry);
         }
+        return ext_;
       }
-      /**
-       * <code>string ext = 1;</code>
-       */
-      public com.google.protobuf.ByteString
-          getExtBytes() {
-        java.lang.Object ref = ext_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          ext_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      internalGetMutableExt() {
+        onChanged();;
+        if (ext_ == null) {
+          ext_ = com.google.protobuf.MapField.newMapField(
+              ExtDefaultEntryHolder.defaultEntry);
         }
+        if (!ext_.isMutable()) {
+          ext_ = ext_.copy();
+        }
+        return ext_;
+      }
+
+      public int getExtCount() {
+        return internalGetExt().getMap().size();
       }
       /**
-       * <code>string ext = 1;</code>
+       * <code>map&lt;string, string&gt; ext = 1;</code>
        */
-      public Builder setExt(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        ext_ = value;
-        onChanged();
-        return this;
+
+      public boolean containsExt(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        return internalGetExt().getMap().containsKey(key);
       }
       /**
-       * <code>string ext = 1;</code>
+       * Use {@link #getExtMap()} instead.
        */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.String> getExt() {
+        return getExtMap();
+      }
+      /**
+       * <code>map&lt;string, string&gt; ext = 1;</code>
+       */
+
+      public java.util.Map<java.lang.String, java.lang.String> getExtMap() {
+        return internalGetExt().getMap();
+      }
+      /**
+       * <code>map&lt;string, string&gt; ext = 1;</code>
+       */
+
+      public java.lang.String getExtOrDefault(
+          java.lang.String key,
+          java.lang.String defaultValue) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, java.lang.String> map =
+            internalGetExt().getMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+      /**
+       * <code>map&lt;string, string&gt; ext = 1;</code>
+       */
+
+      public java.lang.String getExtOrThrow(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, java.lang.String> map =
+            internalGetExt().getMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+
       public Builder clearExt() {
-        
-        ext_ = getDefaultInstance().getExt();
-        onChanged();
+        internalGetMutableExt().getMutableMap()
+            .clear();
         return this;
       }
       /**
-       * <code>string ext = 1;</code>
+       * <code>map&lt;string, string&gt; ext = 1;</code>
        */
-      public Builder setExtBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        ext_ = value;
-        onChanged();
+
+      public Builder removeExt(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutableExt().getMutableMap()
+            .remove(key);
+        return this;
+      }
+      /**
+       * Use alternate mutation accessors instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.String>
+      getMutableExt() {
+        return internalGetMutableExt().getMutableMap();
+      }
+      /**
+       * <code>map&lt;string, string&gt; ext = 1;</code>
+       */
+      public Builder putExt(
+          java.lang.String key,
+          java.lang.String value) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        if (value == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutableExt().getMutableMap()
+            .put(key, value);
+        return this;
+      }
+      /**
+       * <code>map&lt;string, string&gt; ext = 1;</code>
+       */
+
+      public Builder putAllExt(
+          java.util.Map<java.lang.String, java.lang.String> values) {
+        internalGetMutableExt().getMutableMap()
+            .putAll(values);
         return this;
       }
       public final Builder setUnknownFields(
@@ -63135,14 +64950,38 @@ public final class PbXmsg {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string ext = 1;</code>
+     * <code>map&lt;string, string&gt; ext = 1;</code>
      */
-    java.lang.String getExt();
+    int getExtCount();
     /**
-     * <code>string ext = 1;</code>
+     * <code>map&lt;string, string&gt; ext = 1;</code>
      */
-    com.google.protobuf.ByteString
-        getExtBytes();
+    boolean containsExt(
+        java.lang.String key);
+    /**
+     * Use {@link #getExtMap()} instead.
+     */
+    @java.lang.Deprecated
+    java.util.Map<java.lang.String, java.lang.String>
+    getExt();
+    /**
+     * <code>map&lt;string, string&gt; ext = 1;</code>
+     */
+    java.util.Map<java.lang.String, java.lang.String>
+    getExtMap();
+    /**
+     * <code>map&lt;string, string&gt; ext = 1;</code>
+     */
+
+    java.lang.String getExtOrDefault(
+        java.lang.String key,
+        java.lang.String defaultValue);
+    /**
+     * <code>map&lt;string, string&gt; ext = 1;</code>
+     */
+
+    java.lang.String getExtOrThrow(
+        java.lang.String key);
   }
   /**
    * Protobuf type {@code XmsgImHlrUsrInfoUpdateRsp}
@@ -63157,7 +64996,6 @@ public final class PbXmsg {
       super(builder);
     }
     private XmsgImHlrUsrInfoUpdateRsp() {
-      ext_ = "";
     }
 
     @java.lang.Override
@@ -63192,9 +65030,16 @@ public final class PbXmsg {
               break;
             }
             case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              ext_ = s;
+              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                ext_ = com.google.protobuf.MapField.newMapField(
+                    ExtDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000001;
+              }
+              com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+              ext__ = input.readMessage(
+                  ExtDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              ext_.getMutableMap().put(
+                  ext__.getKey(), ext__.getValue());
               break;
             }
           }
@@ -63214,6 +65059,17 @@ public final class PbXmsg {
       return x.msg.pb.PbXmsg.internal_static_XmsgImHlrUsrInfoUpdateRsp_descriptor;
     }
 
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapField internalGetMapField(
+        int number) {
+      switch (number) {
+        case 1:
+          return internalGetExt();
+        default:
+          throw new RuntimeException(
+              "Invalid map field number: " + number);
+      }
+    }
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return x.msg.pb.PbXmsg.internal_static_XmsgImHlrUsrInfoUpdateRsp_fieldAccessorTable
@@ -63222,37 +65078,79 @@ public final class PbXmsg {
     }
 
     public static final int EXT_FIELD_NUMBER = 1;
-    private volatile java.lang.Object ext_;
-    /**
-     * <code>string ext = 1;</code>
-     */
-    public java.lang.String getExt() {
-      java.lang.Object ref = ext_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        ext_ = s;
-        return s;
+    private static final class ExtDefaultEntryHolder {
+      static final com.google.protobuf.MapEntry<
+          java.lang.String, java.lang.String> defaultEntry =
+              com.google.protobuf.MapEntry
+              .<java.lang.String, java.lang.String>newDefaultInstance(
+                  x.msg.pb.PbXmsg.internal_static_XmsgImHlrUsrInfoUpdateRsp_ExtEntry_descriptor, 
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "",
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "");
+    }
+    private com.google.protobuf.MapField<
+        java.lang.String, java.lang.String> ext_;
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+    internalGetExt() {
+      if (ext_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            ExtDefaultEntryHolder.defaultEntry);
       }
+      return ext_;
+    }
+
+    public int getExtCount() {
+      return internalGetExt().getMap().size();
     }
     /**
-     * <code>string ext = 1;</code>
+     * <code>map&lt;string, string&gt; ext = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getExtBytes() {
-      java.lang.Object ref = ext_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        ext_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
+
+    public boolean containsExt(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      return internalGetExt().getMap().containsKey(key);
+    }
+    /**
+     * Use {@link #getExtMap()} instead.
+     */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getExt() {
+      return getExtMap();
+    }
+    /**
+     * <code>map&lt;string, string&gt; ext = 1;</code>
+     */
+
+    public java.util.Map<java.lang.String, java.lang.String> getExtMap() {
+      return internalGetExt().getMap();
+    }
+    /**
+     * <code>map&lt;string, string&gt; ext = 1;</code>
+     */
+
+    public java.lang.String getExtOrDefault(
+        java.lang.String key,
+        java.lang.String defaultValue) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetExt().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <code>map&lt;string, string&gt; ext = 1;</code>
+     */
+
+    public java.lang.String getExtOrThrow(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetExt().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
       }
+      return map.get(key);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -63267,9 +65165,12 @@ public final class PbXmsg {
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getExtBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, ext_);
-      }
+      com.google.protobuf.GeneratedMessageV3
+        .serializeStringMapTo(
+          output,
+          internalGetExt(),
+          ExtDefaultEntryHolder.defaultEntry,
+          1);
       unknownFields.writeTo(output);
     }
 
@@ -63278,8 +65179,15 @@ public final class PbXmsg {
       if (size != -1) return size;
 
       size = 0;
-      if (!getExtBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, ext_);
+      for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
+           : internalGetExt().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+        ext__ = ExtDefaultEntryHolder.defaultEntry.newBuilderForType()
+            .setKey(entry.getKey())
+            .setValue(entry.getValue())
+            .build();
+        size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(1, ext__);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -63297,8 +65205,8 @@ public final class PbXmsg {
       x.msg.pb.PbXmsg.XmsgImHlrUsrInfoUpdateRsp other = (x.msg.pb.PbXmsg.XmsgImHlrUsrInfoUpdateRsp) obj;
 
       boolean result = true;
-      result = result && getExt()
-          .equals(other.getExt());
+      result = result && internalGetExt().equals(
+          other.internalGetExt());
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -63310,8 +65218,10 @@ public final class PbXmsg {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + EXT_FIELD_NUMBER;
-      hash = (53 * hash) + getExt().hashCode();
+      if (!internalGetExt().getMap().isEmpty()) {
+        hash = (37 * hash) + EXT_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetExt().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -63417,6 +65327,28 @@ public final class PbXmsg {
         return x.msg.pb.PbXmsg.internal_static_XmsgImHlrUsrInfoUpdateRsp_descriptor;
       }
 
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapField internalGetMapField(
+          int number) {
+        switch (number) {
+          case 1:
+            return internalGetExt();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapField internalGetMutableMapField(
+          int number) {
+        switch (number) {
+          case 1:
+            return internalGetMutableExt();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return x.msg.pb.PbXmsg.internal_static_XmsgImHlrUsrInfoUpdateRsp_fieldAccessorTable
@@ -63441,8 +65373,7 @@ public final class PbXmsg {
       }
       public Builder clear() {
         super.clear();
-        ext_ = "";
-
+        internalGetMutableExt().clear();
         return this;
       }
 
@@ -63465,7 +65396,9 @@ public final class PbXmsg {
 
       public x.msg.pb.PbXmsg.XmsgImHlrUsrInfoUpdateRsp buildPartial() {
         x.msg.pb.PbXmsg.XmsgImHlrUsrInfoUpdateRsp result = new x.msg.pb.PbXmsg.XmsgImHlrUsrInfoUpdateRsp(this);
-        result.ext_ = ext_;
+        int from_bitField0_ = bitField0_;
+        result.ext_ = internalGetExt();
+        result.ext_.makeImmutable();
         onBuilt();
         return result;
       }
@@ -63507,10 +65440,8 @@ public final class PbXmsg {
 
       public Builder mergeFrom(x.msg.pb.PbXmsg.XmsgImHlrUsrInfoUpdateRsp other) {
         if (other == x.msg.pb.PbXmsg.XmsgImHlrUsrInfoUpdateRsp.getDefaultInstance()) return this;
-        if (!other.getExt().isEmpty()) {
-          ext_ = other.ext_;
-          onChanged();
-        }
+        internalGetMutableExt().mergeFrom(
+            other.internalGetExt());
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -63537,73 +65468,128 @@ public final class PbXmsg {
         }
         return this;
       }
+      private int bitField0_;
 
-      private java.lang.Object ext_ = "";
-      /**
-       * <code>string ext = 1;</code>
-       */
-      public java.lang.String getExt() {
-        java.lang.Object ref = ext_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          ext_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
+      private com.google.protobuf.MapField<
+          java.lang.String, java.lang.String> ext_;
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      internalGetExt() {
+        if (ext_ == null) {
+          return com.google.protobuf.MapField.emptyMapField(
+              ExtDefaultEntryHolder.defaultEntry);
         }
+        return ext_;
       }
-      /**
-       * <code>string ext = 1;</code>
-       */
-      public com.google.protobuf.ByteString
-          getExtBytes() {
-        java.lang.Object ref = ext_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          ext_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      internalGetMutableExt() {
+        onChanged();;
+        if (ext_ == null) {
+          ext_ = com.google.protobuf.MapField.newMapField(
+              ExtDefaultEntryHolder.defaultEntry);
         }
+        if (!ext_.isMutable()) {
+          ext_ = ext_.copy();
+        }
+        return ext_;
+      }
+
+      public int getExtCount() {
+        return internalGetExt().getMap().size();
       }
       /**
-       * <code>string ext = 1;</code>
+       * <code>map&lt;string, string&gt; ext = 1;</code>
        */
-      public Builder setExt(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        ext_ = value;
-        onChanged();
-        return this;
+
+      public boolean containsExt(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        return internalGetExt().getMap().containsKey(key);
       }
       /**
-       * <code>string ext = 1;</code>
+       * Use {@link #getExtMap()} instead.
        */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.String> getExt() {
+        return getExtMap();
+      }
+      /**
+       * <code>map&lt;string, string&gt; ext = 1;</code>
+       */
+
+      public java.util.Map<java.lang.String, java.lang.String> getExtMap() {
+        return internalGetExt().getMap();
+      }
+      /**
+       * <code>map&lt;string, string&gt; ext = 1;</code>
+       */
+
+      public java.lang.String getExtOrDefault(
+          java.lang.String key,
+          java.lang.String defaultValue) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, java.lang.String> map =
+            internalGetExt().getMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+      /**
+       * <code>map&lt;string, string&gt; ext = 1;</code>
+       */
+
+      public java.lang.String getExtOrThrow(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, java.lang.String> map =
+            internalGetExt().getMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+
       public Builder clearExt() {
-        
-        ext_ = getDefaultInstance().getExt();
-        onChanged();
+        internalGetMutableExt().getMutableMap()
+            .clear();
         return this;
       }
       /**
-       * <code>string ext = 1;</code>
+       * <code>map&lt;string, string&gt; ext = 1;</code>
        */
-      public Builder setExtBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        ext_ = value;
-        onChanged();
+
+      public Builder removeExt(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutableExt().getMutableMap()
+            .remove(key);
+        return this;
+      }
+      /**
+       * Use alternate mutation accessors instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.String>
+      getMutableExt() {
+        return internalGetMutableExt().getMutableMap();
+      }
+      /**
+       * <code>map&lt;string, string&gt; ext = 1;</code>
+       */
+      public Builder putExt(
+          java.lang.String key,
+          java.lang.String value) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        if (value == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutableExt().getMutableMap()
+            .put(key, value);
+        return this;
+      }
+      /**
+       * <code>map&lt;string, string&gt; ext = 1;</code>
+       */
+
+      public Builder putAllExt(
+          java.util.Map<java.lang.String, java.lang.String> values) {
+        internalGetMutableExt().getMutableMap()
+            .putAll(values);
         return this;
       }
       public final Builder setUnknownFields(
@@ -69803,14 +71789,38 @@ public final class PbXmsg {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string ext = 1;</code>
+     * <code>map&lt;string, string&gt; ext = 1;</code>
      */
-    java.lang.String getExt();
+    int getExtCount();
     /**
-     * <code>string ext = 1;</code>
+     * <code>map&lt;string, string&gt; ext = 1;</code>
      */
-    com.google.protobuf.ByteString
-        getExtBytes();
+    boolean containsExt(
+        java.lang.String key);
+    /**
+     * Use {@link #getExtMap()} instead.
+     */
+    @java.lang.Deprecated
+    java.util.Map<java.lang.String, java.lang.String>
+    getExt();
+    /**
+     * <code>map&lt;string, string&gt; ext = 1;</code>
+     */
+    java.util.Map<java.lang.String, java.lang.String>
+    getExtMap();
+    /**
+     * <code>map&lt;string, string&gt; ext = 1;</code>
+     */
+
+    java.lang.String getExtOrDefault(
+        java.lang.String key,
+        java.lang.String defaultValue);
+    /**
+     * <code>map&lt;string, string&gt; ext = 1;</code>
+     */
+
+    java.lang.String getExtOrThrow(
+        java.lang.String key);
   }
   /**
    * Protobuf type {@code XmsgImOrgSyncPubRsp}
@@ -69825,7 +71835,6 @@ public final class PbXmsg {
       super(builder);
     }
     private XmsgImOrgSyncPubRsp() {
-      ext_ = "";
     }
 
     @java.lang.Override
@@ -69860,9 +71869,16 @@ public final class PbXmsg {
               break;
             }
             case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              ext_ = s;
+              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                ext_ = com.google.protobuf.MapField.newMapField(
+                    ExtDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000001;
+              }
+              com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+              ext__ = input.readMessage(
+                  ExtDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              ext_.getMutableMap().put(
+                  ext__.getKey(), ext__.getValue());
               break;
             }
           }
@@ -69882,6 +71898,17 @@ public final class PbXmsg {
       return x.msg.pb.PbXmsg.internal_static_XmsgImOrgSyncPubRsp_descriptor;
     }
 
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapField internalGetMapField(
+        int number) {
+      switch (number) {
+        case 1:
+          return internalGetExt();
+        default:
+          throw new RuntimeException(
+              "Invalid map field number: " + number);
+      }
+    }
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return x.msg.pb.PbXmsg.internal_static_XmsgImOrgSyncPubRsp_fieldAccessorTable
@@ -69890,37 +71917,79 @@ public final class PbXmsg {
     }
 
     public static final int EXT_FIELD_NUMBER = 1;
-    private volatile java.lang.Object ext_;
-    /**
-     * <code>string ext = 1;</code>
-     */
-    public java.lang.String getExt() {
-      java.lang.Object ref = ext_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        ext_ = s;
-        return s;
+    private static final class ExtDefaultEntryHolder {
+      static final com.google.protobuf.MapEntry<
+          java.lang.String, java.lang.String> defaultEntry =
+              com.google.protobuf.MapEntry
+              .<java.lang.String, java.lang.String>newDefaultInstance(
+                  x.msg.pb.PbXmsg.internal_static_XmsgImOrgSyncPubRsp_ExtEntry_descriptor, 
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "",
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "");
+    }
+    private com.google.protobuf.MapField<
+        java.lang.String, java.lang.String> ext_;
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+    internalGetExt() {
+      if (ext_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            ExtDefaultEntryHolder.defaultEntry);
       }
+      return ext_;
+    }
+
+    public int getExtCount() {
+      return internalGetExt().getMap().size();
     }
     /**
-     * <code>string ext = 1;</code>
+     * <code>map&lt;string, string&gt; ext = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getExtBytes() {
-      java.lang.Object ref = ext_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        ext_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
+
+    public boolean containsExt(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      return internalGetExt().getMap().containsKey(key);
+    }
+    /**
+     * Use {@link #getExtMap()} instead.
+     */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getExt() {
+      return getExtMap();
+    }
+    /**
+     * <code>map&lt;string, string&gt; ext = 1;</code>
+     */
+
+    public java.util.Map<java.lang.String, java.lang.String> getExtMap() {
+      return internalGetExt().getMap();
+    }
+    /**
+     * <code>map&lt;string, string&gt; ext = 1;</code>
+     */
+
+    public java.lang.String getExtOrDefault(
+        java.lang.String key,
+        java.lang.String defaultValue) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetExt().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <code>map&lt;string, string&gt; ext = 1;</code>
+     */
+
+    public java.lang.String getExtOrThrow(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetExt().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
       }
+      return map.get(key);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -69935,9 +72004,12 @@ public final class PbXmsg {
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getExtBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, ext_);
-      }
+      com.google.protobuf.GeneratedMessageV3
+        .serializeStringMapTo(
+          output,
+          internalGetExt(),
+          ExtDefaultEntryHolder.defaultEntry,
+          1);
       unknownFields.writeTo(output);
     }
 
@@ -69946,8 +72018,15 @@ public final class PbXmsg {
       if (size != -1) return size;
 
       size = 0;
-      if (!getExtBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, ext_);
+      for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
+           : internalGetExt().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+        ext__ = ExtDefaultEntryHolder.defaultEntry.newBuilderForType()
+            .setKey(entry.getKey())
+            .setValue(entry.getValue())
+            .build();
+        size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(1, ext__);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -69965,8 +72044,8 @@ public final class PbXmsg {
       x.msg.pb.PbXmsg.XmsgImOrgSyncPubRsp other = (x.msg.pb.PbXmsg.XmsgImOrgSyncPubRsp) obj;
 
       boolean result = true;
-      result = result && getExt()
-          .equals(other.getExt());
+      result = result && internalGetExt().equals(
+          other.internalGetExt());
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -69978,8 +72057,10 @@ public final class PbXmsg {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + EXT_FIELD_NUMBER;
-      hash = (53 * hash) + getExt().hashCode();
+      if (!internalGetExt().getMap().isEmpty()) {
+        hash = (37 * hash) + EXT_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetExt().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -70085,6 +72166,28 @@ public final class PbXmsg {
         return x.msg.pb.PbXmsg.internal_static_XmsgImOrgSyncPubRsp_descriptor;
       }
 
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapField internalGetMapField(
+          int number) {
+        switch (number) {
+          case 1:
+            return internalGetExt();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapField internalGetMutableMapField(
+          int number) {
+        switch (number) {
+          case 1:
+            return internalGetMutableExt();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return x.msg.pb.PbXmsg.internal_static_XmsgImOrgSyncPubRsp_fieldAccessorTable
@@ -70109,8 +72212,7 @@ public final class PbXmsg {
       }
       public Builder clear() {
         super.clear();
-        ext_ = "";
-
+        internalGetMutableExt().clear();
         return this;
       }
 
@@ -70133,7 +72235,9 @@ public final class PbXmsg {
 
       public x.msg.pb.PbXmsg.XmsgImOrgSyncPubRsp buildPartial() {
         x.msg.pb.PbXmsg.XmsgImOrgSyncPubRsp result = new x.msg.pb.PbXmsg.XmsgImOrgSyncPubRsp(this);
-        result.ext_ = ext_;
+        int from_bitField0_ = bitField0_;
+        result.ext_ = internalGetExt();
+        result.ext_.makeImmutable();
         onBuilt();
         return result;
       }
@@ -70175,10 +72279,8 @@ public final class PbXmsg {
 
       public Builder mergeFrom(x.msg.pb.PbXmsg.XmsgImOrgSyncPubRsp other) {
         if (other == x.msg.pb.PbXmsg.XmsgImOrgSyncPubRsp.getDefaultInstance()) return this;
-        if (!other.getExt().isEmpty()) {
-          ext_ = other.ext_;
-          onChanged();
-        }
+        internalGetMutableExt().mergeFrom(
+            other.internalGetExt());
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -70205,73 +72307,128 @@ public final class PbXmsg {
         }
         return this;
       }
+      private int bitField0_;
 
-      private java.lang.Object ext_ = "";
-      /**
-       * <code>string ext = 1;</code>
-       */
-      public java.lang.String getExt() {
-        java.lang.Object ref = ext_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          ext_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
+      private com.google.protobuf.MapField<
+          java.lang.String, java.lang.String> ext_;
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      internalGetExt() {
+        if (ext_ == null) {
+          return com.google.protobuf.MapField.emptyMapField(
+              ExtDefaultEntryHolder.defaultEntry);
         }
+        return ext_;
       }
-      /**
-       * <code>string ext = 1;</code>
-       */
-      public com.google.protobuf.ByteString
-          getExtBytes() {
-        java.lang.Object ref = ext_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          ext_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      internalGetMutableExt() {
+        onChanged();;
+        if (ext_ == null) {
+          ext_ = com.google.protobuf.MapField.newMapField(
+              ExtDefaultEntryHolder.defaultEntry);
         }
+        if (!ext_.isMutable()) {
+          ext_ = ext_.copy();
+        }
+        return ext_;
+      }
+
+      public int getExtCount() {
+        return internalGetExt().getMap().size();
       }
       /**
-       * <code>string ext = 1;</code>
+       * <code>map&lt;string, string&gt; ext = 1;</code>
        */
-      public Builder setExt(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        ext_ = value;
-        onChanged();
-        return this;
+
+      public boolean containsExt(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        return internalGetExt().getMap().containsKey(key);
       }
       /**
-       * <code>string ext = 1;</code>
+       * Use {@link #getExtMap()} instead.
        */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.String> getExt() {
+        return getExtMap();
+      }
+      /**
+       * <code>map&lt;string, string&gt; ext = 1;</code>
+       */
+
+      public java.util.Map<java.lang.String, java.lang.String> getExtMap() {
+        return internalGetExt().getMap();
+      }
+      /**
+       * <code>map&lt;string, string&gt; ext = 1;</code>
+       */
+
+      public java.lang.String getExtOrDefault(
+          java.lang.String key,
+          java.lang.String defaultValue) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, java.lang.String> map =
+            internalGetExt().getMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+      /**
+       * <code>map&lt;string, string&gt; ext = 1;</code>
+       */
+
+      public java.lang.String getExtOrThrow(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, java.lang.String> map =
+            internalGetExt().getMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+
       public Builder clearExt() {
-        
-        ext_ = getDefaultInstance().getExt();
-        onChanged();
+        internalGetMutableExt().getMutableMap()
+            .clear();
         return this;
       }
       /**
-       * <code>string ext = 1;</code>
+       * <code>map&lt;string, string&gt; ext = 1;</code>
        */
-      public Builder setExtBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        ext_ = value;
-        onChanged();
+
+      public Builder removeExt(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutableExt().getMutableMap()
+            .remove(key);
+        return this;
+      }
+      /**
+       * Use alternate mutation accessors instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.String>
+      getMutableExt() {
+        return internalGetMutableExt().getMutableMap();
+      }
+      /**
+       * <code>map&lt;string, string&gt; ext = 1;</code>
+       */
+      public Builder putExt(
+          java.lang.String key,
+          java.lang.String value) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        if (value == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutableExt().getMutableMap()
+            .put(key, value);
+        return this;
+      }
+      /**
+       * <code>map&lt;string, string&gt; ext = 1;</code>
+       */
+
+      public Builder putAllExt(
+          java.util.Map<java.lang.String, java.lang.String> values) {
+        internalGetMutableExt().getMutableMap()
+            .putAll(values);
         return this;
       }
       public final Builder setUnknownFields(
@@ -102352,20 +104509,40 @@ public final class PbXmsg {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_XmsgImHlrAttachSimpleReq_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_XmsgImHlrAttachSimpleReq_ExtEntry_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_XmsgImHlrAttachSimpleReq_ExtEntry_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_XmsgImHlrAttachSimpleRsp_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_XmsgImHlrAttachSimpleRsp_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_XmsgImHlrAttachSimpleRsp_ExtEntry_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_XmsgImHlrAttachSimpleRsp_ExtEntry_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_XmsgImHlrDetachSimpleReq_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_XmsgImHlrDetachSimpleReq_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_XmsgImHlrDetachSimpleReq_ExtEntry_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_XmsgImHlrDetachSimpleReq_ExtEntry_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_XmsgImHlrDetachSimpleRsp_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_XmsgImHlrDetachSimpleRsp_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_XmsgImHlrDetachSimpleRsp_ExtEntry_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_XmsgImHlrDetachSimpleRsp_ExtEntry_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_XmsgImHlrOtherClientAttachReq_descriptor;
   private static final 
@@ -102392,15 +104569,30 @@ public final class PbXmsg {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_XmsgImAuthSimpleRsp_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_XmsgImAuthSimpleRsp_ExtEntry_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_XmsgImAuthSimpleRsp_ExtEntry_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_XmsgImClientDeviceInfo_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_XmsgImClientDeviceInfo_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_XmsgImClientDeviceInfo_ExtEntry_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_XmsgImClientDeviceInfo_ExtEntry_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_XmsgImClientServiceAddress_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_XmsgImClientServiceAddress_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_XmsgImClientServiceAddress_ExtEntry_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_XmsgImClientServiceAddress_ExtEntry_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_XmsgImAuthRegSimpleReq_descriptor;
   private static final 
@@ -102411,6 +104603,11 @@ public final class PbXmsg {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_XmsgImAuthRegSimpleRsp_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_XmsgImAuthRegSimpleRsp_ExtEntry_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_XmsgImAuthRegSimpleRsp_ExtEntry_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_XmsgImHlrOtherUsrInfoQueryReq_descriptor;
   private static final 
@@ -102517,6 +104714,11 @@ public final class PbXmsg {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_XmsgImHlrUsrInfoQueryReq_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_XmsgImHlrUsrInfoQueryReq_ExtEntry_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_XmsgImHlrUsrInfoQueryReq_ExtEntry_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_XmsgImHlrUsrInfoQueryRsp_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -102541,6 +104743,11 @@ public final class PbXmsg {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_XmsgImHlrUsrInfoUpdateRsp_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_XmsgImHlrUsrInfoUpdateRsp_ExtEntry_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_XmsgImHlrUsrInfoUpdateRsp_ExtEntry_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_XmsgImClientDbCrudReq_descriptor;
   private static final 
@@ -102596,6 +104803,11 @@ public final class PbXmsg {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_XmsgImOrgSyncPubRsp_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_XmsgImOrgSyncPubRsp_ExtEntry_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_XmsgImOrgSyncPubRsp_ExtEntry_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_XmsgImOrgChangedNotice_descriptor;
   private static final 
@@ -102940,269 +105152,292 @@ public final class PbXmsg {
       "atusUsrClientStatus\032M\n XmsgChannelStatus" +
       "UsrClientStatus\022\014\n\004plat\030\001 \001(\t\022\013\n\003did\030\002 \001" +
       "(\t\022\016\n\006status\030\003 \001(\t\".\n\034XmsgChannelStatusG" +
-      "roupStatus\022\016\n\006status\030\001 \001(\t\"h\n\023XmsgClient" +
-      "TokenInfo\022\r\n\005token\030\001 \001(\t\022\013\n\003alg\030\002 \001(\t\022\014\n" +
-      "\004slat\030\003 \001(\t\022\014\n\004plat\030\004 \001(\t\022\013\n\003did\030\005 \001(\t\022\014" +
-      "\n\004sign\030\006 \001(\t\"M\n\027XmsgImGroupMemberAddReq\022" +
-      "\013\n\003cgt\030\001 \001(\t\022%\n\006member\030\002 \003(\0132\025.XmsgImGro" +
-      "upAddMember\"u\n\027XmsgImGroupMemberAddRsp\022." +
-      "\n\003ext\030\001 \003(\0132!.XmsgImGroupMemberAddRsp.Ex" +
-      "tEntry\032*\n\010ExtEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value" +
-      "\030\002 \001(\t:\0028\001\"7\n\031XmsgImGroupMemberQueryReq\022" +
-      "\014\n\004gcgt\030\001 \001(\t\022\014\n\004mcgt\030\002 \003(\t\"C\n\031XmsgImGro" +
-      "upMemberQueryRsp\022&\n\006member\030\001 \003(\0132\026.XmsgI" +
-      "mGroupInfoMember\"\260\001\n\032XmsgImGroupMemberUp" +
-      "dateReq\022\014\n\004gcgt\030\001 \001(\t\022\014\n\004mcgt\030\002 \001(\t\0227\n\006u" +
-      "psert\030\003 \003(\0132\'.XmsgImGroupMemberUpdateReq" +
-      ".UpsertEntry\022\016\n\006remove\030\004 \003(\t\032-\n\013UpsertEn" +
-      "try\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"{\n\032X" +
-      "msgImGroupMemberUpdateRsp\0221\n\003ext\030\001 \003(\0132$" +
-      ".XmsgImGroupMemberUpdateRsp.ExtEntry\032*\n\010" +
-      "ExtEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001" +
-      "\"8\n\032XmsgImGroupMemberDeleteReq\022\014\n\004gcgt\030\001" +
-      " \001(\t\022\014\n\004mcgt\030\002 \003(\t\"{\n\032XmsgImGroupMemberD" +
-      "eleteRsp\0221\n\003ext\030\001 \003(\0132$.XmsgImGroupMembe" +
-      "rDeleteRsp.ExtEntry\032*\n\010ExtEntry\022\013\n\003key\030\001" +
-      " \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\345\005\n\025XmsgImSdkEve" +
-      "ntAdapter\022\r\n\005apiId\030\001 \001(\r\022$\n\007evnType\030\002 \001(" +
-      "\0162\023.XmsgImSdkEventType\022A\n\tnetNotice\030\003 \001(" +
-      "\0132..XmsgImSdkEventAdapter.XmsgImSdkEvent" +
-      "NetNotice\022;\n\006netReq\030\004 \001(\0132+.XmsgImSdkEve" +
-      "ntAdapter.XmsgImSdkEventNetReq\022;\n\006netRsp" +
-      "\030\005 \001(\0132+.XmsgImSdkEventAdapter.XmsgImSdk" +
-      "EventNetRsp\0229\n\005dbRsp\030\006 \001(\0132*.XmsgImSdkEv" +
-      "entAdapter.XmsgImSdkEventDbRsp\022;\n\006cxxLog" +
-      "\030\007 \001(\0132+.XmsgImSdkEventAdapter.XmsgImSdk" +
-      "EventCxxLog\0323\n\027XmsgImSdkEventNetNotice\022\013" +
-      "\n\003msg\030\001 \001(\t\022\013\n\003dat\030\002 \001(\014\032=\n\024XmsgImSdkEve" +
-      "ntNetReq\022\013\n\003tid\030\001 \001(\r\022\013\n\003msg\030\002 \001(\t\022\013\n\003da" +
-      "t\030\003 \001(\014\032X\n\024XmsgImSdkEventNetRsp\022\013\n\003tid\030\001" +
-      " \001(\r\022\013\n\003ret\030\002 \001(\r\022\014\n\004desc\030\003 \001(\t\022\013\n\003msg\030\004" +
-      " \001(\t\022\013\n\003dat\030\005 \001(\014\032b\n\023XmsgImSdkEventDbRsp" +
-      "\022\013\n\003tid\030\001 \001(\r\022\013\n\003ret\030\002 \001(\r\022\014\n\004desc\030\003 \001(\t" +
-      "\022#\n\003dat\030\005 \001(\0132\026.XmsgImClientDbCrudRsp\0320\n" +
-      "\024XmsgImSdkEventCxxLog\022\013\n\003lev\030\001 \001(\r\022\013\n\003lo" +
-      "g\030\002 \001(\t\"D\n\030XmsgImSdkEventXmsgImAuth\022\013\n\003e" +
-      "vn\030\001 \001(\t\022\r\n\005times\030\002 \001(\r\022\014\n\004addr\030\003 \001(\t\"@\n" +
-      "\024XmsgImSdkEventXmsgAp\022\013\n\003evn\030\001 \001(\t\022\r\n\005ti" +
-      "mes\030\002 \001(\r\022\014\n\004addr\030\003 \001(\t\"_\n\030XmsgImHlrAtta" +
-      "chSimpleReq\022\r\n\005token\030\001 \001(\t\022\014\n\004salt\030\002 \001(\t" +
-      "\022\014\n\004sign\030\003 \001(\t\022\013\n\003alg\030\004 \001(\t\022\013\n\003ext\030\005 \001(\t" +
-      "\"4\n\030XmsgImHlrAttachSimpleRsp\022\013\n\003cgt\030\001 \001(" +
-      "\t\022\013\n\003ext\030\002 \001(\t\"\'\n\030XmsgImHlrDetachSimpleR" +
-      "eq\022\013\n\003ext\030\001 \001(\t\"\'\n\030XmsgImHlrDetachSimple" +
-      "Rsp\022\013\n\003ext\030\001 \001(\t\"S\n\035XmsgImHlrOtherClient" +
-      "AttachReq\022$\n\003dev\030\001 \001(\0132\027.XmsgImClientDev" +
-      "iceInfo\022\014\n\004host\030\002 \001(\t\"/\n\035XmsgImHlrOtherC" +
-      "lientAttachRsp\022\016\n\006action\030\001 \001(\t\"V\n XmsgIm" +
-      "HlrOtherClientAttachNotice\022$\n\003dev\030\001 \001(\0132" +
-      "\027.XmsgImClientDeviceInfo\022\014\n\004host\030\002 \001(\t\"d" +
-      "\n\023XmsgImAuthSimpleReq\022\013\n\003usr\030\001 \001(\t\022\014\n\004sa" +
-      "lt\030\002 \001(\t\022\014\n\004sign\030\003 \001(\t\022$\n\003dev\030\004 \001(\0132\027.Xm" +
-      "sgImClientDeviceInfo\"\254\001\n\023XmsgImAuthSimpl" +
-      "eRsp\022\r\n\005token\030\001 \001(\t\022\016\n\006secret\030\002 \001(\t\022\017\n\007e" +
-      "xpired\030\003 \001(\004\022+\n\006apAddr\030\004 \003(\0132\033.XmsgImCli" +
-      "entServiceAddress\022+\n\006fsAddr\030\005 \003(\0132\033.Xmsg" +
-      "ImClientServiceAddress\022\013\n\003ext\030\006 \001(\t\"M\n\026X" +
-      "msgImClientDeviceInfo\022\014\n\004plat\030\001 \001(\t\022\013\n\003d" +
-      "id\030\002 \001(\t\022\013\n\003ver\030\003 \001(\t\022\013\n\003ext\030\004 \001(\t\"b\n\032Xm" +
-      "sgImClientServiceAddress\022\n\n\002ip\030\001 \001(\t\022\014\n\004" +
-      "port\030\002 \001(\r\022\016\n\006weight\030\003 \001(\r\022\r\n\005proto\030\004 \003(" +
-      "\t\022\013\n\003ext\030\005 \001(\t\"f\n\026XmsgImAuthRegSimpleReq" +
-      "\022\013\n\003usr\030\001 \001(\t\022\014\n\004salt\030\002 \001(\t\022\013\n\003pwd\030\003 \001(\t" +
-      "\022$\n\003dev\030\004 \001(\0132\027.XmsgImClientDeviceInfo\"%" +
-      "\n\026XmsgImAuthRegSimpleRsp\022\013\n\003ext\030\001 \001(\t\",\n" +
-      "\035XmsgImHlrOtherUsrInfoQueryReq\022\013\n\003cgt\030\001 " +
-      "\003(\t\"\245\001\n\035XmsgImHlrOtherUsrInfoQueryRsp\022<\n" +
-      "\007usrInfo\030\001 \003(\0132+.XmsgImHlrOtherUsrInfoQu" +
-      "eryRsp.UsrInfoEntry\032F\n\014UsrInfoEntry\022\013\n\003k" +
-      "ey\030\001 \001(\t\022%\n\005value\030\002 \001(\0132\026.XmsgImHlrOther" +
-      "UsrInfo:\0028\001\"t\n\025XmsgImHlrOtherUsrInfo\022.\n\004" +
-      "info\030\001 \003(\0132 .XmsgImHlrOtherUsrInfo.InfoE" +
-      "ntry\032+\n\tInfoEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030" +
-      "\002 \001(\t:\0028\001\"\231\001\n\027XmsgFileUploadSimpleReq\022\020\n" +
-      "\010fileName\030\001 \001(\t\022\020\n\010fileSize\030\002 \001(\004\022.\n\003ext" +
-      "\030\003 \003(\0132!.XmsgFileUploadSimpleReq.ExtEntr" +
+      "roupStatus\022\016\n\006status\030\001 \001(\t\"u\n\023XmsgClient" +
+      "TokenInfo\022\013\n\003cgt\030\001 \001(\t\022\r\n\005token\030\002 \001(\t\022\013\n" +
+      "\003alg\030\003 \001(\t\022\014\n\004slat\030\004 \001(\t\022\014\n\004plat\030\005 \001(\t\022\013" +
+      "\n\003did\030\006 \001(\t\022\014\n\004sign\030\007 \001(\t\"M\n\027XmsgImGroup" +
+      "MemberAddReq\022\013\n\003cgt\030\001 \001(\t\022%\n\006member\030\002 \003(" +
+      "\0132\025.XmsgImGroupAddMember\"u\n\027XmsgImGroupM" +
+      "emberAddRsp\022.\n\003ext\030\001 \003(\0132!.XmsgImGroupMe" +
+      "mberAddRsp.ExtEntry\032*\n\010ExtEntry\022\013\n\003key\030\001" +
+      " \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"7\n\031XmsgImGroupMe" +
+      "mberQueryReq\022\014\n\004gcgt\030\001 \001(\t\022\014\n\004mcgt\030\002 \003(\t" +
+      "\"C\n\031XmsgImGroupMemberQueryRsp\022&\n\006member\030" +
+      "\001 \003(\0132\026.XmsgImGroupInfoMember\"\260\001\n\032XmsgIm" +
+      "GroupMemberUpdateReq\022\014\n\004gcgt\030\001 \001(\t\022\014\n\004mc" +
+      "gt\030\002 \001(\t\0227\n\006upsert\030\003 \003(\0132\'.XmsgImGroupMe" +
+      "mberUpdateReq.UpsertEntry\022\016\n\006remove\030\004 \003(" +
+      "\t\032-\n\013UpsertEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002" +
+      " \001(\t:\0028\001\"{\n\032XmsgImGroupMemberUpdateRsp\0221" +
+      "\n\003ext\030\001 \003(\0132$.XmsgImGroupMemberUpdateRsp" +
+      ".ExtEntry\032*\n\010ExtEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005va" +
+      "lue\030\002 \001(\t:\0028\001\"8\n\032XmsgImGroupMemberDelete" +
+      "Req\022\014\n\004gcgt\030\001 \001(\t\022\014\n\004mcgt\030\002 \003(\t\"{\n\032XmsgI" +
+      "mGroupMemberDeleteRsp\0221\n\003ext\030\001 \003(\0132$.Xms" +
+      "gImGroupMemberDeleteRsp.ExtEntry\032*\n\010ExtE" +
+      "ntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\345\005\n" +
+      "\025XmsgImSdkEventAdapter\022\r\n\005apiId\030\001 \001(\r\022$\n" +
+      "\007evnType\030\002 \001(\0162\023.XmsgImSdkEventType\022A\n\tn" +
+      "etNotice\030\003 \001(\0132..XmsgImSdkEventAdapter.X" +
+      "msgImSdkEventNetNotice\022;\n\006netReq\030\004 \001(\0132+" +
+      ".XmsgImSdkEventAdapter.XmsgImSdkEventNet" +
+      "Req\022;\n\006netRsp\030\005 \001(\0132+.XmsgImSdkEventAdap" +
+      "ter.XmsgImSdkEventNetRsp\0229\n\005dbRsp\030\006 \001(\0132" +
+      "*.XmsgImSdkEventAdapter.XmsgImSdkEventDb" +
+      "Rsp\022;\n\006cxxLog\030\007 \001(\0132+.XmsgImSdkEventAdap" +
+      "ter.XmsgImSdkEventCxxLog\0323\n\027XmsgImSdkEve" +
+      "ntNetNotice\022\013\n\003msg\030\001 \001(\t\022\013\n\003dat\030\002 \001(\014\032=\n" +
+      "\024XmsgImSdkEventNetReq\022\013\n\003tid\030\001 \001(\r\022\013\n\003ms" +
+      "g\030\002 \001(\t\022\013\n\003dat\030\003 \001(\014\032X\n\024XmsgImSdkEventNe" +
+      "tRsp\022\013\n\003tid\030\001 \001(\r\022\013\n\003ret\030\002 \001(\r\022\014\n\004desc\030\003" +
+      " \001(\t\022\013\n\003msg\030\004 \001(\t\022\013\n\003dat\030\005 \001(\014\032b\n\023XmsgIm" +
+      "SdkEventDbRsp\022\013\n\003tid\030\001 \001(\r\022\013\n\003ret\030\002 \001(\r\022" +
+      "\014\n\004desc\030\003 \001(\t\022#\n\003dat\030\005 \001(\0132\026.XmsgImClien" +
+      "tDbCrudRsp\0320\n\024XmsgImSdkEventCxxLog\022\013\n\003le" +
+      "v\030\001 \001(\r\022\013\n\003log\030\002 \001(\t\"D\n\030XmsgImSdkEventXm" +
+      "sgImAuth\022\013\n\003evn\030\001 \001(\t\022\r\n\005times\030\002 \001(\r\022\014\n\004" +
+      "addr\030\003 \001(\t\"@\n\024XmsgImSdkEventXmsgAp\022\013\n\003ev" +
+      "n\030\001 \001(\t\022\r\n\005times\030\002 \001(\r\022\014\n\004addr\030\003 \001(\t\"\274\001\n" +
+      "\030XmsgImHlrAttachSimpleReq\022\r\n\005token\030\001 \001(\t" +
+      "\022\014\n\004salt\030\002 \001(\t\022\014\n\004sign\030\003 \001(\t\022\013\n\003alg\030\004 \001(" +
+      "\t\022\013\n\003cgt\030\005 \001(\t\022/\n\003ext\030\006 \003(\0132\".XmsgImHlrA" +
+      "ttachSimpleReq.ExtEntry\032*\n\010ExtEntry\022\013\n\003k" +
+      "ey\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"w\n\030XmsgImHlr" +
+      "AttachSimpleRsp\022/\n\003ext\030\001 \003(\0132\".XmsgImHlr" +
+      "AttachSimpleRsp.ExtEntry\032*\n\010ExtEntry\022\013\n\003" +
+      "key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"w\n\030XmsgImHl" +
+      "rDetachSimpleReq\022/\n\003ext\030\001 \003(\0132\".XmsgImHl" +
+      "rDetachSimpleReq.ExtEntry\032*\n\010ExtEntry\022\013\n" +
+      "\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"w\n\030XmsgImH" +
+      "lrDetachSimpleRsp\022/\n\003ext\030\001 \003(\0132\".XmsgImH" +
+      "lrDetachSimpleRsp.ExtEntry\032*\n\010ExtEntry\022\013" +
+      "\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"S\n\035XmsgIm" +
+      "HlrOtherClientAttachReq\022$\n\003dev\030\001 \001(\0132\027.X" +
+      "msgImClientDeviceInfo\022\014\n\004host\030\002 \001(\t\"/\n\035X" +
+      "msgImHlrOtherClientAttachRsp\022\016\n\006action\030\001" +
+      " \001(\t\"V\n XmsgImHlrOtherClientAttachNotice" +
+      "\022$\n\003dev\030\001 \001(\0132\027.XmsgImClientDeviceInfo\022\014" +
+      "\n\004host\030\002 \001(\t\"d\n\023XmsgImAuthSimpleReq\022\013\n\003u" +
+      "sr\030\001 \001(\t\022\014\n\004salt\030\002 \001(\t\022\014\n\004sign\030\003 \001(\t\022$\n\003" +
+      "dev\030\004 \001(\0132\027.XmsgImClientDeviceInfo\"\204\002\n\023X" +
+      "msgImAuthSimpleRsp\022\r\n\005token\030\001 \001(\t\022\016\n\006sec" +
+      "ret\030\002 \001(\t\022\017\n\007expired\030\003 \001(\004\022+\n\006apAddr\030\004 \003" +
+      "(\0132\033.XmsgImClientServiceAddress\022+\n\006fsAdd" +
+      "r\030\005 \003(\0132\033.XmsgImClientServiceAddress\022\013\n\003" +
+      "cgt\030\007 \001(\t\022*\n\003ext\030\010 \003(\0132\035.XmsgImAuthSimpl" +
+      "eRsp.ExtEntry\032*\n\010ExtEntry\022\013\n\003key\030\001 \001(\t\022\r" +
+      "\n\005value\030\002 \001(\t:\0028\001\"\233\001\n\026XmsgImClientDevice" +
+      "Info\022\014\n\004plat\030\001 \001(\t\022\013\n\003did\030\002 \001(\t\022\013\n\003ver\030\003" +
+      " \001(\t\022-\n\003ext\030\004 \003(\0132 .XmsgImClientDeviceIn" +
+      "fo.ExtEntry\032*\n\010ExtEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005" +
+      "value\030\002 \001(\t:\0028\001\"\264\001\n\032XmsgImClientServiceA" +
+      "ddress\022\n\n\002ip\030\001 \001(\t\022\014\n\004port\030\002 \001(\r\022\016\n\006weig" +
+      "ht\030\003 \001(\r\022\r\n\005proto\030\004 \003(\t\0221\n\003ext\030\005 \003(\0132$.X" +
+      "msgImClientServiceAddress.ExtEntry\032*\n\010Ex" +
+      "tEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"f" +
+      "\n\026XmsgImAuthRegSimpleReq\022\013\n\003usr\030\001 \001(\t\022\014\n" +
+      "\004salt\030\002 \001(\t\022\013\n\003pwd\030\003 \001(\t\022$\n\003dev\030\004 \001(\0132\027." +
+      "XmsgImClientDeviceInfo\"s\n\026XmsgImAuthRegS" +
+      "impleRsp\022-\n\003ext\030\001 \003(\0132 .XmsgImAuthRegSim" +
+      "pleRsp.ExtEntry\032*\n\010ExtEntry\022\013\n\003key\030\001 \001(\t" +
+      "\022\r\n\005value\030\002 \001(\t:\0028\001\",\n\035XmsgImHlrOtherUsr" +
+      "InfoQueryReq\022\013\n\003cgt\030\001 \003(\t\"\245\001\n\035XmsgImHlrO" +
+      "therUsrInfoQueryRsp\022<\n\007usrInfo\030\001 \003(\0132+.X" +
+      "msgImHlrOtherUsrInfoQueryRsp.UsrInfoEntr" +
+      "y\032F\n\014UsrInfoEntry\022\013\n\003key\030\001 \001(\t\022%\n\005value\030" +
+      "\002 \001(\0132\026.XmsgImHlrOtherUsrInfo:\0028\001\"t\n\025Xms" +
+      "gImHlrOtherUsrInfo\022.\n\004info\030\001 \003(\0132 .XmsgI" +
+      "mHlrOtherUsrInfo.InfoEntry\032+\n\tInfoEntry\022" +
+      "\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\231\001\n\027Xmsg" +
+      "FileUploadSimpleReq\022\020\n\010fileName\030\001 \001(\t\022\020\n" +
+      "\010fileSize\030\002 \001(\004\022.\n\003ext\030\003 \003(\0132!.XmsgFileU" +
+      "ploadSimpleReq.ExtEntry\032*\n\010ExtEntry\022\013\n\003k" +
+      "ey\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\223\001\n\027XmsgFile" +
+      "UploadSimpleRsp\022\013\n\003fid\030\001 \001(\t\022\017\n\007hashVal\030" +
+      "\002 \001(\t\022.\n\003ext\030\003 \003(\0132!.XmsgFileUploadSimpl" +
+      "eRsp.ExtEntry\032*\n\010ExtEntry\022\013\n\003key\030\001 \001(\t\022\r" +
+      "\n\005value\030\002 \001(\t:\0028\001\"\260\001\n\031XmsgFileDownloadSi" +
+      "mpleReq\022\013\n\003fid\030\001 \001(\t\022\013\n\003cgt\030\002 \001(\t\022\016\n\006off" +
+      "set\030\003 \001(\004\022\013\n\003len\030\004 \001(\004\0220\n\003ext\030\005 \003(\0132#.Xm" +
+      "sgFileDownloadSimpleReq.ExtEntry\032*\n\010ExtE" +
+      "ntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\273\001\n" +
+      "\031XmsgFileDownloadSimpleRsp\022\020\n\010fileName\030\001" +
+      " \001(\t\022\020\n\010fileSize\030\002 \001(\004\022\017\n\007hashVal\030\003 \001(\t\022" +
+      "\013\n\003gts\030\004 \001(\004\0220\n\003ext\030\005 \003(\0132#.XmsgFileDown" +
+      "loadSimpleRsp.ExtEntry\032*\n\010ExtEntry\022\013\n\003ke" +
+      "y\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"W\n\033XmsgFileUs" +
+      "rFileInfoQueryReq\022\013\n\003sts\030\001 \001(\004\022\013\n\003ets\030\002 " +
+      "\001(\004\022\014\n\004page\030\003 \001(\r\022\020\n\010pageSize\030\004 \001(\r\"E\n\033X" +
+      "msgFileUsrFileInfoQueryRsp\022&\n\010fileInfo\030\001" +
+      " \003(\0132\024.XmsgFileUsrFileInfo\"d\n\023XmsgFileUs" +
+      "rFileInfo\022\013\n\003fid\030\001 \001(\t\022\020\n\010fileName\030\002 \001(\t" +
+      "\022\020\n\010fileSize\030\003 \001(\004\022\017\n\007hashVal\030\004 \001(\t\022\013\n\003g" +
+      "ts\030\005 \001(\004\"\211\001\n\017XmsgImHlrUsrDat\022\013\n\003uid\030\001 \001(" +
+      "\t\022\013\n\003ver\030\002 \001(\004\022 \n\003pri\030\003 \001(\0132\023.XmsgImHlrU" +
+      "srDatPri\022 \n\003pub\030\004 \001(\0132\023.XmsgImHlrUsrDatP" +
+      "ub\022\013\n\003gts\030\005 \001(\004\022\013\n\003uts\030\006 \001(\004\"1\n\022XmsgImHl" +
+      "rUsrDatPri\022\016\n\006enable\030\001 \001(\010\022\013\n\003ext\030\005 \001(\014\"" +
+      "n\n\022XmsgImHlrUsrDatPub\022+\n\004info\030\001 \003(\0132\035.Xm" +
+      "sgImHlrUsrDatPub.InfoEntry\032+\n\tInfoEntry\022" +
+      "\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"w\n\030XmsgI" +
+      "mHlrUsrInfoQueryReq\022/\n\003ext\030\001 \003(\0132\".XmsgI" +
+      "mHlrUsrInfoQueryReq.ExtEntry\032*\n\010ExtEntry" +
+      "\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"z\n\030Xmsg" +
+      "ImHlrUsrInfoQueryRsp\0221\n\004info\030\001 \003(\0132#.Xms" +
+      "gImHlrUsrInfoQueryRsp.InfoEntry\032+\n\tInfoE" +
+      "ntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"|\n\031" +
+      "XmsgImHlrUsrInfoUpdateReq\0222\n\004info\030\001 \003(\0132" +
+      "$.XmsgImHlrUsrInfoUpdateReq.InfoEntry\032+\n" +
+      "\tInfoEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\002" +
+      "8\001\"y\n\031XmsgImHlrUsrInfoUpdateRsp\0220\n\003ext\030\001" +
+      " \003(\0132#.XmsgImHlrUsrInfoUpdateRsp.ExtEntr" +
       "y\032*\n\010ExtEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(" +
-      "\t:\0028\001\"\223\001\n\027XmsgFileUploadSimpleRsp\022\013\n\003fid" +
-      "\030\001 \001(\t\022\017\n\007hashVal\030\002 \001(\t\022.\n\003ext\030\003 \003(\0132!.X" +
-      "msgFileUploadSimpleRsp.ExtEntry\032*\n\010ExtEn" +
-      "try\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\260\001\n\031" +
-      "XmsgFileDownloadSimpleReq\022\013\n\003fid\030\001 \001(\t\022\013" +
-      "\n\003cgt\030\002 \001(\t\022\016\n\006offset\030\003 \001(\004\022\013\n\003len\030\004 \001(\004" +
-      "\0220\n\003ext\030\005 \003(\0132#.XmsgFileDownloadSimpleRe" +
-      "q.ExtEntry\032*\n\010ExtEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005v" +
-      "alue\030\002 \001(\t:\0028\001\"\273\001\n\031XmsgFileDownloadSimpl" +
-      "eRsp\022\020\n\010fileName\030\001 \001(\t\022\020\n\010fileSize\030\002 \001(\004" +
-      "\022\017\n\007hashVal\030\003 \001(\t\022\013\n\003gts\030\004 \001(\004\0220\n\003ext\030\005 " +
-      "\003(\0132#.XmsgFileDownloadSimpleRsp.ExtEntry" +
-      "\032*\n\010ExtEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t" +
-      ":\0028\001\"W\n\033XmsgFileUsrFileInfoQueryReq\022\013\n\003s" +
-      "ts\030\001 \001(\004\022\013\n\003ets\030\002 \001(\004\022\014\n\004page\030\003 \001(\r\022\020\n\010p" +
-      "ageSize\030\004 \001(\r\"E\n\033XmsgFileUsrFileInfoQuer" +
-      "yRsp\022&\n\010fileInfo\030\001 \003(\0132\024.XmsgFileUsrFile" +
-      "Info\"d\n\023XmsgFileUsrFileInfo\022\013\n\003fid\030\001 \001(\t" +
-      "\022\020\n\010fileName\030\002 \001(\t\022\020\n\010fileSize\030\003 \001(\004\022\017\n\007" +
-      "hashVal\030\004 \001(\t\022\013\n\003gts\030\005 \001(\004\"\211\001\n\017XmsgImHlr" +
-      "UsrDat\022\013\n\003uid\030\001 \001(\t\022\013\n\003ver\030\002 \001(\004\022 \n\003pri\030" +
-      "\003 \001(\0132\023.XmsgImHlrUsrDatPri\022 \n\003pub\030\004 \001(\0132" +
-      "\023.XmsgImHlrUsrDatPub\022\013\n\003gts\030\005 \001(\004\022\013\n\003uts" +
-      "\030\006 \001(\004\"1\n\022XmsgImHlrUsrDatPri\022\016\n\006enable\030\001" +
-      " \001(\010\022\013\n\003ext\030\005 \001(\014\"n\n\022XmsgImHlrUsrDatPub\022" +
-      "+\n\004info\030\001 \003(\0132\035.XmsgImHlrUsrDatPub.InfoE" +
-      "ntry\032+\n\tInfoEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030" +
-      "\002 \001(\t:\0028\001\"\'\n\030XmsgImHlrUsrInfoQueryReq\022\013\n" +
-      "\003ext\030\001 \001(\t\"z\n\030XmsgImHlrUsrInfoQueryRsp\0221" +
-      "\n\004info\030\001 \003(\0132#.XmsgImHlrUsrInfoQueryRsp." +
-      "InfoEntry\032+\n\tInfoEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005v" +
-      "alue\030\002 \001(\t:\0028\001\"|\n\031XmsgImHlrUsrInfoUpdate" +
-      "Req\0222\n\004info\030\001 \003(\0132$.XmsgImHlrUsrInfoUpda" +
-      "teReq.InfoEntry\032+\n\tInfoEntry\022\013\n\003key\030\001 \001(" +
-      "\t\022\r\n\005value\030\002 \001(\t:\0028\001\"(\n\031XmsgImHlrUsrInfo" +
-      "UpdateRsp\022\013\n\003ext\030\001 \001(\t\"E\n\025XmsgImClientDb" +
-      "CrudReq\022\013\n\003sql\030\001 \001(\t\022\037\n\003row\030\002 \003(\0132\022.Xmsg" +
-      "ImClientDbRow\"\253\001\n\025XmsgImClientDbCrudRsp\022" +
-      "\016\n\006change\030\001 \001(\r\0222\n\006column\030\002 \003(\0132\".XmsgIm" +
-      "ClientDbCrudRsp.ColumnEntry\022\037\n\003row\030\004 \003(\013" +
-      "2\022.XmsgImClientDbRow\032-\n\013ColumnEntry\022\013\n\003k" +
-      "ey\030\001 \001(\t\022\r\n\005value\030\002 \001(\r:\0028\001\"6\n\021XmsgImCli" +
-      "entDbRow\022!\n\003col\030\001 \003(\0132\024.XmsgImClientDbFi" +
-      "led\"o\n\023XmsgImClientDbFiled\022&\n\004type\030\001 \001(\016" +
-      "2\030.XmsgImClientDbFiledType\022\016\n\006valInt\030\002 \001" +
-      "(\004\022\017\n\007valText\030\003 \001(\t\022\017\n\007valBlob\030\004 \001(\014\"`\n\016" +
-      "XmsgImClientKv\022#\n\002kv\030\001 \003(\0132\027.XmsgImClien" +
-      "tKv.KvEntry\032)\n\007KvEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005v" +
-      "alue\030\002 \001(\t:\0028\001\"M\n\023XmsgImOrgSyncSubReq\022\020\n" +
-      "\010ver4dept\030\001 \001(\004\022\023\n\013ver4deptUsr\030\002 \001(\004\022\017\n\007" +
-      "ver4usr\030\003 \001(\004\"_\n\023XmsgImOrgSyncSubRsp\022\026\n\016" +
-      "ver4deptLatest\030\001 \001(\004\022\031\n\021ver4deptUsrLates" +
-      "t\030\002 \001(\004\022\025\n\rver4usrLatest\030\003 \001(\004\"5\n\023XmsgIm" +
-      "OrgSyncPubReq\022\036\n\005event\030\001 \003(\0132\017.XmsgImOrg" +
-      "Event\"\"\n\023XmsgImOrgSyncPubRsp\022\013\n\003ext\030\001 \001(" +
-      "\t\"8\n\026XmsgImOrgChangedNotice\022\036\n\005event\030\001 \001" +
-      "(\0132\017.XmsgImOrgEvent\")\n\032XmsgImOrgNodeChil" +
-      "dQueryReq\022\013\n\003cgt\030\001 \001(\t\"@\n\032XmsgImOrgNodeC" +
-      "hildQueryRsp\022\"\n\005child\030\001 \003(\0132\023.XmsgImOrgN" +
-      "odeChild\":\n\034XmsgImOrgNodeDeptUsrQueryReq" +
-      "\022\014\n\004dcgt\030\001 \001(\t\022\014\n\004ucgt\030\002 \001(\t\"\205\001\n\034XmsgImO" +
-      "rgNodeDeptUsrQueryRsp\022\014\n\004name\030\002 \001(\t\022\016\n\006e" +
-      "nable\030\003 \001(\010\022 \n\004info\030\004 \001(\0132\022.XmsgImOrgNod" +
-      "eInfo\022\013\n\003ver\030\005 \001(\004\022\013\n\003gts\030\006 \001(\004\022\013\n\003uts\030\007" +
-      " \001(\004\"$\n\025XmsgImOrgNodeQueryReq\022\013\n\003cgt\030\001 \001" +
-      "(\t\"\255\001\n\025XmsgImOrgNodeQueryRsp\022\013\n\003pgt\030\001 \001(" +
-      "\t\022\014\n\004name\030\002 \001(\t\022\016\n\006enable\030\003 \001(\010\022 \n\004type\030" +
-      "\004 \001(\0162\022.XmsgImOrgNodeType\022 \n\004info\030\005 \001(\0132" +
-      "\022.XmsgImOrgNodeInfo\022\013\n\003ver\030\006 \001(\004\022\013\n\003gts\030" +
-      "\007 \001(\004\022\013\n\003uts\030\010 \001(\004\"}\n\016XmsgImOrgEvent\022!\n\004" +
-      "dept\030\001 \001(\0132\023.XmsgImOrgEventDept\022\'\n\007deptU" +
-      "sr\030\002 \001(\0132\026.XmsgImOrgEventDeptUsr\022\037\n\003usr\030" +
-      "\003 \001(\0132\022.XmsgImOrgEventUsr\"\226\001\n\022XmsgImOrgE" +
-      "ventDept\022\013\n\003cgt\030\001 \001(\t\022\014\n\004pcgt\030\002 \001(\t\022\014\n\004n" +
-      "ame\030\003 \001(\t\022\016\n\006enable\030\004 \001(\010\022 \n\004info\030\005 \001(\0132" +
-      "\022.XmsgImOrgNodeInfo\022\013\n\003ver\030\006 \001(\004\022\013\n\003gts\030" +
-      "\007 \001(\004\022\013\n\003uts\030\010 \001(\004\"\232\001\n\025XmsgImOrgEventDep" +
-      "tUsr\022\014\n\004dcgt\030\001 \001(\t\022\014\n\004ucgt\030\002 \001(\t\022\014\n\004name" +
-      "\030\003 \001(\t\022\016\n\006enable\030\004 \001(\010\022 \n\004info\030\005 \001(\0132\022.X" +
-      "msgImOrgNodeInfo\022\013\n\003ver\030\006 \001(\004\022\013\n\003gts\030\007 \001" +
-      "(\004\022\013\n\003uts\030\010 \001(\004\"\207\001\n\021XmsgImOrgEventUsr\022\013\n" +
-      "\003cgt\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\022\016\n\006enable\030\003 \001(\010" +
-      "\022 \n\004info\030\004 \001(\0132\022.XmsgImOrgNodeInfo\022\013\n\003ve" +
-      "r\030\005 \001(\004\022\013\n\003gts\030\006 \001(\004\022\013\n\003uts\030\007 \001(\004\"f\n\021Xms" +
-      "gImOrgNodeInfo\022&\n\002kv\030\001 \003(\0132\032.XmsgImOrgNo" +
-      "deInfo.KvEntry\032)\n\007KvEntry\022\013\n\003key\030\001 \001(\t\022\r" +
-      "\n\005value\030\002 \001(\t:\0028\001\"\252\001\n\022XmsgImOrgNodeChild" +
-      "\022\013\n\003cgt\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\022\016\n\006enable\030\003 " +
-      "\001(\010\022 \n\004type\030\004 \001(\0162\022.XmsgImOrgNodeType\022 \n" +
-      "\004info\030\005 \001(\0132\022.XmsgImOrgNodeInfo\022\013\n\003ver\030\006" +
-      " \001(\004\022\013\n\003gts\030\007 \001(\004\022\013\n\003uts\030\010 \001(\004\"}\n\033XmsgIm" +
-      "GroupUsrGroupQueryReq\0222\n\003ext\030\001 \003(\0132%.Xms" +
-      "gImGroupUsrGroupQueryReq.ExtEntry\032*\n\010Ext" +
-      "Entry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"F\n" +
-      "\033XmsgImGroupUsrGroupQueryRsp\022\'\n\005group\030\001 " +
-      "\003(\0132\030.XmsgImGroupUsrGroupInfo\"\313\001\n\027XmsgIm" +
-      "GroupUsrGroupInfo\022\013\n\003cgt\030\001 \001(\t\022\014\n\004name\030\002" +
-      " \001(\t\0220\n\004info\030\003 \003(\0132\".XmsgImGroupUsrGroup" +
-      "Info.InfoEntry\022\013\n\003ver\030\004 \001(\004\022\013\n\003gts\030\005 \001(\004" +
-      "\022\013\n\003uts\030\006 \001(\004\022\017\n\007usr2usr\030\007 \001(\010\032+\n\tInfoEn" +
-      "try\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\231\001\n\024" +
-      "XmsgImGroupCreateReq\022-\n\004info\030\001 \003(\0132\037.Xms" +
-      "gImGroupCreateReq.InfoEntry\022%\n\006member\030\002 " +
-      "\003(\0132\025.XmsgImGroupAddMember\032+\n\tInfoEntry\022" +
-      "\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"0\n\024XmsgI" +
-      "mGroupCreateRsp\022\013\n\003cgt\030\001 \001(\t\022\013\n\003gts\030\002 \001(" +
-      "\004\"\177\n\024XmsgImGroupAddMember\022\013\n\003cgt\030\001 \001(\t\022-" +
-      "\n\004info\030\002 \003(\0132\037.XmsgImGroupAddMember.Info" +
-      "Entry\032+\n\tInfoEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value" +
-      "\030\002 \001(\t:\0028\001\"|\n\022XmsgImGroupSyncReq\022\017\n\007ver4" +
-      "usr\030\001 \001(\004\022)\n\003ext\030\002 \003(\0132\034.XmsgImGroupSync" +
-      "Req.ExtEntry\032*\n\010ExtEntry\022\013\n\003key\030\001 \001(\t\022\r\n" +
-      "\005value\030\002 \001(\t:\0028\001\":\n\022XmsgImGroupSyncRsp\022$" +
-      "\n\005event\030\001 \003(\0132\025.XmsgImGroupSyncEvent\"\323\001\n" +
-      "\024XmsgImGroupSyncEvent\022\013\n\003cgt\030\001 \001(\t\022\014\n\004op" +
-      "er\030\002 \001(\t\022-\n\004info\030\003 \003(\0132\037.XmsgImGroupSync" +
-      "Event.InfoEntry\022\017\n\007ver4usr\030\004 \001(\004\022\017\n\007gts4" +
-      "usr\030\005 \001(\004\022\017\n\007uts4usr\030\006 \001(\004\022\021\n\tgts4group\030" +
-      "\007 \001(\004\032+\n\tInfoEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value" +
-      "\030\002 \001(\t:\0028\001\"=\n\025XmsgImGroupSyncNotice\022$\n\005e" +
-      "vent\030\001 \001(\0132\025.XmsgImGroupSyncEvent\"\217\001\n\027Xm" +
-      "sgImGroupSyncGroupReq\022\013\n\003cgt\030\001 \001(\t\022\013\n\003ve" +
-      "r\030\002 \001(\004\022.\n\003ext\030\003 \003(\0132!.XmsgImGroupSyncGr" +
-      "oupReq.ExtEntry\032*\n\010ExtEntry\022\013\n\003key\030\001 \001(\t" +
-      "\022\r\n\005value\030\002 \001(\t:\0028\001\"y\n\027XmsgImGroupSyncGr" +
-      "oupRsp\022,\n\004info\030\001 \001(\0132\036.XmsgImGroupSyncGr" +
-      "oupEventInfo\0220\n\006member\030\002 \003(\0132 .XmsgImGro" +
-      "upSyncGroupEventMember\"\253\001\n\035XmsgImGroupSy" +
-      "ncGroupEventInfo\0226\n\004info\030\001 \003(\0132(.XmsgImG" +
-      "roupSyncGroupEventInfo.InfoEntry\022\013\n\003ver\030" +
-      "\002 \001(\004\022\013\n\003gts\030\003 \001(\004\022\013\n\003uts\030\004 \001(\004\032+\n\tInfoE" +
-      "ntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\312\001\n" +
-      "\037XmsgImGroupSyncGroupEventMember\022\013\n\003cgt\030" +
-      "\001 \001(\t\022\014\n\004oper\030\002 \001(\t\0228\n\004info\030\003 \003(\0132*.Xmsg" +
-      "ImGroupSyncGroupEventMember.InfoEntry\022\013\n" +
-      "\003ver\030\004 \001(\004\022\013\n\003gts\030\005 \001(\004\022\013\n\003uts\030\006 \001(\004\032+\n\t" +
-      "InfoEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028" +
-      "\001\"x\n\026XmsgImGroupEventNotice\022,\n\004info\030\001 \001(" +
-      "\0132\036.XmsgImGroupSyncGroupEventInfo\0220\n\006mem" +
-      "ber\030\002 \001(\0132 .XmsgImGroupSyncGroupEventMem" +
-      "ber\"6\n\027XmsgImGroupInfoQueryReq\022\013\n\003cgt\030\001 " +
-      "\001(\t\022\016\n\006member\030\002 \001(\010\"i\n\027XmsgImGroupInfoQu" +
-      "eryRsp\022&\n\004info\030\001 \001(\0132\030.XmsgImGroupInfoSe" +
-      "lfInfo\022&\n\006member\030\002 \003(\0132\026.XmsgImGroupInfo" +
-      "Member\"\274\001\n\027XmsgImGroupInfoSelfInfo\022\013\n\003cg" +
-      "t\030\001 \001(\t\022\016\n\006enable\030\002 \001(\010\0220\n\004info\030\003 \003(\0132\"." +
-      "XmsgImGroupInfoSelfInfo.InfoEntry\022\013\n\003ver" +
-      "\030\004 \001(\004\022\013\n\003gts\030\005 \001(\004\022\013\n\003uts\030\006 \001(\004\032+\n\tInfo" +
-      "Entry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\270\001" +
-      "\n\025XmsgImGroupInfoMember\022\013\n\003cgt\030\001 \001(\t\022\016\n\006" +
-      "enable\030\002 \001(\010\022.\n\004info\030\003 \003(\0132 .XmsgImGroup" +
-      "InfoMember.InfoEntry\022\013\n\003ver\030\004 \001(\004\022\013\n\003gts" +
-      "\030\005 \001(\004\022\013\n\003uts\030\006 \001(\004\032+\n\tInfoEntry\022\013\n\003key\030" +
-      "\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\235\001\n\030XmsgImGroup" +
-      "InfoUpdateReq\022\013\n\003cgt\030\001 \001(\t\0225\n\006upsert\030\002 \003" +
-      "(\0132%.XmsgImGroupInfoUpdateReq.UpsertEntr" +
-      "y\022\016\n\006remove\030\003 \003(\t\032-\n\013UpsertEntry\022\013\n\003key\030" +
-      "\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"w\n\030XmsgImGroupI" +
-      "nfoUpdateRsp\022/\n\003ext\030\001 \003(\0132\".XmsgImGroupI" +
-      "nfoUpdateRsp.ExtEntry\032*\n\010ExtEntry\022\013\n\003key" +
-      "\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"5\n\030XmsgImGroup" +
-      "MsgRecvCfgReq\022\013\n\003cgt\030\001 \001(\t\022\014\n\004type\030\002 \001(\t" +
-      "\"w\n\030XmsgImGroupMsgRecvCfgRsp\022/\n\003ext\030\001 \003(" +
-      "\0132\".XmsgImGroupMsgRecvCfgRsp.ExtEntry\032*\n" +
-      "\010ExtEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028" +
-      "\001*\317\001\n\022XmsgImSdkEventType\022&\n\"X_MSG_IM_SDK" +
-      "_EVENT_TYPE_NET_NOTICE\020\000\022#\n\037X_MSG_IM_SDK" +
-      "_EVENT_TYPE_NET_REQ\020\001\022#\n\037X_MSG_IM_SDK_EV" +
-      "ENT_TYPE_NET_RSP\020\002\022\"\n\036X_MSG_IM_SDK_EVENT" +
-      "_TYPE_DB_RSP\020\003\022#\n\037X_MSG_IM_SDK_EVENT_TYP" +
-      "E_CXX_LOG\020\004*\273\001\n\027XmsgImClientDbFiledType\022" +
-      "(\n$X_MSG_IM_CLIENT_DB_FILED_TYPE_BIGINT\020" +
-      "\000\022&\n\"X_MSG_IM_CLIENT_DB_FILED_TYPE_TEXT\020" +
-      "\001\022&\n\"X_MSG_IM_CLIENT_DB_FILED_TYPE_BLOB\020" +
-      "\002\022&\n\"X_MSG_IM_CLIENT_DB_FILED_TYPE_NULL\020" +
-      "\003*\177\n\021XmsgImOrgNodeType\022&\n\"X_MSG_IM_ORG_N" +
-      "ODE_TYPE__RESERVED__\020\000\022!\n\035X_MSG_IM_ORG_N" +
-      "ODE_TYPE_BRANCH\020\001\022\037\n\033X_MSG_IM_ORG_NODE_T" +
-      "YPE_LEAF\020\002B\022\n\010x.msg.pbB\006PbXmsgb\006proto3"
+      "\t:\0028\001\"E\n\025XmsgImClientDbCrudReq\022\013\n\003sql\030\001 " +
+      "\001(\t\022\037\n\003row\030\002 \003(\0132\022.XmsgImClientDbRow\"\253\001\n" +
+      "\025XmsgImClientDbCrudRsp\022\016\n\006change\030\001 \001(\r\0222" +
+      "\n\006column\030\002 \003(\0132\".XmsgImClientDbCrudRsp.C" +
+      "olumnEntry\022\037\n\003row\030\004 \003(\0132\022.XmsgImClientDb" +
+      "Row\032-\n\013ColumnEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value" +
+      "\030\002 \001(\r:\0028\001\"6\n\021XmsgImClientDbRow\022!\n\003col\030\001" +
+      " \003(\0132\024.XmsgImClientDbFiled\"o\n\023XmsgImClie" +
+      "ntDbFiled\022&\n\004type\030\001 \001(\0162\030.XmsgImClientDb" +
+      "FiledType\022\016\n\006valInt\030\002 \001(\004\022\017\n\007valText\030\003 \001" +
+      "(\t\022\017\n\007valBlob\030\004 \001(\014\"`\n\016XmsgImClientKv\022#\n" +
+      "\002kv\030\001 \003(\0132\027.XmsgImClientKv.KvEntry\032)\n\007Kv" +
+      "Entry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"M\n" +
+      "\023XmsgImOrgSyncSubReq\022\020\n\010ver4dept\030\001 \001(\004\022\023" +
+      "\n\013ver4deptUsr\030\002 \001(\004\022\017\n\007ver4usr\030\003 \001(\004\"_\n\023" +
+      "XmsgImOrgSyncSubRsp\022\026\n\016ver4deptLatest\030\001 " +
+      "\001(\004\022\031\n\021ver4deptUsrLatest\030\002 \001(\004\022\025\n\rver4us" +
+      "rLatest\030\003 \001(\004\"5\n\023XmsgImOrgSyncPubReq\022\036\n\005" +
+      "event\030\001 \003(\0132\017.XmsgImOrgEvent\"m\n\023XmsgImOr" +
+      "gSyncPubRsp\022*\n\003ext\030\001 \003(\0132\035.XmsgImOrgSync" +
+      "PubRsp.ExtEntry\032*\n\010ExtEntry\022\013\n\003key\030\001 \001(\t" +
+      "\022\r\n\005value\030\002 \001(\t:\0028\001\"8\n\026XmsgImOrgChangedN" +
+      "otice\022\036\n\005event\030\001 \001(\0132\017.XmsgImOrgEvent\")\n" +
+      "\032XmsgImOrgNodeChildQueryReq\022\013\n\003cgt\030\001 \001(\t" +
+      "\"@\n\032XmsgImOrgNodeChildQueryRsp\022\"\n\005child\030" +
+      "\001 \003(\0132\023.XmsgImOrgNodeChild\":\n\034XmsgImOrgN" +
+      "odeDeptUsrQueryReq\022\014\n\004dcgt\030\001 \001(\t\022\014\n\004ucgt" +
+      "\030\002 \001(\t\"\205\001\n\034XmsgImOrgNodeDeptUsrQueryRsp\022" +
+      "\014\n\004name\030\002 \001(\t\022\016\n\006enable\030\003 \001(\010\022 \n\004info\030\004 " +
+      "\001(\0132\022.XmsgImOrgNodeInfo\022\013\n\003ver\030\005 \001(\004\022\013\n\003" +
+      "gts\030\006 \001(\004\022\013\n\003uts\030\007 \001(\004\"$\n\025XmsgImOrgNodeQ" +
+      "ueryReq\022\013\n\003cgt\030\001 \001(\t\"\255\001\n\025XmsgImOrgNodeQu" +
+      "eryRsp\022\013\n\003pgt\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\022\016\n\006ena" +
+      "ble\030\003 \001(\010\022 \n\004type\030\004 \001(\0162\022.XmsgImOrgNodeT" +
+      "ype\022 \n\004info\030\005 \001(\0132\022.XmsgImOrgNodeInfo\022\013\n" +
+      "\003ver\030\006 \001(\004\022\013\n\003gts\030\007 \001(\004\022\013\n\003uts\030\010 \001(\004\"}\n\016" +
+      "XmsgImOrgEvent\022!\n\004dept\030\001 \001(\0132\023.XmsgImOrg" +
+      "EventDept\022\'\n\007deptUsr\030\002 \001(\0132\026.XmsgImOrgEv" +
+      "entDeptUsr\022\037\n\003usr\030\003 \001(\0132\022.XmsgImOrgEvent" +
+      "Usr\"\226\001\n\022XmsgImOrgEventDept\022\013\n\003cgt\030\001 \001(\t\022" +
+      "\014\n\004pcgt\030\002 \001(\t\022\014\n\004name\030\003 \001(\t\022\016\n\006enable\030\004 " +
+      "\001(\010\022 \n\004info\030\005 \001(\0132\022.XmsgImOrgNodeInfo\022\013\n" +
+      "\003ver\030\006 \001(\004\022\013\n\003gts\030\007 \001(\004\022\013\n\003uts\030\010 \001(\004\"\232\001\n" +
+      "\025XmsgImOrgEventDeptUsr\022\014\n\004dcgt\030\001 \001(\t\022\014\n\004" +
+      "ucgt\030\002 \001(\t\022\014\n\004name\030\003 \001(\t\022\016\n\006enable\030\004 \001(\010" +
+      "\022 \n\004info\030\005 \001(\0132\022.XmsgImOrgNodeInfo\022\013\n\003ve" +
+      "r\030\006 \001(\004\022\013\n\003gts\030\007 \001(\004\022\013\n\003uts\030\010 \001(\004\"\207\001\n\021Xm" +
+      "sgImOrgEventUsr\022\013\n\003cgt\030\001 \001(\t\022\014\n\004name\030\002 \001" +
+      "(\t\022\016\n\006enable\030\003 \001(\010\022 \n\004info\030\004 \001(\0132\022.XmsgI" +
+      "mOrgNodeInfo\022\013\n\003ver\030\005 \001(\004\022\013\n\003gts\030\006 \001(\004\022\013" +
+      "\n\003uts\030\007 \001(\004\"f\n\021XmsgImOrgNodeInfo\022&\n\002kv\030\001" +
+      " \003(\0132\032.XmsgImOrgNodeInfo.KvEntry\032)\n\007KvEn" +
+      "try\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\252\001\n\022" +
+      "XmsgImOrgNodeChild\022\013\n\003cgt\030\001 \001(\t\022\014\n\004name\030" +
+      "\002 \001(\t\022\016\n\006enable\030\003 \001(\010\022 \n\004type\030\004 \001(\0162\022.Xm" +
+      "sgImOrgNodeType\022 \n\004info\030\005 \001(\0132\022.XmsgImOr" +
+      "gNodeInfo\022\013\n\003ver\030\006 \001(\004\022\013\n\003gts\030\007 \001(\004\022\013\n\003u" +
+      "ts\030\010 \001(\004\"}\n\033XmsgImGroupUsrGroupQueryReq\022" +
+      "2\n\003ext\030\001 \003(\0132%.XmsgImGroupUsrGroupQueryR" +
+      "eq.ExtEntry\032*\n\010ExtEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005" +
+      "value\030\002 \001(\t:\0028\001\"F\n\033XmsgImGroupUsrGroupQu" +
+      "eryRsp\022\'\n\005group\030\001 \003(\0132\030.XmsgImGroupUsrGr" +
+      "oupInfo\"\313\001\n\027XmsgImGroupUsrGroupInfo\022\013\n\003c" +
+      "gt\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\0220\n\004info\030\003 \003(\0132\".X" +
+      "msgImGroupUsrGroupInfo.InfoEntry\022\013\n\003ver\030" +
+      "\004 \001(\004\022\013\n\003gts\030\005 \001(\004\022\013\n\003uts\030\006 \001(\004\022\017\n\007usr2u" +
+      "sr\030\007 \001(\010\032+\n\tInfoEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005va" +
+      "lue\030\002 \001(\t:\0028\001\"\231\001\n\024XmsgImGroupCreateReq\022-" +
+      "\n\004info\030\001 \003(\0132\037.XmsgImGroupCreateReq.Info" +
+      "Entry\022%\n\006member\030\002 \003(\0132\025.XmsgImGroupAddMe" +
+      "mber\032+\n\tInfoEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030" +
+      "\002 \001(\t:\0028\001\"0\n\024XmsgImGroupCreateRsp\022\013\n\003cgt" +
+      "\030\001 \001(\t\022\013\n\003gts\030\002 \001(\004\"\177\n\024XmsgImGroupAddMem" +
+      "ber\022\013\n\003cgt\030\001 \001(\t\022-\n\004info\030\002 \003(\0132\037.XmsgImG" +
+      "roupAddMember.InfoEntry\032+\n\tInfoEntry\022\013\n\003" +
+      "key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"|\n\022XmsgImGr" +
+      "oupSyncReq\022\017\n\007ver4usr\030\001 \001(\004\022)\n\003ext\030\002 \003(\013" +
+      "2\034.XmsgImGroupSyncReq.ExtEntry\032*\n\010ExtEnt" +
+      "ry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\":\n\022Xm" +
+      "sgImGroupSyncRsp\022$\n\005event\030\001 \003(\0132\025.XmsgIm" +
+      "GroupSyncEvent\"\323\001\n\024XmsgImGroupSyncEvent\022" +
+      "\013\n\003cgt\030\001 \001(\t\022\014\n\004oper\030\002 \001(\t\022-\n\004info\030\003 \003(\013" +
+      "2\037.XmsgImGroupSyncEvent.InfoEntry\022\017\n\007ver" +
+      "4usr\030\004 \001(\004\022\017\n\007gts4usr\030\005 \001(\004\022\017\n\007uts4usr\030\006" +
+      " \001(\004\022\021\n\tgts4group\030\007 \001(\004\032+\n\tInfoEntry\022\013\n\003" +
+      "key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"=\n\025XmsgImGr" +
+      "oupSyncNotice\022$\n\005event\030\001 \001(\0132\025.XmsgImGro" +
+      "upSyncEvent\"\217\001\n\027XmsgImGroupSyncGroupReq\022" +
+      "\013\n\003cgt\030\001 \001(\t\022\013\n\003ver\030\002 \001(\004\022.\n\003ext\030\003 \003(\0132!" +
+      ".XmsgImGroupSyncGroupReq.ExtEntry\032*\n\010Ext" +
+      "Entry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"y\n" +
+      "\027XmsgImGroupSyncGroupRsp\022,\n\004info\030\001 \001(\0132\036" +
+      ".XmsgImGroupSyncGroupEventInfo\0220\n\006member" +
+      "\030\002 \003(\0132 .XmsgImGroupSyncGroupEventMember" +
+      "\"\253\001\n\035XmsgImGroupSyncGroupEventInfo\0226\n\004in" +
+      "fo\030\001 \003(\0132(.XmsgImGroupSyncGroupEventInfo" +
+      ".InfoEntry\022\013\n\003ver\030\002 \001(\004\022\013\n\003gts\030\003 \001(\004\022\013\n\003" +
+      "uts\030\004 \001(\004\032+\n\tInfoEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005v" +
+      "alue\030\002 \001(\t:\0028\001\"\312\001\n\037XmsgImGroupSyncGroupE" +
+      "ventMember\022\013\n\003cgt\030\001 \001(\t\022\014\n\004oper\030\002 \001(\t\0228\n" +
+      "\004info\030\003 \003(\0132*.XmsgImGroupSyncGroupEventM" +
+      "ember.InfoEntry\022\013\n\003ver\030\004 \001(\004\022\013\n\003gts\030\005 \001(" +
+      "\004\022\013\n\003uts\030\006 \001(\004\032+\n\tInfoEntry\022\013\n\003key\030\001 \001(\t" +
+      "\022\r\n\005value\030\002 \001(\t:\0028\001\"x\n\026XmsgImGroupEventN" +
+      "otice\022,\n\004info\030\001 \001(\0132\036.XmsgImGroupSyncGro" +
+      "upEventInfo\0220\n\006member\030\002 \001(\0132 .XmsgImGrou" +
+      "pSyncGroupEventMember\"6\n\027XmsgImGroupInfo" +
+      "QueryReq\022\013\n\003cgt\030\001 \001(\t\022\016\n\006member\030\002 \001(\010\"i\n" +
+      "\027XmsgImGroupInfoQueryRsp\022&\n\004info\030\001 \001(\0132\030" +
+      ".XmsgImGroupInfoSelfInfo\022&\n\006member\030\002 \003(\013" +
+      "2\026.XmsgImGroupInfoMember\"\274\001\n\027XmsgImGroup" +
+      "InfoSelfInfo\022\013\n\003cgt\030\001 \001(\t\022\016\n\006enable\030\002 \001(" +
+      "\010\0220\n\004info\030\003 \003(\0132\".XmsgImGroupInfoSelfInf" +
+      "o.InfoEntry\022\013\n\003ver\030\004 \001(\004\022\013\n\003gts\030\005 \001(\004\022\013\n" +
+      "\003uts\030\006 \001(\004\032+\n\tInfoEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005" +
+      "value\030\002 \001(\t:\0028\001\"\270\001\n\025XmsgImGroupInfoMembe" +
+      "r\022\013\n\003cgt\030\001 \001(\t\022\016\n\006enable\030\002 \001(\010\022.\n\004info\030\003" +
+      " \003(\0132 .XmsgImGroupInfoMember.InfoEntry\022\013" +
+      "\n\003ver\030\004 \001(\004\022\013\n\003gts\030\005 \001(\004\022\013\n\003uts\030\006 \001(\004\032+\n" +
+      "\tInfoEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\002" +
+      "8\001\"\235\001\n\030XmsgImGroupInfoUpdateReq\022\013\n\003cgt\030\001" +
+      " \001(\t\0225\n\006upsert\030\002 \003(\0132%.XmsgImGroupInfoUp" +
+      "dateReq.UpsertEntry\022\016\n\006remove\030\003 \003(\t\032-\n\013U" +
+      "psertEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\002" +
+      "8\001\"w\n\030XmsgImGroupInfoUpdateRsp\022/\n\003ext\030\001 " +
+      "\003(\0132\".XmsgImGroupInfoUpdateRsp.ExtEntry\032" +
+      "*\n\010ExtEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:" +
+      "\0028\001\"5\n\030XmsgImGroupMsgRecvCfgReq\022\013\n\003cgt\030\001" +
+      " \001(\t\022\014\n\004type\030\002 \001(\t\"w\n\030XmsgImGroupMsgRecv" +
+      "CfgRsp\022/\n\003ext\030\001 \003(\0132\".XmsgImGroupMsgRecv" +
+      "CfgRsp.ExtEntry\032*\n\010ExtEntry\022\013\n\003key\030\001 \001(\t" +
+      "\022\r\n\005value\030\002 \001(\t:\0028\001*\317\001\n\022XmsgImSdkEventTy" +
+      "pe\022&\n\"X_MSG_IM_SDK_EVENT_TYPE_NET_NOTICE" +
+      "\020\000\022#\n\037X_MSG_IM_SDK_EVENT_TYPE_NET_REQ\020\001\022" +
+      "#\n\037X_MSG_IM_SDK_EVENT_TYPE_NET_RSP\020\002\022\"\n\036" +
+      "X_MSG_IM_SDK_EVENT_TYPE_DB_RSP\020\003\022#\n\037X_MS" +
+      "G_IM_SDK_EVENT_TYPE_CXX_LOG\020\004*\273\001\n\027XmsgIm" +
+      "ClientDbFiledType\022(\n$X_MSG_IM_CLIENT_DB_" +
+      "FILED_TYPE_BIGINT\020\000\022&\n\"X_MSG_IM_CLIENT_D" +
+      "B_FILED_TYPE_TEXT\020\001\022&\n\"X_MSG_IM_CLIENT_D" +
+      "B_FILED_TYPE_BLOB\020\002\022&\n\"X_MSG_IM_CLIENT_D" +
+      "B_FILED_TYPE_NULL\020\003*\177\n\021XmsgImOrgNodeType" +
+      "\022&\n\"X_MSG_IM_ORG_NODE_TYPE__RESERVED__\020\000" +
+      "\022!\n\035X_MSG_IM_ORG_NODE_TYPE_BRANCH\020\001\022\037\n\033X" +
+      "_MSG_IM_ORG_NODE_TYPE_LEAF\020\002B\022\n\010x.msg.pb" +
+      "B\006PbXmsgb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -103479,7 +105714,7 @@ public final class PbXmsg {
     internal_static_XmsgClientTokenInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgClientTokenInfo_descriptor,
-        new java.lang.String[] { "Token", "Alg", "Slat", "Plat", "Did", "Sign", });
+        new java.lang.String[] { "Cgt", "Token", "Alg", "Slat", "Plat", "Did", "Sign", });
     internal_static_XmsgImGroupMemberAddReq_descriptor =
       getDescriptor().getMessageTypes().get(32);
     internal_static_XmsgImGroupMemberAddReq_fieldAccessorTable = new
@@ -103605,25 +105840,49 @@ public final class PbXmsg {
     internal_static_XmsgImHlrAttachSimpleReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImHlrAttachSimpleReq_descriptor,
-        new java.lang.String[] { "Token", "Salt", "Sign", "Alg", "Ext", });
+        new java.lang.String[] { "Token", "Salt", "Sign", "Alg", "Cgt", "Ext", });
+    internal_static_XmsgImHlrAttachSimpleReq_ExtEntry_descriptor =
+      internal_static_XmsgImHlrAttachSimpleReq_descriptor.getNestedTypes().get(0);
+    internal_static_XmsgImHlrAttachSimpleReq_ExtEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_XmsgImHlrAttachSimpleReq_ExtEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
     internal_static_XmsgImHlrAttachSimpleRsp_descriptor =
       getDescriptor().getMessageTypes().get(44);
     internal_static_XmsgImHlrAttachSimpleRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImHlrAttachSimpleRsp_descriptor,
-        new java.lang.String[] { "Cgt", "Ext", });
+        new java.lang.String[] { "Ext", });
+    internal_static_XmsgImHlrAttachSimpleRsp_ExtEntry_descriptor =
+      internal_static_XmsgImHlrAttachSimpleRsp_descriptor.getNestedTypes().get(0);
+    internal_static_XmsgImHlrAttachSimpleRsp_ExtEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_XmsgImHlrAttachSimpleRsp_ExtEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
     internal_static_XmsgImHlrDetachSimpleReq_descriptor =
       getDescriptor().getMessageTypes().get(45);
     internal_static_XmsgImHlrDetachSimpleReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImHlrDetachSimpleReq_descriptor,
         new java.lang.String[] { "Ext", });
+    internal_static_XmsgImHlrDetachSimpleReq_ExtEntry_descriptor =
+      internal_static_XmsgImHlrDetachSimpleReq_descriptor.getNestedTypes().get(0);
+    internal_static_XmsgImHlrDetachSimpleReq_ExtEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_XmsgImHlrDetachSimpleReq_ExtEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
     internal_static_XmsgImHlrDetachSimpleRsp_descriptor =
       getDescriptor().getMessageTypes().get(46);
     internal_static_XmsgImHlrDetachSimpleRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImHlrDetachSimpleRsp_descriptor,
         new java.lang.String[] { "Ext", });
+    internal_static_XmsgImHlrDetachSimpleRsp_ExtEntry_descriptor =
+      internal_static_XmsgImHlrDetachSimpleRsp_descriptor.getNestedTypes().get(0);
+    internal_static_XmsgImHlrDetachSimpleRsp_ExtEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_XmsgImHlrDetachSimpleRsp_ExtEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
     internal_static_XmsgImHlrOtherClientAttachReq_descriptor =
       getDescriptor().getMessageTypes().get(47);
     internal_static_XmsgImHlrOtherClientAttachReq_fieldAccessorTable = new
@@ -103653,19 +105912,37 @@ public final class PbXmsg {
     internal_static_XmsgImAuthSimpleRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImAuthSimpleRsp_descriptor,
-        new java.lang.String[] { "Token", "Secret", "Expired", "ApAddr", "FsAddr", "Ext", });
+        new java.lang.String[] { "Token", "Secret", "Expired", "ApAddr", "FsAddr", "Cgt", "Ext", });
+    internal_static_XmsgImAuthSimpleRsp_ExtEntry_descriptor =
+      internal_static_XmsgImAuthSimpleRsp_descriptor.getNestedTypes().get(0);
+    internal_static_XmsgImAuthSimpleRsp_ExtEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_XmsgImAuthSimpleRsp_ExtEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
     internal_static_XmsgImClientDeviceInfo_descriptor =
       getDescriptor().getMessageTypes().get(52);
     internal_static_XmsgImClientDeviceInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImClientDeviceInfo_descriptor,
         new java.lang.String[] { "Plat", "Did", "Ver", "Ext", });
+    internal_static_XmsgImClientDeviceInfo_ExtEntry_descriptor =
+      internal_static_XmsgImClientDeviceInfo_descriptor.getNestedTypes().get(0);
+    internal_static_XmsgImClientDeviceInfo_ExtEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_XmsgImClientDeviceInfo_ExtEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
     internal_static_XmsgImClientServiceAddress_descriptor =
       getDescriptor().getMessageTypes().get(53);
     internal_static_XmsgImClientServiceAddress_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImClientServiceAddress_descriptor,
         new java.lang.String[] { "Ip", "Port", "Weight", "Proto", "Ext", });
+    internal_static_XmsgImClientServiceAddress_ExtEntry_descriptor =
+      internal_static_XmsgImClientServiceAddress_descriptor.getNestedTypes().get(0);
+    internal_static_XmsgImClientServiceAddress_ExtEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_XmsgImClientServiceAddress_ExtEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
     internal_static_XmsgImAuthRegSimpleReq_descriptor =
       getDescriptor().getMessageTypes().get(54);
     internal_static_XmsgImAuthRegSimpleReq_fieldAccessorTable = new
@@ -103678,6 +105955,12 @@ public final class PbXmsg {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImAuthRegSimpleRsp_descriptor,
         new java.lang.String[] { "Ext", });
+    internal_static_XmsgImAuthRegSimpleRsp_ExtEntry_descriptor =
+      internal_static_XmsgImAuthRegSimpleRsp_descriptor.getNestedTypes().get(0);
+    internal_static_XmsgImAuthRegSimpleRsp_ExtEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_XmsgImAuthRegSimpleRsp_ExtEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
     internal_static_XmsgImHlrOtherUsrInfoQueryReq_descriptor =
       getDescriptor().getMessageTypes().get(56);
     internal_static_XmsgImHlrOtherUsrInfoQueryReq_fieldAccessorTable = new
@@ -103804,6 +106087,12 @@ public final class PbXmsg {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImHlrUsrInfoQueryReq_descriptor,
         new java.lang.String[] { "Ext", });
+    internal_static_XmsgImHlrUsrInfoQueryReq_ExtEntry_descriptor =
+      internal_static_XmsgImHlrUsrInfoQueryReq_descriptor.getNestedTypes().get(0);
+    internal_static_XmsgImHlrUsrInfoQueryReq_ExtEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_XmsgImHlrUsrInfoQueryReq_ExtEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
     internal_static_XmsgImHlrUsrInfoQueryRsp_descriptor =
       getDescriptor().getMessageTypes().get(70);
     internal_static_XmsgImHlrUsrInfoQueryRsp_fieldAccessorTable = new
@@ -103834,6 +106123,12 @@ public final class PbXmsg {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImHlrUsrInfoUpdateRsp_descriptor,
         new java.lang.String[] { "Ext", });
+    internal_static_XmsgImHlrUsrInfoUpdateRsp_ExtEntry_descriptor =
+      internal_static_XmsgImHlrUsrInfoUpdateRsp_descriptor.getNestedTypes().get(0);
+    internal_static_XmsgImHlrUsrInfoUpdateRsp_ExtEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_XmsgImHlrUsrInfoUpdateRsp_ExtEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
     internal_static_XmsgImClientDbCrudReq_descriptor =
       getDescriptor().getMessageTypes().get(73);
     internal_static_XmsgImClientDbCrudReq_fieldAccessorTable = new
@@ -103900,6 +106195,12 @@ public final class PbXmsg {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImOrgSyncPubRsp_descriptor,
         new java.lang.String[] { "Ext", });
+    internal_static_XmsgImOrgSyncPubRsp_ExtEntry_descriptor =
+      internal_static_XmsgImOrgSyncPubRsp_descriptor.getNestedTypes().get(0);
+    internal_static_XmsgImOrgSyncPubRsp_ExtEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_XmsgImOrgSyncPubRsp_ExtEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
     internal_static_XmsgImOrgChangedNotice_descriptor =
       getDescriptor().getMessageTypes().get(82);
     internal_static_XmsgImOrgChangedNotice_fieldAccessorTable = new

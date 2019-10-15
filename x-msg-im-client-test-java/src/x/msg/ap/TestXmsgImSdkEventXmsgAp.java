@@ -18,8 +18,10 @@
  */
 package x.msg.ap;
 
+import misc.Log;
 import misc.Misc;
 import x.msg.im.hlr.TestXmsgImHlrAttachSimpleReq;
+import x.msg.im.test.main.Main;
 import x.msg.pb.PbXmsg.XmsgImSdkEventXmsgAp;
 
 /**
@@ -34,6 +36,8 @@ public class TestXmsgImSdkEventXmsgAp
 	/** 客户端sdk与相关x-msg-ap之间的事件. */
 	public static final void test(XmsgImSdkEventXmsgAp evn)
 	{
-		TestXmsgImHlrAttachSimpleReq.attach(Misc.get(evn));
+		Log.info("evn(%s): %s", evn.getDescriptorForType().getName(), Misc.pb2str(evn));
+		if ("estab".equals(evn.getEvn()) && !Main.firstAttach)
+			TestXmsgImHlrAttachSimpleReq.test(Main.token); /* 再次附着. */
 	}
 }

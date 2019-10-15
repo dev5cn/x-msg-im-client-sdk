@@ -40,7 +40,7 @@ message XmsgImOrgSyncPubReq
 
 message XmsgImOrgSyncPubRsp
 {
-    string ext = 1; 
+    map<string, string> ext = 1; 
 }
 message XmsgImOrgChangedNotice
 {

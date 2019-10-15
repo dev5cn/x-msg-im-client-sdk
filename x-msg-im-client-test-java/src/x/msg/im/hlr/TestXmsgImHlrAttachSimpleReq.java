@@ -24,8 +24,6 @@ import misc.Misc;
 import x.msg.im.client.XmsgErrCode;
 import x.msg.im.test.main.Main;
 import x.msg.pb.PbXmsg.XmsgImHlrAttachSimpleReq;
-import x.msg.pb.PbXmsg.XmsgImHlrAttachSimpleRsp;
-import x.msg.pb.PbXmsg.XmsgImSdkEventXmsgAp;
 
 /**
  * 
@@ -40,6 +38,7 @@ public class TestXmsgImHlrAttachSimpleReq
 	public static final void test(String token)
 	{
 		XmsgImHlrAttachSimpleReq.Builder attach = XmsgImHlrAttachSimpleReq.newBuilder();
+		attach.setCgt(Main.cgt);
 		attach.setToken(Main.token);
 		attach.setSalt(Crypto.gen0aAkey128());
 		attach.setSign("sign");
@@ -52,21 +51,9 @@ public class TestXmsgImHlrAttachSimpleReq
 				return;
 			}
 			Log.info("attach to x-msg-ap successful, rsp(%s): %s", rsp.getDescriptorForType().getName(), Misc.pb2str(rsp));
-			XmsgImHlrAttachSimpleRsp attachRsp = Misc.get(rsp);
-			Main.cgt = attachRsp.getCgt();
 			Main.netApi.stopTry();
+			Main.firstAttach = false;
 			Main.afterAttach();
 		});
-	}
-
-	/** (再次)附着. */
-	public static final void attach(XmsgImSdkEventXmsgAp evn)
-	{
-		Log.info("evn(%s): %s", evn.getDescriptorForType().getName(), Misc.pb2str(evn));
-		if ("estab".equals(evn.getEvn()) && Main.cgt != null /* 非首次. */)
-		{
-			TestXmsgImHlrAttachSimpleReq.test(Main.token);
-			return;
-		}
 	}
 }

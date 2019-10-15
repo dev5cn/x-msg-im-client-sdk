@@ -28,6 +28,9 @@
 #include <google/protobuf/message.h>
 #include <google/protobuf/repeated_field.h>  // IWYU pragma: export
 #include <google/protobuf/extension_set.h>  // IWYU pragma: export
+#include <google/protobuf/map.h>  // IWYU pragma: export
+#include <google/protobuf/map_entry.h>
+#include <google/protobuf/map_field_inl.h>
 #include <google/protobuf/unknown_field_set.h>
 #include "net-x-msg-im-auth.pb.h"
 // @@protoc_insertion_point(includes)
@@ -37,18 +40,26 @@ namespace protobuf_net_2dx_2dmsg_2dim_2dhlr_2dauth_2eproto {
 struct TableStruct {
   static const ::google::protobuf::internal::ParseTableField entries[];
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[];
-  static const ::google::protobuf::internal::ParseTable schema[7];
+  static const ::google::protobuf::internal::ParseTable schema[11];
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
   static const ::google::protobuf::uint32 offsets[];
 };
 void AddDescriptors();
+void InitDefaultsXmsgImHlrAttachSimpleReq_ExtEntry_DoNotUseImpl();
+void InitDefaultsXmsgImHlrAttachSimpleReq_ExtEntry_DoNotUse();
 void InitDefaultsXmsgImHlrAttachSimpleReqImpl();
 void InitDefaultsXmsgImHlrAttachSimpleReq();
+void InitDefaultsXmsgImHlrAttachSimpleRsp_ExtEntry_DoNotUseImpl();
+void InitDefaultsXmsgImHlrAttachSimpleRsp_ExtEntry_DoNotUse();
 void InitDefaultsXmsgImHlrAttachSimpleRspImpl();
 void InitDefaultsXmsgImHlrAttachSimpleRsp();
+void InitDefaultsXmsgImHlrDetachSimpleReq_ExtEntry_DoNotUseImpl();
+void InitDefaultsXmsgImHlrDetachSimpleReq_ExtEntry_DoNotUse();
 void InitDefaultsXmsgImHlrDetachSimpleReqImpl();
 void InitDefaultsXmsgImHlrDetachSimpleReq();
+void InitDefaultsXmsgImHlrDetachSimpleRsp_ExtEntry_DoNotUseImpl();
+void InitDefaultsXmsgImHlrDetachSimpleRsp_ExtEntry_DoNotUse();
 void InitDefaultsXmsgImHlrDetachSimpleRspImpl();
 void InitDefaultsXmsgImHlrDetachSimpleRsp();
 void InitDefaultsXmsgImHlrOtherClientAttachReqImpl();
@@ -58,9 +69,13 @@ void InitDefaultsXmsgImHlrOtherClientAttachRsp();
 void InitDefaultsXmsgImHlrOtherClientAttachNoticeImpl();
 void InitDefaultsXmsgImHlrOtherClientAttachNotice();
 inline void InitDefaults() {
+  InitDefaultsXmsgImHlrAttachSimpleReq_ExtEntry_DoNotUse();
   InitDefaultsXmsgImHlrAttachSimpleReq();
+  InitDefaultsXmsgImHlrAttachSimpleRsp_ExtEntry_DoNotUse();
   InitDefaultsXmsgImHlrAttachSimpleRsp();
+  InitDefaultsXmsgImHlrDetachSimpleReq_ExtEntry_DoNotUse();
   InitDefaultsXmsgImHlrDetachSimpleReq();
+  InitDefaultsXmsgImHlrDetachSimpleRsp_ExtEntry_DoNotUse();
   InitDefaultsXmsgImHlrDetachSimpleRsp();
   InitDefaultsXmsgImHlrOtherClientAttachReq();
   InitDefaultsXmsgImHlrOtherClientAttachRsp();
@@ -70,15 +85,27 @@ inline void InitDefaults() {
 class XmsgImHlrAttachSimpleReq;
 class XmsgImHlrAttachSimpleReqDefaultTypeInternal;
 extern XmsgImHlrAttachSimpleReqDefaultTypeInternal _XmsgImHlrAttachSimpleReq_default_instance_;
+class XmsgImHlrAttachSimpleReq_ExtEntry_DoNotUse;
+class XmsgImHlrAttachSimpleReq_ExtEntry_DoNotUseDefaultTypeInternal;
+extern XmsgImHlrAttachSimpleReq_ExtEntry_DoNotUseDefaultTypeInternal _XmsgImHlrAttachSimpleReq_ExtEntry_DoNotUse_default_instance_;
 class XmsgImHlrAttachSimpleRsp;
 class XmsgImHlrAttachSimpleRspDefaultTypeInternal;
 extern XmsgImHlrAttachSimpleRspDefaultTypeInternal _XmsgImHlrAttachSimpleRsp_default_instance_;
+class XmsgImHlrAttachSimpleRsp_ExtEntry_DoNotUse;
+class XmsgImHlrAttachSimpleRsp_ExtEntry_DoNotUseDefaultTypeInternal;
+extern XmsgImHlrAttachSimpleRsp_ExtEntry_DoNotUseDefaultTypeInternal _XmsgImHlrAttachSimpleRsp_ExtEntry_DoNotUse_default_instance_;
 class XmsgImHlrDetachSimpleReq;
 class XmsgImHlrDetachSimpleReqDefaultTypeInternal;
 extern XmsgImHlrDetachSimpleReqDefaultTypeInternal _XmsgImHlrDetachSimpleReq_default_instance_;
+class XmsgImHlrDetachSimpleReq_ExtEntry_DoNotUse;
+class XmsgImHlrDetachSimpleReq_ExtEntry_DoNotUseDefaultTypeInternal;
+extern XmsgImHlrDetachSimpleReq_ExtEntry_DoNotUseDefaultTypeInternal _XmsgImHlrDetachSimpleReq_ExtEntry_DoNotUse_default_instance_;
 class XmsgImHlrDetachSimpleRsp;
 class XmsgImHlrDetachSimpleRspDefaultTypeInternal;
 extern XmsgImHlrDetachSimpleRspDefaultTypeInternal _XmsgImHlrDetachSimpleRsp_default_instance_;
+class XmsgImHlrDetachSimpleRsp_ExtEntry_DoNotUse;
+class XmsgImHlrDetachSimpleRsp_ExtEntry_DoNotUseDefaultTypeInternal;
+extern XmsgImHlrDetachSimpleRsp_ExtEntry_DoNotUseDefaultTypeInternal _XmsgImHlrDetachSimpleRsp_ExtEntry_DoNotUse_default_instance_;
 class XmsgImHlrOtherClientAttachNotice;
 class XmsgImHlrOtherClientAttachNoticeDefaultTypeInternal;
 extern XmsgImHlrOtherClientAttachNoticeDefaultTypeInternal _XmsgImHlrOtherClientAttachNotice_default_instance_;
@@ -90,6 +117,27 @@ class XmsgImHlrOtherClientAttachRspDefaultTypeInternal;
 extern XmsgImHlrOtherClientAttachRspDefaultTypeInternal _XmsgImHlrOtherClientAttachRsp_default_instance_;
 
 // ===================================================================
+
+class XmsgImHlrAttachSimpleReq_ExtEntry_DoNotUse : public ::google::protobuf::internal::MapEntry<XmsgImHlrAttachSimpleReq_ExtEntry_DoNotUse, 
+    ::std::string, ::std::string,
+    ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+    ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+    0 > {
+public:
+  typedef ::google::protobuf::internal::MapEntry<XmsgImHlrAttachSimpleReq_ExtEntry_DoNotUse, 
+    ::std::string, ::std::string,
+    ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+    ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+    0 > SuperType;
+  XmsgImHlrAttachSimpleReq_ExtEntry_DoNotUse();
+  XmsgImHlrAttachSimpleReq_ExtEntry_DoNotUse(::google::protobuf::Arena* arena);
+  void MergeFrom(const XmsgImHlrAttachSimpleReq_ExtEntry_DoNotUse& other);
+  static const XmsgImHlrAttachSimpleReq_ExtEntry_DoNotUse* internal_default_instance() { return reinterpret_cast<const XmsgImHlrAttachSimpleReq_ExtEntry_DoNotUse*>(&_XmsgImHlrAttachSimpleReq_ExtEntry_DoNotUse_default_instance_); }
+  void MergeFrom(const ::google::protobuf::Message& other) PROTOBUF_FINAL;
+  ::google::protobuf::Metadata GetMetadata() const;
+};
+
+// -------------------------------------------------------------------
 
 class XmsgImHlrAttachSimpleReq : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:XmsgImHlrAttachSimpleReq) */ {
  public:
@@ -126,7 +174,7 @@ class XmsgImHlrAttachSimpleReq : public ::google::protobuf::Message /* @@protoc_
                &_XmsgImHlrAttachSimpleReq_default_instance_);
   }
   static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
-    0;
+    1;
 
   void Swap(XmsgImHlrAttachSimpleReq* other);
   friend void swap(XmsgImHlrAttachSimpleReq& a, XmsgImHlrAttachSimpleReq& b) {
@@ -171,7 +219,17 @@ class XmsgImHlrAttachSimpleReq : public ::google::protobuf::Message /* @@protoc_
 
   // nested types ----------------------------------------------------
 
+
   // accessors -------------------------------------------------------
+
+  // map<string, string> ext = 6;
+  int ext_size() const;
+  void clear_ext();
+  static const int kExtFieldNumber = 6;
+  const ::google::protobuf::Map< ::std::string, ::std::string >&
+      ext() const;
+  ::google::protobuf::Map< ::std::string, ::std::string >*
+      mutable_ext();
 
   // string token = 1;
   void clear_token();
@@ -229,33 +287,60 @@ class XmsgImHlrAttachSimpleReq : public ::google::protobuf::Message /* @@protoc_
   ::std::string* release_alg();
   void set_allocated_alg(::std::string* alg);
 
-  // string ext = 5;
-  void clear_ext();
-  static const int kExtFieldNumber = 5;
-  const ::std::string& ext() const;
-  void set_ext(const ::std::string& value);
+  // string cgt = 5;
+  void clear_cgt();
+  static const int kCgtFieldNumber = 5;
+  const ::std::string& cgt() const;
+  void set_cgt(const ::std::string& value);
   #if LANG_CXX11
-  void set_ext(::std::string&& value);
+  void set_cgt(::std::string&& value);
   #endif
-  void set_ext(const char* value);
-  void set_ext(const char* value, size_t size);
-  ::std::string* mutable_ext();
-  ::std::string* release_ext();
-  void set_allocated_ext(::std::string* ext);
+  void set_cgt(const char* value);
+  void set_cgt(const char* value, size_t size);
+  ::std::string* mutable_cgt();
+  ::std::string* release_cgt();
+  void set_allocated_cgt(::std::string* cgt);
 
   // @@protoc_insertion_point(class_scope:XmsgImHlrAttachSimpleReq)
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::MapField<
+      XmsgImHlrAttachSimpleReq_ExtEntry_DoNotUse,
+      ::std::string, ::std::string,
+      ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+      ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+      0 > ext_;
   ::google::protobuf::internal::ArenaStringPtr token_;
   ::google::protobuf::internal::ArenaStringPtr salt_;
   ::google::protobuf::internal::ArenaStringPtr sign_;
   ::google::protobuf::internal::ArenaStringPtr alg_;
-  ::google::protobuf::internal::ArenaStringPtr ext_;
+  ::google::protobuf::internal::ArenaStringPtr cgt_;
   mutable int _cached_size_;
   friend struct ::protobuf_net_2dx_2dmsg_2dim_2dhlr_2dauth_2eproto::TableStruct;
   friend void ::protobuf_net_2dx_2dmsg_2dim_2dhlr_2dauth_2eproto::InitDefaultsXmsgImHlrAttachSimpleReqImpl();
 };
+// -------------------------------------------------------------------
+
+class XmsgImHlrAttachSimpleRsp_ExtEntry_DoNotUse : public ::google::protobuf::internal::MapEntry<XmsgImHlrAttachSimpleRsp_ExtEntry_DoNotUse, 
+    ::std::string, ::std::string,
+    ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+    ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+    0 > {
+public:
+  typedef ::google::protobuf::internal::MapEntry<XmsgImHlrAttachSimpleRsp_ExtEntry_DoNotUse, 
+    ::std::string, ::std::string,
+    ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+    ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+    0 > SuperType;
+  XmsgImHlrAttachSimpleRsp_ExtEntry_DoNotUse();
+  XmsgImHlrAttachSimpleRsp_ExtEntry_DoNotUse(::google::protobuf::Arena* arena);
+  void MergeFrom(const XmsgImHlrAttachSimpleRsp_ExtEntry_DoNotUse& other);
+  static const XmsgImHlrAttachSimpleRsp_ExtEntry_DoNotUse* internal_default_instance() { return reinterpret_cast<const XmsgImHlrAttachSimpleRsp_ExtEntry_DoNotUse*>(&_XmsgImHlrAttachSimpleRsp_ExtEntry_DoNotUse_default_instance_); }
+  void MergeFrom(const ::google::protobuf::Message& other) PROTOBUF_FINAL;
+  ::google::protobuf::Metadata GetMetadata() const;
+};
+
 // -------------------------------------------------------------------
 
 class XmsgImHlrAttachSimpleRsp : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:XmsgImHlrAttachSimpleRsp) */ {
@@ -293,7 +378,7 @@ class XmsgImHlrAttachSimpleRsp : public ::google::protobuf::Message /* @@protoc_
                &_XmsgImHlrAttachSimpleRsp_default_instance_);
   }
   static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
-    1;
+    3;
 
   void Swap(XmsgImHlrAttachSimpleRsp* other);
   friend void swap(XmsgImHlrAttachSimpleRsp& a, XmsgImHlrAttachSimpleRsp& b) {
@@ -338,46 +423,53 @@ class XmsgImHlrAttachSimpleRsp : public ::google::protobuf::Message /* @@protoc_
 
   // nested types ----------------------------------------------------
 
+
   // accessors -------------------------------------------------------
 
-  // string cgt = 1;
-  void clear_cgt();
-  static const int kCgtFieldNumber = 1;
-  const ::std::string& cgt() const;
-  void set_cgt(const ::std::string& value);
-  #if LANG_CXX11
-  void set_cgt(::std::string&& value);
-  #endif
-  void set_cgt(const char* value);
-  void set_cgt(const char* value, size_t size);
-  ::std::string* mutable_cgt();
-  ::std::string* release_cgt();
-  void set_allocated_cgt(::std::string* cgt);
-
-  // string ext = 2;
+  // map<string, string> ext = 1;
+  int ext_size() const;
   void clear_ext();
-  static const int kExtFieldNumber = 2;
-  const ::std::string& ext() const;
-  void set_ext(const ::std::string& value);
-  #if LANG_CXX11
-  void set_ext(::std::string&& value);
-  #endif
-  void set_ext(const char* value);
-  void set_ext(const char* value, size_t size);
-  ::std::string* mutable_ext();
-  ::std::string* release_ext();
-  void set_allocated_ext(::std::string* ext);
+  static const int kExtFieldNumber = 1;
+  const ::google::protobuf::Map< ::std::string, ::std::string >&
+      ext() const;
+  ::google::protobuf::Map< ::std::string, ::std::string >*
+      mutable_ext();
 
   // @@protoc_insertion_point(class_scope:XmsgImHlrAttachSimpleRsp)
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::google::protobuf::internal::ArenaStringPtr cgt_;
-  ::google::protobuf::internal::ArenaStringPtr ext_;
+  ::google::protobuf::internal::MapField<
+      XmsgImHlrAttachSimpleRsp_ExtEntry_DoNotUse,
+      ::std::string, ::std::string,
+      ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+      ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+      0 > ext_;
   mutable int _cached_size_;
   friend struct ::protobuf_net_2dx_2dmsg_2dim_2dhlr_2dauth_2eproto::TableStruct;
   friend void ::protobuf_net_2dx_2dmsg_2dim_2dhlr_2dauth_2eproto::InitDefaultsXmsgImHlrAttachSimpleRspImpl();
 };
+// -------------------------------------------------------------------
+
+class XmsgImHlrDetachSimpleReq_ExtEntry_DoNotUse : public ::google::protobuf::internal::MapEntry<XmsgImHlrDetachSimpleReq_ExtEntry_DoNotUse, 
+    ::std::string, ::std::string,
+    ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+    ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+    0 > {
+public:
+  typedef ::google::protobuf::internal::MapEntry<XmsgImHlrDetachSimpleReq_ExtEntry_DoNotUse, 
+    ::std::string, ::std::string,
+    ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+    ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+    0 > SuperType;
+  XmsgImHlrDetachSimpleReq_ExtEntry_DoNotUse();
+  XmsgImHlrDetachSimpleReq_ExtEntry_DoNotUse(::google::protobuf::Arena* arena);
+  void MergeFrom(const XmsgImHlrDetachSimpleReq_ExtEntry_DoNotUse& other);
+  static const XmsgImHlrDetachSimpleReq_ExtEntry_DoNotUse* internal_default_instance() { return reinterpret_cast<const XmsgImHlrDetachSimpleReq_ExtEntry_DoNotUse*>(&_XmsgImHlrDetachSimpleReq_ExtEntry_DoNotUse_default_instance_); }
+  void MergeFrom(const ::google::protobuf::Message& other) PROTOBUF_FINAL;
+  ::google::protobuf::Metadata GetMetadata() const;
+};
+
 // -------------------------------------------------------------------
 
 class XmsgImHlrDetachSimpleReq : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:XmsgImHlrDetachSimpleReq) */ {
@@ -415,7 +507,7 @@ class XmsgImHlrDetachSimpleReq : public ::google::protobuf::Message /* @@protoc_
                &_XmsgImHlrDetachSimpleReq_default_instance_);
   }
   static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
-    2;
+    5;
 
   void Swap(XmsgImHlrDetachSimpleReq* other);
   friend void swap(XmsgImHlrDetachSimpleReq& a, XmsgImHlrDetachSimpleReq& b) {
@@ -460,31 +552,53 @@ class XmsgImHlrDetachSimpleReq : public ::google::protobuf::Message /* @@protoc_
 
   // nested types ----------------------------------------------------
 
+
   // accessors -------------------------------------------------------
 
-  // string ext = 1;
+  // map<string, string> ext = 1;
+  int ext_size() const;
   void clear_ext();
   static const int kExtFieldNumber = 1;
-  const ::std::string& ext() const;
-  void set_ext(const ::std::string& value);
-  #if LANG_CXX11
-  void set_ext(::std::string&& value);
-  #endif
-  void set_ext(const char* value);
-  void set_ext(const char* value, size_t size);
-  ::std::string* mutable_ext();
-  ::std::string* release_ext();
-  void set_allocated_ext(::std::string* ext);
+  const ::google::protobuf::Map< ::std::string, ::std::string >&
+      ext() const;
+  ::google::protobuf::Map< ::std::string, ::std::string >*
+      mutable_ext();
 
   // @@protoc_insertion_point(class_scope:XmsgImHlrDetachSimpleReq)
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::google::protobuf::internal::ArenaStringPtr ext_;
+  ::google::protobuf::internal::MapField<
+      XmsgImHlrDetachSimpleReq_ExtEntry_DoNotUse,
+      ::std::string, ::std::string,
+      ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+      ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+      0 > ext_;
   mutable int _cached_size_;
   friend struct ::protobuf_net_2dx_2dmsg_2dim_2dhlr_2dauth_2eproto::TableStruct;
   friend void ::protobuf_net_2dx_2dmsg_2dim_2dhlr_2dauth_2eproto::InitDefaultsXmsgImHlrDetachSimpleReqImpl();
 };
+// -------------------------------------------------------------------
+
+class XmsgImHlrDetachSimpleRsp_ExtEntry_DoNotUse : public ::google::protobuf::internal::MapEntry<XmsgImHlrDetachSimpleRsp_ExtEntry_DoNotUse, 
+    ::std::string, ::std::string,
+    ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+    ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+    0 > {
+public:
+  typedef ::google::protobuf::internal::MapEntry<XmsgImHlrDetachSimpleRsp_ExtEntry_DoNotUse, 
+    ::std::string, ::std::string,
+    ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+    ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+    0 > SuperType;
+  XmsgImHlrDetachSimpleRsp_ExtEntry_DoNotUse();
+  XmsgImHlrDetachSimpleRsp_ExtEntry_DoNotUse(::google::protobuf::Arena* arena);
+  void MergeFrom(const XmsgImHlrDetachSimpleRsp_ExtEntry_DoNotUse& other);
+  static const XmsgImHlrDetachSimpleRsp_ExtEntry_DoNotUse* internal_default_instance() { return reinterpret_cast<const XmsgImHlrDetachSimpleRsp_ExtEntry_DoNotUse*>(&_XmsgImHlrDetachSimpleRsp_ExtEntry_DoNotUse_default_instance_); }
+  void MergeFrom(const ::google::protobuf::Message& other) PROTOBUF_FINAL;
+  ::google::protobuf::Metadata GetMetadata() const;
+};
+
 // -------------------------------------------------------------------
 
 class XmsgImHlrDetachSimpleRsp : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:XmsgImHlrDetachSimpleRsp) */ {
@@ -522,7 +636,7 @@ class XmsgImHlrDetachSimpleRsp : public ::google::protobuf::Message /* @@protoc_
                &_XmsgImHlrDetachSimpleRsp_default_instance_);
   }
   static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
-    3;
+    7;
 
   void Swap(XmsgImHlrDetachSimpleRsp* other);
   friend void swap(XmsgImHlrDetachSimpleRsp& a, XmsgImHlrDetachSimpleRsp& b) {
@@ -567,27 +681,28 @@ class XmsgImHlrDetachSimpleRsp : public ::google::protobuf::Message /* @@protoc_
 
   // nested types ----------------------------------------------------
 
+
   // accessors -------------------------------------------------------
 
-  // string ext = 1;
+  // map<string, string> ext = 1;
+  int ext_size() const;
   void clear_ext();
   static const int kExtFieldNumber = 1;
-  const ::std::string& ext() const;
-  void set_ext(const ::std::string& value);
-  #if LANG_CXX11
-  void set_ext(::std::string&& value);
-  #endif
-  void set_ext(const char* value);
-  void set_ext(const char* value, size_t size);
-  ::std::string* mutable_ext();
-  ::std::string* release_ext();
-  void set_allocated_ext(::std::string* ext);
+  const ::google::protobuf::Map< ::std::string, ::std::string >&
+      ext() const;
+  ::google::protobuf::Map< ::std::string, ::std::string >*
+      mutable_ext();
 
   // @@protoc_insertion_point(class_scope:XmsgImHlrDetachSimpleRsp)
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::google::protobuf::internal::ArenaStringPtr ext_;
+  ::google::protobuf::internal::MapField<
+      XmsgImHlrDetachSimpleRsp_ExtEntry_DoNotUse,
+      ::std::string, ::std::string,
+      ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+      ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+      0 > ext_;
   mutable int _cached_size_;
   friend struct ::protobuf_net_2dx_2dmsg_2dim_2dhlr_2dauth_2eproto::TableStruct;
   friend void ::protobuf_net_2dx_2dmsg_2dim_2dhlr_2dauth_2eproto::InitDefaultsXmsgImHlrDetachSimpleRspImpl();
@@ -629,7 +744,7 @@ class XmsgImHlrOtherClientAttachReq : public ::google::protobuf::Message /* @@pr
                &_XmsgImHlrOtherClientAttachReq_default_instance_);
   }
   static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
-    4;
+    8;
 
   void Swap(XmsgImHlrOtherClientAttachReq* other);
   friend void swap(XmsgImHlrOtherClientAttachReq& a, XmsgImHlrOtherClientAttachReq& b) {
@@ -746,7 +861,7 @@ class XmsgImHlrOtherClientAttachRsp : public ::google::protobuf::Message /* @@pr
                &_XmsgImHlrOtherClientAttachRsp_default_instance_);
   }
   static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
-    5;
+    9;
 
   void Swap(XmsgImHlrOtherClientAttachRsp* other);
   friend void swap(XmsgImHlrOtherClientAttachRsp& a, XmsgImHlrOtherClientAttachRsp& b) {
@@ -853,7 +968,7 @@ class XmsgImHlrOtherClientAttachNotice : public ::google::protobuf::Message /* @
                &_XmsgImHlrOtherClientAttachNotice_default_instance_);
   }
   static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
-    6;
+    10;
 
   void Swap(XmsgImHlrOtherClientAttachNotice* other);
   friend void swap(XmsgImHlrOtherClientAttachNotice& a, XmsgImHlrOtherClientAttachNotice& b) {
@@ -942,6 +1057,8 @@ class XmsgImHlrOtherClientAttachNotice : public ::google::protobuf::Message /* @
   #pragma GCC diagnostic push
   #pragma GCC diagnostic ignored "-Wstrict-aliasing"
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // XmsgImHlrAttachSimpleReq
 
 // string token = 1;
@@ -1156,281 +1273,147 @@ inline void XmsgImHlrAttachSimpleReq::set_allocated_alg(::std::string* alg) {
   // @@protoc_insertion_point(field_set_allocated:XmsgImHlrAttachSimpleReq.alg)
 }
 
-// string ext = 5;
-inline void XmsgImHlrAttachSimpleReq::clear_ext() {
-  ext_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline const ::std::string& XmsgImHlrAttachSimpleReq::ext() const {
-  // @@protoc_insertion_point(field_get:XmsgImHlrAttachSimpleReq.ext)
-  return ext_.GetNoArena();
-}
-inline void XmsgImHlrAttachSimpleReq::set_ext(const ::std::string& value) {
-  
-  ext_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:XmsgImHlrAttachSimpleReq.ext)
-}
-#if LANG_CXX11
-inline void XmsgImHlrAttachSimpleReq::set_ext(::std::string&& value) {
-  
-  ext_.SetNoArena(
-    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:XmsgImHlrAttachSimpleReq.ext)
-}
-#endif
-inline void XmsgImHlrAttachSimpleReq::set_ext(const char* value) {
-  GOOGLE_DCHECK(value != NULL);
-  
-  ext_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:XmsgImHlrAttachSimpleReq.ext)
-}
-inline void XmsgImHlrAttachSimpleReq::set_ext(const char* value, size_t size) {
-  
-  ext_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:XmsgImHlrAttachSimpleReq.ext)
-}
-inline ::std::string* XmsgImHlrAttachSimpleReq::mutable_ext() {
-  
-  // @@protoc_insertion_point(field_mutable:XmsgImHlrAttachSimpleReq.ext)
-  return ext_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline ::std::string* XmsgImHlrAttachSimpleReq::release_ext() {
-  // @@protoc_insertion_point(field_release:XmsgImHlrAttachSimpleReq.ext)
-  
-  return ext_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline void XmsgImHlrAttachSimpleReq::set_allocated_ext(::std::string* ext) {
-  if (ext != NULL) {
-    
-  } else {
-    
-  }
-  ext_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ext);
-  // @@protoc_insertion_point(field_set_allocated:XmsgImHlrAttachSimpleReq.ext)
-}
-
-// -------------------------------------------------------------------
-
-// XmsgImHlrAttachSimpleRsp
-
-// string cgt = 1;
-inline void XmsgImHlrAttachSimpleRsp::clear_cgt() {
+// string cgt = 5;
+inline void XmsgImHlrAttachSimpleReq::clear_cgt() {
   cgt_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline const ::std::string& XmsgImHlrAttachSimpleRsp::cgt() const {
-  // @@protoc_insertion_point(field_get:XmsgImHlrAttachSimpleRsp.cgt)
+inline const ::std::string& XmsgImHlrAttachSimpleReq::cgt() const {
+  // @@protoc_insertion_point(field_get:XmsgImHlrAttachSimpleReq.cgt)
   return cgt_.GetNoArena();
 }
-inline void XmsgImHlrAttachSimpleRsp::set_cgt(const ::std::string& value) {
+inline void XmsgImHlrAttachSimpleReq::set_cgt(const ::std::string& value) {
   
   cgt_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:XmsgImHlrAttachSimpleRsp.cgt)
+  // @@protoc_insertion_point(field_set:XmsgImHlrAttachSimpleReq.cgt)
 }
 #if LANG_CXX11
-inline void XmsgImHlrAttachSimpleRsp::set_cgt(::std::string&& value) {
+inline void XmsgImHlrAttachSimpleReq::set_cgt(::std::string&& value) {
   
   cgt_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:XmsgImHlrAttachSimpleRsp.cgt)
+  // @@protoc_insertion_point(field_set_rvalue:XmsgImHlrAttachSimpleReq.cgt)
 }
 #endif
-inline void XmsgImHlrAttachSimpleRsp::set_cgt(const char* value) {
+inline void XmsgImHlrAttachSimpleReq::set_cgt(const char* value) {
   GOOGLE_DCHECK(value != NULL);
   
   cgt_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:XmsgImHlrAttachSimpleRsp.cgt)
+  // @@protoc_insertion_point(field_set_char:XmsgImHlrAttachSimpleReq.cgt)
 }
-inline void XmsgImHlrAttachSimpleRsp::set_cgt(const char* value, size_t size) {
+inline void XmsgImHlrAttachSimpleReq::set_cgt(const char* value, size_t size) {
   
   cgt_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:XmsgImHlrAttachSimpleRsp.cgt)
+  // @@protoc_insertion_point(field_set_pointer:XmsgImHlrAttachSimpleReq.cgt)
 }
-inline ::std::string* XmsgImHlrAttachSimpleRsp::mutable_cgt() {
+inline ::std::string* XmsgImHlrAttachSimpleReq::mutable_cgt() {
   
-  // @@protoc_insertion_point(field_mutable:XmsgImHlrAttachSimpleRsp.cgt)
+  // @@protoc_insertion_point(field_mutable:XmsgImHlrAttachSimpleReq.cgt)
   return cgt_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline ::std::string* XmsgImHlrAttachSimpleRsp::release_cgt() {
-  // @@protoc_insertion_point(field_release:XmsgImHlrAttachSimpleRsp.cgt)
+inline ::std::string* XmsgImHlrAttachSimpleReq::release_cgt() {
+  // @@protoc_insertion_point(field_release:XmsgImHlrAttachSimpleReq.cgt)
   
   return cgt_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline void XmsgImHlrAttachSimpleRsp::set_allocated_cgt(::std::string* cgt) {
+inline void XmsgImHlrAttachSimpleReq::set_allocated_cgt(::std::string* cgt) {
   if (cgt != NULL) {
     
   } else {
     
   }
   cgt_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), cgt);
-  // @@protoc_insertion_point(field_set_allocated:XmsgImHlrAttachSimpleRsp.cgt)
+  // @@protoc_insertion_point(field_set_allocated:XmsgImHlrAttachSimpleReq.cgt)
 }
 
-// string ext = 2;
+// map<string, string> ext = 6;
+inline int XmsgImHlrAttachSimpleReq::ext_size() const {
+  return ext_.size();
+}
+inline void XmsgImHlrAttachSimpleReq::clear_ext() {
+  ext_.Clear();
+}
+inline const ::google::protobuf::Map< ::std::string, ::std::string >&
+XmsgImHlrAttachSimpleReq::ext() const {
+  // @@protoc_insertion_point(field_map:XmsgImHlrAttachSimpleReq.ext)
+  return ext_.GetMap();
+}
+inline ::google::protobuf::Map< ::std::string, ::std::string >*
+XmsgImHlrAttachSimpleReq::mutable_ext() {
+  // @@protoc_insertion_point(field_mutable_map:XmsgImHlrAttachSimpleReq.ext)
+  return ext_.MutableMap();
+}
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// XmsgImHlrAttachSimpleRsp
+
+// map<string, string> ext = 1;
+inline int XmsgImHlrAttachSimpleRsp::ext_size() const {
+  return ext_.size();
+}
 inline void XmsgImHlrAttachSimpleRsp::clear_ext() {
-  ext_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  ext_.Clear();
 }
-inline const ::std::string& XmsgImHlrAttachSimpleRsp::ext() const {
-  // @@protoc_insertion_point(field_get:XmsgImHlrAttachSimpleRsp.ext)
-  return ext_.GetNoArena();
+inline const ::google::protobuf::Map< ::std::string, ::std::string >&
+XmsgImHlrAttachSimpleRsp::ext() const {
+  // @@protoc_insertion_point(field_map:XmsgImHlrAttachSimpleRsp.ext)
+  return ext_.GetMap();
 }
-inline void XmsgImHlrAttachSimpleRsp::set_ext(const ::std::string& value) {
-  
-  ext_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:XmsgImHlrAttachSimpleRsp.ext)
+inline ::google::protobuf::Map< ::std::string, ::std::string >*
+XmsgImHlrAttachSimpleRsp::mutable_ext() {
+  // @@protoc_insertion_point(field_mutable_map:XmsgImHlrAttachSimpleRsp.ext)
+  return ext_.MutableMap();
 }
-#if LANG_CXX11
-inline void XmsgImHlrAttachSimpleRsp::set_ext(::std::string&& value) {
-  
-  ext_.SetNoArena(
-    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:XmsgImHlrAttachSimpleRsp.ext)
-}
-#endif
-inline void XmsgImHlrAttachSimpleRsp::set_ext(const char* value) {
-  GOOGLE_DCHECK(value != NULL);
-  
-  ext_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:XmsgImHlrAttachSimpleRsp.ext)
-}
-inline void XmsgImHlrAttachSimpleRsp::set_ext(const char* value, size_t size) {
-  
-  ext_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:XmsgImHlrAttachSimpleRsp.ext)
-}
-inline ::std::string* XmsgImHlrAttachSimpleRsp::mutable_ext() {
-  
-  // @@protoc_insertion_point(field_mutable:XmsgImHlrAttachSimpleRsp.ext)
-  return ext_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline ::std::string* XmsgImHlrAttachSimpleRsp::release_ext() {
-  // @@protoc_insertion_point(field_release:XmsgImHlrAttachSimpleRsp.ext)
-  
-  return ext_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline void XmsgImHlrAttachSimpleRsp::set_allocated_ext(::std::string* ext) {
-  if (ext != NULL) {
-    
-  } else {
-    
-  }
-  ext_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ext);
-  // @@protoc_insertion_point(field_set_allocated:XmsgImHlrAttachSimpleRsp.ext)
-}
+
+// -------------------------------------------------------------------
 
 // -------------------------------------------------------------------
 
 // XmsgImHlrDetachSimpleReq
 
-// string ext = 1;
+// map<string, string> ext = 1;
+inline int XmsgImHlrDetachSimpleReq::ext_size() const {
+  return ext_.size();
+}
 inline void XmsgImHlrDetachSimpleReq::clear_ext() {
-  ext_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  ext_.Clear();
 }
-inline const ::std::string& XmsgImHlrDetachSimpleReq::ext() const {
-  // @@protoc_insertion_point(field_get:XmsgImHlrDetachSimpleReq.ext)
-  return ext_.GetNoArena();
+inline const ::google::protobuf::Map< ::std::string, ::std::string >&
+XmsgImHlrDetachSimpleReq::ext() const {
+  // @@protoc_insertion_point(field_map:XmsgImHlrDetachSimpleReq.ext)
+  return ext_.GetMap();
 }
-inline void XmsgImHlrDetachSimpleReq::set_ext(const ::std::string& value) {
-  
-  ext_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:XmsgImHlrDetachSimpleReq.ext)
+inline ::google::protobuf::Map< ::std::string, ::std::string >*
+XmsgImHlrDetachSimpleReq::mutable_ext() {
+  // @@protoc_insertion_point(field_mutable_map:XmsgImHlrDetachSimpleReq.ext)
+  return ext_.MutableMap();
 }
-#if LANG_CXX11
-inline void XmsgImHlrDetachSimpleReq::set_ext(::std::string&& value) {
-  
-  ext_.SetNoArena(
-    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:XmsgImHlrDetachSimpleReq.ext)
-}
-#endif
-inline void XmsgImHlrDetachSimpleReq::set_ext(const char* value) {
-  GOOGLE_DCHECK(value != NULL);
-  
-  ext_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:XmsgImHlrDetachSimpleReq.ext)
-}
-inline void XmsgImHlrDetachSimpleReq::set_ext(const char* value, size_t size) {
-  
-  ext_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:XmsgImHlrDetachSimpleReq.ext)
-}
-inline ::std::string* XmsgImHlrDetachSimpleReq::mutable_ext() {
-  
-  // @@protoc_insertion_point(field_mutable:XmsgImHlrDetachSimpleReq.ext)
-  return ext_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline ::std::string* XmsgImHlrDetachSimpleReq::release_ext() {
-  // @@protoc_insertion_point(field_release:XmsgImHlrDetachSimpleReq.ext)
-  
-  return ext_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline void XmsgImHlrDetachSimpleReq::set_allocated_ext(::std::string* ext) {
-  if (ext != NULL) {
-    
-  } else {
-    
-  }
-  ext_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ext);
-  // @@protoc_insertion_point(field_set_allocated:XmsgImHlrDetachSimpleReq.ext)
-}
+
+// -------------------------------------------------------------------
 
 // -------------------------------------------------------------------
 
 // XmsgImHlrDetachSimpleRsp
 
-// string ext = 1;
+// map<string, string> ext = 1;
+inline int XmsgImHlrDetachSimpleRsp::ext_size() const {
+  return ext_.size();
+}
 inline void XmsgImHlrDetachSimpleRsp::clear_ext() {
-  ext_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  ext_.Clear();
 }
-inline const ::std::string& XmsgImHlrDetachSimpleRsp::ext() const {
-  // @@protoc_insertion_point(field_get:XmsgImHlrDetachSimpleRsp.ext)
-  return ext_.GetNoArena();
+inline const ::google::protobuf::Map< ::std::string, ::std::string >&
+XmsgImHlrDetachSimpleRsp::ext() const {
+  // @@protoc_insertion_point(field_map:XmsgImHlrDetachSimpleRsp.ext)
+  return ext_.GetMap();
 }
-inline void XmsgImHlrDetachSimpleRsp::set_ext(const ::std::string& value) {
-  
-  ext_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:XmsgImHlrDetachSimpleRsp.ext)
-}
-#if LANG_CXX11
-inline void XmsgImHlrDetachSimpleRsp::set_ext(::std::string&& value) {
-  
-  ext_.SetNoArena(
-    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:XmsgImHlrDetachSimpleRsp.ext)
-}
-#endif
-inline void XmsgImHlrDetachSimpleRsp::set_ext(const char* value) {
-  GOOGLE_DCHECK(value != NULL);
-  
-  ext_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:XmsgImHlrDetachSimpleRsp.ext)
-}
-inline void XmsgImHlrDetachSimpleRsp::set_ext(const char* value, size_t size) {
-  
-  ext_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:XmsgImHlrDetachSimpleRsp.ext)
-}
-inline ::std::string* XmsgImHlrDetachSimpleRsp::mutable_ext() {
-  
-  // @@protoc_insertion_point(field_mutable:XmsgImHlrDetachSimpleRsp.ext)
-  return ext_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline ::std::string* XmsgImHlrDetachSimpleRsp::release_ext() {
-  // @@protoc_insertion_point(field_release:XmsgImHlrDetachSimpleRsp.ext)
-  
-  return ext_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline void XmsgImHlrDetachSimpleRsp::set_allocated_ext(::std::string* ext) {
-  if (ext != NULL) {
-    
-  } else {
-    
-  }
-  ext_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ext);
-  // @@protoc_insertion_point(field_set_allocated:XmsgImHlrDetachSimpleRsp.ext)
+inline ::google::protobuf::Map< ::std::string, ::std::string >*
+XmsgImHlrDetachSimpleRsp::mutable_ext() {
+  // @@protoc_insertion_point(field_mutable_map:XmsgImHlrDetachSimpleRsp.ext)
+  return ext_.MutableMap();
 }
 
 // -------------------------------------------------------------------
@@ -1695,6 +1678,14 @@ inline void XmsgImHlrOtherClientAttachNotice::set_allocated_host(::std::string* 
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

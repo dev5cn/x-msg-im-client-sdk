@@ -30,7 +30,7 @@ public class XmsgImClientJni
 
 	public static native void x_msg_im_client_sdk_net_del_api(int netApiId);
 
-	public static native int x_msg_im_client_sdk_net_future(int netApiId, String msg, byte dat[]);
+	public static native int x_msg_im_client_sdk_net_future(int netApiId, String msg, byte dat[], String oob);
 
 	public static native void x_msg_im_client_sdk_net_end_trans(int dtid, int ret, String desc, String msg, byte dat[]);
 

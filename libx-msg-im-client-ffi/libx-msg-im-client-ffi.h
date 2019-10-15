@@ -28,7 +28,7 @@ unsigned char* x_msg_im_client_sdk_loop(int* len);
 void x_msg_im_client_sdk_exit(); 
 int x_msg_im_client_sdk_net_new_api(const char* uri); 
 void x_msg_im_client_sdk_net_del_api(int netApiId); 
-int x_msg_im_client_sdk_net_future(int netApiId, const char* msg, const char* dat, int len); 
+int x_msg_im_client_sdk_net_future(int netApiId, const char* msg, const char* dat, int len, const char* oob); 
 void x_msg_im_client_sdk_net_end_trans(unsigned int dtid, int ret, const char* desc, const char* msg, const char* dat, int len); 
 void x_msg_im_client_sdk_net_stop_try(int netApiId); 
 int x_msg_im_client_sdk_db_init(const char* path); 
