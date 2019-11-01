@@ -66,8 +66,8 @@ typedef struct
 #define XSC_TAG_ALG																				0x10		
 #define XSC_TAG_CHECKSUM																			0x11		
 #define XSC_TAG_TRACE_ID																			0x12		
-#define XSC_TAG_SPAWN_ID																			0x13		
-#define XSC_TAG_P_SPAWN_ID  																	0x14		
+#define XSC_TAG_SPAN_ID																			0x13		
+#define XSC_TAG_P_SPAN_ID	  																	0x14		
 #define XSC_TAG_TS																				0x15		
 #define XSC_TAG_GTS																				0x16		
 #define XSC_TAG_UTS																				0x17		

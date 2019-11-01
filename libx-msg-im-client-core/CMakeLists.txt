@@ -11,15 +11,16 @@ ELSE ()
         ADD_DEFINITIONS(-D$ENV{PLAT})
 ENDIF()
 #
-INCLUDE_DIRECTORIES(../libmisc-cpp/)
+INCLUDE_DIRECTORIES(../libmisc-cpp)
 #
-ADD_COMPILE_OPTIONS(-std=c++11 -fPIC -g3 -O3 -Wall)
+ADD_COMPILE_OPTIONS(-std=c++11 -fPIC -Wall)
 ADD_DEFINITIONS(-Wno-builtin-macro-redefined)
+SET(CMAKE_CXX_FLAGS $ENV{CXX_FLAGS})
 #
 FILE(GLOB SRC "./*.cpp")
 #
 PROJECT(x-msg-im-client-core)
 #
 ADD_LIBRARY(x-msg-im-client-core STATIC ${SRC})
-INCLUDE(../__file__.cmake)
+INCLUDE(./__file__.cmake)
 REDEFINE_FILE_MACRO(x-msg-im-client-core)

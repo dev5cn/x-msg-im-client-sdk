@@ -36,8 +36,9 @@ INCLUDE_DIRECTORIES(../libx-msg-im-client-db)
 INCLUDE_DIRECTORIES(../libx-msg-im-client-sdk)
 INCLUDE_DIRECTORIES($ENV{PROTOBUF}/include)
 #
-ADD_COMPILE_OPTIONS(-std=c++11 -fPIC -g3 -O3 -Wall)
+ADD_COMPILE_OPTIONS(-std=c++11 -fPIC -Wall)
 ADD_DEFINITIONS(-Wno-builtin-macro-redefined)
+SET(CMAKE_CXX_FLAGS $ENV{CXX_FLAGS})
 #
 LINK_DIRECTORIES(../libmisc-cpp)
 LINK_DIRECTORIES(../libxsc-proto-client-cpp)
@@ -54,5 +55,5 @@ FILE(GLOB SRC "./*.cpp")
 PROJECT(x-msg-im-client-ffi)
 #
 ADD_LIBRARY(x-msg-im-client-ffi SHARED ${SRC})
-INCLUDE(../__file__.cmake)
+INCLUDE(./__file__.cmake)
 REDEFINE_FILE_MACRO(x-msg-im-client-ffi)

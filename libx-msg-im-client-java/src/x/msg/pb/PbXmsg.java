@@ -51475,11 +51475,21 @@ public final class PbXmsg {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>map&lt;string, string&gt; ext = 1;</code>
+     * <code>string cgt = 1;</code>
+     */
+    java.lang.String getCgt();
+    /**
+     * <code>string cgt = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getCgtBytes();
+
+    /**
+     * <code>map&lt;string, string&gt; ext = 2;</code>
      */
     int getExtCount();
     /**
-     * <code>map&lt;string, string&gt; ext = 1;</code>
+     * <code>map&lt;string, string&gt; ext = 2;</code>
      */
     boolean containsExt(
         java.lang.String key);
@@ -51490,19 +51500,19 @@ public final class PbXmsg {
     java.util.Map<java.lang.String, java.lang.String>
     getExt();
     /**
-     * <code>map&lt;string, string&gt; ext = 1;</code>
+     * <code>map&lt;string, string&gt; ext = 2;</code>
      */
     java.util.Map<java.lang.String, java.lang.String>
     getExtMap();
     /**
-     * <code>map&lt;string, string&gt; ext = 1;</code>
+     * <code>map&lt;string, string&gt; ext = 2;</code>
      */
 
     java.lang.String getExtOrDefault(
         java.lang.String key,
         java.lang.String defaultValue);
     /**
-     * <code>map&lt;string, string&gt; ext = 1;</code>
+     * <code>map&lt;string, string&gt; ext = 2;</code>
      */
 
     java.lang.String getExtOrThrow(
@@ -51521,6 +51531,7 @@ public final class PbXmsg {
       super(builder);
     }
     private XmsgImAuthRegSimpleRsp() {
+      cgt_ = "";
     }
 
     @java.lang.Override
@@ -51555,10 +51566,16 @@ public final class PbXmsg {
               break;
             }
             case 10: {
-              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              cgt_ = s;
+              break;
+            }
+            case 18: {
+              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
                 ext_ = com.google.protobuf.MapField.newMapField(
                     ExtDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000001;
+                mutable_bitField0_ |= 0x00000002;
               }
               com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
               ext__ = input.readMessage(
@@ -51588,7 +51605,7 @@ public final class PbXmsg {
     protected com.google.protobuf.MapField internalGetMapField(
         int number) {
       switch (number) {
-        case 1:
+        case 2:
           return internalGetExt();
         default:
           throw new RuntimeException(
@@ -51602,7 +51619,42 @@ public final class PbXmsg {
               x.msg.pb.PbXmsg.XmsgImAuthRegSimpleRsp.class, x.msg.pb.PbXmsg.XmsgImAuthRegSimpleRsp.Builder.class);
     }
 
-    public static final int EXT_FIELD_NUMBER = 1;
+    private int bitField0_;
+    public static final int CGT_FIELD_NUMBER = 1;
+    private volatile java.lang.Object cgt_;
+    /**
+     * <code>string cgt = 1;</code>
+     */
+    public java.lang.String getCgt() {
+      java.lang.Object ref = cgt_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        cgt_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string cgt = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getCgtBytes() {
+      java.lang.Object ref = cgt_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        cgt_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int EXT_FIELD_NUMBER = 2;
     private static final class ExtDefaultEntryHolder {
       static final com.google.protobuf.MapEntry<
           java.lang.String, java.lang.String> defaultEntry =
@@ -51629,7 +51681,7 @@ public final class PbXmsg {
       return internalGetExt().getMap().size();
     }
     /**
-     * <code>map&lt;string, string&gt; ext = 1;</code>
+     * <code>map&lt;string, string&gt; ext = 2;</code>
      */
 
     public boolean containsExt(
@@ -51645,14 +51697,14 @@ public final class PbXmsg {
       return getExtMap();
     }
     /**
-     * <code>map&lt;string, string&gt; ext = 1;</code>
+     * <code>map&lt;string, string&gt; ext = 2;</code>
      */
 
     public java.util.Map<java.lang.String, java.lang.String> getExtMap() {
       return internalGetExt().getMap();
     }
     /**
-     * <code>map&lt;string, string&gt; ext = 1;</code>
+     * <code>map&lt;string, string&gt; ext = 2;</code>
      */
 
     public java.lang.String getExtOrDefault(
@@ -51664,7 +51716,7 @@ public final class PbXmsg {
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
-     * <code>map&lt;string, string&gt; ext = 1;</code>
+     * <code>map&lt;string, string&gt; ext = 2;</code>
      */
 
     public java.lang.String getExtOrThrow(
@@ -51690,12 +51742,15 @@ public final class PbXmsg {
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      if (!getCgtBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, cgt_);
+      }
       com.google.protobuf.GeneratedMessageV3
         .serializeStringMapTo(
           output,
           internalGetExt(),
           ExtDefaultEntryHolder.defaultEntry,
-          1);
+          2);
       unknownFields.writeTo(output);
     }
 
@@ -51704,6 +51759,9 @@ public final class PbXmsg {
       if (size != -1) return size;
 
       size = 0;
+      if (!getCgtBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, cgt_);
+      }
       for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
            : internalGetExt().getMap().entrySet()) {
         com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
@@ -51712,7 +51770,7 @@ public final class PbXmsg {
             .setValue(entry.getValue())
             .build();
         size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(1, ext__);
+            .computeMessageSize(2, ext__);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -51730,6 +51788,8 @@ public final class PbXmsg {
       x.msg.pb.PbXmsg.XmsgImAuthRegSimpleRsp other = (x.msg.pb.PbXmsg.XmsgImAuthRegSimpleRsp) obj;
 
       boolean result = true;
+      result = result && getCgt()
+          .equals(other.getCgt());
       result = result && internalGetExt().equals(
           other.internalGetExt());
       result = result && unknownFields.equals(other.unknownFields);
@@ -51743,6 +51803,8 @@ public final class PbXmsg {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + CGT_FIELD_NUMBER;
+      hash = (53 * hash) + getCgt().hashCode();
       if (!internalGetExt().getMap().isEmpty()) {
         hash = (37 * hash) + EXT_FIELD_NUMBER;
         hash = (53 * hash) + internalGetExt().hashCode();
@@ -51856,7 +51918,7 @@ public final class PbXmsg {
       protected com.google.protobuf.MapField internalGetMapField(
           int number) {
         switch (number) {
-          case 1:
+          case 2:
             return internalGetExt();
           default:
             throw new RuntimeException(
@@ -51867,7 +51929,7 @@ public final class PbXmsg {
       protected com.google.protobuf.MapField internalGetMutableMapField(
           int number) {
         switch (number) {
-          case 1:
+          case 2:
             return internalGetMutableExt();
           default:
             throw new RuntimeException(
@@ -51898,6 +51960,8 @@ public final class PbXmsg {
       }
       public Builder clear() {
         super.clear();
+        cgt_ = "";
+
         internalGetMutableExt().clear();
         return this;
       }
@@ -51922,8 +51986,11 @@ public final class PbXmsg {
       public x.msg.pb.PbXmsg.XmsgImAuthRegSimpleRsp buildPartial() {
         x.msg.pb.PbXmsg.XmsgImAuthRegSimpleRsp result = new x.msg.pb.PbXmsg.XmsgImAuthRegSimpleRsp(this);
         int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        result.cgt_ = cgt_;
         result.ext_ = internalGetExt();
         result.ext_.makeImmutable();
+        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -51965,6 +52032,10 @@ public final class PbXmsg {
 
       public Builder mergeFrom(x.msg.pb.PbXmsg.XmsgImAuthRegSimpleRsp other) {
         if (other == x.msg.pb.PbXmsg.XmsgImAuthRegSimpleRsp.getDefaultInstance()) return this;
+        if (!other.getCgt().isEmpty()) {
+          cgt_ = other.cgt_;
+          onChanged();
+        }
         internalGetMutableExt().mergeFrom(
             other.internalGetExt());
         this.mergeUnknownFields(other.unknownFields);
@@ -51995,6 +52066,75 @@ public final class PbXmsg {
       }
       private int bitField0_;
 
+      private java.lang.Object cgt_ = "";
+      /**
+       * <code>string cgt = 1;</code>
+       */
+      public java.lang.String getCgt() {
+        java.lang.Object ref = cgt_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          cgt_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string cgt = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getCgtBytes() {
+        java.lang.Object ref = cgt_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          cgt_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string cgt = 1;</code>
+       */
+      public Builder setCgt(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        cgt_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string cgt = 1;</code>
+       */
+      public Builder clearCgt() {
+        
+        cgt_ = getDefaultInstance().getCgt();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string cgt = 1;</code>
+       */
+      public Builder setCgtBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        cgt_ = value;
+        onChanged();
+        return this;
+      }
+
       private com.google.protobuf.MapField<
           java.lang.String, java.lang.String> ext_;
       private com.google.protobuf.MapField<java.lang.String, java.lang.String>
@@ -52022,7 +52162,7 @@ public final class PbXmsg {
         return internalGetExt().getMap().size();
       }
       /**
-       * <code>map&lt;string, string&gt; ext = 1;</code>
+       * <code>map&lt;string, string&gt; ext = 2;</code>
        */
 
       public boolean containsExt(
@@ -52038,14 +52178,14 @@ public final class PbXmsg {
         return getExtMap();
       }
       /**
-       * <code>map&lt;string, string&gt; ext = 1;</code>
+       * <code>map&lt;string, string&gt; ext = 2;</code>
        */
 
       public java.util.Map<java.lang.String, java.lang.String> getExtMap() {
         return internalGetExt().getMap();
       }
       /**
-       * <code>map&lt;string, string&gt; ext = 1;</code>
+       * <code>map&lt;string, string&gt; ext = 2;</code>
        */
 
       public java.lang.String getExtOrDefault(
@@ -52057,7 +52197,7 @@ public final class PbXmsg {
         return map.containsKey(key) ? map.get(key) : defaultValue;
       }
       /**
-       * <code>map&lt;string, string&gt; ext = 1;</code>
+       * <code>map&lt;string, string&gt; ext = 2;</code>
        */
 
       public java.lang.String getExtOrThrow(
@@ -52077,7 +52217,7 @@ public final class PbXmsg {
         return this;
       }
       /**
-       * <code>map&lt;string, string&gt; ext = 1;</code>
+       * <code>map&lt;string, string&gt; ext = 2;</code>
        */
 
       public Builder removeExt(
@@ -52096,7 +52236,7 @@ public final class PbXmsg {
         return internalGetMutableExt().getMutableMap();
       }
       /**
-       * <code>map&lt;string, string&gt; ext = 1;</code>
+       * <code>map&lt;string, string&gt; ext = 2;</code>
        */
       public Builder putExt(
           java.lang.String key,
@@ -52108,7 +52248,7 @@ public final class PbXmsg {
         return this;
       }
       /**
-       * <code>map&lt;string, string&gt; ext = 1;</code>
+       * <code>map&lt;string, string&gt; ext = 2;</code>
        */
 
       public Builder putAllExt(
@@ -105237,207 +105377,207 @@ public final class PbXmsg {
       "tEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"f" +
       "\n\026XmsgImAuthRegSimpleReq\022\013\n\003usr\030\001 \001(\t\022\014\n" +
       "\004salt\030\002 \001(\t\022\013\n\003pwd\030\003 \001(\t\022$\n\003dev\030\004 \001(\0132\027." +
-      "XmsgImClientDeviceInfo\"s\n\026XmsgImAuthRegS" +
-      "impleRsp\022-\n\003ext\030\001 \003(\0132 .XmsgImAuthRegSim" +
-      "pleRsp.ExtEntry\032*\n\010ExtEntry\022\013\n\003key\030\001 \001(\t" +
-      "\022\r\n\005value\030\002 \001(\t:\0028\001\",\n\035XmsgImHlrOtherUsr" +
-      "InfoQueryReq\022\013\n\003cgt\030\001 \003(\t\"\245\001\n\035XmsgImHlrO" +
-      "therUsrInfoQueryRsp\022<\n\007usrInfo\030\001 \003(\0132+.X" +
-      "msgImHlrOtherUsrInfoQueryRsp.UsrInfoEntr" +
-      "y\032F\n\014UsrInfoEntry\022\013\n\003key\030\001 \001(\t\022%\n\005value\030" +
-      "\002 \001(\0132\026.XmsgImHlrOtherUsrInfo:\0028\001\"t\n\025Xms" +
-      "gImHlrOtherUsrInfo\022.\n\004info\030\001 \003(\0132 .XmsgI" +
-      "mHlrOtherUsrInfo.InfoEntry\032+\n\tInfoEntry\022" +
-      "\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\231\001\n\027Xmsg" +
-      "FileUploadSimpleReq\022\020\n\010fileName\030\001 \001(\t\022\020\n" +
-      "\010fileSize\030\002 \001(\004\022.\n\003ext\030\003 \003(\0132!.XmsgFileU" +
-      "ploadSimpleReq.ExtEntry\032*\n\010ExtEntry\022\013\n\003k" +
-      "ey\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\223\001\n\027XmsgFile" +
-      "UploadSimpleRsp\022\013\n\003fid\030\001 \001(\t\022\017\n\007hashVal\030" +
-      "\002 \001(\t\022.\n\003ext\030\003 \003(\0132!.XmsgFileUploadSimpl" +
+      "XmsgImClientDeviceInfo\"\200\001\n\026XmsgImAuthReg" +
+      "SimpleRsp\022\013\n\003cgt\030\001 \001(\t\022-\n\003ext\030\002 \003(\0132 .Xm" +
+      "sgImAuthRegSimpleRsp.ExtEntry\032*\n\010ExtEntr" +
+      "y\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\",\n\035Xms" +
+      "gImHlrOtherUsrInfoQueryReq\022\013\n\003cgt\030\001 \003(\t\"" +
+      "\245\001\n\035XmsgImHlrOtherUsrInfoQueryRsp\022<\n\007usr" +
+      "Info\030\001 \003(\0132+.XmsgImHlrOtherUsrInfoQueryR" +
+      "sp.UsrInfoEntry\032F\n\014UsrInfoEntry\022\013\n\003key\030\001" +
+      " \001(\t\022%\n\005value\030\002 \001(\0132\026.XmsgImHlrOtherUsrI" +
+      "nfo:\0028\001\"t\n\025XmsgImHlrOtherUsrInfo\022.\n\004info" +
+      "\030\001 \003(\0132 .XmsgImHlrOtherUsrInfo.InfoEntry" +
+      "\032+\n\tInfoEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(" +
+      "\t:\0028\001\"\231\001\n\027XmsgFileUploadSimpleReq\022\020\n\010fil" +
+      "eName\030\001 \001(\t\022\020\n\010fileSize\030\002 \001(\004\022.\n\003ext\030\003 \003" +
+      "(\0132!.XmsgFileUploadSimpleReq.ExtEntry\032*\n" +
+      "\010ExtEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028" +
+      "\001\"\223\001\n\027XmsgFileUploadSimpleRsp\022\013\n\003fid\030\001 \001" +
+      "(\t\022\017\n\007hashVal\030\002 \001(\t\022.\n\003ext\030\003 \003(\0132!.XmsgF" +
+      "ileUploadSimpleRsp.ExtEntry\032*\n\010ExtEntry\022" +
+      "\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\260\001\n\031Xmsg" +
+      "FileDownloadSimpleReq\022\013\n\003fid\030\001 \001(\t\022\013\n\003cg" +
+      "t\030\002 \001(\t\022\016\n\006offset\030\003 \001(\004\022\013\n\003len\030\004 \001(\004\0220\n\003" +
+      "ext\030\005 \003(\0132#.XmsgFileDownloadSimpleReq.Ex" +
+      "tEntry\032*\n\010ExtEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value" +
+      "\030\002 \001(\t:\0028\001\"\273\001\n\031XmsgFileDownloadSimpleRsp" +
+      "\022\020\n\010fileName\030\001 \001(\t\022\020\n\010fileSize\030\002 \001(\004\022\017\n\007" +
+      "hashVal\030\003 \001(\t\022\013\n\003gts\030\004 \001(\004\0220\n\003ext\030\005 \003(\0132" +
+      "#.XmsgFileDownloadSimpleRsp.ExtEntry\032*\n\010" +
+      "ExtEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001" +
+      "\"W\n\033XmsgFileUsrFileInfoQueryReq\022\013\n\003sts\030\001" +
+      " \001(\004\022\013\n\003ets\030\002 \001(\004\022\014\n\004page\030\003 \001(\r\022\020\n\010pageS" +
+      "ize\030\004 \001(\r\"E\n\033XmsgFileUsrFileInfoQueryRsp" +
+      "\022&\n\010fileInfo\030\001 \003(\0132\024.XmsgFileUsrFileInfo" +
+      "\"d\n\023XmsgFileUsrFileInfo\022\013\n\003fid\030\001 \001(\t\022\020\n\010" +
+      "fileName\030\002 \001(\t\022\020\n\010fileSize\030\003 \001(\004\022\017\n\007hash" +
+      "Val\030\004 \001(\t\022\013\n\003gts\030\005 \001(\004\"\211\001\n\017XmsgImHlrUsrD" +
+      "at\022\013\n\003uid\030\001 \001(\t\022\013\n\003ver\030\002 \001(\004\022 \n\003pri\030\003 \001(" +
+      "\0132\023.XmsgImHlrUsrDatPri\022 \n\003pub\030\004 \001(\0132\023.Xm" +
+      "sgImHlrUsrDatPub\022\013\n\003gts\030\005 \001(\004\022\013\n\003uts\030\006 \001" +
+      "(\004\"1\n\022XmsgImHlrUsrDatPri\022\016\n\006enable\030\001 \001(\010" +
+      "\022\013\n\003ext\030\005 \001(\014\"n\n\022XmsgImHlrUsrDatPub\022+\n\004i" +
+      "nfo\030\001 \003(\0132\035.XmsgImHlrUsrDatPub.InfoEntry" +
+      "\032+\n\tInfoEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(" +
+      "\t:\0028\001\"w\n\030XmsgImHlrUsrInfoQueryReq\022/\n\003ext" +
+      "\030\001 \003(\0132\".XmsgImHlrUsrInfoQueryReq.ExtEnt" +
+      "ry\032*\n\010ExtEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001" +
+      "(\t:\0028\001\"z\n\030XmsgImHlrUsrInfoQueryRsp\0221\n\004in" +
+      "fo\030\001 \003(\0132#.XmsgImHlrUsrInfoQueryRsp.Info" +
+      "Entry\032+\n\tInfoEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value" +
+      "\030\002 \001(\t:\0028\001\"|\n\031XmsgImHlrUsrInfoUpdateReq\022" +
+      "2\n\004info\030\001 \003(\0132$.XmsgImHlrUsrInfoUpdateRe" +
+      "q.InfoEntry\032+\n\tInfoEntry\022\013\n\003key\030\001 \001(\t\022\r\n" +
+      "\005value\030\002 \001(\t:\0028\001\"y\n\031XmsgImHlrUsrInfoUpda" +
+      "teRsp\0220\n\003ext\030\001 \003(\0132#.XmsgImHlrUsrInfoUpd" +
+      "ateRsp.ExtEntry\032*\n\010ExtEntry\022\013\n\003key\030\001 \001(\t" +
+      "\022\r\n\005value\030\002 \001(\t:\0028\001\"E\n\025XmsgImClientDbCru" +
+      "dReq\022\013\n\003sql\030\001 \001(\t\022\037\n\003row\030\002 \003(\0132\022.XmsgImC" +
+      "lientDbRow\"\253\001\n\025XmsgImClientDbCrudRsp\022\016\n\006" +
+      "change\030\001 \001(\r\0222\n\006column\030\002 \003(\0132\".XmsgImCli" +
+      "entDbCrudRsp.ColumnEntry\022\037\n\003row\030\004 \003(\0132\022." +
+      "XmsgImClientDbRow\032-\n\013ColumnEntry\022\013\n\003key\030" +
+      "\001 \001(\t\022\r\n\005value\030\002 \001(\r:\0028\001\"6\n\021XmsgImClient" +
+      "DbRow\022!\n\003col\030\001 \003(\0132\024.XmsgImClientDbFiled" +
+      "\"o\n\023XmsgImClientDbFiled\022&\n\004type\030\001 \001(\0162\030." +
+      "XmsgImClientDbFiledType\022\016\n\006valInt\030\002 \001(\004\022" +
+      "\017\n\007valText\030\003 \001(\t\022\017\n\007valBlob\030\004 \001(\014\"`\n\016Xms" +
+      "gImClientKv\022#\n\002kv\030\001 \003(\0132\027.XmsgImClientKv" +
+      ".KvEntry\032)\n\007KvEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005valu" +
+      "e\030\002 \001(\t:\0028\001\"M\n\023XmsgImOrgSyncSubReq\022\020\n\010ve" +
+      "r4dept\030\001 \001(\004\022\023\n\013ver4deptUsr\030\002 \001(\004\022\017\n\007ver" +
+      "4usr\030\003 \001(\004\"_\n\023XmsgImOrgSyncSubRsp\022\026\n\016ver" +
+      "4deptLatest\030\001 \001(\004\022\031\n\021ver4deptUsrLatest\030\002" +
+      " \001(\004\022\025\n\rver4usrLatest\030\003 \001(\004\"5\n\023XmsgImOrg" +
+      "SyncPubReq\022\036\n\005event\030\001 \003(\0132\017.XmsgImOrgEve" +
+      "nt\"m\n\023XmsgImOrgSyncPubRsp\022*\n\003ext\030\001 \003(\0132\035" +
+      ".XmsgImOrgSyncPubRsp.ExtEntry\032*\n\010ExtEntr" +
+      "y\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"8\n\026Xms" +
+      "gImOrgChangedNotice\022\036\n\005event\030\001 \001(\0132\017.Xms" +
+      "gImOrgEvent\")\n\032XmsgImOrgNodeChildQueryRe" +
+      "q\022\013\n\003cgt\030\001 \001(\t\"@\n\032XmsgImOrgNodeChildQuer" +
+      "yRsp\022\"\n\005child\030\001 \003(\0132\023.XmsgImOrgNodeChild" +
+      "\":\n\034XmsgImOrgNodeDeptUsrQueryReq\022\014\n\004dcgt" +
+      "\030\001 \001(\t\022\014\n\004ucgt\030\002 \001(\t\"\205\001\n\034XmsgImOrgNodeDe" +
+      "ptUsrQueryRsp\022\014\n\004name\030\002 \001(\t\022\016\n\006enable\030\003 " +
+      "\001(\010\022 \n\004info\030\004 \001(\0132\022.XmsgImOrgNodeInfo\022\013\n" +
+      "\003ver\030\005 \001(\004\022\013\n\003gts\030\006 \001(\004\022\013\n\003uts\030\007 \001(\004\"$\n\025" +
+      "XmsgImOrgNodeQueryReq\022\013\n\003cgt\030\001 \001(\t\"\255\001\n\025X" +
+      "msgImOrgNodeQueryRsp\022\013\n\003pgt\030\001 \001(\t\022\014\n\004nam" +
+      "e\030\002 \001(\t\022\016\n\006enable\030\003 \001(\010\022 \n\004type\030\004 \001(\0162\022." +
+      "XmsgImOrgNodeType\022 \n\004info\030\005 \001(\0132\022.XmsgIm" +
+      "OrgNodeInfo\022\013\n\003ver\030\006 \001(\004\022\013\n\003gts\030\007 \001(\004\022\013\n" +
+      "\003uts\030\010 \001(\004\"}\n\016XmsgImOrgEvent\022!\n\004dept\030\001 \001" +
+      "(\0132\023.XmsgImOrgEventDept\022\'\n\007deptUsr\030\002 \001(\013" +
+      "2\026.XmsgImOrgEventDeptUsr\022\037\n\003usr\030\003 \001(\0132\022." +
+      "XmsgImOrgEventUsr\"\226\001\n\022XmsgImOrgEventDept" +
+      "\022\013\n\003cgt\030\001 \001(\t\022\014\n\004pcgt\030\002 \001(\t\022\014\n\004name\030\003 \001(" +
+      "\t\022\016\n\006enable\030\004 \001(\010\022 \n\004info\030\005 \001(\0132\022.XmsgIm" +
+      "OrgNodeInfo\022\013\n\003ver\030\006 \001(\004\022\013\n\003gts\030\007 \001(\004\022\013\n" +
+      "\003uts\030\010 \001(\004\"\232\001\n\025XmsgImOrgEventDeptUsr\022\014\n\004" +
+      "dcgt\030\001 \001(\t\022\014\n\004ucgt\030\002 \001(\t\022\014\n\004name\030\003 \001(\t\022\016" +
+      "\n\006enable\030\004 \001(\010\022 \n\004info\030\005 \001(\0132\022.XmsgImOrg" +
+      "NodeInfo\022\013\n\003ver\030\006 \001(\004\022\013\n\003gts\030\007 \001(\004\022\013\n\003ut" +
+      "s\030\010 \001(\004\"\207\001\n\021XmsgImOrgEventUsr\022\013\n\003cgt\030\001 \001" +
+      "(\t\022\014\n\004name\030\002 \001(\t\022\016\n\006enable\030\003 \001(\010\022 \n\004info" +
+      "\030\004 \001(\0132\022.XmsgImOrgNodeInfo\022\013\n\003ver\030\005 \001(\004\022" +
+      "\013\n\003gts\030\006 \001(\004\022\013\n\003uts\030\007 \001(\004\"f\n\021XmsgImOrgNo" +
+      "deInfo\022&\n\002kv\030\001 \003(\0132\032.XmsgImOrgNodeInfo.K" +
+      "vEntry\032)\n\007KvEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030" +
+      "\002 \001(\t:\0028\001\"\252\001\n\022XmsgImOrgNodeChild\022\013\n\003cgt\030" +
+      "\001 \001(\t\022\014\n\004name\030\002 \001(\t\022\016\n\006enable\030\003 \001(\010\022 \n\004t" +
+      "ype\030\004 \001(\0162\022.XmsgImOrgNodeType\022 \n\004info\030\005 " +
+      "\001(\0132\022.XmsgImOrgNodeInfo\022\013\n\003ver\030\006 \001(\004\022\013\n\003" +
+      "gts\030\007 \001(\004\022\013\n\003uts\030\010 \001(\004\"}\n\033XmsgImGroupUsr" +
+      "GroupQueryReq\0222\n\003ext\030\001 \003(\0132%.XmsgImGroup" +
+      "UsrGroupQueryReq.ExtEntry\032*\n\010ExtEntry\022\013\n" +
+      "\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"F\n\033XmsgImG" +
+      "roupUsrGroupQueryRsp\022\'\n\005group\030\001 \003(\0132\030.Xm" +
+      "sgImGroupUsrGroupInfo\"\313\001\n\027XmsgImGroupUsr" +
+      "GroupInfo\022\013\n\003cgt\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\0220\n\004" +
+      "info\030\003 \003(\0132\".XmsgImGroupUsrGroupInfo.Inf" +
+      "oEntry\022\013\n\003ver\030\004 \001(\004\022\013\n\003gts\030\005 \001(\004\022\013\n\003uts\030" +
+      "\006 \001(\004\022\017\n\007usr2usr\030\007 \001(\010\032+\n\tInfoEntry\022\013\n\003k" +
+      "ey\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\231\001\n\024XmsgImGr" +
+      "oupCreateReq\022-\n\004info\030\001 \003(\0132\037.XmsgImGroup" +
+      "CreateReq.InfoEntry\022%\n\006member\030\002 \003(\0132\025.Xm" +
+      "sgImGroupAddMember\032+\n\tInfoEntry\022\013\n\003key\030\001" +
+      " \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"0\n\024XmsgImGroupCr" +
+      "eateRsp\022\013\n\003cgt\030\001 \001(\t\022\013\n\003gts\030\002 \001(\004\"\177\n\024Xms" +
+      "gImGroupAddMember\022\013\n\003cgt\030\001 \001(\t\022-\n\004info\030\002" +
+      " \003(\0132\037.XmsgImGroupAddMember.InfoEntry\032+\n" +
+      "\tInfoEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\002" +
+      "8\001\"|\n\022XmsgImGroupSyncReq\022\017\n\007ver4usr\030\001 \001(" +
+      "\004\022)\n\003ext\030\002 \003(\0132\034.XmsgImGroupSyncReq.ExtE" +
+      "ntry\032*\n\010ExtEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002" +
+      " \001(\t:\0028\001\":\n\022XmsgImGroupSyncRsp\022$\n\005event\030" +
+      "\001 \003(\0132\025.XmsgImGroupSyncEvent\"\323\001\n\024XmsgImG" +
+      "roupSyncEvent\022\013\n\003cgt\030\001 \001(\t\022\014\n\004oper\030\002 \001(\t" +
+      "\022-\n\004info\030\003 \003(\0132\037.XmsgImGroupSyncEvent.In" +
+      "foEntry\022\017\n\007ver4usr\030\004 \001(\004\022\017\n\007gts4usr\030\005 \001(" +
+      "\004\022\017\n\007uts4usr\030\006 \001(\004\022\021\n\tgts4group\030\007 \001(\004\032+\n" +
+      "\tInfoEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\002" +
+      "8\001\"=\n\025XmsgImGroupSyncNotice\022$\n\005event\030\001 \001" +
+      "(\0132\025.XmsgImGroupSyncEvent\"\217\001\n\027XmsgImGrou" +
+      "pSyncGroupReq\022\013\n\003cgt\030\001 \001(\t\022\013\n\003ver\030\002 \001(\004\022" +
+      ".\n\003ext\030\003 \003(\0132!.XmsgImGroupSyncGroupReq.E" +
+      "xtEntry\032*\n\010ExtEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005valu" +
+      "e\030\002 \001(\t:\0028\001\"y\n\027XmsgImGroupSyncGroupRsp\022," +
+      "\n\004info\030\001 \001(\0132\036.XmsgImGroupSyncGroupEvent" +
+      "Info\0220\n\006member\030\002 \003(\0132 .XmsgImGroupSyncGr" +
+      "oupEventMember\"\253\001\n\035XmsgImGroupSyncGroupE" +
+      "ventInfo\0226\n\004info\030\001 \003(\0132(.XmsgImGroupSync" +
+      "GroupEventInfo.InfoEntry\022\013\n\003ver\030\002 \001(\004\022\013\n" +
+      "\003gts\030\003 \001(\004\022\013\n\003uts\030\004 \001(\004\032+\n\tInfoEntry\022\013\n\003" +
+      "key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\312\001\n\037XmsgImG" +
+      "roupSyncGroupEventMember\022\013\n\003cgt\030\001 \001(\t\022\014\n" +
+      "\004oper\030\002 \001(\t\0228\n\004info\030\003 \003(\0132*.XmsgImGroupS" +
+      "yncGroupEventMember.InfoEntry\022\013\n\003ver\030\004 \001" +
+      "(\004\022\013\n\003gts\030\005 \001(\004\022\013\n\003uts\030\006 \001(\004\032+\n\tInfoEntr" +
+      "y\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"x\n\026Xms" +
+      "gImGroupEventNotice\022,\n\004info\030\001 \001(\0132\036.Xmsg" +
+      "ImGroupSyncGroupEventInfo\0220\n\006member\030\002 \001(" +
+      "\0132 .XmsgImGroupSyncGroupEventMember\"6\n\027X" +
+      "msgImGroupInfoQueryReq\022\013\n\003cgt\030\001 \001(\t\022\016\n\006m" +
+      "ember\030\002 \001(\010\"i\n\027XmsgImGroupInfoQueryRsp\022&" +
+      "\n\004info\030\001 \001(\0132\030.XmsgImGroupInfoSelfInfo\022&" +
+      "\n\006member\030\002 \003(\0132\026.XmsgImGroupInfoMember\"\274" +
+      "\001\n\027XmsgImGroupInfoSelfInfo\022\013\n\003cgt\030\001 \001(\t\022" +
+      "\016\n\006enable\030\002 \001(\010\0220\n\004info\030\003 \003(\0132\".XmsgImGr" +
+      "oupInfoSelfInfo.InfoEntry\022\013\n\003ver\030\004 \001(\004\022\013" +
+      "\n\003gts\030\005 \001(\004\022\013\n\003uts\030\006 \001(\004\032+\n\tInfoEntry\022\013\n" +
+      "\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\270\001\n\025XmsgIm" +
+      "GroupInfoMember\022\013\n\003cgt\030\001 \001(\t\022\016\n\006enable\030\002" +
+      " \001(\010\022.\n\004info\030\003 \003(\0132 .XmsgImGroupInfoMemb" +
+      "er.InfoEntry\022\013\n\003ver\030\004 \001(\004\022\013\n\003gts\030\005 \001(\004\022\013" +
+      "\n\003uts\030\006 \001(\004\032+\n\tInfoEntry\022\013\n\003key\030\001 \001(\t\022\r\n" +
+      "\005value\030\002 \001(\t:\0028\001\"\235\001\n\030XmsgImGroupInfoUpda" +
+      "teReq\022\013\n\003cgt\030\001 \001(\t\0225\n\006upsert\030\002 \003(\0132%.Xms" +
+      "gImGroupInfoUpdateReq.UpsertEntry\022\016\n\006rem" +
+      "ove\030\003 \003(\t\032-\n\013UpsertEntry\022\013\n\003key\030\001 \001(\t\022\r\n" +
+      "\005value\030\002 \001(\t:\0028\001\"w\n\030XmsgImGroupInfoUpdat" +
+      "eRsp\022/\n\003ext\030\001 \003(\0132\".XmsgImGroupInfoUpdat" +
       "eRsp.ExtEntry\032*\n\010ExtEntry\022\013\n\003key\030\001 \001(\t\022\r" +
-      "\n\005value\030\002 \001(\t:\0028\001\"\260\001\n\031XmsgFileDownloadSi" +
-      "mpleReq\022\013\n\003fid\030\001 \001(\t\022\013\n\003cgt\030\002 \001(\t\022\016\n\006off" +
-      "set\030\003 \001(\004\022\013\n\003len\030\004 \001(\004\0220\n\003ext\030\005 \003(\0132#.Xm" +
-      "sgFileDownloadSimpleReq.ExtEntry\032*\n\010ExtE" +
-      "ntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\273\001\n" +
-      "\031XmsgFileDownloadSimpleRsp\022\020\n\010fileName\030\001" +
-      " \001(\t\022\020\n\010fileSize\030\002 \001(\004\022\017\n\007hashVal\030\003 \001(\t\022" +
-      "\013\n\003gts\030\004 \001(\004\0220\n\003ext\030\005 \003(\0132#.XmsgFileDown" +
-      "loadSimpleRsp.ExtEntry\032*\n\010ExtEntry\022\013\n\003ke" +
-      "y\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"W\n\033XmsgFileUs" +
-      "rFileInfoQueryReq\022\013\n\003sts\030\001 \001(\004\022\013\n\003ets\030\002 " +
-      "\001(\004\022\014\n\004page\030\003 \001(\r\022\020\n\010pageSize\030\004 \001(\r\"E\n\033X" +
-      "msgFileUsrFileInfoQueryRsp\022&\n\010fileInfo\030\001" +
-      " \003(\0132\024.XmsgFileUsrFileInfo\"d\n\023XmsgFileUs" +
-      "rFileInfo\022\013\n\003fid\030\001 \001(\t\022\020\n\010fileName\030\002 \001(\t" +
-      "\022\020\n\010fileSize\030\003 \001(\004\022\017\n\007hashVal\030\004 \001(\t\022\013\n\003g" +
-      "ts\030\005 \001(\004\"\211\001\n\017XmsgImHlrUsrDat\022\013\n\003uid\030\001 \001(" +
-      "\t\022\013\n\003ver\030\002 \001(\004\022 \n\003pri\030\003 \001(\0132\023.XmsgImHlrU" +
-      "srDatPri\022 \n\003pub\030\004 \001(\0132\023.XmsgImHlrUsrDatP" +
-      "ub\022\013\n\003gts\030\005 \001(\004\022\013\n\003uts\030\006 \001(\004\"1\n\022XmsgImHl" +
-      "rUsrDatPri\022\016\n\006enable\030\001 \001(\010\022\013\n\003ext\030\005 \001(\014\"" +
-      "n\n\022XmsgImHlrUsrDatPub\022+\n\004info\030\001 \003(\0132\035.Xm" +
-      "sgImHlrUsrDatPub.InfoEntry\032+\n\tInfoEntry\022" +
-      "\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"w\n\030XmsgI" +
-      "mHlrUsrInfoQueryReq\022/\n\003ext\030\001 \003(\0132\".XmsgI" +
-      "mHlrUsrInfoQueryReq.ExtEntry\032*\n\010ExtEntry" +
-      "\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"z\n\030Xmsg" +
-      "ImHlrUsrInfoQueryRsp\0221\n\004info\030\001 \003(\0132#.Xms" +
-      "gImHlrUsrInfoQueryRsp.InfoEntry\032+\n\tInfoE" +
-      "ntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"|\n\031" +
-      "XmsgImHlrUsrInfoUpdateReq\0222\n\004info\030\001 \003(\0132" +
-      "$.XmsgImHlrUsrInfoUpdateReq.InfoEntry\032+\n" +
-      "\tInfoEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\002" +
-      "8\001\"y\n\031XmsgImHlrUsrInfoUpdateRsp\0220\n\003ext\030\001" +
-      " \003(\0132#.XmsgImHlrUsrInfoUpdateRsp.ExtEntr" +
-      "y\032*\n\010ExtEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(" +
-      "\t:\0028\001\"E\n\025XmsgImClientDbCrudReq\022\013\n\003sql\030\001 " +
-      "\001(\t\022\037\n\003row\030\002 \003(\0132\022.XmsgImClientDbRow\"\253\001\n" +
-      "\025XmsgImClientDbCrudRsp\022\016\n\006change\030\001 \001(\r\0222" +
-      "\n\006column\030\002 \003(\0132\".XmsgImClientDbCrudRsp.C" +
-      "olumnEntry\022\037\n\003row\030\004 \003(\0132\022.XmsgImClientDb" +
-      "Row\032-\n\013ColumnEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value" +
-      "\030\002 \001(\r:\0028\001\"6\n\021XmsgImClientDbRow\022!\n\003col\030\001" +
-      " \003(\0132\024.XmsgImClientDbFiled\"o\n\023XmsgImClie" +
-      "ntDbFiled\022&\n\004type\030\001 \001(\0162\030.XmsgImClientDb" +
-      "FiledType\022\016\n\006valInt\030\002 \001(\004\022\017\n\007valText\030\003 \001" +
-      "(\t\022\017\n\007valBlob\030\004 \001(\014\"`\n\016XmsgImClientKv\022#\n" +
-      "\002kv\030\001 \003(\0132\027.XmsgImClientKv.KvEntry\032)\n\007Kv" +
-      "Entry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"M\n" +
-      "\023XmsgImOrgSyncSubReq\022\020\n\010ver4dept\030\001 \001(\004\022\023" +
-      "\n\013ver4deptUsr\030\002 \001(\004\022\017\n\007ver4usr\030\003 \001(\004\"_\n\023" +
-      "XmsgImOrgSyncSubRsp\022\026\n\016ver4deptLatest\030\001 " +
-      "\001(\004\022\031\n\021ver4deptUsrLatest\030\002 \001(\004\022\025\n\rver4us" +
-      "rLatest\030\003 \001(\004\"5\n\023XmsgImOrgSyncPubReq\022\036\n\005" +
-      "event\030\001 \003(\0132\017.XmsgImOrgEvent\"m\n\023XmsgImOr" +
-      "gSyncPubRsp\022*\n\003ext\030\001 \003(\0132\035.XmsgImOrgSync" +
-      "PubRsp.ExtEntry\032*\n\010ExtEntry\022\013\n\003key\030\001 \001(\t" +
-      "\022\r\n\005value\030\002 \001(\t:\0028\001\"8\n\026XmsgImOrgChangedN" +
-      "otice\022\036\n\005event\030\001 \001(\0132\017.XmsgImOrgEvent\")\n" +
-      "\032XmsgImOrgNodeChildQueryReq\022\013\n\003cgt\030\001 \001(\t" +
-      "\"@\n\032XmsgImOrgNodeChildQueryRsp\022\"\n\005child\030" +
-      "\001 \003(\0132\023.XmsgImOrgNodeChild\":\n\034XmsgImOrgN" +
-      "odeDeptUsrQueryReq\022\014\n\004dcgt\030\001 \001(\t\022\014\n\004ucgt" +
-      "\030\002 \001(\t\"\205\001\n\034XmsgImOrgNodeDeptUsrQueryRsp\022" +
-      "\014\n\004name\030\002 \001(\t\022\016\n\006enable\030\003 \001(\010\022 \n\004info\030\004 " +
-      "\001(\0132\022.XmsgImOrgNodeInfo\022\013\n\003ver\030\005 \001(\004\022\013\n\003" +
-      "gts\030\006 \001(\004\022\013\n\003uts\030\007 \001(\004\"$\n\025XmsgImOrgNodeQ" +
-      "ueryReq\022\013\n\003cgt\030\001 \001(\t\"\255\001\n\025XmsgImOrgNodeQu" +
-      "eryRsp\022\013\n\003pgt\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\022\016\n\006ena" +
-      "ble\030\003 \001(\010\022 \n\004type\030\004 \001(\0162\022.XmsgImOrgNodeT" +
-      "ype\022 \n\004info\030\005 \001(\0132\022.XmsgImOrgNodeInfo\022\013\n" +
-      "\003ver\030\006 \001(\004\022\013\n\003gts\030\007 \001(\004\022\013\n\003uts\030\010 \001(\004\"}\n\016" +
-      "XmsgImOrgEvent\022!\n\004dept\030\001 \001(\0132\023.XmsgImOrg" +
-      "EventDept\022\'\n\007deptUsr\030\002 \001(\0132\026.XmsgImOrgEv" +
-      "entDeptUsr\022\037\n\003usr\030\003 \001(\0132\022.XmsgImOrgEvent" +
-      "Usr\"\226\001\n\022XmsgImOrgEventDept\022\013\n\003cgt\030\001 \001(\t\022" +
-      "\014\n\004pcgt\030\002 \001(\t\022\014\n\004name\030\003 \001(\t\022\016\n\006enable\030\004 " +
-      "\001(\010\022 \n\004info\030\005 \001(\0132\022.XmsgImOrgNodeInfo\022\013\n" +
-      "\003ver\030\006 \001(\004\022\013\n\003gts\030\007 \001(\004\022\013\n\003uts\030\010 \001(\004\"\232\001\n" +
-      "\025XmsgImOrgEventDeptUsr\022\014\n\004dcgt\030\001 \001(\t\022\014\n\004" +
-      "ucgt\030\002 \001(\t\022\014\n\004name\030\003 \001(\t\022\016\n\006enable\030\004 \001(\010" +
-      "\022 \n\004info\030\005 \001(\0132\022.XmsgImOrgNodeInfo\022\013\n\003ve" +
-      "r\030\006 \001(\004\022\013\n\003gts\030\007 \001(\004\022\013\n\003uts\030\010 \001(\004\"\207\001\n\021Xm" +
-      "sgImOrgEventUsr\022\013\n\003cgt\030\001 \001(\t\022\014\n\004name\030\002 \001" +
-      "(\t\022\016\n\006enable\030\003 \001(\010\022 \n\004info\030\004 \001(\0132\022.XmsgI" +
-      "mOrgNodeInfo\022\013\n\003ver\030\005 \001(\004\022\013\n\003gts\030\006 \001(\004\022\013" +
-      "\n\003uts\030\007 \001(\004\"f\n\021XmsgImOrgNodeInfo\022&\n\002kv\030\001" +
-      " \003(\0132\032.XmsgImOrgNodeInfo.KvEntry\032)\n\007KvEn" +
-      "try\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\252\001\n\022" +
-      "XmsgImOrgNodeChild\022\013\n\003cgt\030\001 \001(\t\022\014\n\004name\030" +
-      "\002 \001(\t\022\016\n\006enable\030\003 \001(\010\022 \n\004type\030\004 \001(\0162\022.Xm" +
-      "sgImOrgNodeType\022 \n\004info\030\005 \001(\0132\022.XmsgImOr" +
-      "gNodeInfo\022\013\n\003ver\030\006 \001(\004\022\013\n\003gts\030\007 \001(\004\022\013\n\003u" +
-      "ts\030\010 \001(\004\"}\n\033XmsgImGroupUsrGroupQueryReq\022" +
-      "2\n\003ext\030\001 \003(\0132%.XmsgImGroupUsrGroupQueryR" +
-      "eq.ExtEntry\032*\n\010ExtEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005" +
-      "value\030\002 \001(\t:\0028\001\"F\n\033XmsgImGroupUsrGroupQu" +
-      "eryRsp\022\'\n\005group\030\001 \003(\0132\030.XmsgImGroupUsrGr" +
-      "oupInfo\"\313\001\n\027XmsgImGroupUsrGroupInfo\022\013\n\003c" +
-      "gt\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\0220\n\004info\030\003 \003(\0132\".X" +
-      "msgImGroupUsrGroupInfo.InfoEntry\022\013\n\003ver\030" +
-      "\004 \001(\004\022\013\n\003gts\030\005 \001(\004\022\013\n\003uts\030\006 \001(\004\022\017\n\007usr2u" +
-      "sr\030\007 \001(\010\032+\n\tInfoEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005va" +
-      "lue\030\002 \001(\t:\0028\001\"\231\001\n\024XmsgImGroupCreateReq\022-" +
-      "\n\004info\030\001 \003(\0132\037.XmsgImGroupCreateReq.Info" +
-      "Entry\022%\n\006member\030\002 \003(\0132\025.XmsgImGroupAddMe" +
-      "mber\032+\n\tInfoEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030" +
-      "\002 \001(\t:\0028\001\"0\n\024XmsgImGroupCreateRsp\022\013\n\003cgt" +
-      "\030\001 \001(\t\022\013\n\003gts\030\002 \001(\004\"\177\n\024XmsgImGroupAddMem" +
-      "ber\022\013\n\003cgt\030\001 \001(\t\022-\n\004info\030\002 \003(\0132\037.XmsgImG" +
-      "roupAddMember.InfoEntry\032+\n\tInfoEntry\022\013\n\003" +
-      "key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"|\n\022XmsgImGr" +
-      "oupSyncReq\022\017\n\007ver4usr\030\001 \001(\004\022)\n\003ext\030\002 \003(\013" +
-      "2\034.XmsgImGroupSyncReq.ExtEntry\032*\n\010ExtEnt" +
-      "ry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\":\n\022Xm" +
-      "sgImGroupSyncRsp\022$\n\005event\030\001 \003(\0132\025.XmsgIm" +
-      "GroupSyncEvent\"\323\001\n\024XmsgImGroupSyncEvent\022" +
-      "\013\n\003cgt\030\001 \001(\t\022\014\n\004oper\030\002 \001(\t\022-\n\004info\030\003 \003(\013" +
-      "2\037.XmsgImGroupSyncEvent.InfoEntry\022\017\n\007ver" +
-      "4usr\030\004 \001(\004\022\017\n\007gts4usr\030\005 \001(\004\022\017\n\007uts4usr\030\006" +
-      " \001(\004\022\021\n\tgts4group\030\007 \001(\004\032+\n\tInfoEntry\022\013\n\003" +
-      "key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"=\n\025XmsgImGr" +
-      "oupSyncNotice\022$\n\005event\030\001 \001(\0132\025.XmsgImGro" +
-      "upSyncEvent\"\217\001\n\027XmsgImGroupSyncGroupReq\022" +
-      "\013\n\003cgt\030\001 \001(\t\022\013\n\003ver\030\002 \001(\004\022.\n\003ext\030\003 \003(\0132!" +
-      ".XmsgImGroupSyncGroupReq.ExtEntry\032*\n\010Ext" +
-      "Entry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"y\n" +
-      "\027XmsgImGroupSyncGroupRsp\022,\n\004info\030\001 \001(\0132\036" +
-      ".XmsgImGroupSyncGroupEventInfo\0220\n\006member" +
-      "\030\002 \003(\0132 .XmsgImGroupSyncGroupEventMember" +
-      "\"\253\001\n\035XmsgImGroupSyncGroupEventInfo\0226\n\004in" +
-      "fo\030\001 \003(\0132(.XmsgImGroupSyncGroupEventInfo" +
-      ".InfoEntry\022\013\n\003ver\030\002 \001(\004\022\013\n\003gts\030\003 \001(\004\022\013\n\003" +
-      "uts\030\004 \001(\004\032+\n\tInfoEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005v" +
-      "alue\030\002 \001(\t:\0028\001\"\312\001\n\037XmsgImGroupSyncGroupE" +
-      "ventMember\022\013\n\003cgt\030\001 \001(\t\022\014\n\004oper\030\002 \001(\t\0228\n" +
-      "\004info\030\003 \003(\0132*.XmsgImGroupSyncGroupEventM" +
-      "ember.InfoEntry\022\013\n\003ver\030\004 \001(\004\022\013\n\003gts\030\005 \001(" +
-      "\004\022\013\n\003uts\030\006 \001(\004\032+\n\tInfoEntry\022\013\n\003key\030\001 \001(\t" +
-      "\022\r\n\005value\030\002 \001(\t:\0028\001\"x\n\026XmsgImGroupEventN" +
-      "otice\022,\n\004info\030\001 \001(\0132\036.XmsgImGroupSyncGro" +
-      "upEventInfo\0220\n\006member\030\002 \001(\0132 .XmsgImGrou" +
-      "pSyncGroupEventMember\"6\n\027XmsgImGroupInfo" +
-      "QueryReq\022\013\n\003cgt\030\001 \001(\t\022\016\n\006member\030\002 \001(\010\"i\n" +
-      "\027XmsgImGroupInfoQueryRsp\022&\n\004info\030\001 \001(\0132\030" +
-      ".XmsgImGroupInfoSelfInfo\022&\n\006member\030\002 \003(\013" +
-      "2\026.XmsgImGroupInfoMember\"\274\001\n\027XmsgImGroup" +
-      "InfoSelfInfo\022\013\n\003cgt\030\001 \001(\t\022\016\n\006enable\030\002 \001(" +
-      "\010\0220\n\004info\030\003 \003(\0132\".XmsgImGroupInfoSelfInf" +
-      "o.InfoEntry\022\013\n\003ver\030\004 \001(\004\022\013\n\003gts\030\005 \001(\004\022\013\n" +
-      "\003uts\030\006 \001(\004\032+\n\tInfoEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005" +
-      "value\030\002 \001(\t:\0028\001\"\270\001\n\025XmsgImGroupInfoMembe" +
-      "r\022\013\n\003cgt\030\001 \001(\t\022\016\n\006enable\030\002 \001(\010\022.\n\004info\030\003" +
-      " \003(\0132 .XmsgImGroupInfoMember.InfoEntry\022\013" +
-      "\n\003ver\030\004 \001(\004\022\013\n\003gts\030\005 \001(\004\022\013\n\003uts\030\006 \001(\004\032+\n" +
-      "\tInfoEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\002" +
-      "8\001\"\235\001\n\030XmsgImGroupInfoUpdateReq\022\013\n\003cgt\030\001" +
-      " \001(\t\0225\n\006upsert\030\002 \003(\0132%.XmsgImGroupInfoUp" +
-      "dateReq.UpsertEntry\022\016\n\006remove\030\003 \003(\t\032-\n\013U" +
-      "psertEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\002" +
-      "8\001\"w\n\030XmsgImGroupInfoUpdateRsp\022/\n\003ext\030\001 " +
-      "\003(\0132\".XmsgImGroupInfoUpdateRsp.ExtEntry\032" +
-      "*\n\010ExtEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:" +
-      "\0028\001\"5\n\030XmsgImGroupMsgRecvCfgReq\022\013\n\003cgt\030\001" +
-      " \001(\t\022\014\n\004type\030\002 \001(\t\"w\n\030XmsgImGroupMsgRecv" +
-      "CfgRsp\022/\n\003ext\030\001 \003(\0132\".XmsgImGroupMsgRecv" +
-      "CfgRsp.ExtEntry\032*\n\010ExtEntry\022\013\n\003key\030\001 \001(\t" +
-      "\022\r\n\005value\030\002 \001(\t:\0028\001*\317\001\n\022XmsgImSdkEventTy" +
-      "pe\022&\n\"X_MSG_IM_SDK_EVENT_TYPE_NET_NOTICE" +
-      "\020\000\022#\n\037X_MSG_IM_SDK_EVENT_TYPE_NET_REQ\020\001\022" +
-      "#\n\037X_MSG_IM_SDK_EVENT_TYPE_NET_RSP\020\002\022\"\n\036" +
-      "X_MSG_IM_SDK_EVENT_TYPE_DB_RSP\020\003\022#\n\037X_MS" +
-      "G_IM_SDK_EVENT_TYPE_CXX_LOG\020\004*\273\001\n\027XmsgIm" +
-      "ClientDbFiledType\022(\n$X_MSG_IM_CLIENT_DB_" +
-      "FILED_TYPE_BIGINT\020\000\022&\n\"X_MSG_IM_CLIENT_D" +
-      "B_FILED_TYPE_TEXT\020\001\022&\n\"X_MSG_IM_CLIENT_D" +
-      "B_FILED_TYPE_BLOB\020\002\022&\n\"X_MSG_IM_CLIENT_D" +
-      "B_FILED_TYPE_NULL\020\003*\177\n\021XmsgImOrgNodeType" +
-      "\022&\n\"X_MSG_IM_ORG_NODE_TYPE__RESERVED__\020\000" +
-      "\022!\n\035X_MSG_IM_ORG_NODE_TYPE_BRANCH\020\001\022\037\n\033X" +
-      "_MSG_IM_ORG_NODE_TYPE_LEAF\020\002B\022\n\010x.msg.pb" +
-      "B\006PbXmsgb\006proto3"
+      "\n\005value\030\002 \001(\t:\0028\001\"5\n\030XmsgImGroupMsgRecvC" +
+      "fgReq\022\013\n\003cgt\030\001 \001(\t\022\014\n\004type\030\002 \001(\t\"w\n\030Xmsg" +
+      "ImGroupMsgRecvCfgRsp\022/\n\003ext\030\001 \003(\0132\".Xmsg" +
+      "ImGroupMsgRecvCfgRsp.ExtEntry\032*\n\010ExtEntr" +
+      "y\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001*\317\001\n\022Xm" +
+      "sgImSdkEventType\022&\n\"X_MSG_IM_SDK_EVENT_T" +
+      "YPE_NET_NOTICE\020\000\022#\n\037X_MSG_IM_SDK_EVENT_T" +
+      "YPE_NET_REQ\020\001\022#\n\037X_MSG_IM_SDK_EVENT_TYPE" +
+      "_NET_RSP\020\002\022\"\n\036X_MSG_IM_SDK_EVENT_TYPE_DB" +
+      "_RSP\020\003\022#\n\037X_MSG_IM_SDK_EVENT_TYPE_CXX_LO" +
+      "G\020\004*\273\001\n\027XmsgImClientDbFiledType\022(\n$X_MSG" +
+      "_IM_CLIENT_DB_FILED_TYPE_BIGINT\020\000\022&\n\"X_M" +
+      "SG_IM_CLIENT_DB_FILED_TYPE_TEXT\020\001\022&\n\"X_M" +
+      "SG_IM_CLIENT_DB_FILED_TYPE_BLOB\020\002\022&\n\"X_M" +
+      "SG_IM_CLIENT_DB_FILED_TYPE_NULL\020\003*\177\n\021Xms" +
+      "gImOrgNodeType\022&\n\"X_MSG_IM_ORG_NODE_TYPE" +
+      "__RESERVED__\020\000\022!\n\035X_MSG_IM_ORG_NODE_TYPE" +
+      "_BRANCH\020\001\022\037\n\033X_MSG_IM_ORG_NODE_TYPE_LEAF" +
+      "\020\002B\022\n\010x.msg.pbB\006PbXmsgb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -105954,7 +106094,7 @@ public final class PbXmsg {
     internal_static_XmsgImAuthRegSimpleRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImAuthRegSimpleRsp_descriptor,
-        new java.lang.String[] { "Ext", });
+        new java.lang.String[] { "Cgt", "Ext", });
     internal_static_XmsgImAuthRegSimpleRsp_ExtEntry_descriptor =
       internal_static_XmsgImAuthRegSimpleRsp_descriptor.getNestedTypes().get(0);
     internal_static_XmsgImAuthRegSimpleRsp_ExtEntry_fieldAccessorTable = new

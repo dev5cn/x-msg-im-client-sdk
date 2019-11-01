@@ -1071,14 +1071,28 @@ class XmsgImAuthRegSimpleRsp : public ::google::protobuf::Message /* @@protoc_in
 
   // accessors -------------------------------------------------------
 
-  // map<string, string> ext = 1;
+  // map<string, string> ext = 2;
   int ext_size() const;
   void clear_ext();
-  static const int kExtFieldNumber = 1;
+  static const int kExtFieldNumber = 2;
   const ::google::protobuf::Map< ::std::string, ::std::string >&
       ext() const;
   ::google::protobuf::Map< ::std::string, ::std::string >*
       mutable_ext();
+
+  // string cgt = 1;
+  void clear_cgt();
+  static const int kCgtFieldNumber = 1;
+  const ::std::string& cgt() const;
+  void set_cgt(const ::std::string& value);
+  #if LANG_CXX11
+  void set_cgt(::std::string&& value);
+  #endif
+  void set_cgt(const char* value);
+  void set_cgt(const char* value, size_t size);
+  ::std::string* mutable_cgt();
+  ::std::string* release_cgt();
+  void set_allocated_cgt(::std::string* cgt);
 
   // @@protoc_insertion_point(class_scope:XmsgImAuthRegSimpleRsp)
  private:
@@ -1090,6 +1104,7 @@ class XmsgImAuthRegSimpleRsp : public ::google::protobuf::Message /* @@protoc_in
       ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
       ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
       0 > ext_;
+  ::google::protobuf::internal::ArenaStringPtr cgt_;
   mutable int _cached_size_;
   friend struct ::protobuf_net_2dx_2dmsg_2dim_2dauth_2eproto::TableStruct;
   friend void ::protobuf_net_2dx_2dmsg_2dim_2dauth_2eproto::InitDefaultsXmsgImAuthRegSimpleRspImpl();
@@ -2147,7 +2162,60 @@ inline void XmsgImAuthRegSimpleReq::set_allocated_dev(::XmsgImClientDeviceInfo* 
 
 // XmsgImAuthRegSimpleRsp
 
-// map<string, string> ext = 1;
+// string cgt = 1;
+inline void XmsgImAuthRegSimpleRsp::clear_cgt() {
+  cgt_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& XmsgImAuthRegSimpleRsp::cgt() const {
+  // @@protoc_insertion_point(field_get:XmsgImAuthRegSimpleRsp.cgt)
+  return cgt_.GetNoArena();
+}
+inline void XmsgImAuthRegSimpleRsp::set_cgt(const ::std::string& value) {
+  
+  cgt_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:XmsgImAuthRegSimpleRsp.cgt)
+}
+#if LANG_CXX11
+inline void XmsgImAuthRegSimpleRsp::set_cgt(::std::string&& value) {
+  
+  cgt_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:XmsgImAuthRegSimpleRsp.cgt)
+}
+#endif
+inline void XmsgImAuthRegSimpleRsp::set_cgt(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  cgt_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:XmsgImAuthRegSimpleRsp.cgt)
+}
+inline void XmsgImAuthRegSimpleRsp::set_cgt(const char* value, size_t size) {
+  
+  cgt_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:XmsgImAuthRegSimpleRsp.cgt)
+}
+inline ::std::string* XmsgImAuthRegSimpleRsp::mutable_cgt() {
+  
+  // @@protoc_insertion_point(field_mutable:XmsgImAuthRegSimpleRsp.cgt)
+  return cgt_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* XmsgImAuthRegSimpleRsp::release_cgt() {
+  // @@protoc_insertion_point(field_release:XmsgImAuthRegSimpleRsp.cgt)
+  
+  return cgt_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void XmsgImAuthRegSimpleRsp::set_allocated_cgt(::std::string* cgt) {
+  if (cgt != NULL) {
+    
+  } else {
+    
+  }
+  cgt_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), cgt);
+  // @@protoc_insertion_point(field_set_allocated:XmsgImAuthRegSimpleRsp.cgt)
+}
+
+// map<string, string> ext = 2;
 inline int XmsgImAuthRegSimpleRsp::ext_size() const {
   return ext_.size();
 }

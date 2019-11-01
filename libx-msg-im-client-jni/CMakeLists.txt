@@ -15,8 +15,9 @@ ENDIF()
 #
 INCLUDE_DIRECTORIES(../libx-msg-im-client-ffi)
 #
-ADD_COMPILE_OPTIONS(-std=c++11 -fPIC -g3 -O3 -Wall)
+ADD_COMPILE_OPTIONS(-std=c++11 -fPIC -Wall)
 ADD_DEFINITIONS(-Wno-builtin-macro-redefined)
+SET(CMAKE_CXX_FLAGS $ENV{CXX_FLAGS})
 #
 LINK_DIRECTORIES(../libx-msg-im-client-ffi)
 #
@@ -27,5 +28,5 @@ FILE(GLOB SRC "./*.cpp")
 PROJECT(x-msg-im-client-jni)
 #
 ADD_LIBRARY(x-msg-im-client-jni SHARED ${SRC})
-INCLUDE(../__file__.cmake)
+INCLUDE(./__file__.cmake)
 REDEFINE_FILE_MACRO(x-msg-im-client-jni)

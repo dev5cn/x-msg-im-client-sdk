@@ -19,7 +19,7 @@
 
 #include "XscProtoPdu.h"
 
-thread_local uchar bytesTemp[XSC_TRANSM_MTU]; 
+thread_local uchar __pdu_bytes__[XSC_TRANSM_MTU]; 
 
 XscProtoPdu::XscProtoPdu()
 {
@@ -101,13 +101,14 @@ uchar* XscProtoPdu::bytes(int* len)
 	if (this->transm.indicator & XSC_TAG_TRANSM_PING)
 	{
 		*len = 1;
-		return bytesTemp;
+		__pdu_bytes__[0] = this->transm.indicator;
+		return __pdu_bytes__;
 	}
 	xsc_tlv_pdu xtp;
 	xtp.len = XSC_TRANSM_MTU - 5 ;
 	xtp.rm = XSC_TRANSM_MTU - 5;
 	xtp.p = 0;
-	xtp.buff = bytesTemp + 5;
+	xtp.buff = __pdu_bytes__ + 5;
 	if (this->transm.trans->trans == XSC_TAG_TRANS_BEGIN)
 		XscProtoTransaction::encodeBegin(this->transm.trans, &xtp);
 	else if (this->transm.trans->trans == XSC_TAG_TRANS_END)
@@ -138,32 +139,32 @@ uchar* XscProtoPdu::bytes(int* len)
 	if (lenlen == 1)
 	{
 		ofset = XSC_TRANSM_MTU - sizeh - sizet - 2 ;
-		bytesTemp[ofset] = this->transm.header == NULL ? 0x00 : 0x01 ;
-		bytesTemp[ofset + 1] = (uchar) size;
+		__pdu_bytes__[ofset] = this->transm.header == NULL ? 0x00 : 0x01 ;
+		__pdu_bytes__[ofset + 1] = (uchar) size;
 	} else if (lenlen == 2)
 	{
 		ofset = XSC_TRANSM_MTU - sizeh - sizet - 3 ;
-		bytesTemp[ofset] = this->transm.header == NULL ? 0x02 : 0x03 ;
+		__pdu_bytes__[ofset] = this->transm.header == NULL ? 0x02 : 0x03 ;
 		ushort x = ::htons((ushort) size);
-		::memcpy(bytesTemp + ofset + 1, (uchar*) &x, 2);
+		::memcpy(__pdu_bytes__ + ofset + 1, (uchar*) &x, 2);
 	} else if (lenlen == 3)
 	{
 		ofset = XSC_TRANSM_MTU - sizeh - sizet - 4 ;
-		bytesTemp[ofset] = this->transm.header == NULL ? 0x04 : 0x05 ;
+		__pdu_bytes__[ofset] = this->transm.header == NULL ? 0x04 : 0x05 ;
 		uint x = ::htonl(size);
-		::memcpy(bytesTemp + ofset + 1, ((uchar*) &x) + 1, 3);
+		::memcpy(__pdu_bytes__ + ofset + 1, ((uchar*) &x) + 1, 3);
 	} else if (lenlen == 4)
 	{
 		ofset = XSC_TRANSM_MTU - sizeh - sizet - 5 ;
-		bytesTemp[ofset] = this->transm.header == NULL ? 0x06 : 0x07 ;
+		__pdu_bytes__[ofset] = this->transm.header == NULL ? 0x06 : 0x07 ;
 		uint x = ::htonl(size);
-		::memcpy(bytesTemp + ofset + 1, ((uchar*) &x), 4);
+		::memcpy(__pdu_bytes__ + ofset + 1, ((uchar*) &x), 4);
 	} else
 	{
 		LOG_FAULT("it`s a bug, lenlen: %d", lenlen)
 	}
 	*len = size;
-	return bytesTemp + ofset;
+	return __pdu_bytes__ + ofset;
 }
 
 void XscProtoPdu::takeoffHeader(bool oob)

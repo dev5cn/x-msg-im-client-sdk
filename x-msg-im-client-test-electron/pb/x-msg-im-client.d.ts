@@ -6066,6 +6066,9 @@ export class XmsgImAuthRegSimpleRsp implements IXmsgImAuthRegSimpleRsp {
      */
     constructor(properties?: IXmsgImAuthRegSimpleRsp);
 
+    /** XmsgImAuthRegSimpleRsp cgt. */
+    public cgt: string;
+
     /** XmsgImAuthRegSimpleRsp ext. */
     public ext: { [k: string]: string };
 

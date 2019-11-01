@@ -66,5 +66,6 @@ message XmsgImAuthRegSimpleReq
 
 message XmsgImAuthRegSimpleRsp
 {
-    map<string, string> ext = 1; 
+	string cgt = 1;
+    map<string, string> ext = 2; 
 }

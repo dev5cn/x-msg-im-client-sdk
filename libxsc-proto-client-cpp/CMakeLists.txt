@@ -13,13 +13,14 @@ ENDIF()
 #
 INCLUDE_DIRECTORIES(../libmisc-cpp)
 #
-ADD_COMPILE_OPTIONS(-std=c++11 -fPIC -g3 -O3 -Wall)
+ADD_COMPILE_OPTIONS(-std=c++11 -fPIC -Wall)
 ADD_DEFINITIONS(-Wno-builtin-macro-redefined)
+SET(CMAKE_CXX_FLAGS $ENV{CXX_FLAGS})
 #
 FILE(GLOB SRC "./*.cpp")
 #
 PROJECT(xsc-proto-client-cpp)
 #
 ADD_LIBRARY(xsc-proto-client-cpp STATIC ${SRC})
-INCLUDE(../__file__.cmake)
+INCLUDE(./__file__.cmake)
 REDEFINE_FILE_MACRO(xsc-proto-client-cpp)

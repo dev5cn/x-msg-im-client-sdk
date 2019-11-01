@@ -15050,6 +15050,7 @@ $root.XmsgImAuthRegSimpleRsp = (function() {
      * Properties of a XmsgImAuthRegSimpleRsp.
      * @exports IXmsgImAuthRegSimpleRsp
      * @interface IXmsgImAuthRegSimpleRsp
+     * @property {string|null} [cgt] XmsgImAuthRegSimpleRsp cgt
      * @property {Object.<string,string>|null} [ext] XmsgImAuthRegSimpleRsp ext
      */
 
@@ -15068,6 +15069,14 @@ $root.XmsgImAuthRegSimpleRsp = (function() {
                 if (properties[keys[i]] != null)
                     this[keys[i]] = properties[keys[i]];
     }
+
+    /**
+     * XmsgImAuthRegSimpleRsp cgt.
+     * @member {string} cgt
+     * @memberof XmsgImAuthRegSimpleRsp
+     * @instance
+     */
+    XmsgImAuthRegSimpleRsp.prototype.cgt = "";
 
     /**
      * XmsgImAuthRegSimpleRsp ext.
@@ -15101,9 +15110,11 @@ $root.XmsgImAuthRegSimpleRsp = (function() {
     XmsgImAuthRegSimpleRsp.encode = function encode(message, writer) {
         if (!writer)
             writer = $Writer.create();
+        if (message.cgt != null && message.hasOwnProperty("cgt"))
+            writer.uint32(/* id 1, wireType 2 =*/10).string(message.cgt);
         if (message.ext != null && message.hasOwnProperty("ext"))
             for (var keys = Object.keys(message.ext), i = 0; i < keys.length; ++i)
-                writer.uint32(/* id 1, wireType 2 =*/10).fork().uint32(/* id 1, wireType 2 =*/10).string(keys[i]).uint32(/* id 2, wireType 2 =*/18).string(message.ext[keys[i]]).ldelim();
+                writer.uint32(/* id 2, wireType 2 =*/18).fork().uint32(/* id 1, wireType 2 =*/10).string(keys[i]).uint32(/* id 2, wireType 2 =*/18).string(message.ext[keys[i]]).ldelim();
         return writer;
     };
 
@@ -15139,6 +15150,9 @@ $root.XmsgImAuthRegSimpleRsp = (function() {
             var tag = reader.uint32();
             switch (tag >>> 3) {
             case 1:
+                message.cgt = reader.string();
+                break;
+            case 2:
                 reader.skip().pos++;
                 if (message.ext === $util.emptyObject)
                     message.ext = {};
@@ -15181,6 +15195,9 @@ $root.XmsgImAuthRegSimpleRsp = (function() {
     XmsgImAuthRegSimpleRsp.verify = function verify(message) {
         if (typeof message !== "object" || message === null)
             return "object expected";
+        if (message.cgt != null && message.hasOwnProperty("cgt"))
+            if (!$util.isString(message.cgt))
+                return "cgt: string expected";
         if (message.ext != null && message.hasOwnProperty("ext")) {
             if (!$util.isObject(message.ext))
                 return "ext: object expected";
@@ -15204,6 +15221,8 @@ $root.XmsgImAuthRegSimpleRsp = (function() {
         if (object instanceof $root.XmsgImAuthRegSimpleRsp)
             return object;
         var message = new $root.XmsgImAuthRegSimpleRsp();
+        if (object.cgt != null)
+            message.cgt = String(object.cgt);
         if (object.ext) {
             if (typeof object.ext !== "object")
                 throw TypeError(".XmsgImAuthRegSimpleRsp.ext: object expected");
@@ -15229,6 +15248,10 @@ $root.XmsgImAuthRegSimpleRsp = (function() {
         var object = {};
         if (options.objects || options.defaults)
             object.ext = {};
+        if (options.defaults)
+            object.cgt = "";
+        if (message.cgt != null && message.hasOwnProperty("cgt"))
+            object.cgt = message.cgt;
         var keys2;
         if (message.ext && (keys2 = Object.keys(message.ext)).length) {
             object.ext = {};
