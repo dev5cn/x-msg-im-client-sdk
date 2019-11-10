@@ -33,7 +33,6 @@
 #include "cpp/net-x-msg-im-hlr-other-usr.pb.h"
 #include "cpp/net-x-msg-im-hlr-usr-dat.pb.h"
 #include "cpp/net-x-msg-im-org.pb.h"
-#include "cpp/net-x-msg-token-info.pb.h"
 #include "cpp/sdk-x-msg-im-client-event.pb.h"
 
 using namespace google::protobuf;

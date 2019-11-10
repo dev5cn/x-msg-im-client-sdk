@@ -2500,28 +2500,41 @@ public final class PbXmsg {
     x.msg.pb.PbXmsg.XmsgImMsgVideoOrBuilder getVideoOrBuilder();
 
     /**
-     * <code>.XmsgImMsgMerge merge = 7;</code>
+     * <code>.XmsgImMsgFile file = 7;</code>
+     */
+    boolean hasFile();
+    /**
+     * <code>.XmsgImMsgFile file = 7;</code>
+     */
+    x.msg.pb.PbXmsg.XmsgImMsgFile getFile();
+    /**
+     * <code>.XmsgImMsgFile file = 7;</code>
+     */
+    x.msg.pb.PbXmsg.XmsgImMsgFileOrBuilder getFileOrBuilder();
+
+    /**
+     * <code>.XmsgImMsgMerge merge = 8;</code>
      */
     boolean hasMerge();
     /**
-     * <code>.XmsgImMsgMerge merge = 7;</code>
+     * <code>.XmsgImMsgMerge merge = 8;</code>
      */
     x.msg.pb.PbXmsg.XmsgImMsgMerge getMerge();
     /**
-     * <code>.XmsgImMsgMerge merge = 7;</code>
+     * <code>.XmsgImMsgMerge merge = 8;</code>
      */
     x.msg.pb.PbXmsg.XmsgImMsgMergeOrBuilder getMergeOrBuilder();
 
     /**
-     * <code>.XmsgImMsgAt atx = 8;</code>
+     * <code>.XmsgImMsgAt atx = 9;</code>
      */
     boolean hasAtx();
     /**
-     * <code>.XmsgImMsgAt atx = 8;</code>
+     * <code>.XmsgImMsgAt atx = 9;</code>
      */
     x.msg.pb.PbXmsg.XmsgImMsgAt getAtx();
     /**
-     * <code>.XmsgImMsgAt atx = 8;</code>
+     * <code>.XmsgImMsgAt atx = 9;</code>
      */
     x.msg.pb.PbXmsg.XmsgImMsgAtOrBuilder getAtxOrBuilder();
   }
@@ -2644,6 +2657,19 @@ public final class PbXmsg {
               break;
             }
             case 58: {
+              x.msg.pb.PbXmsg.XmsgImMsgFile.Builder subBuilder = null;
+              if (file_ != null) {
+                subBuilder = file_.toBuilder();
+              }
+              file_ = input.readMessage(x.msg.pb.PbXmsg.XmsgImMsgFile.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(file_);
+                file_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 66: {
               x.msg.pb.PbXmsg.XmsgImMsgMerge.Builder subBuilder = null;
               if (merge_ != null) {
                 subBuilder = merge_.toBuilder();
@@ -2656,7 +2682,7 @@ public final class PbXmsg {
 
               break;
             }
-            case 66: {
+            case 74: {
               x.msg.pb.PbXmsg.XmsgImMsgAt.Builder subBuilder = null;
               if (atx_ != null) {
                 subBuilder = atx_.toBuilder();
@@ -2832,43 +2858,64 @@ public final class PbXmsg {
       return getVideo();
     }
 
-    public static final int MERGE_FIELD_NUMBER = 7;
+    public static final int FILE_FIELD_NUMBER = 7;
+    private x.msg.pb.PbXmsg.XmsgImMsgFile file_;
+    /**
+     * <code>.XmsgImMsgFile file = 7;</code>
+     */
+    public boolean hasFile() {
+      return file_ != null;
+    }
+    /**
+     * <code>.XmsgImMsgFile file = 7;</code>
+     */
+    public x.msg.pb.PbXmsg.XmsgImMsgFile getFile() {
+      return file_ == null ? x.msg.pb.PbXmsg.XmsgImMsgFile.getDefaultInstance() : file_;
+    }
+    /**
+     * <code>.XmsgImMsgFile file = 7;</code>
+     */
+    public x.msg.pb.PbXmsg.XmsgImMsgFileOrBuilder getFileOrBuilder() {
+      return getFile();
+    }
+
+    public static final int MERGE_FIELD_NUMBER = 8;
     private x.msg.pb.PbXmsg.XmsgImMsgMerge merge_;
     /**
-     * <code>.XmsgImMsgMerge merge = 7;</code>
+     * <code>.XmsgImMsgMerge merge = 8;</code>
      */
     public boolean hasMerge() {
       return merge_ != null;
     }
     /**
-     * <code>.XmsgImMsgMerge merge = 7;</code>
+     * <code>.XmsgImMsgMerge merge = 8;</code>
      */
     public x.msg.pb.PbXmsg.XmsgImMsgMerge getMerge() {
       return merge_ == null ? x.msg.pb.PbXmsg.XmsgImMsgMerge.getDefaultInstance() : merge_;
     }
     /**
-     * <code>.XmsgImMsgMerge merge = 7;</code>
+     * <code>.XmsgImMsgMerge merge = 8;</code>
      */
     public x.msg.pb.PbXmsg.XmsgImMsgMergeOrBuilder getMergeOrBuilder() {
       return getMerge();
     }
 
-    public static final int ATX_FIELD_NUMBER = 8;
+    public static final int ATX_FIELD_NUMBER = 9;
     private x.msg.pb.PbXmsg.XmsgImMsgAt atx_;
     /**
-     * <code>.XmsgImMsgAt atx = 8;</code>
+     * <code>.XmsgImMsgAt atx = 9;</code>
      */
     public boolean hasAtx() {
       return atx_ != null;
     }
     /**
-     * <code>.XmsgImMsgAt atx = 8;</code>
+     * <code>.XmsgImMsgAt atx = 9;</code>
      */
     public x.msg.pb.PbXmsg.XmsgImMsgAt getAtx() {
       return atx_ == null ? x.msg.pb.PbXmsg.XmsgImMsgAt.getDefaultInstance() : atx_;
     }
     /**
-     * <code>.XmsgImMsgAt atx = 8;</code>
+     * <code>.XmsgImMsgAt atx = 9;</code>
      */
     public x.msg.pb.PbXmsg.XmsgImMsgAtOrBuilder getAtxOrBuilder() {
       return getAtx();
@@ -2904,11 +2951,14 @@ public final class PbXmsg {
       if (video_ != null) {
         output.writeMessage(6, getVideo());
       }
+      if (file_ != null) {
+        output.writeMessage(7, getFile());
+      }
       if (merge_ != null) {
-        output.writeMessage(7, getMerge());
+        output.writeMessage(8, getMerge());
       }
       if (atx_ != null) {
-        output.writeMessage(8, getAtx());
+        output.writeMessage(9, getAtx());
       }
       unknownFields.writeTo(output);
     }
@@ -2941,13 +2991,17 @@ public final class PbXmsg {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(6, getVideo());
       }
+      if (file_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(7, getFile());
+      }
       if (merge_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(7, getMerge());
+          .computeMessageSize(8, getMerge());
       }
       if (atx_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(8, getAtx());
+          .computeMessageSize(9, getAtx());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -2992,6 +3046,11 @@ public final class PbXmsg {
         result = result && getVideo()
             .equals(other.getVideo());
       }
+      result = result && (hasFile() == other.hasFile());
+      if (hasFile()) {
+        result = result && getFile()
+            .equals(other.getFile());
+      }
       result = result && (hasMerge() == other.hasMerge());
       if (hasMerge()) {
         result = result && getMerge()
@@ -3034,6 +3093,10 @@ public final class PbXmsg {
       if (hasVideo()) {
         hash = (37 * hash) + VIDEO_FIELD_NUMBER;
         hash = (53 * hash) + getVideo().hashCode();
+      }
+      if (hasFile()) {
+        hash = (37 * hash) + FILE_FIELD_NUMBER;
+        hash = (53 * hash) + getFile().hashCode();
       }
       if (hasMerge()) {
         hash = (37 * hash) + MERGE_FIELD_NUMBER;
@@ -3204,6 +3267,12 @@ public final class PbXmsg {
           video_ = null;
           videoBuilder_ = null;
         }
+        if (fileBuilder_ == null) {
+          file_ = null;
+        } else {
+          file_ = null;
+          fileBuilder_ = null;
+        }
         if (mergeBuilder_ == null) {
           merge_ = null;
         } else {
@@ -3263,6 +3332,11 @@ public final class PbXmsg {
           result.video_ = video_;
         } else {
           result.video_ = videoBuilder_.build();
+        }
+        if (fileBuilder_ == null) {
+          result.file_ = file_;
+        } else {
+          result.file_ = fileBuilder_.build();
         }
         if (mergeBuilder_ == null) {
           result.merge_ = merge_;
@@ -3333,6 +3407,9 @@ public final class PbXmsg {
         }
         if (other.hasVideo()) {
           mergeVideo(other.getVideo());
+        }
+        if (other.hasFile()) {
+          mergeFile(other.getFile());
         }
         if (other.hasMerge()) {
           mergeMerge(other.getMerge());
@@ -4021,17 +4098,134 @@ public final class PbXmsg {
         return videoBuilder_;
       }
 
+      private x.msg.pb.PbXmsg.XmsgImMsgFile file_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          x.msg.pb.PbXmsg.XmsgImMsgFile, x.msg.pb.PbXmsg.XmsgImMsgFile.Builder, x.msg.pb.PbXmsg.XmsgImMsgFileOrBuilder> fileBuilder_;
+      /**
+       * <code>.XmsgImMsgFile file = 7;</code>
+       */
+      public boolean hasFile() {
+        return fileBuilder_ != null || file_ != null;
+      }
+      /**
+       * <code>.XmsgImMsgFile file = 7;</code>
+       */
+      public x.msg.pb.PbXmsg.XmsgImMsgFile getFile() {
+        if (fileBuilder_ == null) {
+          return file_ == null ? x.msg.pb.PbXmsg.XmsgImMsgFile.getDefaultInstance() : file_;
+        } else {
+          return fileBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.XmsgImMsgFile file = 7;</code>
+       */
+      public Builder setFile(x.msg.pb.PbXmsg.XmsgImMsgFile value) {
+        if (fileBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          file_ = value;
+          onChanged();
+        } else {
+          fileBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.XmsgImMsgFile file = 7;</code>
+       */
+      public Builder setFile(
+          x.msg.pb.PbXmsg.XmsgImMsgFile.Builder builderForValue) {
+        if (fileBuilder_ == null) {
+          file_ = builderForValue.build();
+          onChanged();
+        } else {
+          fileBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.XmsgImMsgFile file = 7;</code>
+       */
+      public Builder mergeFile(x.msg.pb.PbXmsg.XmsgImMsgFile value) {
+        if (fileBuilder_ == null) {
+          if (file_ != null) {
+            file_ =
+              x.msg.pb.PbXmsg.XmsgImMsgFile.newBuilder(file_).mergeFrom(value).buildPartial();
+          } else {
+            file_ = value;
+          }
+          onChanged();
+        } else {
+          fileBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.XmsgImMsgFile file = 7;</code>
+       */
+      public Builder clearFile() {
+        if (fileBuilder_ == null) {
+          file_ = null;
+          onChanged();
+        } else {
+          file_ = null;
+          fileBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.XmsgImMsgFile file = 7;</code>
+       */
+      public x.msg.pb.PbXmsg.XmsgImMsgFile.Builder getFileBuilder() {
+        
+        onChanged();
+        return getFileFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.XmsgImMsgFile file = 7;</code>
+       */
+      public x.msg.pb.PbXmsg.XmsgImMsgFileOrBuilder getFileOrBuilder() {
+        if (fileBuilder_ != null) {
+          return fileBuilder_.getMessageOrBuilder();
+        } else {
+          return file_ == null ?
+              x.msg.pb.PbXmsg.XmsgImMsgFile.getDefaultInstance() : file_;
+        }
+      }
+      /**
+       * <code>.XmsgImMsgFile file = 7;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          x.msg.pb.PbXmsg.XmsgImMsgFile, x.msg.pb.PbXmsg.XmsgImMsgFile.Builder, x.msg.pb.PbXmsg.XmsgImMsgFileOrBuilder> 
+          getFileFieldBuilder() {
+        if (fileBuilder_ == null) {
+          fileBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              x.msg.pb.PbXmsg.XmsgImMsgFile, x.msg.pb.PbXmsg.XmsgImMsgFile.Builder, x.msg.pb.PbXmsg.XmsgImMsgFileOrBuilder>(
+                  getFile(),
+                  getParentForChildren(),
+                  isClean());
+          file_ = null;
+        }
+        return fileBuilder_;
+      }
+
       private x.msg.pb.PbXmsg.XmsgImMsgMerge merge_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
           x.msg.pb.PbXmsg.XmsgImMsgMerge, x.msg.pb.PbXmsg.XmsgImMsgMerge.Builder, x.msg.pb.PbXmsg.XmsgImMsgMergeOrBuilder> mergeBuilder_;
       /**
-       * <code>.XmsgImMsgMerge merge = 7;</code>
+       * <code>.XmsgImMsgMerge merge = 8;</code>
        */
       public boolean hasMerge() {
         return mergeBuilder_ != null || merge_ != null;
       }
       /**
-       * <code>.XmsgImMsgMerge merge = 7;</code>
+       * <code>.XmsgImMsgMerge merge = 8;</code>
        */
       public x.msg.pb.PbXmsg.XmsgImMsgMerge getMerge() {
         if (mergeBuilder_ == null) {
@@ -4041,7 +4235,7 @@ public final class PbXmsg {
         }
       }
       /**
-       * <code>.XmsgImMsgMerge merge = 7;</code>
+       * <code>.XmsgImMsgMerge merge = 8;</code>
        */
       public Builder setMerge(x.msg.pb.PbXmsg.XmsgImMsgMerge value) {
         if (mergeBuilder_ == null) {
@@ -4057,7 +4251,7 @@ public final class PbXmsg {
         return this;
       }
       /**
-       * <code>.XmsgImMsgMerge merge = 7;</code>
+       * <code>.XmsgImMsgMerge merge = 8;</code>
        */
       public Builder setMerge(
           x.msg.pb.PbXmsg.XmsgImMsgMerge.Builder builderForValue) {
@@ -4071,7 +4265,7 @@ public final class PbXmsg {
         return this;
       }
       /**
-       * <code>.XmsgImMsgMerge merge = 7;</code>
+       * <code>.XmsgImMsgMerge merge = 8;</code>
        */
       public Builder mergeMerge(x.msg.pb.PbXmsg.XmsgImMsgMerge value) {
         if (mergeBuilder_ == null) {
@@ -4089,7 +4283,7 @@ public final class PbXmsg {
         return this;
       }
       /**
-       * <code>.XmsgImMsgMerge merge = 7;</code>
+       * <code>.XmsgImMsgMerge merge = 8;</code>
        */
       public Builder clearMerge() {
         if (mergeBuilder_ == null) {
@@ -4103,7 +4297,7 @@ public final class PbXmsg {
         return this;
       }
       /**
-       * <code>.XmsgImMsgMerge merge = 7;</code>
+       * <code>.XmsgImMsgMerge merge = 8;</code>
        */
       public x.msg.pb.PbXmsg.XmsgImMsgMerge.Builder getMergeBuilder() {
         
@@ -4111,7 +4305,7 @@ public final class PbXmsg {
         return getMergeFieldBuilder().getBuilder();
       }
       /**
-       * <code>.XmsgImMsgMerge merge = 7;</code>
+       * <code>.XmsgImMsgMerge merge = 8;</code>
        */
       public x.msg.pb.PbXmsg.XmsgImMsgMergeOrBuilder getMergeOrBuilder() {
         if (mergeBuilder_ != null) {
@@ -4122,7 +4316,7 @@ public final class PbXmsg {
         }
       }
       /**
-       * <code>.XmsgImMsgMerge merge = 7;</code>
+       * <code>.XmsgImMsgMerge merge = 8;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           x.msg.pb.PbXmsg.XmsgImMsgMerge, x.msg.pb.PbXmsg.XmsgImMsgMerge.Builder, x.msg.pb.PbXmsg.XmsgImMsgMergeOrBuilder> 
@@ -4142,13 +4336,13 @@ public final class PbXmsg {
       private com.google.protobuf.SingleFieldBuilderV3<
           x.msg.pb.PbXmsg.XmsgImMsgAt, x.msg.pb.PbXmsg.XmsgImMsgAt.Builder, x.msg.pb.PbXmsg.XmsgImMsgAtOrBuilder> atxBuilder_;
       /**
-       * <code>.XmsgImMsgAt atx = 8;</code>
+       * <code>.XmsgImMsgAt atx = 9;</code>
        */
       public boolean hasAtx() {
         return atxBuilder_ != null || atx_ != null;
       }
       /**
-       * <code>.XmsgImMsgAt atx = 8;</code>
+       * <code>.XmsgImMsgAt atx = 9;</code>
        */
       public x.msg.pb.PbXmsg.XmsgImMsgAt getAtx() {
         if (atxBuilder_ == null) {
@@ -4158,7 +4352,7 @@ public final class PbXmsg {
         }
       }
       /**
-       * <code>.XmsgImMsgAt atx = 8;</code>
+       * <code>.XmsgImMsgAt atx = 9;</code>
        */
       public Builder setAtx(x.msg.pb.PbXmsg.XmsgImMsgAt value) {
         if (atxBuilder_ == null) {
@@ -4174,7 +4368,7 @@ public final class PbXmsg {
         return this;
       }
       /**
-       * <code>.XmsgImMsgAt atx = 8;</code>
+       * <code>.XmsgImMsgAt atx = 9;</code>
        */
       public Builder setAtx(
           x.msg.pb.PbXmsg.XmsgImMsgAt.Builder builderForValue) {
@@ -4188,7 +4382,7 @@ public final class PbXmsg {
         return this;
       }
       /**
-       * <code>.XmsgImMsgAt atx = 8;</code>
+       * <code>.XmsgImMsgAt atx = 9;</code>
        */
       public Builder mergeAtx(x.msg.pb.PbXmsg.XmsgImMsgAt value) {
         if (atxBuilder_ == null) {
@@ -4206,7 +4400,7 @@ public final class PbXmsg {
         return this;
       }
       /**
-       * <code>.XmsgImMsgAt atx = 8;</code>
+       * <code>.XmsgImMsgAt atx = 9;</code>
        */
       public Builder clearAtx() {
         if (atxBuilder_ == null) {
@@ -4220,7 +4414,7 @@ public final class PbXmsg {
         return this;
       }
       /**
-       * <code>.XmsgImMsgAt atx = 8;</code>
+       * <code>.XmsgImMsgAt atx = 9;</code>
        */
       public x.msg.pb.PbXmsg.XmsgImMsgAt.Builder getAtxBuilder() {
         
@@ -4228,7 +4422,7 @@ public final class PbXmsg {
         return getAtxFieldBuilder().getBuilder();
       }
       /**
-       * <code>.XmsgImMsgAt atx = 8;</code>
+       * <code>.XmsgImMsgAt atx = 9;</code>
        */
       public x.msg.pb.PbXmsg.XmsgImMsgAtOrBuilder getAtxOrBuilder() {
         if (atxBuilder_ != null) {
@@ -4239,7 +4433,7 @@ public final class PbXmsg {
         }
       }
       /**
-       * <code>.XmsgImMsgAt atx = 8;</code>
+       * <code>.XmsgImMsgAt atx = 9;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           x.msg.pb.PbXmsg.XmsgImMsgAt, x.msg.pb.PbXmsg.XmsgImMsgAt.Builder, x.msg.pb.PbXmsg.XmsgImMsgAtOrBuilder> 
@@ -6923,6 +7117,668 @@ public final class PbXmsg {
     }
 
     public x.msg.pb.PbXmsg.XmsgImMsgVideo getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface XmsgImMsgFileOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:XmsgImMsgFile)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string from = 1;</code>
+     */
+    java.lang.String getFrom();
+    /**
+     * <code>string from = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getFromBytes();
+
+    /**
+     * <code>string fid = 2;</code>
+     */
+    java.lang.String getFid();
+    /**
+     * <code>string fid = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getFidBytes();
+  }
+  /**
+   * Protobuf type {@code XmsgImMsgFile}
+   */
+  public  static final class XmsgImMsgFile extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:XmsgImMsgFile)
+      XmsgImMsgFileOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use XmsgImMsgFile.newBuilder() to construct.
+    private XmsgImMsgFile(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private XmsgImMsgFile() {
+      from_ = "";
+      fid_ = "";
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private XmsgImMsgFile(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              from_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              fid_ = s;
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return x.msg.pb.PbXmsg.internal_static_XmsgImMsgFile_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return x.msg.pb.PbXmsg.internal_static_XmsgImMsgFile_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              x.msg.pb.PbXmsg.XmsgImMsgFile.class, x.msg.pb.PbXmsg.XmsgImMsgFile.Builder.class);
+    }
+
+    public static final int FROM_FIELD_NUMBER = 1;
+    private volatile java.lang.Object from_;
+    /**
+     * <code>string from = 1;</code>
+     */
+    public java.lang.String getFrom() {
+      java.lang.Object ref = from_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        from_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string from = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getFromBytes() {
+      java.lang.Object ref = from_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        from_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int FID_FIELD_NUMBER = 2;
+    private volatile java.lang.Object fid_;
+    /**
+     * <code>string fid = 2;</code>
+     */
+    public java.lang.String getFid() {
+      java.lang.Object ref = fid_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        fid_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string fid = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getFidBytes() {
+      java.lang.Object ref = fid_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        fid_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getFromBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, from_);
+      }
+      if (!getFidBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, fid_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getFromBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, from_);
+      }
+      if (!getFidBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, fid_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof x.msg.pb.PbXmsg.XmsgImMsgFile)) {
+        return super.equals(obj);
+      }
+      x.msg.pb.PbXmsg.XmsgImMsgFile other = (x.msg.pb.PbXmsg.XmsgImMsgFile) obj;
+
+      boolean result = true;
+      result = result && getFrom()
+          .equals(other.getFrom());
+      result = result && getFid()
+          .equals(other.getFid());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + FROM_FIELD_NUMBER;
+      hash = (53 * hash) + getFrom().hashCode();
+      hash = (37 * hash) + FID_FIELD_NUMBER;
+      hash = (53 * hash) + getFid().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static x.msg.pb.PbXmsg.XmsgImMsgFile parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static x.msg.pb.PbXmsg.XmsgImMsgFile parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static x.msg.pb.PbXmsg.XmsgImMsgFile parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static x.msg.pb.PbXmsg.XmsgImMsgFile parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static x.msg.pb.PbXmsg.XmsgImMsgFile parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static x.msg.pb.PbXmsg.XmsgImMsgFile parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static x.msg.pb.PbXmsg.XmsgImMsgFile parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static x.msg.pb.PbXmsg.XmsgImMsgFile parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static x.msg.pb.PbXmsg.XmsgImMsgFile parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static x.msg.pb.PbXmsg.XmsgImMsgFile parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static x.msg.pb.PbXmsg.XmsgImMsgFile parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static x.msg.pb.PbXmsg.XmsgImMsgFile parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(x.msg.pb.PbXmsg.XmsgImMsgFile prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code XmsgImMsgFile}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:XmsgImMsgFile)
+        x.msg.pb.PbXmsg.XmsgImMsgFileOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return x.msg.pb.PbXmsg.internal_static_XmsgImMsgFile_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return x.msg.pb.PbXmsg.internal_static_XmsgImMsgFile_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                x.msg.pb.PbXmsg.XmsgImMsgFile.class, x.msg.pb.PbXmsg.XmsgImMsgFile.Builder.class);
+      }
+
+      // Construct using x.msg.pb.PbXmsg.XmsgImMsgFile.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        from_ = "";
+
+        fid_ = "";
+
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return x.msg.pb.PbXmsg.internal_static_XmsgImMsgFile_descriptor;
+      }
+
+      public x.msg.pb.PbXmsg.XmsgImMsgFile getDefaultInstanceForType() {
+        return x.msg.pb.PbXmsg.XmsgImMsgFile.getDefaultInstance();
+      }
+
+      public x.msg.pb.PbXmsg.XmsgImMsgFile build() {
+        x.msg.pb.PbXmsg.XmsgImMsgFile result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public x.msg.pb.PbXmsg.XmsgImMsgFile buildPartial() {
+        x.msg.pb.PbXmsg.XmsgImMsgFile result = new x.msg.pb.PbXmsg.XmsgImMsgFile(this);
+        result.from_ = from_;
+        result.fid_ = fid_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof x.msg.pb.PbXmsg.XmsgImMsgFile) {
+          return mergeFrom((x.msg.pb.PbXmsg.XmsgImMsgFile)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(x.msg.pb.PbXmsg.XmsgImMsgFile other) {
+        if (other == x.msg.pb.PbXmsg.XmsgImMsgFile.getDefaultInstance()) return this;
+        if (!other.getFrom().isEmpty()) {
+          from_ = other.from_;
+          onChanged();
+        }
+        if (!other.getFid().isEmpty()) {
+          fid_ = other.fid_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        x.msg.pb.PbXmsg.XmsgImMsgFile parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (x.msg.pb.PbXmsg.XmsgImMsgFile) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object from_ = "";
+      /**
+       * <code>string from = 1;</code>
+       */
+      public java.lang.String getFrom() {
+        java.lang.Object ref = from_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          from_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string from = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getFromBytes() {
+        java.lang.Object ref = from_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          from_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string from = 1;</code>
+       */
+      public Builder setFrom(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        from_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string from = 1;</code>
+       */
+      public Builder clearFrom() {
+        
+        from_ = getDefaultInstance().getFrom();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string from = 1;</code>
+       */
+      public Builder setFromBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        from_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object fid_ = "";
+      /**
+       * <code>string fid = 2;</code>
+       */
+      public java.lang.String getFid() {
+        java.lang.Object ref = fid_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          fid_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string fid = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getFidBytes() {
+        java.lang.Object ref = fid_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          fid_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string fid = 2;</code>
+       */
+      public Builder setFid(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        fid_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string fid = 2;</code>
+       */
+      public Builder clearFid() {
+        
+        fid_ = getDefaultInstance().getFid();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string fid = 2;</code>
+       */
+      public Builder setFidBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        fid_ = value;
+        onChanged();
+        return this;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:XmsgImMsgFile)
+    }
+
+    // @@protoc_insertion_point(class_scope:XmsgImMsgFile)
+    private static final x.msg.pb.PbXmsg.XmsgImMsgFile DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new x.msg.pb.PbXmsg.XmsgImMsgFile();
+    }
+
+    public static x.msg.pb.PbXmsg.XmsgImMsgFile getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<XmsgImMsgFile>
+        PARSER = new com.google.protobuf.AbstractParser<XmsgImMsgFile>() {
+      public XmsgImMsgFile parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new XmsgImMsgFile(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<XmsgImMsgFile> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<XmsgImMsgFile> getParserForType() {
+      return PARSER;
+    }
+
+    public x.msg.pb.PbXmsg.XmsgImMsgFile getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -25696,1353 +26552,6 @@ public final class PbXmsg {
 
   }
 
-  public interface XmsgClientTokenInfoOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:XmsgClientTokenInfo)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>string cgt = 1;</code>
-     */
-    java.lang.String getCgt();
-    /**
-     * <code>string cgt = 1;</code>
-     */
-    com.google.protobuf.ByteString
-        getCgtBytes();
-
-    /**
-     * <code>string token = 2;</code>
-     */
-    java.lang.String getToken();
-    /**
-     * <code>string token = 2;</code>
-     */
-    com.google.protobuf.ByteString
-        getTokenBytes();
-
-    /**
-     * <code>string alg = 3;</code>
-     */
-    java.lang.String getAlg();
-    /**
-     * <code>string alg = 3;</code>
-     */
-    com.google.protobuf.ByteString
-        getAlgBytes();
-
-    /**
-     * <code>string slat = 4;</code>
-     */
-    java.lang.String getSlat();
-    /**
-     * <code>string slat = 4;</code>
-     */
-    com.google.protobuf.ByteString
-        getSlatBytes();
-
-    /**
-     * <code>string plat = 5;</code>
-     */
-    java.lang.String getPlat();
-    /**
-     * <code>string plat = 5;</code>
-     */
-    com.google.protobuf.ByteString
-        getPlatBytes();
-
-    /**
-     * <code>string did = 6;</code>
-     */
-    java.lang.String getDid();
-    /**
-     * <code>string did = 6;</code>
-     */
-    com.google.protobuf.ByteString
-        getDidBytes();
-
-    /**
-     * <code>string sign = 7;</code>
-     */
-    java.lang.String getSign();
-    /**
-     * <code>string sign = 7;</code>
-     */
-    com.google.protobuf.ByteString
-        getSignBytes();
-  }
-  /**
-   * Protobuf type {@code XmsgClientTokenInfo}
-   */
-  public  static final class XmsgClientTokenInfo extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:XmsgClientTokenInfo)
-      XmsgClientTokenInfoOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use XmsgClientTokenInfo.newBuilder() to construct.
-    private XmsgClientTokenInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private XmsgClientTokenInfo() {
-      cgt_ = "";
-      token_ = "";
-      alg_ = "";
-      slat_ = "";
-      plat_ = "";
-      did_ = "";
-      sign_ = "";
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private XmsgClientTokenInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              cgt_ = s;
-              break;
-            }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              token_ = s;
-              break;
-            }
-            case 26: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              alg_ = s;
-              break;
-            }
-            case 34: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              slat_ = s;
-              break;
-            }
-            case 42: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              plat_ = s;
-              break;
-            }
-            case 50: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              did_ = s;
-              break;
-            }
-            case 58: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              sign_ = s;
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return x.msg.pb.PbXmsg.internal_static_XmsgClientTokenInfo_descriptor;
-    }
-
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return x.msg.pb.PbXmsg.internal_static_XmsgClientTokenInfo_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              x.msg.pb.PbXmsg.XmsgClientTokenInfo.class, x.msg.pb.PbXmsg.XmsgClientTokenInfo.Builder.class);
-    }
-
-    public static final int CGT_FIELD_NUMBER = 1;
-    private volatile java.lang.Object cgt_;
-    /**
-     * <code>string cgt = 1;</code>
-     */
-    public java.lang.String getCgt() {
-      java.lang.Object ref = cgt_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        cgt_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string cgt = 1;</code>
-     */
-    public com.google.protobuf.ByteString
-        getCgtBytes() {
-      java.lang.Object ref = cgt_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        cgt_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int TOKEN_FIELD_NUMBER = 2;
-    private volatile java.lang.Object token_;
-    /**
-     * <code>string token = 2;</code>
-     */
-    public java.lang.String getToken() {
-      java.lang.Object ref = token_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        token_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string token = 2;</code>
-     */
-    public com.google.protobuf.ByteString
-        getTokenBytes() {
-      java.lang.Object ref = token_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        token_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int ALG_FIELD_NUMBER = 3;
-    private volatile java.lang.Object alg_;
-    /**
-     * <code>string alg = 3;</code>
-     */
-    public java.lang.String getAlg() {
-      java.lang.Object ref = alg_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        alg_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string alg = 3;</code>
-     */
-    public com.google.protobuf.ByteString
-        getAlgBytes() {
-      java.lang.Object ref = alg_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        alg_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int SLAT_FIELD_NUMBER = 4;
-    private volatile java.lang.Object slat_;
-    /**
-     * <code>string slat = 4;</code>
-     */
-    public java.lang.String getSlat() {
-      java.lang.Object ref = slat_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        slat_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string slat = 4;</code>
-     */
-    public com.google.protobuf.ByteString
-        getSlatBytes() {
-      java.lang.Object ref = slat_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        slat_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int PLAT_FIELD_NUMBER = 5;
-    private volatile java.lang.Object plat_;
-    /**
-     * <code>string plat = 5;</code>
-     */
-    public java.lang.String getPlat() {
-      java.lang.Object ref = plat_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        plat_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string plat = 5;</code>
-     */
-    public com.google.protobuf.ByteString
-        getPlatBytes() {
-      java.lang.Object ref = plat_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        plat_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int DID_FIELD_NUMBER = 6;
-    private volatile java.lang.Object did_;
-    /**
-     * <code>string did = 6;</code>
-     */
-    public java.lang.String getDid() {
-      java.lang.Object ref = did_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        did_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string did = 6;</code>
-     */
-    public com.google.protobuf.ByteString
-        getDidBytes() {
-      java.lang.Object ref = did_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        did_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int SIGN_FIELD_NUMBER = 7;
-    private volatile java.lang.Object sign_;
-    /**
-     * <code>string sign = 7;</code>
-     */
-    public java.lang.String getSign() {
-      java.lang.Object ref = sign_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        sign_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string sign = 7;</code>
-     */
-    public com.google.protobuf.ByteString
-        getSignBytes() {
-      java.lang.Object ref = sign_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        sign_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    private byte memoizedIsInitialized = -1;
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (!getCgtBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, cgt_);
-      }
-      if (!getTokenBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, token_);
-      }
-      if (!getAlgBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, alg_);
-      }
-      if (!getSlatBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, slat_);
-      }
-      if (!getPlatBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, plat_);
-      }
-      if (!getDidBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, did_);
-      }
-      if (!getSignBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, sign_);
-      }
-      unknownFields.writeTo(output);
-    }
-
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (!getCgtBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, cgt_);
-      }
-      if (!getTokenBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, token_);
-      }
-      if (!getAlgBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, alg_);
-      }
-      if (!getSlatBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, slat_);
-      }
-      if (!getPlatBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, plat_);
-      }
-      if (!getDidBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, did_);
-      }
-      if (!getSignBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, sign_);
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof x.msg.pb.PbXmsg.XmsgClientTokenInfo)) {
-        return super.equals(obj);
-      }
-      x.msg.pb.PbXmsg.XmsgClientTokenInfo other = (x.msg.pb.PbXmsg.XmsgClientTokenInfo) obj;
-
-      boolean result = true;
-      result = result && getCgt()
-          .equals(other.getCgt());
-      result = result && getToken()
-          .equals(other.getToken());
-      result = result && getAlg()
-          .equals(other.getAlg());
-      result = result && getSlat()
-          .equals(other.getSlat());
-      result = result && getPlat()
-          .equals(other.getPlat());
-      result = result && getDid()
-          .equals(other.getDid());
-      result = result && getSign()
-          .equals(other.getSign());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + CGT_FIELD_NUMBER;
-      hash = (53 * hash) + getCgt().hashCode();
-      hash = (37 * hash) + TOKEN_FIELD_NUMBER;
-      hash = (53 * hash) + getToken().hashCode();
-      hash = (37 * hash) + ALG_FIELD_NUMBER;
-      hash = (53 * hash) + getAlg().hashCode();
-      hash = (37 * hash) + SLAT_FIELD_NUMBER;
-      hash = (53 * hash) + getSlat().hashCode();
-      hash = (37 * hash) + PLAT_FIELD_NUMBER;
-      hash = (53 * hash) + getPlat().hashCode();
-      hash = (37 * hash) + DID_FIELD_NUMBER;
-      hash = (53 * hash) + getDid().hashCode();
-      hash = (37 * hash) + SIGN_FIELD_NUMBER;
-      hash = (53 * hash) + getSign().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static x.msg.pb.PbXmsg.XmsgClientTokenInfo parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static x.msg.pb.PbXmsg.XmsgClientTokenInfo parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static x.msg.pb.PbXmsg.XmsgClientTokenInfo parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static x.msg.pb.PbXmsg.XmsgClientTokenInfo parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static x.msg.pb.PbXmsg.XmsgClientTokenInfo parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static x.msg.pb.PbXmsg.XmsgClientTokenInfo parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static x.msg.pb.PbXmsg.XmsgClientTokenInfo parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static x.msg.pb.PbXmsg.XmsgClientTokenInfo parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static x.msg.pb.PbXmsg.XmsgClientTokenInfo parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static x.msg.pb.PbXmsg.XmsgClientTokenInfo parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static x.msg.pb.PbXmsg.XmsgClientTokenInfo parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static x.msg.pb.PbXmsg.XmsgClientTokenInfo parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(x.msg.pb.PbXmsg.XmsgClientTokenInfo prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * Protobuf type {@code XmsgClientTokenInfo}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:XmsgClientTokenInfo)
-        x.msg.pb.PbXmsg.XmsgClientTokenInfoOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return x.msg.pb.PbXmsg.internal_static_XmsgClientTokenInfo_descriptor;
-      }
-
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return x.msg.pb.PbXmsg.internal_static_XmsgClientTokenInfo_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                x.msg.pb.PbXmsg.XmsgClientTokenInfo.class, x.msg.pb.PbXmsg.XmsgClientTokenInfo.Builder.class);
-      }
-
-      // Construct using x.msg.pb.PbXmsg.XmsgClientTokenInfo.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      public Builder clear() {
-        super.clear();
-        cgt_ = "";
-
-        token_ = "";
-
-        alg_ = "";
-
-        slat_ = "";
-
-        plat_ = "";
-
-        did_ = "";
-
-        sign_ = "";
-
-        return this;
-      }
-
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return x.msg.pb.PbXmsg.internal_static_XmsgClientTokenInfo_descriptor;
-      }
-
-      public x.msg.pb.PbXmsg.XmsgClientTokenInfo getDefaultInstanceForType() {
-        return x.msg.pb.PbXmsg.XmsgClientTokenInfo.getDefaultInstance();
-      }
-
-      public x.msg.pb.PbXmsg.XmsgClientTokenInfo build() {
-        x.msg.pb.PbXmsg.XmsgClientTokenInfo result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      public x.msg.pb.PbXmsg.XmsgClientTokenInfo buildPartial() {
-        x.msg.pb.PbXmsg.XmsgClientTokenInfo result = new x.msg.pb.PbXmsg.XmsgClientTokenInfo(this);
-        result.cgt_ = cgt_;
-        result.token_ = token_;
-        result.alg_ = alg_;
-        result.slat_ = slat_;
-        result.plat_ = plat_;
-        result.did_ = did_;
-        result.sign_ = sign_;
-        onBuilt();
-        return result;
-      }
-
-      public Builder clone() {
-        return (Builder) super.clone();
-      }
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return (Builder) super.setField(field, value);
-      }
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
-      }
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
-      }
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
-      }
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
-      }
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof x.msg.pb.PbXmsg.XmsgClientTokenInfo) {
-          return mergeFrom((x.msg.pb.PbXmsg.XmsgClientTokenInfo)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(x.msg.pb.PbXmsg.XmsgClientTokenInfo other) {
-        if (other == x.msg.pb.PbXmsg.XmsgClientTokenInfo.getDefaultInstance()) return this;
-        if (!other.getCgt().isEmpty()) {
-          cgt_ = other.cgt_;
-          onChanged();
-        }
-        if (!other.getToken().isEmpty()) {
-          token_ = other.token_;
-          onChanged();
-        }
-        if (!other.getAlg().isEmpty()) {
-          alg_ = other.alg_;
-          onChanged();
-        }
-        if (!other.getSlat().isEmpty()) {
-          slat_ = other.slat_;
-          onChanged();
-        }
-        if (!other.getPlat().isEmpty()) {
-          plat_ = other.plat_;
-          onChanged();
-        }
-        if (!other.getDid().isEmpty()) {
-          did_ = other.did_;
-          onChanged();
-        }
-        if (!other.getSign().isEmpty()) {
-          sign_ = other.sign_;
-          onChanged();
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        x.msg.pb.PbXmsg.XmsgClientTokenInfo parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (x.msg.pb.PbXmsg.XmsgClientTokenInfo) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private java.lang.Object cgt_ = "";
-      /**
-       * <code>string cgt = 1;</code>
-       */
-      public java.lang.String getCgt() {
-        java.lang.Object ref = cgt_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          cgt_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string cgt = 1;</code>
-       */
-      public com.google.protobuf.ByteString
-          getCgtBytes() {
-        java.lang.Object ref = cgt_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          cgt_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string cgt = 1;</code>
-       */
-      public Builder setCgt(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        cgt_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string cgt = 1;</code>
-       */
-      public Builder clearCgt() {
-        
-        cgt_ = getDefaultInstance().getCgt();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string cgt = 1;</code>
-       */
-      public Builder setCgtBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        cgt_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object token_ = "";
-      /**
-       * <code>string token = 2;</code>
-       */
-      public java.lang.String getToken() {
-        java.lang.Object ref = token_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          token_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string token = 2;</code>
-       */
-      public com.google.protobuf.ByteString
-          getTokenBytes() {
-        java.lang.Object ref = token_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          token_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string token = 2;</code>
-       */
-      public Builder setToken(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        token_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string token = 2;</code>
-       */
-      public Builder clearToken() {
-        
-        token_ = getDefaultInstance().getToken();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string token = 2;</code>
-       */
-      public Builder setTokenBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        token_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object alg_ = "";
-      /**
-       * <code>string alg = 3;</code>
-       */
-      public java.lang.String getAlg() {
-        java.lang.Object ref = alg_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          alg_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string alg = 3;</code>
-       */
-      public com.google.protobuf.ByteString
-          getAlgBytes() {
-        java.lang.Object ref = alg_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          alg_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string alg = 3;</code>
-       */
-      public Builder setAlg(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        alg_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string alg = 3;</code>
-       */
-      public Builder clearAlg() {
-        
-        alg_ = getDefaultInstance().getAlg();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string alg = 3;</code>
-       */
-      public Builder setAlgBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        alg_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object slat_ = "";
-      /**
-       * <code>string slat = 4;</code>
-       */
-      public java.lang.String getSlat() {
-        java.lang.Object ref = slat_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          slat_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string slat = 4;</code>
-       */
-      public com.google.protobuf.ByteString
-          getSlatBytes() {
-        java.lang.Object ref = slat_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          slat_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string slat = 4;</code>
-       */
-      public Builder setSlat(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        slat_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string slat = 4;</code>
-       */
-      public Builder clearSlat() {
-        
-        slat_ = getDefaultInstance().getSlat();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string slat = 4;</code>
-       */
-      public Builder setSlatBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        slat_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object plat_ = "";
-      /**
-       * <code>string plat = 5;</code>
-       */
-      public java.lang.String getPlat() {
-        java.lang.Object ref = plat_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          plat_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string plat = 5;</code>
-       */
-      public com.google.protobuf.ByteString
-          getPlatBytes() {
-        java.lang.Object ref = plat_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          plat_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string plat = 5;</code>
-       */
-      public Builder setPlat(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        plat_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string plat = 5;</code>
-       */
-      public Builder clearPlat() {
-        
-        plat_ = getDefaultInstance().getPlat();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string plat = 5;</code>
-       */
-      public Builder setPlatBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        plat_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object did_ = "";
-      /**
-       * <code>string did = 6;</code>
-       */
-      public java.lang.String getDid() {
-        java.lang.Object ref = did_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          did_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string did = 6;</code>
-       */
-      public com.google.protobuf.ByteString
-          getDidBytes() {
-        java.lang.Object ref = did_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          did_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string did = 6;</code>
-       */
-      public Builder setDid(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        did_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string did = 6;</code>
-       */
-      public Builder clearDid() {
-        
-        did_ = getDefaultInstance().getDid();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string did = 6;</code>
-       */
-      public Builder setDidBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        did_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object sign_ = "";
-      /**
-       * <code>string sign = 7;</code>
-       */
-      public java.lang.String getSign() {
-        java.lang.Object ref = sign_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          sign_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string sign = 7;</code>
-       */
-      public com.google.protobuf.ByteString
-          getSignBytes() {
-        java.lang.Object ref = sign_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          sign_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string sign = 7;</code>
-       */
-      public Builder setSign(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        sign_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string sign = 7;</code>
-       */
-      public Builder clearSign() {
-        
-        sign_ = getDefaultInstance().getSign();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string sign = 7;</code>
-       */
-      public Builder setSignBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        sign_ = value;
-        onChanged();
-        return this;
-      }
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
-      }
-
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:XmsgClientTokenInfo)
-    }
-
-    // @@protoc_insertion_point(class_scope:XmsgClientTokenInfo)
-    private static final x.msg.pb.PbXmsg.XmsgClientTokenInfo DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new x.msg.pb.PbXmsg.XmsgClientTokenInfo();
-    }
-
-    public static x.msg.pb.PbXmsg.XmsgClientTokenInfo getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<XmsgClientTokenInfo>
-        PARSER = new com.google.protobuf.AbstractParser<XmsgClientTokenInfo>() {
-      public XmsgClientTokenInfo parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new XmsgClientTokenInfo(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<XmsgClientTokenInfo> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<XmsgClientTokenInfo> getParserForType() {
-      return PARSER;
-    }
-
-    public x.msg.pb.PbXmsg.XmsgClientTokenInfo getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
   public interface XmsgImGroupMemberAddReqOrBuilder extends
       // @@protoc_insertion_point(interface_extends:XmsgImGroupMemberAddReq)
       com.google.protobuf.MessageOrBuilder {
@@ -39880,6 +39389,7754 @@ public final class PbXmsg {
 
   }
 
+  public interface XmsgOssUploadSimpleReqOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:XmsgOssUploadSimpleReq)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string objName = 1;</code>
+     */
+    java.lang.String getObjName();
+    /**
+     * <code>string objName = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getObjNameBytes();
+
+    /**
+     * <code>uint64 objSize = 2;</code>
+     */
+    long getObjSize();
+
+    /**
+     * <code>map&lt;string, string&gt; ext = 3;</code>
+     */
+    int getExtCount();
+    /**
+     * <code>map&lt;string, string&gt; ext = 3;</code>
+     */
+    boolean containsExt(
+        java.lang.String key);
+    /**
+     * Use {@link #getExtMap()} instead.
+     */
+    @java.lang.Deprecated
+    java.util.Map<java.lang.String, java.lang.String>
+    getExt();
+    /**
+     * <code>map&lt;string, string&gt; ext = 3;</code>
+     */
+    java.util.Map<java.lang.String, java.lang.String>
+    getExtMap();
+    /**
+     * <code>map&lt;string, string&gt; ext = 3;</code>
+     */
+
+    java.lang.String getExtOrDefault(
+        java.lang.String key,
+        java.lang.String defaultValue);
+    /**
+     * <code>map&lt;string, string&gt; ext = 3;</code>
+     */
+
+    java.lang.String getExtOrThrow(
+        java.lang.String key);
+  }
+  /**
+   * Protobuf type {@code XmsgOssUploadSimpleReq}
+   */
+  public  static final class XmsgOssUploadSimpleReq extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:XmsgOssUploadSimpleReq)
+      XmsgOssUploadSimpleReqOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use XmsgOssUploadSimpleReq.newBuilder() to construct.
+    private XmsgOssUploadSimpleReq(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private XmsgOssUploadSimpleReq() {
+      objName_ = "";
+      objSize_ = 0L;
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private XmsgOssUploadSimpleReq(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              objName_ = s;
+              break;
+            }
+            case 16: {
+
+              objSize_ = input.readUInt64();
+              break;
+            }
+            case 26: {
+              if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+                ext_ = com.google.protobuf.MapField.newMapField(
+                    ExtDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000004;
+              }
+              com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+              ext__ = input.readMessage(
+                  ExtDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              ext_.getMutableMap().put(
+                  ext__.getKey(), ext__.getValue());
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return x.msg.pb.PbXmsg.internal_static_XmsgOssUploadSimpleReq_descriptor;
+    }
+
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapField internalGetMapField(
+        int number) {
+      switch (number) {
+        case 3:
+          return internalGetExt();
+        default:
+          throw new RuntimeException(
+              "Invalid map field number: " + number);
+      }
+    }
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return x.msg.pb.PbXmsg.internal_static_XmsgOssUploadSimpleReq_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              x.msg.pb.PbXmsg.XmsgOssUploadSimpleReq.class, x.msg.pb.PbXmsg.XmsgOssUploadSimpleReq.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int OBJNAME_FIELD_NUMBER = 1;
+    private volatile java.lang.Object objName_;
+    /**
+     * <code>string objName = 1;</code>
+     */
+    public java.lang.String getObjName() {
+      java.lang.Object ref = objName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        objName_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string objName = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getObjNameBytes() {
+      java.lang.Object ref = objName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        objName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int OBJSIZE_FIELD_NUMBER = 2;
+    private long objSize_;
+    /**
+     * <code>uint64 objSize = 2;</code>
+     */
+    public long getObjSize() {
+      return objSize_;
+    }
+
+    public static final int EXT_FIELD_NUMBER = 3;
+    private static final class ExtDefaultEntryHolder {
+      static final com.google.protobuf.MapEntry<
+          java.lang.String, java.lang.String> defaultEntry =
+              com.google.protobuf.MapEntry
+              .<java.lang.String, java.lang.String>newDefaultInstance(
+                  x.msg.pb.PbXmsg.internal_static_XmsgOssUploadSimpleReq_ExtEntry_descriptor, 
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "",
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "");
+    }
+    private com.google.protobuf.MapField<
+        java.lang.String, java.lang.String> ext_;
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+    internalGetExt() {
+      if (ext_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            ExtDefaultEntryHolder.defaultEntry);
+      }
+      return ext_;
+    }
+
+    public int getExtCount() {
+      return internalGetExt().getMap().size();
+    }
+    /**
+     * <code>map&lt;string, string&gt; ext = 3;</code>
+     */
+
+    public boolean containsExt(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      return internalGetExt().getMap().containsKey(key);
+    }
+    /**
+     * Use {@link #getExtMap()} instead.
+     */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getExt() {
+      return getExtMap();
+    }
+    /**
+     * <code>map&lt;string, string&gt; ext = 3;</code>
+     */
+
+    public java.util.Map<java.lang.String, java.lang.String> getExtMap() {
+      return internalGetExt().getMap();
+    }
+    /**
+     * <code>map&lt;string, string&gt; ext = 3;</code>
+     */
+
+    public java.lang.String getExtOrDefault(
+        java.lang.String key,
+        java.lang.String defaultValue) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetExt().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <code>map&lt;string, string&gt; ext = 3;</code>
+     */
+
+    public java.lang.String getExtOrThrow(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetExt().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getObjNameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, objName_);
+      }
+      if (objSize_ != 0L) {
+        output.writeUInt64(2, objSize_);
+      }
+      com.google.protobuf.GeneratedMessageV3
+        .serializeStringMapTo(
+          output,
+          internalGetExt(),
+          ExtDefaultEntryHolder.defaultEntry,
+          3);
+      unknownFields.writeTo(output);
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getObjNameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, objName_);
+      }
+      if (objSize_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(2, objSize_);
+      }
+      for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
+           : internalGetExt().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+        ext__ = ExtDefaultEntryHolder.defaultEntry.newBuilderForType()
+            .setKey(entry.getKey())
+            .setValue(entry.getValue())
+            .build();
+        size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(3, ext__);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof x.msg.pb.PbXmsg.XmsgOssUploadSimpleReq)) {
+        return super.equals(obj);
+      }
+      x.msg.pb.PbXmsg.XmsgOssUploadSimpleReq other = (x.msg.pb.PbXmsg.XmsgOssUploadSimpleReq) obj;
+
+      boolean result = true;
+      result = result && getObjName()
+          .equals(other.getObjName());
+      result = result && (getObjSize()
+          == other.getObjSize());
+      result = result && internalGetExt().equals(
+          other.internalGetExt());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + OBJNAME_FIELD_NUMBER;
+      hash = (53 * hash) + getObjName().hashCode();
+      hash = (37 * hash) + OBJSIZE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getObjSize());
+      if (!internalGetExt().getMap().isEmpty()) {
+        hash = (37 * hash) + EXT_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetExt().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static x.msg.pb.PbXmsg.XmsgOssUploadSimpleReq parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static x.msg.pb.PbXmsg.XmsgOssUploadSimpleReq parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static x.msg.pb.PbXmsg.XmsgOssUploadSimpleReq parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static x.msg.pb.PbXmsg.XmsgOssUploadSimpleReq parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static x.msg.pb.PbXmsg.XmsgOssUploadSimpleReq parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static x.msg.pb.PbXmsg.XmsgOssUploadSimpleReq parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static x.msg.pb.PbXmsg.XmsgOssUploadSimpleReq parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static x.msg.pb.PbXmsg.XmsgOssUploadSimpleReq parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static x.msg.pb.PbXmsg.XmsgOssUploadSimpleReq parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static x.msg.pb.PbXmsg.XmsgOssUploadSimpleReq parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static x.msg.pb.PbXmsg.XmsgOssUploadSimpleReq parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static x.msg.pb.PbXmsg.XmsgOssUploadSimpleReq parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(x.msg.pb.PbXmsg.XmsgOssUploadSimpleReq prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code XmsgOssUploadSimpleReq}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:XmsgOssUploadSimpleReq)
+        x.msg.pb.PbXmsg.XmsgOssUploadSimpleReqOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return x.msg.pb.PbXmsg.internal_static_XmsgOssUploadSimpleReq_descriptor;
+      }
+
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapField internalGetMapField(
+          int number) {
+        switch (number) {
+          case 3:
+            return internalGetExt();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapField internalGetMutableMapField(
+          int number) {
+        switch (number) {
+          case 3:
+            return internalGetMutableExt();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return x.msg.pb.PbXmsg.internal_static_XmsgOssUploadSimpleReq_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                x.msg.pb.PbXmsg.XmsgOssUploadSimpleReq.class, x.msg.pb.PbXmsg.XmsgOssUploadSimpleReq.Builder.class);
+      }
+
+      // Construct using x.msg.pb.PbXmsg.XmsgOssUploadSimpleReq.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        objName_ = "";
+
+        objSize_ = 0L;
+
+        internalGetMutableExt().clear();
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return x.msg.pb.PbXmsg.internal_static_XmsgOssUploadSimpleReq_descriptor;
+      }
+
+      public x.msg.pb.PbXmsg.XmsgOssUploadSimpleReq getDefaultInstanceForType() {
+        return x.msg.pb.PbXmsg.XmsgOssUploadSimpleReq.getDefaultInstance();
+      }
+
+      public x.msg.pb.PbXmsg.XmsgOssUploadSimpleReq build() {
+        x.msg.pb.PbXmsg.XmsgOssUploadSimpleReq result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public x.msg.pb.PbXmsg.XmsgOssUploadSimpleReq buildPartial() {
+        x.msg.pb.PbXmsg.XmsgOssUploadSimpleReq result = new x.msg.pb.PbXmsg.XmsgOssUploadSimpleReq(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        result.objName_ = objName_;
+        result.objSize_ = objSize_;
+        result.ext_ = internalGetExt();
+        result.ext_.makeImmutable();
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof x.msg.pb.PbXmsg.XmsgOssUploadSimpleReq) {
+          return mergeFrom((x.msg.pb.PbXmsg.XmsgOssUploadSimpleReq)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(x.msg.pb.PbXmsg.XmsgOssUploadSimpleReq other) {
+        if (other == x.msg.pb.PbXmsg.XmsgOssUploadSimpleReq.getDefaultInstance()) return this;
+        if (!other.getObjName().isEmpty()) {
+          objName_ = other.objName_;
+          onChanged();
+        }
+        if (other.getObjSize() != 0L) {
+          setObjSize(other.getObjSize());
+        }
+        internalGetMutableExt().mergeFrom(
+            other.internalGetExt());
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        x.msg.pb.PbXmsg.XmsgOssUploadSimpleReq parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (x.msg.pb.PbXmsg.XmsgOssUploadSimpleReq) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object objName_ = "";
+      /**
+       * <code>string objName = 1;</code>
+       */
+      public java.lang.String getObjName() {
+        java.lang.Object ref = objName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          objName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string objName = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getObjNameBytes() {
+        java.lang.Object ref = objName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          objName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string objName = 1;</code>
+       */
+      public Builder setObjName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        objName_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string objName = 1;</code>
+       */
+      public Builder clearObjName() {
+        
+        objName_ = getDefaultInstance().getObjName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string objName = 1;</code>
+       */
+      public Builder setObjNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        objName_ = value;
+        onChanged();
+        return this;
+      }
+
+      private long objSize_ ;
+      /**
+       * <code>uint64 objSize = 2;</code>
+       */
+      public long getObjSize() {
+        return objSize_;
+      }
+      /**
+       * <code>uint64 objSize = 2;</code>
+       */
+      public Builder setObjSize(long value) {
+        
+        objSize_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint64 objSize = 2;</code>
+       */
+      public Builder clearObjSize() {
+        
+        objSize_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.MapField<
+          java.lang.String, java.lang.String> ext_;
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      internalGetExt() {
+        if (ext_ == null) {
+          return com.google.protobuf.MapField.emptyMapField(
+              ExtDefaultEntryHolder.defaultEntry);
+        }
+        return ext_;
+      }
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      internalGetMutableExt() {
+        onChanged();;
+        if (ext_ == null) {
+          ext_ = com.google.protobuf.MapField.newMapField(
+              ExtDefaultEntryHolder.defaultEntry);
+        }
+        if (!ext_.isMutable()) {
+          ext_ = ext_.copy();
+        }
+        return ext_;
+      }
+
+      public int getExtCount() {
+        return internalGetExt().getMap().size();
+      }
+      /**
+       * <code>map&lt;string, string&gt; ext = 3;</code>
+       */
+
+      public boolean containsExt(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        return internalGetExt().getMap().containsKey(key);
+      }
+      /**
+       * Use {@link #getExtMap()} instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.String> getExt() {
+        return getExtMap();
+      }
+      /**
+       * <code>map&lt;string, string&gt; ext = 3;</code>
+       */
+
+      public java.util.Map<java.lang.String, java.lang.String> getExtMap() {
+        return internalGetExt().getMap();
+      }
+      /**
+       * <code>map&lt;string, string&gt; ext = 3;</code>
+       */
+
+      public java.lang.String getExtOrDefault(
+          java.lang.String key,
+          java.lang.String defaultValue) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, java.lang.String> map =
+            internalGetExt().getMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+      /**
+       * <code>map&lt;string, string&gt; ext = 3;</code>
+       */
+
+      public java.lang.String getExtOrThrow(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, java.lang.String> map =
+            internalGetExt().getMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+
+      public Builder clearExt() {
+        internalGetMutableExt().getMutableMap()
+            .clear();
+        return this;
+      }
+      /**
+       * <code>map&lt;string, string&gt; ext = 3;</code>
+       */
+
+      public Builder removeExt(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutableExt().getMutableMap()
+            .remove(key);
+        return this;
+      }
+      /**
+       * Use alternate mutation accessors instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.String>
+      getMutableExt() {
+        return internalGetMutableExt().getMutableMap();
+      }
+      /**
+       * <code>map&lt;string, string&gt; ext = 3;</code>
+       */
+      public Builder putExt(
+          java.lang.String key,
+          java.lang.String value) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        if (value == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutableExt().getMutableMap()
+            .put(key, value);
+        return this;
+      }
+      /**
+       * <code>map&lt;string, string&gt; ext = 3;</code>
+       */
+
+      public Builder putAllExt(
+          java.util.Map<java.lang.String, java.lang.String> values) {
+        internalGetMutableExt().getMutableMap()
+            .putAll(values);
+        return this;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:XmsgOssUploadSimpleReq)
+    }
+
+    // @@protoc_insertion_point(class_scope:XmsgOssUploadSimpleReq)
+    private static final x.msg.pb.PbXmsg.XmsgOssUploadSimpleReq DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new x.msg.pb.PbXmsg.XmsgOssUploadSimpleReq();
+    }
+
+    public static x.msg.pb.PbXmsg.XmsgOssUploadSimpleReq getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<XmsgOssUploadSimpleReq>
+        PARSER = new com.google.protobuf.AbstractParser<XmsgOssUploadSimpleReq>() {
+      public XmsgOssUploadSimpleReq parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new XmsgOssUploadSimpleReq(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<XmsgOssUploadSimpleReq> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<XmsgOssUploadSimpleReq> getParserForType() {
+      return PARSER;
+    }
+
+    public x.msg.pb.PbXmsg.XmsgOssUploadSimpleReq getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface XmsgOssUploadSimpleRspOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:XmsgOssUploadSimpleRsp)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string oid = 1;</code>
+     */
+    java.lang.String getOid();
+    /**
+     * <code>string oid = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getOidBytes();
+
+    /**
+     * <code>string hashVal = 2;</code>
+     */
+    java.lang.String getHashVal();
+    /**
+     * <code>string hashVal = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getHashValBytes();
+
+    /**
+     * <code>map&lt;string, string&gt; ext = 3;</code>
+     */
+    int getExtCount();
+    /**
+     * <code>map&lt;string, string&gt; ext = 3;</code>
+     */
+    boolean containsExt(
+        java.lang.String key);
+    /**
+     * Use {@link #getExtMap()} instead.
+     */
+    @java.lang.Deprecated
+    java.util.Map<java.lang.String, java.lang.String>
+    getExt();
+    /**
+     * <code>map&lt;string, string&gt; ext = 3;</code>
+     */
+    java.util.Map<java.lang.String, java.lang.String>
+    getExtMap();
+    /**
+     * <code>map&lt;string, string&gt; ext = 3;</code>
+     */
+
+    java.lang.String getExtOrDefault(
+        java.lang.String key,
+        java.lang.String defaultValue);
+    /**
+     * <code>map&lt;string, string&gt; ext = 3;</code>
+     */
+
+    java.lang.String getExtOrThrow(
+        java.lang.String key);
+  }
+  /**
+   * Protobuf type {@code XmsgOssUploadSimpleRsp}
+   */
+  public  static final class XmsgOssUploadSimpleRsp extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:XmsgOssUploadSimpleRsp)
+      XmsgOssUploadSimpleRspOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use XmsgOssUploadSimpleRsp.newBuilder() to construct.
+    private XmsgOssUploadSimpleRsp(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private XmsgOssUploadSimpleRsp() {
+      oid_ = "";
+      hashVal_ = "";
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private XmsgOssUploadSimpleRsp(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              oid_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              hashVal_ = s;
+              break;
+            }
+            case 26: {
+              if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+                ext_ = com.google.protobuf.MapField.newMapField(
+                    ExtDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000004;
+              }
+              com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+              ext__ = input.readMessage(
+                  ExtDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              ext_.getMutableMap().put(
+                  ext__.getKey(), ext__.getValue());
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return x.msg.pb.PbXmsg.internal_static_XmsgOssUploadSimpleRsp_descriptor;
+    }
+
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapField internalGetMapField(
+        int number) {
+      switch (number) {
+        case 3:
+          return internalGetExt();
+        default:
+          throw new RuntimeException(
+              "Invalid map field number: " + number);
+      }
+    }
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return x.msg.pb.PbXmsg.internal_static_XmsgOssUploadSimpleRsp_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              x.msg.pb.PbXmsg.XmsgOssUploadSimpleRsp.class, x.msg.pb.PbXmsg.XmsgOssUploadSimpleRsp.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int OID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object oid_;
+    /**
+     * <code>string oid = 1;</code>
+     */
+    public java.lang.String getOid() {
+      java.lang.Object ref = oid_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        oid_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string oid = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getOidBytes() {
+      java.lang.Object ref = oid_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        oid_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int HASHVAL_FIELD_NUMBER = 2;
+    private volatile java.lang.Object hashVal_;
+    /**
+     * <code>string hashVal = 2;</code>
+     */
+    public java.lang.String getHashVal() {
+      java.lang.Object ref = hashVal_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        hashVal_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string hashVal = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getHashValBytes() {
+      java.lang.Object ref = hashVal_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        hashVal_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int EXT_FIELD_NUMBER = 3;
+    private static final class ExtDefaultEntryHolder {
+      static final com.google.protobuf.MapEntry<
+          java.lang.String, java.lang.String> defaultEntry =
+              com.google.protobuf.MapEntry
+              .<java.lang.String, java.lang.String>newDefaultInstance(
+                  x.msg.pb.PbXmsg.internal_static_XmsgOssUploadSimpleRsp_ExtEntry_descriptor, 
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "",
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "");
+    }
+    private com.google.protobuf.MapField<
+        java.lang.String, java.lang.String> ext_;
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+    internalGetExt() {
+      if (ext_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            ExtDefaultEntryHolder.defaultEntry);
+      }
+      return ext_;
+    }
+
+    public int getExtCount() {
+      return internalGetExt().getMap().size();
+    }
+    /**
+     * <code>map&lt;string, string&gt; ext = 3;</code>
+     */
+
+    public boolean containsExt(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      return internalGetExt().getMap().containsKey(key);
+    }
+    /**
+     * Use {@link #getExtMap()} instead.
+     */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getExt() {
+      return getExtMap();
+    }
+    /**
+     * <code>map&lt;string, string&gt; ext = 3;</code>
+     */
+
+    public java.util.Map<java.lang.String, java.lang.String> getExtMap() {
+      return internalGetExt().getMap();
+    }
+    /**
+     * <code>map&lt;string, string&gt; ext = 3;</code>
+     */
+
+    public java.lang.String getExtOrDefault(
+        java.lang.String key,
+        java.lang.String defaultValue) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetExt().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <code>map&lt;string, string&gt; ext = 3;</code>
+     */
+
+    public java.lang.String getExtOrThrow(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetExt().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getOidBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, oid_);
+      }
+      if (!getHashValBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, hashVal_);
+      }
+      com.google.protobuf.GeneratedMessageV3
+        .serializeStringMapTo(
+          output,
+          internalGetExt(),
+          ExtDefaultEntryHolder.defaultEntry,
+          3);
+      unknownFields.writeTo(output);
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getOidBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, oid_);
+      }
+      if (!getHashValBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, hashVal_);
+      }
+      for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
+           : internalGetExt().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+        ext__ = ExtDefaultEntryHolder.defaultEntry.newBuilderForType()
+            .setKey(entry.getKey())
+            .setValue(entry.getValue())
+            .build();
+        size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(3, ext__);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof x.msg.pb.PbXmsg.XmsgOssUploadSimpleRsp)) {
+        return super.equals(obj);
+      }
+      x.msg.pb.PbXmsg.XmsgOssUploadSimpleRsp other = (x.msg.pb.PbXmsg.XmsgOssUploadSimpleRsp) obj;
+
+      boolean result = true;
+      result = result && getOid()
+          .equals(other.getOid());
+      result = result && getHashVal()
+          .equals(other.getHashVal());
+      result = result && internalGetExt().equals(
+          other.internalGetExt());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + OID_FIELD_NUMBER;
+      hash = (53 * hash) + getOid().hashCode();
+      hash = (37 * hash) + HASHVAL_FIELD_NUMBER;
+      hash = (53 * hash) + getHashVal().hashCode();
+      if (!internalGetExt().getMap().isEmpty()) {
+        hash = (37 * hash) + EXT_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetExt().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static x.msg.pb.PbXmsg.XmsgOssUploadSimpleRsp parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static x.msg.pb.PbXmsg.XmsgOssUploadSimpleRsp parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static x.msg.pb.PbXmsg.XmsgOssUploadSimpleRsp parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static x.msg.pb.PbXmsg.XmsgOssUploadSimpleRsp parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static x.msg.pb.PbXmsg.XmsgOssUploadSimpleRsp parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static x.msg.pb.PbXmsg.XmsgOssUploadSimpleRsp parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static x.msg.pb.PbXmsg.XmsgOssUploadSimpleRsp parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static x.msg.pb.PbXmsg.XmsgOssUploadSimpleRsp parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static x.msg.pb.PbXmsg.XmsgOssUploadSimpleRsp parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static x.msg.pb.PbXmsg.XmsgOssUploadSimpleRsp parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static x.msg.pb.PbXmsg.XmsgOssUploadSimpleRsp parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static x.msg.pb.PbXmsg.XmsgOssUploadSimpleRsp parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(x.msg.pb.PbXmsg.XmsgOssUploadSimpleRsp prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code XmsgOssUploadSimpleRsp}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:XmsgOssUploadSimpleRsp)
+        x.msg.pb.PbXmsg.XmsgOssUploadSimpleRspOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return x.msg.pb.PbXmsg.internal_static_XmsgOssUploadSimpleRsp_descriptor;
+      }
+
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapField internalGetMapField(
+          int number) {
+        switch (number) {
+          case 3:
+            return internalGetExt();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapField internalGetMutableMapField(
+          int number) {
+        switch (number) {
+          case 3:
+            return internalGetMutableExt();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return x.msg.pb.PbXmsg.internal_static_XmsgOssUploadSimpleRsp_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                x.msg.pb.PbXmsg.XmsgOssUploadSimpleRsp.class, x.msg.pb.PbXmsg.XmsgOssUploadSimpleRsp.Builder.class);
+      }
+
+      // Construct using x.msg.pb.PbXmsg.XmsgOssUploadSimpleRsp.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        oid_ = "";
+
+        hashVal_ = "";
+
+        internalGetMutableExt().clear();
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return x.msg.pb.PbXmsg.internal_static_XmsgOssUploadSimpleRsp_descriptor;
+      }
+
+      public x.msg.pb.PbXmsg.XmsgOssUploadSimpleRsp getDefaultInstanceForType() {
+        return x.msg.pb.PbXmsg.XmsgOssUploadSimpleRsp.getDefaultInstance();
+      }
+
+      public x.msg.pb.PbXmsg.XmsgOssUploadSimpleRsp build() {
+        x.msg.pb.PbXmsg.XmsgOssUploadSimpleRsp result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public x.msg.pb.PbXmsg.XmsgOssUploadSimpleRsp buildPartial() {
+        x.msg.pb.PbXmsg.XmsgOssUploadSimpleRsp result = new x.msg.pb.PbXmsg.XmsgOssUploadSimpleRsp(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        result.oid_ = oid_;
+        result.hashVal_ = hashVal_;
+        result.ext_ = internalGetExt();
+        result.ext_.makeImmutable();
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof x.msg.pb.PbXmsg.XmsgOssUploadSimpleRsp) {
+          return mergeFrom((x.msg.pb.PbXmsg.XmsgOssUploadSimpleRsp)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(x.msg.pb.PbXmsg.XmsgOssUploadSimpleRsp other) {
+        if (other == x.msg.pb.PbXmsg.XmsgOssUploadSimpleRsp.getDefaultInstance()) return this;
+        if (!other.getOid().isEmpty()) {
+          oid_ = other.oid_;
+          onChanged();
+        }
+        if (!other.getHashVal().isEmpty()) {
+          hashVal_ = other.hashVal_;
+          onChanged();
+        }
+        internalGetMutableExt().mergeFrom(
+            other.internalGetExt());
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        x.msg.pb.PbXmsg.XmsgOssUploadSimpleRsp parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (x.msg.pb.PbXmsg.XmsgOssUploadSimpleRsp) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object oid_ = "";
+      /**
+       * <code>string oid = 1;</code>
+       */
+      public java.lang.String getOid() {
+        java.lang.Object ref = oid_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          oid_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string oid = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getOidBytes() {
+        java.lang.Object ref = oid_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          oid_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string oid = 1;</code>
+       */
+      public Builder setOid(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        oid_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string oid = 1;</code>
+       */
+      public Builder clearOid() {
+        
+        oid_ = getDefaultInstance().getOid();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string oid = 1;</code>
+       */
+      public Builder setOidBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        oid_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object hashVal_ = "";
+      /**
+       * <code>string hashVal = 2;</code>
+       */
+      public java.lang.String getHashVal() {
+        java.lang.Object ref = hashVal_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          hashVal_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string hashVal = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getHashValBytes() {
+        java.lang.Object ref = hashVal_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          hashVal_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string hashVal = 2;</code>
+       */
+      public Builder setHashVal(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        hashVal_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string hashVal = 2;</code>
+       */
+      public Builder clearHashVal() {
+        
+        hashVal_ = getDefaultInstance().getHashVal();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string hashVal = 2;</code>
+       */
+      public Builder setHashValBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        hashVal_ = value;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.MapField<
+          java.lang.String, java.lang.String> ext_;
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      internalGetExt() {
+        if (ext_ == null) {
+          return com.google.protobuf.MapField.emptyMapField(
+              ExtDefaultEntryHolder.defaultEntry);
+        }
+        return ext_;
+      }
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      internalGetMutableExt() {
+        onChanged();;
+        if (ext_ == null) {
+          ext_ = com.google.protobuf.MapField.newMapField(
+              ExtDefaultEntryHolder.defaultEntry);
+        }
+        if (!ext_.isMutable()) {
+          ext_ = ext_.copy();
+        }
+        return ext_;
+      }
+
+      public int getExtCount() {
+        return internalGetExt().getMap().size();
+      }
+      /**
+       * <code>map&lt;string, string&gt; ext = 3;</code>
+       */
+
+      public boolean containsExt(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        return internalGetExt().getMap().containsKey(key);
+      }
+      /**
+       * Use {@link #getExtMap()} instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.String> getExt() {
+        return getExtMap();
+      }
+      /**
+       * <code>map&lt;string, string&gt; ext = 3;</code>
+       */
+
+      public java.util.Map<java.lang.String, java.lang.String> getExtMap() {
+        return internalGetExt().getMap();
+      }
+      /**
+       * <code>map&lt;string, string&gt; ext = 3;</code>
+       */
+
+      public java.lang.String getExtOrDefault(
+          java.lang.String key,
+          java.lang.String defaultValue) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, java.lang.String> map =
+            internalGetExt().getMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+      /**
+       * <code>map&lt;string, string&gt; ext = 3;</code>
+       */
+
+      public java.lang.String getExtOrThrow(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, java.lang.String> map =
+            internalGetExt().getMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+
+      public Builder clearExt() {
+        internalGetMutableExt().getMutableMap()
+            .clear();
+        return this;
+      }
+      /**
+       * <code>map&lt;string, string&gt; ext = 3;</code>
+       */
+
+      public Builder removeExt(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutableExt().getMutableMap()
+            .remove(key);
+        return this;
+      }
+      /**
+       * Use alternate mutation accessors instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.String>
+      getMutableExt() {
+        return internalGetMutableExt().getMutableMap();
+      }
+      /**
+       * <code>map&lt;string, string&gt; ext = 3;</code>
+       */
+      public Builder putExt(
+          java.lang.String key,
+          java.lang.String value) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        if (value == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutableExt().getMutableMap()
+            .put(key, value);
+        return this;
+      }
+      /**
+       * <code>map&lt;string, string&gt; ext = 3;</code>
+       */
+
+      public Builder putAllExt(
+          java.util.Map<java.lang.String, java.lang.String> values) {
+        internalGetMutableExt().getMutableMap()
+            .putAll(values);
+        return this;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:XmsgOssUploadSimpleRsp)
+    }
+
+    // @@protoc_insertion_point(class_scope:XmsgOssUploadSimpleRsp)
+    private static final x.msg.pb.PbXmsg.XmsgOssUploadSimpleRsp DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new x.msg.pb.PbXmsg.XmsgOssUploadSimpleRsp();
+    }
+
+    public static x.msg.pb.PbXmsg.XmsgOssUploadSimpleRsp getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<XmsgOssUploadSimpleRsp>
+        PARSER = new com.google.protobuf.AbstractParser<XmsgOssUploadSimpleRsp>() {
+      public XmsgOssUploadSimpleRsp parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new XmsgOssUploadSimpleRsp(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<XmsgOssUploadSimpleRsp> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<XmsgOssUploadSimpleRsp> getParserForType() {
+      return PARSER;
+    }
+
+    public x.msg.pb.PbXmsg.XmsgOssUploadSimpleRsp getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface XmsgOssDownloadSimpleReqOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:XmsgOssDownloadSimpleReq)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string oid = 1;</code>
+     */
+    java.lang.String getOid();
+    /**
+     * <code>string oid = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getOidBytes();
+
+    /**
+     * <code>string cgt = 2;</code>
+     */
+    java.lang.String getCgt();
+    /**
+     * <code>string cgt = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getCgtBytes();
+
+    /**
+     * <code>uint64 offset = 3;</code>
+     */
+    long getOffset();
+
+    /**
+     * <code>uint64 len = 4;</code>
+     */
+    long getLen();
+
+    /**
+     * <code>map&lt;string, string&gt; ext = 5;</code>
+     */
+    int getExtCount();
+    /**
+     * <code>map&lt;string, string&gt; ext = 5;</code>
+     */
+    boolean containsExt(
+        java.lang.String key);
+    /**
+     * Use {@link #getExtMap()} instead.
+     */
+    @java.lang.Deprecated
+    java.util.Map<java.lang.String, java.lang.String>
+    getExt();
+    /**
+     * <code>map&lt;string, string&gt; ext = 5;</code>
+     */
+    java.util.Map<java.lang.String, java.lang.String>
+    getExtMap();
+    /**
+     * <code>map&lt;string, string&gt; ext = 5;</code>
+     */
+
+    java.lang.String getExtOrDefault(
+        java.lang.String key,
+        java.lang.String defaultValue);
+    /**
+     * <code>map&lt;string, string&gt; ext = 5;</code>
+     */
+
+    java.lang.String getExtOrThrow(
+        java.lang.String key);
+  }
+  /**
+   * Protobuf type {@code XmsgOssDownloadSimpleReq}
+   */
+  public  static final class XmsgOssDownloadSimpleReq extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:XmsgOssDownloadSimpleReq)
+      XmsgOssDownloadSimpleReqOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use XmsgOssDownloadSimpleReq.newBuilder() to construct.
+    private XmsgOssDownloadSimpleReq(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private XmsgOssDownloadSimpleReq() {
+      oid_ = "";
+      cgt_ = "";
+      offset_ = 0L;
+      len_ = 0L;
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private XmsgOssDownloadSimpleReq(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              oid_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              cgt_ = s;
+              break;
+            }
+            case 24: {
+
+              offset_ = input.readUInt64();
+              break;
+            }
+            case 32: {
+
+              len_ = input.readUInt64();
+              break;
+            }
+            case 42: {
+              if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+                ext_ = com.google.protobuf.MapField.newMapField(
+                    ExtDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000010;
+              }
+              com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+              ext__ = input.readMessage(
+                  ExtDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              ext_.getMutableMap().put(
+                  ext__.getKey(), ext__.getValue());
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return x.msg.pb.PbXmsg.internal_static_XmsgOssDownloadSimpleReq_descriptor;
+    }
+
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapField internalGetMapField(
+        int number) {
+      switch (number) {
+        case 5:
+          return internalGetExt();
+        default:
+          throw new RuntimeException(
+              "Invalid map field number: " + number);
+      }
+    }
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return x.msg.pb.PbXmsg.internal_static_XmsgOssDownloadSimpleReq_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              x.msg.pb.PbXmsg.XmsgOssDownloadSimpleReq.class, x.msg.pb.PbXmsg.XmsgOssDownloadSimpleReq.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int OID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object oid_;
+    /**
+     * <code>string oid = 1;</code>
+     */
+    public java.lang.String getOid() {
+      java.lang.Object ref = oid_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        oid_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string oid = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getOidBytes() {
+      java.lang.Object ref = oid_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        oid_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CGT_FIELD_NUMBER = 2;
+    private volatile java.lang.Object cgt_;
+    /**
+     * <code>string cgt = 2;</code>
+     */
+    public java.lang.String getCgt() {
+      java.lang.Object ref = cgt_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        cgt_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string cgt = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getCgtBytes() {
+      java.lang.Object ref = cgt_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        cgt_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int OFFSET_FIELD_NUMBER = 3;
+    private long offset_;
+    /**
+     * <code>uint64 offset = 3;</code>
+     */
+    public long getOffset() {
+      return offset_;
+    }
+
+    public static final int LEN_FIELD_NUMBER = 4;
+    private long len_;
+    /**
+     * <code>uint64 len = 4;</code>
+     */
+    public long getLen() {
+      return len_;
+    }
+
+    public static final int EXT_FIELD_NUMBER = 5;
+    private static final class ExtDefaultEntryHolder {
+      static final com.google.protobuf.MapEntry<
+          java.lang.String, java.lang.String> defaultEntry =
+              com.google.protobuf.MapEntry
+              .<java.lang.String, java.lang.String>newDefaultInstance(
+                  x.msg.pb.PbXmsg.internal_static_XmsgOssDownloadSimpleReq_ExtEntry_descriptor, 
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "",
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "");
+    }
+    private com.google.protobuf.MapField<
+        java.lang.String, java.lang.String> ext_;
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+    internalGetExt() {
+      if (ext_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            ExtDefaultEntryHolder.defaultEntry);
+      }
+      return ext_;
+    }
+
+    public int getExtCount() {
+      return internalGetExt().getMap().size();
+    }
+    /**
+     * <code>map&lt;string, string&gt; ext = 5;</code>
+     */
+
+    public boolean containsExt(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      return internalGetExt().getMap().containsKey(key);
+    }
+    /**
+     * Use {@link #getExtMap()} instead.
+     */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getExt() {
+      return getExtMap();
+    }
+    /**
+     * <code>map&lt;string, string&gt; ext = 5;</code>
+     */
+
+    public java.util.Map<java.lang.String, java.lang.String> getExtMap() {
+      return internalGetExt().getMap();
+    }
+    /**
+     * <code>map&lt;string, string&gt; ext = 5;</code>
+     */
+
+    public java.lang.String getExtOrDefault(
+        java.lang.String key,
+        java.lang.String defaultValue) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetExt().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <code>map&lt;string, string&gt; ext = 5;</code>
+     */
+
+    public java.lang.String getExtOrThrow(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetExt().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getOidBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, oid_);
+      }
+      if (!getCgtBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, cgt_);
+      }
+      if (offset_ != 0L) {
+        output.writeUInt64(3, offset_);
+      }
+      if (len_ != 0L) {
+        output.writeUInt64(4, len_);
+      }
+      com.google.protobuf.GeneratedMessageV3
+        .serializeStringMapTo(
+          output,
+          internalGetExt(),
+          ExtDefaultEntryHolder.defaultEntry,
+          5);
+      unknownFields.writeTo(output);
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getOidBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, oid_);
+      }
+      if (!getCgtBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, cgt_);
+      }
+      if (offset_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(3, offset_);
+      }
+      if (len_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(4, len_);
+      }
+      for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
+           : internalGetExt().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+        ext__ = ExtDefaultEntryHolder.defaultEntry.newBuilderForType()
+            .setKey(entry.getKey())
+            .setValue(entry.getValue())
+            .build();
+        size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(5, ext__);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof x.msg.pb.PbXmsg.XmsgOssDownloadSimpleReq)) {
+        return super.equals(obj);
+      }
+      x.msg.pb.PbXmsg.XmsgOssDownloadSimpleReq other = (x.msg.pb.PbXmsg.XmsgOssDownloadSimpleReq) obj;
+
+      boolean result = true;
+      result = result && getOid()
+          .equals(other.getOid());
+      result = result && getCgt()
+          .equals(other.getCgt());
+      result = result && (getOffset()
+          == other.getOffset());
+      result = result && (getLen()
+          == other.getLen());
+      result = result && internalGetExt().equals(
+          other.internalGetExt());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + OID_FIELD_NUMBER;
+      hash = (53 * hash) + getOid().hashCode();
+      hash = (37 * hash) + CGT_FIELD_NUMBER;
+      hash = (53 * hash) + getCgt().hashCode();
+      hash = (37 * hash) + OFFSET_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getOffset());
+      hash = (37 * hash) + LEN_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getLen());
+      if (!internalGetExt().getMap().isEmpty()) {
+        hash = (37 * hash) + EXT_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetExt().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static x.msg.pb.PbXmsg.XmsgOssDownloadSimpleReq parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static x.msg.pb.PbXmsg.XmsgOssDownloadSimpleReq parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static x.msg.pb.PbXmsg.XmsgOssDownloadSimpleReq parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static x.msg.pb.PbXmsg.XmsgOssDownloadSimpleReq parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static x.msg.pb.PbXmsg.XmsgOssDownloadSimpleReq parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static x.msg.pb.PbXmsg.XmsgOssDownloadSimpleReq parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static x.msg.pb.PbXmsg.XmsgOssDownloadSimpleReq parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static x.msg.pb.PbXmsg.XmsgOssDownloadSimpleReq parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static x.msg.pb.PbXmsg.XmsgOssDownloadSimpleReq parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static x.msg.pb.PbXmsg.XmsgOssDownloadSimpleReq parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static x.msg.pb.PbXmsg.XmsgOssDownloadSimpleReq parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static x.msg.pb.PbXmsg.XmsgOssDownloadSimpleReq parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(x.msg.pb.PbXmsg.XmsgOssDownloadSimpleReq prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code XmsgOssDownloadSimpleReq}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:XmsgOssDownloadSimpleReq)
+        x.msg.pb.PbXmsg.XmsgOssDownloadSimpleReqOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return x.msg.pb.PbXmsg.internal_static_XmsgOssDownloadSimpleReq_descriptor;
+      }
+
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapField internalGetMapField(
+          int number) {
+        switch (number) {
+          case 5:
+            return internalGetExt();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapField internalGetMutableMapField(
+          int number) {
+        switch (number) {
+          case 5:
+            return internalGetMutableExt();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return x.msg.pb.PbXmsg.internal_static_XmsgOssDownloadSimpleReq_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                x.msg.pb.PbXmsg.XmsgOssDownloadSimpleReq.class, x.msg.pb.PbXmsg.XmsgOssDownloadSimpleReq.Builder.class);
+      }
+
+      // Construct using x.msg.pb.PbXmsg.XmsgOssDownloadSimpleReq.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        oid_ = "";
+
+        cgt_ = "";
+
+        offset_ = 0L;
+
+        len_ = 0L;
+
+        internalGetMutableExt().clear();
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return x.msg.pb.PbXmsg.internal_static_XmsgOssDownloadSimpleReq_descriptor;
+      }
+
+      public x.msg.pb.PbXmsg.XmsgOssDownloadSimpleReq getDefaultInstanceForType() {
+        return x.msg.pb.PbXmsg.XmsgOssDownloadSimpleReq.getDefaultInstance();
+      }
+
+      public x.msg.pb.PbXmsg.XmsgOssDownloadSimpleReq build() {
+        x.msg.pb.PbXmsg.XmsgOssDownloadSimpleReq result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public x.msg.pb.PbXmsg.XmsgOssDownloadSimpleReq buildPartial() {
+        x.msg.pb.PbXmsg.XmsgOssDownloadSimpleReq result = new x.msg.pb.PbXmsg.XmsgOssDownloadSimpleReq(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        result.oid_ = oid_;
+        result.cgt_ = cgt_;
+        result.offset_ = offset_;
+        result.len_ = len_;
+        result.ext_ = internalGetExt();
+        result.ext_.makeImmutable();
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof x.msg.pb.PbXmsg.XmsgOssDownloadSimpleReq) {
+          return mergeFrom((x.msg.pb.PbXmsg.XmsgOssDownloadSimpleReq)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(x.msg.pb.PbXmsg.XmsgOssDownloadSimpleReq other) {
+        if (other == x.msg.pb.PbXmsg.XmsgOssDownloadSimpleReq.getDefaultInstance()) return this;
+        if (!other.getOid().isEmpty()) {
+          oid_ = other.oid_;
+          onChanged();
+        }
+        if (!other.getCgt().isEmpty()) {
+          cgt_ = other.cgt_;
+          onChanged();
+        }
+        if (other.getOffset() != 0L) {
+          setOffset(other.getOffset());
+        }
+        if (other.getLen() != 0L) {
+          setLen(other.getLen());
+        }
+        internalGetMutableExt().mergeFrom(
+            other.internalGetExt());
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        x.msg.pb.PbXmsg.XmsgOssDownloadSimpleReq parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (x.msg.pb.PbXmsg.XmsgOssDownloadSimpleReq) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object oid_ = "";
+      /**
+       * <code>string oid = 1;</code>
+       */
+      public java.lang.String getOid() {
+        java.lang.Object ref = oid_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          oid_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string oid = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getOidBytes() {
+        java.lang.Object ref = oid_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          oid_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string oid = 1;</code>
+       */
+      public Builder setOid(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        oid_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string oid = 1;</code>
+       */
+      public Builder clearOid() {
+        
+        oid_ = getDefaultInstance().getOid();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string oid = 1;</code>
+       */
+      public Builder setOidBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        oid_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object cgt_ = "";
+      /**
+       * <code>string cgt = 2;</code>
+       */
+      public java.lang.String getCgt() {
+        java.lang.Object ref = cgt_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          cgt_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string cgt = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getCgtBytes() {
+        java.lang.Object ref = cgt_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          cgt_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string cgt = 2;</code>
+       */
+      public Builder setCgt(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        cgt_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string cgt = 2;</code>
+       */
+      public Builder clearCgt() {
+        
+        cgt_ = getDefaultInstance().getCgt();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string cgt = 2;</code>
+       */
+      public Builder setCgtBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        cgt_ = value;
+        onChanged();
+        return this;
+      }
+
+      private long offset_ ;
+      /**
+       * <code>uint64 offset = 3;</code>
+       */
+      public long getOffset() {
+        return offset_;
+      }
+      /**
+       * <code>uint64 offset = 3;</code>
+       */
+      public Builder setOffset(long value) {
+        
+        offset_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint64 offset = 3;</code>
+       */
+      public Builder clearOffset() {
+        
+        offset_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long len_ ;
+      /**
+       * <code>uint64 len = 4;</code>
+       */
+      public long getLen() {
+        return len_;
+      }
+      /**
+       * <code>uint64 len = 4;</code>
+       */
+      public Builder setLen(long value) {
+        
+        len_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint64 len = 4;</code>
+       */
+      public Builder clearLen() {
+        
+        len_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.MapField<
+          java.lang.String, java.lang.String> ext_;
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      internalGetExt() {
+        if (ext_ == null) {
+          return com.google.protobuf.MapField.emptyMapField(
+              ExtDefaultEntryHolder.defaultEntry);
+        }
+        return ext_;
+      }
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      internalGetMutableExt() {
+        onChanged();;
+        if (ext_ == null) {
+          ext_ = com.google.protobuf.MapField.newMapField(
+              ExtDefaultEntryHolder.defaultEntry);
+        }
+        if (!ext_.isMutable()) {
+          ext_ = ext_.copy();
+        }
+        return ext_;
+      }
+
+      public int getExtCount() {
+        return internalGetExt().getMap().size();
+      }
+      /**
+       * <code>map&lt;string, string&gt; ext = 5;</code>
+       */
+
+      public boolean containsExt(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        return internalGetExt().getMap().containsKey(key);
+      }
+      /**
+       * Use {@link #getExtMap()} instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.String> getExt() {
+        return getExtMap();
+      }
+      /**
+       * <code>map&lt;string, string&gt; ext = 5;</code>
+       */
+
+      public java.util.Map<java.lang.String, java.lang.String> getExtMap() {
+        return internalGetExt().getMap();
+      }
+      /**
+       * <code>map&lt;string, string&gt; ext = 5;</code>
+       */
+
+      public java.lang.String getExtOrDefault(
+          java.lang.String key,
+          java.lang.String defaultValue) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, java.lang.String> map =
+            internalGetExt().getMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+      /**
+       * <code>map&lt;string, string&gt; ext = 5;</code>
+       */
+
+      public java.lang.String getExtOrThrow(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, java.lang.String> map =
+            internalGetExt().getMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+
+      public Builder clearExt() {
+        internalGetMutableExt().getMutableMap()
+            .clear();
+        return this;
+      }
+      /**
+       * <code>map&lt;string, string&gt; ext = 5;</code>
+       */
+
+      public Builder removeExt(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutableExt().getMutableMap()
+            .remove(key);
+        return this;
+      }
+      /**
+       * Use alternate mutation accessors instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.String>
+      getMutableExt() {
+        return internalGetMutableExt().getMutableMap();
+      }
+      /**
+       * <code>map&lt;string, string&gt; ext = 5;</code>
+       */
+      public Builder putExt(
+          java.lang.String key,
+          java.lang.String value) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        if (value == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutableExt().getMutableMap()
+            .put(key, value);
+        return this;
+      }
+      /**
+       * <code>map&lt;string, string&gt; ext = 5;</code>
+       */
+
+      public Builder putAllExt(
+          java.util.Map<java.lang.String, java.lang.String> values) {
+        internalGetMutableExt().getMutableMap()
+            .putAll(values);
+        return this;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:XmsgOssDownloadSimpleReq)
+    }
+
+    // @@protoc_insertion_point(class_scope:XmsgOssDownloadSimpleReq)
+    private static final x.msg.pb.PbXmsg.XmsgOssDownloadSimpleReq DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new x.msg.pb.PbXmsg.XmsgOssDownloadSimpleReq();
+    }
+
+    public static x.msg.pb.PbXmsg.XmsgOssDownloadSimpleReq getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<XmsgOssDownloadSimpleReq>
+        PARSER = new com.google.protobuf.AbstractParser<XmsgOssDownloadSimpleReq>() {
+      public XmsgOssDownloadSimpleReq parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new XmsgOssDownloadSimpleReq(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<XmsgOssDownloadSimpleReq> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<XmsgOssDownloadSimpleReq> getParserForType() {
+      return PARSER;
+    }
+
+    public x.msg.pb.PbXmsg.XmsgOssDownloadSimpleReq getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface XmsgOssDownloadSimpleRspOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:XmsgOssDownloadSimpleRsp)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string objName = 1;</code>
+     */
+    java.lang.String getObjName();
+    /**
+     * <code>string objName = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getObjNameBytes();
+
+    /**
+     * <code>uint64 objSize = 2;</code>
+     */
+    long getObjSize();
+
+    /**
+     * <code>string hashVal = 3;</code>
+     */
+    java.lang.String getHashVal();
+    /**
+     * <code>string hashVal = 3;</code>
+     */
+    com.google.protobuf.ByteString
+        getHashValBytes();
+
+    /**
+     * <code>uint64 gts = 4;</code>
+     */
+    long getGts();
+
+    /**
+     * <code>map&lt;string, string&gt; ext = 5;</code>
+     */
+    int getExtCount();
+    /**
+     * <code>map&lt;string, string&gt; ext = 5;</code>
+     */
+    boolean containsExt(
+        java.lang.String key);
+    /**
+     * Use {@link #getExtMap()} instead.
+     */
+    @java.lang.Deprecated
+    java.util.Map<java.lang.String, java.lang.String>
+    getExt();
+    /**
+     * <code>map&lt;string, string&gt; ext = 5;</code>
+     */
+    java.util.Map<java.lang.String, java.lang.String>
+    getExtMap();
+    /**
+     * <code>map&lt;string, string&gt; ext = 5;</code>
+     */
+
+    java.lang.String getExtOrDefault(
+        java.lang.String key,
+        java.lang.String defaultValue);
+    /**
+     * <code>map&lt;string, string&gt; ext = 5;</code>
+     */
+
+    java.lang.String getExtOrThrow(
+        java.lang.String key);
+  }
+  /**
+   * Protobuf type {@code XmsgOssDownloadSimpleRsp}
+   */
+  public  static final class XmsgOssDownloadSimpleRsp extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:XmsgOssDownloadSimpleRsp)
+      XmsgOssDownloadSimpleRspOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use XmsgOssDownloadSimpleRsp.newBuilder() to construct.
+    private XmsgOssDownloadSimpleRsp(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private XmsgOssDownloadSimpleRsp() {
+      objName_ = "";
+      objSize_ = 0L;
+      hashVal_ = "";
+      gts_ = 0L;
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private XmsgOssDownloadSimpleRsp(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              objName_ = s;
+              break;
+            }
+            case 16: {
+
+              objSize_ = input.readUInt64();
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              hashVal_ = s;
+              break;
+            }
+            case 32: {
+
+              gts_ = input.readUInt64();
+              break;
+            }
+            case 42: {
+              if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+                ext_ = com.google.protobuf.MapField.newMapField(
+                    ExtDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000010;
+              }
+              com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+              ext__ = input.readMessage(
+                  ExtDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              ext_.getMutableMap().put(
+                  ext__.getKey(), ext__.getValue());
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return x.msg.pb.PbXmsg.internal_static_XmsgOssDownloadSimpleRsp_descriptor;
+    }
+
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapField internalGetMapField(
+        int number) {
+      switch (number) {
+        case 5:
+          return internalGetExt();
+        default:
+          throw new RuntimeException(
+              "Invalid map field number: " + number);
+      }
+    }
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return x.msg.pb.PbXmsg.internal_static_XmsgOssDownloadSimpleRsp_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              x.msg.pb.PbXmsg.XmsgOssDownloadSimpleRsp.class, x.msg.pb.PbXmsg.XmsgOssDownloadSimpleRsp.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int OBJNAME_FIELD_NUMBER = 1;
+    private volatile java.lang.Object objName_;
+    /**
+     * <code>string objName = 1;</code>
+     */
+    public java.lang.String getObjName() {
+      java.lang.Object ref = objName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        objName_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string objName = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getObjNameBytes() {
+      java.lang.Object ref = objName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        objName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int OBJSIZE_FIELD_NUMBER = 2;
+    private long objSize_;
+    /**
+     * <code>uint64 objSize = 2;</code>
+     */
+    public long getObjSize() {
+      return objSize_;
+    }
+
+    public static final int HASHVAL_FIELD_NUMBER = 3;
+    private volatile java.lang.Object hashVal_;
+    /**
+     * <code>string hashVal = 3;</code>
+     */
+    public java.lang.String getHashVal() {
+      java.lang.Object ref = hashVal_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        hashVal_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string hashVal = 3;</code>
+     */
+    public com.google.protobuf.ByteString
+        getHashValBytes() {
+      java.lang.Object ref = hashVal_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        hashVal_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int GTS_FIELD_NUMBER = 4;
+    private long gts_;
+    /**
+     * <code>uint64 gts = 4;</code>
+     */
+    public long getGts() {
+      return gts_;
+    }
+
+    public static final int EXT_FIELD_NUMBER = 5;
+    private static final class ExtDefaultEntryHolder {
+      static final com.google.protobuf.MapEntry<
+          java.lang.String, java.lang.String> defaultEntry =
+              com.google.protobuf.MapEntry
+              .<java.lang.String, java.lang.String>newDefaultInstance(
+                  x.msg.pb.PbXmsg.internal_static_XmsgOssDownloadSimpleRsp_ExtEntry_descriptor, 
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "",
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "");
+    }
+    private com.google.protobuf.MapField<
+        java.lang.String, java.lang.String> ext_;
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+    internalGetExt() {
+      if (ext_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            ExtDefaultEntryHolder.defaultEntry);
+      }
+      return ext_;
+    }
+
+    public int getExtCount() {
+      return internalGetExt().getMap().size();
+    }
+    /**
+     * <code>map&lt;string, string&gt; ext = 5;</code>
+     */
+
+    public boolean containsExt(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      return internalGetExt().getMap().containsKey(key);
+    }
+    /**
+     * Use {@link #getExtMap()} instead.
+     */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getExt() {
+      return getExtMap();
+    }
+    /**
+     * <code>map&lt;string, string&gt; ext = 5;</code>
+     */
+
+    public java.util.Map<java.lang.String, java.lang.String> getExtMap() {
+      return internalGetExt().getMap();
+    }
+    /**
+     * <code>map&lt;string, string&gt; ext = 5;</code>
+     */
+
+    public java.lang.String getExtOrDefault(
+        java.lang.String key,
+        java.lang.String defaultValue) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetExt().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <code>map&lt;string, string&gt; ext = 5;</code>
+     */
+
+    public java.lang.String getExtOrThrow(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetExt().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getObjNameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, objName_);
+      }
+      if (objSize_ != 0L) {
+        output.writeUInt64(2, objSize_);
+      }
+      if (!getHashValBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, hashVal_);
+      }
+      if (gts_ != 0L) {
+        output.writeUInt64(4, gts_);
+      }
+      com.google.protobuf.GeneratedMessageV3
+        .serializeStringMapTo(
+          output,
+          internalGetExt(),
+          ExtDefaultEntryHolder.defaultEntry,
+          5);
+      unknownFields.writeTo(output);
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getObjNameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, objName_);
+      }
+      if (objSize_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(2, objSize_);
+      }
+      if (!getHashValBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, hashVal_);
+      }
+      if (gts_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(4, gts_);
+      }
+      for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
+           : internalGetExt().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+        ext__ = ExtDefaultEntryHolder.defaultEntry.newBuilderForType()
+            .setKey(entry.getKey())
+            .setValue(entry.getValue())
+            .build();
+        size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(5, ext__);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof x.msg.pb.PbXmsg.XmsgOssDownloadSimpleRsp)) {
+        return super.equals(obj);
+      }
+      x.msg.pb.PbXmsg.XmsgOssDownloadSimpleRsp other = (x.msg.pb.PbXmsg.XmsgOssDownloadSimpleRsp) obj;
+
+      boolean result = true;
+      result = result && getObjName()
+          .equals(other.getObjName());
+      result = result && (getObjSize()
+          == other.getObjSize());
+      result = result && getHashVal()
+          .equals(other.getHashVal());
+      result = result && (getGts()
+          == other.getGts());
+      result = result && internalGetExt().equals(
+          other.internalGetExt());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + OBJNAME_FIELD_NUMBER;
+      hash = (53 * hash) + getObjName().hashCode();
+      hash = (37 * hash) + OBJSIZE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getObjSize());
+      hash = (37 * hash) + HASHVAL_FIELD_NUMBER;
+      hash = (53 * hash) + getHashVal().hashCode();
+      hash = (37 * hash) + GTS_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getGts());
+      if (!internalGetExt().getMap().isEmpty()) {
+        hash = (37 * hash) + EXT_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetExt().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static x.msg.pb.PbXmsg.XmsgOssDownloadSimpleRsp parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static x.msg.pb.PbXmsg.XmsgOssDownloadSimpleRsp parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static x.msg.pb.PbXmsg.XmsgOssDownloadSimpleRsp parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static x.msg.pb.PbXmsg.XmsgOssDownloadSimpleRsp parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static x.msg.pb.PbXmsg.XmsgOssDownloadSimpleRsp parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static x.msg.pb.PbXmsg.XmsgOssDownloadSimpleRsp parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static x.msg.pb.PbXmsg.XmsgOssDownloadSimpleRsp parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static x.msg.pb.PbXmsg.XmsgOssDownloadSimpleRsp parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static x.msg.pb.PbXmsg.XmsgOssDownloadSimpleRsp parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static x.msg.pb.PbXmsg.XmsgOssDownloadSimpleRsp parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static x.msg.pb.PbXmsg.XmsgOssDownloadSimpleRsp parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static x.msg.pb.PbXmsg.XmsgOssDownloadSimpleRsp parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(x.msg.pb.PbXmsg.XmsgOssDownloadSimpleRsp prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code XmsgOssDownloadSimpleRsp}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:XmsgOssDownloadSimpleRsp)
+        x.msg.pb.PbXmsg.XmsgOssDownloadSimpleRspOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return x.msg.pb.PbXmsg.internal_static_XmsgOssDownloadSimpleRsp_descriptor;
+      }
+
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapField internalGetMapField(
+          int number) {
+        switch (number) {
+          case 5:
+            return internalGetExt();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapField internalGetMutableMapField(
+          int number) {
+        switch (number) {
+          case 5:
+            return internalGetMutableExt();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return x.msg.pb.PbXmsg.internal_static_XmsgOssDownloadSimpleRsp_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                x.msg.pb.PbXmsg.XmsgOssDownloadSimpleRsp.class, x.msg.pb.PbXmsg.XmsgOssDownloadSimpleRsp.Builder.class);
+      }
+
+      // Construct using x.msg.pb.PbXmsg.XmsgOssDownloadSimpleRsp.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        objName_ = "";
+
+        objSize_ = 0L;
+
+        hashVal_ = "";
+
+        gts_ = 0L;
+
+        internalGetMutableExt().clear();
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return x.msg.pb.PbXmsg.internal_static_XmsgOssDownloadSimpleRsp_descriptor;
+      }
+
+      public x.msg.pb.PbXmsg.XmsgOssDownloadSimpleRsp getDefaultInstanceForType() {
+        return x.msg.pb.PbXmsg.XmsgOssDownloadSimpleRsp.getDefaultInstance();
+      }
+
+      public x.msg.pb.PbXmsg.XmsgOssDownloadSimpleRsp build() {
+        x.msg.pb.PbXmsg.XmsgOssDownloadSimpleRsp result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public x.msg.pb.PbXmsg.XmsgOssDownloadSimpleRsp buildPartial() {
+        x.msg.pb.PbXmsg.XmsgOssDownloadSimpleRsp result = new x.msg.pb.PbXmsg.XmsgOssDownloadSimpleRsp(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        result.objName_ = objName_;
+        result.objSize_ = objSize_;
+        result.hashVal_ = hashVal_;
+        result.gts_ = gts_;
+        result.ext_ = internalGetExt();
+        result.ext_.makeImmutable();
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof x.msg.pb.PbXmsg.XmsgOssDownloadSimpleRsp) {
+          return mergeFrom((x.msg.pb.PbXmsg.XmsgOssDownloadSimpleRsp)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(x.msg.pb.PbXmsg.XmsgOssDownloadSimpleRsp other) {
+        if (other == x.msg.pb.PbXmsg.XmsgOssDownloadSimpleRsp.getDefaultInstance()) return this;
+        if (!other.getObjName().isEmpty()) {
+          objName_ = other.objName_;
+          onChanged();
+        }
+        if (other.getObjSize() != 0L) {
+          setObjSize(other.getObjSize());
+        }
+        if (!other.getHashVal().isEmpty()) {
+          hashVal_ = other.hashVal_;
+          onChanged();
+        }
+        if (other.getGts() != 0L) {
+          setGts(other.getGts());
+        }
+        internalGetMutableExt().mergeFrom(
+            other.internalGetExt());
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        x.msg.pb.PbXmsg.XmsgOssDownloadSimpleRsp parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (x.msg.pb.PbXmsg.XmsgOssDownloadSimpleRsp) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object objName_ = "";
+      /**
+       * <code>string objName = 1;</code>
+       */
+      public java.lang.String getObjName() {
+        java.lang.Object ref = objName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          objName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string objName = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getObjNameBytes() {
+        java.lang.Object ref = objName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          objName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string objName = 1;</code>
+       */
+      public Builder setObjName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        objName_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string objName = 1;</code>
+       */
+      public Builder clearObjName() {
+        
+        objName_ = getDefaultInstance().getObjName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string objName = 1;</code>
+       */
+      public Builder setObjNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        objName_ = value;
+        onChanged();
+        return this;
+      }
+
+      private long objSize_ ;
+      /**
+       * <code>uint64 objSize = 2;</code>
+       */
+      public long getObjSize() {
+        return objSize_;
+      }
+      /**
+       * <code>uint64 objSize = 2;</code>
+       */
+      public Builder setObjSize(long value) {
+        
+        objSize_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint64 objSize = 2;</code>
+       */
+      public Builder clearObjSize() {
+        
+        objSize_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object hashVal_ = "";
+      /**
+       * <code>string hashVal = 3;</code>
+       */
+      public java.lang.String getHashVal() {
+        java.lang.Object ref = hashVal_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          hashVal_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string hashVal = 3;</code>
+       */
+      public com.google.protobuf.ByteString
+          getHashValBytes() {
+        java.lang.Object ref = hashVal_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          hashVal_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string hashVal = 3;</code>
+       */
+      public Builder setHashVal(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        hashVal_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string hashVal = 3;</code>
+       */
+      public Builder clearHashVal() {
+        
+        hashVal_ = getDefaultInstance().getHashVal();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string hashVal = 3;</code>
+       */
+      public Builder setHashValBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        hashVal_ = value;
+        onChanged();
+        return this;
+      }
+
+      private long gts_ ;
+      /**
+       * <code>uint64 gts = 4;</code>
+       */
+      public long getGts() {
+        return gts_;
+      }
+      /**
+       * <code>uint64 gts = 4;</code>
+       */
+      public Builder setGts(long value) {
+        
+        gts_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint64 gts = 4;</code>
+       */
+      public Builder clearGts() {
+        
+        gts_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.MapField<
+          java.lang.String, java.lang.String> ext_;
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      internalGetExt() {
+        if (ext_ == null) {
+          return com.google.protobuf.MapField.emptyMapField(
+              ExtDefaultEntryHolder.defaultEntry);
+        }
+        return ext_;
+      }
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      internalGetMutableExt() {
+        onChanged();;
+        if (ext_ == null) {
+          ext_ = com.google.protobuf.MapField.newMapField(
+              ExtDefaultEntryHolder.defaultEntry);
+        }
+        if (!ext_.isMutable()) {
+          ext_ = ext_.copy();
+        }
+        return ext_;
+      }
+
+      public int getExtCount() {
+        return internalGetExt().getMap().size();
+      }
+      /**
+       * <code>map&lt;string, string&gt; ext = 5;</code>
+       */
+
+      public boolean containsExt(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        return internalGetExt().getMap().containsKey(key);
+      }
+      /**
+       * Use {@link #getExtMap()} instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.String> getExt() {
+        return getExtMap();
+      }
+      /**
+       * <code>map&lt;string, string&gt; ext = 5;</code>
+       */
+
+      public java.util.Map<java.lang.String, java.lang.String> getExtMap() {
+        return internalGetExt().getMap();
+      }
+      /**
+       * <code>map&lt;string, string&gt; ext = 5;</code>
+       */
+
+      public java.lang.String getExtOrDefault(
+          java.lang.String key,
+          java.lang.String defaultValue) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, java.lang.String> map =
+            internalGetExt().getMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+      /**
+       * <code>map&lt;string, string&gt; ext = 5;</code>
+       */
+
+      public java.lang.String getExtOrThrow(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, java.lang.String> map =
+            internalGetExt().getMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+
+      public Builder clearExt() {
+        internalGetMutableExt().getMutableMap()
+            .clear();
+        return this;
+      }
+      /**
+       * <code>map&lt;string, string&gt; ext = 5;</code>
+       */
+
+      public Builder removeExt(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutableExt().getMutableMap()
+            .remove(key);
+        return this;
+      }
+      /**
+       * Use alternate mutation accessors instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.String>
+      getMutableExt() {
+        return internalGetMutableExt().getMutableMap();
+      }
+      /**
+       * <code>map&lt;string, string&gt; ext = 5;</code>
+       */
+      public Builder putExt(
+          java.lang.String key,
+          java.lang.String value) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        if (value == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutableExt().getMutableMap()
+            .put(key, value);
+        return this;
+      }
+      /**
+       * <code>map&lt;string, string&gt; ext = 5;</code>
+       */
+
+      public Builder putAllExt(
+          java.util.Map<java.lang.String, java.lang.String> values) {
+        internalGetMutableExt().getMutableMap()
+            .putAll(values);
+        return this;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:XmsgOssDownloadSimpleRsp)
+    }
+
+    // @@protoc_insertion_point(class_scope:XmsgOssDownloadSimpleRsp)
+    private static final x.msg.pb.PbXmsg.XmsgOssDownloadSimpleRsp DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new x.msg.pb.PbXmsg.XmsgOssDownloadSimpleRsp();
+    }
+
+    public static x.msg.pb.PbXmsg.XmsgOssDownloadSimpleRsp getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<XmsgOssDownloadSimpleRsp>
+        PARSER = new com.google.protobuf.AbstractParser<XmsgOssDownloadSimpleRsp>() {
+      public XmsgOssDownloadSimpleRsp parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new XmsgOssDownloadSimpleRsp(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<XmsgOssDownloadSimpleRsp> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<XmsgOssDownloadSimpleRsp> getParserForType() {
+      return PARSER;
+    }
+
+    public x.msg.pb.PbXmsg.XmsgOssDownloadSimpleRsp getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface XmsgOssUsrObjInfoQueryReqOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:XmsgOssUsrObjInfoQueryReq)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>uint64 sts = 1;</code>
+     */
+    long getSts();
+
+    /**
+     * <code>uint64 ets = 2;</code>
+     */
+    long getEts();
+
+    /**
+     * <code>uint32 page = 3;</code>
+     */
+    int getPage();
+
+    /**
+     * <code>uint32 pageSize = 4;</code>
+     */
+    int getPageSize();
+  }
+  /**
+   * Protobuf type {@code XmsgOssUsrObjInfoQueryReq}
+   */
+  public  static final class XmsgOssUsrObjInfoQueryReq extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:XmsgOssUsrObjInfoQueryReq)
+      XmsgOssUsrObjInfoQueryReqOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use XmsgOssUsrObjInfoQueryReq.newBuilder() to construct.
+    private XmsgOssUsrObjInfoQueryReq(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private XmsgOssUsrObjInfoQueryReq() {
+      sts_ = 0L;
+      ets_ = 0L;
+      page_ = 0;
+      pageSize_ = 0;
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private XmsgOssUsrObjInfoQueryReq(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 8: {
+
+              sts_ = input.readUInt64();
+              break;
+            }
+            case 16: {
+
+              ets_ = input.readUInt64();
+              break;
+            }
+            case 24: {
+
+              page_ = input.readUInt32();
+              break;
+            }
+            case 32: {
+
+              pageSize_ = input.readUInt32();
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return x.msg.pb.PbXmsg.internal_static_XmsgOssUsrObjInfoQueryReq_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return x.msg.pb.PbXmsg.internal_static_XmsgOssUsrObjInfoQueryReq_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              x.msg.pb.PbXmsg.XmsgOssUsrObjInfoQueryReq.class, x.msg.pb.PbXmsg.XmsgOssUsrObjInfoQueryReq.Builder.class);
+    }
+
+    public static final int STS_FIELD_NUMBER = 1;
+    private long sts_;
+    /**
+     * <code>uint64 sts = 1;</code>
+     */
+    public long getSts() {
+      return sts_;
+    }
+
+    public static final int ETS_FIELD_NUMBER = 2;
+    private long ets_;
+    /**
+     * <code>uint64 ets = 2;</code>
+     */
+    public long getEts() {
+      return ets_;
+    }
+
+    public static final int PAGE_FIELD_NUMBER = 3;
+    private int page_;
+    /**
+     * <code>uint32 page = 3;</code>
+     */
+    public int getPage() {
+      return page_;
+    }
+
+    public static final int PAGESIZE_FIELD_NUMBER = 4;
+    private int pageSize_;
+    /**
+     * <code>uint32 pageSize = 4;</code>
+     */
+    public int getPageSize() {
+      return pageSize_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (sts_ != 0L) {
+        output.writeUInt64(1, sts_);
+      }
+      if (ets_ != 0L) {
+        output.writeUInt64(2, ets_);
+      }
+      if (page_ != 0) {
+        output.writeUInt32(3, page_);
+      }
+      if (pageSize_ != 0) {
+        output.writeUInt32(4, pageSize_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (sts_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(1, sts_);
+      }
+      if (ets_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(2, ets_);
+      }
+      if (page_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(3, page_);
+      }
+      if (pageSize_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(4, pageSize_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof x.msg.pb.PbXmsg.XmsgOssUsrObjInfoQueryReq)) {
+        return super.equals(obj);
+      }
+      x.msg.pb.PbXmsg.XmsgOssUsrObjInfoQueryReq other = (x.msg.pb.PbXmsg.XmsgOssUsrObjInfoQueryReq) obj;
+
+      boolean result = true;
+      result = result && (getSts()
+          == other.getSts());
+      result = result && (getEts()
+          == other.getEts());
+      result = result && (getPage()
+          == other.getPage());
+      result = result && (getPageSize()
+          == other.getPageSize());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + STS_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getSts());
+      hash = (37 * hash) + ETS_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getEts());
+      hash = (37 * hash) + PAGE_FIELD_NUMBER;
+      hash = (53 * hash) + getPage();
+      hash = (37 * hash) + PAGESIZE_FIELD_NUMBER;
+      hash = (53 * hash) + getPageSize();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static x.msg.pb.PbXmsg.XmsgOssUsrObjInfoQueryReq parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static x.msg.pb.PbXmsg.XmsgOssUsrObjInfoQueryReq parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static x.msg.pb.PbXmsg.XmsgOssUsrObjInfoQueryReq parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static x.msg.pb.PbXmsg.XmsgOssUsrObjInfoQueryReq parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static x.msg.pb.PbXmsg.XmsgOssUsrObjInfoQueryReq parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static x.msg.pb.PbXmsg.XmsgOssUsrObjInfoQueryReq parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static x.msg.pb.PbXmsg.XmsgOssUsrObjInfoQueryReq parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static x.msg.pb.PbXmsg.XmsgOssUsrObjInfoQueryReq parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static x.msg.pb.PbXmsg.XmsgOssUsrObjInfoQueryReq parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static x.msg.pb.PbXmsg.XmsgOssUsrObjInfoQueryReq parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static x.msg.pb.PbXmsg.XmsgOssUsrObjInfoQueryReq parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static x.msg.pb.PbXmsg.XmsgOssUsrObjInfoQueryReq parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(x.msg.pb.PbXmsg.XmsgOssUsrObjInfoQueryReq prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code XmsgOssUsrObjInfoQueryReq}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:XmsgOssUsrObjInfoQueryReq)
+        x.msg.pb.PbXmsg.XmsgOssUsrObjInfoQueryReqOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return x.msg.pb.PbXmsg.internal_static_XmsgOssUsrObjInfoQueryReq_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return x.msg.pb.PbXmsg.internal_static_XmsgOssUsrObjInfoQueryReq_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                x.msg.pb.PbXmsg.XmsgOssUsrObjInfoQueryReq.class, x.msg.pb.PbXmsg.XmsgOssUsrObjInfoQueryReq.Builder.class);
+      }
+
+      // Construct using x.msg.pb.PbXmsg.XmsgOssUsrObjInfoQueryReq.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        sts_ = 0L;
+
+        ets_ = 0L;
+
+        page_ = 0;
+
+        pageSize_ = 0;
+
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return x.msg.pb.PbXmsg.internal_static_XmsgOssUsrObjInfoQueryReq_descriptor;
+      }
+
+      public x.msg.pb.PbXmsg.XmsgOssUsrObjInfoQueryReq getDefaultInstanceForType() {
+        return x.msg.pb.PbXmsg.XmsgOssUsrObjInfoQueryReq.getDefaultInstance();
+      }
+
+      public x.msg.pb.PbXmsg.XmsgOssUsrObjInfoQueryReq build() {
+        x.msg.pb.PbXmsg.XmsgOssUsrObjInfoQueryReq result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public x.msg.pb.PbXmsg.XmsgOssUsrObjInfoQueryReq buildPartial() {
+        x.msg.pb.PbXmsg.XmsgOssUsrObjInfoQueryReq result = new x.msg.pb.PbXmsg.XmsgOssUsrObjInfoQueryReq(this);
+        result.sts_ = sts_;
+        result.ets_ = ets_;
+        result.page_ = page_;
+        result.pageSize_ = pageSize_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof x.msg.pb.PbXmsg.XmsgOssUsrObjInfoQueryReq) {
+          return mergeFrom((x.msg.pb.PbXmsg.XmsgOssUsrObjInfoQueryReq)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(x.msg.pb.PbXmsg.XmsgOssUsrObjInfoQueryReq other) {
+        if (other == x.msg.pb.PbXmsg.XmsgOssUsrObjInfoQueryReq.getDefaultInstance()) return this;
+        if (other.getSts() != 0L) {
+          setSts(other.getSts());
+        }
+        if (other.getEts() != 0L) {
+          setEts(other.getEts());
+        }
+        if (other.getPage() != 0) {
+          setPage(other.getPage());
+        }
+        if (other.getPageSize() != 0) {
+          setPageSize(other.getPageSize());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        x.msg.pb.PbXmsg.XmsgOssUsrObjInfoQueryReq parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (x.msg.pb.PbXmsg.XmsgOssUsrObjInfoQueryReq) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private long sts_ ;
+      /**
+       * <code>uint64 sts = 1;</code>
+       */
+      public long getSts() {
+        return sts_;
+      }
+      /**
+       * <code>uint64 sts = 1;</code>
+       */
+      public Builder setSts(long value) {
+        
+        sts_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint64 sts = 1;</code>
+       */
+      public Builder clearSts() {
+        
+        sts_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long ets_ ;
+      /**
+       * <code>uint64 ets = 2;</code>
+       */
+      public long getEts() {
+        return ets_;
+      }
+      /**
+       * <code>uint64 ets = 2;</code>
+       */
+      public Builder setEts(long value) {
+        
+        ets_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint64 ets = 2;</code>
+       */
+      public Builder clearEts() {
+        
+        ets_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private int page_ ;
+      /**
+       * <code>uint32 page = 3;</code>
+       */
+      public int getPage() {
+        return page_;
+      }
+      /**
+       * <code>uint32 page = 3;</code>
+       */
+      public Builder setPage(int value) {
+        
+        page_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 page = 3;</code>
+       */
+      public Builder clearPage() {
+        
+        page_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int pageSize_ ;
+      /**
+       * <code>uint32 pageSize = 4;</code>
+       */
+      public int getPageSize() {
+        return pageSize_;
+      }
+      /**
+       * <code>uint32 pageSize = 4;</code>
+       */
+      public Builder setPageSize(int value) {
+        
+        pageSize_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 pageSize = 4;</code>
+       */
+      public Builder clearPageSize() {
+        
+        pageSize_ = 0;
+        onChanged();
+        return this;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:XmsgOssUsrObjInfoQueryReq)
+    }
+
+    // @@protoc_insertion_point(class_scope:XmsgOssUsrObjInfoQueryReq)
+    private static final x.msg.pb.PbXmsg.XmsgOssUsrObjInfoQueryReq DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new x.msg.pb.PbXmsg.XmsgOssUsrObjInfoQueryReq();
+    }
+
+    public static x.msg.pb.PbXmsg.XmsgOssUsrObjInfoQueryReq getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<XmsgOssUsrObjInfoQueryReq>
+        PARSER = new com.google.protobuf.AbstractParser<XmsgOssUsrObjInfoQueryReq>() {
+      public XmsgOssUsrObjInfoQueryReq parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new XmsgOssUsrObjInfoQueryReq(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<XmsgOssUsrObjInfoQueryReq> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<XmsgOssUsrObjInfoQueryReq> getParserForType() {
+      return PARSER;
+    }
+
+    public x.msg.pb.PbXmsg.XmsgOssUsrObjInfoQueryReq getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface XmsgOssUsrObjInfoQueryRspOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:XmsgOssUsrObjInfoQueryRsp)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>repeated .XmsgOssUsrObjInfo objInfo = 1;</code>
+     */
+    java.util.List<x.msg.pb.PbXmsg.XmsgOssUsrObjInfo> 
+        getObjInfoList();
+    /**
+     * <code>repeated .XmsgOssUsrObjInfo objInfo = 1;</code>
+     */
+    x.msg.pb.PbXmsg.XmsgOssUsrObjInfo getObjInfo(int index);
+    /**
+     * <code>repeated .XmsgOssUsrObjInfo objInfo = 1;</code>
+     */
+    int getObjInfoCount();
+    /**
+     * <code>repeated .XmsgOssUsrObjInfo objInfo = 1;</code>
+     */
+    java.util.List<? extends x.msg.pb.PbXmsg.XmsgOssUsrObjInfoOrBuilder> 
+        getObjInfoOrBuilderList();
+    /**
+     * <code>repeated .XmsgOssUsrObjInfo objInfo = 1;</code>
+     */
+    x.msg.pb.PbXmsg.XmsgOssUsrObjInfoOrBuilder getObjInfoOrBuilder(
+        int index);
+  }
+  /**
+   * Protobuf type {@code XmsgOssUsrObjInfoQueryRsp}
+   */
+  public  static final class XmsgOssUsrObjInfoQueryRsp extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:XmsgOssUsrObjInfoQueryRsp)
+      XmsgOssUsrObjInfoQueryRspOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use XmsgOssUsrObjInfoQueryRsp.newBuilder() to construct.
+    private XmsgOssUsrObjInfoQueryRsp(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private XmsgOssUsrObjInfoQueryRsp() {
+      objInfo_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private XmsgOssUsrObjInfoQueryRsp(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                objInfo_ = new java.util.ArrayList<x.msg.pb.PbXmsg.XmsgOssUsrObjInfo>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              objInfo_.add(
+                  input.readMessage(x.msg.pb.PbXmsg.XmsgOssUsrObjInfo.parser(), extensionRegistry));
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+          objInfo_ = java.util.Collections.unmodifiableList(objInfo_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return x.msg.pb.PbXmsg.internal_static_XmsgOssUsrObjInfoQueryRsp_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return x.msg.pb.PbXmsg.internal_static_XmsgOssUsrObjInfoQueryRsp_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              x.msg.pb.PbXmsg.XmsgOssUsrObjInfoQueryRsp.class, x.msg.pb.PbXmsg.XmsgOssUsrObjInfoQueryRsp.Builder.class);
+    }
+
+    public static final int OBJINFO_FIELD_NUMBER = 1;
+    private java.util.List<x.msg.pb.PbXmsg.XmsgOssUsrObjInfo> objInfo_;
+    /**
+     * <code>repeated .XmsgOssUsrObjInfo objInfo = 1;</code>
+     */
+    public java.util.List<x.msg.pb.PbXmsg.XmsgOssUsrObjInfo> getObjInfoList() {
+      return objInfo_;
+    }
+    /**
+     * <code>repeated .XmsgOssUsrObjInfo objInfo = 1;</code>
+     */
+    public java.util.List<? extends x.msg.pb.PbXmsg.XmsgOssUsrObjInfoOrBuilder> 
+        getObjInfoOrBuilderList() {
+      return objInfo_;
+    }
+    /**
+     * <code>repeated .XmsgOssUsrObjInfo objInfo = 1;</code>
+     */
+    public int getObjInfoCount() {
+      return objInfo_.size();
+    }
+    /**
+     * <code>repeated .XmsgOssUsrObjInfo objInfo = 1;</code>
+     */
+    public x.msg.pb.PbXmsg.XmsgOssUsrObjInfo getObjInfo(int index) {
+      return objInfo_.get(index);
+    }
+    /**
+     * <code>repeated .XmsgOssUsrObjInfo objInfo = 1;</code>
+     */
+    public x.msg.pb.PbXmsg.XmsgOssUsrObjInfoOrBuilder getObjInfoOrBuilder(
+        int index) {
+      return objInfo_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      for (int i = 0; i < objInfo_.size(); i++) {
+        output.writeMessage(1, objInfo_.get(i));
+      }
+      unknownFields.writeTo(output);
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (int i = 0; i < objInfo_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, objInfo_.get(i));
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof x.msg.pb.PbXmsg.XmsgOssUsrObjInfoQueryRsp)) {
+        return super.equals(obj);
+      }
+      x.msg.pb.PbXmsg.XmsgOssUsrObjInfoQueryRsp other = (x.msg.pb.PbXmsg.XmsgOssUsrObjInfoQueryRsp) obj;
+
+      boolean result = true;
+      result = result && getObjInfoList()
+          .equals(other.getObjInfoList());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getObjInfoCount() > 0) {
+        hash = (37 * hash) + OBJINFO_FIELD_NUMBER;
+        hash = (53 * hash) + getObjInfoList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static x.msg.pb.PbXmsg.XmsgOssUsrObjInfoQueryRsp parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static x.msg.pb.PbXmsg.XmsgOssUsrObjInfoQueryRsp parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static x.msg.pb.PbXmsg.XmsgOssUsrObjInfoQueryRsp parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static x.msg.pb.PbXmsg.XmsgOssUsrObjInfoQueryRsp parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static x.msg.pb.PbXmsg.XmsgOssUsrObjInfoQueryRsp parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static x.msg.pb.PbXmsg.XmsgOssUsrObjInfoQueryRsp parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static x.msg.pb.PbXmsg.XmsgOssUsrObjInfoQueryRsp parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static x.msg.pb.PbXmsg.XmsgOssUsrObjInfoQueryRsp parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static x.msg.pb.PbXmsg.XmsgOssUsrObjInfoQueryRsp parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static x.msg.pb.PbXmsg.XmsgOssUsrObjInfoQueryRsp parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static x.msg.pb.PbXmsg.XmsgOssUsrObjInfoQueryRsp parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static x.msg.pb.PbXmsg.XmsgOssUsrObjInfoQueryRsp parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(x.msg.pb.PbXmsg.XmsgOssUsrObjInfoQueryRsp prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code XmsgOssUsrObjInfoQueryRsp}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:XmsgOssUsrObjInfoQueryRsp)
+        x.msg.pb.PbXmsg.XmsgOssUsrObjInfoQueryRspOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return x.msg.pb.PbXmsg.internal_static_XmsgOssUsrObjInfoQueryRsp_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return x.msg.pb.PbXmsg.internal_static_XmsgOssUsrObjInfoQueryRsp_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                x.msg.pb.PbXmsg.XmsgOssUsrObjInfoQueryRsp.class, x.msg.pb.PbXmsg.XmsgOssUsrObjInfoQueryRsp.Builder.class);
+      }
+
+      // Construct using x.msg.pb.PbXmsg.XmsgOssUsrObjInfoQueryRsp.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getObjInfoFieldBuilder();
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        if (objInfoBuilder_ == null) {
+          objInfo_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          objInfoBuilder_.clear();
+        }
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return x.msg.pb.PbXmsg.internal_static_XmsgOssUsrObjInfoQueryRsp_descriptor;
+      }
+
+      public x.msg.pb.PbXmsg.XmsgOssUsrObjInfoQueryRsp getDefaultInstanceForType() {
+        return x.msg.pb.PbXmsg.XmsgOssUsrObjInfoQueryRsp.getDefaultInstance();
+      }
+
+      public x.msg.pb.PbXmsg.XmsgOssUsrObjInfoQueryRsp build() {
+        x.msg.pb.PbXmsg.XmsgOssUsrObjInfoQueryRsp result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public x.msg.pb.PbXmsg.XmsgOssUsrObjInfoQueryRsp buildPartial() {
+        x.msg.pb.PbXmsg.XmsgOssUsrObjInfoQueryRsp result = new x.msg.pb.PbXmsg.XmsgOssUsrObjInfoQueryRsp(this);
+        int from_bitField0_ = bitField0_;
+        if (objInfoBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) == 0x00000001)) {
+            objInfo_ = java.util.Collections.unmodifiableList(objInfo_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.objInfo_ = objInfo_;
+        } else {
+          result.objInfo_ = objInfoBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof x.msg.pb.PbXmsg.XmsgOssUsrObjInfoQueryRsp) {
+          return mergeFrom((x.msg.pb.PbXmsg.XmsgOssUsrObjInfoQueryRsp)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(x.msg.pb.PbXmsg.XmsgOssUsrObjInfoQueryRsp other) {
+        if (other == x.msg.pb.PbXmsg.XmsgOssUsrObjInfoQueryRsp.getDefaultInstance()) return this;
+        if (objInfoBuilder_ == null) {
+          if (!other.objInfo_.isEmpty()) {
+            if (objInfo_.isEmpty()) {
+              objInfo_ = other.objInfo_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureObjInfoIsMutable();
+              objInfo_.addAll(other.objInfo_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.objInfo_.isEmpty()) {
+            if (objInfoBuilder_.isEmpty()) {
+              objInfoBuilder_.dispose();
+              objInfoBuilder_ = null;
+              objInfo_ = other.objInfo_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              objInfoBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getObjInfoFieldBuilder() : null;
+            } else {
+              objInfoBuilder_.addAllMessages(other.objInfo_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        x.msg.pb.PbXmsg.XmsgOssUsrObjInfoQueryRsp parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (x.msg.pb.PbXmsg.XmsgOssUsrObjInfoQueryRsp) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.util.List<x.msg.pb.PbXmsg.XmsgOssUsrObjInfo> objInfo_ =
+        java.util.Collections.emptyList();
+      private void ensureObjInfoIsMutable() {
+        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+          objInfo_ = new java.util.ArrayList<x.msg.pb.PbXmsg.XmsgOssUsrObjInfo>(objInfo_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          x.msg.pb.PbXmsg.XmsgOssUsrObjInfo, x.msg.pb.PbXmsg.XmsgOssUsrObjInfo.Builder, x.msg.pb.PbXmsg.XmsgOssUsrObjInfoOrBuilder> objInfoBuilder_;
+
+      /**
+       * <code>repeated .XmsgOssUsrObjInfo objInfo = 1;</code>
+       */
+      public java.util.List<x.msg.pb.PbXmsg.XmsgOssUsrObjInfo> getObjInfoList() {
+        if (objInfoBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(objInfo_);
+        } else {
+          return objInfoBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .XmsgOssUsrObjInfo objInfo = 1;</code>
+       */
+      public int getObjInfoCount() {
+        if (objInfoBuilder_ == null) {
+          return objInfo_.size();
+        } else {
+          return objInfoBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .XmsgOssUsrObjInfo objInfo = 1;</code>
+       */
+      public x.msg.pb.PbXmsg.XmsgOssUsrObjInfo getObjInfo(int index) {
+        if (objInfoBuilder_ == null) {
+          return objInfo_.get(index);
+        } else {
+          return objInfoBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .XmsgOssUsrObjInfo objInfo = 1;</code>
+       */
+      public Builder setObjInfo(
+          int index, x.msg.pb.PbXmsg.XmsgOssUsrObjInfo value) {
+        if (objInfoBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureObjInfoIsMutable();
+          objInfo_.set(index, value);
+          onChanged();
+        } else {
+          objInfoBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .XmsgOssUsrObjInfo objInfo = 1;</code>
+       */
+      public Builder setObjInfo(
+          int index, x.msg.pb.PbXmsg.XmsgOssUsrObjInfo.Builder builderForValue) {
+        if (objInfoBuilder_ == null) {
+          ensureObjInfoIsMutable();
+          objInfo_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          objInfoBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .XmsgOssUsrObjInfo objInfo = 1;</code>
+       */
+      public Builder addObjInfo(x.msg.pb.PbXmsg.XmsgOssUsrObjInfo value) {
+        if (objInfoBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureObjInfoIsMutable();
+          objInfo_.add(value);
+          onChanged();
+        } else {
+          objInfoBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .XmsgOssUsrObjInfo objInfo = 1;</code>
+       */
+      public Builder addObjInfo(
+          int index, x.msg.pb.PbXmsg.XmsgOssUsrObjInfo value) {
+        if (objInfoBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureObjInfoIsMutable();
+          objInfo_.add(index, value);
+          onChanged();
+        } else {
+          objInfoBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .XmsgOssUsrObjInfo objInfo = 1;</code>
+       */
+      public Builder addObjInfo(
+          x.msg.pb.PbXmsg.XmsgOssUsrObjInfo.Builder builderForValue) {
+        if (objInfoBuilder_ == null) {
+          ensureObjInfoIsMutable();
+          objInfo_.add(builderForValue.build());
+          onChanged();
+        } else {
+          objInfoBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .XmsgOssUsrObjInfo objInfo = 1;</code>
+       */
+      public Builder addObjInfo(
+          int index, x.msg.pb.PbXmsg.XmsgOssUsrObjInfo.Builder builderForValue) {
+        if (objInfoBuilder_ == null) {
+          ensureObjInfoIsMutable();
+          objInfo_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          objInfoBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .XmsgOssUsrObjInfo objInfo = 1;</code>
+       */
+      public Builder addAllObjInfo(
+          java.lang.Iterable<? extends x.msg.pb.PbXmsg.XmsgOssUsrObjInfo> values) {
+        if (objInfoBuilder_ == null) {
+          ensureObjInfoIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, objInfo_);
+          onChanged();
+        } else {
+          objInfoBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .XmsgOssUsrObjInfo objInfo = 1;</code>
+       */
+      public Builder clearObjInfo() {
+        if (objInfoBuilder_ == null) {
+          objInfo_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          objInfoBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .XmsgOssUsrObjInfo objInfo = 1;</code>
+       */
+      public Builder removeObjInfo(int index) {
+        if (objInfoBuilder_ == null) {
+          ensureObjInfoIsMutable();
+          objInfo_.remove(index);
+          onChanged();
+        } else {
+          objInfoBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .XmsgOssUsrObjInfo objInfo = 1;</code>
+       */
+      public x.msg.pb.PbXmsg.XmsgOssUsrObjInfo.Builder getObjInfoBuilder(
+          int index) {
+        return getObjInfoFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .XmsgOssUsrObjInfo objInfo = 1;</code>
+       */
+      public x.msg.pb.PbXmsg.XmsgOssUsrObjInfoOrBuilder getObjInfoOrBuilder(
+          int index) {
+        if (objInfoBuilder_ == null) {
+          return objInfo_.get(index);  } else {
+          return objInfoBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .XmsgOssUsrObjInfo objInfo = 1;</code>
+       */
+      public java.util.List<? extends x.msg.pb.PbXmsg.XmsgOssUsrObjInfoOrBuilder> 
+           getObjInfoOrBuilderList() {
+        if (objInfoBuilder_ != null) {
+          return objInfoBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(objInfo_);
+        }
+      }
+      /**
+       * <code>repeated .XmsgOssUsrObjInfo objInfo = 1;</code>
+       */
+      public x.msg.pb.PbXmsg.XmsgOssUsrObjInfo.Builder addObjInfoBuilder() {
+        return getObjInfoFieldBuilder().addBuilder(
+            x.msg.pb.PbXmsg.XmsgOssUsrObjInfo.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .XmsgOssUsrObjInfo objInfo = 1;</code>
+       */
+      public x.msg.pb.PbXmsg.XmsgOssUsrObjInfo.Builder addObjInfoBuilder(
+          int index) {
+        return getObjInfoFieldBuilder().addBuilder(
+            index, x.msg.pb.PbXmsg.XmsgOssUsrObjInfo.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .XmsgOssUsrObjInfo objInfo = 1;</code>
+       */
+      public java.util.List<x.msg.pb.PbXmsg.XmsgOssUsrObjInfo.Builder> 
+           getObjInfoBuilderList() {
+        return getObjInfoFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          x.msg.pb.PbXmsg.XmsgOssUsrObjInfo, x.msg.pb.PbXmsg.XmsgOssUsrObjInfo.Builder, x.msg.pb.PbXmsg.XmsgOssUsrObjInfoOrBuilder> 
+          getObjInfoFieldBuilder() {
+        if (objInfoBuilder_ == null) {
+          objInfoBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              x.msg.pb.PbXmsg.XmsgOssUsrObjInfo, x.msg.pb.PbXmsg.XmsgOssUsrObjInfo.Builder, x.msg.pb.PbXmsg.XmsgOssUsrObjInfoOrBuilder>(
+                  objInfo_,
+                  ((bitField0_ & 0x00000001) == 0x00000001),
+                  getParentForChildren(),
+                  isClean());
+          objInfo_ = null;
+        }
+        return objInfoBuilder_;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:XmsgOssUsrObjInfoQueryRsp)
+    }
+
+    // @@protoc_insertion_point(class_scope:XmsgOssUsrObjInfoQueryRsp)
+    private static final x.msg.pb.PbXmsg.XmsgOssUsrObjInfoQueryRsp DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new x.msg.pb.PbXmsg.XmsgOssUsrObjInfoQueryRsp();
+    }
+
+    public static x.msg.pb.PbXmsg.XmsgOssUsrObjInfoQueryRsp getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<XmsgOssUsrObjInfoQueryRsp>
+        PARSER = new com.google.protobuf.AbstractParser<XmsgOssUsrObjInfoQueryRsp>() {
+      public XmsgOssUsrObjInfoQueryRsp parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new XmsgOssUsrObjInfoQueryRsp(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<XmsgOssUsrObjInfoQueryRsp> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<XmsgOssUsrObjInfoQueryRsp> getParserForType() {
+      return PARSER;
+    }
+
+    public x.msg.pb.PbXmsg.XmsgOssUsrObjInfoQueryRsp getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface XmsgOssUsrObjInfoOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:XmsgOssUsrObjInfo)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string oid = 1;</code>
+     */
+    java.lang.String getOid();
+    /**
+     * <code>string oid = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getOidBytes();
+
+    /**
+     * <code>string objName = 2;</code>
+     */
+    java.lang.String getObjName();
+    /**
+     * <code>string objName = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getObjNameBytes();
+
+    /**
+     * <code>uint64 objSize = 3;</code>
+     */
+    long getObjSize();
+
+    /**
+     * <code>string hashVal = 4;</code>
+     */
+    java.lang.String getHashVal();
+    /**
+     * <code>string hashVal = 4;</code>
+     */
+    com.google.protobuf.ByteString
+        getHashValBytes();
+
+    /**
+     * <code>uint64 gts = 5;</code>
+     */
+    long getGts();
+  }
+  /**
+   * Protobuf type {@code XmsgOssUsrObjInfo}
+   */
+  public  static final class XmsgOssUsrObjInfo extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:XmsgOssUsrObjInfo)
+      XmsgOssUsrObjInfoOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use XmsgOssUsrObjInfo.newBuilder() to construct.
+    private XmsgOssUsrObjInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private XmsgOssUsrObjInfo() {
+      oid_ = "";
+      objName_ = "";
+      objSize_ = 0L;
+      hashVal_ = "";
+      gts_ = 0L;
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private XmsgOssUsrObjInfo(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              oid_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              objName_ = s;
+              break;
+            }
+            case 24: {
+
+              objSize_ = input.readUInt64();
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              hashVal_ = s;
+              break;
+            }
+            case 40: {
+
+              gts_ = input.readUInt64();
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return x.msg.pb.PbXmsg.internal_static_XmsgOssUsrObjInfo_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return x.msg.pb.PbXmsg.internal_static_XmsgOssUsrObjInfo_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              x.msg.pb.PbXmsg.XmsgOssUsrObjInfo.class, x.msg.pb.PbXmsg.XmsgOssUsrObjInfo.Builder.class);
+    }
+
+    public static final int OID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object oid_;
+    /**
+     * <code>string oid = 1;</code>
+     */
+    public java.lang.String getOid() {
+      java.lang.Object ref = oid_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        oid_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string oid = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getOidBytes() {
+      java.lang.Object ref = oid_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        oid_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int OBJNAME_FIELD_NUMBER = 2;
+    private volatile java.lang.Object objName_;
+    /**
+     * <code>string objName = 2;</code>
+     */
+    public java.lang.String getObjName() {
+      java.lang.Object ref = objName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        objName_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string objName = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getObjNameBytes() {
+      java.lang.Object ref = objName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        objName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int OBJSIZE_FIELD_NUMBER = 3;
+    private long objSize_;
+    /**
+     * <code>uint64 objSize = 3;</code>
+     */
+    public long getObjSize() {
+      return objSize_;
+    }
+
+    public static final int HASHVAL_FIELD_NUMBER = 4;
+    private volatile java.lang.Object hashVal_;
+    /**
+     * <code>string hashVal = 4;</code>
+     */
+    public java.lang.String getHashVal() {
+      java.lang.Object ref = hashVal_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        hashVal_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string hashVal = 4;</code>
+     */
+    public com.google.protobuf.ByteString
+        getHashValBytes() {
+      java.lang.Object ref = hashVal_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        hashVal_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int GTS_FIELD_NUMBER = 5;
+    private long gts_;
+    /**
+     * <code>uint64 gts = 5;</code>
+     */
+    public long getGts() {
+      return gts_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getOidBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, oid_);
+      }
+      if (!getObjNameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, objName_);
+      }
+      if (objSize_ != 0L) {
+        output.writeUInt64(3, objSize_);
+      }
+      if (!getHashValBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, hashVal_);
+      }
+      if (gts_ != 0L) {
+        output.writeUInt64(5, gts_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getOidBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, oid_);
+      }
+      if (!getObjNameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, objName_);
+      }
+      if (objSize_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(3, objSize_);
+      }
+      if (!getHashValBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, hashVal_);
+      }
+      if (gts_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(5, gts_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof x.msg.pb.PbXmsg.XmsgOssUsrObjInfo)) {
+        return super.equals(obj);
+      }
+      x.msg.pb.PbXmsg.XmsgOssUsrObjInfo other = (x.msg.pb.PbXmsg.XmsgOssUsrObjInfo) obj;
+
+      boolean result = true;
+      result = result && getOid()
+          .equals(other.getOid());
+      result = result && getObjName()
+          .equals(other.getObjName());
+      result = result && (getObjSize()
+          == other.getObjSize());
+      result = result && getHashVal()
+          .equals(other.getHashVal());
+      result = result && (getGts()
+          == other.getGts());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + OID_FIELD_NUMBER;
+      hash = (53 * hash) + getOid().hashCode();
+      hash = (37 * hash) + OBJNAME_FIELD_NUMBER;
+      hash = (53 * hash) + getObjName().hashCode();
+      hash = (37 * hash) + OBJSIZE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getObjSize());
+      hash = (37 * hash) + HASHVAL_FIELD_NUMBER;
+      hash = (53 * hash) + getHashVal().hashCode();
+      hash = (37 * hash) + GTS_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getGts());
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static x.msg.pb.PbXmsg.XmsgOssUsrObjInfo parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static x.msg.pb.PbXmsg.XmsgOssUsrObjInfo parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static x.msg.pb.PbXmsg.XmsgOssUsrObjInfo parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static x.msg.pb.PbXmsg.XmsgOssUsrObjInfo parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static x.msg.pb.PbXmsg.XmsgOssUsrObjInfo parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static x.msg.pb.PbXmsg.XmsgOssUsrObjInfo parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static x.msg.pb.PbXmsg.XmsgOssUsrObjInfo parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static x.msg.pb.PbXmsg.XmsgOssUsrObjInfo parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static x.msg.pb.PbXmsg.XmsgOssUsrObjInfo parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static x.msg.pb.PbXmsg.XmsgOssUsrObjInfo parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static x.msg.pb.PbXmsg.XmsgOssUsrObjInfo parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static x.msg.pb.PbXmsg.XmsgOssUsrObjInfo parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(x.msg.pb.PbXmsg.XmsgOssUsrObjInfo prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code XmsgOssUsrObjInfo}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:XmsgOssUsrObjInfo)
+        x.msg.pb.PbXmsg.XmsgOssUsrObjInfoOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return x.msg.pb.PbXmsg.internal_static_XmsgOssUsrObjInfo_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return x.msg.pb.PbXmsg.internal_static_XmsgOssUsrObjInfo_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                x.msg.pb.PbXmsg.XmsgOssUsrObjInfo.class, x.msg.pb.PbXmsg.XmsgOssUsrObjInfo.Builder.class);
+      }
+
+      // Construct using x.msg.pb.PbXmsg.XmsgOssUsrObjInfo.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        oid_ = "";
+
+        objName_ = "";
+
+        objSize_ = 0L;
+
+        hashVal_ = "";
+
+        gts_ = 0L;
+
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return x.msg.pb.PbXmsg.internal_static_XmsgOssUsrObjInfo_descriptor;
+      }
+
+      public x.msg.pb.PbXmsg.XmsgOssUsrObjInfo getDefaultInstanceForType() {
+        return x.msg.pb.PbXmsg.XmsgOssUsrObjInfo.getDefaultInstance();
+      }
+
+      public x.msg.pb.PbXmsg.XmsgOssUsrObjInfo build() {
+        x.msg.pb.PbXmsg.XmsgOssUsrObjInfo result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public x.msg.pb.PbXmsg.XmsgOssUsrObjInfo buildPartial() {
+        x.msg.pb.PbXmsg.XmsgOssUsrObjInfo result = new x.msg.pb.PbXmsg.XmsgOssUsrObjInfo(this);
+        result.oid_ = oid_;
+        result.objName_ = objName_;
+        result.objSize_ = objSize_;
+        result.hashVal_ = hashVal_;
+        result.gts_ = gts_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof x.msg.pb.PbXmsg.XmsgOssUsrObjInfo) {
+          return mergeFrom((x.msg.pb.PbXmsg.XmsgOssUsrObjInfo)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(x.msg.pb.PbXmsg.XmsgOssUsrObjInfo other) {
+        if (other == x.msg.pb.PbXmsg.XmsgOssUsrObjInfo.getDefaultInstance()) return this;
+        if (!other.getOid().isEmpty()) {
+          oid_ = other.oid_;
+          onChanged();
+        }
+        if (!other.getObjName().isEmpty()) {
+          objName_ = other.objName_;
+          onChanged();
+        }
+        if (other.getObjSize() != 0L) {
+          setObjSize(other.getObjSize());
+        }
+        if (!other.getHashVal().isEmpty()) {
+          hashVal_ = other.hashVal_;
+          onChanged();
+        }
+        if (other.getGts() != 0L) {
+          setGts(other.getGts());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        x.msg.pb.PbXmsg.XmsgOssUsrObjInfo parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (x.msg.pb.PbXmsg.XmsgOssUsrObjInfo) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object oid_ = "";
+      /**
+       * <code>string oid = 1;</code>
+       */
+      public java.lang.String getOid() {
+        java.lang.Object ref = oid_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          oid_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string oid = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getOidBytes() {
+        java.lang.Object ref = oid_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          oid_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string oid = 1;</code>
+       */
+      public Builder setOid(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        oid_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string oid = 1;</code>
+       */
+      public Builder clearOid() {
+        
+        oid_ = getDefaultInstance().getOid();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string oid = 1;</code>
+       */
+      public Builder setOidBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        oid_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object objName_ = "";
+      /**
+       * <code>string objName = 2;</code>
+       */
+      public java.lang.String getObjName() {
+        java.lang.Object ref = objName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          objName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string objName = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getObjNameBytes() {
+        java.lang.Object ref = objName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          objName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string objName = 2;</code>
+       */
+      public Builder setObjName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        objName_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string objName = 2;</code>
+       */
+      public Builder clearObjName() {
+        
+        objName_ = getDefaultInstance().getObjName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string objName = 2;</code>
+       */
+      public Builder setObjNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        objName_ = value;
+        onChanged();
+        return this;
+      }
+
+      private long objSize_ ;
+      /**
+       * <code>uint64 objSize = 3;</code>
+       */
+      public long getObjSize() {
+        return objSize_;
+      }
+      /**
+       * <code>uint64 objSize = 3;</code>
+       */
+      public Builder setObjSize(long value) {
+        
+        objSize_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint64 objSize = 3;</code>
+       */
+      public Builder clearObjSize() {
+        
+        objSize_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object hashVal_ = "";
+      /**
+       * <code>string hashVal = 4;</code>
+       */
+      public java.lang.String getHashVal() {
+        java.lang.Object ref = hashVal_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          hashVal_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string hashVal = 4;</code>
+       */
+      public com.google.protobuf.ByteString
+          getHashValBytes() {
+        java.lang.Object ref = hashVal_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          hashVal_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string hashVal = 4;</code>
+       */
+      public Builder setHashVal(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        hashVal_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string hashVal = 4;</code>
+       */
+      public Builder clearHashVal() {
+        
+        hashVal_ = getDefaultInstance().getHashVal();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string hashVal = 4;</code>
+       */
+      public Builder setHashValBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        hashVal_ = value;
+        onChanged();
+        return this;
+      }
+
+      private long gts_ ;
+      /**
+       * <code>uint64 gts = 5;</code>
+       */
+      public long getGts() {
+        return gts_;
+      }
+      /**
+       * <code>uint64 gts = 5;</code>
+       */
+      public Builder setGts(long value) {
+        
+        gts_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint64 gts = 5;</code>
+       */
+      public Builder clearGts() {
+        
+        gts_ = 0L;
+        onChanged();
+        return this;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:XmsgOssUsrObjInfo)
+    }
+
+    // @@protoc_insertion_point(class_scope:XmsgOssUsrObjInfo)
+    private static final x.msg.pb.PbXmsg.XmsgOssUsrObjInfo DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new x.msg.pb.PbXmsg.XmsgOssUsrObjInfo();
+    }
+
+    public static x.msg.pb.PbXmsg.XmsgOssUsrObjInfo getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<XmsgOssUsrObjInfo>
+        PARSER = new com.google.protobuf.AbstractParser<XmsgOssUsrObjInfo>() {
+      public XmsgOssUsrObjInfo parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new XmsgOssUsrObjInfo(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<XmsgOssUsrObjInfo> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<XmsgOssUsrObjInfo> getParserForType() {
+      return PARSER;
+    }
+
+    public x.msg.pb.PbXmsg.XmsgOssUsrObjInfo getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface XmsgClientTokenInfoOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:XmsgClientTokenInfo)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string cgt = 1;</code>
+     */
+    java.lang.String getCgt();
+    /**
+     * <code>string cgt = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getCgtBytes();
+
+    /**
+     * <code>string token = 2;</code>
+     */
+    java.lang.String getToken();
+    /**
+     * <code>string token = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getTokenBytes();
+
+    /**
+     * <code>string alg = 3;</code>
+     */
+    java.lang.String getAlg();
+    /**
+     * <code>string alg = 3;</code>
+     */
+    com.google.protobuf.ByteString
+        getAlgBytes();
+
+    /**
+     * <code>string slat = 4;</code>
+     */
+    java.lang.String getSlat();
+    /**
+     * <code>string slat = 4;</code>
+     */
+    com.google.protobuf.ByteString
+        getSlatBytes();
+
+    /**
+     * <code>string plat = 5;</code>
+     */
+    java.lang.String getPlat();
+    /**
+     * <code>string plat = 5;</code>
+     */
+    com.google.protobuf.ByteString
+        getPlatBytes();
+
+    /**
+     * <code>string did = 6;</code>
+     */
+    java.lang.String getDid();
+    /**
+     * <code>string did = 6;</code>
+     */
+    com.google.protobuf.ByteString
+        getDidBytes();
+
+    /**
+     * <code>string sign = 7;</code>
+     */
+    java.lang.String getSign();
+    /**
+     * <code>string sign = 7;</code>
+     */
+    com.google.protobuf.ByteString
+        getSignBytes();
+  }
+  /**
+   * Protobuf type {@code XmsgClientTokenInfo}
+   */
+  public  static final class XmsgClientTokenInfo extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:XmsgClientTokenInfo)
+      XmsgClientTokenInfoOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use XmsgClientTokenInfo.newBuilder() to construct.
+    private XmsgClientTokenInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private XmsgClientTokenInfo() {
+      cgt_ = "";
+      token_ = "";
+      alg_ = "";
+      slat_ = "";
+      plat_ = "";
+      did_ = "";
+      sign_ = "";
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private XmsgClientTokenInfo(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              cgt_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              token_ = s;
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              alg_ = s;
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              slat_ = s;
+              break;
+            }
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              plat_ = s;
+              break;
+            }
+            case 50: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              did_ = s;
+              break;
+            }
+            case 58: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              sign_ = s;
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return x.msg.pb.PbXmsg.internal_static_XmsgClientTokenInfo_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return x.msg.pb.PbXmsg.internal_static_XmsgClientTokenInfo_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              x.msg.pb.PbXmsg.XmsgClientTokenInfo.class, x.msg.pb.PbXmsg.XmsgClientTokenInfo.Builder.class);
+    }
+
+    public static final int CGT_FIELD_NUMBER = 1;
+    private volatile java.lang.Object cgt_;
+    /**
+     * <code>string cgt = 1;</code>
+     */
+    public java.lang.String getCgt() {
+      java.lang.Object ref = cgt_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        cgt_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string cgt = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getCgtBytes() {
+      java.lang.Object ref = cgt_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        cgt_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int TOKEN_FIELD_NUMBER = 2;
+    private volatile java.lang.Object token_;
+    /**
+     * <code>string token = 2;</code>
+     */
+    public java.lang.String getToken() {
+      java.lang.Object ref = token_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        token_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string token = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getTokenBytes() {
+      java.lang.Object ref = token_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        token_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ALG_FIELD_NUMBER = 3;
+    private volatile java.lang.Object alg_;
+    /**
+     * <code>string alg = 3;</code>
+     */
+    public java.lang.String getAlg() {
+      java.lang.Object ref = alg_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        alg_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string alg = 3;</code>
+     */
+    public com.google.protobuf.ByteString
+        getAlgBytes() {
+      java.lang.Object ref = alg_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        alg_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int SLAT_FIELD_NUMBER = 4;
+    private volatile java.lang.Object slat_;
+    /**
+     * <code>string slat = 4;</code>
+     */
+    public java.lang.String getSlat() {
+      java.lang.Object ref = slat_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        slat_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string slat = 4;</code>
+     */
+    public com.google.protobuf.ByteString
+        getSlatBytes() {
+      java.lang.Object ref = slat_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        slat_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int PLAT_FIELD_NUMBER = 5;
+    private volatile java.lang.Object plat_;
+    /**
+     * <code>string plat = 5;</code>
+     */
+    public java.lang.String getPlat() {
+      java.lang.Object ref = plat_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        plat_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string plat = 5;</code>
+     */
+    public com.google.protobuf.ByteString
+        getPlatBytes() {
+      java.lang.Object ref = plat_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        plat_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int DID_FIELD_NUMBER = 6;
+    private volatile java.lang.Object did_;
+    /**
+     * <code>string did = 6;</code>
+     */
+    public java.lang.String getDid() {
+      java.lang.Object ref = did_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        did_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string did = 6;</code>
+     */
+    public com.google.protobuf.ByteString
+        getDidBytes() {
+      java.lang.Object ref = did_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        did_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int SIGN_FIELD_NUMBER = 7;
+    private volatile java.lang.Object sign_;
+    /**
+     * <code>string sign = 7;</code>
+     */
+    public java.lang.String getSign() {
+      java.lang.Object ref = sign_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        sign_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string sign = 7;</code>
+     */
+    public com.google.protobuf.ByteString
+        getSignBytes() {
+      java.lang.Object ref = sign_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        sign_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getCgtBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, cgt_);
+      }
+      if (!getTokenBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, token_);
+      }
+      if (!getAlgBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, alg_);
+      }
+      if (!getSlatBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, slat_);
+      }
+      if (!getPlatBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, plat_);
+      }
+      if (!getDidBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, did_);
+      }
+      if (!getSignBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, sign_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getCgtBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, cgt_);
+      }
+      if (!getTokenBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, token_);
+      }
+      if (!getAlgBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, alg_);
+      }
+      if (!getSlatBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, slat_);
+      }
+      if (!getPlatBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, plat_);
+      }
+      if (!getDidBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, did_);
+      }
+      if (!getSignBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, sign_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof x.msg.pb.PbXmsg.XmsgClientTokenInfo)) {
+        return super.equals(obj);
+      }
+      x.msg.pb.PbXmsg.XmsgClientTokenInfo other = (x.msg.pb.PbXmsg.XmsgClientTokenInfo) obj;
+
+      boolean result = true;
+      result = result && getCgt()
+          .equals(other.getCgt());
+      result = result && getToken()
+          .equals(other.getToken());
+      result = result && getAlg()
+          .equals(other.getAlg());
+      result = result && getSlat()
+          .equals(other.getSlat());
+      result = result && getPlat()
+          .equals(other.getPlat());
+      result = result && getDid()
+          .equals(other.getDid());
+      result = result && getSign()
+          .equals(other.getSign());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + CGT_FIELD_NUMBER;
+      hash = (53 * hash) + getCgt().hashCode();
+      hash = (37 * hash) + TOKEN_FIELD_NUMBER;
+      hash = (53 * hash) + getToken().hashCode();
+      hash = (37 * hash) + ALG_FIELD_NUMBER;
+      hash = (53 * hash) + getAlg().hashCode();
+      hash = (37 * hash) + SLAT_FIELD_NUMBER;
+      hash = (53 * hash) + getSlat().hashCode();
+      hash = (37 * hash) + PLAT_FIELD_NUMBER;
+      hash = (53 * hash) + getPlat().hashCode();
+      hash = (37 * hash) + DID_FIELD_NUMBER;
+      hash = (53 * hash) + getDid().hashCode();
+      hash = (37 * hash) + SIGN_FIELD_NUMBER;
+      hash = (53 * hash) + getSign().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static x.msg.pb.PbXmsg.XmsgClientTokenInfo parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static x.msg.pb.PbXmsg.XmsgClientTokenInfo parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static x.msg.pb.PbXmsg.XmsgClientTokenInfo parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static x.msg.pb.PbXmsg.XmsgClientTokenInfo parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static x.msg.pb.PbXmsg.XmsgClientTokenInfo parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static x.msg.pb.PbXmsg.XmsgClientTokenInfo parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static x.msg.pb.PbXmsg.XmsgClientTokenInfo parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static x.msg.pb.PbXmsg.XmsgClientTokenInfo parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static x.msg.pb.PbXmsg.XmsgClientTokenInfo parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static x.msg.pb.PbXmsg.XmsgClientTokenInfo parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static x.msg.pb.PbXmsg.XmsgClientTokenInfo parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static x.msg.pb.PbXmsg.XmsgClientTokenInfo parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(x.msg.pb.PbXmsg.XmsgClientTokenInfo prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code XmsgClientTokenInfo}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:XmsgClientTokenInfo)
+        x.msg.pb.PbXmsg.XmsgClientTokenInfoOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return x.msg.pb.PbXmsg.internal_static_XmsgClientTokenInfo_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return x.msg.pb.PbXmsg.internal_static_XmsgClientTokenInfo_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                x.msg.pb.PbXmsg.XmsgClientTokenInfo.class, x.msg.pb.PbXmsg.XmsgClientTokenInfo.Builder.class);
+      }
+
+      // Construct using x.msg.pb.PbXmsg.XmsgClientTokenInfo.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        cgt_ = "";
+
+        token_ = "";
+
+        alg_ = "";
+
+        slat_ = "";
+
+        plat_ = "";
+
+        did_ = "";
+
+        sign_ = "";
+
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return x.msg.pb.PbXmsg.internal_static_XmsgClientTokenInfo_descriptor;
+      }
+
+      public x.msg.pb.PbXmsg.XmsgClientTokenInfo getDefaultInstanceForType() {
+        return x.msg.pb.PbXmsg.XmsgClientTokenInfo.getDefaultInstance();
+      }
+
+      public x.msg.pb.PbXmsg.XmsgClientTokenInfo build() {
+        x.msg.pb.PbXmsg.XmsgClientTokenInfo result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public x.msg.pb.PbXmsg.XmsgClientTokenInfo buildPartial() {
+        x.msg.pb.PbXmsg.XmsgClientTokenInfo result = new x.msg.pb.PbXmsg.XmsgClientTokenInfo(this);
+        result.cgt_ = cgt_;
+        result.token_ = token_;
+        result.alg_ = alg_;
+        result.slat_ = slat_;
+        result.plat_ = plat_;
+        result.did_ = did_;
+        result.sign_ = sign_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof x.msg.pb.PbXmsg.XmsgClientTokenInfo) {
+          return mergeFrom((x.msg.pb.PbXmsg.XmsgClientTokenInfo)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(x.msg.pb.PbXmsg.XmsgClientTokenInfo other) {
+        if (other == x.msg.pb.PbXmsg.XmsgClientTokenInfo.getDefaultInstance()) return this;
+        if (!other.getCgt().isEmpty()) {
+          cgt_ = other.cgt_;
+          onChanged();
+        }
+        if (!other.getToken().isEmpty()) {
+          token_ = other.token_;
+          onChanged();
+        }
+        if (!other.getAlg().isEmpty()) {
+          alg_ = other.alg_;
+          onChanged();
+        }
+        if (!other.getSlat().isEmpty()) {
+          slat_ = other.slat_;
+          onChanged();
+        }
+        if (!other.getPlat().isEmpty()) {
+          plat_ = other.plat_;
+          onChanged();
+        }
+        if (!other.getDid().isEmpty()) {
+          did_ = other.did_;
+          onChanged();
+        }
+        if (!other.getSign().isEmpty()) {
+          sign_ = other.sign_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        x.msg.pb.PbXmsg.XmsgClientTokenInfo parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (x.msg.pb.PbXmsg.XmsgClientTokenInfo) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object cgt_ = "";
+      /**
+       * <code>string cgt = 1;</code>
+       */
+      public java.lang.String getCgt() {
+        java.lang.Object ref = cgt_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          cgt_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string cgt = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getCgtBytes() {
+        java.lang.Object ref = cgt_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          cgt_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string cgt = 1;</code>
+       */
+      public Builder setCgt(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        cgt_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string cgt = 1;</code>
+       */
+      public Builder clearCgt() {
+        
+        cgt_ = getDefaultInstance().getCgt();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string cgt = 1;</code>
+       */
+      public Builder setCgtBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        cgt_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object token_ = "";
+      /**
+       * <code>string token = 2;</code>
+       */
+      public java.lang.String getToken() {
+        java.lang.Object ref = token_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          token_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string token = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getTokenBytes() {
+        java.lang.Object ref = token_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          token_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string token = 2;</code>
+       */
+      public Builder setToken(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        token_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string token = 2;</code>
+       */
+      public Builder clearToken() {
+        
+        token_ = getDefaultInstance().getToken();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string token = 2;</code>
+       */
+      public Builder setTokenBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        token_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object alg_ = "";
+      /**
+       * <code>string alg = 3;</code>
+       */
+      public java.lang.String getAlg() {
+        java.lang.Object ref = alg_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          alg_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string alg = 3;</code>
+       */
+      public com.google.protobuf.ByteString
+          getAlgBytes() {
+        java.lang.Object ref = alg_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          alg_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string alg = 3;</code>
+       */
+      public Builder setAlg(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        alg_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string alg = 3;</code>
+       */
+      public Builder clearAlg() {
+        
+        alg_ = getDefaultInstance().getAlg();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string alg = 3;</code>
+       */
+      public Builder setAlgBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        alg_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object slat_ = "";
+      /**
+       * <code>string slat = 4;</code>
+       */
+      public java.lang.String getSlat() {
+        java.lang.Object ref = slat_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          slat_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string slat = 4;</code>
+       */
+      public com.google.protobuf.ByteString
+          getSlatBytes() {
+        java.lang.Object ref = slat_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          slat_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string slat = 4;</code>
+       */
+      public Builder setSlat(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        slat_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string slat = 4;</code>
+       */
+      public Builder clearSlat() {
+        
+        slat_ = getDefaultInstance().getSlat();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string slat = 4;</code>
+       */
+      public Builder setSlatBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        slat_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object plat_ = "";
+      /**
+       * <code>string plat = 5;</code>
+       */
+      public java.lang.String getPlat() {
+        java.lang.Object ref = plat_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          plat_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string plat = 5;</code>
+       */
+      public com.google.protobuf.ByteString
+          getPlatBytes() {
+        java.lang.Object ref = plat_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          plat_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string plat = 5;</code>
+       */
+      public Builder setPlat(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        plat_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string plat = 5;</code>
+       */
+      public Builder clearPlat() {
+        
+        plat_ = getDefaultInstance().getPlat();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string plat = 5;</code>
+       */
+      public Builder setPlatBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        plat_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object did_ = "";
+      /**
+       * <code>string did = 6;</code>
+       */
+      public java.lang.String getDid() {
+        java.lang.Object ref = did_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          did_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string did = 6;</code>
+       */
+      public com.google.protobuf.ByteString
+          getDidBytes() {
+        java.lang.Object ref = did_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          did_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string did = 6;</code>
+       */
+      public Builder setDid(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        did_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string did = 6;</code>
+       */
+      public Builder clearDid() {
+        
+        did_ = getDefaultInstance().getDid();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string did = 6;</code>
+       */
+      public Builder setDidBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        did_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object sign_ = "";
+      /**
+       * <code>string sign = 7;</code>
+       */
+      public java.lang.String getSign() {
+        java.lang.Object ref = sign_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          sign_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string sign = 7;</code>
+       */
+      public com.google.protobuf.ByteString
+          getSignBytes() {
+        java.lang.Object ref = sign_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          sign_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string sign = 7;</code>
+       */
+      public Builder setSign(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        sign_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string sign = 7;</code>
+       */
+      public Builder clearSign() {
+        
+        sign_ = getDefaultInstance().getSign();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string sign = 7;</code>
+       */
+      public Builder setSignBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        sign_ = value;
+        onChanged();
+        return this;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:XmsgClientTokenInfo)
+    }
+
+    // @@protoc_insertion_point(class_scope:XmsgClientTokenInfo)
+    private static final x.msg.pb.PbXmsg.XmsgClientTokenInfo DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new x.msg.pb.PbXmsg.XmsgClientTokenInfo();
+    }
+
+    public static x.msg.pb.PbXmsg.XmsgClientTokenInfo getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<XmsgClientTokenInfo>
+        PARSER = new com.google.protobuf.AbstractParser<XmsgClientTokenInfo>() {
+      public XmsgClientTokenInfo parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new XmsgClientTokenInfo(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<XmsgClientTokenInfo> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<XmsgClientTokenInfo> getParserForType() {
+      return PARSER;
+    }
+
+    public x.msg.pb.PbXmsg.XmsgClientTokenInfo getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface XmsgImHlrAttachSimpleReqOrBuilder extends
       // @@protoc_insertion_point(interface_extends:XmsgImHlrAttachSimpleReq)
       com.google.protobuf.MessageOrBuilder {
@@ -48216,6 +55473,1835 @@ public final class PbXmsg {
 
   }
 
+  public interface XmsgImAuthRegSimpleReqOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:XmsgImAuthRegSimpleReq)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string usr = 1;</code>
+     */
+    java.lang.String getUsr();
+    /**
+     * <code>string usr = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getUsrBytes();
+
+    /**
+     * <code>string salt = 2;</code>
+     */
+    java.lang.String getSalt();
+    /**
+     * <code>string salt = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getSaltBytes();
+
+    /**
+     * <code>string pwd = 3;</code>
+     */
+    java.lang.String getPwd();
+    /**
+     * <code>string pwd = 3;</code>
+     */
+    com.google.protobuf.ByteString
+        getPwdBytes();
+
+    /**
+     * <code>.XmsgImClientDeviceInfo dev = 4;</code>
+     */
+    boolean hasDev();
+    /**
+     * <code>.XmsgImClientDeviceInfo dev = 4;</code>
+     */
+    x.msg.pb.PbXmsg.XmsgImClientDeviceInfo getDev();
+    /**
+     * <code>.XmsgImClientDeviceInfo dev = 4;</code>
+     */
+    x.msg.pb.PbXmsg.XmsgImClientDeviceInfoOrBuilder getDevOrBuilder();
+  }
+  /**
+   * Protobuf type {@code XmsgImAuthRegSimpleReq}
+   */
+  public  static final class XmsgImAuthRegSimpleReq extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:XmsgImAuthRegSimpleReq)
+      XmsgImAuthRegSimpleReqOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use XmsgImAuthRegSimpleReq.newBuilder() to construct.
+    private XmsgImAuthRegSimpleReq(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private XmsgImAuthRegSimpleReq() {
+      usr_ = "";
+      salt_ = "";
+      pwd_ = "";
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private XmsgImAuthRegSimpleReq(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              usr_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              salt_ = s;
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              pwd_ = s;
+              break;
+            }
+            case 34: {
+              x.msg.pb.PbXmsg.XmsgImClientDeviceInfo.Builder subBuilder = null;
+              if (dev_ != null) {
+                subBuilder = dev_.toBuilder();
+              }
+              dev_ = input.readMessage(x.msg.pb.PbXmsg.XmsgImClientDeviceInfo.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(dev_);
+                dev_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return x.msg.pb.PbXmsg.internal_static_XmsgImAuthRegSimpleReq_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return x.msg.pb.PbXmsg.internal_static_XmsgImAuthRegSimpleReq_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              x.msg.pb.PbXmsg.XmsgImAuthRegSimpleReq.class, x.msg.pb.PbXmsg.XmsgImAuthRegSimpleReq.Builder.class);
+    }
+
+    public static final int USR_FIELD_NUMBER = 1;
+    private volatile java.lang.Object usr_;
+    /**
+     * <code>string usr = 1;</code>
+     */
+    public java.lang.String getUsr() {
+      java.lang.Object ref = usr_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        usr_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string usr = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getUsrBytes() {
+      java.lang.Object ref = usr_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        usr_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int SALT_FIELD_NUMBER = 2;
+    private volatile java.lang.Object salt_;
+    /**
+     * <code>string salt = 2;</code>
+     */
+    public java.lang.String getSalt() {
+      java.lang.Object ref = salt_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        salt_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string salt = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getSaltBytes() {
+      java.lang.Object ref = salt_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        salt_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int PWD_FIELD_NUMBER = 3;
+    private volatile java.lang.Object pwd_;
+    /**
+     * <code>string pwd = 3;</code>
+     */
+    public java.lang.String getPwd() {
+      java.lang.Object ref = pwd_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        pwd_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string pwd = 3;</code>
+     */
+    public com.google.protobuf.ByteString
+        getPwdBytes() {
+      java.lang.Object ref = pwd_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        pwd_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int DEV_FIELD_NUMBER = 4;
+    private x.msg.pb.PbXmsg.XmsgImClientDeviceInfo dev_;
+    /**
+     * <code>.XmsgImClientDeviceInfo dev = 4;</code>
+     */
+    public boolean hasDev() {
+      return dev_ != null;
+    }
+    /**
+     * <code>.XmsgImClientDeviceInfo dev = 4;</code>
+     */
+    public x.msg.pb.PbXmsg.XmsgImClientDeviceInfo getDev() {
+      return dev_ == null ? x.msg.pb.PbXmsg.XmsgImClientDeviceInfo.getDefaultInstance() : dev_;
+    }
+    /**
+     * <code>.XmsgImClientDeviceInfo dev = 4;</code>
+     */
+    public x.msg.pb.PbXmsg.XmsgImClientDeviceInfoOrBuilder getDevOrBuilder() {
+      return getDev();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getUsrBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, usr_);
+      }
+      if (!getSaltBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, salt_);
+      }
+      if (!getPwdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, pwd_);
+      }
+      if (dev_ != null) {
+        output.writeMessage(4, getDev());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getUsrBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, usr_);
+      }
+      if (!getSaltBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, salt_);
+      }
+      if (!getPwdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, pwd_);
+      }
+      if (dev_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(4, getDev());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof x.msg.pb.PbXmsg.XmsgImAuthRegSimpleReq)) {
+        return super.equals(obj);
+      }
+      x.msg.pb.PbXmsg.XmsgImAuthRegSimpleReq other = (x.msg.pb.PbXmsg.XmsgImAuthRegSimpleReq) obj;
+
+      boolean result = true;
+      result = result && getUsr()
+          .equals(other.getUsr());
+      result = result && getSalt()
+          .equals(other.getSalt());
+      result = result && getPwd()
+          .equals(other.getPwd());
+      result = result && (hasDev() == other.hasDev());
+      if (hasDev()) {
+        result = result && getDev()
+            .equals(other.getDev());
+      }
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + USR_FIELD_NUMBER;
+      hash = (53 * hash) + getUsr().hashCode();
+      hash = (37 * hash) + SALT_FIELD_NUMBER;
+      hash = (53 * hash) + getSalt().hashCode();
+      hash = (37 * hash) + PWD_FIELD_NUMBER;
+      hash = (53 * hash) + getPwd().hashCode();
+      if (hasDev()) {
+        hash = (37 * hash) + DEV_FIELD_NUMBER;
+        hash = (53 * hash) + getDev().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static x.msg.pb.PbXmsg.XmsgImAuthRegSimpleReq parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static x.msg.pb.PbXmsg.XmsgImAuthRegSimpleReq parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static x.msg.pb.PbXmsg.XmsgImAuthRegSimpleReq parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static x.msg.pb.PbXmsg.XmsgImAuthRegSimpleReq parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static x.msg.pb.PbXmsg.XmsgImAuthRegSimpleReq parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static x.msg.pb.PbXmsg.XmsgImAuthRegSimpleReq parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static x.msg.pb.PbXmsg.XmsgImAuthRegSimpleReq parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static x.msg.pb.PbXmsg.XmsgImAuthRegSimpleReq parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static x.msg.pb.PbXmsg.XmsgImAuthRegSimpleReq parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static x.msg.pb.PbXmsg.XmsgImAuthRegSimpleReq parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static x.msg.pb.PbXmsg.XmsgImAuthRegSimpleReq parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static x.msg.pb.PbXmsg.XmsgImAuthRegSimpleReq parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(x.msg.pb.PbXmsg.XmsgImAuthRegSimpleReq prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code XmsgImAuthRegSimpleReq}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:XmsgImAuthRegSimpleReq)
+        x.msg.pb.PbXmsg.XmsgImAuthRegSimpleReqOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return x.msg.pb.PbXmsg.internal_static_XmsgImAuthRegSimpleReq_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return x.msg.pb.PbXmsg.internal_static_XmsgImAuthRegSimpleReq_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                x.msg.pb.PbXmsg.XmsgImAuthRegSimpleReq.class, x.msg.pb.PbXmsg.XmsgImAuthRegSimpleReq.Builder.class);
+      }
+
+      // Construct using x.msg.pb.PbXmsg.XmsgImAuthRegSimpleReq.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        usr_ = "";
+
+        salt_ = "";
+
+        pwd_ = "";
+
+        if (devBuilder_ == null) {
+          dev_ = null;
+        } else {
+          dev_ = null;
+          devBuilder_ = null;
+        }
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return x.msg.pb.PbXmsg.internal_static_XmsgImAuthRegSimpleReq_descriptor;
+      }
+
+      public x.msg.pb.PbXmsg.XmsgImAuthRegSimpleReq getDefaultInstanceForType() {
+        return x.msg.pb.PbXmsg.XmsgImAuthRegSimpleReq.getDefaultInstance();
+      }
+
+      public x.msg.pb.PbXmsg.XmsgImAuthRegSimpleReq build() {
+        x.msg.pb.PbXmsg.XmsgImAuthRegSimpleReq result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public x.msg.pb.PbXmsg.XmsgImAuthRegSimpleReq buildPartial() {
+        x.msg.pb.PbXmsg.XmsgImAuthRegSimpleReq result = new x.msg.pb.PbXmsg.XmsgImAuthRegSimpleReq(this);
+        result.usr_ = usr_;
+        result.salt_ = salt_;
+        result.pwd_ = pwd_;
+        if (devBuilder_ == null) {
+          result.dev_ = dev_;
+        } else {
+          result.dev_ = devBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof x.msg.pb.PbXmsg.XmsgImAuthRegSimpleReq) {
+          return mergeFrom((x.msg.pb.PbXmsg.XmsgImAuthRegSimpleReq)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(x.msg.pb.PbXmsg.XmsgImAuthRegSimpleReq other) {
+        if (other == x.msg.pb.PbXmsg.XmsgImAuthRegSimpleReq.getDefaultInstance()) return this;
+        if (!other.getUsr().isEmpty()) {
+          usr_ = other.usr_;
+          onChanged();
+        }
+        if (!other.getSalt().isEmpty()) {
+          salt_ = other.salt_;
+          onChanged();
+        }
+        if (!other.getPwd().isEmpty()) {
+          pwd_ = other.pwd_;
+          onChanged();
+        }
+        if (other.hasDev()) {
+          mergeDev(other.getDev());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        x.msg.pb.PbXmsg.XmsgImAuthRegSimpleReq parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (x.msg.pb.PbXmsg.XmsgImAuthRegSimpleReq) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object usr_ = "";
+      /**
+       * <code>string usr = 1;</code>
+       */
+      public java.lang.String getUsr() {
+        java.lang.Object ref = usr_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          usr_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string usr = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getUsrBytes() {
+        java.lang.Object ref = usr_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          usr_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string usr = 1;</code>
+       */
+      public Builder setUsr(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        usr_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string usr = 1;</code>
+       */
+      public Builder clearUsr() {
+        
+        usr_ = getDefaultInstance().getUsr();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string usr = 1;</code>
+       */
+      public Builder setUsrBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        usr_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object salt_ = "";
+      /**
+       * <code>string salt = 2;</code>
+       */
+      public java.lang.String getSalt() {
+        java.lang.Object ref = salt_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          salt_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string salt = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getSaltBytes() {
+        java.lang.Object ref = salt_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          salt_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string salt = 2;</code>
+       */
+      public Builder setSalt(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        salt_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string salt = 2;</code>
+       */
+      public Builder clearSalt() {
+        
+        salt_ = getDefaultInstance().getSalt();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string salt = 2;</code>
+       */
+      public Builder setSaltBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        salt_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object pwd_ = "";
+      /**
+       * <code>string pwd = 3;</code>
+       */
+      public java.lang.String getPwd() {
+        java.lang.Object ref = pwd_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          pwd_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string pwd = 3;</code>
+       */
+      public com.google.protobuf.ByteString
+          getPwdBytes() {
+        java.lang.Object ref = pwd_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          pwd_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string pwd = 3;</code>
+       */
+      public Builder setPwd(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        pwd_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string pwd = 3;</code>
+       */
+      public Builder clearPwd() {
+        
+        pwd_ = getDefaultInstance().getPwd();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string pwd = 3;</code>
+       */
+      public Builder setPwdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        pwd_ = value;
+        onChanged();
+        return this;
+      }
+
+      private x.msg.pb.PbXmsg.XmsgImClientDeviceInfo dev_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          x.msg.pb.PbXmsg.XmsgImClientDeviceInfo, x.msg.pb.PbXmsg.XmsgImClientDeviceInfo.Builder, x.msg.pb.PbXmsg.XmsgImClientDeviceInfoOrBuilder> devBuilder_;
+      /**
+       * <code>.XmsgImClientDeviceInfo dev = 4;</code>
+       */
+      public boolean hasDev() {
+        return devBuilder_ != null || dev_ != null;
+      }
+      /**
+       * <code>.XmsgImClientDeviceInfo dev = 4;</code>
+       */
+      public x.msg.pb.PbXmsg.XmsgImClientDeviceInfo getDev() {
+        if (devBuilder_ == null) {
+          return dev_ == null ? x.msg.pb.PbXmsg.XmsgImClientDeviceInfo.getDefaultInstance() : dev_;
+        } else {
+          return devBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.XmsgImClientDeviceInfo dev = 4;</code>
+       */
+      public Builder setDev(x.msg.pb.PbXmsg.XmsgImClientDeviceInfo value) {
+        if (devBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          dev_ = value;
+          onChanged();
+        } else {
+          devBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.XmsgImClientDeviceInfo dev = 4;</code>
+       */
+      public Builder setDev(
+          x.msg.pb.PbXmsg.XmsgImClientDeviceInfo.Builder builderForValue) {
+        if (devBuilder_ == null) {
+          dev_ = builderForValue.build();
+          onChanged();
+        } else {
+          devBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.XmsgImClientDeviceInfo dev = 4;</code>
+       */
+      public Builder mergeDev(x.msg.pb.PbXmsg.XmsgImClientDeviceInfo value) {
+        if (devBuilder_ == null) {
+          if (dev_ != null) {
+            dev_ =
+              x.msg.pb.PbXmsg.XmsgImClientDeviceInfo.newBuilder(dev_).mergeFrom(value).buildPartial();
+          } else {
+            dev_ = value;
+          }
+          onChanged();
+        } else {
+          devBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.XmsgImClientDeviceInfo dev = 4;</code>
+       */
+      public Builder clearDev() {
+        if (devBuilder_ == null) {
+          dev_ = null;
+          onChanged();
+        } else {
+          dev_ = null;
+          devBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.XmsgImClientDeviceInfo dev = 4;</code>
+       */
+      public x.msg.pb.PbXmsg.XmsgImClientDeviceInfo.Builder getDevBuilder() {
+        
+        onChanged();
+        return getDevFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.XmsgImClientDeviceInfo dev = 4;</code>
+       */
+      public x.msg.pb.PbXmsg.XmsgImClientDeviceInfoOrBuilder getDevOrBuilder() {
+        if (devBuilder_ != null) {
+          return devBuilder_.getMessageOrBuilder();
+        } else {
+          return dev_ == null ?
+              x.msg.pb.PbXmsg.XmsgImClientDeviceInfo.getDefaultInstance() : dev_;
+        }
+      }
+      /**
+       * <code>.XmsgImClientDeviceInfo dev = 4;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          x.msg.pb.PbXmsg.XmsgImClientDeviceInfo, x.msg.pb.PbXmsg.XmsgImClientDeviceInfo.Builder, x.msg.pb.PbXmsg.XmsgImClientDeviceInfoOrBuilder> 
+          getDevFieldBuilder() {
+        if (devBuilder_ == null) {
+          devBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              x.msg.pb.PbXmsg.XmsgImClientDeviceInfo, x.msg.pb.PbXmsg.XmsgImClientDeviceInfo.Builder, x.msg.pb.PbXmsg.XmsgImClientDeviceInfoOrBuilder>(
+                  getDev(),
+                  getParentForChildren(),
+                  isClean());
+          dev_ = null;
+        }
+        return devBuilder_;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:XmsgImAuthRegSimpleReq)
+    }
+
+    // @@protoc_insertion_point(class_scope:XmsgImAuthRegSimpleReq)
+    private static final x.msg.pb.PbXmsg.XmsgImAuthRegSimpleReq DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new x.msg.pb.PbXmsg.XmsgImAuthRegSimpleReq();
+    }
+
+    public static x.msg.pb.PbXmsg.XmsgImAuthRegSimpleReq getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<XmsgImAuthRegSimpleReq>
+        PARSER = new com.google.protobuf.AbstractParser<XmsgImAuthRegSimpleReq>() {
+      public XmsgImAuthRegSimpleReq parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new XmsgImAuthRegSimpleReq(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<XmsgImAuthRegSimpleReq> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<XmsgImAuthRegSimpleReq> getParserForType() {
+      return PARSER;
+    }
+
+    public x.msg.pb.PbXmsg.XmsgImAuthRegSimpleReq getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface XmsgImAuthRegSimpleRspOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:XmsgImAuthRegSimpleRsp)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string cgt = 1;</code>
+     */
+    java.lang.String getCgt();
+    /**
+     * <code>string cgt = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getCgtBytes();
+
+    /**
+     * <code>map&lt;string, string&gt; ext = 2;</code>
+     */
+    int getExtCount();
+    /**
+     * <code>map&lt;string, string&gt; ext = 2;</code>
+     */
+    boolean containsExt(
+        java.lang.String key);
+    /**
+     * Use {@link #getExtMap()} instead.
+     */
+    @java.lang.Deprecated
+    java.util.Map<java.lang.String, java.lang.String>
+    getExt();
+    /**
+     * <code>map&lt;string, string&gt; ext = 2;</code>
+     */
+    java.util.Map<java.lang.String, java.lang.String>
+    getExtMap();
+    /**
+     * <code>map&lt;string, string&gt; ext = 2;</code>
+     */
+
+    java.lang.String getExtOrDefault(
+        java.lang.String key,
+        java.lang.String defaultValue);
+    /**
+     * <code>map&lt;string, string&gt; ext = 2;</code>
+     */
+
+    java.lang.String getExtOrThrow(
+        java.lang.String key);
+  }
+  /**
+   * Protobuf type {@code XmsgImAuthRegSimpleRsp}
+   */
+  public  static final class XmsgImAuthRegSimpleRsp extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:XmsgImAuthRegSimpleRsp)
+      XmsgImAuthRegSimpleRspOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use XmsgImAuthRegSimpleRsp.newBuilder() to construct.
+    private XmsgImAuthRegSimpleRsp(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private XmsgImAuthRegSimpleRsp() {
+      cgt_ = "";
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private XmsgImAuthRegSimpleRsp(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              cgt_ = s;
+              break;
+            }
+            case 18: {
+              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+                ext_ = com.google.protobuf.MapField.newMapField(
+                    ExtDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000002;
+              }
+              com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+              ext__ = input.readMessage(
+                  ExtDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              ext_.getMutableMap().put(
+                  ext__.getKey(), ext__.getValue());
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return x.msg.pb.PbXmsg.internal_static_XmsgImAuthRegSimpleRsp_descriptor;
+    }
+
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapField internalGetMapField(
+        int number) {
+      switch (number) {
+        case 2:
+          return internalGetExt();
+        default:
+          throw new RuntimeException(
+              "Invalid map field number: " + number);
+      }
+    }
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return x.msg.pb.PbXmsg.internal_static_XmsgImAuthRegSimpleRsp_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              x.msg.pb.PbXmsg.XmsgImAuthRegSimpleRsp.class, x.msg.pb.PbXmsg.XmsgImAuthRegSimpleRsp.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int CGT_FIELD_NUMBER = 1;
+    private volatile java.lang.Object cgt_;
+    /**
+     * <code>string cgt = 1;</code>
+     */
+    public java.lang.String getCgt() {
+      java.lang.Object ref = cgt_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        cgt_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string cgt = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getCgtBytes() {
+      java.lang.Object ref = cgt_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        cgt_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int EXT_FIELD_NUMBER = 2;
+    private static final class ExtDefaultEntryHolder {
+      static final com.google.protobuf.MapEntry<
+          java.lang.String, java.lang.String> defaultEntry =
+              com.google.protobuf.MapEntry
+              .<java.lang.String, java.lang.String>newDefaultInstance(
+                  x.msg.pb.PbXmsg.internal_static_XmsgImAuthRegSimpleRsp_ExtEntry_descriptor, 
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "",
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "");
+    }
+    private com.google.protobuf.MapField<
+        java.lang.String, java.lang.String> ext_;
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+    internalGetExt() {
+      if (ext_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            ExtDefaultEntryHolder.defaultEntry);
+      }
+      return ext_;
+    }
+
+    public int getExtCount() {
+      return internalGetExt().getMap().size();
+    }
+    /**
+     * <code>map&lt;string, string&gt; ext = 2;</code>
+     */
+
+    public boolean containsExt(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      return internalGetExt().getMap().containsKey(key);
+    }
+    /**
+     * Use {@link #getExtMap()} instead.
+     */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getExt() {
+      return getExtMap();
+    }
+    /**
+     * <code>map&lt;string, string&gt; ext = 2;</code>
+     */
+
+    public java.util.Map<java.lang.String, java.lang.String> getExtMap() {
+      return internalGetExt().getMap();
+    }
+    /**
+     * <code>map&lt;string, string&gt; ext = 2;</code>
+     */
+
+    public java.lang.String getExtOrDefault(
+        java.lang.String key,
+        java.lang.String defaultValue) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetExt().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <code>map&lt;string, string&gt; ext = 2;</code>
+     */
+
+    public java.lang.String getExtOrThrow(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetExt().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getCgtBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, cgt_);
+      }
+      com.google.protobuf.GeneratedMessageV3
+        .serializeStringMapTo(
+          output,
+          internalGetExt(),
+          ExtDefaultEntryHolder.defaultEntry,
+          2);
+      unknownFields.writeTo(output);
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getCgtBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, cgt_);
+      }
+      for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
+           : internalGetExt().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+        ext__ = ExtDefaultEntryHolder.defaultEntry.newBuilderForType()
+            .setKey(entry.getKey())
+            .setValue(entry.getValue())
+            .build();
+        size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(2, ext__);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof x.msg.pb.PbXmsg.XmsgImAuthRegSimpleRsp)) {
+        return super.equals(obj);
+      }
+      x.msg.pb.PbXmsg.XmsgImAuthRegSimpleRsp other = (x.msg.pb.PbXmsg.XmsgImAuthRegSimpleRsp) obj;
+
+      boolean result = true;
+      result = result && getCgt()
+          .equals(other.getCgt());
+      result = result && internalGetExt().equals(
+          other.internalGetExt());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + CGT_FIELD_NUMBER;
+      hash = (53 * hash) + getCgt().hashCode();
+      if (!internalGetExt().getMap().isEmpty()) {
+        hash = (37 * hash) + EXT_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetExt().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static x.msg.pb.PbXmsg.XmsgImAuthRegSimpleRsp parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static x.msg.pb.PbXmsg.XmsgImAuthRegSimpleRsp parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static x.msg.pb.PbXmsg.XmsgImAuthRegSimpleRsp parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static x.msg.pb.PbXmsg.XmsgImAuthRegSimpleRsp parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static x.msg.pb.PbXmsg.XmsgImAuthRegSimpleRsp parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static x.msg.pb.PbXmsg.XmsgImAuthRegSimpleRsp parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static x.msg.pb.PbXmsg.XmsgImAuthRegSimpleRsp parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static x.msg.pb.PbXmsg.XmsgImAuthRegSimpleRsp parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static x.msg.pb.PbXmsg.XmsgImAuthRegSimpleRsp parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static x.msg.pb.PbXmsg.XmsgImAuthRegSimpleRsp parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static x.msg.pb.PbXmsg.XmsgImAuthRegSimpleRsp parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static x.msg.pb.PbXmsg.XmsgImAuthRegSimpleRsp parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(x.msg.pb.PbXmsg.XmsgImAuthRegSimpleRsp prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code XmsgImAuthRegSimpleRsp}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:XmsgImAuthRegSimpleRsp)
+        x.msg.pb.PbXmsg.XmsgImAuthRegSimpleRspOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return x.msg.pb.PbXmsg.internal_static_XmsgImAuthRegSimpleRsp_descriptor;
+      }
+
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapField internalGetMapField(
+          int number) {
+        switch (number) {
+          case 2:
+            return internalGetExt();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapField internalGetMutableMapField(
+          int number) {
+        switch (number) {
+          case 2:
+            return internalGetMutableExt();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return x.msg.pb.PbXmsg.internal_static_XmsgImAuthRegSimpleRsp_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                x.msg.pb.PbXmsg.XmsgImAuthRegSimpleRsp.class, x.msg.pb.PbXmsg.XmsgImAuthRegSimpleRsp.Builder.class);
+      }
+
+      // Construct using x.msg.pb.PbXmsg.XmsgImAuthRegSimpleRsp.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        cgt_ = "";
+
+        internalGetMutableExt().clear();
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return x.msg.pb.PbXmsg.internal_static_XmsgImAuthRegSimpleRsp_descriptor;
+      }
+
+      public x.msg.pb.PbXmsg.XmsgImAuthRegSimpleRsp getDefaultInstanceForType() {
+        return x.msg.pb.PbXmsg.XmsgImAuthRegSimpleRsp.getDefaultInstance();
+      }
+
+      public x.msg.pb.PbXmsg.XmsgImAuthRegSimpleRsp build() {
+        x.msg.pb.PbXmsg.XmsgImAuthRegSimpleRsp result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public x.msg.pb.PbXmsg.XmsgImAuthRegSimpleRsp buildPartial() {
+        x.msg.pb.PbXmsg.XmsgImAuthRegSimpleRsp result = new x.msg.pb.PbXmsg.XmsgImAuthRegSimpleRsp(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        result.cgt_ = cgt_;
+        result.ext_ = internalGetExt();
+        result.ext_.makeImmutable();
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof x.msg.pb.PbXmsg.XmsgImAuthRegSimpleRsp) {
+          return mergeFrom((x.msg.pb.PbXmsg.XmsgImAuthRegSimpleRsp)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(x.msg.pb.PbXmsg.XmsgImAuthRegSimpleRsp other) {
+        if (other == x.msg.pb.PbXmsg.XmsgImAuthRegSimpleRsp.getDefaultInstance()) return this;
+        if (!other.getCgt().isEmpty()) {
+          cgt_ = other.cgt_;
+          onChanged();
+        }
+        internalGetMutableExt().mergeFrom(
+            other.internalGetExt());
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        x.msg.pb.PbXmsg.XmsgImAuthRegSimpleRsp parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (x.msg.pb.PbXmsg.XmsgImAuthRegSimpleRsp) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object cgt_ = "";
+      /**
+       * <code>string cgt = 1;</code>
+       */
+      public java.lang.String getCgt() {
+        java.lang.Object ref = cgt_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          cgt_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string cgt = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getCgtBytes() {
+        java.lang.Object ref = cgt_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          cgt_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string cgt = 1;</code>
+       */
+      public Builder setCgt(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        cgt_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string cgt = 1;</code>
+       */
+      public Builder clearCgt() {
+        
+        cgt_ = getDefaultInstance().getCgt();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string cgt = 1;</code>
+       */
+      public Builder setCgtBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        cgt_ = value;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.MapField<
+          java.lang.String, java.lang.String> ext_;
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      internalGetExt() {
+        if (ext_ == null) {
+          return com.google.protobuf.MapField.emptyMapField(
+              ExtDefaultEntryHolder.defaultEntry);
+        }
+        return ext_;
+      }
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      internalGetMutableExt() {
+        onChanged();;
+        if (ext_ == null) {
+          ext_ = com.google.protobuf.MapField.newMapField(
+              ExtDefaultEntryHolder.defaultEntry);
+        }
+        if (!ext_.isMutable()) {
+          ext_ = ext_.copy();
+        }
+        return ext_;
+      }
+
+      public int getExtCount() {
+        return internalGetExt().getMap().size();
+      }
+      /**
+       * <code>map&lt;string, string&gt; ext = 2;</code>
+       */
+
+      public boolean containsExt(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        return internalGetExt().getMap().containsKey(key);
+      }
+      /**
+       * Use {@link #getExtMap()} instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.String> getExt() {
+        return getExtMap();
+      }
+      /**
+       * <code>map&lt;string, string&gt; ext = 2;</code>
+       */
+
+      public java.util.Map<java.lang.String, java.lang.String> getExtMap() {
+        return internalGetExt().getMap();
+      }
+      /**
+       * <code>map&lt;string, string&gt; ext = 2;</code>
+       */
+
+      public java.lang.String getExtOrDefault(
+          java.lang.String key,
+          java.lang.String defaultValue) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, java.lang.String> map =
+            internalGetExt().getMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+      /**
+       * <code>map&lt;string, string&gt; ext = 2;</code>
+       */
+
+      public java.lang.String getExtOrThrow(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, java.lang.String> map =
+            internalGetExt().getMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+
+      public Builder clearExt() {
+        internalGetMutableExt().getMutableMap()
+            .clear();
+        return this;
+      }
+      /**
+       * <code>map&lt;string, string&gt; ext = 2;</code>
+       */
+
+      public Builder removeExt(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutableExt().getMutableMap()
+            .remove(key);
+        return this;
+      }
+      /**
+       * Use alternate mutation accessors instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.String>
+      getMutableExt() {
+        return internalGetMutableExt().getMutableMap();
+      }
+      /**
+       * <code>map&lt;string, string&gt; ext = 2;</code>
+       */
+      public Builder putExt(
+          java.lang.String key,
+          java.lang.String value) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        if (value == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutableExt().getMutableMap()
+            .put(key, value);
+        return this;
+      }
+      /**
+       * <code>map&lt;string, string&gt; ext = 2;</code>
+       */
+
+      public Builder putAllExt(
+          java.util.Map<java.lang.String, java.lang.String> values) {
+        internalGetMutableExt().getMutableMap()
+            .putAll(values);
+        return this;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:XmsgImAuthRegSimpleRsp)
+    }
+
+    // @@protoc_insertion_point(class_scope:XmsgImAuthRegSimpleRsp)
+    private static final x.msg.pb.PbXmsg.XmsgImAuthRegSimpleRsp DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new x.msg.pb.PbXmsg.XmsgImAuthRegSimpleRsp();
+    }
+
+    public static x.msg.pb.PbXmsg.XmsgImAuthRegSimpleRsp getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<XmsgImAuthRegSimpleRsp>
+        PARSER = new com.google.protobuf.AbstractParser<XmsgImAuthRegSimpleRsp>() {
+      public XmsgImAuthRegSimpleRsp parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new XmsgImAuthRegSimpleRsp(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<XmsgImAuthRegSimpleRsp> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<XmsgImAuthRegSimpleRsp> getParserForType() {
+      return PARSER;
+    }
+
+    public x.msg.pb.PbXmsg.XmsgImAuthRegSimpleRsp getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface XmsgImClientDeviceInfoOrBuilder extends
       // @@protoc_insertion_point(interface_extends:XmsgImClientDeviceInfo)
       com.google.protobuf.MessageOrBuilder {
@@ -50472,1835 +59558,6 @@ public final class PbXmsg {
     }
 
     public x.msg.pb.PbXmsg.XmsgImClientServiceAddress getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface XmsgImAuthRegSimpleReqOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:XmsgImAuthRegSimpleReq)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>string usr = 1;</code>
-     */
-    java.lang.String getUsr();
-    /**
-     * <code>string usr = 1;</code>
-     */
-    com.google.protobuf.ByteString
-        getUsrBytes();
-
-    /**
-     * <code>string salt = 2;</code>
-     */
-    java.lang.String getSalt();
-    /**
-     * <code>string salt = 2;</code>
-     */
-    com.google.protobuf.ByteString
-        getSaltBytes();
-
-    /**
-     * <code>string pwd = 3;</code>
-     */
-    java.lang.String getPwd();
-    /**
-     * <code>string pwd = 3;</code>
-     */
-    com.google.protobuf.ByteString
-        getPwdBytes();
-
-    /**
-     * <code>.XmsgImClientDeviceInfo dev = 4;</code>
-     */
-    boolean hasDev();
-    /**
-     * <code>.XmsgImClientDeviceInfo dev = 4;</code>
-     */
-    x.msg.pb.PbXmsg.XmsgImClientDeviceInfo getDev();
-    /**
-     * <code>.XmsgImClientDeviceInfo dev = 4;</code>
-     */
-    x.msg.pb.PbXmsg.XmsgImClientDeviceInfoOrBuilder getDevOrBuilder();
-  }
-  /**
-   * Protobuf type {@code XmsgImAuthRegSimpleReq}
-   */
-  public  static final class XmsgImAuthRegSimpleReq extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:XmsgImAuthRegSimpleReq)
-      XmsgImAuthRegSimpleReqOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use XmsgImAuthRegSimpleReq.newBuilder() to construct.
-    private XmsgImAuthRegSimpleReq(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private XmsgImAuthRegSimpleReq() {
-      usr_ = "";
-      salt_ = "";
-      pwd_ = "";
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private XmsgImAuthRegSimpleReq(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              usr_ = s;
-              break;
-            }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              salt_ = s;
-              break;
-            }
-            case 26: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              pwd_ = s;
-              break;
-            }
-            case 34: {
-              x.msg.pb.PbXmsg.XmsgImClientDeviceInfo.Builder subBuilder = null;
-              if (dev_ != null) {
-                subBuilder = dev_.toBuilder();
-              }
-              dev_ = input.readMessage(x.msg.pb.PbXmsg.XmsgImClientDeviceInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(dev_);
-                dev_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return x.msg.pb.PbXmsg.internal_static_XmsgImAuthRegSimpleReq_descriptor;
-    }
-
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return x.msg.pb.PbXmsg.internal_static_XmsgImAuthRegSimpleReq_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              x.msg.pb.PbXmsg.XmsgImAuthRegSimpleReq.class, x.msg.pb.PbXmsg.XmsgImAuthRegSimpleReq.Builder.class);
-    }
-
-    public static final int USR_FIELD_NUMBER = 1;
-    private volatile java.lang.Object usr_;
-    /**
-     * <code>string usr = 1;</code>
-     */
-    public java.lang.String getUsr() {
-      java.lang.Object ref = usr_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        usr_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string usr = 1;</code>
-     */
-    public com.google.protobuf.ByteString
-        getUsrBytes() {
-      java.lang.Object ref = usr_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        usr_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int SALT_FIELD_NUMBER = 2;
-    private volatile java.lang.Object salt_;
-    /**
-     * <code>string salt = 2;</code>
-     */
-    public java.lang.String getSalt() {
-      java.lang.Object ref = salt_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        salt_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string salt = 2;</code>
-     */
-    public com.google.protobuf.ByteString
-        getSaltBytes() {
-      java.lang.Object ref = salt_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        salt_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int PWD_FIELD_NUMBER = 3;
-    private volatile java.lang.Object pwd_;
-    /**
-     * <code>string pwd = 3;</code>
-     */
-    public java.lang.String getPwd() {
-      java.lang.Object ref = pwd_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        pwd_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string pwd = 3;</code>
-     */
-    public com.google.protobuf.ByteString
-        getPwdBytes() {
-      java.lang.Object ref = pwd_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        pwd_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int DEV_FIELD_NUMBER = 4;
-    private x.msg.pb.PbXmsg.XmsgImClientDeviceInfo dev_;
-    /**
-     * <code>.XmsgImClientDeviceInfo dev = 4;</code>
-     */
-    public boolean hasDev() {
-      return dev_ != null;
-    }
-    /**
-     * <code>.XmsgImClientDeviceInfo dev = 4;</code>
-     */
-    public x.msg.pb.PbXmsg.XmsgImClientDeviceInfo getDev() {
-      return dev_ == null ? x.msg.pb.PbXmsg.XmsgImClientDeviceInfo.getDefaultInstance() : dev_;
-    }
-    /**
-     * <code>.XmsgImClientDeviceInfo dev = 4;</code>
-     */
-    public x.msg.pb.PbXmsg.XmsgImClientDeviceInfoOrBuilder getDevOrBuilder() {
-      return getDev();
-    }
-
-    private byte memoizedIsInitialized = -1;
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (!getUsrBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, usr_);
-      }
-      if (!getSaltBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, salt_);
-      }
-      if (!getPwdBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, pwd_);
-      }
-      if (dev_ != null) {
-        output.writeMessage(4, getDev());
-      }
-      unknownFields.writeTo(output);
-    }
-
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (!getUsrBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, usr_);
-      }
-      if (!getSaltBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, salt_);
-      }
-      if (!getPwdBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, pwd_);
-      }
-      if (dev_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(4, getDev());
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof x.msg.pb.PbXmsg.XmsgImAuthRegSimpleReq)) {
-        return super.equals(obj);
-      }
-      x.msg.pb.PbXmsg.XmsgImAuthRegSimpleReq other = (x.msg.pb.PbXmsg.XmsgImAuthRegSimpleReq) obj;
-
-      boolean result = true;
-      result = result && getUsr()
-          .equals(other.getUsr());
-      result = result && getSalt()
-          .equals(other.getSalt());
-      result = result && getPwd()
-          .equals(other.getPwd());
-      result = result && (hasDev() == other.hasDev());
-      if (hasDev()) {
-        result = result && getDev()
-            .equals(other.getDev());
-      }
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + USR_FIELD_NUMBER;
-      hash = (53 * hash) + getUsr().hashCode();
-      hash = (37 * hash) + SALT_FIELD_NUMBER;
-      hash = (53 * hash) + getSalt().hashCode();
-      hash = (37 * hash) + PWD_FIELD_NUMBER;
-      hash = (53 * hash) + getPwd().hashCode();
-      if (hasDev()) {
-        hash = (37 * hash) + DEV_FIELD_NUMBER;
-        hash = (53 * hash) + getDev().hashCode();
-      }
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static x.msg.pb.PbXmsg.XmsgImAuthRegSimpleReq parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static x.msg.pb.PbXmsg.XmsgImAuthRegSimpleReq parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static x.msg.pb.PbXmsg.XmsgImAuthRegSimpleReq parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static x.msg.pb.PbXmsg.XmsgImAuthRegSimpleReq parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static x.msg.pb.PbXmsg.XmsgImAuthRegSimpleReq parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static x.msg.pb.PbXmsg.XmsgImAuthRegSimpleReq parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static x.msg.pb.PbXmsg.XmsgImAuthRegSimpleReq parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static x.msg.pb.PbXmsg.XmsgImAuthRegSimpleReq parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static x.msg.pb.PbXmsg.XmsgImAuthRegSimpleReq parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static x.msg.pb.PbXmsg.XmsgImAuthRegSimpleReq parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static x.msg.pb.PbXmsg.XmsgImAuthRegSimpleReq parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static x.msg.pb.PbXmsg.XmsgImAuthRegSimpleReq parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(x.msg.pb.PbXmsg.XmsgImAuthRegSimpleReq prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * Protobuf type {@code XmsgImAuthRegSimpleReq}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:XmsgImAuthRegSimpleReq)
-        x.msg.pb.PbXmsg.XmsgImAuthRegSimpleReqOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return x.msg.pb.PbXmsg.internal_static_XmsgImAuthRegSimpleReq_descriptor;
-      }
-
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return x.msg.pb.PbXmsg.internal_static_XmsgImAuthRegSimpleReq_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                x.msg.pb.PbXmsg.XmsgImAuthRegSimpleReq.class, x.msg.pb.PbXmsg.XmsgImAuthRegSimpleReq.Builder.class);
-      }
-
-      // Construct using x.msg.pb.PbXmsg.XmsgImAuthRegSimpleReq.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      public Builder clear() {
-        super.clear();
-        usr_ = "";
-
-        salt_ = "";
-
-        pwd_ = "";
-
-        if (devBuilder_ == null) {
-          dev_ = null;
-        } else {
-          dev_ = null;
-          devBuilder_ = null;
-        }
-        return this;
-      }
-
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return x.msg.pb.PbXmsg.internal_static_XmsgImAuthRegSimpleReq_descriptor;
-      }
-
-      public x.msg.pb.PbXmsg.XmsgImAuthRegSimpleReq getDefaultInstanceForType() {
-        return x.msg.pb.PbXmsg.XmsgImAuthRegSimpleReq.getDefaultInstance();
-      }
-
-      public x.msg.pb.PbXmsg.XmsgImAuthRegSimpleReq build() {
-        x.msg.pb.PbXmsg.XmsgImAuthRegSimpleReq result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      public x.msg.pb.PbXmsg.XmsgImAuthRegSimpleReq buildPartial() {
-        x.msg.pb.PbXmsg.XmsgImAuthRegSimpleReq result = new x.msg.pb.PbXmsg.XmsgImAuthRegSimpleReq(this);
-        result.usr_ = usr_;
-        result.salt_ = salt_;
-        result.pwd_ = pwd_;
-        if (devBuilder_ == null) {
-          result.dev_ = dev_;
-        } else {
-          result.dev_ = devBuilder_.build();
-        }
-        onBuilt();
-        return result;
-      }
-
-      public Builder clone() {
-        return (Builder) super.clone();
-      }
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return (Builder) super.setField(field, value);
-      }
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
-      }
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
-      }
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
-      }
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
-      }
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof x.msg.pb.PbXmsg.XmsgImAuthRegSimpleReq) {
-          return mergeFrom((x.msg.pb.PbXmsg.XmsgImAuthRegSimpleReq)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(x.msg.pb.PbXmsg.XmsgImAuthRegSimpleReq other) {
-        if (other == x.msg.pb.PbXmsg.XmsgImAuthRegSimpleReq.getDefaultInstance()) return this;
-        if (!other.getUsr().isEmpty()) {
-          usr_ = other.usr_;
-          onChanged();
-        }
-        if (!other.getSalt().isEmpty()) {
-          salt_ = other.salt_;
-          onChanged();
-        }
-        if (!other.getPwd().isEmpty()) {
-          pwd_ = other.pwd_;
-          onChanged();
-        }
-        if (other.hasDev()) {
-          mergeDev(other.getDev());
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        x.msg.pb.PbXmsg.XmsgImAuthRegSimpleReq parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (x.msg.pb.PbXmsg.XmsgImAuthRegSimpleReq) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private java.lang.Object usr_ = "";
-      /**
-       * <code>string usr = 1;</code>
-       */
-      public java.lang.String getUsr() {
-        java.lang.Object ref = usr_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          usr_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string usr = 1;</code>
-       */
-      public com.google.protobuf.ByteString
-          getUsrBytes() {
-        java.lang.Object ref = usr_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          usr_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string usr = 1;</code>
-       */
-      public Builder setUsr(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        usr_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string usr = 1;</code>
-       */
-      public Builder clearUsr() {
-        
-        usr_ = getDefaultInstance().getUsr();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string usr = 1;</code>
-       */
-      public Builder setUsrBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        usr_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object salt_ = "";
-      /**
-       * <code>string salt = 2;</code>
-       */
-      public java.lang.String getSalt() {
-        java.lang.Object ref = salt_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          salt_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string salt = 2;</code>
-       */
-      public com.google.protobuf.ByteString
-          getSaltBytes() {
-        java.lang.Object ref = salt_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          salt_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string salt = 2;</code>
-       */
-      public Builder setSalt(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        salt_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string salt = 2;</code>
-       */
-      public Builder clearSalt() {
-        
-        salt_ = getDefaultInstance().getSalt();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string salt = 2;</code>
-       */
-      public Builder setSaltBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        salt_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object pwd_ = "";
-      /**
-       * <code>string pwd = 3;</code>
-       */
-      public java.lang.String getPwd() {
-        java.lang.Object ref = pwd_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          pwd_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string pwd = 3;</code>
-       */
-      public com.google.protobuf.ByteString
-          getPwdBytes() {
-        java.lang.Object ref = pwd_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          pwd_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string pwd = 3;</code>
-       */
-      public Builder setPwd(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        pwd_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string pwd = 3;</code>
-       */
-      public Builder clearPwd() {
-        
-        pwd_ = getDefaultInstance().getPwd();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string pwd = 3;</code>
-       */
-      public Builder setPwdBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        pwd_ = value;
-        onChanged();
-        return this;
-      }
-
-      private x.msg.pb.PbXmsg.XmsgImClientDeviceInfo dev_ = null;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          x.msg.pb.PbXmsg.XmsgImClientDeviceInfo, x.msg.pb.PbXmsg.XmsgImClientDeviceInfo.Builder, x.msg.pb.PbXmsg.XmsgImClientDeviceInfoOrBuilder> devBuilder_;
-      /**
-       * <code>.XmsgImClientDeviceInfo dev = 4;</code>
-       */
-      public boolean hasDev() {
-        return devBuilder_ != null || dev_ != null;
-      }
-      /**
-       * <code>.XmsgImClientDeviceInfo dev = 4;</code>
-       */
-      public x.msg.pb.PbXmsg.XmsgImClientDeviceInfo getDev() {
-        if (devBuilder_ == null) {
-          return dev_ == null ? x.msg.pb.PbXmsg.XmsgImClientDeviceInfo.getDefaultInstance() : dev_;
-        } else {
-          return devBuilder_.getMessage();
-        }
-      }
-      /**
-       * <code>.XmsgImClientDeviceInfo dev = 4;</code>
-       */
-      public Builder setDev(x.msg.pb.PbXmsg.XmsgImClientDeviceInfo value) {
-        if (devBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          dev_ = value;
-          onChanged();
-        } else {
-          devBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.XmsgImClientDeviceInfo dev = 4;</code>
-       */
-      public Builder setDev(
-          x.msg.pb.PbXmsg.XmsgImClientDeviceInfo.Builder builderForValue) {
-        if (devBuilder_ == null) {
-          dev_ = builderForValue.build();
-          onChanged();
-        } else {
-          devBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <code>.XmsgImClientDeviceInfo dev = 4;</code>
-       */
-      public Builder mergeDev(x.msg.pb.PbXmsg.XmsgImClientDeviceInfo value) {
-        if (devBuilder_ == null) {
-          if (dev_ != null) {
-            dev_ =
-              x.msg.pb.PbXmsg.XmsgImClientDeviceInfo.newBuilder(dev_).mergeFrom(value).buildPartial();
-          } else {
-            dev_ = value;
-          }
-          onChanged();
-        } else {
-          devBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.XmsgImClientDeviceInfo dev = 4;</code>
-       */
-      public Builder clearDev() {
-        if (devBuilder_ == null) {
-          dev_ = null;
-          onChanged();
-        } else {
-          dev_ = null;
-          devBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <code>.XmsgImClientDeviceInfo dev = 4;</code>
-       */
-      public x.msg.pb.PbXmsg.XmsgImClientDeviceInfo.Builder getDevBuilder() {
-        
-        onChanged();
-        return getDevFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.XmsgImClientDeviceInfo dev = 4;</code>
-       */
-      public x.msg.pb.PbXmsg.XmsgImClientDeviceInfoOrBuilder getDevOrBuilder() {
-        if (devBuilder_ != null) {
-          return devBuilder_.getMessageOrBuilder();
-        } else {
-          return dev_ == null ?
-              x.msg.pb.PbXmsg.XmsgImClientDeviceInfo.getDefaultInstance() : dev_;
-        }
-      }
-      /**
-       * <code>.XmsgImClientDeviceInfo dev = 4;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          x.msg.pb.PbXmsg.XmsgImClientDeviceInfo, x.msg.pb.PbXmsg.XmsgImClientDeviceInfo.Builder, x.msg.pb.PbXmsg.XmsgImClientDeviceInfoOrBuilder> 
-          getDevFieldBuilder() {
-        if (devBuilder_ == null) {
-          devBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              x.msg.pb.PbXmsg.XmsgImClientDeviceInfo, x.msg.pb.PbXmsg.XmsgImClientDeviceInfo.Builder, x.msg.pb.PbXmsg.XmsgImClientDeviceInfoOrBuilder>(
-                  getDev(),
-                  getParentForChildren(),
-                  isClean());
-          dev_ = null;
-        }
-        return devBuilder_;
-      }
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
-      }
-
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:XmsgImAuthRegSimpleReq)
-    }
-
-    // @@protoc_insertion_point(class_scope:XmsgImAuthRegSimpleReq)
-    private static final x.msg.pb.PbXmsg.XmsgImAuthRegSimpleReq DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new x.msg.pb.PbXmsg.XmsgImAuthRegSimpleReq();
-    }
-
-    public static x.msg.pb.PbXmsg.XmsgImAuthRegSimpleReq getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<XmsgImAuthRegSimpleReq>
-        PARSER = new com.google.protobuf.AbstractParser<XmsgImAuthRegSimpleReq>() {
-      public XmsgImAuthRegSimpleReq parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new XmsgImAuthRegSimpleReq(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<XmsgImAuthRegSimpleReq> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<XmsgImAuthRegSimpleReq> getParserForType() {
-      return PARSER;
-    }
-
-    public x.msg.pb.PbXmsg.XmsgImAuthRegSimpleReq getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface XmsgImAuthRegSimpleRspOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:XmsgImAuthRegSimpleRsp)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>string cgt = 1;</code>
-     */
-    java.lang.String getCgt();
-    /**
-     * <code>string cgt = 1;</code>
-     */
-    com.google.protobuf.ByteString
-        getCgtBytes();
-
-    /**
-     * <code>map&lt;string, string&gt; ext = 2;</code>
-     */
-    int getExtCount();
-    /**
-     * <code>map&lt;string, string&gt; ext = 2;</code>
-     */
-    boolean containsExt(
-        java.lang.String key);
-    /**
-     * Use {@link #getExtMap()} instead.
-     */
-    @java.lang.Deprecated
-    java.util.Map<java.lang.String, java.lang.String>
-    getExt();
-    /**
-     * <code>map&lt;string, string&gt; ext = 2;</code>
-     */
-    java.util.Map<java.lang.String, java.lang.String>
-    getExtMap();
-    /**
-     * <code>map&lt;string, string&gt; ext = 2;</code>
-     */
-
-    java.lang.String getExtOrDefault(
-        java.lang.String key,
-        java.lang.String defaultValue);
-    /**
-     * <code>map&lt;string, string&gt; ext = 2;</code>
-     */
-
-    java.lang.String getExtOrThrow(
-        java.lang.String key);
-  }
-  /**
-   * Protobuf type {@code XmsgImAuthRegSimpleRsp}
-   */
-  public  static final class XmsgImAuthRegSimpleRsp extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:XmsgImAuthRegSimpleRsp)
-      XmsgImAuthRegSimpleRspOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use XmsgImAuthRegSimpleRsp.newBuilder() to construct.
-    private XmsgImAuthRegSimpleRsp(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private XmsgImAuthRegSimpleRsp() {
-      cgt_ = "";
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private XmsgImAuthRegSimpleRsp(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              cgt_ = s;
-              break;
-            }
-            case 18: {
-              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
-                ext_ = com.google.protobuf.MapField.newMapField(
-                    ExtDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000002;
-              }
-              com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-              ext__ = input.readMessage(
-                  ExtDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              ext_.getMutableMap().put(
-                  ext__.getKey(), ext__.getValue());
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return x.msg.pb.PbXmsg.internal_static_XmsgImAuthRegSimpleRsp_descriptor;
-    }
-
-    @SuppressWarnings({"rawtypes"})
-    protected com.google.protobuf.MapField internalGetMapField(
-        int number) {
-      switch (number) {
-        case 2:
-          return internalGetExt();
-        default:
-          throw new RuntimeException(
-              "Invalid map field number: " + number);
-      }
-    }
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return x.msg.pb.PbXmsg.internal_static_XmsgImAuthRegSimpleRsp_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              x.msg.pb.PbXmsg.XmsgImAuthRegSimpleRsp.class, x.msg.pb.PbXmsg.XmsgImAuthRegSimpleRsp.Builder.class);
-    }
-
-    private int bitField0_;
-    public static final int CGT_FIELD_NUMBER = 1;
-    private volatile java.lang.Object cgt_;
-    /**
-     * <code>string cgt = 1;</code>
-     */
-    public java.lang.String getCgt() {
-      java.lang.Object ref = cgt_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        cgt_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string cgt = 1;</code>
-     */
-    public com.google.protobuf.ByteString
-        getCgtBytes() {
-      java.lang.Object ref = cgt_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        cgt_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int EXT_FIELD_NUMBER = 2;
-    private static final class ExtDefaultEntryHolder {
-      static final com.google.protobuf.MapEntry<
-          java.lang.String, java.lang.String> defaultEntry =
-              com.google.protobuf.MapEntry
-              .<java.lang.String, java.lang.String>newDefaultInstance(
-                  x.msg.pb.PbXmsg.internal_static_XmsgImAuthRegSimpleRsp_ExtEntry_descriptor, 
-                  com.google.protobuf.WireFormat.FieldType.STRING,
-                  "",
-                  com.google.protobuf.WireFormat.FieldType.STRING,
-                  "");
-    }
-    private com.google.protobuf.MapField<
-        java.lang.String, java.lang.String> ext_;
-    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-    internalGetExt() {
-      if (ext_ == null) {
-        return com.google.protobuf.MapField.emptyMapField(
-            ExtDefaultEntryHolder.defaultEntry);
-      }
-      return ext_;
-    }
-
-    public int getExtCount() {
-      return internalGetExt().getMap().size();
-    }
-    /**
-     * <code>map&lt;string, string&gt; ext = 2;</code>
-     */
-
-    public boolean containsExt(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      return internalGetExt().getMap().containsKey(key);
-    }
-    /**
-     * Use {@link #getExtMap()} instead.
-     */
-    @java.lang.Deprecated
-    public java.util.Map<java.lang.String, java.lang.String> getExt() {
-      return getExtMap();
-    }
-    /**
-     * <code>map&lt;string, string&gt; ext = 2;</code>
-     */
-
-    public java.util.Map<java.lang.String, java.lang.String> getExtMap() {
-      return internalGetExt().getMap();
-    }
-    /**
-     * <code>map&lt;string, string&gt; ext = 2;</code>
-     */
-
-    public java.lang.String getExtOrDefault(
-        java.lang.String key,
-        java.lang.String defaultValue) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      java.util.Map<java.lang.String, java.lang.String> map =
-          internalGetExt().getMap();
-      return map.containsKey(key) ? map.get(key) : defaultValue;
-    }
-    /**
-     * <code>map&lt;string, string&gt; ext = 2;</code>
-     */
-
-    public java.lang.String getExtOrThrow(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      java.util.Map<java.lang.String, java.lang.String> map =
-          internalGetExt().getMap();
-      if (!map.containsKey(key)) {
-        throw new java.lang.IllegalArgumentException();
-      }
-      return map.get(key);
-    }
-
-    private byte memoizedIsInitialized = -1;
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (!getCgtBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, cgt_);
-      }
-      com.google.protobuf.GeneratedMessageV3
-        .serializeStringMapTo(
-          output,
-          internalGetExt(),
-          ExtDefaultEntryHolder.defaultEntry,
-          2);
-      unknownFields.writeTo(output);
-    }
-
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (!getCgtBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, cgt_);
-      }
-      for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
-           : internalGetExt().getMap().entrySet()) {
-        com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-        ext__ = ExtDefaultEntryHolder.defaultEntry.newBuilderForType()
-            .setKey(entry.getKey())
-            .setValue(entry.getValue())
-            .build();
-        size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(2, ext__);
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof x.msg.pb.PbXmsg.XmsgImAuthRegSimpleRsp)) {
-        return super.equals(obj);
-      }
-      x.msg.pb.PbXmsg.XmsgImAuthRegSimpleRsp other = (x.msg.pb.PbXmsg.XmsgImAuthRegSimpleRsp) obj;
-
-      boolean result = true;
-      result = result && getCgt()
-          .equals(other.getCgt());
-      result = result && internalGetExt().equals(
-          other.internalGetExt());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + CGT_FIELD_NUMBER;
-      hash = (53 * hash) + getCgt().hashCode();
-      if (!internalGetExt().getMap().isEmpty()) {
-        hash = (37 * hash) + EXT_FIELD_NUMBER;
-        hash = (53 * hash) + internalGetExt().hashCode();
-      }
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static x.msg.pb.PbXmsg.XmsgImAuthRegSimpleRsp parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static x.msg.pb.PbXmsg.XmsgImAuthRegSimpleRsp parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static x.msg.pb.PbXmsg.XmsgImAuthRegSimpleRsp parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static x.msg.pb.PbXmsg.XmsgImAuthRegSimpleRsp parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static x.msg.pb.PbXmsg.XmsgImAuthRegSimpleRsp parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static x.msg.pb.PbXmsg.XmsgImAuthRegSimpleRsp parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static x.msg.pb.PbXmsg.XmsgImAuthRegSimpleRsp parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static x.msg.pb.PbXmsg.XmsgImAuthRegSimpleRsp parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static x.msg.pb.PbXmsg.XmsgImAuthRegSimpleRsp parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static x.msg.pb.PbXmsg.XmsgImAuthRegSimpleRsp parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static x.msg.pb.PbXmsg.XmsgImAuthRegSimpleRsp parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static x.msg.pb.PbXmsg.XmsgImAuthRegSimpleRsp parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(x.msg.pb.PbXmsg.XmsgImAuthRegSimpleRsp prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * Protobuf type {@code XmsgImAuthRegSimpleRsp}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:XmsgImAuthRegSimpleRsp)
-        x.msg.pb.PbXmsg.XmsgImAuthRegSimpleRspOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return x.msg.pb.PbXmsg.internal_static_XmsgImAuthRegSimpleRsp_descriptor;
-      }
-
-      @SuppressWarnings({"rawtypes"})
-      protected com.google.protobuf.MapField internalGetMapField(
-          int number) {
-        switch (number) {
-          case 2:
-            return internalGetExt();
-          default:
-            throw new RuntimeException(
-                "Invalid map field number: " + number);
-        }
-      }
-      @SuppressWarnings({"rawtypes"})
-      protected com.google.protobuf.MapField internalGetMutableMapField(
-          int number) {
-        switch (number) {
-          case 2:
-            return internalGetMutableExt();
-          default:
-            throw new RuntimeException(
-                "Invalid map field number: " + number);
-        }
-      }
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return x.msg.pb.PbXmsg.internal_static_XmsgImAuthRegSimpleRsp_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                x.msg.pb.PbXmsg.XmsgImAuthRegSimpleRsp.class, x.msg.pb.PbXmsg.XmsgImAuthRegSimpleRsp.Builder.class);
-      }
-
-      // Construct using x.msg.pb.PbXmsg.XmsgImAuthRegSimpleRsp.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      public Builder clear() {
-        super.clear();
-        cgt_ = "";
-
-        internalGetMutableExt().clear();
-        return this;
-      }
-
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return x.msg.pb.PbXmsg.internal_static_XmsgImAuthRegSimpleRsp_descriptor;
-      }
-
-      public x.msg.pb.PbXmsg.XmsgImAuthRegSimpleRsp getDefaultInstanceForType() {
-        return x.msg.pb.PbXmsg.XmsgImAuthRegSimpleRsp.getDefaultInstance();
-      }
-
-      public x.msg.pb.PbXmsg.XmsgImAuthRegSimpleRsp build() {
-        x.msg.pb.PbXmsg.XmsgImAuthRegSimpleRsp result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      public x.msg.pb.PbXmsg.XmsgImAuthRegSimpleRsp buildPartial() {
-        x.msg.pb.PbXmsg.XmsgImAuthRegSimpleRsp result = new x.msg.pb.PbXmsg.XmsgImAuthRegSimpleRsp(this);
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        result.cgt_ = cgt_;
-        result.ext_ = internalGetExt();
-        result.ext_.makeImmutable();
-        result.bitField0_ = to_bitField0_;
-        onBuilt();
-        return result;
-      }
-
-      public Builder clone() {
-        return (Builder) super.clone();
-      }
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return (Builder) super.setField(field, value);
-      }
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
-      }
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
-      }
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
-      }
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
-      }
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof x.msg.pb.PbXmsg.XmsgImAuthRegSimpleRsp) {
-          return mergeFrom((x.msg.pb.PbXmsg.XmsgImAuthRegSimpleRsp)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(x.msg.pb.PbXmsg.XmsgImAuthRegSimpleRsp other) {
-        if (other == x.msg.pb.PbXmsg.XmsgImAuthRegSimpleRsp.getDefaultInstance()) return this;
-        if (!other.getCgt().isEmpty()) {
-          cgt_ = other.cgt_;
-          onChanged();
-        }
-        internalGetMutableExt().mergeFrom(
-            other.internalGetExt());
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        x.msg.pb.PbXmsg.XmsgImAuthRegSimpleRsp parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (x.msg.pb.PbXmsg.XmsgImAuthRegSimpleRsp) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-      private int bitField0_;
-
-      private java.lang.Object cgt_ = "";
-      /**
-       * <code>string cgt = 1;</code>
-       */
-      public java.lang.String getCgt() {
-        java.lang.Object ref = cgt_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          cgt_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string cgt = 1;</code>
-       */
-      public com.google.protobuf.ByteString
-          getCgtBytes() {
-        java.lang.Object ref = cgt_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          cgt_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string cgt = 1;</code>
-       */
-      public Builder setCgt(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        cgt_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string cgt = 1;</code>
-       */
-      public Builder clearCgt() {
-        
-        cgt_ = getDefaultInstance().getCgt();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string cgt = 1;</code>
-       */
-      public Builder setCgtBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        cgt_ = value;
-        onChanged();
-        return this;
-      }
-
-      private com.google.protobuf.MapField<
-          java.lang.String, java.lang.String> ext_;
-      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-      internalGetExt() {
-        if (ext_ == null) {
-          return com.google.protobuf.MapField.emptyMapField(
-              ExtDefaultEntryHolder.defaultEntry);
-        }
-        return ext_;
-      }
-      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-      internalGetMutableExt() {
-        onChanged();;
-        if (ext_ == null) {
-          ext_ = com.google.protobuf.MapField.newMapField(
-              ExtDefaultEntryHolder.defaultEntry);
-        }
-        if (!ext_.isMutable()) {
-          ext_ = ext_.copy();
-        }
-        return ext_;
-      }
-
-      public int getExtCount() {
-        return internalGetExt().getMap().size();
-      }
-      /**
-       * <code>map&lt;string, string&gt; ext = 2;</code>
-       */
-
-      public boolean containsExt(
-          java.lang.String key) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        return internalGetExt().getMap().containsKey(key);
-      }
-      /**
-       * Use {@link #getExtMap()} instead.
-       */
-      @java.lang.Deprecated
-      public java.util.Map<java.lang.String, java.lang.String> getExt() {
-        return getExtMap();
-      }
-      /**
-       * <code>map&lt;string, string&gt; ext = 2;</code>
-       */
-
-      public java.util.Map<java.lang.String, java.lang.String> getExtMap() {
-        return internalGetExt().getMap();
-      }
-      /**
-       * <code>map&lt;string, string&gt; ext = 2;</code>
-       */
-
-      public java.lang.String getExtOrDefault(
-          java.lang.String key,
-          java.lang.String defaultValue) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        java.util.Map<java.lang.String, java.lang.String> map =
-            internalGetExt().getMap();
-        return map.containsKey(key) ? map.get(key) : defaultValue;
-      }
-      /**
-       * <code>map&lt;string, string&gt; ext = 2;</code>
-       */
-
-      public java.lang.String getExtOrThrow(
-          java.lang.String key) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        java.util.Map<java.lang.String, java.lang.String> map =
-            internalGetExt().getMap();
-        if (!map.containsKey(key)) {
-          throw new java.lang.IllegalArgumentException();
-        }
-        return map.get(key);
-      }
-
-      public Builder clearExt() {
-        internalGetMutableExt().getMutableMap()
-            .clear();
-        return this;
-      }
-      /**
-       * <code>map&lt;string, string&gt; ext = 2;</code>
-       */
-
-      public Builder removeExt(
-          java.lang.String key) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        internalGetMutableExt().getMutableMap()
-            .remove(key);
-        return this;
-      }
-      /**
-       * Use alternate mutation accessors instead.
-       */
-      @java.lang.Deprecated
-      public java.util.Map<java.lang.String, java.lang.String>
-      getMutableExt() {
-        return internalGetMutableExt().getMutableMap();
-      }
-      /**
-       * <code>map&lt;string, string&gt; ext = 2;</code>
-       */
-      public Builder putExt(
-          java.lang.String key,
-          java.lang.String value) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        if (value == null) { throw new java.lang.NullPointerException(); }
-        internalGetMutableExt().getMutableMap()
-            .put(key, value);
-        return this;
-      }
-      /**
-       * <code>map&lt;string, string&gt; ext = 2;</code>
-       */
-
-      public Builder putAllExt(
-          java.util.Map<java.lang.String, java.lang.String> values) {
-        internalGetMutableExt().getMutableMap()
-            .putAll(values);
-        return this;
-      }
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
-      }
-
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:XmsgImAuthRegSimpleRsp)
-    }
-
-    // @@protoc_insertion_point(class_scope:XmsgImAuthRegSimpleRsp)
-    private static final x.msg.pb.PbXmsg.XmsgImAuthRegSimpleRsp DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new x.msg.pb.PbXmsg.XmsgImAuthRegSimpleRsp();
-    }
-
-    public static x.msg.pb.PbXmsg.XmsgImAuthRegSimpleRsp getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<XmsgImAuthRegSimpleRsp>
-        PARSER = new com.google.protobuf.AbstractParser<XmsgImAuthRegSimpleRsp>() {
-      public XmsgImAuthRegSimpleRsp parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new XmsgImAuthRegSimpleRsp(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<XmsgImAuthRegSimpleRsp> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<XmsgImAuthRegSimpleRsp> getParserForType() {
-      return PARSER;
-    }
-
-    public x.msg.pb.PbXmsg.XmsgImAuthRegSimpleRsp getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -61793,9 +69050,38 @@ public final class PbXmsg {
     boolean getEnable();
 
     /**
-     * <code>bytes ext = 5;</code>
+     * <code>map&lt;string, string&gt; info = 2;</code>
      */
-    com.google.protobuf.ByteString getExt();
+    int getInfoCount();
+    /**
+     * <code>map&lt;string, string&gt; info = 2;</code>
+     */
+    boolean containsInfo(
+        java.lang.String key);
+    /**
+     * Use {@link #getInfoMap()} instead.
+     */
+    @java.lang.Deprecated
+    java.util.Map<java.lang.String, java.lang.String>
+    getInfo();
+    /**
+     * <code>map&lt;string, string&gt; info = 2;</code>
+     */
+    java.util.Map<java.lang.String, java.lang.String>
+    getInfoMap();
+    /**
+     * <code>map&lt;string, string&gt; info = 2;</code>
+     */
+
+    java.lang.String getInfoOrDefault(
+        java.lang.String key,
+        java.lang.String defaultValue);
+    /**
+     * <code>map&lt;string, string&gt; info = 2;</code>
+     */
+
+    java.lang.String getInfoOrThrow(
+        java.lang.String key);
   }
   /**
    * Protobuf type {@code XmsgImHlrUsrDatPri}
@@ -61811,7 +69097,6 @@ public final class PbXmsg {
     }
     private XmsgImHlrUsrDatPri() {
       enable_ = false;
-      ext_ = com.google.protobuf.ByteString.EMPTY;
     }
 
     @java.lang.Override
@@ -61850,9 +69135,17 @@ public final class PbXmsg {
               enable_ = input.readBool();
               break;
             }
-            case 42: {
-
-              ext_ = input.readBytes();
+            case 18: {
+              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+                info_ = com.google.protobuf.MapField.newMapField(
+                    InfoDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000002;
+              }
+              com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+              info__ = input.readMessage(
+                  InfoDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              info_.getMutableMap().put(
+                  info__.getKey(), info__.getValue());
               break;
             }
           }
@@ -61872,6 +69165,17 @@ public final class PbXmsg {
       return x.msg.pb.PbXmsg.internal_static_XmsgImHlrUsrDatPri_descriptor;
     }
 
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapField internalGetMapField(
+        int number) {
+      switch (number) {
+        case 2:
+          return internalGetInfo();
+        default:
+          throw new RuntimeException(
+              "Invalid map field number: " + number);
+      }
+    }
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return x.msg.pb.PbXmsg.internal_static_XmsgImHlrUsrDatPri_fieldAccessorTable
@@ -61879,6 +69183,7 @@ public final class PbXmsg {
               x.msg.pb.PbXmsg.XmsgImHlrUsrDatPri.class, x.msg.pb.PbXmsg.XmsgImHlrUsrDatPri.Builder.class);
     }
 
+    private int bitField0_;
     public static final int ENABLE_FIELD_NUMBER = 1;
     private boolean enable_;
     /**
@@ -61888,13 +69193,80 @@ public final class PbXmsg {
       return enable_;
     }
 
-    public static final int EXT_FIELD_NUMBER = 5;
-    private com.google.protobuf.ByteString ext_;
+    public static final int INFO_FIELD_NUMBER = 2;
+    private static final class InfoDefaultEntryHolder {
+      static final com.google.protobuf.MapEntry<
+          java.lang.String, java.lang.String> defaultEntry =
+              com.google.protobuf.MapEntry
+              .<java.lang.String, java.lang.String>newDefaultInstance(
+                  x.msg.pb.PbXmsg.internal_static_XmsgImHlrUsrDatPri_InfoEntry_descriptor, 
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "",
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "");
+    }
+    private com.google.protobuf.MapField<
+        java.lang.String, java.lang.String> info_;
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+    internalGetInfo() {
+      if (info_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            InfoDefaultEntryHolder.defaultEntry);
+      }
+      return info_;
+    }
+
+    public int getInfoCount() {
+      return internalGetInfo().getMap().size();
+    }
     /**
-     * <code>bytes ext = 5;</code>
+     * <code>map&lt;string, string&gt; info = 2;</code>
      */
-    public com.google.protobuf.ByteString getExt() {
-      return ext_;
+
+    public boolean containsInfo(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      return internalGetInfo().getMap().containsKey(key);
+    }
+    /**
+     * Use {@link #getInfoMap()} instead.
+     */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getInfo() {
+      return getInfoMap();
+    }
+    /**
+     * <code>map&lt;string, string&gt; info = 2;</code>
+     */
+
+    public java.util.Map<java.lang.String, java.lang.String> getInfoMap() {
+      return internalGetInfo().getMap();
+    }
+    /**
+     * <code>map&lt;string, string&gt; info = 2;</code>
+     */
+
+    public java.lang.String getInfoOrDefault(
+        java.lang.String key,
+        java.lang.String defaultValue) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetInfo().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <code>map&lt;string, string&gt; info = 2;</code>
+     */
+
+    public java.lang.String getInfoOrThrow(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetInfo().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -61912,9 +69284,12 @@ public final class PbXmsg {
       if (enable_ != false) {
         output.writeBool(1, enable_);
       }
-      if (!ext_.isEmpty()) {
-        output.writeBytes(5, ext_);
-      }
+      com.google.protobuf.GeneratedMessageV3
+        .serializeStringMapTo(
+          output,
+          internalGetInfo(),
+          InfoDefaultEntryHolder.defaultEntry,
+          2);
       unknownFields.writeTo(output);
     }
 
@@ -61927,9 +69302,15 @@ public final class PbXmsg {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(1, enable_);
       }
-      if (!ext_.isEmpty()) {
+      for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
+           : internalGetInfo().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+        info__ = InfoDefaultEntryHolder.defaultEntry.newBuilderForType()
+            .setKey(entry.getKey())
+            .setValue(entry.getValue())
+            .build();
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(5, ext_);
+            .computeMessageSize(2, info__);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -61949,8 +69330,8 @@ public final class PbXmsg {
       boolean result = true;
       result = result && (getEnable()
           == other.getEnable());
-      result = result && getExt()
-          .equals(other.getExt());
+      result = result && internalGetInfo().equals(
+          other.internalGetInfo());
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -61965,8 +69346,10 @@ public final class PbXmsg {
       hash = (37 * hash) + ENABLE_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getEnable());
-      hash = (37 * hash) + EXT_FIELD_NUMBER;
-      hash = (53 * hash) + getExt().hashCode();
+      if (!internalGetInfo().getMap().isEmpty()) {
+        hash = (37 * hash) + INFO_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetInfo().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -62072,6 +69455,28 @@ public final class PbXmsg {
         return x.msg.pb.PbXmsg.internal_static_XmsgImHlrUsrDatPri_descriptor;
       }
 
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapField internalGetMapField(
+          int number) {
+        switch (number) {
+          case 2:
+            return internalGetInfo();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapField internalGetMutableMapField(
+          int number) {
+        switch (number) {
+          case 2:
+            return internalGetMutableInfo();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return x.msg.pb.PbXmsg.internal_static_XmsgImHlrUsrDatPri_fieldAccessorTable
@@ -62098,8 +69503,7 @@ public final class PbXmsg {
         super.clear();
         enable_ = false;
 
-        ext_ = com.google.protobuf.ByteString.EMPTY;
-
+        internalGetMutableInfo().clear();
         return this;
       }
 
@@ -62122,8 +69526,12 @@ public final class PbXmsg {
 
       public x.msg.pb.PbXmsg.XmsgImHlrUsrDatPri buildPartial() {
         x.msg.pb.PbXmsg.XmsgImHlrUsrDatPri result = new x.msg.pb.PbXmsg.XmsgImHlrUsrDatPri(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
         result.enable_ = enable_;
-        result.ext_ = ext_;
+        result.info_ = internalGetInfo();
+        result.info_.makeImmutable();
+        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -62168,9 +69576,8 @@ public final class PbXmsg {
         if (other.getEnable() != false) {
           setEnable(other.getEnable());
         }
-        if (other.getExt() != com.google.protobuf.ByteString.EMPTY) {
-          setExt(other.getExt());
-        }
+        internalGetMutableInfo().mergeFrom(
+            other.internalGetInfo());
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -62197,6 +69604,7 @@ public final class PbXmsg {
         }
         return this;
       }
+      private int bitField0_;
 
       private boolean enable_ ;
       /**
@@ -62224,32 +69632,126 @@ public final class PbXmsg {
         return this;
       }
 
-      private com.google.protobuf.ByteString ext_ = com.google.protobuf.ByteString.EMPTY;
-      /**
-       * <code>bytes ext = 5;</code>
-       */
-      public com.google.protobuf.ByteString getExt() {
-        return ext_;
+      private com.google.protobuf.MapField<
+          java.lang.String, java.lang.String> info_;
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      internalGetInfo() {
+        if (info_ == null) {
+          return com.google.protobuf.MapField.emptyMapField(
+              InfoDefaultEntryHolder.defaultEntry);
+        }
+        return info_;
+      }
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      internalGetMutableInfo() {
+        onChanged();;
+        if (info_ == null) {
+          info_ = com.google.protobuf.MapField.newMapField(
+              InfoDefaultEntryHolder.defaultEntry);
+        }
+        if (!info_.isMutable()) {
+          info_ = info_.copy();
+        }
+        return info_;
+      }
+
+      public int getInfoCount() {
+        return internalGetInfo().getMap().size();
       }
       /**
-       * <code>bytes ext = 5;</code>
+       * <code>map&lt;string, string&gt; info = 2;</code>
        */
-      public Builder setExt(com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        ext_ = value;
-        onChanged();
+
+      public boolean containsInfo(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        return internalGetInfo().getMap().containsKey(key);
+      }
+      /**
+       * Use {@link #getInfoMap()} instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.String> getInfo() {
+        return getInfoMap();
+      }
+      /**
+       * <code>map&lt;string, string&gt; info = 2;</code>
+       */
+
+      public java.util.Map<java.lang.String, java.lang.String> getInfoMap() {
+        return internalGetInfo().getMap();
+      }
+      /**
+       * <code>map&lt;string, string&gt; info = 2;</code>
+       */
+
+      public java.lang.String getInfoOrDefault(
+          java.lang.String key,
+          java.lang.String defaultValue) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, java.lang.String> map =
+            internalGetInfo().getMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+      /**
+       * <code>map&lt;string, string&gt; info = 2;</code>
+       */
+
+      public java.lang.String getInfoOrThrow(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, java.lang.String> map =
+            internalGetInfo().getMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+
+      public Builder clearInfo() {
+        internalGetMutableInfo().getMutableMap()
+            .clear();
         return this;
       }
       /**
-       * <code>bytes ext = 5;</code>
+       * <code>map&lt;string, string&gt; info = 2;</code>
        */
-      public Builder clearExt() {
-        
-        ext_ = getDefaultInstance().getExt();
-        onChanged();
+
+      public Builder removeInfo(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutableInfo().getMutableMap()
+            .remove(key);
+        return this;
+      }
+      /**
+       * Use alternate mutation accessors instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.String>
+      getMutableInfo() {
+        return internalGetMutableInfo().getMutableMap();
+      }
+      /**
+       * <code>map&lt;string, string&gt; info = 2;</code>
+       */
+      public Builder putInfo(
+          java.lang.String key,
+          java.lang.String value) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        if (value == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutableInfo().getMutableMap()
+            .put(key, value);
+        return this;
+      }
+      /**
+       * <code>map&lt;string, string&gt; info = 2;</code>
+       */
+
+      public Builder putAllInfo(
+          java.util.Map<java.lang.String, java.lang.String> values) {
+        internalGetMutableInfo().getMutableMap()
+            .putAll(values);
         return this;
       }
       public final Builder setUnknownFields(
@@ -104374,6 +111876,11 @@ public final class PbXmsg {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_XmsgImMsgVideo_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_XmsgImMsgFile_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_XmsgImMsgFile_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_XmsgImMsgMerge_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -104539,11 +112046,6 @@ public final class PbXmsg {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_XmsgChannelStatusGroupStatus_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_XmsgClientTokenInfo_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_XmsgClientTokenInfo_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_XmsgImGroupMemberAddReq_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -104644,6 +112146,66 @@ public final class PbXmsg {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_XmsgImSdkEventXmsgAp_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_XmsgOssUploadSimpleReq_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_XmsgOssUploadSimpleReq_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_XmsgOssUploadSimpleReq_ExtEntry_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_XmsgOssUploadSimpleReq_ExtEntry_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_XmsgOssUploadSimpleRsp_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_XmsgOssUploadSimpleRsp_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_XmsgOssUploadSimpleRsp_ExtEntry_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_XmsgOssUploadSimpleRsp_ExtEntry_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_XmsgOssDownloadSimpleReq_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_XmsgOssDownloadSimpleReq_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_XmsgOssDownloadSimpleReq_ExtEntry_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_XmsgOssDownloadSimpleReq_ExtEntry_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_XmsgOssDownloadSimpleRsp_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_XmsgOssDownloadSimpleRsp_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_XmsgOssDownloadSimpleRsp_ExtEntry_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_XmsgOssDownloadSimpleRsp_ExtEntry_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_XmsgOssUsrObjInfoQueryReq_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_XmsgOssUsrObjInfoQueryReq_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_XmsgOssUsrObjInfoQueryRsp_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_XmsgOssUsrObjInfoQueryRsp_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_XmsgOssUsrObjInfo_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_XmsgOssUsrObjInfo_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_XmsgClientTokenInfo_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_XmsgClientTokenInfo_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_XmsgImHlrAttachSimpleReq_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -104714,6 +112276,21 @@ public final class PbXmsg {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_XmsgImAuthSimpleRsp_ExtEntry_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_XmsgImAuthRegSimpleReq_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_XmsgImAuthRegSimpleReq_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_XmsgImAuthRegSimpleRsp_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_XmsgImAuthRegSimpleRsp_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_XmsgImAuthRegSimpleRsp_ExtEntry_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_XmsgImAuthRegSimpleRsp_ExtEntry_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_XmsgImClientDeviceInfo_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -104733,21 +112310,6 @@ public final class PbXmsg {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_XmsgImClientServiceAddress_ExtEntry_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_XmsgImAuthRegSimpleReq_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_XmsgImAuthRegSimpleReq_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_XmsgImAuthRegSimpleRsp_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_XmsgImAuthRegSimpleRsp_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_XmsgImAuthRegSimpleRsp_ExtEntry_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_XmsgImAuthRegSimpleRsp_ExtEntry_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_XmsgImHlrOtherUsrInfoQueryReq_descriptor;
   private static final 
@@ -104838,6 +112400,11 @@ public final class PbXmsg {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_XmsgImHlrUsrDatPri_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_XmsgImHlrUsrDatPri_InfoEntry_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_XmsgImHlrUsrDatPri_InfoEntry_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_XmsgImHlrUsrDatPub_descriptor;
   private static final 
@@ -105220,364 +112787,391 @@ public final class PbXmsg {
       "gImGroupSendMsgRsp\022\r\n\005msgId\030\001 \001(\004\022\014\n\004gcg" +
       "t\030\002 \001(\t\022\013\n\003gts\030\003 \001(\004\022,\n\003ext\030\004 \003(\0132\037.Xmsg" +
       "ImGroupSendMsgRsp.ExtEntry\032*\n\010ExtEntry\022\013" +
-      "\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\360\001\n\tXmsgI" +
+      "\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\216\002\n\tXmsgI" +
       "mMsg\022\014\n\004type\030\001 \001(\t\022\034\n\004text\030\002 \001(\0132\016.XmsgI" +
       "mMsgText\022\034\n\004html\030\003 \001(\0132\016.XmsgImMsgHtml\022\036" +
       "\n\005image\030\004 \001(\0132\017.XmsgImMsgImage\022\036\n\005voice\030" +
       "\005 \001(\0132\017.XmsgImMsgVoice\022\036\n\005video\030\006 \001(\0132\017." +
-      "XmsgImMsgVideo\022\036\n\005merge\030\007 \001(\0132\017.XmsgImMs" +
-      "gMerge\022\031\n\003atx\030\010 \001(\0132\014.XmsgImMsgAt\"\035\n\rXms" +
-      "gImMsgText\022\014\n\004text\030\001 \001(\t\"\035\n\rXmsgImMsgHtm" +
-      "l\022\014\n\004html\030\001 \001(\t\"\035\n\016XmsgImMsgImage\022\013\n\003uri" +
-      "\030\001 \001(\t\"\035\n\016XmsgImMsgVoice\022\013\n\003uri\030\001 \001(\t\"\035\n" +
-      "\016XmsgImMsgVideo\022\013\n\003uri\030\001 \001(\t\")\n\016XmsgImMs" +
-      "gMerge\022\027\n\003msg\030\001 \003(\0132\n.XmsgImMsg\"\032\n\013XmsgI" +
-      "mMsgAt\022\013\n\003cgt\030\002 \003(\t\"\300\001\n\024XmsgImGroupMsgNo" +
-      "tice\022\014\n\004gcgt\030\001 \001(\t\022\014\n\004scgt\030\002 \001(\t\022\r\n\005msgI" +
-      "d\030\003 \001(\004\022\027\n\003msg\030\004 \001(\0132\n.XmsgImMsg\022\013\n\003gts\030" +
-      "\005 \001(\004\022+\n\003ext\030\006 \003(\0132\036.XmsgImGroupMsgNotic" +
-      "e.ExtEntry\032*\n\010ExtEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005v" +
-      "alue\030\002 \001(\t:\0028\001\"C\n\025XmsgImGroupMsgSyncReq\022" +
-      "\013\n\003cgt\030\001 \001(\t\022\r\n\005msgId\030\002 \001(\004\022\016\n\006latest\030\003 " +
-      "\001(\r\"<\n\025XmsgImGroupMsgSyncRsp\022#\n\003msg\030\001 \003(" +
-      "\0132\026.XmsgImGroupMsgHistory\"j\n\025XmsgImGroup" +
-      "MsgHistory\022\014\n\004scgt\030\001 \001(\t\022\r\n\005msgId\030\002 \001(\004\022" +
-      "\027\n\003msg\030\003 \001(\0132\n.XmsgImMsg\022\013\n\003gts\030\004 \001(\004\022\016\n" +
-      "\006isRead\030\005 \001(\010\"V\n\026XmsgImGroupMsgQueryReq\022" +
-      "\013\n\003cgt\030\001 \001(\t\022\r\n\005msgId\030\002 \001(\004\022\016\n\006before\030\003 " +
-      "\001(\010\022\020\n\010pageSize\030\004 \001(\r\"\272\001\n\026XmsgImGroupMsg" +
-      "QueryRsp\022?\n\003msg\030\001 \003(\01322.XmsgImGroupMsgQu" +
-      "eryRsp.XmsgImGroupMsgQueryRspItem\032_\n\032Xms" +
-      "gImGroupMsgQueryRspItem\022\014\n\004scgt\030\001 \001(\t\022\r\n" +
-      "\005msgId\030\002 \001(\004\022\027\n\003msg\030\003 \001(\0132\n.XmsgImMsg\022\013\n" +
-      "\003gts\030\004 \001(\004\"3\n\025XmsgImGroupMsgReadReq\022\013\n\003c" +
-      "gt\030\001 \001(\t\022\r\n\005msgId\030\002 \001(\004\"q\n\025XmsgImGroupMs" +
-      "gReadRsp\022,\n\003ext\030\001 \003(\0132\037.XmsgImGroupMsgRe" +
-      "adRsp.ExtEntry\032*\n\010ExtEntry\022\013\n\003key\030\001 \001(\t\022" +
-      "\r\n\005value\030\002 \001(\t:\0028\001\"6\n\030XmsgImGroupMsgRead" +
-      "Notice\022\013\n\003cgt\030\001 \001(\t\022\r\n\005msgId\030\002 \001(\004\"K\n\024Xm" +
-      "sgImHlrGroupMsgReq\022\013\n\003cgt\030\001 \001(\t\022\014\n\004type\030" +
-      "\002 \001(\t\022\013\n\003msg\030\003 \001(\t\022\013\n\003dat\030\004 \001(\014\"o\n\024XmsgI" +
-      "mHlrGroupMsgRsp\022+\n\003ext\030\001 \003(\0132\036.XmsgImHlr" +
-      "GroupMsgRsp.ExtEntry\032*\n\010ExtEntry\022\013\n\003key\030" +
-      "\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"(\n\031XmsgChannelS" +
-      "tatusQueryReq\022\013\n\003cgt\030\001 \003(\t\"\275\002\n\031XmsgChann" +
-      "elStatusQueryRsp\022<\n\tusrStatus\030\001 \003(\0132).Xm" +
-      "sgChannelStatusQueryRsp.UsrStatusEntry\022@" +
-      "\n\013groupStatus\030\002 \003(\0132+.XmsgChannelStatusQ" +
-      "ueryRsp.GroupStatusEntry\032M\n\016UsrStatusEnt" +
-      "ry\022\013\n\003key\030\001 \001(\t\022*\n\005value\030\002 \001(\0132\033.XmsgCha" +
-      "nnelStatusUsrStatus:\0028\001\032Q\n\020GroupStatusEn" +
-      "try\022\013\n\003key\030\001 \001(\t\022,\n\005value\030\002 \001(\0132\035.XmsgCh" +
-      "annelStatusGroupStatus:\0028\001\"&\n\027XmsgChanne" +
-      "lStatusSubReq\022\013\n\003cgt\030\001 \003(\t\"\267\002\n\027XmsgChann" +
-      "elStatusSubRsp\022:\n\tusrStatus\030\001 \003(\0132\'.Xmsg" +
-      "ChannelStatusSubRsp.UsrStatusEntry\022>\n\013gr" +
-      "oupStatus\030\002 \003(\0132).XmsgChannelStatusSubRs" +
+      "XmsgImMsgVideo\022\034\n\004file\030\007 \001(\0132\016.XmsgImMsg" +
+      "File\022\036\n\005merge\030\010 \001(\0132\017.XmsgImMsgMerge\022\031\n\003" +
+      "atx\030\t \001(\0132\014.XmsgImMsgAt\"\035\n\rXmsgImMsgText" +
+      "\022\014\n\004text\030\001 \001(\t\"\035\n\rXmsgImMsgHtml\022\014\n\004html\030" +
+      "\001 \001(\t\"\035\n\016XmsgImMsgImage\022\013\n\003uri\030\001 \001(\t\"\035\n\016" +
+      "XmsgImMsgVoice\022\013\n\003uri\030\001 \001(\t\"\035\n\016XmsgImMsg" +
+      "Video\022\013\n\003uri\030\001 \001(\t\"*\n\rXmsgImMsgFile\022\014\n\004f" +
+      "rom\030\001 \001(\t\022\013\n\003fid\030\002 \001(\t\")\n\016XmsgImMsgMerge" +
+      "\022\027\n\003msg\030\001 \003(\0132\n.XmsgImMsg\"\032\n\013XmsgImMsgAt" +
+      "\022\013\n\003cgt\030\002 \003(\t\"\300\001\n\024XmsgImGroupMsgNotice\022\014" +
+      "\n\004gcgt\030\001 \001(\t\022\014\n\004scgt\030\002 \001(\t\022\r\n\005msgId\030\003 \001(" +
+      "\004\022\027\n\003msg\030\004 \001(\0132\n.XmsgImMsg\022\013\n\003gts\030\005 \001(\004\022" +
+      "+\n\003ext\030\006 \003(\0132\036.XmsgImGroupMsgNotice.ExtE" +
+      "ntry\032*\n\010ExtEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002" +
+      " \001(\t:\0028\001\"C\n\025XmsgImGroupMsgSyncReq\022\013\n\003cgt" +
+      "\030\001 \001(\t\022\r\n\005msgId\030\002 \001(\004\022\016\n\006latest\030\003 \001(\r\"<\n" +
+      "\025XmsgImGroupMsgSyncRsp\022#\n\003msg\030\001 \003(\0132\026.Xm" +
+      "sgImGroupMsgHistory\"j\n\025XmsgImGroupMsgHis" +
+      "tory\022\014\n\004scgt\030\001 \001(\t\022\r\n\005msgId\030\002 \001(\004\022\027\n\003msg" +
+      "\030\003 \001(\0132\n.XmsgImMsg\022\013\n\003gts\030\004 \001(\004\022\016\n\006isRea" +
+      "d\030\005 \001(\010\"V\n\026XmsgImGroupMsgQueryReq\022\013\n\003cgt" +
+      "\030\001 \001(\t\022\r\n\005msgId\030\002 \001(\004\022\016\n\006before\030\003 \001(\010\022\020\n" +
+      "\010pageSize\030\004 \001(\r\"\272\001\n\026XmsgImGroupMsgQueryR" +
+      "sp\022?\n\003msg\030\001 \003(\01322.XmsgImGroupMsgQueryRsp" +
+      ".XmsgImGroupMsgQueryRspItem\032_\n\032XmsgImGro" +
+      "upMsgQueryRspItem\022\014\n\004scgt\030\001 \001(\t\022\r\n\005msgId" +
+      "\030\002 \001(\004\022\027\n\003msg\030\003 \001(\0132\n.XmsgImMsg\022\013\n\003gts\030\004" +
+      " \001(\004\"3\n\025XmsgImGroupMsgReadReq\022\013\n\003cgt\030\001 \001" +
+      "(\t\022\r\n\005msgId\030\002 \001(\004\"q\n\025XmsgImGroupMsgReadR" +
+      "sp\022,\n\003ext\030\001 \003(\0132\037.XmsgImGroupMsgReadRsp." +
+      "ExtEntry\032*\n\010ExtEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005val" +
+      "ue\030\002 \001(\t:\0028\001\"6\n\030XmsgImGroupMsgReadNotice" +
+      "\022\013\n\003cgt\030\001 \001(\t\022\r\n\005msgId\030\002 \001(\004\"K\n\024XmsgImHl" +
+      "rGroupMsgReq\022\013\n\003cgt\030\001 \001(\t\022\014\n\004type\030\002 \001(\t\022" +
+      "\013\n\003msg\030\003 \001(\t\022\013\n\003dat\030\004 \001(\014\"o\n\024XmsgImHlrGr" +
+      "oupMsgRsp\022+\n\003ext\030\001 \003(\0132\036.XmsgImHlrGroupM" +
+      "sgRsp.ExtEntry\032*\n\010ExtEntry\022\013\n\003key\030\001 \001(\t\022" +
+      "\r\n\005value\030\002 \001(\t:\0028\001\"(\n\031XmsgChannelStatusQ" +
+      "ueryReq\022\013\n\003cgt\030\001 \003(\t\"\275\002\n\031XmsgChannelStat" +
+      "usQueryRsp\022<\n\tusrStatus\030\001 \003(\0132).XmsgChan" +
+      "nelStatusQueryRsp.UsrStatusEntry\022@\n\013grou" +
+      "pStatus\030\002 \003(\0132+.XmsgChannelStatusQueryRs" +
       "p.GroupStatusEntry\032M\n\016UsrStatusEntry\022\013\n\003" +
       "key\030\001 \001(\t\022*\n\005value\030\002 \001(\0132\033.XmsgChannelSt" +
       "atusUsrStatus:\0028\001\032Q\n\020GroupStatusEntry\022\013\n" +
       "\003key\030\001 \001(\t\022,\n\005value\030\002 \001(\0132\035.XmsgChannelS" +
-      "tatusGroupStatus:\0028\001\"(\n\031XmsgChannelStatu" +
-      "sUnSubReq\022\013\n\003cgt\030\001 \003(\t\"y\n\031XmsgChannelSta" +
-      "tusUnSubRsp\0220\n\003ext\030\001 \003(\0132#.XmsgChannelSt" +
-      "atusUnSubRsp.ExtEntry\032*\n\010ExtEntry\022\013\n\003key" +
-      "\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"]\n#XmsgChannel" +
-      "StatusPubUsrStatusNotice\022\013\n\003cgt\030\001 \001(\t\022\014\n" +
-      "\004plat\030\002 \001(\t\022\013\n\003did\030\003 \001(\t\022\016\n\006status\030\004 \001(\t" +
-      "\"D\n%XmsgChannelStatusPubGroupStatusNotic" +
-      "e\022\013\n\003cgt\030\001 \001(\t\022\016\n\006status\030\002 \001(\t\"\271\001\n\032XmsgC" +
-      "hannelStatusUsrStatus\022L\n\006client\030\002 \003(\0132<." +
-      "XmsgChannelStatusUsrStatus.XmsgChannelSt" +
-      "atusUsrClientStatus\032M\n XmsgChannelStatus" +
-      "UsrClientStatus\022\014\n\004plat\030\001 \001(\t\022\013\n\003did\030\002 \001" +
-      "(\t\022\016\n\006status\030\003 \001(\t\".\n\034XmsgChannelStatusG" +
-      "roupStatus\022\016\n\006status\030\001 \001(\t\"u\n\023XmsgClient" +
-      "TokenInfo\022\013\n\003cgt\030\001 \001(\t\022\r\n\005token\030\002 \001(\t\022\013\n" +
-      "\003alg\030\003 \001(\t\022\014\n\004slat\030\004 \001(\t\022\014\n\004plat\030\005 \001(\t\022\013" +
-      "\n\003did\030\006 \001(\t\022\014\n\004sign\030\007 \001(\t\"M\n\027XmsgImGroup" +
-      "MemberAddReq\022\013\n\003cgt\030\001 \001(\t\022%\n\006member\030\002 \003(" +
-      "\0132\025.XmsgImGroupAddMember\"u\n\027XmsgImGroupM" +
-      "emberAddRsp\022.\n\003ext\030\001 \003(\0132!.XmsgImGroupMe" +
-      "mberAddRsp.ExtEntry\032*\n\010ExtEntry\022\013\n\003key\030\001" +
-      " \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"7\n\031XmsgImGroupMe" +
-      "mberQueryReq\022\014\n\004gcgt\030\001 \001(\t\022\014\n\004mcgt\030\002 \003(\t" +
-      "\"C\n\031XmsgImGroupMemberQueryRsp\022&\n\006member\030" +
-      "\001 \003(\0132\026.XmsgImGroupInfoMember\"\260\001\n\032XmsgIm" +
-      "GroupMemberUpdateReq\022\014\n\004gcgt\030\001 \001(\t\022\014\n\004mc" +
-      "gt\030\002 \001(\t\0227\n\006upsert\030\003 \003(\0132\'.XmsgImGroupMe" +
-      "mberUpdateReq.UpsertEntry\022\016\n\006remove\030\004 \003(" +
-      "\t\032-\n\013UpsertEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002" +
-      " \001(\t:\0028\001\"{\n\032XmsgImGroupMemberUpdateRsp\0221" +
-      "\n\003ext\030\001 \003(\0132$.XmsgImGroupMemberUpdateRsp" +
-      ".ExtEntry\032*\n\010ExtEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005va" +
-      "lue\030\002 \001(\t:\0028\001\"8\n\032XmsgImGroupMemberDelete" +
-      "Req\022\014\n\004gcgt\030\001 \001(\t\022\014\n\004mcgt\030\002 \003(\t\"{\n\032XmsgI" +
-      "mGroupMemberDeleteRsp\0221\n\003ext\030\001 \003(\0132$.Xms" +
-      "gImGroupMemberDeleteRsp.ExtEntry\032*\n\010ExtE" +
-      "ntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\345\005\n" +
-      "\025XmsgImSdkEventAdapter\022\r\n\005apiId\030\001 \001(\r\022$\n" +
-      "\007evnType\030\002 \001(\0162\023.XmsgImSdkEventType\022A\n\tn" +
-      "etNotice\030\003 \001(\0132..XmsgImSdkEventAdapter.X" +
-      "msgImSdkEventNetNotice\022;\n\006netReq\030\004 \001(\0132+" +
-      ".XmsgImSdkEventAdapter.XmsgImSdkEventNet" +
-      "Req\022;\n\006netRsp\030\005 \001(\0132+.XmsgImSdkEventAdap" +
-      "ter.XmsgImSdkEventNetRsp\0229\n\005dbRsp\030\006 \001(\0132" +
-      "*.XmsgImSdkEventAdapter.XmsgImSdkEventDb" +
-      "Rsp\022;\n\006cxxLog\030\007 \001(\0132+.XmsgImSdkEventAdap" +
-      "ter.XmsgImSdkEventCxxLog\0323\n\027XmsgImSdkEve" +
-      "ntNetNotice\022\013\n\003msg\030\001 \001(\t\022\013\n\003dat\030\002 \001(\014\032=\n" +
-      "\024XmsgImSdkEventNetReq\022\013\n\003tid\030\001 \001(\r\022\013\n\003ms" +
-      "g\030\002 \001(\t\022\013\n\003dat\030\003 \001(\014\032X\n\024XmsgImSdkEventNe" +
-      "tRsp\022\013\n\003tid\030\001 \001(\r\022\013\n\003ret\030\002 \001(\r\022\014\n\004desc\030\003" +
-      " \001(\t\022\013\n\003msg\030\004 \001(\t\022\013\n\003dat\030\005 \001(\014\032b\n\023XmsgIm" +
-      "SdkEventDbRsp\022\013\n\003tid\030\001 \001(\r\022\013\n\003ret\030\002 \001(\r\022" +
-      "\014\n\004desc\030\003 \001(\t\022#\n\003dat\030\005 \001(\0132\026.XmsgImClien" +
-      "tDbCrudRsp\0320\n\024XmsgImSdkEventCxxLog\022\013\n\003le" +
-      "v\030\001 \001(\r\022\013\n\003log\030\002 \001(\t\"D\n\030XmsgImSdkEventXm" +
-      "sgImAuth\022\013\n\003evn\030\001 \001(\t\022\r\n\005times\030\002 \001(\r\022\014\n\004" +
-      "addr\030\003 \001(\t\"@\n\024XmsgImSdkEventXmsgAp\022\013\n\003ev" +
-      "n\030\001 \001(\t\022\r\n\005times\030\002 \001(\r\022\014\n\004addr\030\003 \001(\t\"\274\001\n" +
-      "\030XmsgImHlrAttachSimpleReq\022\r\n\005token\030\001 \001(\t" +
-      "\022\014\n\004salt\030\002 \001(\t\022\014\n\004sign\030\003 \001(\t\022\013\n\003alg\030\004 \001(" +
-      "\t\022\013\n\003cgt\030\005 \001(\t\022/\n\003ext\030\006 \003(\0132\".XmsgImHlrA" +
-      "ttachSimpleReq.ExtEntry\032*\n\010ExtEntry\022\013\n\003k" +
-      "ey\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"w\n\030XmsgImHlr" +
-      "AttachSimpleRsp\022/\n\003ext\030\001 \003(\0132\".XmsgImHlr" +
-      "AttachSimpleRsp.ExtEntry\032*\n\010ExtEntry\022\013\n\003" +
-      "key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"w\n\030XmsgImHl" +
-      "rDetachSimpleReq\022/\n\003ext\030\001 \003(\0132\".XmsgImHl" +
-      "rDetachSimpleReq.ExtEntry\032*\n\010ExtEntry\022\013\n" +
-      "\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"w\n\030XmsgImH" +
-      "lrDetachSimpleRsp\022/\n\003ext\030\001 \003(\0132\".XmsgImH" +
-      "lrDetachSimpleRsp.ExtEntry\032*\n\010ExtEntry\022\013" +
-      "\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"S\n\035XmsgIm" +
-      "HlrOtherClientAttachReq\022$\n\003dev\030\001 \001(\0132\027.X" +
-      "msgImClientDeviceInfo\022\014\n\004host\030\002 \001(\t\"/\n\035X" +
-      "msgImHlrOtherClientAttachRsp\022\016\n\006action\030\001" +
-      " \001(\t\"V\n XmsgImHlrOtherClientAttachNotice" +
-      "\022$\n\003dev\030\001 \001(\0132\027.XmsgImClientDeviceInfo\022\014" +
-      "\n\004host\030\002 \001(\t\"d\n\023XmsgImAuthSimpleReq\022\013\n\003u" +
-      "sr\030\001 \001(\t\022\014\n\004salt\030\002 \001(\t\022\014\n\004sign\030\003 \001(\t\022$\n\003" +
-      "dev\030\004 \001(\0132\027.XmsgImClientDeviceInfo\"\204\002\n\023X" +
-      "msgImAuthSimpleRsp\022\r\n\005token\030\001 \001(\t\022\016\n\006sec" +
-      "ret\030\002 \001(\t\022\017\n\007expired\030\003 \001(\004\022+\n\006apAddr\030\004 \003" +
-      "(\0132\033.XmsgImClientServiceAddress\022+\n\006fsAdd" +
-      "r\030\005 \003(\0132\033.XmsgImClientServiceAddress\022\013\n\003" +
-      "cgt\030\007 \001(\t\022*\n\003ext\030\010 \003(\0132\035.XmsgImAuthSimpl" +
-      "eRsp.ExtEntry\032*\n\010ExtEntry\022\013\n\003key\030\001 \001(\t\022\r" +
-      "\n\005value\030\002 \001(\t:\0028\001\"\233\001\n\026XmsgImClientDevice" +
-      "Info\022\014\n\004plat\030\001 \001(\t\022\013\n\003did\030\002 \001(\t\022\013\n\003ver\030\003" +
-      " \001(\t\022-\n\003ext\030\004 \003(\0132 .XmsgImClientDeviceIn" +
-      "fo.ExtEntry\032*\n\010ExtEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005" +
-      "value\030\002 \001(\t:\0028\001\"\264\001\n\032XmsgImClientServiceA" +
-      "ddress\022\n\n\002ip\030\001 \001(\t\022\014\n\004port\030\002 \001(\r\022\016\n\006weig" +
-      "ht\030\003 \001(\r\022\r\n\005proto\030\004 \003(\t\0221\n\003ext\030\005 \003(\0132$.X" +
-      "msgImClientServiceAddress.ExtEntry\032*\n\010Ex" +
-      "tEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"f" +
-      "\n\026XmsgImAuthRegSimpleReq\022\013\n\003usr\030\001 \001(\t\022\014\n" +
-      "\004salt\030\002 \001(\t\022\013\n\003pwd\030\003 \001(\t\022$\n\003dev\030\004 \001(\0132\027." +
-      "XmsgImClientDeviceInfo\"\200\001\n\026XmsgImAuthReg" +
-      "SimpleRsp\022\013\n\003cgt\030\001 \001(\t\022-\n\003ext\030\002 \003(\0132 .Xm" +
-      "sgImAuthRegSimpleRsp.ExtEntry\032*\n\010ExtEntr" +
-      "y\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\",\n\035Xms" +
-      "gImHlrOtherUsrInfoQueryReq\022\013\n\003cgt\030\001 \003(\t\"" +
-      "\245\001\n\035XmsgImHlrOtherUsrInfoQueryRsp\022<\n\007usr" +
-      "Info\030\001 \003(\0132+.XmsgImHlrOtherUsrInfoQueryR" +
-      "sp.UsrInfoEntry\032F\n\014UsrInfoEntry\022\013\n\003key\030\001" +
-      " \001(\t\022%\n\005value\030\002 \001(\0132\026.XmsgImHlrOtherUsrI" +
-      "nfo:\0028\001\"t\n\025XmsgImHlrOtherUsrInfo\022.\n\004info" +
-      "\030\001 \003(\0132 .XmsgImHlrOtherUsrInfo.InfoEntry" +
-      "\032+\n\tInfoEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(" +
-      "\t:\0028\001\"\231\001\n\027XmsgFileUploadSimpleReq\022\020\n\010fil" +
-      "eName\030\001 \001(\t\022\020\n\010fileSize\030\002 \001(\004\022.\n\003ext\030\003 \003" +
-      "(\0132!.XmsgFileUploadSimpleReq.ExtEntry\032*\n" +
-      "\010ExtEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028" +
-      "\001\"\223\001\n\027XmsgFileUploadSimpleRsp\022\013\n\003fid\030\001 \001" +
-      "(\t\022\017\n\007hashVal\030\002 \001(\t\022.\n\003ext\030\003 \003(\0132!.XmsgF" +
-      "ileUploadSimpleRsp.ExtEntry\032*\n\010ExtEntry\022" +
-      "\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\260\001\n\031Xmsg" +
-      "FileDownloadSimpleReq\022\013\n\003fid\030\001 \001(\t\022\013\n\003cg" +
-      "t\030\002 \001(\t\022\016\n\006offset\030\003 \001(\004\022\013\n\003len\030\004 \001(\004\0220\n\003" +
-      "ext\030\005 \003(\0132#.XmsgFileDownloadSimpleReq.Ex" +
-      "tEntry\032*\n\010ExtEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value" +
-      "\030\002 \001(\t:\0028\001\"\273\001\n\031XmsgFileDownloadSimpleRsp" +
-      "\022\020\n\010fileName\030\001 \001(\t\022\020\n\010fileSize\030\002 \001(\004\022\017\n\007" +
-      "hashVal\030\003 \001(\t\022\013\n\003gts\030\004 \001(\004\0220\n\003ext\030\005 \003(\0132" +
-      "#.XmsgFileDownloadSimpleRsp.ExtEntry\032*\n\010" +
-      "ExtEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001" +
-      "\"W\n\033XmsgFileUsrFileInfoQueryReq\022\013\n\003sts\030\001" +
-      " \001(\004\022\013\n\003ets\030\002 \001(\004\022\014\n\004page\030\003 \001(\r\022\020\n\010pageS" +
-      "ize\030\004 \001(\r\"E\n\033XmsgFileUsrFileInfoQueryRsp" +
-      "\022&\n\010fileInfo\030\001 \003(\0132\024.XmsgFileUsrFileInfo" +
-      "\"d\n\023XmsgFileUsrFileInfo\022\013\n\003fid\030\001 \001(\t\022\020\n\010" +
-      "fileName\030\002 \001(\t\022\020\n\010fileSize\030\003 \001(\004\022\017\n\007hash" +
-      "Val\030\004 \001(\t\022\013\n\003gts\030\005 \001(\004\"\211\001\n\017XmsgImHlrUsrD" +
-      "at\022\013\n\003uid\030\001 \001(\t\022\013\n\003ver\030\002 \001(\004\022 \n\003pri\030\003 \001(" +
-      "\0132\023.XmsgImHlrUsrDatPri\022 \n\003pub\030\004 \001(\0132\023.Xm" +
-      "sgImHlrUsrDatPub\022\013\n\003gts\030\005 \001(\004\022\013\n\003uts\030\006 \001" +
-      "(\004\"1\n\022XmsgImHlrUsrDatPri\022\016\n\006enable\030\001 \001(\010" +
-      "\022\013\n\003ext\030\005 \001(\014\"n\n\022XmsgImHlrUsrDatPub\022+\n\004i" +
-      "nfo\030\001 \003(\0132\035.XmsgImHlrUsrDatPub.InfoEntry" +
-      "\032+\n\tInfoEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(" +
-      "\t:\0028\001\"w\n\030XmsgImHlrUsrInfoQueryReq\022/\n\003ext" +
-      "\030\001 \003(\0132\".XmsgImHlrUsrInfoQueryReq.ExtEnt" +
-      "ry\032*\n\010ExtEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001" +
-      "(\t:\0028\001\"z\n\030XmsgImHlrUsrInfoQueryRsp\0221\n\004in" +
-      "fo\030\001 \003(\0132#.XmsgImHlrUsrInfoQueryRsp.Info" +
-      "Entry\032+\n\tInfoEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value" +
-      "\030\002 \001(\t:\0028\001\"|\n\031XmsgImHlrUsrInfoUpdateReq\022" +
-      "2\n\004info\030\001 \003(\0132$.XmsgImHlrUsrInfoUpdateRe" +
-      "q.InfoEntry\032+\n\tInfoEntry\022\013\n\003key\030\001 \001(\t\022\r\n" +
-      "\005value\030\002 \001(\t:\0028\001\"y\n\031XmsgImHlrUsrInfoUpda" +
-      "teRsp\0220\n\003ext\030\001 \003(\0132#.XmsgImHlrUsrInfoUpd" +
-      "ateRsp.ExtEntry\032*\n\010ExtEntry\022\013\n\003key\030\001 \001(\t" +
-      "\022\r\n\005value\030\002 \001(\t:\0028\001\"E\n\025XmsgImClientDbCru" +
-      "dReq\022\013\n\003sql\030\001 \001(\t\022\037\n\003row\030\002 \003(\0132\022.XmsgImC" +
-      "lientDbRow\"\253\001\n\025XmsgImClientDbCrudRsp\022\016\n\006" +
-      "change\030\001 \001(\r\0222\n\006column\030\002 \003(\0132\".XmsgImCli" +
-      "entDbCrudRsp.ColumnEntry\022\037\n\003row\030\004 \003(\0132\022." +
-      "XmsgImClientDbRow\032-\n\013ColumnEntry\022\013\n\003key\030" +
-      "\001 \001(\t\022\r\n\005value\030\002 \001(\r:\0028\001\"6\n\021XmsgImClient" +
-      "DbRow\022!\n\003col\030\001 \003(\0132\024.XmsgImClientDbFiled" +
-      "\"o\n\023XmsgImClientDbFiled\022&\n\004type\030\001 \001(\0162\030." +
-      "XmsgImClientDbFiledType\022\016\n\006valInt\030\002 \001(\004\022" +
-      "\017\n\007valText\030\003 \001(\t\022\017\n\007valBlob\030\004 \001(\014\"`\n\016Xms" +
-      "gImClientKv\022#\n\002kv\030\001 \003(\0132\027.XmsgImClientKv" +
-      ".KvEntry\032)\n\007KvEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005valu" +
-      "e\030\002 \001(\t:\0028\001\"M\n\023XmsgImOrgSyncSubReq\022\020\n\010ve" +
-      "r4dept\030\001 \001(\004\022\023\n\013ver4deptUsr\030\002 \001(\004\022\017\n\007ver" +
-      "4usr\030\003 \001(\004\"_\n\023XmsgImOrgSyncSubRsp\022\026\n\016ver" +
-      "4deptLatest\030\001 \001(\004\022\031\n\021ver4deptUsrLatest\030\002" +
-      " \001(\004\022\025\n\rver4usrLatest\030\003 \001(\004\"5\n\023XmsgImOrg" +
-      "SyncPubReq\022\036\n\005event\030\001 \003(\0132\017.XmsgImOrgEve" +
-      "nt\"m\n\023XmsgImOrgSyncPubRsp\022*\n\003ext\030\001 \003(\0132\035" +
-      ".XmsgImOrgSyncPubRsp.ExtEntry\032*\n\010ExtEntr" +
-      "y\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"8\n\026Xms" +
-      "gImOrgChangedNotice\022\036\n\005event\030\001 \001(\0132\017.Xms" +
-      "gImOrgEvent\")\n\032XmsgImOrgNodeChildQueryRe" +
-      "q\022\013\n\003cgt\030\001 \001(\t\"@\n\032XmsgImOrgNodeChildQuer" +
-      "yRsp\022\"\n\005child\030\001 \003(\0132\023.XmsgImOrgNodeChild" +
-      "\":\n\034XmsgImOrgNodeDeptUsrQueryReq\022\014\n\004dcgt" +
-      "\030\001 \001(\t\022\014\n\004ucgt\030\002 \001(\t\"\205\001\n\034XmsgImOrgNodeDe" +
-      "ptUsrQueryRsp\022\014\n\004name\030\002 \001(\t\022\016\n\006enable\030\003 " +
-      "\001(\010\022 \n\004info\030\004 \001(\0132\022.XmsgImOrgNodeInfo\022\013\n" +
-      "\003ver\030\005 \001(\004\022\013\n\003gts\030\006 \001(\004\022\013\n\003uts\030\007 \001(\004\"$\n\025" +
-      "XmsgImOrgNodeQueryReq\022\013\n\003cgt\030\001 \001(\t\"\255\001\n\025X" +
-      "msgImOrgNodeQueryRsp\022\013\n\003pgt\030\001 \001(\t\022\014\n\004nam" +
-      "e\030\002 \001(\t\022\016\n\006enable\030\003 \001(\010\022 \n\004type\030\004 \001(\0162\022." +
-      "XmsgImOrgNodeType\022 \n\004info\030\005 \001(\0132\022.XmsgIm" +
-      "OrgNodeInfo\022\013\n\003ver\030\006 \001(\004\022\013\n\003gts\030\007 \001(\004\022\013\n" +
-      "\003uts\030\010 \001(\004\"}\n\016XmsgImOrgEvent\022!\n\004dept\030\001 \001" +
-      "(\0132\023.XmsgImOrgEventDept\022\'\n\007deptUsr\030\002 \001(\013" +
-      "2\026.XmsgImOrgEventDeptUsr\022\037\n\003usr\030\003 \001(\0132\022." +
-      "XmsgImOrgEventUsr\"\226\001\n\022XmsgImOrgEventDept" +
-      "\022\013\n\003cgt\030\001 \001(\t\022\014\n\004pcgt\030\002 \001(\t\022\014\n\004name\030\003 \001(" +
-      "\t\022\016\n\006enable\030\004 \001(\010\022 \n\004info\030\005 \001(\0132\022.XmsgIm" +
-      "OrgNodeInfo\022\013\n\003ver\030\006 \001(\004\022\013\n\003gts\030\007 \001(\004\022\013\n" +
-      "\003uts\030\010 \001(\004\"\232\001\n\025XmsgImOrgEventDeptUsr\022\014\n\004" +
-      "dcgt\030\001 \001(\t\022\014\n\004ucgt\030\002 \001(\t\022\014\n\004name\030\003 \001(\t\022\016" +
-      "\n\006enable\030\004 \001(\010\022 \n\004info\030\005 \001(\0132\022.XmsgImOrg" +
-      "NodeInfo\022\013\n\003ver\030\006 \001(\004\022\013\n\003gts\030\007 \001(\004\022\013\n\003ut" +
-      "s\030\010 \001(\004\"\207\001\n\021XmsgImOrgEventUsr\022\013\n\003cgt\030\001 \001" +
-      "(\t\022\014\n\004name\030\002 \001(\t\022\016\n\006enable\030\003 \001(\010\022 \n\004info" +
-      "\030\004 \001(\0132\022.XmsgImOrgNodeInfo\022\013\n\003ver\030\005 \001(\004\022" +
-      "\013\n\003gts\030\006 \001(\004\022\013\n\003uts\030\007 \001(\004\"f\n\021XmsgImOrgNo" +
-      "deInfo\022&\n\002kv\030\001 \003(\0132\032.XmsgImOrgNodeInfo.K" +
-      "vEntry\032)\n\007KvEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030" +
-      "\002 \001(\t:\0028\001\"\252\001\n\022XmsgImOrgNodeChild\022\013\n\003cgt\030" +
-      "\001 \001(\t\022\014\n\004name\030\002 \001(\t\022\016\n\006enable\030\003 \001(\010\022 \n\004t" +
-      "ype\030\004 \001(\0162\022.XmsgImOrgNodeType\022 \n\004info\030\005 " +
-      "\001(\0132\022.XmsgImOrgNodeInfo\022\013\n\003ver\030\006 \001(\004\022\013\n\003" +
-      "gts\030\007 \001(\004\022\013\n\003uts\030\010 \001(\004\"}\n\033XmsgImGroupUsr" +
-      "GroupQueryReq\0222\n\003ext\030\001 \003(\0132%.XmsgImGroup" +
-      "UsrGroupQueryReq.ExtEntry\032*\n\010ExtEntry\022\013\n" +
-      "\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"F\n\033XmsgImG" +
-      "roupUsrGroupQueryRsp\022\'\n\005group\030\001 \003(\0132\030.Xm" +
-      "sgImGroupUsrGroupInfo\"\313\001\n\027XmsgImGroupUsr" +
-      "GroupInfo\022\013\n\003cgt\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\0220\n\004" +
-      "info\030\003 \003(\0132\".XmsgImGroupUsrGroupInfo.Inf" +
-      "oEntry\022\013\n\003ver\030\004 \001(\004\022\013\n\003gts\030\005 \001(\004\022\013\n\003uts\030" +
-      "\006 \001(\004\022\017\n\007usr2usr\030\007 \001(\010\032+\n\tInfoEntry\022\013\n\003k" +
-      "ey\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\231\001\n\024XmsgImGr" +
-      "oupCreateReq\022-\n\004info\030\001 \003(\0132\037.XmsgImGroup" +
-      "CreateReq.InfoEntry\022%\n\006member\030\002 \003(\0132\025.Xm" +
-      "sgImGroupAddMember\032+\n\tInfoEntry\022\013\n\003key\030\001" +
-      " \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"0\n\024XmsgImGroupCr" +
-      "eateRsp\022\013\n\003cgt\030\001 \001(\t\022\013\n\003gts\030\002 \001(\004\"\177\n\024Xms" +
-      "gImGroupAddMember\022\013\n\003cgt\030\001 \001(\t\022-\n\004info\030\002" +
-      " \003(\0132\037.XmsgImGroupAddMember.InfoEntry\032+\n" +
-      "\tInfoEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\002" +
-      "8\001\"|\n\022XmsgImGroupSyncReq\022\017\n\007ver4usr\030\001 \001(" +
-      "\004\022)\n\003ext\030\002 \003(\0132\034.XmsgImGroupSyncReq.ExtE" +
+      "tatusGroupStatus:\0028\001\"&\n\027XmsgChannelStatu" +
+      "sSubReq\022\013\n\003cgt\030\001 \003(\t\"\267\002\n\027XmsgChannelStat" +
+      "usSubRsp\022:\n\tusrStatus\030\001 \003(\0132\'.XmsgChanne" +
+      "lStatusSubRsp.UsrStatusEntry\022>\n\013groupSta" +
+      "tus\030\002 \003(\0132).XmsgChannelStatusSubRsp.Grou" +
+      "pStatusEntry\032M\n\016UsrStatusEntry\022\013\n\003key\030\001 " +
+      "\001(\t\022*\n\005value\030\002 \001(\0132\033.XmsgChannelStatusUs" +
+      "rStatus:\0028\001\032Q\n\020GroupStatusEntry\022\013\n\003key\030\001" +
+      " \001(\t\022,\n\005value\030\002 \001(\0132\035.XmsgChannelStatusG" +
+      "roupStatus:\0028\001\"(\n\031XmsgChannelStatusUnSub" +
+      "Req\022\013\n\003cgt\030\001 \003(\t\"y\n\031XmsgChannelStatusUnS" +
+      "ubRsp\0220\n\003ext\030\001 \003(\0132#.XmsgChannelStatusUn" +
+      "SubRsp.ExtEntry\032*\n\010ExtEntry\022\013\n\003key\030\001 \001(\t" +
+      "\022\r\n\005value\030\002 \001(\t:\0028\001\"]\n#XmsgChannelStatus" +
+      "PubUsrStatusNotice\022\013\n\003cgt\030\001 \001(\t\022\014\n\004plat\030" +
+      "\002 \001(\t\022\013\n\003did\030\003 \001(\t\022\016\n\006status\030\004 \001(\t\"D\n%Xm" +
+      "sgChannelStatusPubGroupStatusNotice\022\013\n\003c" +
+      "gt\030\001 \001(\t\022\016\n\006status\030\002 \001(\t\"\271\001\n\032XmsgChannel" +
+      "StatusUsrStatus\022L\n\006client\030\002 \003(\0132<.XmsgCh" +
+      "annelStatusUsrStatus.XmsgChannelStatusUs" +
+      "rClientStatus\032M\n XmsgChannelStatusUsrCli" +
+      "entStatus\022\014\n\004plat\030\001 \001(\t\022\013\n\003did\030\002 \001(\t\022\016\n\006" +
+      "status\030\003 \001(\t\".\n\034XmsgChannelStatusGroupSt" +
+      "atus\022\016\n\006status\030\001 \001(\t\"M\n\027XmsgImGroupMembe" +
+      "rAddReq\022\013\n\003cgt\030\001 \001(\t\022%\n\006member\030\002 \003(\0132\025.X" +
+      "msgImGroupAddMember\"u\n\027XmsgImGroupMember" +
+      "AddRsp\022.\n\003ext\030\001 \003(\0132!.XmsgImGroupMemberA" +
+      "ddRsp.ExtEntry\032*\n\010ExtEntry\022\013\n\003key\030\001 \001(\t\022" +
+      "\r\n\005value\030\002 \001(\t:\0028\001\"7\n\031XmsgImGroupMemberQ" +
+      "ueryReq\022\014\n\004gcgt\030\001 \001(\t\022\014\n\004mcgt\030\002 \003(\t\"C\n\031X" +
+      "msgImGroupMemberQueryRsp\022&\n\006member\030\001 \003(\013" +
+      "2\026.XmsgImGroupInfoMember\"\260\001\n\032XmsgImGroup" +
+      "MemberUpdateReq\022\014\n\004gcgt\030\001 \001(\t\022\014\n\004mcgt\030\002 " +
+      "\001(\t\0227\n\006upsert\030\003 \003(\0132\'.XmsgImGroupMemberU" +
+      "pdateReq.UpsertEntry\022\016\n\006remove\030\004 \003(\t\032-\n\013" +
+      "UpsertEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:" +
+      "\0028\001\"{\n\032XmsgImGroupMemberUpdateRsp\0221\n\003ext" +
+      "\030\001 \003(\0132$.XmsgImGroupMemberUpdateRsp.ExtE" +
       "ntry\032*\n\010ExtEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002" +
-      " \001(\t:\0028\001\":\n\022XmsgImGroupSyncRsp\022$\n\005event\030" +
-      "\001 \003(\0132\025.XmsgImGroupSyncEvent\"\323\001\n\024XmsgImG" +
-      "roupSyncEvent\022\013\n\003cgt\030\001 \001(\t\022\014\n\004oper\030\002 \001(\t" +
-      "\022-\n\004info\030\003 \003(\0132\037.XmsgImGroupSyncEvent.In" +
-      "foEntry\022\017\n\007ver4usr\030\004 \001(\004\022\017\n\007gts4usr\030\005 \001(" +
-      "\004\022\017\n\007uts4usr\030\006 \001(\004\022\021\n\tgts4group\030\007 \001(\004\032+\n" +
-      "\tInfoEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\002" +
-      "8\001\"=\n\025XmsgImGroupSyncNotice\022$\n\005event\030\001 \001" +
-      "(\0132\025.XmsgImGroupSyncEvent\"\217\001\n\027XmsgImGrou" +
-      "pSyncGroupReq\022\013\n\003cgt\030\001 \001(\t\022\013\n\003ver\030\002 \001(\004\022" +
-      ".\n\003ext\030\003 \003(\0132!.XmsgImGroupSyncGroupReq.E" +
+      " \001(\t:\0028\001\"8\n\032XmsgImGroupMemberDeleteReq\022\014" +
+      "\n\004gcgt\030\001 \001(\t\022\014\n\004mcgt\030\002 \003(\t\"{\n\032XmsgImGrou" +
+      "pMemberDeleteRsp\0221\n\003ext\030\001 \003(\0132$.XmsgImGr" +
+      "oupMemberDeleteRsp.ExtEntry\032*\n\010ExtEntry\022" +
+      "\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\345\005\n\025Xmsg" +
+      "ImSdkEventAdapter\022\r\n\005apiId\030\001 \001(\r\022$\n\007evnT" +
+      "ype\030\002 \001(\0162\023.XmsgImSdkEventType\022A\n\tnetNot" +
+      "ice\030\003 \001(\0132..XmsgImSdkEventAdapter.XmsgIm" +
+      "SdkEventNetNotice\022;\n\006netReq\030\004 \001(\0132+.Xmsg" +
+      "ImSdkEventAdapter.XmsgImSdkEventNetReq\022;" +
+      "\n\006netRsp\030\005 \001(\0132+.XmsgImSdkEventAdapter.X" +
+      "msgImSdkEventNetRsp\0229\n\005dbRsp\030\006 \001(\0132*.Xms" +
+      "gImSdkEventAdapter.XmsgImSdkEventDbRsp\022;" +
+      "\n\006cxxLog\030\007 \001(\0132+.XmsgImSdkEventAdapter.X" +
+      "msgImSdkEventCxxLog\0323\n\027XmsgImSdkEventNet" +
+      "Notice\022\013\n\003msg\030\001 \001(\t\022\013\n\003dat\030\002 \001(\014\032=\n\024Xmsg" +
+      "ImSdkEventNetReq\022\013\n\003tid\030\001 \001(\r\022\013\n\003msg\030\002 \001" +
+      "(\t\022\013\n\003dat\030\003 \001(\014\032X\n\024XmsgImSdkEventNetRsp\022" +
+      "\013\n\003tid\030\001 \001(\r\022\013\n\003ret\030\002 \001(\r\022\014\n\004desc\030\003 \001(\t\022" +
+      "\013\n\003msg\030\004 \001(\t\022\013\n\003dat\030\005 \001(\014\032b\n\023XmsgImSdkEv" +
+      "entDbRsp\022\013\n\003tid\030\001 \001(\r\022\013\n\003ret\030\002 \001(\r\022\014\n\004de" +
+      "sc\030\003 \001(\t\022#\n\003dat\030\005 \001(\0132\026.XmsgImClientDbCr" +
+      "udRsp\0320\n\024XmsgImSdkEventCxxLog\022\013\n\003lev\030\001 \001" +
+      "(\r\022\013\n\003log\030\002 \001(\t\"D\n\030XmsgImSdkEventXmsgImA" +
+      "uth\022\013\n\003evn\030\001 \001(\t\022\r\n\005times\030\002 \001(\r\022\014\n\004addr\030" +
+      "\003 \001(\t\"@\n\024XmsgImSdkEventXmsgAp\022\013\n\003evn\030\001 \001" +
+      "(\t\022\r\n\005times\030\002 \001(\r\022\014\n\004addr\030\003 \001(\t\"\225\001\n\026Xmsg" +
+      "OssUploadSimpleReq\022\017\n\007objName\030\001 \001(\t\022\017\n\007o" +
+      "bjSize\030\002 \001(\004\022-\n\003ext\030\003 \003(\0132 .XmsgOssUploa" +
+      "dSimpleReq.ExtEntry\032*\n\010ExtEntry\022\013\n\003key\030\001" +
+      " \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\221\001\n\026XmsgOssUploa" +
+      "dSimpleRsp\022\013\n\003oid\030\001 \001(\t\022\017\n\007hashVal\030\002 \001(\t" +
+      "\022-\n\003ext\030\003 \003(\0132 .XmsgOssUploadSimpleRsp.E" +
       "xtEntry\032*\n\010ExtEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005valu" +
-      "e\030\002 \001(\t:\0028\001\"y\n\027XmsgImGroupSyncGroupRsp\022," +
-      "\n\004info\030\001 \001(\0132\036.XmsgImGroupSyncGroupEvent" +
-      "Info\0220\n\006member\030\002 \003(\0132 .XmsgImGroupSyncGr" +
-      "oupEventMember\"\253\001\n\035XmsgImGroupSyncGroupE" +
-      "ventInfo\0226\n\004info\030\001 \003(\0132(.XmsgImGroupSync" +
-      "GroupEventInfo.InfoEntry\022\013\n\003ver\030\002 \001(\004\022\013\n" +
-      "\003gts\030\003 \001(\004\022\013\n\003uts\030\004 \001(\004\032+\n\tInfoEntry\022\013\n\003" +
-      "key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\312\001\n\037XmsgImG" +
-      "roupSyncGroupEventMember\022\013\n\003cgt\030\001 \001(\t\022\014\n" +
-      "\004oper\030\002 \001(\t\0228\n\004info\030\003 \003(\0132*.XmsgImGroupS" +
-      "yncGroupEventMember.InfoEntry\022\013\n\003ver\030\004 \001" +
-      "(\004\022\013\n\003gts\030\005 \001(\004\022\013\n\003uts\030\006 \001(\004\032+\n\tInfoEntr" +
-      "y\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"x\n\026Xms" +
-      "gImGroupEventNotice\022,\n\004info\030\001 \001(\0132\036.Xmsg" +
-      "ImGroupSyncGroupEventInfo\0220\n\006member\030\002 \001(" +
-      "\0132 .XmsgImGroupSyncGroupEventMember\"6\n\027X" +
-      "msgImGroupInfoQueryReq\022\013\n\003cgt\030\001 \001(\t\022\016\n\006m" +
-      "ember\030\002 \001(\010\"i\n\027XmsgImGroupInfoQueryRsp\022&" +
-      "\n\004info\030\001 \001(\0132\030.XmsgImGroupInfoSelfInfo\022&" +
-      "\n\006member\030\002 \003(\0132\026.XmsgImGroupInfoMember\"\274" +
-      "\001\n\027XmsgImGroupInfoSelfInfo\022\013\n\003cgt\030\001 \001(\t\022" +
-      "\016\n\006enable\030\002 \001(\010\0220\n\004info\030\003 \003(\0132\".XmsgImGr" +
-      "oupInfoSelfInfo.InfoEntry\022\013\n\003ver\030\004 \001(\004\022\013" +
-      "\n\003gts\030\005 \001(\004\022\013\n\003uts\030\006 \001(\004\032+\n\tInfoEntry\022\013\n" +
-      "\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\270\001\n\025XmsgIm" +
-      "GroupInfoMember\022\013\n\003cgt\030\001 \001(\t\022\016\n\006enable\030\002" +
-      " \001(\010\022.\n\004info\030\003 \003(\0132 .XmsgImGroupInfoMemb" +
-      "er.InfoEntry\022\013\n\003ver\030\004 \001(\004\022\013\n\003gts\030\005 \001(\004\022\013" +
-      "\n\003uts\030\006 \001(\004\032+\n\tInfoEntry\022\013\n\003key\030\001 \001(\t\022\r\n" +
-      "\005value\030\002 \001(\t:\0028\001\"\235\001\n\030XmsgImGroupInfoUpda" +
-      "teReq\022\013\n\003cgt\030\001 \001(\t\0225\n\006upsert\030\002 \003(\0132%.Xms" +
-      "gImGroupInfoUpdateReq.UpsertEntry\022\016\n\006rem" +
-      "ove\030\003 \003(\t\032-\n\013UpsertEntry\022\013\n\003key\030\001 \001(\t\022\r\n" +
-      "\005value\030\002 \001(\t:\0028\001\"w\n\030XmsgImGroupInfoUpdat" +
-      "eRsp\022/\n\003ext\030\001 \003(\0132\".XmsgImGroupInfoUpdat" +
-      "eRsp.ExtEntry\032*\n\010ExtEntry\022\013\n\003key\030\001 \001(\t\022\r" +
-      "\n\005value\030\002 \001(\t:\0028\001\"5\n\030XmsgImGroupMsgRecvC" +
-      "fgReq\022\013\n\003cgt\030\001 \001(\t\022\014\n\004type\030\002 \001(\t\"w\n\030Xmsg" +
-      "ImGroupMsgRecvCfgRsp\022/\n\003ext\030\001 \003(\0132\".Xmsg" +
-      "ImGroupMsgRecvCfgRsp.ExtEntry\032*\n\010ExtEntr" +
-      "y\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001*\317\001\n\022Xm" +
-      "sgImSdkEventType\022&\n\"X_MSG_IM_SDK_EVENT_T" +
-      "YPE_NET_NOTICE\020\000\022#\n\037X_MSG_IM_SDK_EVENT_T" +
-      "YPE_NET_REQ\020\001\022#\n\037X_MSG_IM_SDK_EVENT_TYPE" +
-      "_NET_RSP\020\002\022\"\n\036X_MSG_IM_SDK_EVENT_TYPE_DB" +
-      "_RSP\020\003\022#\n\037X_MSG_IM_SDK_EVENT_TYPE_CXX_LO" +
-      "G\020\004*\273\001\n\027XmsgImClientDbFiledType\022(\n$X_MSG" +
-      "_IM_CLIENT_DB_FILED_TYPE_BIGINT\020\000\022&\n\"X_M" +
-      "SG_IM_CLIENT_DB_FILED_TYPE_TEXT\020\001\022&\n\"X_M" +
-      "SG_IM_CLIENT_DB_FILED_TYPE_BLOB\020\002\022&\n\"X_M" +
-      "SG_IM_CLIENT_DB_FILED_TYPE_NULL\020\003*\177\n\021Xms" +
-      "gImOrgNodeType\022&\n\"X_MSG_IM_ORG_NODE_TYPE" +
-      "__RESERVED__\020\000\022!\n\035X_MSG_IM_ORG_NODE_TYPE" +
-      "_BRANCH\020\001\022\037\n\033X_MSG_IM_ORG_NODE_TYPE_LEAF" +
-      "\020\002B\022\n\010x.msg.pbB\006PbXmsgb\006proto3"
+      "e\030\002 \001(\t:\0028\001\"\256\001\n\030XmsgOssDownloadSimpleReq" +
+      "\022\013\n\003oid\030\001 \001(\t\022\013\n\003cgt\030\002 \001(\t\022\016\n\006offset\030\003 \001" +
+      "(\004\022\013\n\003len\030\004 \001(\004\022/\n\003ext\030\005 \003(\0132\".XmsgOssDo" +
+      "wnloadSimpleReq.ExtEntry\032*\n\010ExtEntry\022\013\n\003" +
+      "key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\267\001\n\030XmsgOss" +
+      "DownloadSimpleRsp\022\017\n\007objName\030\001 \001(\t\022\017\n\007ob" +
+      "jSize\030\002 \001(\004\022\017\n\007hashVal\030\003 \001(\t\022\013\n\003gts\030\004 \001(" +
+      "\004\022/\n\003ext\030\005 \003(\0132\".XmsgOssDownloadSimpleRs" +
+      "p.ExtEntry\032*\n\010ExtEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005v" +
+      "alue\030\002 \001(\t:\0028\001\"U\n\031XmsgOssUsrObjInfoQuery" +
+      "Req\022\013\n\003sts\030\001 \001(\004\022\013\n\003ets\030\002 \001(\004\022\014\n\004page\030\003 " +
+      "\001(\r\022\020\n\010pageSize\030\004 \001(\r\"@\n\031XmsgOssUsrObjIn" +
+      "foQueryRsp\022#\n\007objInfo\030\001 \003(\0132\022.XmsgOssUsr" +
+      "ObjInfo\"`\n\021XmsgOssUsrObjInfo\022\013\n\003oid\030\001 \001(" +
+      "\t\022\017\n\007objName\030\002 \001(\t\022\017\n\007objSize\030\003 \001(\004\022\017\n\007h" +
+      "ashVal\030\004 \001(\t\022\013\n\003gts\030\005 \001(\004\"u\n\023XmsgClientT" +
+      "okenInfo\022\013\n\003cgt\030\001 \001(\t\022\r\n\005token\030\002 \001(\t\022\013\n\003" +
+      "alg\030\003 \001(\t\022\014\n\004slat\030\004 \001(\t\022\014\n\004plat\030\005 \001(\t\022\013\n" +
+      "\003did\030\006 \001(\t\022\014\n\004sign\030\007 \001(\t\"\274\001\n\030XmsgImHlrAt" +
+      "tachSimpleReq\022\r\n\005token\030\001 \001(\t\022\014\n\004salt\030\002 \001" +
+      "(\t\022\014\n\004sign\030\003 \001(\t\022\013\n\003alg\030\004 \001(\t\022\013\n\003cgt\030\005 \001" +
+      "(\t\022/\n\003ext\030\006 \003(\0132\".XmsgImHlrAttachSimpleR" +
+      "eq.ExtEntry\032*\n\010ExtEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005" +
+      "value\030\002 \001(\t:\0028\001\"w\n\030XmsgImHlrAttachSimple" +
+      "Rsp\022/\n\003ext\030\001 \003(\0132\".XmsgImHlrAttachSimple" +
+      "Rsp.ExtEntry\032*\n\010ExtEntry\022\013\n\003key\030\001 \001(\t\022\r\n" +
+      "\005value\030\002 \001(\t:\0028\001\"w\n\030XmsgImHlrDetachSimpl" +
+      "eReq\022/\n\003ext\030\001 \003(\0132\".XmsgImHlrDetachSimpl" +
+      "eReq.ExtEntry\032*\n\010ExtEntry\022\013\n\003key\030\001 \001(\t\022\r" +
+      "\n\005value\030\002 \001(\t:\0028\001\"w\n\030XmsgImHlrDetachSimp" +
+      "leRsp\022/\n\003ext\030\001 \003(\0132\".XmsgImHlrDetachSimp" +
+      "leRsp.ExtEntry\032*\n\010ExtEntry\022\013\n\003key\030\001 \001(\t\022" +
+      "\r\n\005value\030\002 \001(\t:\0028\001\"S\n\035XmsgImHlrOtherClie" +
+      "ntAttachReq\022$\n\003dev\030\001 \001(\0132\027.XmsgImClientD" +
+      "eviceInfo\022\014\n\004host\030\002 \001(\t\"/\n\035XmsgImHlrOthe" +
+      "rClientAttachRsp\022\016\n\006action\030\001 \001(\t\"V\n Xmsg" +
+      "ImHlrOtherClientAttachNotice\022$\n\003dev\030\001 \001(" +
+      "\0132\027.XmsgImClientDeviceInfo\022\014\n\004host\030\002 \001(\t" +
+      "\"d\n\023XmsgImAuthSimpleReq\022\013\n\003usr\030\001 \001(\t\022\014\n\004" +
+      "salt\030\002 \001(\t\022\014\n\004sign\030\003 \001(\t\022$\n\003dev\030\004 \001(\0132\027." +
+      "XmsgImClientDeviceInfo\"\204\002\n\023XmsgImAuthSim" +
+      "pleRsp\022\r\n\005token\030\001 \001(\t\022\016\n\006secret\030\002 \001(\t\022\017\n" +
+      "\007expired\030\003 \001(\004\022+\n\006apAddr\030\004 \003(\0132\033.XmsgImC" +
+      "lientServiceAddress\022+\n\006fsAddr\030\005 \003(\0132\033.Xm" +
+      "sgImClientServiceAddress\022\013\n\003cgt\030\007 \001(\t\022*\n" +
+      "\003ext\030\010 \003(\0132\035.XmsgImAuthSimpleRsp.ExtEntr" +
+      "y\032*\n\010ExtEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(" +
+      "\t:\0028\001\"f\n\026XmsgImAuthRegSimpleReq\022\013\n\003usr\030\001" +
+      " \001(\t\022\014\n\004salt\030\002 \001(\t\022\013\n\003pwd\030\003 \001(\t\022$\n\003dev\030\004" +
+      " \001(\0132\027.XmsgImClientDeviceInfo\"\200\001\n\026XmsgIm" +
+      "AuthRegSimpleRsp\022\013\n\003cgt\030\001 \001(\t\022-\n\003ext\030\002 \003" +
+      "(\0132 .XmsgImAuthRegSimpleRsp.ExtEntry\032*\n\010" +
+      "ExtEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001" +
+      "\"\233\001\n\026XmsgImClientDeviceInfo\022\014\n\004plat\030\001 \001(" +
+      "\t\022\013\n\003did\030\002 \001(\t\022\013\n\003ver\030\003 \001(\t\022-\n\003ext\030\004 \003(\013" +
+      "2 .XmsgImClientDeviceInfo.ExtEntry\032*\n\010Ex" +
+      "tEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\264" +
+      "\001\n\032XmsgImClientServiceAddress\022\n\n\002ip\030\001 \001(" +
+      "\t\022\014\n\004port\030\002 \001(\r\022\016\n\006weight\030\003 \001(\r\022\r\n\005proto" +
+      "\030\004 \003(\t\0221\n\003ext\030\005 \003(\0132$.XmsgImClientServic" +
+      "eAddress.ExtEntry\032*\n\010ExtEntry\022\013\n\003key\030\001 \001" +
+      "(\t\022\r\n\005value\030\002 \001(\t:\0028\001\",\n\035XmsgImHlrOtherU" +
+      "srInfoQueryReq\022\013\n\003cgt\030\001 \003(\t\"\245\001\n\035XmsgImHl" +
+      "rOtherUsrInfoQueryRsp\022<\n\007usrInfo\030\001 \003(\0132+" +
+      ".XmsgImHlrOtherUsrInfoQueryRsp.UsrInfoEn" +
+      "try\032F\n\014UsrInfoEntry\022\013\n\003key\030\001 \001(\t\022%\n\005valu" +
+      "e\030\002 \001(\0132\026.XmsgImHlrOtherUsrInfo:\0028\001\"t\n\025X" +
+      "msgImHlrOtherUsrInfo\022.\n\004info\030\001 \003(\0132 .Xms" +
+      "gImHlrOtherUsrInfo.InfoEntry\032+\n\tInfoEntr" +
+      "y\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\231\001\n\027Xm" +
+      "sgFileUploadSimpleReq\022\020\n\010fileName\030\001 \001(\t\022" +
+      "\020\n\010fileSize\030\002 \001(\004\022.\n\003ext\030\003 \003(\0132!.XmsgFil" +
+      "eUploadSimpleReq.ExtEntry\032*\n\010ExtEntry\022\013\n" +
+      "\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\223\001\n\027XmsgFi" +
+      "leUploadSimpleRsp\022\013\n\003fid\030\001 \001(\t\022\017\n\007hashVa" +
+      "l\030\002 \001(\t\022.\n\003ext\030\003 \003(\0132!.XmsgFileUploadSim" +
+      "pleRsp.ExtEntry\032*\n\010ExtEntry\022\013\n\003key\030\001 \001(\t" +
+      "\022\r\n\005value\030\002 \001(\t:\0028\001\"\260\001\n\031XmsgFileDownload" +
+      "SimpleReq\022\013\n\003fid\030\001 \001(\t\022\013\n\003cgt\030\002 \001(\t\022\016\n\006o" +
+      "ffset\030\003 \001(\004\022\013\n\003len\030\004 \001(\004\0220\n\003ext\030\005 \003(\0132#." +
+      "XmsgFileDownloadSimpleReq.ExtEntry\032*\n\010Ex" +
+      "tEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\273" +
+      "\001\n\031XmsgFileDownloadSimpleRsp\022\020\n\010fileName" +
+      "\030\001 \001(\t\022\020\n\010fileSize\030\002 \001(\004\022\017\n\007hashVal\030\003 \001(" +
+      "\t\022\013\n\003gts\030\004 \001(\004\0220\n\003ext\030\005 \003(\0132#.XmsgFileDo" +
+      "wnloadSimpleRsp.ExtEntry\032*\n\010ExtEntry\022\013\n\003" +
+      "key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"W\n\033XmsgFile" +
+      "UsrFileInfoQueryReq\022\013\n\003sts\030\001 \001(\004\022\013\n\003ets\030" +
+      "\002 \001(\004\022\014\n\004page\030\003 \001(\r\022\020\n\010pageSize\030\004 \001(\r\"E\n" +
+      "\033XmsgFileUsrFileInfoQueryRsp\022&\n\010fileInfo" +
+      "\030\001 \003(\0132\024.XmsgFileUsrFileInfo\"d\n\023XmsgFile" +
+      "UsrFileInfo\022\013\n\003fid\030\001 \001(\t\022\020\n\010fileName\030\002 \001" +
+      "(\t\022\020\n\010fileSize\030\003 \001(\004\022\017\n\007hashVal\030\004 \001(\t\022\013\n" +
+      "\003gts\030\005 \001(\004\"\211\001\n\017XmsgImHlrUsrDat\022\013\n\003uid\030\001 " +
+      "\001(\t\022\013\n\003ver\030\002 \001(\004\022 \n\003pri\030\003 \001(\0132\023.XmsgImHl" +
+      "rUsrDatPri\022 \n\003pub\030\004 \001(\0132\023.XmsgImHlrUsrDa" +
+      "tPub\022\013\n\003gts\030\005 \001(\004\022\013\n\003uts\030\006 \001(\004\"~\n\022XmsgIm" +
+      "HlrUsrDatPri\022\016\n\006enable\030\001 \001(\010\022+\n\004info\030\002 \003" +
+      "(\0132\035.XmsgImHlrUsrDatPri.InfoEntry\032+\n\tInf" +
+      "oEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"n" +
+      "\n\022XmsgImHlrUsrDatPub\022+\n\004info\030\001 \003(\0132\035.Xms" +
+      "gImHlrUsrDatPub.InfoEntry\032+\n\tInfoEntry\022\013" +
+      "\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"w\n\030XmsgIm" +
+      "HlrUsrInfoQueryReq\022/\n\003ext\030\001 \003(\0132\".XmsgIm" +
+      "HlrUsrInfoQueryReq.ExtEntry\032*\n\010ExtEntry\022" +
+      "\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"z\n\030XmsgI" +
+      "mHlrUsrInfoQueryRsp\0221\n\004info\030\001 \003(\0132#.Xmsg" +
+      "ImHlrUsrInfoQueryRsp.InfoEntry\032+\n\tInfoEn" +
+      "try\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"|\n\031X" +
+      "msgImHlrUsrInfoUpdateReq\0222\n\004info\030\001 \003(\0132$" +
+      ".XmsgImHlrUsrInfoUpdateReq.InfoEntry\032+\n\t" +
+      "InfoEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028" +
+      "\001\"y\n\031XmsgImHlrUsrInfoUpdateRsp\0220\n\003ext\030\001 " +
+      "\003(\0132#.XmsgImHlrUsrInfoUpdateRsp.ExtEntry" +
+      "\032*\n\010ExtEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t" +
+      ":\0028\001\"E\n\025XmsgImClientDbCrudReq\022\013\n\003sql\030\001 \001" +
+      "(\t\022\037\n\003row\030\002 \003(\0132\022.XmsgImClientDbRow\"\253\001\n\025" +
+      "XmsgImClientDbCrudRsp\022\016\n\006change\030\001 \001(\r\0222\n" +
+      "\006column\030\002 \003(\0132\".XmsgImClientDbCrudRsp.Co" +
+      "lumnEntry\022\037\n\003row\030\004 \003(\0132\022.XmsgImClientDbR" +
+      "ow\032-\n\013ColumnEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030" +
+      "\002 \001(\r:\0028\001\"6\n\021XmsgImClientDbRow\022!\n\003col\030\001 " +
+      "\003(\0132\024.XmsgImClientDbFiled\"o\n\023XmsgImClien" +
+      "tDbFiled\022&\n\004type\030\001 \001(\0162\030.XmsgImClientDbF" +
+      "iledType\022\016\n\006valInt\030\002 \001(\004\022\017\n\007valText\030\003 \001(" +
+      "\t\022\017\n\007valBlob\030\004 \001(\014\"`\n\016XmsgImClientKv\022#\n\002" +
+      "kv\030\001 \003(\0132\027.XmsgImClientKv.KvEntry\032)\n\007KvE" +
+      "ntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"M\n\023" +
+      "XmsgImOrgSyncSubReq\022\020\n\010ver4dept\030\001 \001(\004\022\023\n" +
+      "\013ver4deptUsr\030\002 \001(\004\022\017\n\007ver4usr\030\003 \001(\004\"_\n\023X" +
+      "msgImOrgSyncSubRsp\022\026\n\016ver4deptLatest\030\001 \001" +
+      "(\004\022\031\n\021ver4deptUsrLatest\030\002 \001(\004\022\025\n\rver4usr" +
+      "Latest\030\003 \001(\004\"5\n\023XmsgImOrgSyncPubReq\022\036\n\005e" +
+      "vent\030\001 \003(\0132\017.XmsgImOrgEvent\"m\n\023XmsgImOrg" +
+      "SyncPubRsp\022*\n\003ext\030\001 \003(\0132\035.XmsgImOrgSyncP" +
+      "ubRsp.ExtEntry\032*\n\010ExtEntry\022\013\n\003key\030\001 \001(\t\022" +
+      "\r\n\005value\030\002 \001(\t:\0028\001\"8\n\026XmsgImOrgChangedNo" +
+      "tice\022\036\n\005event\030\001 \001(\0132\017.XmsgImOrgEvent\")\n\032" +
+      "XmsgImOrgNodeChildQueryReq\022\013\n\003cgt\030\001 \001(\t\"" +
+      "@\n\032XmsgImOrgNodeChildQueryRsp\022\"\n\005child\030\001" +
+      " \003(\0132\023.XmsgImOrgNodeChild\":\n\034XmsgImOrgNo" +
+      "deDeptUsrQueryReq\022\014\n\004dcgt\030\001 \001(\t\022\014\n\004ucgt\030" +
+      "\002 \001(\t\"\205\001\n\034XmsgImOrgNodeDeptUsrQueryRsp\022\014" +
+      "\n\004name\030\002 \001(\t\022\016\n\006enable\030\003 \001(\010\022 \n\004info\030\004 \001" +
+      "(\0132\022.XmsgImOrgNodeInfo\022\013\n\003ver\030\005 \001(\004\022\013\n\003g" +
+      "ts\030\006 \001(\004\022\013\n\003uts\030\007 \001(\004\"$\n\025XmsgImOrgNodeQu" +
+      "eryReq\022\013\n\003cgt\030\001 \001(\t\"\255\001\n\025XmsgImOrgNodeQue" +
+      "ryRsp\022\013\n\003pgt\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\022\016\n\006enab" +
+      "le\030\003 \001(\010\022 \n\004type\030\004 \001(\0162\022.XmsgImOrgNodeTy" +
+      "pe\022 \n\004info\030\005 \001(\0132\022.XmsgImOrgNodeInfo\022\013\n\003" +
+      "ver\030\006 \001(\004\022\013\n\003gts\030\007 \001(\004\022\013\n\003uts\030\010 \001(\004\"}\n\016X" +
+      "msgImOrgEvent\022!\n\004dept\030\001 \001(\0132\023.XmsgImOrgE" +
+      "ventDept\022\'\n\007deptUsr\030\002 \001(\0132\026.XmsgImOrgEve" +
+      "ntDeptUsr\022\037\n\003usr\030\003 \001(\0132\022.XmsgImOrgEventU" +
+      "sr\"\226\001\n\022XmsgImOrgEventDept\022\013\n\003cgt\030\001 \001(\t\022\014" +
+      "\n\004pcgt\030\002 \001(\t\022\014\n\004name\030\003 \001(\t\022\016\n\006enable\030\004 \001" +
+      "(\010\022 \n\004info\030\005 \001(\0132\022.XmsgImOrgNodeInfo\022\013\n\003" +
+      "ver\030\006 \001(\004\022\013\n\003gts\030\007 \001(\004\022\013\n\003uts\030\010 \001(\004\"\232\001\n\025" +
+      "XmsgImOrgEventDeptUsr\022\014\n\004dcgt\030\001 \001(\t\022\014\n\004u" +
+      "cgt\030\002 \001(\t\022\014\n\004name\030\003 \001(\t\022\016\n\006enable\030\004 \001(\010\022" +
+      " \n\004info\030\005 \001(\0132\022.XmsgImOrgNodeInfo\022\013\n\003ver" +
+      "\030\006 \001(\004\022\013\n\003gts\030\007 \001(\004\022\013\n\003uts\030\010 \001(\004\"\207\001\n\021Xms" +
+      "gImOrgEventUsr\022\013\n\003cgt\030\001 \001(\t\022\014\n\004name\030\002 \001(" +
+      "\t\022\016\n\006enable\030\003 \001(\010\022 \n\004info\030\004 \001(\0132\022.XmsgIm" +
+      "OrgNodeInfo\022\013\n\003ver\030\005 \001(\004\022\013\n\003gts\030\006 \001(\004\022\013\n" +
+      "\003uts\030\007 \001(\004\"f\n\021XmsgImOrgNodeInfo\022&\n\002kv\030\001 " +
+      "\003(\0132\032.XmsgImOrgNodeInfo.KvEntry\032)\n\007KvEnt" +
+      "ry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\252\001\n\022X" +
+      "msgImOrgNodeChild\022\013\n\003cgt\030\001 \001(\t\022\014\n\004name\030\002" +
+      " \001(\t\022\016\n\006enable\030\003 \001(\010\022 \n\004type\030\004 \001(\0162\022.Xms" +
+      "gImOrgNodeType\022 \n\004info\030\005 \001(\0132\022.XmsgImOrg" +
+      "NodeInfo\022\013\n\003ver\030\006 \001(\004\022\013\n\003gts\030\007 \001(\004\022\013\n\003ut" +
+      "s\030\010 \001(\004\"}\n\033XmsgImGroupUsrGroupQueryReq\0222" +
+      "\n\003ext\030\001 \003(\0132%.XmsgImGroupUsrGroupQueryRe" +
+      "q.ExtEntry\032*\n\010ExtEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005v" +
+      "alue\030\002 \001(\t:\0028\001\"F\n\033XmsgImGroupUsrGroupQue" +
+      "ryRsp\022\'\n\005group\030\001 \003(\0132\030.XmsgImGroupUsrGro" +
+      "upInfo\"\313\001\n\027XmsgImGroupUsrGroupInfo\022\013\n\003cg" +
+      "t\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\0220\n\004info\030\003 \003(\0132\".Xm" +
+      "sgImGroupUsrGroupInfo.InfoEntry\022\013\n\003ver\030\004" +
+      " \001(\004\022\013\n\003gts\030\005 \001(\004\022\013\n\003uts\030\006 \001(\004\022\017\n\007usr2us" +
+      "r\030\007 \001(\010\032+\n\tInfoEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005val" +
+      "ue\030\002 \001(\t:\0028\001\"\231\001\n\024XmsgImGroupCreateReq\022-\n" +
+      "\004info\030\001 \003(\0132\037.XmsgImGroupCreateReq.InfoE" +
+      "ntry\022%\n\006member\030\002 \003(\0132\025.XmsgImGroupAddMem" +
+      "ber\032+\n\tInfoEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002" +
+      " \001(\t:\0028\001\"0\n\024XmsgImGroupCreateRsp\022\013\n\003cgt\030" +
+      "\001 \001(\t\022\013\n\003gts\030\002 \001(\004\"\177\n\024XmsgImGroupAddMemb" +
+      "er\022\013\n\003cgt\030\001 \001(\t\022-\n\004info\030\002 \003(\0132\037.XmsgImGr" +
+      "oupAddMember.InfoEntry\032+\n\tInfoEntry\022\013\n\003k" +
+      "ey\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"|\n\022XmsgImGro" +
+      "upSyncReq\022\017\n\007ver4usr\030\001 \001(\004\022)\n\003ext\030\002 \003(\0132" +
+      "\034.XmsgImGroupSyncReq.ExtEntry\032*\n\010ExtEntr" +
+      "y\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\":\n\022Xms" +
+      "gImGroupSyncRsp\022$\n\005event\030\001 \003(\0132\025.XmsgImG" +
+      "roupSyncEvent\"\323\001\n\024XmsgImGroupSyncEvent\022\013" +
+      "\n\003cgt\030\001 \001(\t\022\014\n\004oper\030\002 \001(\t\022-\n\004info\030\003 \003(\0132" +
+      "\037.XmsgImGroupSyncEvent.InfoEntry\022\017\n\007ver4" +
+      "usr\030\004 \001(\004\022\017\n\007gts4usr\030\005 \001(\004\022\017\n\007uts4usr\030\006 " +
+      "\001(\004\022\021\n\tgts4group\030\007 \001(\004\032+\n\tInfoEntry\022\013\n\003k" +
+      "ey\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"=\n\025XmsgImGro" +
+      "upSyncNotice\022$\n\005event\030\001 \001(\0132\025.XmsgImGrou" +
+      "pSyncEvent\"\217\001\n\027XmsgImGroupSyncGroupReq\022\013" +
+      "\n\003cgt\030\001 \001(\t\022\013\n\003ver\030\002 \001(\004\022.\n\003ext\030\003 \003(\0132!." +
+      "XmsgImGroupSyncGroupReq.ExtEntry\032*\n\010ExtE" +
+      "ntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"y\n\027" +
+      "XmsgImGroupSyncGroupRsp\022,\n\004info\030\001 \001(\0132\036." +
+      "XmsgImGroupSyncGroupEventInfo\0220\n\006member\030" +
+      "\002 \003(\0132 .XmsgImGroupSyncGroupEventMember\"" +
+      "\253\001\n\035XmsgImGroupSyncGroupEventInfo\0226\n\004inf" +
+      "o\030\001 \003(\0132(.XmsgImGroupSyncGroupEventInfo." +
+      "InfoEntry\022\013\n\003ver\030\002 \001(\004\022\013\n\003gts\030\003 \001(\004\022\013\n\003u" +
+      "ts\030\004 \001(\004\032+\n\tInfoEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005va" +
+      "lue\030\002 \001(\t:\0028\001\"\312\001\n\037XmsgImGroupSyncGroupEv" +
+      "entMember\022\013\n\003cgt\030\001 \001(\t\022\014\n\004oper\030\002 \001(\t\0228\n\004" +
+      "info\030\003 \003(\0132*.XmsgImGroupSyncGroupEventMe" +
+      "mber.InfoEntry\022\013\n\003ver\030\004 \001(\004\022\013\n\003gts\030\005 \001(\004" +
+      "\022\013\n\003uts\030\006 \001(\004\032+\n\tInfoEntry\022\013\n\003key\030\001 \001(\t\022" +
+      "\r\n\005value\030\002 \001(\t:\0028\001\"x\n\026XmsgImGroupEventNo" +
+      "tice\022,\n\004info\030\001 \001(\0132\036.XmsgImGroupSyncGrou" +
+      "pEventInfo\0220\n\006member\030\002 \001(\0132 .XmsgImGroup" +
+      "SyncGroupEventMember\"6\n\027XmsgImGroupInfoQ" +
+      "ueryReq\022\013\n\003cgt\030\001 \001(\t\022\016\n\006member\030\002 \001(\010\"i\n\027" +
+      "XmsgImGroupInfoQueryRsp\022&\n\004info\030\001 \001(\0132\030." +
+      "XmsgImGroupInfoSelfInfo\022&\n\006member\030\002 \003(\0132" +
+      "\026.XmsgImGroupInfoMember\"\274\001\n\027XmsgImGroupI" +
+      "nfoSelfInfo\022\013\n\003cgt\030\001 \001(\t\022\016\n\006enable\030\002 \001(\010" +
+      "\0220\n\004info\030\003 \003(\0132\".XmsgImGroupInfoSelfInfo" +
+      ".InfoEntry\022\013\n\003ver\030\004 \001(\004\022\013\n\003gts\030\005 \001(\004\022\013\n\003" +
+      "uts\030\006 \001(\004\032+\n\tInfoEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005v" +
+      "alue\030\002 \001(\t:\0028\001\"\270\001\n\025XmsgImGroupInfoMember" +
+      "\022\013\n\003cgt\030\001 \001(\t\022\016\n\006enable\030\002 \001(\010\022.\n\004info\030\003 " +
+      "\003(\0132 .XmsgImGroupInfoMember.InfoEntry\022\013\n" +
+      "\003ver\030\004 \001(\004\022\013\n\003gts\030\005 \001(\004\022\013\n\003uts\030\006 \001(\004\032+\n\t" +
+      "InfoEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028" +
+      "\001\"\235\001\n\030XmsgImGroupInfoUpdateReq\022\013\n\003cgt\030\001 " +
+      "\001(\t\0225\n\006upsert\030\002 \003(\0132%.XmsgImGroupInfoUpd" +
+      "ateReq.UpsertEntry\022\016\n\006remove\030\003 \003(\t\032-\n\013Up" +
+      "sertEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028" +
+      "\001\"w\n\030XmsgImGroupInfoUpdateRsp\022/\n\003ext\030\001 \003" +
+      "(\0132\".XmsgImGroupInfoUpdateRsp.ExtEntry\032*" +
+      "\n\010ExtEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\002" +
+      "8\001\"5\n\030XmsgImGroupMsgRecvCfgReq\022\013\n\003cgt\030\001 " +
+      "\001(\t\022\014\n\004type\030\002 \001(\t\"w\n\030XmsgImGroupMsgRecvC" +
+      "fgRsp\022/\n\003ext\030\001 \003(\0132\".XmsgImGroupMsgRecvC" +
+      "fgRsp.ExtEntry\032*\n\010ExtEntry\022\013\n\003key\030\001 \001(\t\022" +
+      "\r\n\005value\030\002 \001(\t:\0028\001*\317\001\n\022XmsgImSdkEventTyp" +
+      "e\022&\n\"X_MSG_IM_SDK_EVENT_TYPE_NET_NOTICE\020" +
+      "\000\022#\n\037X_MSG_IM_SDK_EVENT_TYPE_NET_REQ\020\001\022#" +
+      "\n\037X_MSG_IM_SDK_EVENT_TYPE_NET_RSP\020\002\022\"\n\036X" +
+      "_MSG_IM_SDK_EVENT_TYPE_DB_RSP\020\003\022#\n\037X_MSG" +
+      "_IM_SDK_EVENT_TYPE_CXX_LOG\020\004*\273\001\n\027XmsgImC" +
+      "lientDbFiledType\022(\n$X_MSG_IM_CLIENT_DB_F" +
+      "ILED_TYPE_BIGINT\020\000\022&\n\"X_MSG_IM_CLIENT_DB" +
+      "_FILED_TYPE_TEXT\020\001\022&\n\"X_MSG_IM_CLIENT_DB" +
+      "_FILED_TYPE_BLOB\020\002\022&\n\"X_MSG_IM_CLIENT_DB" +
+      "_FILED_TYPE_NULL\020\003*\177\n\021XmsgImOrgNodeType\022" +
+      "&\n\"X_MSG_IM_ORG_NODE_TYPE__RESERVED__\020\000\022" +
+      "!\n\035X_MSG_IM_ORG_NODE_TYPE_BRANCH\020\001\022\037\n\033X_" +
+      "MSG_IM_ORG_NODE_TYPE_LEAF\020\002B\022\n\010x.msg.pbB" +
+      "\006PbXmsgb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -105620,7 +113214,7 @@ public final class PbXmsg {
     internal_static_XmsgImMsg_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImMsg_descriptor,
-        new java.lang.String[] { "Type", "Text", "Html", "Image", "Voice", "Video", "Merge", "Atx", });
+        new java.lang.String[] { "Type", "Text", "Html", "Image", "Voice", "Video", "File", "Merge", "Atx", });
     internal_static_XmsgImMsgText_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_XmsgImMsgText_fieldAccessorTable = new
@@ -105651,20 +113245,26 @@ public final class PbXmsg {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImMsgVideo_descriptor,
         new java.lang.String[] { "Uri", });
-    internal_static_XmsgImMsgMerge_descriptor =
+    internal_static_XmsgImMsgFile_descriptor =
       getDescriptor().getMessageTypes().get(8);
+    internal_static_XmsgImMsgFile_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_XmsgImMsgFile_descriptor,
+        new java.lang.String[] { "From", "Fid", });
+    internal_static_XmsgImMsgMerge_descriptor =
+      getDescriptor().getMessageTypes().get(9);
     internal_static_XmsgImMsgMerge_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImMsgMerge_descriptor,
         new java.lang.String[] { "Msg", });
     internal_static_XmsgImMsgAt_descriptor =
-      getDescriptor().getMessageTypes().get(9);
+      getDescriptor().getMessageTypes().get(10);
     internal_static_XmsgImMsgAt_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImMsgAt_descriptor,
         new java.lang.String[] { "Cgt", });
     internal_static_XmsgImGroupMsgNotice_descriptor =
-      getDescriptor().getMessageTypes().get(10);
+      getDescriptor().getMessageTypes().get(11);
     internal_static_XmsgImGroupMsgNotice_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImGroupMsgNotice_descriptor,
@@ -105676,31 +113276,31 @@ public final class PbXmsg {
         internal_static_XmsgImGroupMsgNotice_ExtEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_XmsgImGroupMsgSyncReq_descriptor =
-      getDescriptor().getMessageTypes().get(11);
+      getDescriptor().getMessageTypes().get(12);
     internal_static_XmsgImGroupMsgSyncReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImGroupMsgSyncReq_descriptor,
         new java.lang.String[] { "Cgt", "MsgId", "Latest", });
     internal_static_XmsgImGroupMsgSyncRsp_descriptor =
-      getDescriptor().getMessageTypes().get(12);
+      getDescriptor().getMessageTypes().get(13);
     internal_static_XmsgImGroupMsgSyncRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImGroupMsgSyncRsp_descriptor,
         new java.lang.String[] { "Msg", });
     internal_static_XmsgImGroupMsgHistory_descriptor =
-      getDescriptor().getMessageTypes().get(13);
+      getDescriptor().getMessageTypes().get(14);
     internal_static_XmsgImGroupMsgHistory_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImGroupMsgHistory_descriptor,
         new java.lang.String[] { "Scgt", "MsgId", "Msg", "Gts", "IsRead", });
     internal_static_XmsgImGroupMsgQueryReq_descriptor =
-      getDescriptor().getMessageTypes().get(14);
+      getDescriptor().getMessageTypes().get(15);
     internal_static_XmsgImGroupMsgQueryReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImGroupMsgQueryReq_descriptor,
         new java.lang.String[] { "Cgt", "MsgId", "Before", "PageSize", });
     internal_static_XmsgImGroupMsgQueryRsp_descriptor =
-      getDescriptor().getMessageTypes().get(15);
+      getDescriptor().getMessageTypes().get(16);
     internal_static_XmsgImGroupMsgQueryRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImGroupMsgQueryRsp_descriptor,
@@ -105712,13 +113312,13 @@ public final class PbXmsg {
         internal_static_XmsgImGroupMsgQueryRsp_XmsgImGroupMsgQueryRspItem_descriptor,
         new java.lang.String[] { "Scgt", "MsgId", "Msg", "Gts", });
     internal_static_XmsgImGroupMsgReadReq_descriptor =
-      getDescriptor().getMessageTypes().get(16);
+      getDescriptor().getMessageTypes().get(17);
     internal_static_XmsgImGroupMsgReadReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImGroupMsgReadReq_descriptor,
         new java.lang.String[] { "Cgt", "MsgId", });
     internal_static_XmsgImGroupMsgReadRsp_descriptor =
-      getDescriptor().getMessageTypes().get(17);
+      getDescriptor().getMessageTypes().get(18);
     internal_static_XmsgImGroupMsgReadRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImGroupMsgReadRsp_descriptor,
@@ -105730,19 +113330,19 @@ public final class PbXmsg {
         internal_static_XmsgImGroupMsgReadRsp_ExtEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_XmsgImGroupMsgReadNotice_descriptor =
-      getDescriptor().getMessageTypes().get(18);
+      getDescriptor().getMessageTypes().get(19);
     internal_static_XmsgImGroupMsgReadNotice_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImGroupMsgReadNotice_descriptor,
         new java.lang.String[] { "Cgt", "MsgId", });
     internal_static_XmsgImHlrGroupMsgReq_descriptor =
-      getDescriptor().getMessageTypes().get(19);
+      getDescriptor().getMessageTypes().get(20);
     internal_static_XmsgImHlrGroupMsgReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImHlrGroupMsgReq_descriptor,
         new java.lang.String[] { "Cgt", "Type", "Msg", "Dat", });
     internal_static_XmsgImHlrGroupMsgRsp_descriptor =
-      getDescriptor().getMessageTypes().get(20);
+      getDescriptor().getMessageTypes().get(21);
     internal_static_XmsgImHlrGroupMsgRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImHlrGroupMsgRsp_descriptor,
@@ -105754,13 +113354,13 @@ public final class PbXmsg {
         internal_static_XmsgImHlrGroupMsgRsp_ExtEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_XmsgChannelStatusQueryReq_descriptor =
-      getDescriptor().getMessageTypes().get(21);
+      getDescriptor().getMessageTypes().get(22);
     internal_static_XmsgChannelStatusQueryReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgChannelStatusQueryReq_descriptor,
         new java.lang.String[] { "Cgt", });
     internal_static_XmsgChannelStatusQueryRsp_descriptor =
-      getDescriptor().getMessageTypes().get(22);
+      getDescriptor().getMessageTypes().get(23);
     internal_static_XmsgChannelStatusQueryRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgChannelStatusQueryRsp_descriptor,
@@ -105778,13 +113378,13 @@ public final class PbXmsg {
         internal_static_XmsgChannelStatusQueryRsp_GroupStatusEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_XmsgChannelStatusSubReq_descriptor =
-      getDescriptor().getMessageTypes().get(23);
+      getDescriptor().getMessageTypes().get(24);
     internal_static_XmsgChannelStatusSubReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgChannelStatusSubReq_descriptor,
         new java.lang.String[] { "Cgt", });
     internal_static_XmsgChannelStatusSubRsp_descriptor =
-      getDescriptor().getMessageTypes().get(24);
+      getDescriptor().getMessageTypes().get(25);
     internal_static_XmsgChannelStatusSubRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgChannelStatusSubRsp_descriptor,
@@ -105802,13 +113402,13 @@ public final class PbXmsg {
         internal_static_XmsgChannelStatusSubRsp_GroupStatusEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_XmsgChannelStatusUnSubReq_descriptor =
-      getDescriptor().getMessageTypes().get(25);
+      getDescriptor().getMessageTypes().get(26);
     internal_static_XmsgChannelStatusUnSubReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgChannelStatusUnSubReq_descriptor,
         new java.lang.String[] { "Cgt", });
     internal_static_XmsgChannelStatusUnSubRsp_descriptor =
-      getDescriptor().getMessageTypes().get(26);
+      getDescriptor().getMessageTypes().get(27);
     internal_static_XmsgChannelStatusUnSubRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgChannelStatusUnSubRsp_descriptor,
@@ -105820,19 +113420,19 @@ public final class PbXmsg {
         internal_static_XmsgChannelStatusUnSubRsp_ExtEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_XmsgChannelStatusPubUsrStatusNotice_descriptor =
-      getDescriptor().getMessageTypes().get(27);
+      getDescriptor().getMessageTypes().get(28);
     internal_static_XmsgChannelStatusPubUsrStatusNotice_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgChannelStatusPubUsrStatusNotice_descriptor,
         new java.lang.String[] { "Cgt", "Plat", "Did", "Status", });
     internal_static_XmsgChannelStatusPubGroupStatusNotice_descriptor =
-      getDescriptor().getMessageTypes().get(28);
+      getDescriptor().getMessageTypes().get(29);
     internal_static_XmsgChannelStatusPubGroupStatusNotice_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgChannelStatusPubGroupStatusNotice_descriptor,
         new java.lang.String[] { "Cgt", "Status", });
     internal_static_XmsgChannelStatusUsrStatus_descriptor =
-      getDescriptor().getMessageTypes().get(29);
+      getDescriptor().getMessageTypes().get(30);
     internal_static_XmsgChannelStatusUsrStatus_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgChannelStatusUsrStatus_descriptor,
@@ -105844,17 +113444,11 @@ public final class PbXmsg {
         internal_static_XmsgChannelStatusUsrStatus_XmsgChannelStatusUsrClientStatus_descriptor,
         new java.lang.String[] { "Plat", "Did", "Status", });
     internal_static_XmsgChannelStatusGroupStatus_descriptor =
-      getDescriptor().getMessageTypes().get(30);
+      getDescriptor().getMessageTypes().get(31);
     internal_static_XmsgChannelStatusGroupStatus_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgChannelStatusGroupStatus_descriptor,
         new java.lang.String[] { "Status", });
-    internal_static_XmsgClientTokenInfo_descriptor =
-      getDescriptor().getMessageTypes().get(31);
-    internal_static_XmsgClientTokenInfo_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_XmsgClientTokenInfo_descriptor,
-        new java.lang.String[] { "Cgt", "Token", "Alg", "Slat", "Plat", "Did", "Sign", });
     internal_static_XmsgImGroupMemberAddReq_descriptor =
       getDescriptor().getMessageTypes().get(32);
     internal_static_XmsgImGroupMemberAddReq_fieldAccessorTable = new
@@ -105975,8 +113569,80 @@ public final class PbXmsg {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImSdkEventXmsgAp_descriptor,
         new java.lang.String[] { "Evn", "Times", "Addr", });
-    internal_static_XmsgImHlrAttachSimpleReq_descriptor =
+    internal_static_XmsgOssUploadSimpleReq_descriptor =
       getDescriptor().getMessageTypes().get(43);
+    internal_static_XmsgOssUploadSimpleReq_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_XmsgOssUploadSimpleReq_descriptor,
+        new java.lang.String[] { "ObjName", "ObjSize", "Ext", });
+    internal_static_XmsgOssUploadSimpleReq_ExtEntry_descriptor =
+      internal_static_XmsgOssUploadSimpleReq_descriptor.getNestedTypes().get(0);
+    internal_static_XmsgOssUploadSimpleReq_ExtEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_XmsgOssUploadSimpleReq_ExtEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
+    internal_static_XmsgOssUploadSimpleRsp_descriptor =
+      getDescriptor().getMessageTypes().get(44);
+    internal_static_XmsgOssUploadSimpleRsp_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_XmsgOssUploadSimpleRsp_descriptor,
+        new java.lang.String[] { "Oid", "HashVal", "Ext", });
+    internal_static_XmsgOssUploadSimpleRsp_ExtEntry_descriptor =
+      internal_static_XmsgOssUploadSimpleRsp_descriptor.getNestedTypes().get(0);
+    internal_static_XmsgOssUploadSimpleRsp_ExtEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_XmsgOssUploadSimpleRsp_ExtEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
+    internal_static_XmsgOssDownloadSimpleReq_descriptor =
+      getDescriptor().getMessageTypes().get(45);
+    internal_static_XmsgOssDownloadSimpleReq_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_XmsgOssDownloadSimpleReq_descriptor,
+        new java.lang.String[] { "Oid", "Cgt", "Offset", "Len", "Ext", });
+    internal_static_XmsgOssDownloadSimpleReq_ExtEntry_descriptor =
+      internal_static_XmsgOssDownloadSimpleReq_descriptor.getNestedTypes().get(0);
+    internal_static_XmsgOssDownloadSimpleReq_ExtEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_XmsgOssDownloadSimpleReq_ExtEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
+    internal_static_XmsgOssDownloadSimpleRsp_descriptor =
+      getDescriptor().getMessageTypes().get(46);
+    internal_static_XmsgOssDownloadSimpleRsp_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_XmsgOssDownloadSimpleRsp_descriptor,
+        new java.lang.String[] { "ObjName", "ObjSize", "HashVal", "Gts", "Ext", });
+    internal_static_XmsgOssDownloadSimpleRsp_ExtEntry_descriptor =
+      internal_static_XmsgOssDownloadSimpleRsp_descriptor.getNestedTypes().get(0);
+    internal_static_XmsgOssDownloadSimpleRsp_ExtEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_XmsgOssDownloadSimpleRsp_ExtEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
+    internal_static_XmsgOssUsrObjInfoQueryReq_descriptor =
+      getDescriptor().getMessageTypes().get(47);
+    internal_static_XmsgOssUsrObjInfoQueryReq_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_XmsgOssUsrObjInfoQueryReq_descriptor,
+        new java.lang.String[] { "Sts", "Ets", "Page", "PageSize", });
+    internal_static_XmsgOssUsrObjInfoQueryRsp_descriptor =
+      getDescriptor().getMessageTypes().get(48);
+    internal_static_XmsgOssUsrObjInfoQueryRsp_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_XmsgOssUsrObjInfoQueryRsp_descriptor,
+        new java.lang.String[] { "ObjInfo", });
+    internal_static_XmsgOssUsrObjInfo_descriptor =
+      getDescriptor().getMessageTypes().get(49);
+    internal_static_XmsgOssUsrObjInfo_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_XmsgOssUsrObjInfo_descriptor,
+        new java.lang.String[] { "Oid", "ObjName", "ObjSize", "HashVal", "Gts", });
+    internal_static_XmsgClientTokenInfo_descriptor =
+      getDescriptor().getMessageTypes().get(50);
+    internal_static_XmsgClientTokenInfo_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_XmsgClientTokenInfo_descriptor,
+        new java.lang.String[] { "Cgt", "Token", "Alg", "Slat", "Plat", "Did", "Sign", });
+    internal_static_XmsgImHlrAttachSimpleReq_descriptor =
+      getDescriptor().getMessageTypes().get(51);
     internal_static_XmsgImHlrAttachSimpleReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImHlrAttachSimpleReq_descriptor,
@@ -105988,7 +113654,7 @@ public final class PbXmsg {
         internal_static_XmsgImHlrAttachSimpleReq_ExtEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_XmsgImHlrAttachSimpleRsp_descriptor =
-      getDescriptor().getMessageTypes().get(44);
+      getDescriptor().getMessageTypes().get(52);
     internal_static_XmsgImHlrAttachSimpleRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImHlrAttachSimpleRsp_descriptor,
@@ -106000,7 +113666,7 @@ public final class PbXmsg {
         internal_static_XmsgImHlrAttachSimpleRsp_ExtEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_XmsgImHlrDetachSimpleReq_descriptor =
-      getDescriptor().getMessageTypes().get(45);
+      getDescriptor().getMessageTypes().get(53);
     internal_static_XmsgImHlrDetachSimpleReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImHlrDetachSimpleReq_descriptor,
@@ -106012,7 +113678,7 @@ public final class PbXmsg {
         internal_static_XmsgImHlrDetachSimpleReq_ExtEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_XmsgImHlrDetachSimpleRsp_descriptor =
-      getDescriptor().getMessageTypes().get(46);
+      getDescriptor().getMessageTypes().get(54);
     internal_static_XmsgImHlrDetachSimpleRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImHlrDetachSimpleRsp_descriptor,
@@ -106024,31 +113690,31 @@ public final class PbXmsg {
         internal_static_XmsgImHlrDetachSimpleRsp_ExtEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_XmsgImHlrOtherClientAttachReq_descriptor =
-      getDescriptor().getMessageTypes().get(47);
+      getDescriptor().getMessageTypes().get(55);
     internal_static_XmsgImHlrOtherClientAttachReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImHlrOtherClientAttachReq_descriptor,
         new java.lang.String[] { "Dev", "Host", });
     internal_static_XmsgImHlrOtherClientAttachRsp_descriptor =
-      getDescriptor().getMessageTypes().get(48);
+      getDescriptor().getMessageTypes().get(56);
     internal_static_XmsgImHlrOtherClientAttachRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImHlrOtherClientAttachRsp_descriptor,
         new java.lang.String[] { "Action", });
     internal_static_XmsgImHlrOtherClientAttachNotice_descriptor =
-      getDescriptor().getMessageTypes().get(49);
+      getDescriptor().getMessageTypes().get(57);
     internal_static_XmsgImHlrOtherClientAttachNotice_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImHlrOtherClientAttachNotice_descriptor,
         new java.lang.String[] { "Dev", "Host", });
     internal_static_XmsgImAuthSimpleReq_descriptor =
-      getDescriptor().getMessageTypes().get(50);
+      getDescriptor().getMessageTypes().get(58);
     internal_static_XmsgImAuthSimpleReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImAuthSimpleReq_descriptor,
         new java.lang.String[] { "Usr", "Salt", "Sign", "Dev", });
     internal_static_XmsgImAuthSimpleRsp_descriptor =
-      getDescriptor().getMessageTypes().get(51);
+      getDescriptor().getMessageTypes().get(59);
     internal_static_XmsgImAuthSimpleRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImAuthSimpleRsp_descriptor,
@@ -106059,8 +113725,26 @@ public final class PbXmsg {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImAuthSimpleRsp_ExtEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
+    internal_static_XmsgImAuthRegSimpleReq_descriptor =
+      getDescriptor().getMessageTypes().get(60);
+    internal_static_XmsgImAuthRegSimpleReq_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_XmsgImAuthRegSimpleReq_descriptor,
+        new java.lang.String[] { "Usr", "Salt", "Pwd", "Dev", });
+    internal_static_XmsgImAuthRegSimpleRsp_descriptor =
+      getDescriptor().getMessageTypes().get(61);
+    internal_static_XmsgImAuthRegSimpleRsp_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_XmsgImAuthRegSimpleRsp_descriptor,
+        new java.lang.String[] { "Cgt", "Ext", });
+    internal_static_XmsgImAuthRegSimpleRsp_ExtEntry_descriptor =
+      internal_static_XmsgImAuthRegSimpleRsp_descriptor.getNestedTypes().get(0);
+    internal_static_XmsgImAuthRegSimpleRsp_ExtEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_XmsgImAuthRegSimpleRsp_ExtEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
     internal_static_XmsgImClientDeviceInfo_descriptor =
-      getDescriptor().getMessageTypes().get(52);
+      getDescriptor().getMessageTypes().get(62);
     internal_static_XmsgImClientDeviceInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImClientDeviceInfo_descriptor,
@@ -106072,7 +113756,7 @@ public final class PbXmsg {
         internal_static_XmsgImClientDeviceInfo_ExtEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_XmsgImClientServiceAddress_descriptor =
-      getDescriptor().getMessageTypes().get(53);
+      getDescriptor().getMessageTypes().get(63);
     internal_static_XmsgImClientServiceAddress_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImClientServiceAddress_descriptor,
@@ -106083,32 +113767,14 @@ public final class PbXmsg {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImClientServiceAddress_ExtEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
-    internal_static_XmsgImAuthRegSimpleReq_descriptor =
-      getDescriptor().getMessageTypes().get(54);
-    internal_static_XmsgImAuthRegSimpleReq_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_XmsgImAuthRegSimpleReq_descriptor,
-        new java.lang.String[] { "Usr", "Salt", "Pwd", "Dev", });
-    internal_static_XmsgImAuthRegSimpleRsp_descriptor =
-      getDescriptor().getMessageTypes().get(55);
-    internal_static_XmsgImAuthRegSimpleRsp_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_XmsgImAuthRegSimpleRsp_descriptor,
-        new java.lang.String[] { "Cgt", "Ext", });
-    internal_static_XmsgImAuthRegSimpleRsp_ExtEntry_descriptor =
-      internal_static_XmsgImAuthRegSimpleRsp_descriptor.getNestedTypes().get(0);
-    internal_static_XmsgImAuthRegSimpleRsp_ExtEntry_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_XmsgImAuthRegSimpleRsp_ExtEntry_descriptor,
-        new java.lang.String[] { "Key", "Value", });
     internal_static_XmsgImHlrOtherUsrInfoQueryReq_descriptor =
-      getDescriptor().getMessageTypes().get(56);
+      getDescriptor().getMessageTypes().get(64);
     internal_static_XmsgImHlrOtherUsrInfoQueryReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImHlrOtherUsrInfoQueryReq_descriptor,
         new java.lang.String[] { "Cgt", });
     internal_static_XmsgImHlrOtherUsrInfoQueryRsp_descriptor =
-      getDescriptor().getMessageTypes().get(57);
+      getDescriptor().getMessageTypes().get(65);
     internal_static_XmsgImHlrOtherUsrInfoQueryRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImHlrOtherUsrInfoQueryRsp_descriptor,
@@ -106120,7 +113786,7 @@ public final class PbXmsg {
         internal_static_XmsgImHlrOtherUsrInfoQueryRsp_UsrInfoEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_XmsgImHlrOtherUsrInfo_descriptor =
-      getDescriptor().getMessageTypes().get(58);
+      getDescriptor().getMessageTypes().get(66);
     internal_static_XmsgImHlrOtherUsrInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImHlrOtherUsrInfo_descriptor,
@@ -106132,7 +113798,7 @@ public final class PbXmsg {
         internal_static_XmsgImHlrOtherUsrInfo_InfoEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_XmsgFileUploadSimpleReq_descriptor =
-      getDescriptor().getMessageTypes().get(59);
+      getDescriptor().getMessageTypes().get(67);
     internal_static_XmsgFileUploadSimpleReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgFileUploadSimpleReq_descriptor,
@@ -106144,7 +113810,7 @@ public final class PbXmsg {
         internal_static_XmsgFileUploadSimpleReq_ExtEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_XmsgFileUploadSimpleRsp_descriptor =
-      getDescriptor().getMessageTypes().get(60);
+      getDescriptor().getMessageTypes().get(68);
     internal_static_XmsgFileUploadSimpleRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgFileUploadSimpleRsp_descriptor,
@@ -106156,7 +113822,7 @@ public final class PbXmsg {
         internal_static_XmsgFileUploadSimpleRsp_ExtEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_XmsgFileDownloadSimpleReq_descriptor =
-      getDescriptor().getMessageTypes().get(61);
+      getDescriptor().getMessageTypes().get(69);
     internal_static_XmsgFileDownloadSimpleReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgFileDownloadSimpleReq_descriptor,
@@ -106168,7 +113834,7 @@ public final class PbXmsg {
         internal_static_XmsgFileDownloadSimpleReq_ExtEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_XmsgFileDownloadSimpleRsp_descriptor =
-      getDescriptor().getMessageTypes().get(62);
+      getDescriptor().getMessageTypes().get(70);
     internal_static_XmsgFileDownloadSimpleRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgFileDownloadSimpleRsp_descriptor,
@@ -106180,37 +113846,43 @@ public final class PbXmsg {
         internal_static_XmsgFileDownloadSimpleRsp_ExtEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_XmsgFileUsrFileInfoQueryReq_descriptor =
-      getDescriptor().getMessageTypes().get(63);
+      getDescriptor().getMessageTypes().get(71);
     internal_static_XmsgFileUsrFileInfoQueryReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgFileUsrFileInfoQueryReq_descriptor,
         new java.lang.String[] { "Sts", "Ets", "Page", "PageSize", });
     internal_static_XmsgFileUsrFileInfoQueryRsp_descriptor =
-      getDescriptor().getMessageTypes().get(64);
+      getDescriptor().getMessageTypes().get(72);
     internal_static_XmsgFileUsrFileInfoQueryRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgFileUsrFileInfoQueryRsp_descriptor,
         new java.lang.String[] { "FileInfo", });
     internal_static_XmsgFileUsrFileInfo_descriptor =
-      getDescriptor().getMessageTypes().get(65);
+      getDescriptor().getMessageTypes().get(73);
     internal_static_XmsgFileUsrFileInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgFileUsrFileInfo_descriptor,
         new java.lang.String[] { "Fid", "FileName", "FileSize", "HashVal", "Gts", });
     internal_static_XmsgImHlrUsrDat_descriptor =
-      getDescriptor().getMessageTypes().get(66);
+      getDescriptor().getMessageTypes().get(74);
     internal_static_XmsgImHlrUsrDat_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImHlrUsrDat_descriptor,
         new java.lang.String[] { "Uid", "Ver", "Pri", "Pub", "Gts", "Uts", });
     internal_static_XmsgImHlrUsrDatPri_descriptor =
-      getDescriptor().getMessageTypes().get(67);
+      getDescriptor().getMessageTypes().get(75);
     internal_static_XmsgImHlrUsrDatPri_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImHlrUsrDatPri_descriptor,
-        new java.lang.String[] { "Enable", "Ext", });
+        new java.lang.String[] { "Enable", "Info", });
+    internal_static_XmsgImHlrUsrDatPri_InfoEntry_descriptor =
+      internal_static_XmsgImHlrUsrDatPri_descriptor.getNestedTypes().get(0);
+    internal_static_XmsgImHlrUsrDatPri_InfoEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_XmsgImHlrUsrDatPri_InfoEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
     internal_static_XmsgImHlrUsrDatPub_descriptor =
-      getDescriptor().getMessageTypes().get(68);
+      getDescriptor().getMessageTypes().get(76);
     internal_static_XmsgImHlrUsrDatPub_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImHlrUsrDatPub_descriptor,
@@ -106222,7 +113894,7 @@ public final class PbXmsg {
         internal_static_XmsgImHlrUsrDatPub_InfoEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_XmsgImHlrUsrInfoQueryReq_descriptor =
-      getDescriptor().getMessageTypes().get(69);
+      getDescriptor().getMessageTypes().get(77);
     internal_static_XmsgImHlrUsrInfoQueryReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImHlrUsrInfoQueryReq_descriptor,
@@ -106234,7 +113906,7 @@ public final class PbXmsg {
         internal_static_XmsgImHlrUsrInfoQueryReq_ExtEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_XmsgImHlrUsrInfoQueryRsp_descriptor =
-      getDescriptor().getMessageTypes().get(70);
+      getDescriptor().getMessageTypes().get(78);
     internal_static_XmsgImHlrUsrInfoQueryRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImHlrUsrInfoQueryRsp_descriptor,
@@ -106246,7 +113918,7 @@ public final class PbXmsg {
         internal_static_XmsgImHlrUsrInfoQueryRsp_InfoEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_XmsgImHlrUsrInfoUpdateReq_descriptor =
-      getDescriptor().getMessageTypes().get(71);
+      getDescriptor().getMessageTypes().get(79);
     internal_static_XmsgImHlrUsrInfoUpdateReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImHlrUsrInfoUpdateReq_descriptor,
@@ -106258,7 +113930,7 @@ public final class PbXmsg {
         internal_static_XmsgImHlrUsrInfoUpdateReq_InfoEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_XmsgImHlrUsrInfoUpdateRsp_descriptor =
-      getDescriptor().getMessageTypes().get(72);
+      getDescriptor().getMessageTypes().get(80);
     internal_static_XmsgImHlrUsrInfoUpdateRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImHlrUsrInfoUpdateRsp_descriptor,
@@ -106270,13 +113942,13 @@ public final class PbXmsg {
         internal_static_XmsgImHlrUsrInfoUpdateRsp_ExtEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_XmsgImClientDbCrudReq_descriptor =
-      getDescriptor().getMessageTypes().get(73);
+      getDescriptor().getMessageTypes().get(81);
     internal_static_XmsgImClientDbCrudReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImClientDbCrudReq_descriptor,
         new java.lang.String[] { "Sql", "Row", });
     internal_static_XmsgImClientDbCrudRsp_descriptor =
-      getDescriptor().getMessageTypes().get(74);
+      getDescriptor().getMessageTypes().get(82);
     internal_static_XmsgImClientDbCrudRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImClientDbCrudRsp_descriptor,
@@ -106288,19 +113960,19 @@ public final class PbXmsg {
         internal_static_XmsgImClientDbCrudRsp_ColumnEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_XmsgImClientDbRow_descriptor =
-      getDescriptor().getMessageTypes().get(75);
+      getDescriptor().getMessageTypes().get(83);
     internal_static_XmsgImClientDbRow_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImClientDbRow_descriptor,
         new java.lang.String[] { "Col", });
     internal_static_XmsgImClientDbFiled_descriptor =
-      getDescriptor().getMessageTypes().get(76);
+      getDescriptor().getMessageTypes().get(84);
     internal_static_XmsgImClientDbFiled_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImClientDbFiled_descriptor,
         new java.lang.String[] { "Type", "ValInt", "ValText", "ValBlob", });
     internal_static_XmsgImClientKv_descriptor =
-      getDescriptor().getMessageTypes().get(77);
+      getDescriptor().getMessageTypes().get(85);
     internal_static_XmsgImClientKv_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImClientKv_descriptor,
@@ -106312,25 +113984,25 @@ public final class PbXmsg {
         internal_static_XmsgImClientKv_KvEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_XmsgImOrgSyncSubReq_descriptor =
-      getDescriptor().getMessageTypes().get(78);
+      getDescriptor().getMessageTypes().get(86);
     internal_static_XmsgImOrgSyncSubReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImOrgSyncSubReq_descriptor,
         new java.lang.String[] { "Ver4Dept", "Ver4DeptUsr", "Ver4Usr", });
     internal_static_XmsgImOrgSyncSubRsp_descriptor =
-      getDescriptor().getMessageTypes().get(79);
+      getDescriptor().getMessageTypes().get(87);
     internal_static_XmsgImOrgSyncSubRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImOrgSyncSubRsp_descriptor,
         new java.lang.String[] { "Ver4DeptLatest", "Ver4DeptUsrLatest", "Ver4UsrLatest", });
     internal_static_XmsgImOrgSyncPubReq_descriptor =
-      getDescriptor().getMessageTypes().get(80);
+      getDescriptor().getMessageTypes().get(88);
     internal_static_XmsgImOrgSyncPubReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImOrgSyncPubReq_descriptor,
         new java.lang.String[] { "Event", });
     internal_static_XmsgImOrgSyncPubRsp_descriptor =
-      getDescriptor().getMessageTypes().get(81);
+      getDescriptor().getMessageTypes().get(89);
     internal_static_XmsgImOrgSyncPubRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImOrgSyncPubRsp_descriptor,
@@ -106342,73 +114014,73 @@ public final class PbXmsg {
         internal_static_XmsgImOrgSyncPubRsp_ExtEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_XmsgImOrgChangedNotice_descriptor =
-      getDescriptor().getMessageTypes().get(82);
+      getDescriptor().getMessageTypes().get(90);
     internal_static_XmsgImOrgChangedNotice_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImOrgChangedNotice_descriptor,
         new java.lang.String[] { "Event", });
     internal_static_XmsgImOrgNodeChildQueryReq_descriptor =
-      getDescriptor().getMessageTypes().get(83);
+      getDescriptor().getMessageTypes().get(91);
     internal_static_XmsgImOrgNodeChildQueryReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImOrgNodeChildQueryReq_descriptor,
         new java.lang.String[] { "Cgt", });
     internal_static_XmsgImOrgNodeChildQueryRsp_descriptor =
-      getDescriptor().getMessageTypes().get(84);
+      getDescriptor().getMessageTypes().get(92);
     internal_static_XmsgImOrgNodeChildQueryRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImOrgNodeChildQueryRsp_descriptor,
         new java.lang.String[] { "Child", });
     internal_static_XmsgImOrgNodeDeptUsrQueryReq_descriptor =
-      getDescriptor().getMessageTypes().get(85);
+      getDescriptor().getMessageTypes().get(93);
     internal_static_XmsgImOrgNodeDeptUsrQueryReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImOrgNodeDeptUsrQueryReq_descriptor,
         new java.lang.String[] { "Dcgt", "Ucgt", });
     internal_static_XmsgImOrgNodeDeptUsrQueryRsp_descriptor =
-      getDescriptor().getMessageTypes().get(86);
+      getDescriptor().getMessageTypes().get(94);
     internal_static_XmsgImOrgNodeDeptUsrQueryRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImOrgNodeDeptUsrQueryRsp_descriptor,
         new java.lang.String[] { "Name", "Enable", "Info", "Ver", "Gts", "Uts", });
     internal_static_XmsgImOrgNodeQueryReq_descriptor =
-      getDescriptor().getMessageTypes().get(87);
+      getDescriptor().getMessageTypes().get(95);
     internal_static_XmsgImOrgNodeQueryReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImOrgNodeQueryReq_descriptor,
         new java.lang.String[] { "Cgt", });
     internal_static_XmsgImOrgNodeQueryRsp_descriptor =
-      getDescriptor().getMessageTypes().get(88);
+      getDescriptor().getMessageTypes().get(96);
     internal_static_XmsgImOrgNodeQueryRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImOrgNodeQueryRsp_descriptor,
         new java.lang.String[] { "Pgt", "Name", "Enable", "Type", "Info", "Ver", "Gts", "Uts", });
     internal_static_XmsgImOrgEvent_descriptor =
-      getDescriptor().getMessageTypes().get(89);
+      getDescriptor().getMessageTypes().get(97);
     internal_static_XmsgImOrgEvent_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImOrgEvent_descriptor,
         new java.lang.String[] { "Dept", "DeptUsr", "Usr", });
     internal_static_XmsgImOrgEventDept_descriptor =
-      getDescriptor().getMessageTypes().get(90);
+      getDescriptor().getMessageTypes().get(98);
     internal_static_XmsgImOrgEventDept_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImOrgEventDept_descriptor,
         new java.lang.String[] { "Cgt", "Pcgt", "Name", "Enable", "Info", "Ver", "Gts", "Uts", });
     internal_static_XmsgImOrgEventDeptUsr_descriptor =
-      getDescriptor().getMessageTypes().get(91);
+      getDescriptor().getMessageTypes().get(99);
     internal_static_XmsgImOrgEventDeptUsr_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImOrgEventDeptUsr_descriptor,
         new java.lang.String[] { "Dcgt", "Ucgt", "Name", "Enable", "Info", "Ver", "Gts", "Uts", });
     internal_static_XmsgImOrgEventUsr_descriptor =
-      getDescriptor().getMessageTypes().get(92);
+      getDescriptor().getMessageTypes().get(100);
     internal_static_XmsgImOrgEventUsr_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImOrgEventUsr_descriptor,
         new java.lang.String[] { "Cgt", "Name", "Enable", "Info", "Ver", "Gts", "Uts", });
     internal_static_XmsgImOrgNodeInfo_descriptor =
-      getDescriptor().getMessageTypes().get(93);
+      getDescriptor().getMessageTypes().get(101);
     internal_static_XmsgImOrgNodeInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImOrgNodeInfo_descriptor,
@@ -106420,13 +114092,13 @@ public final class PbXmsg {
         internal_static_XmsgImOrgNodeInfo_KvEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_XmsgImOrgNodeChild_descriptor =
-      getDescriptor().getMessageTypes().get(94);
+      getDescriptor().getMessageTypes().get(102);
     internal_static_XmsgImOrgNodeChild_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImOrgNodeChild_descriptor,
         new java.lang.String[] { "Cgt", "Name", "Enable", "Type", "Info", "Ver", "Gts", "Uts", });
     internal_static_XmsgImGroupUsrGroupQueryReq_descriptor =
-      getDescriptor().getMessageTypes().get(95);
+      getDescriptor().getMessageTypes().get(103);
     internal_static_XmsgImGroupUsrGroupQueryReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImGroupUsrGroupQueryReq_descriptor,
@@ -106438,13 +114110,13 @@ public final class PbXmsg {
         internal_static_XmsgImGroupUsrGroupQueryReq_ExtEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_XmsgImGroupUsrGroupQueryRsp_descriptor =
-      getDescriptor().getMessageTypes().get(96);
+      getDescriptor().getMessageTypes().get(104);
     internal_static_XmsgImGroupUsrGroupQueryRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImGroupUsrGroupQueryRsp_descriptor,
         new java.lang.String[] { "Group", });
     internal_static_XmsgImGroupUsrGroupInfo_descriptor =
-      getDescriptor().getMessageTypes().get(97);
+      getDescriptor().getMessageTypes().get(105);
     internal_static_XmsgImGroupUsrGroupInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImGroupUsrGroupInfo_descriptor,
@@ -106456,7 +114128,7 @@ public final class PbXmsg {
         internal_static_XmsgImGroupUsrGroupInfo_InfoEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_XmsgImGroupCreateReq_descriptor =
-      getDescriptor().getMessageTypes().get(98);
+      getDescriptor().getMessageTypes().get(106);
     internal_static_XmsgImGroupCreateReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImGroupCreateReq_descriptor,
@@ -106468,13 +114140,13 @@ public final class PbXmsg {
         internal_static_XmsgImGroupCreateReq_InfoEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_XmsgImGroupCreateRsp_descriptor =
-      getDescriptor().getMessageTypes().get(99);
+      getDescriptor().getMessageTypes().get(107);
     internal_static_XmsgImGroupCreateRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImGroupCreateRsp_descriptor,
         new java.lang.String[] { "Cgt", "Gts", });
     internal_static_XmsgImGroupAddMember_descriptor =
-      getDescriptor().getMessageTypes().get(100);
+      getDescriptor().getMessageTypes().get(108);
     internal_static_XmsgImGroupAddMember_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImGroupAddMember_descriptor,
@@ -106486,7 +114158,7 @@ public final class PbXmsg {
         internal_static_XmsgImGroupAddMember_InfoEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_XmsgImGroupSyncReq_descriptor =
-      getDescriptor().getMessageTypes().get(101);
+      getDescriptor().getMessageTypes().get(109);
     internal_static_XmsgImGroupSyncReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImGroupSyncReq_descriptor,
@@ -106498,13 +114170,13 @@ public final class PbXmsg {
         internal_static_XmsgImGroupSyncReq_ExtEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_XmsgImGroupSyncRsp_descriptor =
-      getDescriptor().getMessageTypes().get(102);
+      getDescriptor().getMessageTypes().get(110);
     internal_static_XmsgImGroupSyncRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImGroupSyncRsp_descriptor,
         new java.lang.String[] { "Event", });
     internal_static_XmsgImGroupSyncEvent_descriptor =
-      getDescriptor().getMessageTypes().get(103);
+      getDescriptor().getMessageTypes().get(111);
     internal_static_XmsgImGroupSyncEvent_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImGroupSyncEvent_descriptor,
@@ -106516,13 +114188,13 @@ public final class PbXmsg {
         internal_static_XmsgImGroupSyncEvent_InfoEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_XmsgImGroupSyncNotice_descriptor =
-      getDescriptor().getMessageTypes().get(104);
+      getDescriptor().getMessageTypes().get(112);
     internal_static_XmsgImGroupSyncNotice_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImGroupSyncNotice_descriptor,
         new java.lang.String[] { "Event", });
     internal_static_XmsgImGroupSyncGroupReq_descriptor =
-      getDescriptor().getMessageTypes().get(105);
+      getDescriptor().getMessageTypes().get(113);
     internal_static_XmsgImGroupSyncGroupReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImGroupSyncGroupReq_descriptor,
@@ -106534,13 +114206,13 @@ public final class PbXmsg {
         internal_static_XmsgImGroupSyncGroupReq_ExtEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_XmsgImGroupSyncGroupRsp_descriptor =
-      getDescriptor().getMessageTypes().get(106);
+      getDescriptor().getMessageTypes().get(114);
     internal_static_XmsgImGroupSyncGroupRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImGroupSyncGroupRsp_descriptor,
         new java.lang.String[] { "Info", "Member", });
     internal_static_XmsgImGroupSyncGroupEventInfo_descriptor =
-      getDescriptor().getMessageTypes().get(107);
+      getDescriptor().getMessageTypes().get(115);
     internal_static_XmsgImGroupSyncGroupEventInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImGroupSyncGroupEventInfo_descriptor,
@@ -106552,7 +114224,7 @@ public final class PbXmsg {
         internal_static_XmsgImGroupSyncGroupEventInfo_InfoEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_XmsgImGroupSyncGroupEventMember_descriptor =
-      getDescriptor().getMessageTypes().get(108);
+      getDescriptor().getMessageTypes().get(116);
     internal_static_XmsgImGroupSyncGroupEventMember_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImGroupSyncGroupEventMember_descriptor,
@@ -106564,25 +114236,25 @@ public final class PbXmsg {
         internal_static_XmsgImGroupSyncGroupEventMember_InfoEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_XmsgImGroupEventNotice_descriptor =
-      getDescriptor().getMessageTypes().get(109);
+      getDescriptor().getMessageTypes().get(117);
     internal_static_XmsgImGroupEventNotice_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImGroupEventNotice_descriptor,
         new java.lang.String[] { "Info", "Member", });
     internal_static_XmsgImGroupInfoQueryReq_descriptor =
-      getDescriptor().getMessageTypes().get(110);
+      getDescriptor().getMessageTypes().get(118);
     internal_static_XmsgImGroupInfoQueryReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImGroupInfoQueryReq_descriptor,
         new java.lang.String[] { "Cgt", "Member", });
     internal_static_XmsgImGroupInfoQueryRsp_descriptor =
-      getDescriptor().getMessageTypes().get(111);
+      getDescriptor().getMessageTypes().get(119);
     internal_static_XmsgImGroupInfoQueryRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImGroupInfoQueryRsp_descriptor,
         new java.lang.String[] { "Info", "Member", });
     internal_static_XmsgImGroupInfoSelfInfo_descriptor =
-      getDescriptor().getMessageTypes().get(112);
+      getDescriptor().getMessageTypes().get(120);
     internal_static_XmsgImGroupInfoSelfInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImGroupInfoSelfInfo_descriptor,
@@ -106594,7 +114266,7 @@ public final class PbXmsg {
         internal_static_XmsgImGroupInfoSelfInfo_InfoEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_XmsgImGroupInfoMember_descriptor =
-      getDescriptor().getMessageTypes().get(113);
+      getDescriptor().getMessageTypes().get(121);
     internal_static_XmsgImGroupInfoMember_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImGroupInfoMember_descriptor,
@@ -106606,7 +114278,7 @@ public final class PbXmsg {
         internal_static_XmsgImGroupInfoMember_InfoEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_XmsgImGroupInfoUpdateReq_descriptor =
-      getDescriptor().getMessageTypes().get(114);
+      getDescriptor().getMessageTypes().get(122);
     internal_static_XmsgImGroupInfoUpdateReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImGroupInfoUpdateReq_descriptor,
@@ -106618,7 +114290,7 @@ public final class PbXmsg {
         internal_static_XmsgImGroupInfoUpdateReq_UpsertEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_XmsgImGroupInfoUpdateRsp_descriptor =
-      getDescriptor().getMessageTypes().get(115);
+      getDescriptor().getMessageTypes().get(123);
     internal_static_XmsgImGroupInfoUpdateRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImGroupInfoUpdateRsp_descriptor,
@@ -106630,13 +114302,13 @@ public final class PbXmsg {
         internal_static_XmsgImGroupInfoUpdateRsp_ExtEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_XmsgImGroupMsgRecvCfgReq_descriptor =
-      getDescriptor().getMessageTypes().get(116);
+      getDescriptor().getMessageTypes().get(124);
     internal_static_XmsgImGroupMsgRecvCfgReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImGroupMsgRecvCfgReq_descriptor,
         new java.lang.String[] { "Cgt", "Type", });
     internal_static_XmsgImGroupMsgRecvCfgRsp_descriptor =
-      getDescriptor().getMessageTypes().get(117);
+      getDescriptor().getMessageTypes().get(125);
     internal_static_XmsgImGroupMsgRecvCfgRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_XmsgImGroupMsgRecvCfgRsp_descriptor,

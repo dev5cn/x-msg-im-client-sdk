@@ -55,7 +55,6 @@ message XmsgImOrgNodeChildQueryRsp
 {
     repeated XmsgImOrgNodeChild child = 1; 
 }
-
 message XmsgImOrgNodeDeptUsrQueryReq
 {
     string dcgt = 1; 
@@ -71,7 +70,6 @@ message XmsgImOrgNodeDeptUsrQueryRsp
     uint64 gts = 6; 
     uint64 uts = 7; 
 }
-
 message XmsgImOrgNodeQueryReq
 {
     string cgt = 1; 
@@ -94,7 +92,6 @@ message XmsgImOrgEvent
     XmsgImOrgEventDeptUsr deptUsr = 2; 
     XmsgImOrgEventUsr usr = 3; 
 }
-
 message XmsgImOrgEventDept
 {
     string cgt = 1; 
@@ -106,7 +103,6 @@ message XmsgImOrgEventDept
     uint64 gts = 7; 
     uint64 uts = 8; 
 }
-
 message XmsgImOrgEventDeptUsr
 {
     string dcgt = 1; 
@@ -118,7 +114,6 @@ message XmsgImOrgEventDeptUsr
     uint64 gts = 7; 
     uint64 uts = 8; 
 }
-
 message XmsgImOrgEventUsr
 {
     string cgt = 1; 
@@ -129,18 +124,15 @@ message XmsgImOrgEventUsr
     uint64 gts = 6; 
     uint64 uts = 7; 
 }
-
 enum XmsgImOrgNodeType {
     X_MSG_IM_ORG_NODE_TYPE__RESERVED__ = 0x00;
     X_MSG_IM_ORG_NODE_TYPE_BRANCH = 0x01; 
     X_MSG_IM_ORG_NODE_TYPE_LEAF = 0x02; 
 }
-
 message XmsgImOrgNodeInfo
 {
     map<string, string> kv = 1; 
 }
-
 message XmsgImOrgNodeChild
 {
     string cgt = 1; 

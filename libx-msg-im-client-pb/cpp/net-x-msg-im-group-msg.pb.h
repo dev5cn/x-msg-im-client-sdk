@@ -39,7 +39,7 @@ namespace protobuf_net_2dx_2dmsg_2dim_2dgroup_2dmsg_2eproto {
 struct TableStruct {
   static const ::google::protobuf::internal::ParseTableField entries[];
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[];
-  static const ::google::protobuf::internal::ParseTable schema[24];
+  static const ::google::protobuf::internal::ParseTable schema[25];
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
   static const ::google::protobuf::uint32 offsets[];
@@ -65,6 +65,8 @@ void InitDefaultsXmsgImMsgVoiceImpl();
 void InitDefaultsXmsgImMsgVoice();
 void InitDefaultsXmsgImMsgVideoImpl();
 void InitDefaultsXmsgImMsgVideo();
+void InitDefaultsXmsgImMsgFileImpl();
+void InitDefaultsXmsgImMsgFile();
 void InitDefaultsXmsgImMsgAtImpl();
 void InitDefaultsXmsgImMsgAt();
 void InitDefaultsXmsgImGroupMsgNotice_ExtEntry_DoNotUseImpl();
@@ -102,6 +104,7 @@ inline void InitDefaults() {
   InitDefaultsXmsgImMsgImage();
   InitDefaultsXmsgImMsgVoice();
   InitDefaultsXmsgImMsgVideo();
+  InitDefaultsXmsgImMsgFile();
   InitDefaultsXmsgImMsgAt();
   InitDefaultsXmsgImGroupMsgNotice_ExtEntry_DoNotUse();
   InitDefaultsXmsgImGroupMsgNotice();
@@ -171,6 +174,9 @@ extern XmsgImMsgDefaultTypeInternal _XmsgImMsg_default_instance_;
 class XmsgImMsgAt;
 class XmsgImMsgAtDefaultTypeInternal;
 extern XmsgImMsgAtDefaultTypeInternal _XmsgImMsgAt_default_instance_;
+class XmsgImMsgFile;
+class XmsgImMsgFileDefaultTypeInternal;
+extern XmsgImMsgFileDefaultTypeInternal _XmsgImMsgFile_default_instance_;
 class XmsgImMsgHtml;
 class XmsgImMsgHtmlDefaultTypeInternal;
 extern XmsgImMsgHtmlDefaultTypeInternal _XmsgImMsgHtml_default_instance_;
@@ -652,19 +658,28 @@ class XmsgImMsg : public ::google::protobuf::Message /* @@protoc_insertion_point
   ::XmsgImMsgVideo* mutable_video();
   void set_allocated_video(::XmsgImMsgVideo* video);
 
-  // .XmsgImMsgMerge merge = 7;
+  // .XmsgImMsgFile file = 7;
+  bool has_file() const;
+  void clear_file();
+  static const int kFileFieldNumber = 7;
+  const ::XmsgImMsgFile& file() const;
+  ::XmsgImMsgFile* release_file();
+  ::XmsgImMsgFile* mutable_file();
+  void set_allocated_file(::XmsgImMsgFile* file);
+
+  // .XmsgImMsgMerge merge = 8;
   bool has_merge() const;
   void clear_merge();
-  static const int kMergeFieldNumber = 7;
+  static const int kMergeFieldNumber = 8;
   const ::XmsgImMsgMerge& merge() const;
   ::XmsgImMsgMerge* release_merge();
   ::XmsgImMsgMerge* mutable_merge();
   void set_allocated_merge(::XmsgImMsgMerge* merge);
 
-  // .XmsgImMsgAt atx = 8;
+  // .XmsgImMsgAt atx = 9;
   bool has_atx() const;
   void clear_atx();
-  static const int kAtxFieldNumber = 8;
+  static const int kAtxFieldNumber = 9;
   const ::XmsgImMsgAt& atx() const;
   ::XmsgImMsgAt* release_atx();
   ::XmsgImMsgAt* mutable_atx();
@@ -680,6 +695,7 @@ class XmsgImMsg : public ::google::protobuf::Message /* @@protoc_insertion_point
   ::XmsgImMsgImage* image_;
   ::XmsgImMsgVoice* voice_;
   ::XmsgImMsgVideo* video_;
+  ::XmsgImMsgFile* file_;
   ::XmsgImMsgMerge* merge_;
   ::XmsgImMsgAt* atx_;
   mutable int _cached_size_;
@@ -1223,6 +1239,128 @@ class XmsgImMsgVideo : public ::google::protobuf::Message /* @@protoc_insertion_
 };
 // -------------------------------------------------------------------
 
+class XmsgImMsgFile : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:XmsgImMsgFile) */ {
+ public:
+  XmsgImMsgFile();
+  virtual ~XmsgImMsgFile();
+
+  XmsgImMsgFile(const XmsgImMsgFile& from);
+
+  inline XmsgImMsgFile& operator=(const XmsgImMsgFile& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  XmsgImMsgFile(XmsgImMsgFile&& from) noexcept
+    : XmsgImMsgFile() {
+    *this = ::std::move(from);
+  }
+
+  inline XmsgImMsgFile& operator=(XmsgImMsgFile&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const XmsgImMsgFile& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const XmsgImMsgFile* internal_default_instance() {
+    return reinterpret_cast<const XmsgImMsgFile*>(
+               &_XmsgImMsgFile_default_instance_);
+  }
+  static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
+    10;
+
+  void Swap(XmsgImMsgFile* other);
+  friend void swap(XmsgImMsgFile& a, XmsgImMsgFile& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline XmsgImMsgFile* New() const PROTOBUF_FINAL { return New(NULL); }
+
+  XmsgImMsgFile* New(::google::protobuf::Arena* arena) const PROTOBUF_FINAL;
+  void CopyFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
+  void MergeFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
+  void CopyFrom(const XmsgImMsgFile& from);
+  void MergeFrom(const XmsgImMsgFile& from);
+  void Clear() PROTOBUF_FINAL;
+  bool IsInitialized() const PROTOBUF_FINAL;
+
+  size_t ByteSizeLong() const PROTOBUF_FINAL;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) PROTOBUF_FINAL;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const PROTOBUF_FINAL;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const PROTOBUF_FINAL;
+  int GetCachedSize() const PROTOBUF_FINAL { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const PROTOBUF_FINAL;
+  void InternalSwap(XmsgImMsgFile* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const PROTOBUF_FINAL;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // string from = 1;
+  void clear_from();
+  static const int kFromFieldNumber = 1;
+  const ::std::string& from() const;
+  void set_from(const ::std::string& value);
+  #if LANG_CXX11
+  void set_from(::std::string&& value);
+  #endif
+  void set_from(const char* value);
+  void set_from(const char* value, size_t size);
+  ::std::string* mutable_from();
+  ::std::string* release_from();
+  void set_allocated_from(::std::string* from);
+
+  // string fid = 2;
+  void clear_fid();
+  static const int kFidFieldNumber = 2;
+  const ::std::string& fid() const;
+  void set_fid(const ::std::string& value);
+  #if LANG_CXX11
+  void set_fid(::std::string&& value);
+  #endif
+  void set_fid(const char* value);
+  void set_fid(const char* value, size_t size);
+  ::std::string* mutable_fid();
+  ::std::string* release_fid();
+  void set_allocated_fid(::std::string* fid);
+
+  // @@protoc_insertion_point(class_scope:XmsgImMsgFile)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::ArenaStringPtr from_;
+  ::google::protobuf::internal::ArenaStringPtr fid_;
+  mutable int _cached_size_;
+  friend struct ::protobuf_net_2dx_2dmsg_2dim_2dgroup_2dmsg_2eproto::TableStruct;
+  friend void ::protobuf_net_2dx_2dmsg_2dim_2dgroup_2dmsg_2eproto::InitDefaultsXmsgImMsgFileImpl();
+};
+// -------------------------------------------------------------------
+
 class XmsgImMsgMerge : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:XmsgImMsgMerge) */ {
  public:
   XmsgImMsgMerge();
@@ -1258,7 +1396,7 @@ class XmsgImMsgMerge : public ::google::protobuf::Message /* @@protoc_insertion_
                &_XmsgImMsgMerge_default_instance_);
   }
   static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
-    10;
+    11;
 
   void Swap(XmsgImMsgMerge* other);
   friend void swap(XmsgImMsgMerge& a, XmsgImMsgMerge& b) {
@@ -1363,7 +1501,7 @@ class XmsgImMsgAt : public ::google::protobuf::Message /* @@protoc_insertion_poi
                &_XmsgImMsgAt_default_instance_);
   }
   static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
-    11;
+    12;
 
   void Swap(XmsgImMsgAt* other);
   friend void swap(XmsgImMsgAt& a, XmsgImMsgAt& b) {
@@ -1499,7 +1637,7 @@ class XmsgImGroupMsgNotice : public ::google::protobuf::Message /* @@protoc_inse
                &_XmsgImGroupMsgNotice_default_instance_);
   }
   static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
-    13;
+    14;
 
   void Swap(XmsgImGroupMsgNotice* other);
   friend void swap(XmsgImGroupMsgNotice& a, XmsgImGroupMsgNotice& b) {
@@ -1661,7 +1799,7 @@ class XmsgImGroupMsgSyncReq : public ::google::protobuf::Message /* @@protoc_ins
                &_XmsgImGroupMsgSyncReq_default_instance_);
   }
   static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
-    14;
+    15;
 
   void Swap(XmsgImGroupMsgSyncReq* other);
   friend void swap(XmsgImGroupMsgSyncReq& a, XmsgImGroupMsgSyncReq& b) {
@@ -1782,7 +1920,7 @@ class XmsgImGroupMsgSyncRsp : public ::google::protobuf::Message /* @@protoc_ins
                &_XmsgImGroupMsgSyncRsp_default_instance_);
   }
   static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
-    15;
+    16;
 
   void Swap(XmsgImGroupMsgSyncRsp* other);
   friend void swap(XmsgImGroupMsgSyncRsp& a, XmsgImGroupMsgSyncRsp& b) {
@@ -1887,7 +2025,7 @@ class XmsgImGroupMsgHistory : public ::google::protobuf::Message /* @@protoc_ins
                &_XmsgImGroupMsgHistory_default_instance_);
   }
   static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
-    16;
+    17;
 
   void Swap(XmsgImGroupMsgHistory* other);
   friend void swap(XmsgImGroupMsgHistory& a, XmsgImGroupMsgHistory& b) {
@@ -2025,7 +2163,7 @@ class XmsgImGroupMsgQueryReq : public ::google::protobuf::Message /* @@protoc_in
                &_XmsgImGroupMsgQueryReq_default_instance_);
   }
   static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
-    17;
+    18;
 
   void Swap(XmsgImGroupMsgQueryReq* other);
   friend void swap(XmsgImGroupMsgQueryReq& a, XmsgImGroupMsgQueryReq& b) {
@@ -2153,7 +2291,7 @@ class XmsgImGroupMsgQueryRsp_XmsgImGroupMsgQueryRspItem : public ::google::proto
                &_XmsgImGroupMsgQueryRsp_XmsgImGroupMsgQueryRspItem_default_instance_);
   }
   static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
-    18;
+    19;
 
   void Swap(XmsgImGroupMsgQueryRsp_XmsgImGroupMsgQueryRspItem* other);
   friend void swap(XmsgImGroupMsgQueryRsp_XmsgImGroupMsgQueryRspItem& a, XmsgImGroupMsgQueryRsp_XmsgImGroupMsgQueryRspItem& b) {
@@ -2284,7 +2422,7 @@ class XmsgImGroupMsgQueryRsp : public ::google::protobuf::Message /* @@protoc_in
                &_XmsgImGroupMsgQueryRsp_default_instance_);
   }
   static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
-    19;
+    20;
 
   void Swap(XmsgImGroupMsgQueryRsp* other);
   friend void swap(XmsgImGroupMsgQueryRsp& a, XmsgImGroupMsgQueryRsp& b) {
@@ -2391,7 +2529,7 @@ class XmsgImGroupMsgReadReq : public ::google::protobuf::Message /* @@protoc_ins
                &_XmsgImGroupMsgReadReq_default_instance_);
   }
   static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
-    20;
+    21;
 
   void Swap(XmsgImGroupMsgReadReq* other);
   friend void swap(XmsgImGroupMsgReadReq& a, XmsgImGroupMsgReadReq& b) {
@@ -2526,7 +2664,7 @@ class XmsgImGroupMsgReadRsp : public ::google::protobuf::Message /* @@protoc_ins
                &_XmsgImGroupMsgReadRsp_default_instance_);
   }
   static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
-    22;
+    23;
 
   void Swap(XmsgImGroupMsgReadRsp* other);
   friend void swap(XmsgImGroupMsgReadRsp& a, XmsgImGroupMsgReadRsp& b) {
@@ -2634,7 +2772,7 @@ class XmsgImGroupMsgReadNotice : public ::google::protobuf::Message /* @@protoc_
                &_XmsgImGroupMsgReadNotice_default_instance_);
   }
   static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
-    23;
+    24;
 
   void Swap(XmsgImGroupMsgReadNotice* other);
   friend void swap(XmsgImGroupMsgReadNotice& a, XmsgImGroupMsgReadNotice& b) {
@@ -3271,7 +3409,57 @@ inline void XmsgImMsg::set_allocated_video(::XmsgImMsgVideo* video) {
   // @@protoc_insertion_point(field_set_allocated:XmsgImMsg.video)
 }
 
-// .XmsgImMsgMerge merge = 7;
+// .XmsgImMsgFile file = 7;
+inline bool XmsgImMsg::has_file() const {
+  return this != internal_default_instance() && file_ != NULL;
+}
+inline void XmsgImMsg::clear_file() {
+  if (GetArenaNoVirtual() == NULL && file_ != NULL) {
+    delete file_;
+  }
+  file_ = NULL;
+}
+inline const ::XmsgImMsgFile& XmsgImMsg::file() const {
+  const ::XmsgImMsgFile* p = file_;
+  // @@protoc_insertion_point(field_get:XmsgImMsg.file)
+  return p != NULL ? *p : *reinterpret_cast<const ::XmsgImMsgFile*>(
+      &::_XmsgImMsgFile_default_instance_);
+}
+inline ::XmsgImMsgFile* XmsgImMsg::release_file() {
+  // @@protoc_insertion_point(field_release:XmsgImMsg.file)
+  
+  ::XmsgImMsgFile* temp = file_;
+  file_ = NULL;
+  return temp;
+}
+inline ::XmsgImMsgFile* XmsgImMsg::mutable_file() {
+  
+  if (file_ == NULL) {
+    file_ = new ::XmsgImMsgFile;
+  }
+  // @@protoc_insertion_point(field_mutable:XmsgImMsg.file)
+  return file_;
+}
+inline void XmsgImMsg::set_allocated_file(::XmsgImMsgFile* file) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == NULL) {
+    delete file_;
+  }
+  if (file) {
+    ::google::protobuf::Arena* submessage_arena = NULL;
+    if (message_arena != submessage_arena) {
+      file = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, file, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  file_ = file;
+  // @@protoc_insertion_point(field_set_allocated:XmsgImMsg.file)
+}
+
+// .XmsgImMsgMerge merge = 8;
 inline bool XmsgImMsg::has_merge() const {
   return this != internal_default_instance() && merge_ != NULL;
 }
@@ -3321,7 +3509,7 @@ inline void XmsgImMsg::set_allocated_merge(::XmsgImMsgMerge* merge) {
   // @@protoc_insertion_point(field_set_allocated:XmsgImMsg.merge)
 }
 
-// .XmsgImMsgAt atx = 8;
+// .XmsgImMsgAt atx = 9;
 inline bool XmsgImMsg::has_atx() const {
   return this != internal_default_instance() && atx_ != NULL;
 }
@@ -3654,6 +3842,116 @@ inline void XmsgImMsgVideo::set_allocated_uri(::std::string* uri) {
   }
   uri_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), uri);
   // @@protoc_insertion_point(field_set_allocated:XmsgImMsgVideo.uri)
+}
+
+// -------------------------------------------------------------------
+
+// XmsgImMsgFile
+
+// string from = 1;
+inline void XmsgImMsgFile::clear_from() {
+  from_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& XmsgImMsgFile::from() const {
+  // @@protoc_insertion_point(field_get:XmsgImMsgFile.from)
+  return from_.GetNoArena();
+}
+inline void XmsgImMsgFile::set_from(const ::std::string& value) {
+  
+  from_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:XmsgImMsgFile.from)
+}
+#if LANG_CXX11
+inline void XmsgImMsgFile::set_from(::std::string&& value) {
+  
+  from_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:XmsgImMsgFile.from)
+}
+#endif
+inline void XmsgImMsgFile::set_from(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  from_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:XmsgImMsgFile.from)
+}
+inline void XmsgImMsgFile::set_from(const char* value, size_t size) {
+  
+  from_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:XmsgImMsgFile.from)
+}
+inline ::std::string* XmsgImMsgFile::mutable_from() {
+  
+  // @@protoc_insertion_point(field_mutable:XmsgImMsgFile.from)
+  return from_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* XmsgImMsgFile::release_from() {
+  // @@protoc_insertion_point(field_release:XmsgImMsgFile.from)
+  
+  return from_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void XmsgImMsgFile::set_allocated_from(::std::string* from) {
+  if (from != NULL) {
+    
+  } else {
+    
+  }
+  from_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from);
+  // @@protoc_insertion_point(field_set_allocated:XmsgImMsgFile.from)
+}
+
+// string fid = 2;
+inline void XmsgImMsgFile::clear_fid() {
+  fid_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& XmsgImMsgFile::fid() const {
+  // @@protoc_insertion_point(field_get:XmsgImMsgFile.fid)
+  return fid_.GetNoArena();
+}
+inline void XmsgImMsgFile::set_fid(const ::std::string& value) {
+  
+  fid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:XmsgImMsgFile.fid)
+}
+#if LANG_CXX11
+inline void XmsgImMsgFile::set_fid(::std::string&& value) {
+  
+  fid_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:XmsgImMsgFile.fid)
+}
+#endif
+inline void XmsgImMsgFile::set_fid(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  fid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:XmsgImMsgFile.fid)
+}
+inline void XmsgImMsgFile::set_fid(const char* value, size_t size) {
+  
+  fid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:XmsgImMsgFile.fid)
+}
+inline ::std::string* XmsgImMsgFile::mutable_fid() {
+  
+  // @@protoc_insertion_point(field_mutable:XmsgImMsgFile.fid)
+  return fid_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* XmsgImMsgFile::release_fid() {
+  // @@protoc_insertion_point(field_release:XmsgImMsgFile.fid)
+  
+  return fid_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void XmsgImMsgFile::set_allocated_fid(::std::string* fid) {
+  if (fid != NULL) {
+    
+  } else {
+    
+  }
+  fid_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), fid);
+  // @@protoc_insertion_point(field_set_allocated:XmsgImMsgFile.fid)
 }
 
 // -------------------------------------------------------------------
@@ -4676,6 +4974,8 @@ inline void XmsgImGroupMsgReadNotice::set_msgid(::google::protobuf::uint64 value
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

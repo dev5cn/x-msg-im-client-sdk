@@ -40,7 +40,7 @@ public class TestXmsgImGroupMsgSyncReq
 	/** 群组内消息同步. */
 	public static final void test(String cgt)
 	{
-		String sql = Misc.printf2Str("select max(msgId) from tb_usr_group_msg where gcgt = '%s'", cgt);
+		String sql = Misc.printf2str("select max(msgId) from tb_usr_group_msg where gcgt = '%s'", cgt);
 		Main.dbApi.futureUsrDat(sql, (ret, desc, rst) -> /* 查找此群组中最大的消息id. */
 		{
 			if (ret != XmsgErrCode.SUCCESS)

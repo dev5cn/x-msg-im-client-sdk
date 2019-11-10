@@ -69,6 +69,11 @@ class XmsgImMsgVideoDefaultTypeInternal {
   ::google::protobuf::internal::ExplicitlyConstructed<XmsgImMsgVideo>
       _instance;
 } _XmsgImMsgVideo_default_instance_;
+class XmsgImMsgFileDefaultTypeInternal {
+ public:
+  ::google::protobuf::internal::ExplicitlyConstructed<XmsgImMsgFile>
+      _instance;
+} _XmsgImMsgFile_default_instance_;
 class XmsgImMsgMergeDefaultTypeInternal {
  public:
   ::google::protobuf::internal::ExplicitlyConstructed<XmsgImMsgMerge>
@@ -238,6 +243,7 @@ void InitDefaultsXmsgImMsgImpl() {
   protobuf_net_2dx_2dmsg_2dim_2dgroup_2dmsg_2eproto::InitDefaultsXmsgImMsgImage();
   protobuf_net_2dx_2dmsg_2dim_2dgroup_2dmsg_2eproto::InitDefaultsXmsgImMsgVoice();
   protobuf_net_2dx_2dmsg_2dim_2dgroup_2dmsg_2eproto::InitDefaultsXmsgImMsgVideo();
+  protobuf_net_2dx_2dmsg_2dim_2dgroup_2dmsg_2eproto::InitDefaultsXmsgImMsgFile();
   protobuf_net_2dx_2dmsg_2dim_2dgroup_2dmsg_2eproto::InitDefaultsXmsgImMsgAt();
   {
     void* ptr = &::_XmsgImMsg_default_instance_;
@@ -361,6 +367,27 @@ void InitDefaultsXmsgImMsgVideoImpl() {
 void InitDefaultsXmsgImMsgVideo() {
   static GOOGLE_PROTOBUF_DECLARE_ONCE(once);
   ::google::protobuf::GoogleOnceInit(&once, &InitDefaultsXmsgImMsgVideoImpl);
+}
+
+void InitDefaultsXmsgImMsgFileImpl() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+#ifdef GOOGLE_PROTOBUF_ENFORCE_UNIQUENESS
+  ::google::protobuf::internal::InitProtobufDefaultsForceUnique();
+#else
+  ::google::protobuf::internal::InitProtobufDefaults();
+#endif  // GOOGLE_PROTOBUF_ENFORCE_UNIQUENESS
+  {
+    void* ptr = &::_XmsgImMsgFile_default_instance_;
+    new (ptr) ::XmsgImMsgFile();
+    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::XmsgImMsgFile::InitAsDefaultInstance();
+}
+
+void InitDefaultsXmsgImMsgFile() {
+  static GOOGLE_PROTOBUF_DECLARE_ONCE(once);
+  ::google::protobuf::GoogleOnceInit(&once, &InitDefaultsXmsgImMsgFileImpl);
 }
 
 void InitDefaultsXmsgImMsgAtImpl() {
@@ -641,7 +668,7 @@ void InitDefaultsXmsgImGroupMsgReadNotice() {
   ::google::protobuf::GoogleOnceInit(&once, &InitDefaultsXmsgImGroupMsgReadNoticeImpl);
 }
 
-::google::protobuf::Metadata file_level_metadata[24];
+::google::protobuf::Metadata file_level_metadata[25];
 
 const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::XmsgImGroupSendMsgReq_ExtEntry_DoNotUse, _has_bits_),
@@ -691,6 +718,7 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::XmsgImMsg, image_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::XmsgImMsg, voice_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::XmsgImMsg, video_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::XmsgImMsg, file_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::XmsgImMsg, merge_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::XmsgImMsg, atx_),
   ~0u,  // no _has_bits_
@@ -723,6 +751,13 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::XmsgImMsgVideo, uri_),
+  ~0u,  // no _has_bits_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::XmsgImMsgFile, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::XmsgImMsgFile, from_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::XmsgImMsgFile, fid_),
   ~0u,  // no _has_bits_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::XmsgImMsgMerge, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -839,25 +874,26 @@ static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_PROT
   { 18, 25, sizeof(::XmsgImGroupSendMsgRsp_ExtEntry_DoNotUse)},
   { 27, -1, sizeof(::XmsgImGroupSendMsgRsp)},
   { 36, -1, sizeof(::XmsgImMsg)},
-  { 49, -1, sizeof(::XmsgImMsgText)},
-  { 55, -1, sizeof(::XmsgImMsgHtml)},
-  { 61, -1, sizeof(::XmsgImMsgImage)},
-  { 67, -1, sizeof(::XmsgImMsgVoice)},
-  { 73, -1, sizeof(::XmsgImMsgVideo)},
-  { 79, -1, sizeof(::XmsgImMsgMerge)},
-  { 85, -1, sizeof(::XmsgImMsgAt)},
-  { 91, 98, sizeof(::XmsgImGroupMsgNotice_ExtEntry_DoNotUse)},
-  { 100, -1, sizeof(::XmsgImGroupMsgNotice)},
-  { 111, -1, sizeof(::XmsgImGroupMsgSyncReq)},
-  { 119, -1, sizeof(::XmsgImGroupMsgSyncRsp)},
-  { 125, -1, sizeof(::XmsgImGroupMsgHistory)},
-  { 135, -1, sizeof(::XmsgImGroupMsgQueryReq)},
-  { 144, -1, sizeof(::XmsgImGroupMsgQueryRsp_XmsgImGroupMsgQueryRspItem)},
-  { 153, -1, sizeof(::XmsgImGroupMsgQueryRsp)},
-  { 159, -1, sizeof(::XmsgImGroupMsgReadReq)},
-  { 166, 173, sizeof(::XmsgImGroupMsgReadRsp_ExtEntry_DoNotUse)},
-  { 175, -1, sizeof(::XmsgImGroupMsgReadRsp)},
-  { 181, -1, sizeof(::XmsgImGroupMsgReadNotice)},
+  { 50, -1, sizeof(::XmsgImMsgText)},
+  { 56, -1, sizeof(::XmsgImMsgHtml)},
+  { 62, -1, sizeof(::XmsgImMsgImage)},
+  { 68, -1, sizeof(::XmsgImMsgVoice)},
+  { 74, -1, sizeof(::XmsgImMsgVideo)},
+  { 80, -1, sizeof(::XmsgImMsgFile)},
+  { 87, -1, sizeof(::XmsgImMsgMerge)},
+  { 93, -1, sizeof(::XmsgImMsgAt)},
+  { 99, 106, sizeof(::XmsgImGroupMsgNotice_ExtEntry_DoNotUse)},
+  { 108, -1, sizeof(::XmsgImGroupMsgNotice)},
+  { 119, -1, sizeof(::XmsgImGroupMsgSyncReq)},
+  { 127, -1, sizeof(::XmsgImGroupMsgSyncRsp)},
+  { 133, -1, sizeof(::XmsgImGroupMsgHistory)},
+  { 143, -1, sizeof(::XmsgImGroupMsgQueryReq)},
+  { 152, -1, sizeof(::XmsgImGroupMsgQueryRsp_XmsgImGroupMsgQueryRspItem)},
+  { 161, -1, sizeof(::XmsgImGroupMsgQueryRsp)},
+  { 167, -1, sizeof(::XmsgImGroupMsgReadReq)},
+  { 174, 181, sizeof(::XmsgImGroupMsgReadRsp_ExtEntry_DoNotUse)},
+  { 183, -1, sizeof(::XmsgImGroupMsgReadRsp)},
+  { 189, -1, sizeof(::XmsgImGroupMsgReadNotice)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -871,6 +907,7 @@ static ::google::protobuf::Message const * const file_default_instances[] = {
   reinterpret_cast<const ::google::protobuf::Message*>(&::_XmsgImMsgImage_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::_XmsgImMsgVoice_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::_XmsgImMsgVideo_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&::_XmsgImMsgFile_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::_XmsgImMsgMerge_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::_XmsgImMsgAt_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::_XmsgImGroupMsgNotice_ExtEntry_DoNotUse_default_instance_),
@@ -903,7 +940,7 @@ void protobuf_AssignDescriptorsOnce() {
 void protobuf_RegisterTypes(const ::std::string&) GOOGLE_PROTOBUF_ATTRIBUTE_COLD;
 void protobuf_RegisterTypes(const ::std::string&) {
   protobuf_AssignDescriptorsOnce();
-  ::google::protobuf::internal::RegisterAllTypes(file_level_metadata, 24);
+  ::google::protobuf::internal::RegisterAllTypes(file_level_metadata, 25);
 }
 
 void AddDescriptorsImpl() {
@@ -918,46 +955,47 @@ void AddDescriptorsImpl() {
       "\001 \001(\004\022\014\n\004gcgt\030\002 \001(\t\022\013\n\003gts\030\003 \001(\004\022,\n\003ext\030"
       "\004 \003(\0132\037.XmsgImGroupSendMsgRsp.ExtEntry\032*"
       "\n\010ExtEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\002"
-      "8\001\"\360\001\n\tXmsgImMsg\022\014\n\004type\030\001 \001(\t\022\034\n\004text\030\002"
+      "8\001\"\216\002\n\tXmsgImMsg\022\014\n\004type\030\001 \001(\t\022\034\n\004text\030\002"
       " \001(\0132\016.XmsgImMsgText\022\034\n\004html\030\003 \001(\0132\016.Xms"
       "gImMsgHtml\022\036\n\005image\030\004 \001(\0132\017.XmsgImMsgIma"
       "ge\022\036\n\005voice\030\005 \001(\0132\017.XmsgImMsgVoice\022\036\n\005vi"
-      "deo\030\006 \001(\0132\017.XmsgImMsgVideo\022\036\n\005merge\030\007 \001("
-      "\0132\017.XmsgImMsgMerge\022\031\n\003atx\030\010 \001(\0132\014.XmsgIm"
-      "MsgAt\"\035\n\rXmsgImMsgText\022\014\n\004text\030\001 \001(\t\"\035\n\r"
-      "XmsgImMsgHtml\022\014\n\004html\030\001 \001(\t\"\035\n\016XmsgImMsg"
-      "Image\022\013\n\003uri\030\001 \001(\t\"\035\n\016XmsgImMsgVoice\022\013\n\003"
-      "uri\030\001 \001(\t\"\035\n\016XmsgImMsgVideo\022\013\n\003uri\030\001 \001(\t"
-      "\")\n\016XmsgImMsgMerge\022\027\n\003msg\030\001 \003(\0132\n.XmsgIm"
-      "Msg\"\032\n\013XmsgImMsgAt\022\013\n\003cgt\030\002 \003(\t\"\300\001\n\024Xmsg"
-      "ImGroupMsgNotice\022\014\n\004gcgt\030\001 \001(\t\022\014\n\004scgt\030\002"
-      " \001(\t\022\r\n\005msgId\030\003 \001(\004\022\027\n\003msg\030\004 \001(\0132\n.XmsgI"
-      "mMsg\022\013\n\003gts\030\005 \001(\004\022+\n\003ext\030\006 \003(\0132\036.XmsgImG"
-      "roupMsgNotice.ExtEntry\032*\n\010ExtEntry\022\013\n\003ke"
-      "y\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"C\n\025XmsgImGrou"
-      "pMsgSyncReq\022\013\n\003cgt\030\001 \001(\t\022\r\n\005msgId\030\002 \001(\004\022"
-      "\016\n\006latest\030\003 \001(\r\"<\n\025XmsgImGroupMsgSyncRsp"
-      "\022#\n\003msg\030\001 \003(\0132\026.XmsgImGroupMsgHistory\"j\n"
-      "\025XmsgImGroupMsgHistory\022\014\n\004scgt\030\001 \001(\t\022\r\n\005"
-      "msgId\030\002 \001(\004\022\027\n\003msg\030\003 \001(\0132\n.XmsgImMsg\022\013\n\003"
-      "gts\030\004 \001(\004\022\016\n\006isRead\030\005 \001(\010\"V\n\026XmsgImGroup"
-      "MsgQueryReq\022\013\n\003cgt\030\001 \001(\t\022\r\n\005msgId\030\002 \001(\004\022"
-      "\016\n\006before\030\003 \001(\010\022\020\n\010pageSize\030\004 \001(\r\"\272\001\n\026Xm"
-      "sgImGroupMsgQueryRsp\022\?\n\003msg\030\001 \003(\01322.Xmsg"
-      "ImGroupMsgQueryRsp.XmsgImGroupMsgQueryRs"
-      "pItem\032_\n\032XmsgImGroupMsgQueryRspItem\022\014\n\004s"
-      "cgt\030\001 \001(\t\022\r\n\005msgId\030\002 \001(\004\022\027\n\003msg\030\003 \001(\0132\n."
-      "XmsgImMsg\022\013\n\003gts\030\004 \001(\004\"3\n\025XmsgImGroupMsg"
-      "ReadReq\022\013\n\003cgt\030\001 \001(\t\022\r\n\005msgId\030\002 \001(\004\"q\n\025X"
-      "msgImGroupMsgReadRsp\022,\n\003ext\030\001 \003(\0132\037.Xmsg"
-      "ImGroupMsgReadRsp.ExtEntry\032*\n\010ExtEntry\022\013"
-      "\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"6\n\030XmsgIm"
-      "GroupMsgReadNotice\022\013\n\003cgt\030\001 \001(\t\022\r\n\005msgId"
-      "\030\002 \001(\004B\034\n\010x.msg.pbB\020XmsgImGroupMsgPbb\006pr"
-      "oto3"
+      "deo\030\006 \001(\0132\017.XmsgImMsgVideo\022\034\n\004file\030\007 \001(\013"
+      "2\016.XmsgImMsgFile\022\036\n\005merge\030\010 \001(\0132\017.XmsgIm"
+      "MsgMerge\022\031\n\003atx\030\t \001(\0132\014.XmsgImMsgAt\"\035\n\rX"
+      "msgImMsgText\022\014\n\004text\030\001 \001(\t\"\035\n\rXmsgImMsgH"
+      "tml\022\014\n\004html\030\001 \001(\t\"\035\n\016XmsgImMsgImage\022\013\n\003u"
+      "ri\030\001 \001(\t\"\035\n\016XmsgImMsgVoice\022\013\n\003uri\030\001 \001(\t\""
+      "\035\n\016XmsgImMsgVideo\022\013\n\003uri\030\001 \001(\t\"*\n\rXmsgIm"
+      "MsgFile\022\014\n\004from\030\001 \001(\t\022\013\n\003fid\030\002 \001(\t\")\n\016Xm"
+      "sgImMsgMerge\022\027\n\003msg\030\001 \003(\0132\n.XmsgImMsg\"\032\n"
+      "\013XmsgImMsgAt\022\013\n\003cgt\030\002 \003(\t\"\300\001\n\024XmsgImGrou"
+      "pMsgNotice\022\014\n\004gcgt\030\001 \001(\t\022\014\n\004scgt\030\002 \001(\t\022\r"
+      "\n\005msgId\030\003 \001(\004\022\027\n\003msg\030\004 \001(\0132\n.XmsgImMsg\022\013"
+      "\n\003gts\030\005 \001(\004\022+\n\003ext\030\006 \003(\0132\036.XmsgImGroupMs"
+      "gNotice.ExtEntry\032*\n\010ExtEntry\022\013\n\003key\030\001 \001("
+      "\t\022\r\n\005value\030\002 \001(\t:\0028\001\"C\n\025XmsgImGroupMsgSy"
+      "ncReq\022\013\n\003cgt\030\001 \001(\t\022\r\n\005msgId\030\002 \001(\004\022\016\n\006lat"
+      "est\030\003 \001(\r\"<\n\025XmsgImGroupMsgSyncRsp\022#\n\003ms"
+      "g\030\001 \003(\0132\026.XmsgImGroupMsgHistory\"j\n\025XmsgI"
+      "mGroupMsgHistory\022\014\n\004scgt\030\001 \001(\t\022\r\n\005msgId\030"
+      "\002 \001(\004\022\027\n\003msg\030\003 \001(\0132\n.XmsgImMsg\022\013\n\003gts\030\004 "
+      "\001(\004\022\016\n\006isRead\030\005 \001(\010\"V\n\026XmsgImGroupMsgQue"
+      "ryReq\022\013\n\003cgt\030\001 \001(\t\022\r\n\005msgId\030\002 \001(\004\022\016\n\006bef"
+      "ore\030\003 \001(\010\022\020\n\010pageSize\030\004 \001(\r\"\272\001\n\026XmsgImGr"
+      "oupMsgQueryRsp\022\?\n\003msg\030\001 \003(\01322.XmsgImGrou"
+      "pMsgQueryRsp.XmsgImGroupMsgQueryRspItem\032"
+      "_\n\032XmsgImGroupMsgQueryRspItem\022\014\n\004scgt\030\001 "
+      "\001(\t\022\r\n\005msgId\030\002 \001(\004\022\027\n\003msg\030\003 \001(\0132\n.XmsgIm"
+      "Msg\022\013\n\003gts\030\004 \001(\004\"3\n\025XmsgImGroupMsgReadRe"
+      "q\022\013\n\003cgt\030\001 \001(\t\022\r\n\005msgId\030\002 \001(\004\"q\n\025XmsgImG"
+      "roupMsgReadRsp\022,\n\003ext\030\001 \003(\0132\037.XmsgImGrou"
+      "pMsgReadRsp.ExtEntry\032*\n\010ExtEntry\022\013\n\003key\030"
+      "\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"6\n\030XmsgImGroupM"
+      "sgReadNotice\022\013\n\003cgt\030\001 \001(\t\022\r\n\005msgId\030\002 \001(\004"
+      "B\034\n\010x.msg.pbB\020XmsgImGroupMsgPbb\006proto3"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 1804);
+      descriptor, 1878);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "net-x-msg-im-group-msg.proto", &protobuf_RegisterTypes);
 }
@@ -2016,6 +2054,8 @@ void XmsgImMsg::InitAsDefaultInstance() {
       ::XmsgImMsgVoice::internal_default_instance());
   ::_XmsgImMsg_default_instance_._instance.get_mutable()->video_ = const_cast< ::XmsgImMsgVideo*>(
       ::XmsgImMsgVideo::internal_default_instance());
+  ::_XmsgImMsg_default_instance_._instance.get_mutable()->file_ = const_cast< ::XmsgImMsgFile*>(
+      ::XmsgImMsgFile::internal_default_instance());
   ::_XmsgImMsg_default_instance_._instance.get_mutable()->merge_ = const_cast< ::XmsgImMsgMerge*>(
       ::XmsgImMsgMerge::internal_default_instance());
   ::_XmsgImMsg_default_instance_._instance.get_mutable()->atx_ = const_cast< ::XmsgImMsgAt*>(
@@ -2028,6 +2068,7 @@ const int XmsgImMsg::kHtmlFieldNumber;
 const int XmsgImMsg::kImageFieldNumber;
 const int XmsgImMsg::kVoiceFieldNumber;
 const int XmsgImMsg::kVideoFieldNumber;
+const int XmsgImMsg::kFileFieldNumber;
 const int XmsgImMsg::kMergeFieldNumber;
 const int XmsgImMsg::kAtxFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
@@ -2074,6 +2115,11 @@ XmsgImMsg::XmsgImMsg(const XmsgImMsg& from)
   } else {
     video_ = NULL;
   }
+  if (from.has_file()) {
+    file_ = new ::XmsgImMsgFile(*from.file_);
+  } else {
+    file_ = NULL;
+  }
   if (from.has_merge()) {
     merge_ = new ::XmsgImMsgMerge(*from.merge_);
   } else {
@@ -2107,6 +2153,7 @@ void XmsgImMsg::SharedDtor() {
   if (this != internal_default_instance()) delete image_;
   if (this != internal_default_instance()) delete voice_;
   if (this != internal_default_instance()) delete video_;
+  if (this != internal_default_instance()) delete file_;
   if (this != internal_default_instance()) delete merge_;
   if (this != internal_default_instance()) delete atx_;
 }
@@ -2161,6 +2208,10 @@ void XmsgImMsg::Clear() {
     delete video_;
   }
   video_ = NULL;
+  if (GetArenaNoVirtual() == NULL && file_ != NULL) {
+    delete file_;
+  }
+  file_ = NULL;
   if (GetArenaNoVirtual() == NULL && merge_ != NULL) {
     delete merge_;
   }
@@ -2258,10 +2309,22 @@ bool XmsgImMsg::MergePartialFromCodedStream(
         break;
       }
 
-      // .XmsgImMsgMerge merge = 7;
+      // .XmsgImMsgFile file = 7;
       case 7: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
             static_cast< ::google::protobuf::uint8>(58u /* 58 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+               input, mutable_file()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // .XmsgImMsgMerge merge = 8;
+      case 8: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(66u /* 66 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
                input, mutable_merge()));
         } else {
@@ -2270,10 +2333,10 @@ bool XmsgImMsg::MergePartialFromCodedStream(
         break;
       }
 
-      // .XmsgImMsgAt atx = 8;
-      case 8: {
+      // .XmsgImMsgAt atx = 9;
+      case 9: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(66u /* 66 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(74u /* 74 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
                input, mutable_atx()));
         } else {
@@ -2348,16 +2411,22 @@ void XmsgImMsg::SerializeWithCachedSizes(
       6, *this->video_, output);
   }
 
-  // .XmsgImMsgMerge merge = 7;
-  if (this->has_merge()) {
+  // .XmsgImMsgFile file = 7;
+  if (this->has_file()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      7, *this->merge_, output);
+      7, *this->file_, output);
   }
 
-  // .XmsgImMsgAt atx = 8;
+  // .XmsgImMsgMerge merge = 8;
+  if (this->has_merge()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      8, *this->merge_, output);
+  }
+
+  // .XmsgImMsgAt atx = 9;
   if (this->has_atx()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      8, *this->atx_, output);
+      9, *this->atx_, output);
   }
 
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
@@ -2420,18 +2489,25 @@ void XmsgImMsg::SerializeWithCachedSizes(
         6, *this->video_, deterministic, target);
   }
 
-  // .XmsgImMsgMerge merge = 7;
+  // .XmsgImMsgFile file = 7;
+  if (this->has_file()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        7, *this->file_, deterministic, target);
+  }
+
+  // .XmsgImMsgMerge merge = 8;
   if (this->has_merge()) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        7, *this->merge_, deterministic, target);
+        8, *this->merge_, deterministic, target);
   }
 
-  // .XmsgImMsgAt atx = 8;
+  // .XmsgImMsgAt atx = 9;
   if (this->has_atx()) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        8, *this->atx_, deterministic, target);
+        9, *this->atx_, deterministic, target);
   }
 
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
@@ -2493,14 +2569,21 @@ size_t XmsgImMsg::ByteSizeLong() const {
         *this->video_);
   }
 
-  // .XmsgImMsgMerge merge = 7;
+  // .XmsgImMsgFile file = 7;
+  if (this->has_file()) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSize(
+        *this->file_);
+  }
+
+  // .XmsgImMsgMerge merge = 8;
   if (this->has_merge()) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::MessageSize(
         *this->merge_);
   }
 
-  // .XmsgImMsgAt atx = 8;
+  // .XmsgImMsgAt atx = 9;
   if (this->has_atx()) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::MessageSize(
@@ -2555,6 +2638,9 @@ void XmsgImMsg::MergeFrom(const XmsgImMsg& from) {
   if (from.has_video()) {
     mutable_video()->::XmsgImMsgVideo::MergeFrom(from.video());
   }
+  if (from.has_file()) {
+    mutable_file()->::XmsgImMsgFile::MergeFrom(from.file());
+  }
   if (from.has_merge()) {
     mutable_merge()->::XmsgImMsgMerge::MergeFrom(from.merge());
   }
@@ -2593,6 +2679,7 @@ void XmsgImMsg::InternalSwap(XmsgImMsg* other) {
   swap(image_, other->image_);
   swap(voice_, other->voice_);
   swap(video_, other->video_);
+  swap(file_, other->file_);
   swap(merge_, other->merge_);
   swap(atx_, other->atx_);
   _internal_metadata_.Swap(&other->_internal_metadata_);
@@ -3887,6 +3974,319 @@ void XmsgImMsgVideo::InternalSwap(XmsgImMsgVideo* other) {
 
 // ===================================================================
 
+void XmsgImMsgFile::InitAsDefaultInstance() {
+}
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int XmsgImMsgFile::kFromFieldNumber;
+const int XmsgImMsgFile::kFidFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+XmsgImMsgFile::XmsgImMsgFile()
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  if (GOOGLE_PREDICT_TRUE(this != internal_default_instance())) {
+    ::protobuf_net_2dx_2dmsg_2dim_2dgroup_2dmsg_2eproto::InitDefaultsXmsgImMsgFile();
+  }
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:XmsgImMsgFile)
+}
+XmsgImMsgFile::XmsgImMsgFile(const XmsgImMsgFile& from)
+  : ::google::protobuf::Message(),
+      _internal_metadata_(NULL),
+      _cached_size_(0) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  from_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.from().size() > 0) {
+    from_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.from_);
+  }
+  fid_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.fid().size() > 0) {
+    fid_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.fid_);
+  }
+  // @@protoc_insertion_point(copy_constructor:XmsgImMsgFile)
+}
+
+void XmsgImMsgFile::SharedCtor() {
+  from_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  fid_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  _cached_size_ = 0;
+}
+
+XmsgImMsgFile::~XmsgImMsgFile() {
+  // @@protoc_insertion_point(destructor:XmsgImMsgFile)
+  SharedDtor();
+}
+
+void XmsgImMsgFile::SharedDtor() {
+  from_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  fid_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+
+void XmsgImMsgFile::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* XmsgImMsgFile::descriptor() {
+  ::protobuf_net_2dx_2dmsg_2dim_2dgroup_2dmsg_2eproto::protobuf_AssignDescriptorsOnce();
+  return ::protobuf_net_2dx_2dmsg_2dim_2dgroup_2dmsg_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
+}
+
+const XmsgImMsgFile& XmsgImMsgFile::default_instance() {
+  ::protobuf_net_2dx_2dmsg_2dim_2dgroup_2dmsg_2eproto::InitDefaultsXmsgImMsgFile();
+  return *internal_default_instance();
+}
+
+XmsgImMsgFile* XmsgImMsgFile::New(::google::protobuf::Arena* arena) const {
+  XmsgImMsgFile* n = new XmsgImMsgFile;
+  if (arena != NULL) {
+    arena->Own(n);
+  }
+  return n;
+}
+
+void XmsgImMsgFile::Clear() {
+// @@protoc_insertion_point(message_clear_start:XmsgImMsgFile)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  from_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  fid_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  _internal_metadata_.Clear();
+}
+
+bool XmsgImMsgFile::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:XmsgImMsgFile)
+  for (;;) {
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // string from = 1;
+      case 1: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_from()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->from().data(), static_cast<int>(this->from().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "XmsgImMsgFile.from"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // string fid = 2;
+      case 2: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(18u /* 18 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_fid()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->fid().data(), static_cast<int>(this->fid().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "XmsgImMsgFile.fid"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, _internal_metadata_.mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:XmsgImMsgFile)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:XmsgImMsgFile)
+  return false;
+#undef DO_
+}
+
+void XmsgImMsgFile::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:XmsgImMsgFile)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string from = 1;
+  if (this->from().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->from().data(), static_cast<int>(this->from().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "XmsgImMsgFile.from");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      1, this->from(), output);
+  }
+
+  // string fid = 2;
+  if (this->fid().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->fid().data(), static_cast<int>(this->fid().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "XmsgImMsgFile.fid");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      2, this->fid(), output);
+  }
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
+  }
+  // @@protoc_insertion_point(serialize_end:XmsgImMsgFile)
+}
+
+::google::protobuf::uint8* XmsgImMsgFile::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
+  (void)deterministic; // Unused
+  // @@protoc_insertion_point(serialize_to_array_start:XmsgImMsgFile)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string from = 1;
+  if (this->from().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->from().data(), static_cast<int>(this->from().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "XmsgImMsgFile.from");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        1, this->from(), target);
+  }
+
+  // string fid = 2;
+  if (this->fid().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->fid().data(), static_cast<int>(this->fid().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "XmsgImMsgFile.fid");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        2, this->fid(), target);
+  }
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:XmsgImMsgFile)
+  return target;
+}
+
+size_t XmsgImMsgFile::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:XmsgImMsgFile)
+  size_t total_size = 0;
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
+  }
+  // string from = 1;
+  if (this->from().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->from());
+  }
+
+  // string fid = 2;
+  if (this->fid().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->fid());
+  }
+
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = cached_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void XmsgImMsgFile::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:XmsgImMsgFile)
+  GOOGLE_DCHECK_NE(&from, this);
+  const XmsgImMsgFile* source =
+      ::google::protobuf::internal::DynamicCastToGenerated<const XmsgImMsgFile>(
+          &from);
+  if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:XmsgImMsgFile)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:XmsgImMsgFile)
+    MergeFrom(*source);
+  }
+}
+
+void XmsgImMsgFile::MergeFrom(const XmsgImMsgFile& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:XmsgImMsgFile)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.from().size() > 0) {
+
+    from_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.from_);
+  }
+  if (from.fid().size() > 0) {
+
+    fid_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.fid_);
+  }
+}
+
+void XmsgImMsgFile::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:XmsgImMsgFile)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void XmsgImMsgFile::CopyFrom(const XmsgImMsgFile& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:XmsgImMsgFile)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool XmsgImMsgFile::IsInitialized() const {
+  return true;
+}
+
+void XmsgImMsgFile::Swap(XmsgImMsgFile* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void XmsgImMsgFile::InternalSwap(XmsgImMsgFile* other) {
+  using std::swap;
+  from_.Swap(&other->from_);
+  fid_.Swap(&other->fid_);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  swap(_cached_size_, other->_cached_size_);
+}
+
+::google::protobuf::Metadata XmsgImMsgFile::GetMetadata() const {
+  protobuf_net_2dx_2dmsg_2dim_2dgroup_2dmsg_2eproto::protobuf_AssignDescriptorsOnce();
+  return ::protobuf_net_2dx_2dmsg_2dim_2dgroup_2dmsg_2eproto::file_level_metadata[kIndexInFileMessages];
+}
+
+
+// ===================================================================
+
 void XmsgImMsgMerge::InitAsDefaultInstance() {
 }
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
@@ -4384,7 +4784,7 @@ void XmsgImGroupMsgNotice_ExtEntry_DoNotUse::MergeFrom(const XmsgImGroupMsgNotic
 }
 ::google::protobuf::Metadata XmsgImGroupMsgNotice_ExtEntry_DoNotUse::GetMetadata() const {
   ::protobuf_net_2dx_2dmsg_2dim_2dgroup_2dmsg_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_net_2dx_2dmsg_2dim_2dgroup_2dmsg_2eproto::file_level_metadata[12];
+  return ::protobuf_net_2dx_2dmsg_2dim_2dgroup_2dmsg_2eproto::file_level_metadata[13];
 }
 void XmsgImGroupMsgNotice_ExtEntry_DoNotUse::MergeFrom(
     const ::google::protobuf::Message& other) {
@@ -7291,7 +7691,7 @@ void XmsgImGroupMsgReadRsp_ExtEntry_DoNotUse::MergeFrom(const XmsgImGroupMsgRead
 }
 ::google::protobuf::Metadata XmsgImGroupMsgReadRsp_ExtEntry_DoNotUse::GetMetadata() const {
   ::protobuf_net_2dx_2dmsg_2dim_2dgroup_2dmsg_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_net_2dx_2dmsg_2dim_2dgroup_2dmsg_2eproto::file_level_metadata[21];
+  return ::protobuf_net_2dx_2dmsg_2dim_2dgroup_2dmsg_2eproto::file_level_metadata[22];
 }
 void XmsgImGroupMsgReadRsp_ExtEntry_DoNotUse::MergeFrom(
     const ::google::protobuf::Message& other) {

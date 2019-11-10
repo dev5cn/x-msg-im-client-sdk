@@ -39,7 +39,7 @@ public class TestXmsgImGroupMsgReadReq
 		req.setMsgId(msgId);
 		Main.netApi.future(req.build(), (ret, desc, rsp) -> Misc.donothing());
 		//
-		String sql = Misc.printf2Str("update tb_usr_group_msg set isRead = 0 where gcgt = '%s' and msgId = %d", cgt, msgId);
+		String sql = Misc.printf2str("update tb_usr_group_msg set isRead = 0 where gcgt = '%s' and msgId = %d", cgt, msgId);
 		Main.dbApi.futureUsrDat(sql, (ret, desc, rst) -> Misc.donothing());
 	}
 }

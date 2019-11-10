@@ -46,7 +46,6 @@ message XmsgImHlrDetachSimpleRsp
 {
     map<string, string> ext = 1; 
 }
-
 message XmsgImHlrOtherClientAttachReq
 {
     XmsgImClientDeviceInfo dev = 1; 
@@ -63,3 +62,4 @@ message XmsgImHlrOtherClientAttachNotice
 	XmsgImClientDeviceInfo dev = 1; 
     string host = 2; 
 }
+

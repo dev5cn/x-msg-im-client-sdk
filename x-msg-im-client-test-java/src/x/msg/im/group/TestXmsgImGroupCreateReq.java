@@ -42,7 +42,7 @@ public class TestXmsgImGroupCreateReq
 		m.putInfo("phone", "15889700000");
 		m.putInfo("email", "dev5@qq.com");
 		req.addMember(m);
-		req.putInfo("name", Misc.printf2Str("测试群%02d", 0));
+		req.putInfo("name", Misc.printf2str("测试群%02d", 0));
 		Main.netApi.future(req.build(), (ret, desc, rsp) -> Misc.donothing());
 	}
 }

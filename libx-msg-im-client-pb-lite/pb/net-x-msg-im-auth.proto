@@ -38,24 +38,6 @@ message XmsgImAuthSimpleRsp
     string cgt = 7; 
     map<string, string> ext = 8; 
 }
-
-message XmsgImClientDeviceInfo
-{
-    string plat = 1; 
-    string did = 2; 
-    string ver = 3; 
-    map<string, string> ext = 4; 
-}
-
-message XmsgImClientServiceAddress
-{
-    string ip = 1; 
-    uint32 port = 2; 
-    uint32 weight = 3; 
-    repeated string proto = 4; 
-    map<string, string> ext = 5; 
-}
-
 message XmsgImAuthRegSimpleReq
 {
     string usr = 1; 
@@ -68,4 +50,19 @@ message XmsgImAuthRegSimpleRsp
 {
 	string cgt = 1;
     map<string, string> ext = 2; 
+}
+message XmsgImClientDeviceInfo
+{
+    string plat = 1; 
+    string did = 2; 
+    string ver = 3; 
+    map<string, string> ext = 4; 
+}
+message XmsgImClientServiceAddress
+{
+    string ip = 1; 
+    uint32 port = 2; 
+    uint32 weight = 3; 
+    repeated string proto = 4; 
+    map<string, string> ext = 5; 
 }

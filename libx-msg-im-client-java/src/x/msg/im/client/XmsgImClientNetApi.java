@@ -93,7 +93,7 @@ public class XmsgImClientNetApi
 
 	public String toString()
 	{
-		return Misc.printf2Str("uri: %s, instance-id: %d", this.uri, this.netApiId);
+		return Misc.printf2str("uri: %s, instance-id: %d", this.uri, this.netApiId);
 	}
 
 	public static class XmsgImClientNetTrans
@@ -135,7 +135,7 @@ public class XmsgImClientNetApi
 		public final void end(XmsgErrCode ret, String print, Object... args)
 		{
 			this.ret = ret;
-			this.desc = Misc.printf2Str(print, args);
+			this.desc = Misc.printf2str(print, args);
 			this.end();
 		}
 

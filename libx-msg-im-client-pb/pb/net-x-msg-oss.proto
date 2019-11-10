@@ -1,0 +1,83 @@
+/*
+  Copyright 2019 www.dev5.cn, Inc. dev5@qq.com
+ 
+  This file is part of X-MSG-IM.
+ 
+  X-MSG-IM is free software: you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+
+  X-MSG-IM is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+ 
+  You should have received a copy of the GNU Affero General Public License
+  along with X-MSG-IM.  If not, see <https://www.gnu.org/licenses/>.
+ */
+syntax = "proto3";
+
+option java_package = "x.msg.pb";
+option java_outer_classname = " XmsgOssPb";
+message  XmsgOssUploadSimpleReq
+{
+    string objName = 1; 
+    uint64 objSize = 2; 
+    map<string, string> ext = 3; 
+}
+
+message  XmsgOssUploadSimpleRsp
+{
+    string oid = 1; 
+    string hashVal = 2; 
+    map<string, string> ext = 3; 
+}
+message  XmsgOssDownloadSimpleReq
+{
+    string oid = 1; 
+    string cgt = 2; 
+    uint64 offset = 3; 
+    uint64 len = 4; 
+    map<string, string> ext = 5; 
+}
+
+message  XmsgOssDownloadSimpleRsp
+{
+    string objName = 1; 
+    uint64 objSize = 2; 
+    string hashVal = 3; 
+    uint64 gts = 4; 
+    map<string, string> ext = 5; 
+}
+message  XmsgOssUsrObjInfoQueryReq
+{
+    uint64 sts = 1; 
+    uint64 ets = 2; 
+    uint32 page = 3; 
+    uint32 pageSize = 4; 
+}
+
+message  XmsgOssUsrObjInfoQueryRsp
+{
+    repeated  XmsgOssUsrObjInfo objInfo = 1; 
+}
+
+message  XmsgOssUsrObjInfo
+{
+    string oid = 1; 
+    string objName = 2; 
+    uint64 objSize = 3; 
+    string hashVal = 4; 
+    uint64 gts = 5; 
+}
+message XmsgClientTokenInfo
+{
+    string cgt = 1;
+    string token = 2;
+    string alg = 3;
+    string slat = 4;
+    string plat = 5;
+    string did = 6;
+    string sign = 7;  
+}

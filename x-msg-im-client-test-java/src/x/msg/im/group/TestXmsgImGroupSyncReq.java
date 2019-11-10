@@ -107,7 +107,7 @@ public class TestXmsgImGroupSyncReq
 				}
 				if ("delete".equals(evn.getOper())) /* 被群删除. */
 				{
-					String sql = Misc.printf2Str("update tb_usr_group set enable = 1, ver4usr = %d, uts4usr = %d where cgt = '%s'", evn.getCgt(), evn.getVer4Usr(), evn.getUts4Usr());
+					String sql = Misc.printf2str("update tb_usr_group set enable = 1, ver4usr = %d, uts4usr = %d where cgt = '%s'", evn.getCgt(), evn.getVer4Usr(), evn.getUts4Usr());
 					Main.dbApi.futureUsrDat(sql, (retx, descx, rst) ->
 					{
 						if (counter.decrementAndGet() == 0) /* 全部入库完毕. */

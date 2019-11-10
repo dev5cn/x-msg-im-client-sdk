@@ -44,7 +44,7 @@ public class TestXmsgImGroupSyncGroupReq
 	/** 群组内事件同步. */
 	public static final void test(String gcgt)
 	{
-		String sql = Misc.printf2Str("select ver4group from tb_usr_group where cgt = '%s'", gcgt);
+		String sql = Misc.printf2str("select ver4group from tb_usr_group where cgt = '%s'", gcgt);
 		Main.dbApi.futureUsrDat(sql, (ret, desc, rst) -> /* 查找此群组在本地的版本号. */
 		{
 			if (ret != XmsgErrCode.SUCCESS)

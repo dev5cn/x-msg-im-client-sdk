@@ -97,7 +97,7 @@ bool XscProtoTransaction::decodeBegin(xsc_tlv_node* root)
 		uchar partSeq;
 		if (XscProtoDec::getChar(root, XSC_TAG_SEQ, &partSeq) != 0)
 		{
-			LOG_DEBUG("missing required field: XSC_TAG_PART_SEQ")
+			LOG_DEBUG("missing required field: XSC_TAG_SEQ")
 			return false;
 		}
 		this->haveNextPart = true;

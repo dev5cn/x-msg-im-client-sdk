@@ -69,7 +69,7 @@ public class TestXmsgFileUploadSimpleReq
 			fb.setFileName("1.png");
 			fb.setFileSize(by.length);
 			//
-			HttpPost post = new HttpPost(Misc.printf2Str("http://%s/", Main.fileService));
+			HttpPost post = new HttpPost(Misc.printf2str("http://%s/", Main.fileService));
 			post.addHeader("x-msg-client-token", Crypto.base64enc(b.build().toByteArray()));
 			post.addHeader("x-msg-name", XmsgFileUploadSimpleReq.class.getSimpleName());
 			post.addHeader("x-msg-dat", Crypto.base64enc(fb.build().toByteArray()));

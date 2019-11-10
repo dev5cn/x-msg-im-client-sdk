@@ -24,6 +24,11 @@ class XmsgImHlrUsrDatDefaultTypeInternal {
   ::google::protobuf::internal::ExplicitlyConstructed<XmsgImHlrUsrDat>
       _instance;
 } _XmsgImHlrUsrDat_default_instance_;
+class XmsgImHlrUsrDatPri_InfoEntry_DoNotUseDefaultTypeInternal {
+ public:
+  ::google::protobuf::internal::ExplicitlyConstructed<XmsgImHlrUsrDatPri_InfoEntry_DoNotUse>
+      _instance;
+} _XmsgImHlrUsrDatPri_InfoEntry_DoNotUse_default_instance_;
 class XmsgImHlrUsrDatPriDefaultTypeInternal {
  public:
   ::google::protobuf::internal::ExplicitlyConstructed<XmsgImHlrUsrDatPri>
@@ -103,6 +108,26 @@ void InitDefaultsXmsgImHlrUsrDat() {
   ::google::protobuf::GoogleOnceInit(&once, &InitDefaultsXmsgImHlrUsrDatImpl);
 }
 
+void InitDefaultsXmsgImHlrUsrDatPri_InfoEntry_DoNotUseImpl() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+#ifdef GOOGLE_PROTOBUF_ENFORCE_UNIQUENESS
+  ::google::protobuf::internal::InitProtobufDefaultsForceUnique();
+#else
+  ::google::protobuf::internal::InitProtobufDefaults();
+#endif  // GOOGLE_PROTOBUF_ENFORCE_UNIQUENESS
+  {
+    void* ptr = &::_XmsgImHlrUsrDatPri_InfoEntry_DoNotUse_default_instance_;
+    new (ptr) ::XmsgImHlrUsrDatPri_InfoEntry_DoNotUse();
+  }
+  ::XmsgImHlrUsrDatPri_InfoEntry_DoNotUse::InitAsDefaultInstance();
+}
+
+void InitDefaultsXmsgImHlrUsrDatPri_InfoEntry_DoNotUse() {
+  static GOOGLE_PROTOBUF_DECLARE_ONCE(once);
+  ::google::protobuf::GoogleOnceInit(&once, &InitDefaultsXmsgImHlrUsrDatPri_InfoEntry_DoNotUseImpl);
+}
+
 void InitDefaultsXmsgImHlrUsrDatPriImpl() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
@@ -111,6 +136,7 @@ void InitDefaultsXmsgImHlrUsrDatPriImpl() {
 #else
   ::google::protobuf::internal::InitProtobufDefaults();
 #endif  // GOOGLE_PROTOBUF_ENFORCE_UNIQUENESS
+  protobuf_net_2dx_2dmsg_2dim_2dhlr_2dusr_2ddat_2eproto::InitDefaultsXmsgImHlrUsrDatPri_InfoEntry_DoNotUse();
   {
     void* ptr = &::_XmsgImHlrUsrDatPri_default_instance_;
     new (ptr) ::XmsgImHlrUsrDatPri();
@@ -334,7 +360,7 @@ void InitDefaultsXmsgImHlrUsrInfoUpdateRsp() {
   ::google::protobuf::GoogleOnceInit(&once, &InitDefaultsXmsgImHlrUsrInfoUpdateRspImpl);
 }
 
-::google::protobuf::Metadata file_level_metadata[12];
+::google::protobuf::Metadata file_level_metadata[13];
 
 const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
   ~0u,  // no _has_bits_
@@ -348,13 +374,22 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::XmsgImHlrUsrDat, pub_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::XmsgImHlrUsrDat, gts_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::XmsgImHlrUsrDat, uts_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::XmsgImHlrUsrDatPri_InfoEntry_DoNotUse, _has_bits_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::XmsgImHlrUsrDatPri_InfoEntry_DoNotUse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::XmsgImHlrUsrDatPri_InfoEntry_DoNotUse, key_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::XmsgImHlrUsrDatPri_InfoEntry_DoNotUse, value_),
+  0,
+  1,
   ~0u,  // no _has_bits_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::XmsgImHlrUsrDatPri, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::XmsgImHlrUsrDatPri, enable_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::XmsgImHlrUsrDatPri, ext_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::XmsgImHlrUsrDatPri, info_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::XmsgImHlrUsrDatPub_InfoEntry_DoNotUse, _has_bits_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::XmsgImHlrUsrDatPub_InfoEntry_DoNotUse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -433,21 +468,23 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
 };
 static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::XmsgImHlrUsrDat)},
-  { 11, -1, sizeof(::XmsgImHlrUsrDatPri)},
-  { 18, 25, sizeof(::XmsgImHlrUsrDatPub_InfoEntry_DoNotUse)},
-  { 27, -1, sizeof(::XmsgImHlrUsrDatPub)},
-  { 33, 40, sizeof(::XmsgImHlrUsrInfoQueryReq_ExtEntry_DoNotUse)},
-  { 42, -1, sizeof(::XmsgImHlrUsrInfoQueryReq)},
-  { 48, 55, sizeof(::XmsgImHlrUsrInfoQueryRsp_InfoEntry_DoNotUse)},
-  { 57, -1, sizeof(::XmsgImHlrUsrInfoQueryRsp)},
-  { 63, 70, sizeof(::XmsgImHlrUsrInfoUpdateReq_InfoEntry_DoNotUse)},
-  { 72, -1, sizeof(::XmsgImHlrUsrInfoUpdateReq)},
-  { 78, 85, sizeof(::XmsgImHlrUsrInfoUpdateRsp_ExtEntry_DoNotUse)},
-  { 87, -1, sizeof(::XmsgImHlrUsrInfoUpdateRsp)},
+  { 11, 18, sizeof(::XmsgImHlrUsrDatPri_InfoEntry_DoNotUse)},
+  { 20, -1, sizeof(::XmsgImHlrUsrDatPri)},
+  { 27, 34, sizeof(::XmsgImHlrUsrDatPub_InfoEntry_DoNotUse)},
+  { 36, -1, sizeof(::XmsgImHlrUsrDatPub)},
+  { 42, 49, sizeof(::XmsgImHlrUsrInfoQueryReq_ExtEntry_DoNotUse)},
+  { 51, -1, sizeof(::XmsgImHlrUsrInfoQueryReq)},
+  { 57, 64, sizeof(::XmsgImHlrUsrInfoQueryRsp_InfoEntry_DoNotUse)},
+  { 66, -1, sizeof(::XmsgImHlrUsrInfoQueryRsp)},
+  { 72, 79, sizeof(::XmsgImHlrUsrInfoUpdateReq_InfoEntry_DoNotUse)},
+  { 81, -1, sizeof(::XmsgImHlrUsrInfoUpdateReq)},
+  { 87, 94, sizeof(::XmsgImHlrUsrInfoUpdateRsp_ExtEntry_DoNotUse)},
+  { 96, -1, sizeof(::XmsgImHlrUsrInfoUpdateRsp)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
   reinterpret_cast<const ::google::protobuf::Message*>(&::_XmsgImHlrUsrDat_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&::_XmsgImHlrUsrDatPri_InfoEntry_DoNotUse_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::_XmsgImHlrUsrDatPri_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::_XmsgImHlrUsrDatPub_InfoEntry_DoNotUse_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::_XmsgImHlrUsrDatPub_default_instance_),
@@ -477,7 +514,7 @@ void protobuf_AssignDescriptorsOnce() {
 void protobuf_RegisterTypes(const ::std::string&) GOOGLE_PROTOBUF_ATTRIBUTE_COLD;
 void protobuf_RegisterTypes(const ::std::string&) {
   protobuf_AssignDescriptorsOnce();
-  ::google::protobuf::internal::RegisterAllTypes(file_level_metadata, 12);
+  ::google::protobuf::internal::RegisterAllTypes(file_level_metadata, 13);
 }
 
 void AddDescriptorsImpl() {
@@ -487,27 +524,29 @@ void AddDescriptorsImpl() {
       "gImHlrUsrDat\022\013\n\003uid\030\001 \001(\t\022\013\n\003ver\030\002 \001(\004\022 "
       "\n\003pri\030\003 \001(\0132\023.XmsgImHlrUsrDatPri\022 \n\003pub\030"
       "\004 \001(\0132\023.XmsgImHlrUsrDatPub\022\013\n\003gts\030\005 \001(\004\022"
-      "\013\n\003uts\030\006 \001(\004\"1\n\022XmsgImHlrUsrDatPri\022\016\n\006en"
-      "able\030\001 \001(\010\022\013\n\003ext\030\005 \001(\014\"n\n\022XmsgImHlrUsrD"
-      "atPub\022+\n\004info\030\001 \003(\0132\035.XmsgImHlrUsrDatPub"
-      ".InfoEntry\032+\n\tInfoEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005"
-      "value\030\002 \001(\t:\0028\001\"w\n\030XmsgImHlrUsrInfoQuery"
-      "Req\022/\n\003ext\030\001 \003(\0132\".XmsgImHlrUsrInfoQuery"
-      "Req.ExtEntry\032*\n\010ExtEntry\022\013\n\003key\030\001 \001(\t\022\r\n"
-      "\005value\030\002 \001(\t:\0028\001\"z\n\030XmsgImHlrUsrInfoQuer"
-      "yRsp\0221\n\004info\030\001 \003(\0132#.XmsgImHlrUsrInfoQue"
-      "ryRsp.InfoEntry\032+\n\tInfoEntry\022\013\n\003key\030\001 \001("
-      "\t\022\r\n\005value\030\002 \001(\t:\0028\001\"|\n\031XmsgImHlrUsrInfo"
-      "UpdateReq\0222\n\004info\030\001 \003(\0132$.XmsgImHlrUsrIn"
-      "foUpdateReq.InfoEntry\032+\n\tInfoEntry\022\013\n\003ke"
-      "y\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"y\n\031XmsgImHlrU"
-      "srInfoUpdateRsp\0220\n\003ext\030\001 \003(\0132#.XmsgImHlr"
-      "UsrInfoUpdateRsp.ExtEntry\032*\n\010ExtEntry\022\013\n"
-      "\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001B\035\n\010x.msg.p"
-      "bB\021XmsgImHlrUsrDatPbb\006proto3"
+      "\013\n\003uts\030\006 \001(\004\"~\n\022XmsgImHlrUsrDatPri\022\016\n\006en"
+      "able\030\001 \001(\010\022+\n\004info\030\002 \003(\0132\035.XmsgImHlrUsrD"
+      "atPri.InfoEntry\032+\n\tInfoEntry\022\013\n\003key\030\001 \001("
+      "\t\022\r\n\005value\030\002 \001(\t:\0028\001\"n\n\022XmsgImHlrUsrDatP"
+      "ub\022+\n\004info\030\001 \003(\0132\035.XmsgImHlrUsrDatPub.In"
+      "foEntry\032+\n\tInfoEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005val"
+      "ue\030\002 \001(\t:\0028\001\"w\n\030XmsgImHlrUsrInfoQueryReq"
+      "\022/\n\003ext\030\001 \003(\0132\".XmsgImHlrUsrInfoQueryReq"
+      ".ExtEntry\032*\n\010ExtEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005va"
+      "lue\030\002 \001(\t:\0028\001\"z\n\030XmsgImHlrUsrInfoQueryRs"
+      "p\0221\n\004info\030\001 \003(\0132#.XmsgImHlrUsrInfoQueryR"
+      "sp.InfoEntry\032+\n\tInfoEntry\022\013\n\003key\030\001 \001(\t\022\r"
+      "\n\005value\030\002 \001(\t:\0028\001\"|\n\031XmsgImHlrUsrInfoUpd"
+      "ateReq\0222\n\004info\030\001 \003(\0132$.XmsgImHlrUsrInfoU"
+      "pdateReq.InfoEntry\032+\n\tInfoEntry\022\013\n\003key\030\001"
+      " \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"y\n\031XmsgImHlrUsrI"
+      "nfoUpdateRsp\0220\n\003ext\030\001 \003(\0132#.XmsgImHlrUsr"
+      "InfoUpdateRsp.ExtEntry\032*\n\010ExtEntry\022\013\n\003ke"
+      "y\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001B\035\n\010x.msg.pbB\021"
+      "XmsgImHlrUsrDatPbb\006proto3"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 868);
+      descriptor, 945);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "net-x-msg-im-hlr-usr-dat.proto", &protobuf_RegisterTypes);
 }
@@ -997,11 +1036,28 @@ void XmsgImHlrUsrDat::InternalSwap(XmsgImHlrUsrDat* other) {
 
 // ===================================================================
 
+XmsgImHlrUsrDatPri_InfoEntry_DoNotUse::XmsgImHlrUsrDatPri_InfoEntry_DoNotUse() {}
+XmsgImHlrUsrDatPri_InfoEntry_DoNotUse::XmsgImHlrUsrDatPri_InfoEntry_DoNotUse(::google::protobuf::Arena* arena) : SuperType(arena) {}
+void XmsgImHlrUsrDatPri_InfoEntry_DoNotUse::MergeFrom(const XmsgImHlrUsrDatPri_InfoEntry_DoNotUse& other) {
+  MergeFromInternal(other);
+}
+::google::protobuf::Metadata XmsgImHlrUsrDatPri_InfoEntry_DoNotUse::GetMetadata() const {
+  ::protobuf_net_2dx_2dmsg_2dim_2dhlr_2dusr_2ddat_2eproto::protobuf_AssignDescriptorsOnce();
+  return ::protobuf_net_2dx_2dmsg_2dim_2dhlr_2dusr_2ddat_2eproto::file_level_metadata[1];
+}
+void XmsgImHlrUsrDatPri_InfoEntry_DoNotUse::MergeFrom(
+    const ::google::protobuf::Message& other) {
+  ::google::protobuf::Message::MergeFrom(other);
+}
+
+
+// ===================================================================
+
 void XmsgImHlrUsrDatPri::InitAsDefaultInstance() {
 }
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int XmsgImHlrUsrDatPri::kEnableFieldNumber;
-const int XmsgImHlrUsrDatPri::kExtFieldNumber;
+const int XmsgImHlrUsrDatPri::kInfoFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 XmsgImHlrUsrDatPri::XmsgImHlrUsrDatPri()
@@ -1017,16 +1073,12 @@ XmsgImHlrUsrDatPri::XmsgImHlrUsrDatPri(const XmsgImHlrUsrDatPri& from)
       _internal_metadata_(NULL),
       _cached_size_(0) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ext_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.ext().size() > 0) {
-    ext_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.ext_);
-  }
+  info_.MergeFrom(from.info_);
   enable_ = from.enable_;
   // @@protoc_insertion_point(copy_constructor:XmsgImHlrUsrDatPri)
 }
 
 void XmsgImHlrUsrDatPri::SharedCtor() {
-  ext_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   enable_ = false;
   _cached_size_ = 0;
 }
@@ -1037,7 +1089,6 @@ XmsgImHlrUsrDatPri::~XmsgImHlrUsrDatPri() {
 }
 
 void XmsgImHlrUsrDatPri::SharedDtor() {
-  ext_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 
 void XmsgImHlrUsrDatPri::SetCachedSize(int size) const {
@@ -1069,7 +1120,7 @@ void XmsgImHlrUsrDatPri::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ext_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  info_.Clear();
   enable_ = false;
   _internal_metadata_.Clear();
 }
@@ -1098,12 +1149,27 @@ bool XmsgImHlrUsrDatPri::MergePartialFromCodedStream(
         break;
       }
 
-      // bytes ext = 5;
-      case 5: {
+      // map<string, string> info = 2;
+      case 2: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(42u /* 42 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadBytes(
-                input, this->mutable_ext()));
+            static_cast< ::google::protobuf::uint8>(18u /* 18 & 0xFF */)) {
+          XmsgImHlrUsrDatPri_InfoEntry_DoNotUse::Parser< ::google::protobuf::internal::MapField<
+              XmsgImHlrUsrDatPri_InfoEntry_DoNotUse,
+              ::std::string, ::std::string,
+              ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+              ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+              0 >,
+            ::google::protobuf::Map< ::std::string, ::std::string > > parser(&info_);
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+              input, &parser));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            parser.key().data(), static_cast<int>(parser.key().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "XmsgImHlrUsrDatPri.InfoEntry.key"));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            parser.value().data(), static_cast<int>(parser.value().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "XmsgImHlrUsrDatPri.InfoEntry.value"));
         } else {
           goto handle_unusual;
         }
@@ -1141,10 +1207,57 @@ void XmsgImHlrUsrDatPri::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteBool(1, this->enable(), output);
   }
 
-  // bytes ext = 5;
-  if (this->ext().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteBytesMaybeAliased(
-      5, this->ext(), output);
+  // map<string, string> info = 2;
+  if (!this->info().empty()) {
+    typedef ::google::protobuf::Map< ::std::string, ::std::string >::const_pointer
+        ConstPtr;
+    typedef ConstPtr SortItem;
+    typedef ::google::protobuf::internal::CompareByDerefFirst<SortItem> Less;
+    struct Utf8Check {
+      static void Check(ConstPtr p) {
+        ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+          p->first.data(), static_cast<int>(p->first.length()),
+          ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+          "XmsgImHlrUsrDatPri.InfoEntry.key");
+        ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+          p->second.data(), static_cast<int>(p->second.length()),
+          ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+          "XmsgImHlrUsrDatPri.InfoEntry.value");
+      }
+    };
+
+    if (output->IsSerializationDeterministic() &&
+        this->info().size() > 1) {
+      ::google::protobuf::scoped_array<SortItem> items(
+          new SortItem[this->info().size()]);
+      typedef ::google::protobuf::Map< ::std::string, ::std::string >::size_type size_type;
+      size_type n = 0;
+      for (::google::protobuf::Map< ::std::string, ::std::string >::const_iterator
+          it = this->info().begin();
+          it != this->info().end(); ++it, ++n) {
+        items[static_cast<ptrdiff_t>(n)] = SortItem(&*it);
+      }
+      ::std::sort(&items[0], &items[static_cast<ptrdiff_t>(n)], Less());
+      ::google::protobuf::scoped_ptr<XmsgImHlrUsrDatPri_InfoEntry_DoNotUse> entry;
+      for (size_type i = 0; i < n; i++) {
+        entry.reset(info_.NewEntryWrapper(
+            items[static_cast<ptrdiff_t>(i)]->first, items[static_cast<ptrdiff_t>(i)]->second));
+        ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+            2, *entry, output);
+        Utf8Check::Check(items[static_cast<ptrdiff_t>(i)]);
+      }
+    } else {
+      ::google::protobuf::scoped_ptr<XmsgImHlrUsrDatPri_InfoEntry_DoNotUse> entry;
+      for (::google::protobuf::Map< ::std::string, ::std::string >::const_iterator
+          it = this->info().begin();
+          it != this->info().end(); ++it) {
+        entry.reset(info_.NewEntryWrapper(
+            it->first, it->second));
+        ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+            2, *entry, output);
+        Utf8Check::Check(&*it);
+      }
+    }
   }
 
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
@@ -1166,11 +1279,61 @@ void XmsgImHlrUsrDatPri::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(1, this->enable(), target);
   }
 
-  // bytes ext = 5;
-  if (this->ext().size() > 0) {
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteBytesToArray(
-        5, this->ext(), target);
+  // map<string, string> info = 2;
+  if (!this->info().empty()) {
+    typedef ::google::protobuf::Map< ::std::string, ::std::string >::const_pointer
+        ConstPtr;
+    typedef ConstPtr SortItem;
+    typedef ::google::protobuf::internal::CompareByDerefFirst<SortItem> Less;
+    struct Utf8Check {
+      static void Check(ConstPtr p) {
+        ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+          p->first.data(), static_cast<int>(p->first.length()),
+          ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+          "XmsgImHlrUsrDatPri.InfoEntry.key");
+        ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+          p->second.data(), static_cast<int>(p->second.length()),
+          ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+          "XmsgImHlrUsrDatPri.InfoEntry.value");
+      }
+    };
+
+    if (deterministic &&
+        this->info().size() > 1) {
+      ::google::protobuf::scoped_array<SortItem> items(
+          new SortItem[this->info().size()]);
+      typedef ::google::protobuf::Map< ::std::string, ::std::string >::size_type size_type;
+      size_type n = 0;
+      for (::google::protobuf::Map< ::std::string, ::std::string >::const_iterator
+          it = this->info().begin();
+          it != this->info().end(); ++it, ++n) {
+        items[static_cast<ptrdiff_t>(n)] = SortItem(&*it);
+      }
+      ::std::sort(&items[0], &items[static_cast<ptrdiff_t>(n)], Less());
+      ::google::protobuf::scoped_ptr<XmsgImHlrUsrDatPri_InfoEntry_DoNotUse> entry;
+      for (size_type i = 0; i < n; i++) {
+        entry.reset(info_.NewEntryWrapper(
+            items[static_cast<ptrdiff_t>(i)]->first, items[static_cast<ptrdiff_t>(i)]->second));
+        target = ::google::protobuf::internal::WireFormatLite::
+                   InternalWriteMessageNoVirtualToArray(
+                       2, *entry, deterministic, target);
+;
+        Utf8Check::Check(items[static_cast<ptrdiff_t>(i)]);
+      }
+    } else {
+      ::google::protobuf::scoped_ptr<XmsgImHlrUsrDatPri_InfoEntry_DoNotUse> entry;
+      for (::google::protobuf::Map< ::std::string, ::std::string >::const_iterator
+          it = this->info().begin();
+          it != this->info().end(); ++it) {
+        entry.reset(info_.NewEntryWrapper(
+            it->first, it->second));
+        target = ::google::protobuf::internal::WireFormatLite::
+                   InternalWriteMessageNoVirtualToArray(
+                       2, *entry, deterministic, target);
+;
+        Utf8Check::Check(&*it);
+      }
+    }
   }
 
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
@@ -1190,11 +1353,18 @@ size_t XmsgImHlrUsrDatPri::ByteSizeLong() const {
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
   }
-  // bytes ext = 5;
-  if (this->ext().size() > 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::BytesSize(
-        this->ext());
+  // map<string, string> info = 2;
+  total_size += 1 *
+      ::google::protobuf::internal::FromIntSize(this->info_size());
+  {
+    ::google::protobuf::scoped_ptr<XmsgImHlrUsrDatPri_InfoEntry_DoNotUse> entry;
+    for (::google::protobuf::Map< ::std::string, ::std::string >::const_iterator
+        it = this->info().begin();
+        it != this->info().end(); ++it) {
+      entry.reset(info_.NewEntryWrapper(it->first, it->second));
+      total_size += ::google::protobuf::internal::WireFormatLite::
+          MessageSizeNoVirtual(*entry);
+    }
   }
 
   // bool enable = 1;
@@ -1231,10 +1401,7 @@ void XmsgImHlrUsrDatPri::MergeFrom(const XmsgImHlrUsrDatPri& from) {
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.ext().size() > 0) {
-
-    ext_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.ext_);
-  }
+  info_.MergeFrom(from.info_);
   if (from.enable() != 0) {
     set_enable(from.enable());
   }
@@ -1264,7 +1431,7 @@ void XmsgImHlrUsrDatPri::Swap(XmsgImHlrUsrDatPri* other) {
 }
 void XmsgImHlrUsrDatPri::InternalSwap(XmsgImHlrUsrDatPri* other) {
   using std::swap;
-  ext_.Swap(&other->ext_);
+  info_.Swap(&other->info_);
   swap(enable_, other->enable_);
   _internal_metadata_.Swap(&other->_internal_metadata_);
   swap(_cached_size_, other->_cached_size_);
@@ -1285,7 +1452,7 @@ void XmsgImHlrUsrDatPub_InfoEntry_DoNotUse::MergeFrom(const XmsgImHlrUsrDatPub_I
 }
 ::google::protobuf::Metadata XmsgImHlrUsrDatPub_InfoEntry_DoNotUse::GetMetadata() const {
   ::protobuf_net_2dx_2dmsg_2dim_2dhlr_2dusr_2ddat_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_net_2dx_2dmsg_2dim_2dhlr_2dusr_2ddat_2eproto::file_level_metadata[2];
+  return ::protobuf_net_2dx_2dmsg_2dim_2dhlr_2dusr_2ddat_2eproto::file_level_metadata[3];
 }
 void XmsgImHlrUsrDatPub_InfoEntry_DoNotUse::MergeFrom(
     const ::google::protobuf::Message& other) {
@@ -1657,7 +1824,7 @@ void XmsgImHlrUsrInfoQueryReq_ExtEntry_DoNotUse::MergeFrom(const XmsgImHlrUsrInf
 }
 ::google::protobuf::Metadata XmsgImHlrUsrInfoQueryReq_ExtEntry_DoNotUse::GetMetadata() const {
   ::protobuf_net_2dx_2dmsg_2dim_2dhlr_2dusr_2ddat_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_net_2dx_2dmsg_2dim_2dhlr_2dusr_2ddat_2eproto::file_level_metadata[4];
+  return ::protobuf_net_2dx_2dmsg_2dim_2dhlr_2dusr_2ddat_2eproto::file_level_metadata[5];
 }
 void XmsgImHlrUsrInfoQueryReq_ExtEntry_DoNotUse::MergeFrom(
     const ::google::protobuf::Message& other) {
@@ -2029,7 +2196,7 @@ void XmsgImHlrUsrInfoQueryRsp_InfoEntry_DoNotUse::MergeFrom(const XmsgImHlrUsrIn
 }
 ::google::protobuf::Metadata XmsgImHlrUsrInfoQueryRsp_InfoEntry_DoNotUse::GetMetadata() const {
   ::protobuf_net_2dx_2dmsg_2dim_2dhlr_2dusr_2ddat_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_net_2dx_2dmsg_2dim_2dhlr_2dusr_2ddat_2eproto::file_level_metadata[6];
+  return ::protobuf_net_2dx_2dmsg_2dim_2dhlr_2dusr_2ddat_2eproto::file_level_metadata[7];
 }
 void XmsgImHlrUsrInfoQueryRsp_InfoEntry_DoNotUse::MergeFrom(
     const ::google::protobuf::Message& other) {
@@ -2401,7 +2568,7 @@ void XmsgImHlrUsrInfoUpdateReq_InfoEntry_DoNotUse::MergeFrom(const XmsgImHlrUsrI
 }
 ::google::protobuf::Metadata XmsgImHlrUsrInfoUpdateReq_InfoEntry_DoNotUse::GetMetadata() const {
   ::protobuf_net_2dx_2dmsg_2dim_2dhlr_2dusr_2ddat_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_net_2dx_2dmsg_2dim_2dhlr_2dusr_2ddat_2eproto::file_level_metadata[8];
+  return ::protobuf_net_2dx_2dmsg_2dim_2dhlr_2dusr_2ddat_2eproto::file_level_metadata[9];
 }
 void XmsgImHlrUsrInfoUpdateReq_InfoEntry_DoNotUse::MergeFrom(
     const ::google::protobuf::Message& other) {
@@ -2773,7 +2940,7 @@ void XmsgImHlrUsrInfoUpdateRsp_ExtEntry_DoNotUse::MergeFrom(const XmsgImHlrUsrIn
 }
 ::google::protobuf::Metadata XmsgImHlrUsrInfoUpdateRsp_ExtEntry_DoNotUse::GetMetadata() const {
   ::protobuf_net_2dx_2dmsg_2dim_2dhlr_2dusr_2ddat_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_net_2dx_2dmsg_2dim_2dhlr_2dusr_2ddat_2eproto::file_level_metadata[10];
+  return ::protobuf_net_2dx_2dmsg_2dim_2dhlr_2dusr_2ddat_2eproto::file_level_metadata[11];
 }
 void XmsgImHlrUsrInfoUpdateRsp_ExtEntry_DoNotUse::MergeFrom(
     const ::google::protobuf::Message& other) {

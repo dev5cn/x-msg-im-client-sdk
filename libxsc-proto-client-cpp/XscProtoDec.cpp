@@ -335,7 +335,7 @@ void XscProtoDec::printf(uchar* dat, uint size)
 		XscProtoDec::free(&root);
 		return;
 	}
-	LOG_TRACE("can not decode this XSC PDU.")
+	LOG_TRACE("can not decode this xsc pdu")
 }
 
 void XscProtoDec::printPdu(xsc_tlv_pdu* xtp)
@@ -352,7 +352,7 @@ string XscProtoDec::print2str(uchar* dat, uint size)
 		XscProtoDec::free(&root);
 		return str;
 	}
-	LOG_TRACE("can not decode this XSC PDU.")
+	LOG_TRACE("can not decode this xsc pdu")
 	return "";
 }
 

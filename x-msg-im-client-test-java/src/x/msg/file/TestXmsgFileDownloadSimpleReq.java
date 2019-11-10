@@ -68,7 +68,7 @@ public class TestXmsgFileDownloadSimpleReq
 			req.setOffset(0); /* 偏移量, 这是半开区间, 类似于: new String(by, offset, len); */
 			req.setLen(0x10); /* 要下载的长度, 通过offset和len组合, 可以实现多线程下载. */
 			//
-			HttpGet get = new HttpGet(Misc.printf2Str("http://%s/", Main.fileService));
+			HttpGet get = new HttpGet(Misc.printf2str("http://%s/", Main.fileService));
 			get.addHeader("x-msg-client-token", Crypto.base64enc(b.build().toByteArray())); /* 身份信息. */
 			get.addHeader("x-msg-name", XmsgFileDownloadSimpleReq.class.getSimpleName()); /* 下载请求. */
 			get.addHeader("x-msg-dat", Crypto.base64enc(req.build().toByteArray()));

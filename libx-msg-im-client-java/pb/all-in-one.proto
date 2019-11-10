@@ -43,8 +43,9 @@ message XmsgImMsg
     XmsgImMsgImage image = 4; 
     XmsgImMsgVoice voice = 5; 
     XmsgImMsgVideo video = 6; 
-    XmsgImMsgMerge merge = 7; 
-    XmsgImMsgAt atx = 8; 
+    XmsgImMsgFile file = 7; 
+    XmsgImMsgMerge merge = 8; 
+    XmsgImMsgAt atx = 9; 
 }
 
 message XmsgImMsgText
@@ -70,6 +71,12 @@ message XmsgImMsgVoice
 message XmsgImMsgVideo
 {
     string uri = 1; 
+}
+
+message XmsgImMsgFile
+{
+    string from = 1; 
+    string fid = 2; 
 }
 
 message XmsgImMsgMerge
@@ -148,7 +155,6 @@ message XmsgImGroupMsgReadNotice
     string cgt = 1; 
     uint64 msgId = 2; 
 }
-
 message XmsgImHlrGroupMsgReq
 {
     string cgt = 1; 
@@ -215,16 +221,6 @@ message XmsgChannelStatusUsrStatus
 message XmsgChannelStatusGroupStatus
 {
     string status = 1; 
-}
-message XmsgClientTokenInfo
-{
-	string cgt = 1;
-    string token = 2;
-    string alg = 3;
-    string slat = 4;
-    string plat = 5;
-    string did = 6;
-    string sign = 7;  
 }
 message XmsgImGroupMemberAddReq
 {
@@ -335,6 +331,67 @@ enum XmsgImSdkEventType {
     X_MSG_IM_SDK_EVENT_TYPE_DB_RSP = 0x03; 
     X_MSG_IM_SDK_EVENT_TYPE_CXX_LOG = 0x04; 
 }
+message  XmsgOssUploadSimpleReq
+{
+    string objName = 1; 
+    uint64 objSize = 2; 
+    map<string, string> ext = 3; 
+}
+
+message  XmsgOssUploadSimpleRsp
+{
+    string oid = 1; 
+    string hashVal = 2; 
+    map<string, string> ext = 3; 
+}
+message  XmsgOssDownloadSimpleReq
+{
+    string oid = 1; 
+    string cgt = 2; 
+    uint64 offset = 3; 
+    uint64 len = 4; 
+    map<string, string> ext = 5; 
+}
+
+message  XmsgOssDownloadSimpleRsp
+{
+    string objName = 1; 
+    uint64 objSize = 2; 
+    string hashVal = 3; 
+    uint64 gts = 4; 
+    map<string, string> ext = 5; 
+}
+message  XmsgOssUsrObjInfoQueryReq
+{
+    uint64 sts = 1; 
+    uint64 ets = 2; 
+    uint32 page = 3; 
+    uint32 pageSize = 4; 
+}
+
+message  XmsgOssUsrObjInfoQueryRsp
+{
+    repeated  XmsgOssUsrObjInfo objInfo = 1; 
+}
+
+message  XmsgOssUsrObjInfo
+{
+    string oid = 1; 
+    string objName = 2; 
+    uint64 objSize = 3; 
+    string hashVal = 4; 
+    uint64 gts = 5; 
+}
+message XmsgClientTokenInfo
+{
+    string cgt = 1;
+    string token = 2;
+    string alg = 3;
+    string slat = 4;
+    string plat = 5;
+    string did = 6;
+    string sign = 7;  
+}
 message XmsgImHlrAttachSimpleReq
 {
     string token = 1; 
@@ -359,7 +416,6 @@ message XmsgImHlrDetachSimpleRsp
 {
     map<string, string> ext = 1; 
 }
-
 message XmsgImHlrOtherClientAttachReq
 {
     XmsgImClientDeviceInfo dev = 1; 
@@ -376,6 +432,7 @@ message XmsgImHlrOtherClientAttachNotice
 	XmsgImClientDeviceInfo dev = 1; 
     string host = 2; 
 }
+
 message XmsgImAuthSimpleReq
 {
     string usr = 1; 
@@ -394,24 +451,6 @@ message XmsgImAuthSimpleRsp
     string cgt = 7; 
     map<string, string> ext = 8; 
 }
-
-message XmsgImClientDeviceInfo
-{
-    string plat = 1; 
-    string did = 2; 
-    string ver = 3; 
-    map<string, string> ext = 4; 
-}
-
-message XmsgImClientServiceAddress
-{
-    string ip = 1; 
-    uint32 port = 2; 
-    uint32 weight = 3; 
-    repeated string proto = 4; 
-    map<string, string> ext = 5; 
-}
-
 message XmsgImAuthRegSimpleReq
 {
     string usr = 1; 
@@ -425,6 +464,21 @@ message XmsgImAuthRegSimpleRsp
 	string cgt = 1;
     map<string, string> ext = 2; 
 }
+message XmsgImClientDeviceInfo
+{
+    string plat = 1; 
+    string did = 2; 
+    string ver = 3; 
+    map<string, string> ext = 4; 
+}
+message XmsgImClientServiceAddress
+{
+    string ip = 1; 
+    uint32 port = 2; 
+    uint32 weight = 3; 
+    repeated string proto = 4; 
+    map<string, string> ext = 5; 
+}
 message XmsgImHlrOtherUsrInfoQueryReq
 {
     repeated string cgt = 1; 
@@ -434,7 +488,6 @@ message XmsgImHlrOtherUsrInfoQueryRsp
 {
     map<string, XmsgImHlrOtherUsrInfo> usrInfo = 1; 
 }
-
 message XmsgImHlrOtherUsrInfo
 {
     map<string, string> info = 1; 
@@ -503,7 +556,7 @@ message XmsgImHlrUsrDat
 message XmsgImHlrUsrDatPri
 {
     bool enable = 1; 
-    bytes ext = 5; 
+    map<string, string> info = 2; 
 }
 
 message XmsgImHlrUsrDatPub
@@ -603,7 +656,6 @@ message XmsgImOrgNodeChildQueryRsp
 {
     repeated XmsgImOrgNodeChild child = 1; 
 }
-
 message XmsgImOrgNodeDeptUsrQueryReq
 {
     string dcgt = 1; 
@@ -619,7 +671,6 @@ message XmsgImOrgNodeDeptUsrQueryRsp
     uint64 gts = 6; 
     uint64 uts = 7; 
 }
-
 message XmsgImOrgNodeQueryReq
 {
     string cgt = 1; 
@@ -642,7 +693,6 @@ message XmsgImOrgEvent
     XmsgImOrgEventDeptUsr deptUsr = 2; 
     XmsgImOrgEventUsr usr = 3; 
 }
-
 message XmsgImOrgEventDept
 {
     string cgt = 1; 
@@ -654,7 +704,6 @@ message XmsgImOrgEventDept
     uint64 gts = 7; 
     uint64 uts = 8; 
 }
-
 message XmsgImOrgEventDeptUsr
 {
     string dcgt = 1; 
@@ -666,7 +715,6 @@ message XmsgImOrgEventDeptUsr
     uint64 gts = 7; 
     uint64 uts = 8; 
 }
-
 message XmsgImOrgEventUsr
 {
     string cgt = 1; 
@@ -677,18 +725,15 @@ message XmsgImOrgEventUsr
     uint64 gts = 6; 
     uint64 uts = 7; 
 }
-
 enum XmsgImOrgNodeType {
     X_MSG_IM_ORG_NODE_TYPE__RESERVED__ = 0x00;
     X_MSG_IM_ORG_NODE_TYPE_BRANCH = 0x01; 
     X_MSG_IM_ORG_NODE_TYPE_LEAF = 0x02; 
 }
-
 message XmsgImOrgNodeInfo
 {
     map<string, string> kv = 1; 
 }
-
 message XmsgImOrgNodeChild
 {
     string cgt = 1; 
@@ -709,7 +754,6 @@ message XmsgImGroupUsrGroupQueryRsp
 {
     repeated XmsgImGroupUsrGroupInfo group = 1; 
 }
-
 message XmsgImGroupUsrGroupInfo
 {
     string cgt = 1; 
@@ -720,7 +764,6 @@ message XmsgImGroupUsrGroupInfo
     uint64 uts = 6; 
     bool usr2usr = 7; 
 }
-
 message XmsgImGroupCreateReq
 {
     map<string, string> info = 1; 
@@ -732,13 +775,11 @@ message XmsgImGroupCreateRsp
     string cgt = 1; 
     uint64 gts = 2; 
 }
-
 message XmsgImGroupAddMember
 {
     string cgt = 1; 
     map<string, string> info = 2; 
 }
-
 message XmsgImGroupSyncReq
 {
     uint64 ver4usr = 1; 
@@ -749,7 +790,6 @@ message XmsgImGroupSyncRsp
 {
     repeated XmsgImGroupSyncEvent event = 1; 
 }
-
 message XmsgImGroupSyncEvent
 {
     string cgt = 1; 
@@ -760,8 +800,6 @@ message XmsgImGroupSyncEvent
     uint64 uts4usr = 6; 
     uint64 gts4group = 7; 
 }
-
-
 message XmsgImGroupSyncNotice
 {
     XmsgImGroupSyncEvent event = 1; 
@@ -778,7 +816,6 @@ message XmsgImGroupSyncGroupRsp
     XmsgImGroupSyncGroupEventInfo info = 1; 
     repeated XmsgImGroupSyncGroupEventMember member = 2; 
 }
-
 message XmsgImGroupSyncGroupEventInfo
 {
     map<string, string> info = 1; 
@@ -796,13 +833,11 @@ message XmsgImGroupSyncGroupEventMember
     uint64 gts = 5; 
     uint64 uts = 6; 
 }
-
 message XmsgImGroupEventNotice
 {
     XmsgImGroupSyncGroupEventInfo info = 1; 
     XmsgImGroupSyncGroupEventMember member = 2; 
 }
-
 message XmsgImGroupInfoQueryReq
 {
     string cgt = 1; 
@@ -814,7 +849,6 @@ message XmsgImGroupInfoQueryRsp
     XmsgImGroupInfoSelfInfo info = 1; 
     repeated XmsgImGroupInfoMember member = 2; 
 }
-
 message XmsgImGroupInfoSelfInfo
 {
     string cgt = 1; 
@@ -845,7 +879,6 @@ message XmsgImGroupInfoUpdateRsp
 {
     map<string, string> ext = 1; 
 }
-
 message XmsgImGroupMsgRecvCfgReq
 {
     string cgt = 1; 
@@ -856,4 +889,3 @@ message XmsgImGroupMsgRecvCfgRsp
 {
     map<string, string> ext = 1; 
 }
-

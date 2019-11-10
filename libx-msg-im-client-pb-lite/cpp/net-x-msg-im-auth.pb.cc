@@ -34,6 +34,21 @@ class XmsgImAuthSimpleRspDefaultTypeInternal {
   ::google::protobuf::internal::ExplicitlyConstructed<XmsgImAuthSimpleRsp>
       _instance;
 } _XmsgImAuthSimpleRsp_default_instance_;
+class XmsgImAuthRegSimpleReqDefaultTypeInternal {
+ public:
+  ::google::protobuf::internal::ExplicitlyConstructed<XmsgImAuthRegSimpleReq>
+      _instance;
+} _XmsgImAuthRegSimpleReq_default_instance_;
+class XmsgImAuthRegSimpleRsp_ExtEntry_DoNotUseDefaultTypeInternal {
+ public:
+  ::google::protobuf::internal::ExplicitlyConstructed<XmsgImAuthRegSimpleRsp_ExtEntry_DoNotUse>
+      _instance;
+} _XmsgImAuthRegSimpleRsp_ExtEntry_DoNotUse_default_instance_;
+class XmsgImAuthRegSimpleRspDefaultTypeInternal {
+ public:
+  ::google::protobuf::internal::ExplicitlyConstructed<XmsgImAuthRegSimpleRsp>
+      _instance;
+} _XmsgImAuthRegSimpleRsp_default_instance_;
 class XmsgImClientDeviceInfo_ExtEntry_DoNotUseDefaultTypeInternal {
  public:
   ::google::protobuf::internal::ExplicitlyConstructed<XmsgImClientDeviceInfo_ExtEntry_DoNotUse>
@@ -54,21 +69,6 @@ class XmsgImClientServiceAddressDefaultTypeInternal {
   ::google::protobuf::internal::ExplicitlyConstructed<XmsgImClientServiceAddress>
       _instance;
 } _XmsgImClientServiceAddress_default_instance_;
-class XmsgImAuthRegSimpleReqDefaultTypeInternal {
- public:
-  ::google::protobuf::internal::ExplicitlyConstructed<XmsgImAuthRegSimpleReq>
-      _instance;
-} _XmsgImAuthRegSimpleReq_default_instance_;
-class XmsgImAuthRegSimpleRsp_ExtEntry_DoNotUseDefaultTypeInternal {
- public:
-  ::google::protobuf::internal::ExplicitlyConstructed<XmsgImAuthRegSimpleRsp_ExtEntry_DoNotUse>
-      _instance;
-} _XmsgImAuthRegSimpleRsp_ExtEntry_DoNotUse_default_instance_;
-class XmsgImAuthRegSimpleRspDefaultTypeInternal {
- public:
-  ::google::protobuf::internal::ExplicitlyConstructed<XmsgImAuthRegSimpleRsp>
-      _instance;
-} _XmsgImAuthRegSimpleRsp_default_instance_;
 namespace protobuf_net_2dx_2dmsg_2dim_2dauth_2eproto {
 void InitDefaultsXmsgImAuthSimpleReqImpl() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -133,6 +133,70 @@ void InitDefaultsXmsgImAuthSimpleRspImpl() {
 void InitDefaultsXmsgImAuthSimpleRsp() {
   static GOOGLE_PROTOBUF_DECLARE_ONCE(once);
   ::google::protobuf::GoogleOnceInit(&once, &InitDefaultsXmsgImAuthSimpleRspImpl);
+}
+
+void InitDefaultsXmsgImAuthRegSimpleReqImpl() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+#ifdef GOOGLE_PROTOBUF_ENFORCE_UNIQUENESS
+  ::google::protobuf::internal::InitProtobufDefaultsForceUnique();
+#else
+  ::google::protobuf::internal::InitProtobufDefaults();
+#endif  // GOOGLE_PROTOBUF_ENFORCE_UNIQUENESS
+  protobuf_net_2dx_2dmsg_2dim_2dauth_2eproto::InitDefaultsXmsgImClientDeviceInfo();
+  {
+    void* ptr = &::_XmsgImAuthRegSimpleReq_default_instance_;
+    new (ptr) ::XmsgImAuthRegSimpleReq();
+    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::XmsgImAuthRegSimpleReq::InitAsDefaultInstance();
+}
+
+void InitDefaultsXmsgImAuthRegSimpleReq() {
+  static GOOGLE_PROTOBUF_DECLARE_ONCE(once);
+  ::google::protobuf::GoogleOnceInit(&once, &InitDefaultsXmsgImAuthRegSimpleReqImpl);
+}
+
+void InitDefaultsXmsgImAuthRegSimpleRsp_ExtEntry_DoNotUseImpl() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+#ifdef GOOGLE_PROTOBUF_ENFORCE_UNIQUENESS
+  ::google::protobuf::internal::InitProtobufDefaultsForceUnique();
+#else
+  ::google::protobuf::internal::InitProtobufDefaults();
+#endif  // GOOGLE_PROTOBUF_ENFORCE_UNIQUENESS
+  {
+    void* ptr = &::_XmsgImAuthRegSimpleRsp_ExtEntry_DoNotUse_default_instance_;
+    new (ptr) ::XmsgImAuthRegSimpleRsp_ExtEntry_DoNotUse();
+  }
+  ::XmsgImAuthRegSimpleRsp_ExtEntry_DoNotUse::InitAsDefaultInstance();
+}
+
+void InitDefaultsXmsgImAuthRegSimpleRsp_ExtEntry_DoNotUse() {
+  static GOOGLE_PROTOBUF_DECLARE_ONCE(once);
+  ::google::protobuf::GoogleOnceInit(&once, &InitDefaultsXmsgImAuthRegSimpleRsp_ExtEntry_DoNotUseImpl);
+}
+
+void InitDefaultsXmsgImAuthRegSimpleRspImpl() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+#ifdef GOOGLE_PROTOBUF_ENFORCE_UNIQUENESS
+  ::google::protobuf::internal::InitProtobufDefaultsForceUnique();
+#else
+  ::google::protobuf::internal::InitProtobufDefaults();
+#endif  // GOOGLE_PROTOBUF_ENFORCE_UNIQUENESS
+  protobuf_net_2dx_2dmsg_2dim_2dauth_2eproto::InitDefaultsXmsgImAuthRegSimpleRsp_ExtEntry_DoNotUse();
+  {
+    void* ptr = &::_XmsgImAuthRegSimpleRsp_default_instance_;
+    new (ptr) ::XmsgImAuthRegSimpleRsp();
+    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::XmsgImAuthRegSimpleRsp::InitAsDefaultInstance();
+}
+
+void InitDefaultsXmsgImAuthRegSimpleRsp() {
+  static GOOGLE_PROTOBUF_DECLARE_ONCE(once);
+  ::google::protobuf::GoogleOnceInit(&once, &InitDefaultsXmsgImAuthRegSimpleRspImpl);
 }
 
 void InitDefaultsXmsgImClientDeviceInfo_ExtEntry_DoNotUseImpl() {
@@ -219,70 +283,6 @@ void InitDefaultsXmsgImClientServiceAddress() {
   ::google::protobuf::GoogleOnceInit(&once, &InitDefaultsXmsgImClientServiceAddressImpl);
 }
 
-void InitDefaultsXmsgImAuthRegSimpleReqImpl() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-#ifdef GOOGLE_PROTOBUF_ENFORCE_UNIQUENESS
-  ::google::protobuf::internal::InitProtobufDefaultsForceUnique();
-#else
-  ::google::protobuf::internal::InitProtobufDefaults();
-#endif  // GOOGLE_PROTOBUF_ENFORCE_UNIQUENESS
-  protobuf_net_2dx_2dmsg_2dim_2dauth_2eproto::InitDefaultsXmsgImClientDeviceInfo();
-  {
-    void* ptr = &::_XmsgImAuthRegSimpleReq_default_instance_;
-    new (ptr) ::XmsgImAuthRegSimpleReq();
-    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::XmsgImAuthRegSimpleReq::InitAsDefaultInstance();
-}
-
-void InitDefaultsXmsgImAuthRegSimpleReq() {
-  static GOOGLE_PROTOBUF_DECLARE_ONCE(once);
-  ::google::protobuf::GoogleOnceInit(&once, &InitDefaultsXmsgImAuthRegSimpleReqImpl);
-}
-
-void InitDefaultsXmsgImAuthRegSimpleRsp_ExtEntry_DoNotUseImpl() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-#ifdef GOOGLE_PROTOBUF_ENFORCE_UNIQUENESS
-  ::google::protobuf::internal::InitProtobufDefaultsForceUnique();
-#else
-  ::google::protobuf::internal::InitProtobufDefaults();
-#endif  // GOOGLE_PROTOBUF_ENFORCE_UNIQUENESS
-  {
-    void* ptr = &::_XmsgImAuthRegSimpleRsp_ExtEntry_DoNotUse_default_instance_;
-    new (ptr) ::XmsgImAuthRegSimpleRsp_ExtEntry_DoNotUse();
-  }
-  ::XmsgImAuthRegSimpleRsp_ExtEntry_DoNotUse::InitAsDefaultInstance();
-}
-
-void InitDefaultsXmsgImAuthRegSimpleRsp_ExtEntry_DoNotUse() {
-  static GOOGLE_PROTOBUF_DECLARE_ONCE(once);
-  ::google::protobuf::GoogleOnceInit(&once, &InitDefaultsXmsgImAuthRegSimpleRsp_ExtEntry_DoNotUseImpl);
-}
-
-void InitDefaultsXmsgImAuthRegSimpleRspImpl() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-#ifdef GOOGLE_PROTOBUF_ENFORCE_UNIQUENESS
-  ::google::protobuf::internal::InitProtobufDefaultsForceUnique();
-#else
-  ::google::protobuf::internal::InitProtobufDefaults();
-#endif  // GOOGLE_PROTOBUF_ENFORCE_UNIQUENESS
-  protobuf_net_2dx_2dmsg_2dim_2dauth_2eproto::InitDefaultsXmsgImAuthRegSimpleRsp_ExtEntry_DoNotUse();
-  {
-    void* ptr = &::_XmsgImAuthRegSimpleRsp_default_instance_;
-    new (ptr) ::XmsgImAuthRegSimpleRsp();
-    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::XmsgImAuthRegSimpleRsp::InitAsDefaultInstance();
-}
-
-void InitDefaultsXmsgImAuthRegSimpleRsp() {
-  static GOOGLE_PROTOBUF_DECLARE_ONCE(once);
-  ::google::protobuf::GoogleOnceInit(&once, &InitDefaultsXmsgImAuthRegSimpleRspImpl);
-}
-
 ::google::protobuf::Metadata file_level_metadata[10];
 
 const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
@@ -316,6 +316,31 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::XmsgImAuthSimpleRsp, fsaddr_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::XmsgImAuthSimpleRsp, cgt_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::XmsgImAuthSimpleRsp, ext_),
+  ~0u,  // no _has_bits_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::XmsgImAuthRegSimpleReq, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::XmsgImAuthRegSimpleReq, usr_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::XmsgImAuthRegSimpleReq, salt_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::XmsgImAuthRegSimpleReq, pwd_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::XmsgImAuthRegSimpleReq, dev_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::XmsgImAuthRegSimpleRsp_ExtEntry_DoNotUse, _has_bits_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::XmsgImAuthRegSimpleRsp_ExtEntry_DoNotUse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::XmsgImAuthRegSimpleRsp_ExtEntry_DoNotUse, key_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::XmsgImAuthRegSimpleRsp_ExtEntry_DoNotUse, value_),
+  0,
+  1,
+  ~0u,  // no _has_bits_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::XmsgImAuthRegSimpleRsp, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::XmsgImAuthRegSimpleRsp, cgt_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::XmsgImAuthRegSimpleRsp, ext_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::XmsgImClientDeviceInfo_ExtEntry_DoNotUse, _has_bits_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::XmsgImClientDeviceInfo_ExtEntry_DoNotUse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -353,56 +378,31 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::XmsgImClientServiceAddress, weight_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::XmsgImClientServiceAddress, proto_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::XmsgImClientServiceAddress, ext_),
-  ~0u,  // no _has_bits_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::XmsgImAuthRegSimpleReq, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::XmsgImAuthRegSimpleReq, usr_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::XmsgImAuthRegSimpleReq, salt_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::XmsgImAuthRegSimpleReq, pwd_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::XmsgImAuthRegSimpleReq, dev_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::XmsgImAuthRegSimpleRsp_ExtEntry_DoNotUse, _has_bits_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::XmsgImAuthRegSimpleRsp_ExtEntry_DoNotUse, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::XmsgImAuthRegSimpleRsp_ExtEntry_DoNotUse, key_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::XmsgImAuthRegSimpleRsp_ExtEntry_DoNotUse, value_),
-  0,
-  1,
-  ~0u,  // no _has_bits_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::XmsgImAuthRegSimpleRsp, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::XmsgImAuthRegSimpleRsp, cgt_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::XmsgImAuthRegSimpleRsp, ext_),
 };
 static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::XmsgImAuthSimpleReq)},
   { 9, 16, sizeof(::XmsgImAuthSimpleRsp_ExtEntry_DoNotUse)},
   { 18, -1, sizeof(::XmsgImAuthSimpleRsp)},
-  { 30, 37, sizeof(::XmsgImClientDeviceInfo_ExtEntry_DoNotUse)},
-  { 39, -1, sizeof(::XmsgImClientDeviceInfo)},
-  { 48, 55, sizeof(::XmsgImClientServiceAddress_ExtEntry_DoNotUse)},
-  { 57, -1, sizeof(::XmsgImClientServiceAddress)},
-  { 67, -1, sizeof(::XmsgImAuthRegSimpleReq)},
-  { 76, 83, sizeof(::XmsgImAuthRegSimpleRsp_ExtEntry_DoNotUse)},
-  { 85, -1, sizeof(::XmsgImAuthRegSimpleRsp)},
+  { 30, -1, sizeof(::XmsgImAuthRegSimpleReq)},
+  { 39, 46, sizeof(::XmsgImAuthRegSimpleRsp_ExtEntry_DoNotUse)},
+  { 48, -1, sizeof(::XmsgImAuthRegSimpleRsp)},
+  { 55, 62, sizeof(::XmsgImClientDeviceInfo_ExtEntry_DoNotUse)},
+  { 64, -1, sizeof(::XmsgImClientDeviceInfo)},
+  { 73, 80, sizeof(::XmsgImClientServiceAddress_ExtEntry_DoNotUse)},
+  { 82, -1, sizeof(::XmsgImClientServiceAddress)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
   reinterpret_cast<const ::google::protobuf::Message*>(&::_XmsgImAuthSimpleReq_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::_XmsgImAuthSimpleRsp_ExtEntry_DoNotUse_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::_XmsgImAuthSimpleRsp_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&::_XmsgImAuthRegSimpleReq_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&::_XmsgImAuthRegSimpleRsp_ExtEntry_DoNotUse_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&::_XmsgImAuthRegSimpleRsp_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::_XmsgImClientDeviceInfo_ExtEntry_DoNotUse_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::_XmsgImClientDeviceInfo_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::_XmsgImClientServiceAddress_ExtEntry_DoNotUse_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::_XmsgImClientServiceAddress_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&::_XmsgImAuthRegSimpleReq_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&::_XmsgImAuthRegSimpleRsp_ExtEntry_DoNotUse_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&::_XmsgImAuthRegSimpleRsp_default_instance_),
 };
 
 void protobuf_AssignDescriptors() {
@@ -436,20 +436,20 @@ void AddDescriptorsImpl() {
       "ress\022+\n\006fsAddr\030\005 \003(\0132\033.XmsgImClientServi"
       "ceAddress\022\013\n\003cgt\030\007 \001(\t\022*\n\003ext\030\010 \003(\0132\035.Xm"
       "sgImAuthSimpleRsp.ExtEntry\032*\n\010ExtEntry\022\013"
-      "\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\233\001\n\026XmsgI"
-      "mClientDeviceInfo\022\014\n\004plat\030\001 \001(\t\022\013\n\003did\030\002"
-      " \001(\t\022\013\n\003ver\030\003 \001(\t\022-\n\003ext\030\004 \003(\0132 .XmsgImC"
-      "lientDeviceInfo.ExtEntry\032*\n\010ExtEntry\022\013\n\003"
-      "key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\264\001\n\032XmsgImC"
-      "lientServiceAddress\022\n\n\002ip\030\001 \001(\t\022\014\n\004port\030"
-      "\002 \001(\r\022\016\n\006weight\030\003 \001(\r\022\r\n\005proto\030\004 \003(\t\0221\n\003"
-      "ext\030\005 \003(\0132$.XmsgImClientServiceAddress.E"
-      "xtEntry\032*\n\010ExtEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005valu"
-      "e\030\002 \001(\t:\0028\001\"f\n\026XmsgImAuthRegSimpleReq\022\013\n"
-      "\003usr\030\001 \001(\t\022\014\n\004salt\030\002 \001(\t\022\013\n\003pwd\030\003 \001(\t\022$\n"
-      "\003dev\030\004 \001(\0132\027.XmsgImClientDeviceInfo\"\200\001\n\026"
-      "XmsgImAuthRegSimpleRsp\022\013\n\003cgt\030\001 \001(\t\022-\n\003e"
-      "xt\030\002 \003(\0132 .XmsgImAuthRegSimpleRsp.ExtEnt"
+      "\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"f\n\026XmsgIm"
+      "AuthRegSimpleReq\022\013\n\003usr\030\001 \001(\t\022\014\n\004salt\030\002 "
+      "\001(\t\022\013\n\003pwd\030\003 \001(\t\022$\n\003dev\030\004 \001(\0132\027.XmsgImCl"
+      "ientDeviceInfo\"\200\001\n\026XmsgImAuthRegSimpleRs"
+      "p\022\013\n\003cgt\030\001 \001(\t\022-\n\003ext\030\002 \003(\0132 .XmsgImAuth"
+      "RegSimpleRsp.ExtEntry\032*\n\010ExtEntry\022\013\n\003key"
+      "\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\233\001\n\026XmsgImClie"
+      "ntDeviceInfo\022\014\n\004plat\030\001 \001(\t\022\013\n\003did\030\002 \001(\t\022"
+      "\013\n\003ver\030\003 \001(\t\022-\n\003ext\030\004 \003(\0132 .XmsgImClient"
+      "DeviceInfo.ExtEntry\032*\n\010ExtEntry\022\013\n\003key\030\001"
+      " \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\264\001\n\032XmsgImClient"
+      "ServiceAddress\022\n\n\002ip\030\001 \001(\t\022\014\n\004port\030\002 \001(\r"
+      "\022\016\n\006weight\030\003 \001(\r\022\r\n\005proto\030\004 \003(\t\0221\n\003ext\030\005"
+      " \003(\0132$.XmsgImClientServiceAddress.ExtEnt"
       "ry\032*\n\010ExtEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001"
       "(\t:\0028\001B\030\n\010x.msg.pbB\014XmsgImAuthPbb\006proto3"
   };
@@ -1559,6 +1559,855 @@ void XmsgImAuthSimpleRsp::InternalSwap(XmsgImAuthSimpleRsp* other) {
 
 // ===================================================================
 
+void XmsgImAuthRegSimpleReq::InitAsDefaultInstance() {
+  ::_XmsgImAuthRegSimpleReq_default_instance_._instance.get_mutable()->dev_ = const_cast< ::XmsgImClientDeviceInfo*>(
+      ::XmsgImClientDeviceInfo::internal_default_instance());
+}
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int XmsgImAuthRegSimpleReq::kUsrFieldNumber;
+const int XmsgImAuthRegSimpleReq::kSaltFieldNumber;
+const int XmsgImAuthRegSimpleReq::kPwdFieldNumber;
+const int XmsgImAuthRegSimpleReq::kDevFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+XmsgImAuthRegSimpleReq::XmsgImAuthRegSimpleReq()
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  if (GOOGLE_PREDICT_TRUE(this != internal_default_instance())) {
+    ::protobuf_net_2dx_2dmsg_2dim_2dauth_2eproto::InitDefaultsXmsgImAuthRegSimpleReq();
+  }
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:XmsgImAuthRegSimpleReq)
+}
+XmsgImAuthRegSimpleReq::XmsgImAuthRegSimpleReq(const XmsgImAuthRegSimpleReq& from)
+  : ::google::protobuf::Message(),
+      _internal_metadata_(NULL),
+      _cached_size_(0) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  usr_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.usr().size() > 0) {
+    usr_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.usr_);
+  }
+  salt_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.salt().size() > 0) {
+    salt_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.salt_);
+  }
+  pwd_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.pwd().size() > 0) {
+    pwd_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.pwd_);
+  }
+  if (from.has_dev()) {
+    dev_ = new ::XmsgImClientDeviceInfo(*from.dev_);
+  } else {
+    dev_ = NULL;
+  }
+  // @@protoc_insertion_point(copy_constructor:XmsgImAuthRegSimpleReq)
+}
+
+void XmsgImAuthRegSimpleReq::SharedCtor() {
+  usr_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  salt_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  pwd_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  dev_ = NULL;
+  _cached_size_ = 0;
+}
+
+XmsgImAuthRegSimpleReq::~XmsgImAuthRegSimpleReq() {
+  // @@protoc_insertion_point(destructor:XmsgImAuthRegSimpleReq)
+  SharedDtor();
+}
+
+void XmsgImAuthRegSimpleReq::SharedDtor() {
+  usr_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  salt_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  pwd_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (this != internal_default_instance()) delete dev_;
+}
+
+void XmsgImAuthRegSimpleReq::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* XmsgImAuthRegSimpleReq::descriptor() {
+  ::protobuf_net_2dx_2dmsg_2dim_2dauth_2eproto::protobuf_AssignDescriptorsOnce();
+  return ::protobuf_net_2dx_2dmsg_2dim_2dauth_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
+}
+
+const XmsgImAuthRegSimpleReq& XmsgImAuthRegSimpleReq::default_instance() {
+  ::protobuf_net_2dx_2dmsg_2dim_2dauth_2eproto::InitDefaultsXmsgImAuthRegSimpleReq();
+  return *internal_default_instance();
+}
+
+XmsgImAuthRegSimpleReq* XmsgImAuthRegSimpleReq::New(::google::protobuf::Arena* arena) const {
+  XmsgImAuthRegSimpleReq* n = new XmsgImAuthRegSimpleReq;
+  if (arena != NULL) {
+    arena->Own(n);
+  }
+  return n;
+}
+
+void XmsgImAuthRegSimpleReq::Clear() {
+// @@protoc_insertion_point(message_clear_start:XmsgImAuthRegSimpleReq)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  usr_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  salt_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  pwd_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (GetArenaNoVirtual() == NULL && dev_ != NULL) {
+    delete dev_;
+  }
+  dev_ = NULL;
+  _internal_metadata_.Clear();
+}
+
+bool XmsgImAuthRegSimpleReq::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:XmsgImAuthRegSimpleReq)
+  for (;;) {
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // string usr = 1;
+      case 1: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_usr()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->usr().data(), static_cast<int>(this->usr().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "XmsgImAuthRegSimpleReq.usr"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // string salt = 2;
+      case 2: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(18u /* 18 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_salt()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->salt().data(), static_cast<int>(this->salt().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "XmsgImAuthRegSimpleReq.salt"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // string pwd = 3;
+      case 3: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(26u /* 26 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_pwd()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->pwd().data(), static_cast<int>(this->pwd().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "XmsgImAuthRegSimpleReq.pwd"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // .XmsgImClientDeviceInfo dev = 4;
+      case 4: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(34u /* 34 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+               input, mutable_dev()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, _internal_metadata_.mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:XmsgImAuthRegSimpleReq)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:XmsgImAuthRegSimpleReq)
+  return false;
+#undef DO_
+}
+
+void XmsgImAuthRegSimpleReq::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:XmsgImAuthRegSimpleReq)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string usr = 1;
+  if (this->usr().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->usr().data(), static_cast<int>(this->usr().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "XmsgImAuthRegSimpleReq.usr");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      1, this->usr(), output);
+  }
+
+  // string salt = 2;
+  if (this->salt().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->salt().data(), static_cast<int>(this->salt().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "XmsgImAuthRegSimpleReq.salt");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      2, this->salt(), output);
+  }
+
+  // string pwd = 3;
+  if (this->pwd().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->pwd().data(), static_cast<int>(this->pwd().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "XmsgImAuthRegSimpleReq.pwd");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      3, this->pwd(), output);
+  }
+
+  // .XmsgImClientDeviceInfo dev = 4;
+  if (this->has_dev()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      4, *this->dev_, output);
+  }
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
+  }
+  // @@protoc_insertion_point(serialize_end:XmsgImAuthRegSimpleReq)
+}
+
+::google::protobuf::uint8* XmsgImAuthRegSimpleReq::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
+  (void)deterministic; // Unused
+  // @@protoc_insertion_point(serialize_to_array_start:XmsgImAuthRegSimpleReq)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string usr = 1;
+  if (this->usr().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->usr().data(), static_cast<int>(this->usr().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "XmsgImAuthRegSimpleReq.usr");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        1, this->usr(), target);
+  }
+
+  // string salt = 2;
+  if (this->salt().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->salt().data(), static_cast<int>(this->salt().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "XmsgImAuthRegSimpleReq.salt");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        2, this->salt(), target);
+  }
+
+  // string pwd = 3;
+  if (this->pwd().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->pwd().data(), static_cast<int>(this->pwd().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "XmsgImAuthRegSimpleReq.pwd");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        3, this->pwd(), target);
+  }
+
+  // .XmsgImClientDeviceInfo dev = 4;
+  if (this->has_dev()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        4, *this->dev_, deterministic, target);
+  }
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:XmsgImAuthRegSimpleReq)
+  return target;
+}
+
+size_t XmsgImAuthRegSimpleReq::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:XmsgImAuthRegSimpleReq)
+  size_t total_size = 0;
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
+  }
+  // string usr = 1;
+  if (this->usr().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->usr());
+  }
+
+  // string salt = 2;
+  if (this->salt().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->salt());
+  }
+
+  // string pwd = 3;
+  if (this->pwd().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->pwd());
+  }
+
+  // .XmsgImClientDeviceInfo dev = 4;
+  if (this->has_dev()) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSize(
+        *this->dev_);
+  }
+
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = cached_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void XmsgImAuthRegSimpleReq::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:XmsgImAuthRegSimpleReq)
+  GOOGLE_DCHECK_NE(&from, this);
+  const XmsgImAuthRegSimpleReq* source =
+      ::google::protobuf::internal::DynamicCastToGenerated<const XmsgImAuthRegSimpleReq>(
+          &from);
+  if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:XmsgImAuthRegSimpleReq)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:XmsgImAuthRegSimpleReq)
+    MergeFrom(*source);
+  }
+}
+
+void XmsgImAuthRegSimpleReq::MergeFrom(const XmsgImAuthRegSimpleReq& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:XmsgImAuthRegSimpleReq)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.usr().size() > 0) {
+
+    usr_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.usr_);
+  }
+  if (from.salt().size() > 0) {
+
+    salt_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.salt_);
+  }
+  if (from.pwd().size() > 0) {
+
+    pwd_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.pwd_);
+  }
+  if (from.has_dev()) {
+    mutable_dev()->::XmsgImClientDeviceInfo::MergeFrom(from.dev());
+  }
+}
+
+void XmsgImAuthRegSimpleReq::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:XmsgImAuthRegSimpleReq)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void XmsgImAuthRegSimpleReq::CopyFrom(const XmsgImAuthRegSimpleReq& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:XmsgImAuthRegSimpleReq)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool XmsgImAuthRegSimpleReq::IsInitialized() const {
+  return true;
+}
+
+void XmsgImAuthRegSimpleReq::Swap(XmsgImAuthRegSimpleReq* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void XmsgImAuthRegSimpleReq::InternalSwap(XmsgImAuthRegSimpleReq* other) {
+  using std::swap;
+  usr_.Swap(&other->usr_);
+  salt_.Swap(&other->salt_);
+  pwd_.Swap(&other->pwd_);
+  swap(dev_, other->dev_);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  swap(_cached_size_, other->_cached_size_);
+}
+
+::google::protobuf::Metadata XmsgImAuthRegSimpleReq::GetMetadata() const {
+  protobuf_net_2dx_2dmsg_2dim_2dauth_2eproto::protobuf_AssignDescriptorsOnce();
+  return ::protobuf_net_2dx_2dmsg_2dim_2dauth_2eproto::file_level_metadata[kIndexInFileMessages];
+}
+
+
+// ===================================================================
+
+XmsgImAuthRegSimpleRsp_ExtEntry_DoNotUse::XmsgImAuthRegSimpleRsp_ExtEntry_DoNotUse() {}
+XmsgImAuthRegSimpleRsp_ExtEntry_DoNotUse::XmsgImAuthRegSimpleRsp_ExtEntry_DoNotUse(::google::protobuf::Arena* arena) : SuperType(arena) {}
+void XmsgImAuthRegSimpleRsp_ExtEntry_DoNotUse::MergeFrom(const XmsgImAuthRegSimpleRsp_ExtEntry_DoNotUse& other) {
+  MergeFromInternal(other);
+}
+::google::protobuf::Metadata XmsgImAuthRegSimpleRsp_ExtEntry_DoNotUse::GetMetadata() const {
+  ::protobuf_net_2dx_2dmsg_2dim_2dauth_2eproto::protobuf_AssignDescriptorsOnce();
+  return ::protobuf_net_2dx_2dmsg_2dim_2dauth_2eproto::file_level_metadata[4];
+}
+void XmsgImAuthRegSimpleRsp_ExtEntry_DoNotUse::MergeFrom(
+    const ::google::protobuf::Message& other) {
+  ::google::protobuf::Message::MergeFrom(other);
+}
+
+
+// ===================================================================
+
+void XmsgImAuthRegSimpleRsp::InitAsDefaultInstance() {
+}
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int XmsgImAuthRegSimpleRsp::kCgtFieldNumber;
+const int XmsgImAuthRegSimpleRsp::kExtFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+XmsgImAuthRegSimpleRsp::XmsgImAuthRegSimpleRsp()
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  if (GOOGLE_PREDICT_TRUE(this != internal_default_instance())) {
+    ::protobuf_net_2dx_2dmsg_2dim_2dauth_2eproto::InitDefaultsXmsgImAuthRegSimpleRsp();
+  }
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:XmsgImAuthRegSimpleRsp)
+}
+XmsgImAuthRegSimpleRsp::XmsgImAuthRegSimpleRsp(const XmsgImAuthRegSimpleRsp& from)
+  : ::google::protobuf::Message(),
+      _internal_metadata_(NULL),
+      _cached_size_(0) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ext_.MergeFrom(from.ext_);
+  cgt_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.cgt().size() > 0) {
+    cgt_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.cgt_);
+  }
+  // @@protoc_insertion_point(copy_constructor:XmsgImAuthRegSimpleRsp)
+}
+
+void XmsgImAuthRegSimpleRsp::SharedCtor() {
+  cgt_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  _cached_size_ = 0;
+}
+
+XmsgImAuthRegSimpleRsp::~XmsgImAuthRegSimpleRsp() {
+  // @@protoc_insertion_point(destructor:XmsgImAuthRegSimpleRsp)
+  SharedDtor();
+}
+
+void XmsgImAuthRegSimpleRsp::SharedDtor() {
+  cgt_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+
+void XmsgImAuthRegSimpleRsp::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* XmsgImAuthRegSimpleRsp::descriptor() {
+  ::protobuf_net_2dx_2dmsg_2dim_2dauth_2eproto::protobuf_AssignDescriptorsOnce();
+  return ::protobuf_net_2dx_2dmsg_2dim_2dauth_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
+}
+
+const XmsgImAuthRegSimpleRsp& XmsgImAuthRegSimpleRsp::default_instance() {
+  ::protobuf_net_2dx_2dmsg_2dim_2dauth_2eproto::InitDefaultsXmsgImAuthRegSimpleRsp();
+  return *internal_default_instance();
+}
+
+XmsgImAuthRegSimpleRsp* XmsgImAuthRegSimpleRsp::New(::google::protobuf::Arena* arena) const {
+  XmsgImAuthRegSimpleRsp* n = new XmsgImAuthRegSimpleRsp;
+  if (arena != NULL) {
+    arena->Own(n);
+  }
+  return n;
+}
+
+void XmsgImAuthRegSimpleRsp::Clear() {
+// @@protoc_insertion_point(message_clear_start:XmsgImAuthRegSimpleRsp)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  ext_.Clear();
+  cgt_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  _internal_metadata_.Clear();
+}
+
+bool XmsgImAuthRegSimpleRsp::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:XmsgImAuthRegSimpleRsp)
+  for (;;) {
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // string cgt = 1;
+      case 1: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_cgt()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->cgt().data(), static_cast<int>(this->cgt().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "XmsgImAuthRegSimpleRsp.cgt"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // map<string, string> ext = 2;
+      case 2: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(18u /* 18 & 0xFF */)) {
+          XmsgImAuthRegSimpleRsp_ExtEntry_DoNotUse::Parser< ::google::protobuf::internal::MapField<
+              XmsgImAuthRegSimpleRsp_ExtEntry_DoNotUse,
+              ::std::string, ::std::string,
+              ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+              ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+              0 >,
+            ::google::protobuf::Map< ::std::string, ::std::string > > parser(&ext_);
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+              input, &parser));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            parser.key().data(), static_cast<int>(parser.key().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "XmsgImAuthRegSimpleRsp.ExtEntry.key"));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            parser.value().data(), static_cast<int>(parser.value().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "XmsgImAuthRegSimpleRsp.ExtEntry.value"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, _internal_metadata_.mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:XmsgImAuthRegSimpleRsp)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:XmsgImAuthRegSimpleRsp)
+  return false;
+#undef DO_
+}
+
+void XmsgImAuthRegSimpleRsp::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:XmsgImAuthRegSimpleRsp)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string cgt = 1;
+  if (this->cgt().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->cgt().data(), static_cast<int>(this->cgt().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "XmsgImAuthRegSimpleRsp.cgt");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      1, this->cgt(), output);
+  }
+
+  // map<string, string> ext = 2;
+  if (!this->ext().empty()) {
+    typedef ::google::protobuf::Map< ::std::string, ::std::string >::const_pointer
+        ConstPtr;
+    typedef ConstPtr SortItem;
+    typedef ::google::protobuf::internal::CompareByDerefFirst<SortItem> Less;
+    struct Utf8Check {
+      static void Check(ConstPtr p) {
+        ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+          p->first.data(), static_cast<int>(p->first.length()),
+          ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+          "XmsgImAuthRegSimpleRsp.ExtEntry.key");
+        ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+          p->second.data(), static_cast<int>(p->second.length()),
+          ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+          "XmsgImAuthRegSimpleRsp.ExtEntry.value");
+      }
+    };
+
+    if (output->IsSerializationDeterministic() &&
+        this->ext().size() > 1) {
+      ::google::protobuf::scoped_array<SortItem> items(
+          new SortItem[this->ext().size()]);
+      typedef ::google::protobuf::Map< ::std::string, ::std::string >::size_type size_type;
+      size_type n = 0;
+      for (::google::protobuf::Map< ::std::string, ::std::string >::const_iterator
+          it = this->ext().begin();
+          it != this->ext().end(); ++it, ++n) {
+        items[static_cast<ptrdiff_t>(n)] = SortItem(&*it);
+      }
+      ::std::sort(&items[0], &items[static_cast<ptrdiff_t>(n)], Less());
+      ::google::protobuf::scoped_ptr<XmsgImAuthRegSimpleRsp_ExtEntry_DoNotUse> entry;
+      for (size_type i = 0; i < n; i++) {
+        entry.reset(ext_.NewEntryWrapper(
+            items[static_cast<ptrdiff_t>(i)]->first, items[static_cast<ptrdiff_t>(i)]->second));
+        ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+            2, *entry, output);
+        Utf8Check::Check(items[static_cast<ptrdiff_t>(i)]);
+      }
+    } else {
+      ::google::protobuf::scoped_ptr<XmsgImAuthRegSimpleRsp_ExtEntry_DoNotUse> entry;
+      for (::google::protobuf::Map< ::std::string, ::std::string >::const_iterator
+          it = this->ext().begin();
+          it != this->ext().end(); ++it) {
+        entry.reset(ext_.NewEntryWrapper(
+            it->first, it->second));
+        ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+            2, *entry, output);
+        Utf8Check::Check(&*it);
+      }
+    }
+  }
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
+  }
+  // @@protoc_insertion_point(serialize_end:XmsgImAuthRegSimpleRsp)
+}
+
+::google::protobuf::uint8* XmsgImAuthRegSimpleRsp::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
+  (void)deterministic; // Unused
+  // @@protoc_insertion_point(serialize_to_array_start:XmsgImAuthRegSimpleRsp)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string cgt = 1;
+  if (this->cgt().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->cgt().data(), static_cast<int>(this->cgt().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "XmsgImAuthRegSimpleRsp.cgt");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        1, this->cgt(), target);
+  }
+
+  // map<string, string> ext = 2;
+  if (!this->ext().empty()) {
+    typedef ::google::protobuf::Map< ::std::string, ::std::string >::const_pointer
+        ConstPtr;
+    typedef ConstPtr SortItem;
+    typedef ::google::protobuf::internal::CompareByDerefFirst<SortItem> Less;
+    struct Utf8Check {
+      static void Check(ConstPtr p) {
+        ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+          p->first.data(), static_cast<int>(p->first.length()),
+          ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+          "XmsgImAuthRegSimpleRsp.ExtEntry.key");
+        ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+          p->second.data(), static_cast<int>(p->second.length()),
+          ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+          "XmsgImAuthRegSimpleRsp.ExtEntry.value");
+      }
+    };
+
+    if (deterministic &&
+        this->ext().size() > 1) {
+      ::google::protobuf::scoped_array<SortItem> items(
+          new SortItem[this->ext().size()]);
+      typedef ::google::protobuf::Map< ::std::string, ::std::string >::size_type size_type;
+      size_type n = 0;
+      for (::google::protobuf::Map< ::std::string, ::std::string >::const_iterator
+          it = this->ext().begin();
+          it != this->ext().end(); ++it, ++n) {
+        items[static_cast<ptrdiff_t>(n)] = SortItem(&*it);
+      }
+      ::std::sort(&items[0], &items[static_cast<ptrdiff_t>(n)], Less());
+      ::google::protobuf::scoped_ptr<XmsgImAuthRegSimpleRsp_ExtEntry_DoNotUse> entry;
+      for (size_type i = 0; i < n; i++) {
+        entry.reset(ext_.NewEntryWrapper(
+            items[static_cast<ptrdiff_t>(i)]->first, items[static_cast<ptrdiff_t>(i)]->second));
+        target = ::google::protobuf::internal::WireFormatLite::
+                   InternalWriteMessageNoVirtualToArray(
+                       2, *entry, deterministic, target);
+;
+        Utf8Check::Check(items[static_cast<ptrdiff_t>(i)]);
+      }
+    } else {
+      ::google::protobuf::scoped_ptr<XmsgImAuthRegSimpleRsp_ExtEntry_DoNotUse> entry;
+      for (::google::protobuf::Map< ::std::string, ::std::string >::const_iterator
+          it = this->ext().begin();
+          it != this->ext().end(); ++it) {
+        entry.reset(ext_.NewEntryWrapper(
+            it->first, it->second));
+        target = ::google::protobuf::internal::WireFormatLite::
+                   InternalWriteMessageNoVirtualToArray(
+                       2, *entry, deterministic, target);
+;
+        Utf8Check::Check(&*it);
+      }
+    }
+  }
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:XmsgImAuthRegSimpleRsp)
+  return target;
+}
+
+size_t XmsgImAuthRegSimpleRsp::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:XmsgImAuthRegSimpleRsp)
+  size_t total_size = 0;
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
+  }
+  // map<string, string> ext = 2;
+  total_size += 1 *
+      ::google::protobuf::internal::FromIntSize(this->ext_size());
+  {
+    ::google::protobuf::scoped_ptr<XmsgImAuthRegSimpleRsp_ExtEntry_DoNotUse> entry;
+    for (::google::protobuf::Map< ::std::string, ::std::string >::const_iterator
+        it = this->ext().begin();
+        it != this->ext().end(); ++it) {
+      entry.reset(ext_.NewEntryWrapper(it->first, it->second));
+      total_size += ::google::protobuf::internal::WireFormatLite::
+          MessageSizeNoVirtual(*entry);
+    }
+  }
+
+  // string cgt = 1;
+  if (this->cgt().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->cgt());
+  }
+
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = cached_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void XmsgImAuthRegSimpleRsp::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:XmsgImAuthRegSimpleRsp)
+  GOOGLE_DCHECK_NE(&from, this);
+  const XmsgImAuthRegSimpleRsp* source =
+      ::google::protobuf::internal::DynamicCastToGenerated<const XmsgImAuthRegSimpleRsp>(
+          &from);
+  if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:XmsgImAuthRegSimpleRsp)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:XmsgImAuthRegSimpleRsp)
+    MergeFrom(*source);
+  }
+}
+
+void XmsgImAuthRegSimpleRsp::MergeFrom(const XmsgImAuthRegSimpleRsp& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:XmsgImAuthRegSimpleRsp)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  ext_.MergeFrom(from.ext_);
+  if (from.cgt().size() > 0) {
+
+    cgt_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.cgt_);
+  }
+}
+
+void XmsgImAuthRegSimpleRsp::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:XmsgImAuthRegSimpleRsp)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void XmsgImAuthRegSimpleRsp::CopyFrom(const XmsgImAuthRegSimpleRsp& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:XmsgImAuthRegSimpleRsp)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool XmsgImAuthRegSimpleRsp::IsInitialized() const {
+  return true;
+}
+
+void XmsgImAuthRegSimpleRsp::Swap(XmsgImAuthRegSimpleRsp* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void XmsgImAuthRegSimpleRsp::InternalSwap(XmsgImAuthRegSimpleRsp* other) {
+  using std::swap;
+  ext_.Swap(&other->ext_);
+  cgt_.Swap(&other->cgt_);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  swap(_cached_size_, other->_cached_size_);
+}
+
+::google::protobuf::Metadata XmsgImAuthRegSimpleRsp::GetMetadata() const {
+  protobuf_net_2dx_2dmsg_2dim_2dauth_2eproto::protobuf_AssignDescriptorsOnce();
+  return ::protobuf_net_2dx_2dmsg_2dim_2dauth_2eproto::file_level_metadata[kIndexInFileMessages];
+}
+
+
+// ===================================================================
+
 XmsgImClientDeviceInfo_ExtEntry_DoNotUse::XmsgImClientDeviceInfo_ExtEntry_DoNotUse() {}
 XmsgImClientDeviceInfo_ExtEntry_DoNotUse::XmsgImClientDeviceInfo_ExtEntry_DoNotUse(::google::protobuf::Arena* arena) : SuperType(arena) {}
 void XmsgImClientDeviceInfo_ExtEntry_DoNotUse::MergeFrom(const XmsgImClientDeviceInfo_ExtEntry_DoNotUse& other) {
@@ -1566,7 +2415,7 @@ void XmsgImClientDeviceInfo_ExtEntry_DoNotUse::MergeFrom(const XmsgImClientDevic
 }
 ::google::protobuf::Metadata XmsgImClientDeviceInfo_ExtEntry_DoNotUse::GetMetadata() const {
   ::protobuf_net_2dx_2dmsg_2dim_2dauth_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_net_2dx_2dmsg_2dim_2dauth_2eproto::file_level_metadata[3];
+  return ::protobuf_net_2dx_2dmsg_2dim_2dauth_2eproto::file_level_metadata[6];
 }
 void XmsgImClientDeviceInfo_ExtEntry_DoNotUse::MergeFrom(
     const ::google::protobuf::Message& other) {
@@ -2109,7 +2958,7 @@ void XmsgImClientServiceAddress_ExtEntry_DoNotUse::MergeFrom(const XmsgImClientS
 }
 ::google::protobuf::Metadata XmsgImClientServiceAddress_ExtEntry_DoNotUse::GetMetadata() const {
   ::protobuf_net_2dx_2dmsg_2dim_2dauth_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_net_2dx_2dmsg_2dim_2dauth_2eproto::file_level_metadata[5];
+  return ::protobuf_net_2dx_2dmsg_2dim_2dauth_2eproto::file_level_metadata[8];
 }
 void XmsgImClientServiceAddress_ExtEntry_DoNotUse::MergeFrom(
     const ::google::protobuf::Message& other) {
@@ -2655,855 +3504,6 @@ void XmsgImClientServiceAddress::InternalSwap(XmsgImClientServiceAddress* other)
 }
 
 ::google::protobuf::Metadata XmsgImClientServiceAddress::GetMetadata() const {
-  protobuf_net_2dx_2dmsg_2dim_2dauth_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_net_2dx_2dmsg_2dim_2dauth_2eproto::file_level_metadata[kIndexInFileMessages];
-}
-
-
-// ===================================================================
-
-void XmsgImAuthRegSimpleReq::InitAsDefaultInstance() {
-  ::_XmsgImAuthRegSimpleReq_default_instance_._instance.get_mutable()->dev_ = const_cast< ::XmsgImClientDeviceInfo*>(
-      ::XmsgImClientDeviceInfo::internal_default_instance());
-}
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int XmsgImAuthRegSimpleReq::kUsrFieldNumber;
-const int XmsgImAuthRegSimpleReq::kSaltFieldNumber;
-const int XmsgImAuthRegSimpleReq::kPwdFieldNumber;
-const int XmsgImAuthRegSimpleReq::kDevFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
-
-XmsgImAuthRegSimpleReq::XmsgImAuthRegSimpleReq()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
-  if (GOOGLE_PREDICT_TRUE(this != internal_default_instance())) {
-    ::protobuf_net_2dx_2dmsg_2dim_2dauth_2eproto::InitDefaultsXmsgImAuthRegSimpleReq();
-  }
-  SharedCtor();
-  // @@protoc_insertion_point(constructor:XmsgImAuthRegSimpleReq)
-}
-XmsgImAuthRegSimpleReq::XmsgImAuthRegSimpleReq(const XmsgImAuthRegSimpleReq& from)
-  : ::google::protobuf::Message(),
-      _internal_metadata_(NULL),
-      _cached_size_(0) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  usr_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.usr().size() > 0) {
-    usr_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.usr_);
-  }
-  salt_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.salt().size() > 0) {
-    salt_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.salt_);
-  }
-  pwd_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.pwd().size() > 0) {
-    pwd_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.pwd_);
-  }
-  if (from.has_dev()) {
-    dev_ = new ::XmsgImClientDeviceInfo(*from.dev_);
-  } else {
-    dev_ = NULL;
-  }
-  // @@protoc_insertion_point(copy_constructor:XmsgImAuthRegSimpleReq)
-}
-
-void XmsgImAuthRegSimpleReq::SharedCtor() {
-  usr_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  salt_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  pwd_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  dev_ = NULL;
-  _cached_size_ = 0;
-}
-
-XmsgImAuthRegSimpleReq::~XmsgImAuthRegSimpleReq() {
-  // @@protoc_insertion_point(destructor:XmsgImAuthRegSimpleReq)
-  SharedDtor();
-}
-
-void XmsgImAuthRegSimpleReq::SharedDtor() {
-  usr_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  salt_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  pwd_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (this != internal_default_instance()) delete dev_;
-}
-
-void XmsgImAuthRegSimpleReq::SetCachedSize(int size) const {
-  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-  _cached_size_ = size;
-  GOOGLE_SAFE_CONCURRENT_WRITES_END();
-}
-const ::google::protobuf::Descriptor* XmsgImAuthRegSimpleReq::descriptor() {
-  ::protobuf_net_2dx_2dmsg_2dim_2dauth_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_net_2dx_2dmsg_2dim_2dauth_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
-}
-
-const XmsgImAuthRegSimpleReq& XmsgImAuthRegSimpleReq::default_instance() {
-  ::protobuf_net_2dx_2dmsg_2dim_2dauth_2eproto::InitDefaultsXmsgImAuthRegSimpleReq();
-  return *internal_default_instance();
-}
-
-XmsgImAuthRegSimpleReq* XmsgImAuthRegSimpleReq::New(::google::protobuf::Arena* arena) const {
-  XmsgImAuthRegSimpleReq* n = new XmsgImAuthRegSimpleReq;
-  if (arena != NULL) {
-    arena->Own(n);
-  }
-  return n;
-}
-
-void XmsgImAuthRegSimpleReq::Clear() {
-// @@protoc_insertion_point(message_clear_start:XmsgImAuthRegSimpleReq)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  usr_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  salt_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  pwd_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (GetArenaNoVirtual() == NULL && dev_ != NULL) {
-    delete dev_;
-  }
-  dev_ = NULL;
-  _internal_metadata_.Clear();
-}
-
-bool XmsgImAuthRegSimpleReq::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:XmsgImAuthRegSimpleReq)
-  for (;;) {
-    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // string usr = 1;
-      case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_usr()));
-          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->usr().data(), static_cast<int>(this->usr().length()),
-            ::google::protobuf::internal::WireFormatLite::PARSE,
-            "XmsgImAuthRegSimpleReq.usr"));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // string salt = 2;
-      case 2: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(18u /* 18 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_salt()));
-          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->salt().data(), static_cast<int>(this->salt().length()),
-            ::google::protobuf::internal::WireFormatLite::PARSE,
-            "XmsgImAuthRegSimpleReq.salt"));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // string pwd = 3;
-      case 3: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(26u /* 26 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_pwd()));
-          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->pwd().data(), static_cast<int>(this->pwd().length()),
-            ::google::protobuf::internal::WireFormatLite::PARSE,
-            "XmsgImAuthRegSimpleReq.pwd"));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // .XmsgImClientDeviceInfo dev = 4;
-      case 4: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(34u /* 34 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-               input, mutable_dev()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      default: {
-      handle_unusual:
-        if (tag == 0) {
-          goto success;
-        }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
-      }
-    }
-  }
-success:
-  // @@protoc_insertion_point(parse_success:XmsgImAuthRegSimpleReq)
-  return true;
-failure:
-  // @@protoc_insertion_point(parse_failure:XmsgImAuthRegSimpleReq)
-  return false;
-#undef DO_
-}
-
-void XmsgImAuthRegSimpleReq::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:XmsgImAuthRegSimpleReq)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // string usr = 1;
-  if (this->usr().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->usr().data(), static_cast<int>(this->usr().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "XmsgImAuthRegSimpleReq.usr");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      1, this->usr(), output);
-  }
-
-  // string salt = 2;
-  if (this->salt().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->salt().data(), static_cast<int>(this->salt().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "XmsgImAuthRegSimpleReq.salt");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      2, this->salt(), output);
-  }
-
-  // string pwd = 3;
-  if (this->pwd().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->pwd().data(), static_cast<int>(this->pwd().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "XmsgImAuthRegSimpleReq.pwd");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      3, this->pwd(), output);
-  }
-
-  // .XmsgImClientDeviceInfo dev = 4;
-  if (this->has_dev()) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      4, *this->dev_, output);
-  }
-
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
-  }
-  // @@protoc_insertion_point(serialize_end:XmsgImAuthRegSimpleReq)
-}
-
-::google::protobuf::uint8* XmsgImAuthRegSimpleReq::InternalSerializeWithCachedSizesToArray(
-    bool deterministic, ::google::protobuf::uint8* target) const {
-  (void)deterministic; // Unused
-  // @@protoc_insertion_point(serialize_to_array_start:XmsgImAuthRegSimpleReq)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // string usr = 1;
-  if (this->usr().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->usr().data(), static_cast<int>(this->usr().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "XmsgImAuthRegSimpleReq.usr");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        1, this->usr(), target);
-  }
-
-  // string salt = 2;
-  if (this->salt().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->salt().data(), static_cast<int>(this->salt().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "XmsgImAuthRegSimpleReq.salt");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        2, this->salt(), target);
-  }
-
-  // string pwd = 3;
-  if (this->pwd().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->pwd().data(), static_cast<int>(this->pwd().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "XmsgImAuthRegSimpleReq.pwd");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        3, this->pwd(), target);
-  }
-
-  // .XmsgImClientDeviceInfo dev = 4;
-  if (this->has_dev()) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        4, *this->dev_, deterministic, target);
-  }
-
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:XmsgImAuthRegSimpleReq)
-  return target;
-}
-
-size_t XmsgImAuthRegSimpleReq::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:XmsgImAuthRegSimpleReq)
-  size_t total_size = 0;
-
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
-  }
-  // string usr = 1;
-  if (this->usr().size() > 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->usr());
-  }
-
-  // string salt = 2;
-  if (this->salt().size() > 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->salt());
-  }
-
-  // string pwd = 3;
-  if (this->pwd().size() > 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->pwd());
-  }
-
-  // .XmsgImClientDeviceInfo dev = 4;
-  if (this->has_dev()) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::MessageSize(
-        *this->dev_);
-  }
-
-  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
-  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-  _cached_size_ = cached_size;
-  GOOGLE_SAFE_CONCURRENT_WRITES_END();
-  return total_size;
-}
-
-void XmsgImAuthRegSimpleReq::MergeFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:XmsgImAuthRegSimpleReq)
-  GOOGLE_DCHECK_NE(&from, this);
-  const XmsgImAuthRegSimpleReq* source =
-      ::google::protobuf::internal::DynamicCastToGenerated<const XmsgImAuthRegSimpleReq>(
-          &from);
-  if (source == NULL) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:XmsgImAuthRegSimpleReq)
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:XmsgImAuthRegSimpleReq)
-    MergeFrom(*source);
-  }
-}
-
-void XmsgImAuthRegSimpleReq::MergeFrom(const XmsgImAuthRegSimpleReq& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:XmsgImAuthRegSimpleReq)
-  GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  if (from.usr().size() > 0) {
-
-    usr_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.usr_);
-  }
-  if (from.salt().size() > 0) {
-
-    salt_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.salt_);
-  }
-  if (from.pwd().size() > 0) {
-
-    pwd_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.pwd_);
-  }
-  if (from.has_dev()) {
-    mutable_dev()->::XmsgImClientDeviceInfo::MergeFrom(from.dev());
-  }
-}
-
-void XmsgImAuthRegSimpleReq::CopyFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:XmsgImAuthRegSimpleReq)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-void XmsgImAuthRegSimpleReq::CopyFrom(const XmsgImAuthRegSimpleReq& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:XmsgImAuthRegSimpleReq)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool XmsgImAuthRegSimpleReq::IsInitialized() const {
-  return true;
-}
-
-void XmsgImAuthRegSimpleReq::Swap(XmsgImAuthRegSimpleReq* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
-void XmsgImAuthRegSimpleReq::InternalSwap(XmsgImAuthRegSimpleReq* other) {
-  using std::swap;
-  usr_.Swap(&other->usr_);
-  salt_.Swap(&other->salt_);
-  pwd_.Swap(&other->pwd_);
-  swap(dev_, other->dev_);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  swap(_cached_size_, other->_cached_size_);
-}
-
-::google::protobuf::Metadata XmsgImAuthRegSimpleReq::GetMetadata() const {
-  protobuf_net_2dx_2dmsg_2dim_2dauth_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_net_2dx_2dmsg_2dim_2dauth_2eproto::file_level_metadata[kIndexInFileMessages];
-}
-
-
-// ===================================================================
-
-XmsgImAuthRegSimpleRsp_ExtEntry_DoNotUse::XmsgImAuthRegSimpleRsp_ExtEntry_DoNotUse() {}
-XmsgImAuthRegSimpleRsp_ExtEntry_DoNotUse::XmsgImAuthRegSimpleRsp_ExtEntry_DoNotUse(::google::protobuf::Arena* arena) : SuperType(arena) {}
-void XmsgImAuthRegSimpleRsp_ExtEntry_DoNotUse::MergeFrom(const XmsgImAuthRegSimpleRsp_ExtEntry_DoNotUse& other) {
-  MergeFromInternal(other);
-}
-::google::protobuf::Metadata XmsgImAuthRegSimpleRsp_ExtEntry_DoNotUse::GetMetadata() const {
-  ::protobuf_net_2dx_2dmsg_2dim_2dauth_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_net_2dx_2dmsg_2dim_2dauth_2eproto::file_level_metadata[8];
-}
-void XmsgImAuthRegSimpleRsp_ExtEntry_DoNotUse::MergeFrom(
-    const ::google::protobuf::Message& other) {
-  ::google::protobuf::Message::MergeFrom(other);
-}
-
-
-// ===================================================================
-
-void XmsgImAuthRegSimpleRsp::InitAsDefaultInstance() {
-}
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int XmsgImAuthRegSimpleRsp::kCgtFieldNumber;
-const int XmsgImAuthRegSimpleRsp::kExtFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
-
-XmsgImAuthRegSimpleRsp::XmsgImAuthRegSimpleRsp()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
-  if (GOOGLE_PREDICT_TRUE(this != internal_default_instance())) {
-    ::protobuf_net_2dx_2dmsg_2dim_2dauth_2eproto::InitDefaultsXmsgImAuthRegSimpleRsp();
-  }
-  SharedCtor();
-  // @@protoc_insertion_point(constructor:XmsgImAuthRegSimpleRsp)
-}
-XmsgImAuthRegSimpleRsp::XmsgImAuthRegSimpleRsp(const XmsgImAuthRegSimpleRsp& from)
-  : ::google::protobuf::Message(),
-      _internal_metadata_(NULL),
-      _cached_size_(0) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ext_.MergeFrom(from.ext_);
-  cgt_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.cgt().size() > 0) {
-    cgt_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.cgt_);
-  }
-  // @@protoc_insertion_point(copy_constructor:XmsgImAuthRegSimpleRsp)
-}
-
-void XmsgImAuthRegSimpleRsp::SharedCtor() {
-  cgt_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  _cached_size_ = 0;
-}
-
-XmsgImAuthRegSimpleRsp::~XmsgImAuthRegSimpleRsp() {
-  // @@protoc_insertion_point(destructor:XmsgImAuthRegSimpleRsp)
-  SharedDtor();
-}
-
-void XmsgImAuthRegSimpleRsp::SharedDtor() {
-  cgt_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-
-void XmsgImAuthRegSimpleRsp::SetCachedSize(int size) const {
-  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-  _cached_size_ = size;
-  GOOGLE_SAFE_CONCURRENT_WRITES_END();
-}
-const ::google::protobuf::Descriptor* XmsgImAuthRegSimpleRsp::descriptor() {
-  ::protobuf_net_2dx_2dmsg_2dim_2dauth_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_net_2dx_2dmsg_2dim_2dauth_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
-}
-
-const XmsgImAuthRegSimpleRsp& XmsgImAuthRegSimpleRsp::default_instance() {
-  ::protobuf_net_2dx_2dmsg_2dim_2dauth_2eproto::InitDefaultsXmsgImAuthRegSimpleRsp();
-  return *internal_default_instance();
-}
-
-XmsgImAuthRegSimpleRsp* XmsgImAuthRegSimpleRsp::New(::google::protobuf::Arena* arena) const {
-  XmsgImAuthRegSimpleRsp* n = new XmsgImAuthRegSimpleRsp;
-  if (arena != NULL) {
-    arena->Own(n);
-  }
-  return n;
-}
-
-void XmsgImAuthRegSimpleRsp::Clear() {
-// @@protoc_insertion_point(message_clear_start:XmsgImAuthRegSimpleRsp)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  ext_.Clear();
-  cgt_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  _internal_metadata_.Clear();
-}
-
-bool XmsgImAuthRegSimpleRsp::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:XmsgImAuthRegSimpleRsp)
-  for (;;) {
-    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // string cgt = 1;
-      case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_cgt()));
-          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->cgt().data(), static_cast<int>(this->cgt().length()),
-            ::google::protobuf::internal::WireFormatLite::PARSE,
-            "XmsgImAuthRegSimpleRsp.cgt"));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // map<string, string> ext = 2;
-      case 2: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(18u /* 18 & 0xFF */)) {
-          XmsgImAuthRegSimpleRsp_ExtEntry_DoNotUse::Parser< ::google::protobuf::internal::MapField<
-              XmsgImAuthRegSimpleRsp_ExtEntry_DoNotUse,
-              ::std::string, ::std::string,
-              ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
-              ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
-              0 >,
-            ::google::protobuf::Map< ::std::string, ::std::string > > parser(&ext_);
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
-              input, &parser));
-          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            parser.key().data(), static_cast<int>(parser.key().length()),
-            ::google::protobuf::internal::WireFormatLite::PARSE,
-            "XmsgImAuthRegSimpleRsp.ExtEntry.key"));
-          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            parser.value().data(), static_cast<int>(parser.value().length()),
-            ::google::protobuf::internal::WireFormatLite::PARSE,
-            "XmsgImAuthRegSimpleRsp.ExtEntry.value"));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      default: {
-      handle_unusual:
-        if (tag == 0) {
-          goto success;
-        }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
-      }
-    }
-  }
-success:
-  // @@protoc_insertion_point(parse_success:XmsgImAuthRegSimpleRsp)
-  return true;
-failure:
-  // @@protoc_insertion_point(parse_failure:XmsgImAuthRegSimpleRsp)
-  return false;
-#undef DO_
-}
-
-void XmsgImAuthRegSimpleRsp::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:XmsgImAuthRegSimpleRsp)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // string cgt = 1;
-  if (this->cgt().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->cgt().data(), static_cast<int>(this->cgt().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "XmsgImAuthRegSimpleRsp.cgt");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      1, this->cgt(), output);
-  }
-
-  // map<string, string> ext = 2;
-  if (!this->ext().empty()) {
-    typedef ::google::protobuf::Map< ::std::string, ::std::string >::const_pointer
-        ConstPtr;
-    typedef ConstPtr SortItem;
-    typedef ::google::protobuf::internal::CompareByDerefFirst<SortItem> Less;
-    struct Utf8Check {
-      static void Check(ConstPtr p) {
-        ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-          p->first.data(), static_cast<int>(p->first.length()),
-          ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-          "XmsgImAuthRegSimpleRsp.ExtEntry.key");
-        ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-          p->second.data(), static_cast<int>(p->second.length()),
-          ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-          "XmsgImAuthRegSimpleRsp.ExtEntry.value");
-      }
-    };
-
-    if (output->IsSerializationDeterministic() &&
-        this->ext().size() > 1) {
-      ::google::protobuf::scoped_array<SortItem> items(
-          new SortItem[this->ext().size()]);
-      typedef ::google::protobuf::Map< ::std::string, ::std::string >::size_type size_type;
-      size_type n = 0;
-      for (::google::protobuf::Map< ::std::string, ::std::string >::const_iterator
-          it = this->ext().begin();
-          it != this->ext().end(); ++it, ++n) {
-        items[static_cast<ptrdiff_t>(n)] = SortItem(&*it);
-      }
-      ::std::sort(&items[0], &items[static_cast<ptrdiff_t>(n)], Less());
-      ::google::protobuf::scoped_ptr<XmsgImAuthRegSimpleRsp_ExtEntry_DoNotUse> entry;
-      for (size_type i = 0; i < n; i++) {
-        entry.reset(ext_.NewEntryWrapper(
-            items[static_cast<ptrdiff_t>(i)]->first, items[static_cast<ptrdiff_t>(i)]->second));
-        ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-            2, *entry, output);
-        Utf8Check::Check(items[static_cast<ptrdiff_t>(i)]);
-      }
-    } else {
-      ::google::protobuf::scoped_ptr<XmsgImAuthRegSimpleRsp_ExtEntry_DoNotUse> entry;
-      for (::google::protobuf::Map< ::std::string, ::std::string >::const_iterator
-          it = this->ext().begin();
-          it != this->ext().end(); ++it) {
-        entry.reset(ext_.NewEntryWrapper(
-            it->first, it->second));
-        ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-            2, *entry, output);
-        Utf8Check::Check(&*it);
-      }
-    }
-  }
-
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
-  }
-  // @@protoc_insertion_point(serialize_end:XmsgImAuthRegSimpleRsp)
-}
-
-::google::protobuf::uint8* XmsgImAuthRegSimpleRsp::InternalSerializeWithCachedSizesToArray(
-    bool deterministic, ::google::protobuf::uint8* target) const {
-  (void)deterministic; // Unused
-  // @@protoc_insertion_point(serialize_to_array_start:XmsgImAuthRegSimpleRsp)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // string cgt = 1;
-  if (this->cgt().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->cgt().data(), static_cast<int>(this->cgt().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "XmsgImAuthRegSimpleRsp.cgt");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        1, this->cgt(), target);
-  }
-
-  // map<string, string> ext = 2;
-  if (!this->ext().empty()) {
-    typedef ::google::protobuf::Map< ::std::string, ::std::string >::const_pointer
-        ConstPtr;
-    typedef ConstPtr SortItem;
-    typedef ::google::protobuf::internal::CompareByDerefFirst<SortItem> Less;
-    struct Utf8Check {
-      static void Check(ConstPtr p) {
-        ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-          p->first.data(), static_cast<int>(p->first.length()),
-          ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-          "XmsgImAuthRegSimpleRsp.ExtEntry.key");
-        ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-          p->second.data(), static_cast<int>(p->second.length()),
-          ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-          "XmsgImAuthRegSimpleRsp.ExtEntry.value");
-      }
-    };
-
-    if (deterministic &&
-        this->ext().size() > 1) {
-      ::google::protobuf::scoped_array<SortItem> items(
-          new SortItem[this->ext().size()]);
-      typedef ::google::protobuf::Map< ::std::string, ::std::string >::size_type size_type;
-      size_type n = 0;
-      for (::google::protobuf::Map< ::std::string, ::std::string >::const_iterator
-          it = this->ext().begin();
-          it != this->ext().end(); ++it, ++n) {
-        items[static_cast<ptrdiff_t>(n)] = SortItem(&*it);
-      }
-      ::std::sort(&items[0], &items[static_cast<ptrdiff_t>(n)], Less());
-      ::google::protobuf::scoped_ptr<XmsgImAuthRegSimpleRsp_ExtEntry_DoNotUse> entry;
-      for (size_type i = 0; i < n; i++) {
-        entry.reset(ext_.NewEntryWrapper(
-            items[static_cast<ptrdiff_t>(i)]->first, items[static_cast<ptrdiff_t>(i)]->second));
-        target = ::google::protobuf::internal::WireFormatLite::
-                   InternalWriteMessageNoVirtualToArray(
-                       2, *entry, deterministic, target);
-;
-        Utf8Check::Check(items[static_cast<ptrdiff_t>(i)]);
-      }
-    } else {
-      ::google::protobuf::scoped_ptr<XmsgImAuthRegSimpleRsp_ExtEntry_DoNotUse> entry;
-      for (::google::protobuf::Map< ::std::string, ::std::string >::const_iterator
-          it = this->ext().begin();
-          it != this->ext().end(); ++it) {
-        entry.reset(ext_.NewEntryWrapper(
-            it->first, it->second));
-        target = ::google::protobuf::internal::WireFormatLite::
-                   InternalWriteMessageNoVirtualToArray(
-                       2, *entry, deterministic, target);
-;
-        Utf8Check::Check(&*it);
-      }
-    }
-  }
-
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:XmsgImAuthRegSimpleRsp)
-  return target;
-}
-
-size_t XmsgImAuthRegSimpleRsp::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:XmsgImAuthRegSimpleRsp)
-  size_t total_size = 0;
-
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
-  }
-  // map<string, string> ext = 2;
-  total_size += 1 *
-      ::google::protobuf::internal::FromIntSize(this->ext_size());
-  {
-    ::google::protobuf::scoped_ptr<XmsgImAuthRegSimpleRsp_ExtEntry_DoNotUse> entry;
-    for (::google::protobuf::Map< ::std::string, ::std::string >::const_iterator
-        it = this->ext().begin();
-        it != this->ext().end(); ++it) {
-      entry.reset(ext_.NewEntryWrapper(it->first, it->second));
-      total_size += ::google::protobuf::internal::WireFormatLite::
-          MessageSizeNoVirtual(*entry);
-    }
-  }
-
-  // string cgt = 1;
-  if (this->cgt().size() > 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->cgt());
-  }
-
-  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
-  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-  _cached_size_ = cached_size;
-  GOOGLE_SAFE_CONCURRENT_WRITES_END();
-  return total_size;
-}
-
-void XmsgImAuthRegSimpleRsp::MergeFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:XmsgImAuthRegSimpleRsp)
-  GOOGLE_DCHECK_NE(&from, this);
-  const XmsgImAuthRegSimpleRsp* source =
-      ::google::protobuf::internal::DynamicCastToGenerated<const XmsgImAuthRegSimpleRsp>(
-          &from);
-  if (source == NULL) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:XmsgImAuthRegSimpleRsp)
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:XmsgImAuthRegSimpleRsp)
-    MergeFrom(*source);
-  }
-}
-
-void XmsgImAuthRegSimpleRsp::MergeFrom(const XmsgImAuthRegSimpleRsp& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:XmsgImAuthRegSimpleRsp)
-  GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  ext_.MergeFrom(from.ext_);
-  if (from.cgt().size() > 0) {
-
-    cgt_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.cgt_);
-  }
-}
-
-void XmsgImAuthRegSimpleRsp::CopyFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:XmsgImAuthRegSimpleRsp)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-void XmsgImAuthRegSimpleRsp::CopyFrom(const XmsgImAuthRegSimpleRsp& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:XmsgImAuthRegSimpleRsp)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool XmsgImAuthRegSimpleRsp::IsInitialized() const {
-  return true;
-}
-
-void XmsgImAuthRegSimpleRsp::Swap(XmsgImAuthRegSimpleRsp* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
-void XmsgImAuthRegSimpleRsp::InternalSwap(XmsgImAuthRegSimpleRsp* other) {
-  using std::swap;
-  ext_.Swap(&other->ext_);
-  cgt_.Swap(&other->cgt_);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  swap(_cached_size_, other->_cached_size_);
-}
-
-::google::protobuf::Metadata XmsgImAuthRegSimpleRsp::GetMetadata() const {
   protobuf_net_2dx_2dmsg_2dim_2dauth_2eproto::protobuf_AssignDescriptorsOnce();
   return ::protobuf_net_2dx_2dmsg_2dim_2dauth_2eproto::file_level_metadata[kIndexInFileMessages];
 }

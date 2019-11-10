@@ -34,7 +34,7 @@ message XmsgImHlrUsrDat
 message XmsgImHlrUsrDatPri
 {
     bool enable = 1; 
-    bytes ext = 5; 
+    map<string, string> info = 2; 
 }
 
 message XmsgImHlrUsrDatPub

@@ -44,8 +44,9 @@ message XmsgImMsg
     XmsgImMsgImage image = 4; 
     XmsgImMsgVoice voice = 5; 
     XmsgImMsgVideo video = 6; 
-    XmsgImMsgMerge merge = 7; 
-    XmsgImMsgAt atx = 8; 
+    XmsgImMsgFile file = 7; 
+    XmsgImMsgMerge merge = 8; 
+    XmsgImMsgAt atx = 9; 
 }
 
 message XmsgImMsgText
@@ -71,6 +72,12 @@ message XmsgImMsgVoice
 message XmsgImMsgVideo
 {
     string uri = 1; 
+}
+
+message XmsgImMsgFile
+{
+    string from = 1; 
+    string fid = 2; 
 }
 
 message XmsgImMsgMerge
@@ -149,4 +156,3 @@ message XmsgImGroupMsgReadNotice
     string cgt = 1; 
     uint64 msgId = 2; 
 }
-

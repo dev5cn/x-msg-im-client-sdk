@@ -29,7 +29,6 @@ message XmsgImHlrOtherUsrInfoQueryRsp
 {
     map<string, XmsgImHlrOtherUsrInfo> usrInfo = 1; 
 }
-
 message XmsgImHlrOtherUsrInfo
 {
     map<string, string> info = 1; 
