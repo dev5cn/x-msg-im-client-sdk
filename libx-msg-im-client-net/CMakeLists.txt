@@ -12,7 +12,7 @@ ELSE ()
 ENDIF()
 #
 INCLUDE_DIRECTORIES(../libmisc-cpp)
-INCLUDE_DIRECTORIES(../libxsc-proto-client-cpp)
+INCLUDE_DIRECTORIES(../libxsc-proto-cpp)
 INCLUDE_DIRECTORIES(../libx-msg-im-client-xsc)
 INCLUDE_DIRECTORIES(../libx-msg-im-client-core)
 INCLUDE_DIRECTORIES(../libx-msg-im-client-pb-lite)

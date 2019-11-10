@@ -236,6 +236,9 @@ export interface IXmsgImMsg {
     /** XmsgImMsg video */
     video?: (IXmsgImMsgVideo|null);
 
+    /** XmsgImMsg file */
+    file?: (IXmsgImMsgFile|null);
+
     /** XmsgImMsg merge */
     merge?: (IXmsgImMsgMerge|null);
 
@@ -269,6 +272,9 @@ export class XmsgImMsg implements IXmsgImMsg {
 
     /** XmsgImMsg video. */
     public video?: (IXmsgImMsgVideo|null);
+
+    /** XmsgImMsg file. */
+    public file?: (IXmsgImMsgFile|null);
 
     /** XmsgImMsg merge. */
     public merge?: (IXmsgImMsgMerge|null);
@@ -792,6 +798,102 @@ export class XmsgImMsgVideo implements IXmsgImMsgVideo {
 
     /**
      * Converts this XmsgImMsgVideo to JSON.
+     * @returns JSON object
+     */
+    public toJSON(): { [k: string]: any };
+}
+
+/** Properties of a XmsgImMsgFile. */
+export interface IXmsgImMsgFile {
+
+    /** XmsgImMsgFile from */
+    from?: (string|null);
+
+    /** XmsgImMsgFile fid */
+    fid?: (string|null);
+}
+
+/** Represents a XmsgImMsgFile. */
+export class XmsgImMsgFile implements IXmsgImMsgFile {
+
+    /**
+     * Constructs a new XmsgImMsgFile.
+     * @param [properties] Properties to set
+     */
+    constructor(properties?: IXmsgImMsgFile);
+
+    /** XmsgImMsgFile from. */
+    public from: string;
+
+    /** XmsgImMsgFile fid. */
+    public fid: string;
+
+    /**
+     * Creates a new XmsgImMsgFile instance using the specified properties.
+     * @param [properties] Properties to set
+     * @returns XmsgImMsgFile instance
+     */
+    public static create(properties?: IXmsgImMsgFile): XmsgImMsgFile;
+
+    /**
+     * Encodes the specified XmsgImMsgFile message. Does not implicitly {@link XmsgImMsgFile.verify|verify} messages.
+     * @param message XmsgImMsgFile message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encode(message: IXmsgImMsgFile, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Encodes the specified XmsgImMsgFile message, length delimited. Does not implicitly {@link XmsgImMsgFile.verify|verify} messages.
+     * @param message XmsgImMsgFile message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encodeDelimited(message: IXmsgImMsgFile, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Decodes a XmsgImMsgFile message from the specified reader or buffer.
+     * @param reader Reader or buffer to decode from
+     * @param [length] Message length if known beforehand
+     * @returns XmsgImMsgFile
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): XmsgImMsgFile;
+
+    /**
+     * Decodes a XmsgImMsgFile message from the specified reader or buffer, length delimited.
+     * @param reader Reader or buffer to decode from
+     * @returns XmsgImMsgFile
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): XmsgImMsgFile;
+
+    /**
+     * Verifies a XmsgImMsgFile message.
+     * @param message Plain object to verify
+     * @returns `null` if valid, otherwise the reason why it is not
+     */
+    public static verify(message: { [k: string]: any }): (string|null);
+
+    /**
+     * Creates a XmsgImMsgFile message from a plain object. Also converts values to their respective internal types.
+     * @param object Plain object
+     * @returns XmsgImMsgFile
+     */
+    public static fromObject(object: { [k: string]: any }): XmsgImMsgFile;
+
+    /**
+     * Creates a plain object from a XmsgImMsgFile message. Also converts values to other types if specified.
+     * @param message XmsgImMsgFile
+     * @param [options] Conversion options
+     * @returns Plain object
+     */
+    public static toObject(message: XmsgImMsgFile, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+    /**
+     * Converts this XmsgImMsgFile to JSON.
      * @returns JSON object
      */
     public toJSON(): { [k: string]: any };
@@ -3233,132 +3335,6 @@ export class XmsgChannelStatusGroupStatus implements IXmsgChannelStatusGroupStat
     public toJSON(): { [k: string]: any };
 }
 
-/** Properties of a XmsgClientTokenInfo. */
-export interface IXmsgClientTokenInfo {
-
-    /** XmsgClientTokenInfo cgt */
-    cgt?: (string|null);
-
-    /** XmsgClientTokenInfo token */
-    token?: (string|null);
-
-    /** XmsgClientTokenInfo alg */
-    alg?: (string|null);
-
-    /** XmsgClientTokenInfo slat */
-    slat?: (string|null);
-
-    /** XmsgClientTokenInfo plat */
-    plat?: (string|null);
-
-    /** XmsgClientTokenInfo did */
-    did?: (string|null);
-
-    /** XmsgClientTokenInfo sign */
-    sign?: (string|null);
-}
-
-/** Represents a XmsgClientTokenInfo. */
-export class XmsgClientTokenInfo implements IXmsgClientTokenInfo {
-
-    /**
-     * Constructs a new XmsgClientTokenInfo.
-     * @param [properties] Properties to set
-     */
-    constructor(properties?: IXmsgClientTokenInfo);
-
-    /** XmsgClientTokenInfo cgt. */
-    public cgt: string;
-
-    /** XmsgClientTokenInfo token. */
-    public token: string;
-
-    /** XmsgClientTokenInfo alg. */
-    public alg: string;
-
-    /** XmsgClientTokenInfo slat. */
-    public slat: string;
-
-    /** XmsgClientTokenInfo plat. */
-    public plat: string;
-
-    /** XmsgClientTokenInfo did. */
-    public did: string;
-
-    /** XmsgClientTokenInfo sign. */
-    public sign: string;
-
-    /**
-     * Creates a new XmsgClientTokenInfo instance using the specified properties.
-     * @param [properties] Properties to set
-     * @returns XmsgClientTokenInfo instance
-     */
-    public static create(properties?: IXmsgClientTokenInfo): XmsgClientTokenInfo;
-
-    /**
-     * Encodes the specified XmsgClientTokenInfo message. Does not implicitly {@link XmsgClientTokenInfo.verify|verify} messages.
-     * @param message XmsgClientTokenInfo message or plain object to encode
-     * @param [writer] Writer to encode to
-     * @returns Writer
-     */
-    public static encode(message: IXmsgClientTokenInfo, writer?: $protobuf.Writer): $protobuf.Writer;
-
-    /**
-     * Encodes the specified XmsgClientTokenInfo message, length delimited. Does not implicitly {@link XmsgClientTokenInfo.verify|verify} messages.
-     * @param message XmsgClientTokenInfo message or plain object to encode
-     * @param [writer] Writer to encode to
-     * @returns Writer
-     */
-    public static encodeDelimited(message: IXmsgClientTokenInfo, writer?: $protobuf.Writer): $protobuf.Writer;
-
-    /**
-     * Decodes a XmsgClientTokenInfo message from the specified reader or buffer.
-     * @param reader Reader or buffer to decode from
-     * @param [length] Message length if known beforehand
-     * @returns XmsgClientTokenInfo
-     * @throws {Error} If the payload is not a reader or valid buffer
-     * @throws {$protobuf.util.ProtocolError} If required fields are missing
-     */
-    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): XmsgClientTokenInfo;
-
-    /**
-     * Decodes a XmsgClientTokenInfo message from the specified reader or buffer, length delimited.
-     * @param reader Reader or buffer to decode from
-     * @returns XmsgClientTokenInfo
-     * @throws {Error} If the payload is not a reader or valid buffer
-     * @throws {$protobuf.util.ProtocolError} If required fields are missing
-     */
-    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): XmsgClientTokenInfo;
-
-    /**
-     * Verifies a XmsgClientTokenInfo message.
-     * @param message Plain object to verify
-     * @returns `null` if valid, otherwise the reason why it is not
-     */
-    public static verify(message: { [k: string]: any }): (string|null);
-
-    /**
-     * Creates a XmsgClientTokenInfo message from a plain object. Also converts values to their respective internal types.
-     * @param object Plain object
-     * @returns XmsgClientTokenInfo
-     */
-    public static fromObject(object: { [k: string]: any }): XmsgClientTokenInfo;
-
-    /**
-     * Creates a plain object from a XmsgClientTokenInfo message. Also converts values to other types if specified.
-     * @param message XmsgClientTokenInfo
-     * @param [options] Conversion options
-     * @returns Plain object
-     */
-    public static toObject(message: XmsgClientTokenInfo, options?: $protobuf.IConversionOptions): { [k: string]: any };
-
-    /**
-     * Converts this XmsgClientTokenInfo to JSON.
-     * @returns JSON object
-     */
-    public toJSON(): { [k: string]: any };
-}
-
 /** Properties of a XmsgImGroupMemberAddReq. */
 export interface IXmsgImGroupMemberAddReq {
 
@@ -4983,6 +4959,745 @@ namespace XmsgImSdkEventType {
     let X_MSG_IM_SDK_EVENT_TYPE_CXX_LOG: number;
 }
 
+/** Represents a XmsgOssUploadSimpleReq. */
+export class XmsgOssUploadSimpleReq implements IXmsgOssUploadSimpleReq {
+
+    /**
+     * Constructs a new XmsgOssUploadSimpleReq.
+     * @param [properties] Properties to set
+     */
+    constructor(properties?: IXmsgOssUploadSimpleReq);
+
+    /** XmsgOssUploadSimpleReq objName. */
+    public objName: string;
+
+    /** XmsgOssUploadSimpleReq objSize. */
+    public objSize: (number|Long);
+
+    /** XmsgOssUploadSimpleReq ext. */
+    public ext: { [k: string]: string };
+
+    /**
+     * Creates a new XmsgOssUploadSimpleReq instance using the specified properties.
+     * @param [properties] Properties to set
+     * @returns XmsgOssUploadSimpleReq instance
+     */
+    public static create(properties?: IXmsgOssUploadSimpleReq): XmsgOssUploadSimpleReq;
+
+    /**
+     * Encodes the specified XmsgOssUploadSimpleReq message. Does not implicitly {@link XmsgOssUploadSimpleReq.verify|verify} messages.
+     * @param message XmsgOssUploadSimpleReq message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encode(message: IXmsgOssUploadSimpleReq, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Encodes the specified XmsgOssUploadSimpleReq message, length delimited. Does not implicitly {@link XmsgOssUploadSimpleReq.verify|verify} messages.
+     * @param message XmsgOssUploadSimpleReq message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encodeDelimited(message: IXmsgOssUploadSimpleReq, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Decodes a XmsgOssUploadSimpleReq message from the specified reader or buffer.
+     * @param reader Reader or buffer to decode from
+     * @param [length] Message length if known beforehand
+     * @returns XmsgOssUploadSimpleReq
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): XmsgOssUploadSimpleReq;
+
+    /**
+     * Decodes a XmsgOssUploadSimpleReq message from the specified reader or buffer, length delimited.
+     * @param reader Reader or buffer to decode from
+     * @returns XmsgOssUploadSimpleReq
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): XmsgOssUploadSimpleReq;
+
+    /**
+     * Verifies a XmsgOssUploadSimpleReq message.
+     * @param message Plain object to verify
+     * @returns `null` if valid, otherwise the reason why it is not
+     */
+    public static verify(message: { [k: string]: any }): (string|null);
+
+    /**
+     * Creates a XmsgOssUploadSimpleReq message from a plain object. Also converts values to their respective internal types.
+     * @param object Plain object
+     * @returns XmsgOssUploadSimpleReq
+     */
+    public static fromObject(object: { [k: string]: any }): XmsgOssUploadSimpleReq;
+
+    /**
+     * Creates a plain object from a XmsgOssUploadSimpleReq message. Also converts values to other types if specified.
+     * @param message XmsgOssUploadSimpleReq
+     * @param [options] Conversion options
+     * @returns Plain object
+     */
+    public static toObject(message: XmsgOssUploadSimpleReq, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+    /**
+     * Converts this XmsgOssUploadSimpleReq to JSON.
+     * @returns JSON object
+     */
+    public toJSON(): { [k: string]: any };
+}
+
+/** Represents a XmsgOssUploadSimpleRsp. */
+export class XmsgOssUploadSimpleRsp implements IXmsgOssUploadSimpleRsp {
+
+    /**
+     * Constructs a new XmsgOssUploadSimpleRsp.
+     * @param [properties] Properties to set
+     */
+    constructor(properties?: IXmsgOssUploadSimpleRsp);
+
+    /** XmsgOssUploadSimpleRsp oid. */
+    public oid: string;
+
+    /** XmsgOssUploadSimpleRsp hashVal. */
+    public hashVal: string;
+
+    /** XmsgOssUploadSimpleRsp ext. */
+    public ext: { [k: string]: string };
+
+    /**
+     * Creates a new XmsgOssUploadSimpleRsp instance using the specified properties.
+     * @param [properties] Properties to set
+     * @returns XmsgOssUploadSimpleRsp instance
+     */
+    public static create(properties?: IXmsgOssUploadSimpleRsp): XmsgOssUploadSimpleRsp;
+
+    /**
+     * Encodes the specified XmsgOssUploadSimpleRsp message. Does not implicitly {@link XmsgOssUploadSimpleRsp.verify|verify} messages.
+     * @param message XmsgOssUploadSimpleRsp message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encode(message: IXmsgOssUploadSimpleRsp, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Encodes the specified XmsgOssUploadSimpleRsp message, length delimited. Does not implicitly {@link XmsgOssUploadSimpleRsp.verify|verify} messages.
+     * @param message XmsgOssUploadSimpleRsp message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encodeDelimited(message: IXmsgOssUploadSimpleRsp, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Decodes a XmsgOssUploadSimpleRsp message from the specified reader or buffer.
+     * @param reader Reader or buffer to decode from
+     * @param [length] Message length if known beforehand
+     * @returns XmsgOssUploadSimpleRsp
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): XmsgOssUploadSimpleRsp;
+
+    /**
+     * Decodes a XmsgOssUploadSimpleRsp message from the specified reader or buffer, length delimited.
+     * @param reader Reader or buffer to decode from
+     * @returns XmsgOssUploadSimpleRsp
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): XmsgOssUploadSimpleRsp;
+
+    /**
+     * Verifies a XmsgOssUploadSimpleRsp message.
+     * @param message Plain object to verify
+     * @returns `null` if valid, otherwise the reason why it is not
+     */
+    public static verify(message: { [k: string]: any }): (string|null);
+
+    /**
+     * Creates a XmsgOssUploadSimpleRsp message from a plain object. Also converts values to their respective internal types.
+     * @param object Plain object
+     * @returns XmsgOssUploadSimpleRsp
+     */
+    public static fromObject(object: { [k: string]: any }): XmsgOssUploadSimpleRsp;
+
+    /**
+     * Creates a plain object from a XmsgOssUploadSimpleRsp message. Also converts values to other types if specified.
+     * @param message XmsgOssUploadSimpleRsp
+     * @param [options] Conversion options
+     * @returns Plain object
+     */
+    public static toObject(message: XmsgOssUploadSimpleRsp, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+    /**
+     * Converts this XmsgOssUploadSimpleRsp to JSON.
+     * @returns JSON object
+     */
+    public toJSON(): { [k: string]: any };
+}
+
+/** Represents a XmsgOssDownloadSimpleReq. */
+export class XmsgOssDownloadSimpleReq implements IXmsgOssDownloadSimpleReq {
+
+    /**
+     * Constructs a new XmsgOssDownloadSimpleReq.
+     * @param [properties] Properties to set
+     */
+    constructor(properties?: IXmsgOssDownloadSimpleReq);
+
+    /** XmsgOssDownloadSimpleReq oid. */
+    public oid: string;
+
+    /** XmsgOssDownloadSimpleReq cgt. */
+    public cgt: string;
+
+    /** XmsgOssDownloadSimpleReq offset. */
+    public offset: (number|Long);
+
+    /** XmsgOssDownloadSimpleReq len. */
+    public len: (number|Long);
+
+    /** XmsgOssDownloadSimpleReq ext. */
+    public ext: { [k: string]: string };
+
+    /**
+     * Creates a new XmsgOssDownloadSimpleReq instance using the specified properties.
+     * @param [properties] Properties to set
+     * @returns XmsgOssDownloadSimpleReq instance
+     */
+    public static create(properties?: IXmsgOssDownloadSimpleReq): XmsgOssDownloadSimpleReq;
+
+    /**
+     * Encodes the specified XmsgOssDownloadSimpleReq message. Does not implicitly {@link XmsgOssDownloadSimpleReq.verify|verify} messages.
+     * @param message XmsgOssDownloadSimpleReq message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encode(message: IXmsgOssDownloadSimpleReq, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Encodes the specified XmsgOssDownloadSimpleReq message, length delimited. Does not implicitly {@link XmsgOssDownloadSimpleReq.verify|verify} messages.
+     * @param message XmsgOssDownloadSimpleReq message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encodeDelimited(message: IXmsgOssDownloadSimpleReq, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Decodes a XmsgOssDownloadSimpleReq message from the specified reader or buffer.
+     * @param reader Reader or buffer to decode from
+     * @param [length] Message length if known beforehand
+     * @returns XmsgOssDownloadSimpleReq
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): XmsgOssDownloadSimpleReq;
+
+    /**
+     * Decodes a XmsgOssDownloadSimpleReq message from the specified reader or buffer, length delimited.
+     * @param reader Reader or buffer to decode from
+     * @returns XmsgOssDownloadSimpleReq
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): XmsgOssDownloadSimpleReq;
+
+    /**
+     * Verifies a XmsgOssDownloadSimpleReq message.
+     * @param message Plain object to verify
+     * @returns `null` if valid, otherwise the reason why it is not
+     */
+    public static verify(message: { [k: string]: any }): (string|null);
+
+    /**
+     * Creates a XmsgOssDownloadSimpleReq message from a plain object. Also converts values to their respective internal types.
+     * @param object Plain object
+     * @returns XmsgOssDownloadSimpleReq
+     */
+    public static fromObject(object: { [k: string]: any }): XmsgOssDownloadSimpleReq;
+
+    /**
+     * Creates a plain object from a XmsgOssDownloadSimpleReq message. Also converts values to other types if specified.
+     * @param message XmsgOssDownloadSimpleReq
+     * @param [options] Conversion options
+     * @returns Plain object
+     */
+    public static toObject(message: XmsgOssDownloadSimpleReq, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+    /**
+     * Converts this XmsgOssDownloadSimpleReq to JSON.
+     * @returns JSON object
+     */
+    public toJSON(): { [k: string]: any };
+}
+
+/** Represents a XmsgOssDownloadSimpleRsp. */
+export class XmsgOssDownloadSimpleRsp implements IXmsgOssDownloadSimpleRsp {
+
+    /**
+     * Constructs a new XmsgOssDownloadSimpleRsp.
+     * @param [properties] Properties to set
+     */
+    constructor(properties?: IXmsgOssDownloadSimpleRsp);
+
+    /** XmsgOssDownloadSimpleRsp objName. */
+    public objName: string;
+
+    /** XmsgOssDownloadSimpleRsp objSize. */
+    public objSize: (number|Long);
+
+    /** XmsgOssDownloadSimpleRsp hashVal. */
+    public hashVal: string;
+
+    /** XmsgOssDownloadSimpleRsp gts. */
+    public gts: (number|Long);
+
+    /** XmsgOssDownloadSimpleRsp ext. */
+    public ext: { [k: string]: string };
+
+    /**
+     * Creates a new XmsgOssDownloadSimpleRsp instance using the specified properties.
+     * @param [properties] Properties to set
+     * @returns XmsgOssDownloadSimpleRsp instance
+     */
+    public static create(properties?: IXmsgOssDownloadSimpleRsp): XmsgOssDownloadSimpleRsp;
+
+    /**
+     * Encodes the specified XmsgOssDownloadSimpleRsp message. Does not implicitly {@link XmsgOssDownloadSimpleRsp.verify|verify} messages.
+     * @param message XmsgOssDownloadSimpleRsp message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encode(message: IXmsgOssDownloadSimpleRsp, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Encodes the specified XmsgOssDownloadSimpleRsp message, length delimited. Does not implicitly {@link XmsgOssDownloadSimpleRsp.verify|verify} messages.
+     * @param message XmsgOssDownloadSimpleRsp message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encodeDelimited(message: IXmsgOssDownloadSimpleRsp, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Decodes a XmsgOssDownloadSimpleRsp message from the specified reader or buffer.
+     * @param reader Reader or buffer to decode from
+     * @param [length] Message length if known beforehand
+     * @returns XmsgOssDownloadSimpleRsp
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): XmsgOssDownloadSimpleRsp;
+
+    /**
+     * Decodes a XmsgOssDownloadSimpleRsp message from the specified reader or buffer, length delimited.
+     * @param reader Reader or buffer to decode from
+     * @returns XmsgOssDownloadSimpleRsp
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): XmsgOssDownloadSimpleRsp;
+
+    /**
+     * Verifies a XmsgOssDownloadSimpleRsp message.
+     * @param message Plain object to verify
+     * @returns `null` if valid, otherwise the reason why it is not
+     */
+    public static verify(message: { [k: string]: any }): (string|null);
+
+    /**
+     * Creates a XmsgOssDownloadSimpleRsp message from a plain object. Also converts values to their respective internal types.
+     * @param object Plain object
+     * @returns XmsgOssDownloadSimpleRsp
+     */
+    public static fromObject(object: { [k: string]: any }): XmsgOssDownloadSimpleRsp;
+
+    /**
+     * Creates a plain object from a XmsgOssDownloadSimpleRsp message. Also converts values to other types if specified.
+     * @param message XmsgOssDownloadSimpleRsp
+     * @param [options] Conversion options
+     * @returns Plain object
+     */
+    public static toObject(message: XmsgOssDownloadSimpleRsp, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+    /**
+     * Converts this XmsgOssDownloadSimpleRsp to JSON.
+     * @returns JSON object
+     */
+    public toJSON(): { [k: string]: any };
+}
+
+/** Represents a XmsgOssUsrObjInfoQueryReq. */
+export class XmsgOssUsrObjInfoQueryReq implements IXmsgOssUsrObjInfoQueryReq {
+
+    /**
+     * Constructs a new XmsgOssUsrObjInfoQueryReq.
+     * @param [properties] Properties to set
+     */
+    constructor(properties?: IXmsgOssUsrObjInfoQueryReq);
+
+    /** XmsgOssUsrObjInfoQueryReq sts. */
+    public sts: (number|Long);
+
+    /** XmsgOssUsrObjInfoQueryReq ets. */
+    public ets: (number|Long);
+
+    /** XmsgOssUsrObjInfoQueryReq page. */
+    public page: number;
+
+    /** XmsgOssUsrObjInfoQueryReq pageSize. */
+    public pageSize: number;
+
+    /**
+     * Creates a new XmsgOssUsrObjInfoQueryReq instance using the specified properties.
+     * @param [properties] Properties to set
+     * @returns XmsgOssUsrObjInfoQueryReq instance
+     */
+    public static create(properties?: IXmsgOssUsrObjInfoQueryReq): XmsgOssUsrObjInfoQueryReq;
+
+    /**
+     * Encodes the specified XmsgOssUsrObjInfoQueryReq message. Does not implicitly {@link XmsgOssUsrObjInfoQueryReq.verify|verify} messages.
+     * @param message XmsgOssUsrObjInfoQueryReq message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encode(message: IXmsgOssUsrObjInfoQueryReq, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Encodes the specified XmsgOssUsrObjInfoQueryReq message, length delimited. Does not implicitly {@link XmsgOssUsrObjInfoQueryReq.verify|verify} messages.
+     * @param message XmsgOssUsrObjInfoQueryReq message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encodeDelimited(message: IXmsgOssUsrObjInfoQueryReq, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Decodes a XmsgOssUsrObjInfoQueryReq message from the specified reader or buffer.
+     * @param reader Reader or buffer to decode from
+     * @param [length] Message length if known beforehand
+     * @returns XmsgOssUsrObjInfoQueryReq
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): XmsgOssUsrObjInfoQueryReq;
+
+    /**
+     * Decodes a XmsgOssUsrObjInfoQueryReq message from the specified reader or buffer, length delimited.
+     * @param reader Reader or buffer to decode from
+     * @returns XmsgOssUsrObjInfoQueryReq
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): XmsgOssUsrObjInfoQueryReq;
+
+    /**
+     * Verifies a XmsgOssUsrObjInfoQueryReq message.
+     * @param message Plain object to verify
+     * @returns `null` if valid, otherwise the reason why it is not
+     */
+    public static verify(message: { [k: string]: any }): (string|null);
+
+    /**
+     * Creates a XmsgOssUsrObjInfoQueryReq message from a plain object. Also converts values to their respective internal types.
+     * @param object Plain object
+     * @returns XmsgOssUsrObjInfoQueryReq
+     */
+    public static fromObject(object: { [k: string]: any }): XmsgOssUsrObjInfoQueryReq;
+
+    /**
+     * Creates a plain object from a XmsgOssUsrObjInfoQueryReq message. Also converts values to other types if specified.
+     * @param message XmsgOssUsrObjInfoQueryReq
+     * @param [options] Conversion options
+     * @returns Plain object
+     */
+    public static toObject(message: XmsgOssUsrObjInfoQueryReq, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+    /**
+     * Converts this XmsgOssUsrObjInfoQueryReq to JSON.
+     * @returns JSON object
+     */
+    public toJSON(): { [k: string]: any };
+}
+
+/** Represents a XmsgOssUsrObjInfoQueryRsp. */
+export class XmsgOssUsrObjInfoQueryRsp implements IXmsgOssUsrObjInfoQueryRsp {
+
+    /**
+     * Constructs a new XmsgOssUsrObjInfoQueryRsp.
+     * @param [properties] Properties to set
+     */
+    constructor(properties?: IXmsgOssUsrObjInfoQueryRsp);
+
+    /** XmsgOssUsrObjInfoQueryRsp objInfo. */
+    public objInfo: IXmsgOssUsrObjInfo[];
+
+    /**
+     * Creates a new XmsgOssUsrObjInfoQueryRsp instance using the specified properties.
+     * @param [properties] Properties to set
+     * @returns XmsgOssUsrObjInfoQueryRsp instance
+     */
+    public static create(properties?: IXmsgOssUsrObjInfoQueryRsp): XmsgOssUsrObjInfoQueryRsp;
+
+    /**
+     * Encodes the specified XmsgOssUsrObjInfoQueryRsp message. Does not implicitly {@link XmsgOssUsrObjInfoQueryRsp.verify|verify} messages.
+     * @param message XmsgOssUsrObjInfoQueryRsp message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encode(message: IXmsgOssUsrObjInfoQueryRsp, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Encodes the specified XmsgOssUsrObjInfoQueryRsp message, length delimited. Does not implicitly {@link XmsgOssUsrObjInfoQueryRsp.verify|verify} messages.
+     * @param message XmsgOssUsrObjInfoQueryRsp message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encodeDelimited(message: IXmsgOssUsrObjInfoQueryRsp, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Decodes a XmsgOssUsrObjInfoQueryRsp message from the specified reader or buffer.
+     * @param reader Reader or buffer to decode from
+     * @param [length] Message length if known beforehand
+     * @returns XmsgOssUsrObjInfoQueryRsp
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): XmsgOssUsrObjInfoQueryRsp;
+
+    /**
+     * Decodes a XmsgOssUsrObjInfoQueryRsp message from the specified reader or buffer, length delimited.
+     * @param reader Reader or buffer to decode from
+     * @returns XmsgOssUsrObjInfoQueryRsp
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): XmsgOssUsrObjInfoQueryRsp;
+
+    /**
+     * Verifies a XmsgOssUsrObjInfoQueryRsp message.
+     * @param message Plain object to verify
+     * @returns `null` if valid, otherwise the reason why it is not
+     */
+    public static verify(message: { [k: string]: any }): (string|null);
+
+    /**
+     * Creates a XmsgOssUsrObjInfoQueryRsp message from a plain object. Also converts values to their respective internal types.
+     * @param object Plain object
+     * @returns XmsgOssUsrObjInfoQueryRsp
+     */
+    public static fromObject(object: { [k: string]: any }): XmsgOssUsrObjInfoQueryRsp;
+
+    /**
+     * Creates a plain object from a XmsgOssUsrObjInfoQueryRsp message. Also converts values to other types if specified.
+     * @param message XmsgOssUsrObjInfoQueryRsp
+     * @param [options] Conversion options
+     * @returns Plain object
+     */
+    public static toObject(message: XmsgOssUsrObjInfoQueryRsp, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+    /**
+     * Converts this XmsgOssUsrObjInfoQueryRsp to JSON.
+     * @returns JSON object
+     */
+    public toJSON(): { [k: string]: any };
+}
+
+/** Represents a XmsgOssUsrObjInfo. */
+export class XmsgOssUsrObjInfo implements IXmsgOssUsrObjInfo {
+
+    /**
+     * Constructs a new XmsgOssUsrObjInfo.
+     * @param [properties] Properties to set
+     */
+    constructor(properties?: IXmsgOssUsrObjInfo);
+
+    /** XmsgOssUsrObjInfo oid. */
+    public oid: string;
+
+    /** XmsgOssUsrObjInfo objName. */
+    public objName: string;
+
+    /** XmsgOssUsrObjInfo objSize. */
+    public objSize: (number|Long);
+
+    /** XmsgOssUsrObjInfo hashVal. */
+    public hashVal: string;
+
+    /** XmsgOssUsrObjInfo gts. */
+    public gts: (number|Long);
+
+    /**
+     * Creates a new XmsgOssUsrObjInfo instance using the specified properties.
+     * @param [properties] Properties to set
+     * @returns XmsgOssUsrObjInfo instance
+     */
+    public static create(properties?: IXmsgOssUsrObjInfo): XmsgOssUsrObjInfo;
+
+    /**
+     * Encodes the specified XmsgOssUsrObjInfo message. Does not implicitly {@link XmsgOssUsrObjInfo.verify|verify} messages.
+     * @param message XmsgOssUsrObjInfo message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encode(message: IXmsgOssUsrObjInfo, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Encodes the specified XmsgOssUsrObjInfo message, length delimited. Does not implicitly {@link XmsgOssUsrObjInfo.verify|verify} messages.
+     * @param message XmsgOssUsrObjInfo message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encodeDelimited(message: IXmsgOssUsrObjInfo, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Decodes a XmsgOssUsrObjInfo message from the specified reader or buffer.
+     * @param reader Reader or buffer to decode from
+     * @param [length] Message length if known beforehand
+     * @returns XmsgOssUsrObjInfo
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): XmsgOssUsrObjInfo;
+
+    /**
+     * Decodes a XmsgOssUsrObjInfo message from the specified reader or buffer, length delimited.
+     * @param reader Reader or buffer to decode from
+     * @returns XmsgOssUsrObjInfo
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): XmsgOssUsrObjInfo;
+
+    /**
+     * Verifies a XmsgOssUsrObjInfo message.
+     * @param message Plain object to verify
+     * @returns `null` if valid, otherwise the reason why it is not
+     */
+    public static verify(message: { [k: string]: any }): (string|null);
+
+    /**
+     * Creates a XmsgOssUsrObjInfo message from a plain object. Also converts values to their respective internal types.
+     * @param object Plain object
+     * @returns XmsgOssUsrObjInfo
+     */
+    public static fromObject(object: { [k: string]: any }): XmsgOssUsrObjInfo;
+
+    /**
+     * Creates a plain object from a XmsgOssUsrObjInfo message. Also converts values to other types if specified.
+     * @param message XmsgOssUsrObjInfo
+     * @param [options] Conversion options
+     * @returns Plain object
+     */
+    public static toObject(message: XmsgOssUsrObjInfo, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+    /**
+     * Converts this XmsgOssUsrObjInfo to JSON.
+     * @returns JSON object
+     */
+    public toJSON(): { [k: string]: any };
+}
+
+/** Represents a XmsgClientTokenInfo. */
+export class XmsgClientTokenInfo implements IXmsgClientTokenInfo {
+
+    /**
+     * Constructs a new XmsgClientTokenInfo.
+     * @param [properties] Properties to set
+     */
+    constructor(properties?: IXmsgClientTokenInfo);
+
+    /** XmsgClientTokenInfo cgt. */
+    public cgt: string;
+
+    /** XmsgClientTokenInfo token. */
+    public token: string;
+
+    /** XmsgClientTokenInfo alg. */
+    public alg: string;
+
+    /** XmsgClientTokenInfo slat. */
+    public slat: string;
+
+    /** XmsgClientTokenInfo plat. */
+    public plat: string;
+
+    /** XmsgClientTokenInfo did. */
+    public did: string;
+
+    /** XmsgClientTokenInfo sign. */
+    public sign: string;
+
+    /**
+     * Creates a new XmsgClientTokenInfo instance using the specified properties.
+     * @param [properties] Properties to set
+     * @returns XmsgClientTokenInfo instance
+     */
+    public static create(properties?: IXmsgClientTokenInfo): XmsgClientTokenInfo;
+
+    /**
+     * Encodes the specified XmsgClientTokenInfo message. Does not implicitly {@link XmsgClientTokenInfo.verify|verify} messages.
+     * @param message XmsgClientTokenInfo message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encode(message: IXmsgClientTokenInfo, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Encodes the specified XmsgClientTokenInfo message, length delimited. Does not implicitly {@link XmsgClientTokenInfo.verify|verify} messages.
+     * @param message XmsgClientTokenInfo message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encodeDelimited(message: IXmsgClientTokenInfo, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Decodes a XmsgClientTokenInfo message from the specified reader or buffer.
+     * @param reader Reader or buffer to decode from
+     * @param [length] Message length if known beforehand
+     * @returns XmsgClientTokenInfo
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): XmsgClientTokenInfo;
+
+    /**
+     * Decodes a XmsgClientTokenInfo message from the specified reader or buffer, length delimited.
+     * @param reader Reader or buffer to decode from
+     * @returns XmsgClientTokenInfo
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): XmsgClientTokenInfo;
+
+    /**
+     * Verifies a XmsgClientTokenInfo message.
+     * @param message Plain object to verify
+     * @returns `null` if valid, otherwise the reason why it is not
+     */
+    public static verify(message: { [k: string]: any }): (string|null);
+
+    /**
+     * Creates a XmsgClientTokenInfo message from a plain object. Also converts values to their respective internal types.
+     * @param object Plain object
+     * @returns XmsgClientTokenInfo
+     */
+    public static fromObject(object: { [k: string]: any }): XmsgClientTokenInfo;
+
+    /**
+     * Creates a plain object from a XmsgClientTokenInfo message. Also converts values to other types if specified.
+     * @param message XmsgClientTokenInfo
+     * @param [options] Conversion options
+     * @returns Plain object
+     */
+    public static toObject(message: XmsgClientTokenInfo, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+    /**
+     * Converts this XmsgClientTokenInfo to JSON.
+     * @returns JSON object
+     */
+    public toJSON(): { [k: string]: any };
+}
+
 /** Represents a XmsgImHlrAttachSimpleReq. */
 export class XmsgImHlrAttachSimpleReq implements IXmsgImHlrAttachSimpleReq {
 
@@ -5778,6 +6493,184 @@ export class XmsgImAuthSimpleRsp implements IXmsgImAuthSimpleRsp {
     public toJSON(): { [k: string]: any };
 }
 
+/** Represents a XmsgImAuthRegSimpleReq. */
+export class XmsgImAuthRegSimpleReq implements IXmsgImAuthRegSimpleReq {
+
+    /**
+     * Constructs a new XmsgImAuthRegSimpleReq.
+     * @param [properties] Properties to set
+     */
+    constructor(properties?: IXmsgImAuthRegSimpleReq);
+
+    /** XmsgImAuthRegSimpleReq usr. */
+    public usr: string;
+
+    /** XmsgImAuthRegSimpleReq salt. */
+    public salt: string;
+
+    /** XmsgImAuthRegSimpleReq pwd. */
+    public pwd: string;
+
+    /** XmsgImAuthRegSimpleReq dev. */
+    public dev?: (IXmsgImClientDeviceInfo|null);
+
+    /**
+     * Creates a new XmsgImAuthRegSimpleReq instance using the specified properties.
+     * @param [properties] Properties to set
+     * @returns XmsgImAuthRegSimpleReq instance
+     */
+    public static create(properties?: IXmsgImAuthRegSimpleReq): XmsgImAuthRegSimpleReq;
+
+    /**
+     * Encodes the specified XmsgImAuthRegSimpleReq message. Does not implicitly {@link XmsgImAuthRegSimpleReq.verify|verify} messages.
+     * @param message XmsgImAuthRegSimpleReq message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encode(message: IXmsgImAuthRegSimpleReq, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Encodes the specified XmsgImAuthRegSimpleReq message, length delimited. Does not implicitly {@link XmsgImAuthRegSimpleReq.verify|verify} messages.
+     * @param message XmsgImAuthRegSimpleReq message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encodeDelimited(message: IXmsgImAuthRegSimpleReq, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Decodes a XmsgImAuthRegSimpleReq message from the specified reader or buffer.
+     * @param reader Reader or buffer to decode from
+     * @param [length] Message length if known beforehand
+     * @returns XmsgImAuthRegSimpleReq
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): XmsgImAuthRegSimpleReq;
+
+    /**
+     * Decodes a XmsgImAuthRegSimpleReq message from the specified reader or buffer, length delimited.
+     * @param reader Reader or buffer to decode from
+     * @returns XmsgImAuthRegSimpleReq
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): XmsgImAuthRegSimpleReq;
+
+    /**
+     * Verifies a XmsgImAuthRegSimpleReq message.
+     * @param message Plain object to verify
+     * @returns `null` if valid, otherwise the reason why it is not
+     */
+    public static verify(message: { [k: string]: any }): (string|null);
+
+    /**
+     * Creates a XmsgImAuthRegSimpleReq message from a plain object. Also converts values to their respective internal types.
+     * @param object Plain object
+     * @returns XmsgImAuthRegSimpleReq
+     */
+    public static fromObject(object: { [k: string]: any }): XmsgImAuthRegSimpleReq;
+
+    /**
+     * Creates a plain object from a XmsgImAuthRegSimpleReq message. Also converts values to other types if specified.
+     * @param message XmsgImAuthRegSimpleReq
+     * @param [options] Conversion options
+     * @returns Plain object
+     */
+    public static toObject(message: XmsgImAuthRegSimpleReq, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+    /**
+     * Converts this XmsgImAuthRegSimpleReq to JSON.
+     * @returns JSON object
+     */
+    public toJSON(): { [k: string]: any };
+}
+
+/** Represents a XmsgImAuthRegSimpleRsp. */
+export class XmsgImAuthRegSimpleRsp implements IXmsgImAuthRegSimpleRsp {
+
+    /**
+     * Constructs a new XmsgImAuthRegSimpleRsp.
+     * @param [properties] Properties to set
+     */
+    constructor(properties?: IXmsgImAuthRegSimpleRsp);
+
+    /** XmsgImAuthRegSimpleRsp cgt. */
+    public cgt: string;
+
+    /** XmsgImAuthRegSimpleRsp ext. */
+    public ext: { [k: string]: string };
+
+    /**
+     * Creates a new XmsgImAuthRegSimpleRsp instance using the specified properties.
+     * @param [properties] Properties to set
+     * @returns XmsgImAuthRegSimpleRsp instance
+     */
+    public static create(properties?: IXmsgImAuthRegSimpleRsp): XmsgImAuthRegSimpleRsp;
+
+    /**
+     * Encodes the specified XmsgImAuthRegSimpleRsp message. Does not implicitly {@link XmsgImAuthRegSimpleRsp.verify|verify} messages.
+     * @param message XmsgImAuthRegSimpleRsp message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encode(message: IXmsgImAuthRegSimpleRsp, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Encodes the specified XmsgImAuthRegSimpleRsp message, length delimited. Does not implicitly {@link XmsgImAuthRegSimpleRsp.verify|verify} messages.
+     * @param message XmsgImAuthRegSimpleRsp message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encodeDelimited(message: IXmsgImAuthRegSimpleRsp, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Decodes a XmsgImAuthRegSimpleRsp message from the specified reader or buffer.
+     * @param reader Reader or buffer to decode from
+     * @param [length] Message length if known beforehand
+     * @returns XmsgImAuthRegSimpleRsp
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): XmsgImAuthRegSimpleRsp;
+
+    /**
+     * Decodes a XmsgImAuthRegSimpleRsp message from the specified reader or buffer, length delimited.
+     * @param reader Reader or buffer to decode from
+     * @returns XmsgImAuthRegSimpleRsp
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): XmsgImAuthRegSimpleRsp;
+
+    /**
+     * Verifies a XmsgImAuthRegSimpleRsp message.
+     * @param message Plain object to verify
+     * @returns `null` if valid, otherwise the reason why it is not
+     */
+    public static verify(message: { [k: string]: any }): (string|null);
+
+    /**
+     * Creates a XmsgImAuthRegSimpleRsp message from a plain object. Also converts values to their respective internal types.
+     * @param object Plain object
+     * @returns XmsgImAuthRegSimpleRsp
+     */
+    public static fromObject(object: { [k: string]: any }): XmsgImAuthRegSimpleRsp;
+
+    /**
+     * Creates a plain object from a XmsgImAuthRegSimpleRsp message. Also converts values to other types if specified.
+     * @param message XmsgImAuthRegSimpleRsp
+     * @param [options] Conversion options
+     * @returns Plain object
+     */
+    public static toObject(message: XmsgImAuthRegSimpleRsp, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+    /**
+     * Converts this XmsgImAuthRegSimpleRsp to JSON.
+     * @returns JSON object
+     */
+    public toJSON(): { [k: string]: any };
+}
+
 /** Represents a XmsgImClientDeviceInfo. */
 export class XmsgImClientDeviceInfo implements IXmsgImClientDeviceInfo {
 
@@ -5960,184 +6853,6 @@ export class XmsgImClientServiceAddress implements IXmsgImClientServiceAddress {
 
     /**
      * Converts this XmsgImClientServiceAddress to JSON.
-     * @returns JSON object
-     */
-    public toJSON(): { [k: string]: any };
-}
-
-/** Represents a XmsgImAuthRegSimpleReq. */
-export class XmsgImAuthRegSimpleReq implements IXmsgImAuthRegSimpleReq {
-
-    /**
-     * Constructs a new XmsgImAuthRegSimpleReq.
-     * @param [properties] Properties to set
-     */
-    constructor(properties?: IXmsgImAuthRegSimpleReq);
-
-    /** XmsgImAuthRegSimpleReq usr. */
-    public usr: string;
-
-    /** XmsgImAuthRegSimpleReq salt. */
-    public salt: string;
-
-    /** XmsgImAuthRegSimpleReq pwd. */
-    public pwd: string;
-
-    /** XmsgImAuthRegSimpleReq dev. */
-    public dev?: (IXmsgImClientDeviceInfo|null);
-
-    /**
-     * Creates a new XmsgImAuthRegSimpleReq instance using the specified properties.
-     * @param [properties] Properties to set
-     * @returns XmsgImAuthRegSimpleReq instance
-     */
-    public static create(properties?: IXmsgImAuthRegSimpleReq): XmsgImAuthRegSimpleReq;
-
-    /**
-     * Encodes the specified XmsgImAuthRegSimpleReq message. Does not implicitly {@link XmsgImAuthRegSimpleReq.verify|verify} messages.
-     * @param message XmsgImAuthRegSimpleReq message or plain object to encode
-     * @param [writer] Writer to encode to
-     * @returns Writer
-     */
-    public static encode(message: IXmsgImAuthRegSimpleReq, writer?: $protobuf.Writer): $protobuf.Writer;
-
-    /**
-     * Encodes the specified XmsgImAuthRegSimpleReq message, length delimited. Does not implicitly {@link XmsgImAuthRegSimpleReq.verify|verify} messages.
-     * @param message XmsgImAuthRegSimpleReq message or plain object to encode
-     * @param [writer] Writer to encode to
-     * @returns Writer
-     */
-    public static encodeDelimited(message: IXmsgImAuthRegSimpleReq, writer?: $protobuf.Writer): $protobuf.Writer;
-
-    /**
-     * Decodes a XmsgImAuthRegSimpleReq message from the specified reader or buffer.
-     * @param reader Reader or buffer to decode from
-     * @param [length] Message length if known beforehand
-     * @returns XmsgImAuthRegSimpleReq
-     * @throws {Error} If the payload is not a reader or valid buffer
-     * @throws {$protobuf.util.ProtocolError} If required fields are missing
-     */
-    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): XmsgImAuthRegSimpleReq;
-
-    /**
-     * Decodes a XmsgImAuthRegSimpleReq message from the specified reader or buffer, length delimited.
-     * @param reader Reader or buffer to decode from
-     * @returns XmsgImAuthRegSimpleReq
-     * @throws {Error} If the payload is not a reader or valid buffer
-     * @throws {$protobuf.util.ProtocolError} If required fields are missing
-     */
-    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): XmsgImAuthRegSimpleReq;
-
-    /**
-     * Verifies a XmsgImAuthRegSimpleReq message.
-     * @param message Plain object to verify
-     * @returns `null` if valid, otherwise the reason why it is not
-     */
-    public static verify(message: { [k: string]: any }): (string|null);
-
-    /**
-     * Creates a XmsgImAuthRegSimpleReq message from a plain object. Also converts values to their respective internal types.
-     * @param object Plain object
-     * @returns XmsgImAuthRegSimpleReq
-     */
-    public static fromObject(object: { [k: string]: any }): XmsgImAuthRegSimpleReq;
-
-    /**
-     * Creates a plain object from a XmsgImAuthRegSimpleReq message. Also converts values to other types if specified.
-     * @param message XmsgImAuthRegSimpleReq
-     * @param [options] Conversion options
-     * @returns Plain object
-     */
-    public static toObject(message: XmsgImAuthRegSimpleReq, options?: $protobuf.IConversionOptions): { [k: string]: any };
-
-    /**
-     * Converts this XmsgImAuthRegSimpleReq to JSON.
-     * @returns JSON object
-     */
-    public toJSON(): { [k: string]: any };
-}
-
-/** Represents a XmsgImAuthRegSimpleRsp. */
-export class XmsgImAuthRegSimpleRsp implements IXmsgImAuthRegSimpleRsp {
-
-    /**
-     * Constructs a new XmsgImAuthRegSimpleRsp.
-     * @param [properties] Properties to set
-     */
-    constructor(properties?: IXmsgImAuthRegSimpleRsp);
-
-    /** XmsgImAuthRegSimpleRsp cgt. */
-    public cgt: string;
-
-    /** XmsgImAuthRegSimpleRsp ext. */
-    public ext: { [k: string]: string };
-
-    /**
-     * Creates a new XmsgImAuthRegSimpleRsp instance using the specified properties.
-     * @param [properties] Properties to set
-     * @returns XmsgImAuthRegSimpleRsp instance
-     */
-    public static create(properties?: IXmsgImAuthRegSimpleRsp): XmsgImAuthRegSimpleRsp;
-
-    /**
-     * Encodes the specified XmsgImAuthRegSimpleRsp message. Does not implicitly {@link XmsgImAuthRegSimpleRsp.verify|verify} messages.
-     * @param message XmsgImAuthRegSimpleRsp message or plain object to encode
-     * @param [writer] Writer to encode to
-     * @returns Writer
-     */
-    public static encode(message: IXmsgImAuthRegSimpleRsp, writer?: $protobuf.Writer): $protobuf.Writer;
-
-    /**
-     * Encodes the specified XmsgImAuthRegSimpleRsp message, length delimited. Does not implicitly {@link XmsgImAuthRegSimpleRsp.verify|verify} messages.
-     * @param message XmsgImAuthRegSimpleRsp message or plain object to encode
-     * @param [writer] Writer to encode to
-     * @returns Writer
-     */
-    public static encodeDelimited(message: IXmsgImAuthRegSimpleRsp, writer?: $protobuf.Writer): $protobuf.Writer;
-
-    /**
-     * Decodes a XmsgImAuthRegSimpleRsp message from the specified reader or buffer.
-     * @param reader Reader or buffer to decode from
-     * @param [length] Message length if known beforehand
-     * @returns XmsgImAuthRegSimpleRsp
-     * @throws {Error} If the payload is not a reader or valid buffer
-     * @throws {$protobuf.util.ProtocolError} If required fields are missing
-     */
-    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): XmsgImAuthRegSimpleRsp;
-
-    /**
-     * Decodes a XmsgImAuthRegSimpleRsp message from the specified reader or buffer, length delimited.
-     * @param reader Reader or buffer to decode from
-     * @returns XmsgImAuthRegSimpleRsp
-     * @throws {Error} If the payload is not a reader or valid buffer
-     * @throws {$protobuf.util.ProtocolError} If required fields are missing
-     */
-    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): XmsgImAuthRegSimpleRsp;
-
-    /**
-     * Verifies a XmsgImAuthRegSimpleRsp message.
-     * @param message Plain object to verify
-     * @returns `null` if valid, otherwise the reason why it is not
-     */
-    public static verify(message: { [k: string]: any }): (string|null);
-
-    /**
-     * Creates a XmsgImAuthRegSimpleRsp message from a plain object. Also converts values to their respective internal types.
-     * @param object Plain object
-     * @returns XmsgImAuthRegSimpleRsp
-     */
-    public static fromObject(object: { [k: string]: any }): XmsgImAuthRegSimpleRsp;
-
-    /**
-     * Creates a plain object from a XmsgImAuthRegSimpleRsp message. Also converts values to other types if specified.
-     * @param message XmsgImAuthRegSimpleRsp
-     * @param [options] Conversion options
-     * @returns Plain object
-     */
-    public static toObject(message: XmsgImAuthRegSimpleRsp, options?: $protobuf.IConversionOptions): { [k: string]: any };
-
-    /**
-     * Converts this XmsgImAuthRegSimpleRsp to JSON.
      * @returns JSON object
      */
     public toJSON(): { [k: string]: any };
@@ -7140,8 +7855,8 @@ export class XmsgImHlrUsrDatPri implements IXmsgImHlrUsrDatPri {
     /** XmsgImHlrUsrDatPri enable. */
     public enable: boolean;
 
-    /** XmsgImHlrUsrDatPri ext. */
-    public ext: Uint8Array;
+    /** XmsgImHlrUsrDatPri info. */
+    public info: { [k: string]: string };
 
     /**
      * Creates a new XmsgImHlrUsrDatPri instance using the specified properties.

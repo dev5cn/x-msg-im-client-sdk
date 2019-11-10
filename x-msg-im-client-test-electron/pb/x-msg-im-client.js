@@ -620,6 +620,7 @@ $root.XmsgImMsg = (function() {
      * @property {IXmsgImMsgImage|null} [image] XmsgImMsg image
      * @property {IXmsgImMsgVoice|null} [voice] XmsgImMsg voice
      * @property {IXmsgImMsgVideo|null} [video] XmsgImMsg video
+     * @property {IXmsgImMsgFile|null} [file] XmsgImMsg file
      * @property {IXmsgImMsgMerge|null} [merge] XmsgImMsg merge
      * @property {IXmsgImMsgAt|null} [atx] XmsgImMsg atx
      */
@@ -688,6 +689,14 @@ $root.XmsgImMsg = (function() {
     XmsgImMsg.prototype.video = null;
 
     /**
+     * XmsgImMsg file.
+     * @member {IXmsgImMsgFile|null|undefined} file
+     * @memberof XmsgImMsg
+     * @instance
+     */
+    XmsgImMsg.prototype.file = null;
+
+    /**
      * XmsgImMsg merge.
      * @member {IXmsgImMsgMerge|null|undefined} merge
      * @memberof XmsgImMsg
@@ -739,10 +748,12 @@ $root.XmsgImMsg = (function() {
             $root.XmsgImMsgVoice.encode(message.voice, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
         if (message.video != null && message.hasOwnProperty("video"))
             $root.XmsgImMsgVideo.encode(message.video, writer.uint32(/* id 6, wireType 2 =*/50).fork()).ldelim();
+        if (message.file != null && message.hasOwnProperty("file"))
+            $root.XmsgImMsgFile.encode(message.file, writer.uint32(/* id 7, wireType 2 =*/58).fork()).ldelim();
         if (message.merge != null && message.hasOwnProperty("merge"))
-            $root.XmsgImMsgMerge.encode(message.merge, writer.uint32(/* id 7, wireType 2 =*/58).fork()).ldelim();
+            $root.XmsgImMsgMerge.encode(message.merge, writer.uint32(/* id 8, wireType 2 =*/66).fork()).ldelim();
         if (message.atx != null && message.hasOwnProperty("atx"))
-            $root.XmsgImMsgAt.encode(message.atx, writer.uint32(/* id 8, wireType 2 =*/66).fork()).ldelim();
+            $root.XmsgImMsgAt.encode(message.atx, writer.uint32(/* id 9, wireType 2 =*/74).fork()).ldelim();
         return writer;
     };
 
@@ -796,9 +807,12 @@ $root.XmsgImMsg = (function() {
                 message.video = $root.XmsgImMsgVideo.decode(reader, reader.uint32());
                 break;
             case 7:
-                message.merge = $root.XmsgImMsgMerge.decode(reader, reader.uint32());
+                message.file = $root.XmsgImMsgFile.decode(reader, reader.uint32());
                 break;
             case 8:
+                message.merge = $root.XmsgImMsgMerge.decode(reader, reader.uint32());
+                break;
+            case 9:
                 message.atx = $root.XmsgImMsgAt.decode(reader, reader.uint32());
                 break;
             default:
@@ -864,6 +878,11 @@ $root.XmsgImMsg = (function() {
             if (error)
                 return "video." + error;
         }
+        if (message.file != null && message.hasOwnProperty("file")) {
+            var error = $root.XmsgImMsgFile.verify(message.file);
+            if (error)
+                return "file." + error;
+        }
         if (message.merge != null && message.hasOwnProperty("merge")) {
             var error = $root.XmsgImMsgMerge.verify(message.merge);
             if (error)
@@ -916,6 +935,11 @@ $root.XmsgImMsg = (function() {
                 throw TypeError(".XmsgImMsg.video: object expected");
             message.video = $root.XmsgImMsgVideo.fromObject(object.video);
         }
+        if (object.file != null) {
+            if (typeof object.file !== "object")
+                throw TypeError(".XmsgImMsg.file: object expected");
+            message.file = $root.XmsgImMsgFile.fromObject(object.file);
+        }
         if (object.merge != null) {
             if (typeof object.merge !== "object")
                 throw TypeError(".XmsgImMsg.merge: object expected");
@@ -949,6 +973,7 @@ $root.XmsgImMsg = (function() {
             object.image = null;
             object.voice = null;
             object.video = null;
+            object.file = null;
             object.merge = null;
             object.atx = null;
         }
@@ -964,6 +989,8 @@ $root.XmsgImMsg = (function() {
             object.voice = $root.XmsgImMsgVoice.toObject(message.voice, options);
         if (message.video != null && message.hasOwnProperty("video"))
             object.video = $root.XmsgImMsgVideo.toObject(message.video, options);
+        if (message.file != null && message.hasOwnProperty("file"))
+            object.file = $root.XmsgImMsgFile.toObject(message.file, options);
         if (message.merge != null && message.hasOwnProperty("merge"))
             object.merge = $root.XmsgImMsgMerge.toObject(message.merge, options);
         if (message.atx != null && message.hasOwnProperty("atx"))
@@ -1918,6 +1945,216 @@ $root.XmsgImMsgVideo = (function() {
     };
 
     return XmsgImMsgVideo;
+})();
+
+$root.XmsgImMsgFile = (function() {
+
+    /**
+     * Properties of a XmsgImMsgFile.
+     * @exports IXmsgImMsgFile
+     * @interface IXmsgImMsgFile
+     * @property {string|null} [from] XmsgImMsgFile from
+     * @property {string|null} [fid] XmsgImMsgFile fid
+     */
+
+    /**
+     * Constructs a new XmsgImMsgFile.
+     * @exports XmsgImMsgFile
+     * @classdesc Represents a XmsgImMsgFile.
+     * @implements IXmsgImMsgFile
+     * @constructor
+     * @param {IXmsgImMsgFile=} [properties] Properties to set
+     */
+    function XmsgImMsgFile(properties) {
+        if (properties)
+            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                if (properties[keys[i]] != null)
+                    this[keys[i]] = properties[keys[i]];
+    }
+
+    /**
+     * XmsgImMsgFile from.
+     * @member {string} from
+     * @memberof XmsgImMsgFile
+     * @instance
+     */
+    XmsgImMsgFile.prototype.from = "";
+
+    /**
+     * XmsgImMsgFile fid.
+     * @member {string} fid
+     * @memberof XmsgImMsgFile
+     * @instance
+     */
+    XmsgImMsgFile.prototype.fid = "";
+
+    /**
+     * Creates a new XmsgImMsgFile instance using the specified properties.
+     * @function create
+     * @memberof XmsgImMsgFile
+     * @static
+     * @param {IXmsgImMsgFile=} [properties] Properties to set
+     * @returns {XmsgImMsgFile} XmsgImMsgFile instance
+     */
+    XmsgImMsgFile.create = function create(properties) {
+        return new XmsgImMsgFile(properties);
+    };
+
+    /**
+     * Encodes the specified XmsgImMsgFile message. Does not implicitly {@link XmsgImMsgFile.verify|verify} messages.
+     * @function encode
+     * @memberof XmsgImMsgFile
+     * @static
+     * @param {IXmsgImMsgFile} message XmsgImMsgFile message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    XmsgImMsgFile.encode = function encode(message, writer) {
+        if (!writer)
+            writer = $Writer.create();
+        if (message.from != null && message.hasOwnProperty("from"))
+            writer.uint32(/* id 1, wireType 2 =*/10).string(message.from);
+        if (message.fid != null && message.hasOwnProperty("fid"))
+            writer.uint32(/* id 2, wireType 2 =*/18).string(message.fid);
+        return writer;
+    };
+
+    /**
+     * Encodes the specified XmsgImMsgFile message, length delimited. Does not implicitly {@link XmsgImMsgFile.verify|verify} messages.
+     * @function encodeDelimited
+     * @memberof XmsgImMsgFile
+     * @static
+     * @param {IXmsgImMsgFile} message XmsgImMsgFile message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    XmsgImMsgFile.encodeDelimited = function encodeDelimited(message, writer) {
+        return this.encode(message, writer).ldelim();
+    };
+
+    /**
+     * Decodes a XmsgImMsgFile message from the specified reader or buffer.
+     * @function decode
+     * @memberof XmsgImMsgFile
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @param {number} [length] Message length if known beforehand
+     * @returns {XmsgImMsgFile} XmsgImMsgFile
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    XmsgImMsgFile.decode = function decode(reader, length) {
+        if (!(reader instanceof $Reader))
+            reader = $Reader.create(reader);
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.XmsgImMsgFile();
+        while (reader.pos < end) {
+            var tag = reader.uint32();
+            switch (tag >>> 3) {
+            case 1:
+                message.from = reader.string();
+                break;
+            case 2:
+                message.fid = reader.string();
+                break;
+            default:
+                reader.skipType(tag & 7);
+                break;
+            }
+        }
+        return message;
+    };
+
+    /**
+     * Decodes a XmsgImMsgFile message from the specified reader or buffer, length delimited.
+     * @function decodeDelimited
+     * @memberof XmsgImMsgFile
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @returns {XmsgImMsgFile} XmsgImMsgFile
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    XmsgImMsgFile.decodeDelimited = function decodeDelimited(reader) {
+        if (!(reader instanceof $Reader))
+            reader = new $Reader(reader);
+        return this.decode(reader, reader.uint32());
+    };
+
+    /**
+     * Verifies a XmsgImMsgFile message.
+     * @function verify
+     * @memberof XmsgImMsgFile
+     * @static
+     * @param {Object.<string,*>} message Plain object to verify
+     * @returns {string|null} `null` if valid, otherwise the reason why it is not
+     */
+    XmsgImMsgFile.verify = function verify(message) {
+        if (typeof message !== "object" || message === null)
+            return "object expected";
+        if (message.from != null && message.hasOwnProperty("from"))
+            if (!$util.isString(message.from))
+                return "from: string expected";
+        if (message.fid != null && message.hasOwnProperty("fid"))
+            if (!$util.isString(message.fid))
+                return "fid: string expected";
+        return null;
+    };
+
+    /**
+     * Creates a XmsgImMsgFile message from a plain object. Also converts values to their respective internal types.
+     * @function fromObject
+     * @memberof XmsgImMsgFile
+     * @static
+     * @param {Object.<string,*>} object Plain object
+     * @returns {XmsgImMsgFile} XmsgImMsgFile
+     */
+    XmsgImMsgFile.fromObject = function fromObject(object) {
+        if (object instanceof $root.XmsgImMsgFile)
+            return object;
+        var message = new $root.XmsgImMsgFile();
+        if (object.from != null)
+            message.from = String(object.from);
+        if (object.fid != null)
+            message.fid = String(object.fid);
+        return message;
+    };
+
+    /**
+     * Creates a plain object from a XmsgImMsgFile message. Also converts values to other types if specified.
+     * @function toObject
+     * @memberof XmsgImMsgFile
+     * @static
+     * @param {XmsgImMsgFile} message XmsgImMsgFile
+     * @param {$protobuf.IConversionOptions} [options] Conversion options
+     * @returns {Object.<string,*>} Plain object
+     */
+    XmsgImMsgFile.toObject = function toObject(message, options) {
+        if (!options)
+            options = {};
+        var object = {};
+        if (options.defaults) {
+            object.from = "";
+            object.fid = "";
+        }
+        if (message.from != null && message.hasOwnProperty("from"))
+            object.from = message.from;
+        if (message.fid != null && message.hasOwnProperty("fid"))
+            object.fid = message.fid;
+        return object;
+    };
+
+    /**
+     * Converts this XmsgImMsgFile to JSON.
+     * @function toJSON
+     * @memberof XmsgImMsgFile
+     * @instance
+     * @returns {Object.<string,*>} JSON object
+     */
+    XmsgImMsgFile.prototype.toJSON = function toJSON() {
+        return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+    };
+
+    return XmsgImMsgFile;
 })();
 
 $root.XmsgImMsgMerge = (function() {
@@ -7775,326 +8012,6 @@ $root.XmsgChannelStatusGroupStatus = (function() {
     return XmsgChannelStatusGroupStatus;
 })();
 
-$root.XmsgClientTokenInfo = (function() {
-
-    /**
-     * Properties of a XmsgClientTokenInfo.
-     * @exports IXmsgClientTokenInfo
-     * @interface IXmsgClientTokenInfo
-     * @property {string|null} [cgt] XmsgClientTokenInfo cgt
-     * @property {string|null} [token] XmsgClientTokenInfo token
-     * @property {string|null} [alg] XmsgClientTokenInfo alg
-     * @property {string|null} [slat] XmsgClientTokenInfo slat
-     * @property {string|null} [plat] XmsgClientTokenInfo plat
-     * @property {string|null} [did] XmsgClientTokenInfo did
-     * @property {string|null} [sign] XmsgClientTokenInfo sign
-     */
-
-    /**
-     * Constructs a new XmsgClientTokenInfo.
-     * @exports XmsgClientTokenInfo
-     * @classdesc Represents a XmsgClientTokenInfo.
-     * @implements IXmsgClientTokenInfo
-     * @constructor
-     * @param {IXmsgClientTokenInfo=} [properties] Properties to set
-     */
-    function XmsgClientTokenInfo(properties) {
-        if (properties)
-            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                if (properties[keys[i]] != null)
-                    this[keys[i]] = properties[keys[i]];
-    }
-
-    /**
-     * XmsgClientTokenInfo cgt.
-     * @member {string} cgt
-     * @memberof XmsgClientTokenInfo
-     * @instance
-     */
-    XmsgClientTokenInfo.prototype.cgt = "";
-
-    /**
-     * XmsgClientTokenInfo token.
-     * @member {string} token
-     * @memberof XmsgClientTokenInfo
-     * @instance
-     */
-    XmsgClientTokenInfo.prototype.token = "";
-
-    /**
-     * XmsgClientTokenInfo alg.
-     * @member {string} alg
-     * @memberof XmsgClientTokenInfo
-     * @instance
-     */
-    XmsgClientTokenInfo.prototype.alg = "";
-
-    /**
-     * XmsgClientTokenInfo slat.
-     * @member {string} slat
-     * @memberof XmsgClientTokenInfo
-     * @instance
-     */
-    XmsgClientTokenInfo.prototype.slat = "";
-
-    /**
-     * XmsgClientTokenInfo plat.
-     * @member {string} plat
-     * @memberof XmsgClientTokenInfo
-     * @instance
-     */
-    XmsgClientTokenInfo.prototype.plat = "";
-
-    /**
-     * XmsgClientTokenInfo did.
-     * @member {string} did
-     * @memberof XmsgClientTokenInfo
-     * @instance
-     */
-    XmsgClientTokenInfo.prototype.did = "";
-
-    /**
-     * XmsgClientTokenInfo sign.
-     * @member {string} sign
-     * @memberof XmsgClientTokenInfo
-     * @instance
-     */
-    XmsgClientTokenInfo.prototype.sign = "";
-
-    /**
-     * Creates a new XmsgClientTokenInfo instance using the specified properties.
-     * @function create
-     * @memberof XmsgClientTokenInfo
-     * @static
-     * @param {IXmsgClientTokenInfo=} [properties] Properties to set
-     * @returns {XmsgClientTokenInfo} XmsgClientTokenInfo instance
-     */
-    XmsgClientTokenInfo.create = function create(properties) {
-        return new XmsgClientTokenInfo(properties);
-    };
-
-    /**
-     * Encodes the specified XmsgClientTokenInfo message. Does not implicitly {@link XmsgClientTokenInfo.verify|verify} messages.
-     * @function encode
-     * @memberof XmsgClientTokenInfo
-     * @static
-     * @param {IXmsgClientTokenInfo} message XmsgClientTokenInfo message or plain object to encode
-     * @param {$protobuf.Writer} [writer] Writer to encode to
-     * @returns {$protobuf.Writer} Writer
-     */
-    XmsgClientTokenInfo.encode = function encode(message, writer) {
-        if (!writer)
-            writer = $Writer.create();
-        if (message.cgt != null && message.hasOwnProperty("cgt"))
-            writer.uint32(/* id 1, wireType 2 =*/10).string(message.cgt);
-        if (message.token != null && message.hasOwnProperty("token"))
-            writer.uint32(/* id 2, wireType 2 =*/18).string(message.token);
-        if (message.alg != null && message.hasOwnProperty("alg"))
-            writer.uint32(/* id 3, wireType 2 =*/26).string(message.alg);
-        if (message.slat != null && message.hasOwnProperty("slat"))
-            writer.uint32(/* id 4, wireType 2 =*/34).string(message.slat);
-        if (message.plat != null && message.hasOwnProperty("plat"))
-            writer.uint32(/* id 5, wireType 2 =*/42).string(message.plat);
-        if (message.did != null && message.hasOwnProperty("did"))
-            writer.uint32(/* id 6, wireType 2 =*/50).string(message.did);
-        if (message.sign != null && message.hasOwnProperty("sign"))
-            writer.uint32(/* id 7, wireType 2 =*/58).string(message.sign);
-        return writer;
-    };
-
-    /**
-     * Encodes the specified XmsgClientTokenInfo message, length delimited. Does not implicitly {@link XmsgClientTokenInfo.verify|verify} messages.
-     * @function encodeDelimited
-     * @memberof XmsgClientTokenInfo
-     * @static
-     * @param {IXmsgClientTokenInfo} message XmsgClientTokenInfo message or plain object to encode
-     * @param {$protobuf.Writer} [writer] Writer to encode to
-     * @returns {$protobuf.Writer} Writer
-     */
-    XmsgClientTokenInfo.encodeDelimited = function encodeDelimited(message, writer) {
-        return this.encode(message, writer).ldelim();
-    };
-
-    /**
-     * Decodes a XmsgClientTokenInfo message from the specified reader or buffer.
-     * @function decode
-     * @memberof XmsgClientTokenInfo
-     * @static
-     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-     * @param {number} [length] Message length if known beforehand
-     * @returns {XmsgClientTokenInfo} XmsgClientTokenInfo
-     * @throws {Error} If the payload is not a reader or valid buffer
-     * @throws {$protobuf.util.ProtocolError} If required fields are missing
-     */
-    XmsgClientTokenInfo.decode = function decode(reader, length) {
-        if (!(reader instanceof $Reader))
-            reader = $Reader.create(reader);
-        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.XmsgClientTokenInfo();
-        while (reader.pos < end) {
-            var tag = reader.uint32();
-            switch (tag >>> 3) {
-            case 1:
-                message.cgt = reader.string();
-                break;
-            case 2:
-                message.token = reader.string();
-                break;
-            case 3:
-                message.alg = reader.string();
-                break;
-            case 4:
-                message.slat = reader.string();
-                break;
-            case 5:
-                message.plat = reader.string();
-                break;
-            case 6:
-                message.did = reader.string();
-                break;
-            case 7:
-                message.sign = reader.string();
-                break;
-            default:
-                reader.skipType(tag & 7);
-                break;
-            }
-        }
-        return message;
-    };
-
-    /**
-     * Decodes a XmsgClientTokenInfo message from the specified reader or buffer, length delimited.
-     * @function decodeDelimited
-     * @memberof XmsgClientTokenInfo
-     * @static
-     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-     * @returns {XmsgClientTokenInfo} XmsgClientTokenInfo
-     * @throws {Error} If the payload is not a reader or valid buffer
-     * @throws {$protobuf.util.ProtocolError} If required fields are missing
-     */
-    XmsgClientTokenInfo.decodeDelimited = function decodeDelimited(reader) {
-        if (!(reader instanceof $Reader))
-            reader = new $Reader(reader);
-        return this.decode(reader, reader.uint32());
-    };
-
-    /**
-     * Verifies a XmsgClientTokenInfo message.
-     * @function verify
-     * @memberof XmsgClientTokenInfo
-     * @static
-     * @param {Object.<string,*>} message Plain object to verify
-     * @returns {string|null} `null` if valid, otherwise the reason why it is not
-     */
-    XmsgClientTokenInfo.verify = function verify(message) {
-        if (typeof message !== "object" || message === null)
-            return "object expected";
-        if (message.cgt != null && message.hasOwnProperty("cgt"))
-            if (!$util.isString(message.cgt))
-                return "cgt: string expected";
-        if (message.token != null && message.hasOwnProperty("token"))
-            if (!$util.isString(message.token))
-                return "token: string expected";
-        if (message.alg != null && message.hasOwnProperty("alg"))
-            if (!$util.isString(message.alg))
-                return "alg: string expected";
-        if (message.slat != null && message.hasOwnProperty("slat"))
-            if (!$util.isString(message.slat))
-                return "slat: string expected";
-        if (message.plat != null && message.hasOwnProperty("plat"))
-            if (!$util.isString(message.plat))
-                return "plat: string expected";
-        if (message.did != null && message.hasOwnProperty("did"))
-            if (!$util.isString(message.did))
-                return "did: string expected";
-        if (message.sign != null && message.hasOwnProperty("sign"))
-            if (!$util.isString(message.sign))
-                return "sign: string expected";
-        return null;
-    };
-
-    /**
-     * Creates a XmsgClientTokenInfo message from a plain object. Also converts values to their respective internal types.
-     * @function fromObject
-     * @memberof XmsgClientTokenInfo
-     * @static
-     * @param {Object.<string,*>} object Plain object
-     * @returns {XmsgClientTokenInfo} XmsgClientTokenInfo
-     */
-    XmsgClientTokenInfo.fromObject = function fromObject(object) {
-        if (object instanceof $root.XmsgClientTokenInfo)
-            return object;
-        var message = new $root.XmsgClientTokenInfo();
-        if (object.cgt != null)
-            message.cgt = String(object.cgt);
-        if (object.token != null)
-            message.token = String(object.token);
-        if (object.alg != null)
-            message.alg = String(object.alg);
-        if (object.slat != null)
-            message.slat = String(object.slat);
-        if (object.plat != null)
-            message.plat = String(object.plat);
-        if (object.did != null)
-            message.did = String(object.did);
-        if (object.sign != null)
-            message.sign = String(object.sign);
-        return message;
-    };
-
-    /**
-     * Creates a plain object from a XmsgClientTokenInfo message. Also converts values to other types if specified.
-     * @function toObject
-     * @memberof XmsgClientTokenInfo
-     * @static
-     * @param {XmsgClientTokenInfo} message XmsgClientTokenInfo
-     * @param {$protobuf.IConversionOptions} [options] Conversion options
-     * @returns {Object.<string,*>} Plain object
-     */
-    XmsgClientTokenInfo.toObject = function toObject(message, options) {
-        if (!options)
-            options = {};
-        var object = {};
-        if (options.defaults) {
-            object.cgt = "";
-            object.token = "";
-            object.alg = "";
-            object.slat = "";
-            object.plat = "";
-            object.did = "";
-            object.sign = "";
-        }
-        if (message.cgt != null && message.hasOwnProperty("cgt"))
-            object.cgt = message.cgt;
-        if (message.token != null && message.hasOwnProperty("token"))
-            object.token = message.token;
-        if (message.alg != null && message.hasOwnProperty("alg"))
-            object.alg = message.alg;
-        if (message.slat != null && message.hasOwnProperty("slat"))
-            object.slat = message.slat;
-        if (message.plat != null && message.hasOwnProperty("plat"))
-            object.plat = message.plat;
-        if (message.did != null && message.hasOwnProperty("did"))
-            object.did = message.did;
-        if (message.sign != null && message.hasOwnProperty("sign"))
-            object.sign = message.sign;
-        return object;
-    };
-
-    /**
-     * Converts this XmsgClientTokenInfo to JSON.
-     * @function toJSON
-     * @memberof XmsgClientTokenInfo
-     * @instance
-     * @returns {Object.<string,*>} JSON object
-     */
-    XmsgClientTokenInfo.prototype.toJSON = function toJSON() {
-        return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-    };
-
-    return XmsgClientTokenInfo;
-})();
-
 $root.XmsgImGroupMemberAddReq = (function() {
 
     /**
@@ -11974,6 +11891,2294 @@ $root.XmsgImSdkEventType = (function() {
     return values;
 })();
 
+$root.XmsgOssUploadSimpleReq = (function() {
+
+    /**
+     * Properties of a XmsgOssUploadSimpleReq.
+     * @exports IXmsgOssUploadSimpleReq
+     * @interface IXmsgOssUploadSimpleReq
+     * @property {string|null} [objName] XmsgOssUploadSimpleReq objName
+     * @property {number|Long|null} [objSize] XmsgOssUploadSimpleReq objSize
+     * @property {Object.<string,string>|null} [ext] XmsgOssUploadSimpleReq ext
+     */
+
+    /**
+     * Constructs a new XmsgOssUploadSimpleReq.
+     * @exports XmsgOssUploadSimpleReq
+     * @classdesc Represents a XmsgOssUploadSimpleReq.
+     * @implements IXmsgOssUploadSimpleReq
+     * @constructor
+     * @param {IXmsgOssUploadSimpleReq=} [properties] Properties to set
+     */
+    function XmsgOssUploadSimpleReq(properties) {
+        this.ext = {};
+        if (properties)
+            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                if (properties[keys[i]] != null)
+                    this[keys[i]] = properties[keys[i]];
+    }
+
+    /**
+     * XmsgOssUploadSimpleReq objName.
+     * @member {string} objName
+     * @memberof XmsgOssUploadSimpleReq
+     * @instance
+     */
+    XmsgOssUploadSimpleReq.prototype.objName = "";
+
+    /**
+     * XmsgOssUploadSimpleReq objSize.
+     * @member {number|Long} objSize
+     * @memberof XmsgOssUploadSimpleReq
+     * @instance
+     */
+    XmsgOssUploadSimpleReq.prototype.objSize = $util.Long ? $util.Long.fromBits(0,0,true) : 0;
+
+    /**
+     * XmsgOssUploadSimpleReq ext.
+     * @member {Object.<string,string>} ext
+     * @memberof XmsgOssUploadSimpleReq
+     * @instance
+     */
+    XmsgOssUploadSimpleReq.prototype.ext = $util.emptyObject;
+
+    /**
+     * Creates a new XmsgOssUploadSimpleReq instance using the specified properties.
+     * @function create
+     * @memberof XmsgOssUploadSimpleReq
+     * @static
+     * @param {IXmsgOssUploadSimpleReq=} [properties] Properties to set
+     * @returns {XmsgOssUploadSimpleReq} XmsgOssUploadSimpleReq instance
+     */
+    XmsgOssUploadSimpleReq.create = function create(properties) {
+        return new XmsgOssUploadSimpleReq(properties);
+    };
+
+    /**
+     * Encodes the specified XmsgOssUploadSimpleReq message. Does not implicitly {@link XmsgOssUploadSimpleReq.verify|verify} messages.
+     * @function encode
+     * @memberof XmsgOssUploadSimpleReq
+     * @static
+     * @param {IXmsgOssUploadSimpleReq} message XmsgOssUploadSimpleReq message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    XmsgOssUploadSimpleReq.encode = function encode(message, writer) {
+        if (!writer)
+            writer = $Writer.create();
+        if (message.objName != null && message.hasOwnProperty("objName"))
+            writer.uint32(/* id 1, wireType 2 =*/10).string(message.objName);
+        if (message.objSize != null && message.hasOwnProperty("objSize"))
+            writer.uint32(/* id 2, wireType 0 =*/16).uint64(message.objSize);
+        if (message.ext != null && message.hasOwnProperty("ext"))
+            for (var keys = Object.keys(message.ext), i = 0; i < keys.length; ++i)
+                writer.uint32(/* id 3, wireType 2 =*/26).fork().uint32(/* id 1, wireType 2 =*/10).string(keys[i]).uint32(/* id 2, wireType 2 =*/18).string(message.ext[keys[i]]).ldelim();
+        return writer;
+    };
+
+    /**
+     * Encodes the specified XmsgOssUploadSimpleReq message, length delimited. Does not implicitly {@link XmsgOssUploadSimpleReq.verify|verify} messages.
+     * @function encodeDelimited
+     * @memberof XmsgOssUploadSimpleReq
+     * @static
+     * @param {IXmsgOssUploadSimpleReq} message XmsgOssUploadSimpleReq message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    XmsgOssUploadSimpleReq.encodeDelimited = function encodeDelimited(message, writer) {
+        return this.encode(message, writer).ldelim();
+    };
+
+    /**
+     * Decodes a XmsgOssUploadSimpleReq message from the specified reader or buffer.
+     * @function decode
+     * @memberof XmsgOssUploadSimpleReq
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @param {number} [length] Message length if known beforehand
+     * @returns {XmsgOssUploadSimpleReq} XmsgOssUploadSimpleReq
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    XmsgOssUploadSimpleReq.decode = function decode(reader, length) {
+        if (!(reader instanceof $Reader))
+            reader = $Reader.create(reader);
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.XmsgOssUploadSimpleReq(), key;
+        while (reader.pos < end) {
+            var tag = reader.uint32();
+            switch (tag >>> 3) {
+            case 1:
+                message.objName = reader.string();
+                break;
+            case 2:
+                message.objSize = reader.uint64();
+                break;
+            case 3:
+                reader.skip().pos++;
+                if (message.ext === $util.emptyObject)
+                    message.ext = {};
+                key = reader.string();
+                reader.pos++;
+                message.ext[key] = reader.string();
+                break;
+            default:
+                reader.skipType(tag & 7);
+                break;
+            }
+        }
+        return message;
+    };
+
+    /**
+     * Decodes a XmsgOssUploadSimpleReq message from the specified reader or buffer, length delimited.
+     * @function decodeDelimited
+     * @memberof XmsgOssUploadSimpleReq
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @returns {XmsgOssUploadSimpleReq} XmsgOssUploadSimpleReq
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    XmsgOssUploadSimpleReq.decodeDelimited = function decodeDelimited(reader) {
+        if (!(reader instanceof $Reader))
+            reader = new $Reader(reader);
+        return this.decode(reader, reader.uint32());
+    };
+
+    /**
+     * Verifies a XmsgOssUploadSimpleReq message.
+     * @function verify
+     * @memberof XmsgOssUploadSimpleReq
+     * @static
+     * @param {Object.<string,*>} message Plain object to verify
+     * @returns {string|null} `null` if valid, otherwise the reason why it is not
+     */
+    XmsgOssUploadSimpleReq.verify = function verify(message) {
+        if (typeof message !== "object" || message === null)
+            return "object expected";
+        if (message.objName != null && message.hasOwnProperty("objName"))
+            if (!$util.isString(message.objName))
+                return "objName: string expected";
+        if (message.objSize != null && message.hasOwnProperty("objSize"))
+            if (!$util.isInteger(message.objSize) && !(message.objSize && $util.isInteger(message.objSize.low) && $util.isInteger(message.objSize.high)))
+                return "objSize: integer|Long expected";
+        if (message.ext != null && message.hasOwnProperty("ext")) {
+            if (!$util.isObject(message.ext))
+                return "ext: object expected";
+            var key = Object.keys(message.ext);
+            for (var i = 0; i < key.length; ++i)
+                if (!$util.isString(message.ext[key[i]]))
+                    return "ext: string{k:string} expected";
+        }
+        return null;
+    };
+
+    /**
+     * Creates a XmsgOssUploadSimpleReq message from a plain object. Also converts values to their respective internal types.
+     * @function fromObject
+     * @memberof XmsgOssUploadSimpleReq
+     * @static
+     * @param {Object.<string,*>} object Plain object
+     * @returns {XmsgOssUploadSimpleReq} XmsgOssUploadSimpleReq
+     */
+    XmsgOssUploadSimpleReq.fromObject = function fromObject(object) {
+        if (object instanceof $root.XmsgOssUploadSimpleReq)
+            return object;
+        var message = new $root.XmsgOssUploadSimpleReq();
+        if (object.objName != null)
+            message.objName = String(object.objName);
+        if (object.objSize != null)
+            if ($util.Long)
+                (message.objSize = $util.Long.fromValue(object.objSize)).unsigned = true;
+            else if (typeof object.objSize === "string")
+                message.objSize = parseInt(object.objSize, 10);
+            else if (typeof object.objSize === "number")
+                message.objSize = object.objSize;
+            else if (typeof object.objSize === "object")
+                message.objSize = new $util.LongBits(object.objSize.low >>> 0, object.objSize.high >>> 0).toNumber(true);
+        if (object.ext) {
+            if (typeof object.ext !== "object")
+                throw TypeError(".XmsgOssUploadSimpleReq.ext: object expected");
+            message.ext = {};
+            for (var keys = Object.keys(object.ext), i = 0; i < keys.length; ++i)
+                message.ext[keys[i]] = String(object.ext[keys[i]]);
+        }
+        return message;
+    };
+
+    /**
+     * Creates a plain object from a XmsgOssUploadSimpleReq message. Also converts values to other types if specified.
+     * @function toObject
+     * @memberof XmsgOssUploadSimpleReq
+     * @static
+     * @param {XmsgOssUploadSimpleReq} message XmsgOssUploadSimpleReq
+     * @param {$protobuf.IConversionOptions} [options] Conversion options
+     * @returns {Object.<string,*>} Plain object
+     */
+    XmsgOssUploadSimpleReq.toObject = function toObject(message, options) {
+        if (!options)
+            options = {};
+        var object = {};
+        if (options.objects || options.defaults)
+            object.ext = {};
+        if (options.defaults) {
+            object.objName = "";
+            if ($util.Long) {
+                var long = new $util.Long(0, 0, true);
+                object.objSize = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : long;
+            } else
+                object.objSize = options.longs === String ? "0" : 0;
+        }
+        if (message.objName != null && message.hasOwnProperty("objName"))
+            object.objName = message.objName;
+        if (message.objSize != null && message.hasOwnProperty("objSize"))
+            if (typeof message.objSize === "number")
+                object.objSize = options.longs === String ? String(message.objSize) : message.objSize;
+            else
+                object.objSize = options.longs === String ? $util.Long.prototype.toString.call(message.objSize) : options.longs === Number ? new $util.LongBits(message.objSize.low >>> 0, message.objSize.high >>> 0).toNumber(true) : message.objSize;
+        var keys2;
+        if (message.ext && (keys2 = Object.keys(message.ext)).length) {
+            object.ext = {};
+            for (var j = 0; j < keys2.length; ++j)
+                object.ext[keys2[j]] = message.ext[keys2[j]];
+        }
+        return object;
+    };
+
+    /**
+     * Converts this XmsgOssUploadSimpleReq to JSON.
+     * @function toJSON
+     * @memberof XmsgOssUploadSimpleReq
+     * @instance
+     * @returns {Object.<string,*>} JSON object
+     */
+    XmsgOssUploadSimpleReq.prototype.toJSON = function toJSON() {
+        return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+    };
+
+    return XmsgOssUploadSimpleReq;
+})();
+
+$root.XmsgOssUploadSimpleRsp = (function() {
+
+    /**
+     * Properties of a XmsgOssUploadSimpleRsp.
+     * @exports IXmsgOssUploadSimpleRsp
+     * @interface IXmsgOssUploadSimpleRsp
+     * @property {string|null} [oid] XmsgOssUploadSimpleRsp oid
+     * @property {string|null} [hashVal] XmsgOssUploadSimpleRsp hashVal
+     * @property {Object.<string,string>|null} [ext] XmsgOssUploadSimpleRsp ext
+     */
+
+    /**
+     * Constructs a new XmsgOssUploadSimpleRsp.
+     * @exports XmsgOssUploadSimpleRsp
+     * @classdesc Represents a XmsgOssUploadSimpleRsp.
+     * @implements IXmsgOssUploadSimpleRsp
+     * @constructor
+     * @param {IXmsgOssUploadSimpleRsp=} [properties] Properties to set
+     */
+    function XmsgOssUploadSimpleRsp(properties) {
+        this.ext = {};
+        if (properties)
+            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                if (properties[keys[i]] != null)
+                    this[keys[i]] = properties[keys[i]];
+    }
+
+    /**
+     * XmsgOssUploadSimpleRsp oid.
+     * @member {string} oid
+     * @memberof XmsgOssUploadSimpleRsp
+     * @instance
+     */
+    XmsgOssUploadSimpleRsp.prototype.oid = "";
+
+    /**
+     * XmsgOssUploadSimpleRsp hashVal.
+     * @member {string} hashVal
+     * @memberof XmsgOssUploadSimpleRsp
+     * @instance
+     */
+    XmsgOssUploadSimpleRsp.prototype.hashVal = "";
+
+    /**
+     * XmsgOssUploadSimpleRsp ext.
+     * @member {Object.<string,string>} ext
+     * @memberof XmsgOssUploadSimpleRsp
+     * @instance
+     */
+    XmsgOssUploadSimpleRsp.prototype.ext = $util.emptyObject;
+
+    /**
+     * Creates a new XmsgOssUploadSimpleRsp instance using the specified properties.
+     * @function create
+     * @memberof XmsgOssUploadSimpleRsp
+     * @static
+     * @param {IXmsgOssUploadSimpleRsp=} [properties] Properties to set
+     * @returns {XmsgOssUploadSimpleRsp} XmsgOssUploadSimpleRsp instance
+     */
+    XmsgOssUploadSimpleRsp.create = function create(properties) {
+        return new XmsgOssUploadSimpleRsp(properties);
+    };
+
+    /**
+     * Encodes the specified XmsgOssUploadSimpleRsp message. Does not implicitly {@link XmsgOssUploadSimpleRsp.verify|verify} messages.
+     * @function encode
+     * @memberof XmsgOssUploadSimpleRsp
+     * @static
+     * @param {IXmsgOssUploadSimpleRsp} message XmsgOssUploadSimpleRsp message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    XmsgOssUploadSimpleRsp.encode = function encode(message, writer) {
+        if (!writer)
+            writer = $Writer.create();
+        if (message.oid != null && message.hasOwnProperty("oid"))
+            writer.uint32(/* id 1, wireType 2 =*/10).string(message.oid);
+        if (message.hashVal != null && message.hasOwnProperty("hashVal"))
+            writer.uint32(/* id 2, wireType 2 =*/18).string(message.hashVal);
+        if (message.ext != null && message.hasOwnProperty("ext"))
+            for (var keys = Object.keys(message.ext), i = 0; i < keys.length; ++i)
+                writer.uint32(/* id 3, wireType 2 =*/26).fork().uint32(/* id 1, wireType 2 =*/10).string(keys[i]).uint32(/* id 2, wireType 2 =*/18).string(message.ext[keys[i]]).ldelim();
+        return writer;
+    };
+
+    /**
+     * Encodes the specified XmsgOssUploadSimpleRsp message, length delimited. Does not implicitly {@link XmsgOssUploadSimpleRsp.verify|verify} messages.
+     * @function encodeDelimited
+     * @memberof XmsgOssUploadSimpleRsp
+     * @static
+     * @param {IXmsgOssUploadSimpleRsp} message XmsgOssUploadSimpleRsp message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    XmsgOssUploadSimpleRsp.encodeDelimited = function encodeDelimited(message, writer) {
+        return this.encode(message, writer).ldelim();
+    };
+
+    /**
+     * Decodes a XmsgOssUploadSimpleRsp message from the specified reader or buffer.
+     * @function decode
+     * @memberof XmsgOssUploadSimpleRsp
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @param {number} [length] Message length if known beforehand
+     * @returns {XmsgOssUploadSimpleRsp} XmsgOssUploadSimpleRsp
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    XmsgOssUploadSimpleRsp.decode = function decode(reader, length) {
+        if (!(reader instanceof $Reader))
+            reader = $Reader.create(reader);
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.XmsgOssUploadSimpleRsp(), key;
+        while (reader.pos < end) {
+            var tag = reader.uint32();
+            switch (tag >>> 3) {
+            case 1:
+                message.oid = reader.string();
+                break;
+            case 2:
+                message.hashVal = reader.string();
+                break;
+            case 3:
+                reader.skip().pos++;
+                if (message.ext === $util.emptyObject)
+                    message.ext = {};
+                key = reader.string();
+                reader.pos++;
+                message.ext[key] = reader.string();
+                break;
+            default:
+                reader.skipType(tag & 7);
+                break;
+            }
+        }
+        return message;
+    };
+
+    /**
+     * Decodes a XmsgOssUploadSimpleRsp message from the specified reader or buffer, length delimited.
+     * @function decodeDelimited
+     * @memberof XmsgOssUploadSimpleRsp
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @returns {XmsgOssUploadSimpleRsp} XmsgOssUploadSimpleRsp
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    XmsgOssUploadSimpleRsp.decodeDelimited = function decodeDelimited(reader) {
+        if (!(reader instanceof $Reader))
+            reader = new $Reader(reader);
+        return this.decode(reader, reader.uint32());
+    };
+
+    /**
+     * Verifies a XmsgOssUploadSimpleRsp message.
+     * @function verify
+     * @memberof XmsgOssUploadSimpleRsp
+     * @static
+     * @param {Object.<string,*>} message Plain object to verify
+     * @returns {string|null} `null` if valid, otherwise the reason why it is not
+     */
+    XmsgOssUploadSimpleRsp.verify = function verify(message) {
+        if (typeof message !== "object" || message === null)
+            return "object expected";
+        if (message.oid != null && message.hasOwnProperty("oid"))
+            if (!$util.isString(message.oid))
+                return "oid: string expected";
+        if (message.hashVal != null && message.hasOwnProperty("hashVal"))
+            if (!$util.isString(message.hashVal))
+                return "hashVal: string expected";
+        if (message.ext != null && message.hasOwnProperty("ext")) {
+            if (!$util.isObject(message.ext))
+                return "ext: object expected";
+            var key = Object.keys(message.ext);
+            for (var i = 0; i < key.length; ++i)
+                if (!$util.isString(message.ext[key[i]]))
+                    return "ext: string{k:string} expected";
+        }
+        return null;
+    };
+
+    /**
+     * Creates a XmsgOssUploadSimpleRsp message from a plain object. Also converts values to their respective internal types.
+     * @function fromObject
+     * @memberof XmsgOssUploadSimpleRsp
+     * @static
+     * @param {Object.<string,*>} object Plain object
+     * @returns {XmsgOssUploadSimpleRsp} XmsgOssUploadSimpleRsp
+     */
+    XmsgOssUploadSimpleRsp.fromObject = function fromObject(object) {
+        if (object instanceof $root.XmsgOssUploadSimpleRsp)
+            return object;
+        var message = new $root.XmsgOssUploadSimpleRsp();
+        if (object.oid != null)
+            message.oid = String(object.oid);
+        if (object.hashVal != null)
+            message.hashVal = String(object.hashVal);
+        if (object.ext) {
+            if (typeof object.ext !== "object")
+                throw TypeError(".XmsgOssUploadSimpleRsp.ext: object expected");
+            message.ext = {};
+            for (var keys = Object.keys(object.ext), i = 0; i < keys.length; ++i)
+                message.ext[keys[i]] = String(object.ext[keys[i]]);
+        }
+        return message;
+    };
+
+    /**
+     * Creates a plain object from a XmsgOssUploadSimpleRsp message. Also converts values to other types if specified.
+     * @function toObject
+     * @memberof XmsgOssUploadSimpleRsp
+     * @static
+     * @param {XmsgOssUploadSimpleRsp} message XmsgOssUploadSimpleRsp
+     * @param {$protobuf.IConversionOptions} [options] Conversion options
+     * @returns {Object.<string,*>} Plain object
+     */
+    XmsgOssUploadSimpleRsp.toObject = function toObject(message, options) {
+        if (!options)
+            options = {};
+        var object = {};
+        if (options.objects || options.defaults)
+            object.ext = {};
+        if (options.defaults) {
+            object.oid = "";
+            object.hashVal = "";
+        }
+        if (message.oid != null && message.hasOwnProperty("oid"))
+            object.oid = message.oid;
+        if (message.hashVal != null && message.hasOwnProperty("hashVal"))
+            object.hashVal = message.hashVal;
+        var keys2;
+        if (message.ext && (keys2 = Object.keys(message.ext)).length) {
+            object.ext = {};
+            for (var j = 0; j < keys2.length; ++j)
+                object.ext[keys2[j]] = message.ext[keys2[j]];
+        }
+        return object;
+    };
+
+    /**
+     * Converts this XmsgOssUploadSimpleRsp to JSON.
+     * @function toJSON
+     * @memberof XmsgOssUploadSimpleRsp
+     * @instance
+     * @returns {Object.<string,*>} JSON object
+     */
+    XmsgOssUploadSimpleRsp.prototype.toJSON = function toJSON() {
+        return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+    };
+
+    return XmsgOssUploadSimpleRsp;
+})();
+
+$root.XmsgOssDownloadSimpleReq = (function() {
+
+    /**
+     * Properties of a XmsgOssDownloadSimpleReq.
+     * @exports IXmsgOssDownloadSimpleReq
+     * @interface IXmsgOssDownloadSimpleReq
+     * @property {string|null} [oid] XmsgOssDownloadSimpleReq oid
+     * @property {string|null} [cgt] XmsgOssDownloadSimpleReq cgt
+     * @property {number|Long|null} [offset] XmsgOssDownloadSimpleReq offset
+     * @property {number|Long|null} [len] XmsgOssDownloadSimpleReq len
+     * @property {Object.<string,string>|null} [ext] XmsgOssDownloadSimpleReq ext
+     */
+
+    /**
+     * Constructs a new XmsgOssDownloadSimpleReq.
+     * @exports XmsgOssDownloadSimpleReq
+     * @classdesc Represents a XmsgOssDownloadSimpleReq.
+     * @implements IXmsgOssDownloadSimpleReq
+     * @constructor
+     * @param {IXmsgOssDownloadSimpleReq=} [properties] Properties to set
+     */
+    function XmsgOssDownloadSimpleReq(properties) {
+        this.ext = {};
+        if (properties)
+            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                if (properties[keys[i]] != null)
+                    this[keys[i]] = properties[keys[i]];
+    }
+
+    /**
+     * XmsgOssDownloadSimpleReq oid.
+     * @member {string} oid
+     * @memberof XmsgOssDownloadSimpleReq
+     * @instance
+     */
+    XmsgOssDownloadSimpleReq.prototype.oid = "";
+
+    /**
+     * XmsgOssDownloadSimpleReq cgt.
+     * @member {string} cgt
+     * @memberof XmsgOssDownloadSimpleReq
+     * @instance
+     */
+    XmsgOssDownloadSimpleReq.prototype.cgt = "";
+
+    /**
+     * XmsgOssDownloadSimpleReq offset.
+     * @member {number|Long} offset
+     * @memberof XmsgOssDownloadSimpleReq
+     * @instance
+     */
+    XmsgOssDownloadSimpleReq.prototype.offset = $util.Long ? $util.Long.fromBits(0,0,true) : 0;
+
+    /**
+     * XmsgOssDownloadSimpleReq len.
+     * @member {number|Long} len
+     * @memberof XmsgOssDownloadSimpleReq
+     * @instance
+     */
+    XmsgOssDownloadSimpleReq.prototype.len = $util.Long ? $util.Long.fromBits(0,0,true) : 0;
+
+    /**
+     * XmsgOssDownloadSimpleReq ext.
+     * @member {Object.<string,string>} ext
+     * @memberof XmsgOssDownloadSimpleReq
+     * @instance
+     */
+    XmsgOssDownloadSimpleReq.prototype.ext = $util.emptyObject;
+
+    /**
+     * Creates a new XmsgOssDownloadSimpleReq instance using the specified properties.
+     * @function create
+     * @memberof XmsgOssDownloadSimpleReq
+     * @static
+     * @param {IXmsgOssDownloadSimpleReq=} [properties] Properties to set
+     * @returns {XmsgOssDownloadSimpleReq} XmsgOssDownloadSimpleReq instance
+     */
+    XmsgOssDownloadSimpleReq.create = function create(properties) {
+        return new XmsgOssDownloadSimpleReq(properties);
+    };
+
+    /**
+     * Encodes the specified XmsgOssDownloadSimpleReq message. Does not implicitly {@link XmsgOssDownloadSimpleReq.verify|verify} messages.
+     * @function encode
+     * @memberof XmsgOssDownloadSimpleReq
+     * @static
+     * @param {IXmsgOssDownloadSimpleReq} message XmsgOssDownloadSimpleReq message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    XmsgOssDownloadSimpleReq.encode = function encode(message, writer) {
+        if (!writer)
+            writer = $Writer.create();
+        if (message.oid != null && message.hasOwnProperty("oid"))
+            writer.uint32(/* id 1, wireType 2 =*/10).string(message.oid);
+        if (message.cgt != null && message.hasOwnProperty("cgt"))
+            writer.uint32(/* id 2, wireType 2 =*/18).string(message.cgt);
+        if (message.offset != null && message.hasOwnProperty("offset"))
+            writer.uint32(/* id 3, wireType 0 =*/24).uint64(message.offset);
+        if (message.len != null && message.hasOwnProperty("len"))
+            writer.uint32(/* id 4, wireType 0 =*/32).uint64(message.len);
+        if (message.ext != null && message.hasOwnProperty("ext"))
+            for (var keys = Object.keys(message.ext), i = 0; i < keys.length; ++i)
+                writer.uint32(/* id 5, wireType 2 =*/42).fork().uint32(/* id 1, wireType 2 =*/10).string(keys[i]).uint32(/* id 2, wireType 2 =*/18).string(message.ext[keys[i]]).ldelim();
+        return writer;
+    };
+
+    /**
+     * Encodes the specified XmsgOssDownloadSimpleReq message, length delimited. Does not implicitly {@link XmsgOssDownloadSimpleReq.verify|verify} messages.
+     * @function encodeDelimited
+     * @memberof XmsgOssDownloadSimpleReq
+     * @static
+     * @param {IXmsgOssDownloadSimpleReq} message XmsgOssDownloadSimpleReq message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    XmsgOssDownloadSimpleReq.encodeDelimited = function encodeDelimited(message, writer) {
+        return this.encode(message, writer).ldelim();
+    };
+
+    /**
+     * Decodes a XmsgOssDownloadSimpleReq message from the specified reader or buffer.
+     * @function decode
+     * @memberof XmsgOssDownloadSimpleReq
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @param {number} [length] Message length if known beforehand
+     * @returns {XmsgOssDownloadSimpleReq} XmsgOssDownloadSimpleReq
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    XmsgOssDownloadSimpleReq.decode = function decode(reader, length) {
+        if (!(reader instanceof $Reader))
+            reader = $Reader.create(reader);
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.XmsgOssDownloadSimpleReq(), key;
+        while (reader.pos < end) {
+            var tag = reader.uint32();
+            switch (tag >>> 3) {
+            case 1:
+                message.oid = reader.string();
+                break;
+            case 2:
+                message.cgt = reader.string();
+                break;
+            case 3:
+                message.offset = reader.uint64();
+                break;
+            case 4:
+                message.len = reader.uint64();
+                break;
+            case 5:
+                reader.skip().pos++;
+                if (message.ext === $util.emptyObject)
+                    message.ext = {};
+                key = reader.string();
+                reader.pos++;
+                message.ext[key] = reader.string();
+                break;
+            default:
+                reader.skipType(tag & 7);
+                break;
+            }
+        }
+        return message;
+    };
+
+    /**
+     * Decodes a XmsgOssDownloadSimpleReq message from the specified reader or buffer, length delimited.
+     * @function decodeDelimited
+     * @memberof XmsgOssDownloadSimpleReq
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @returns {XmsgOssDownloadSimpleReq} XmsgOssDownloadSimpleReq
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    XmsgOssDownloadSimpleReq.decodeDelimited = function decodeDelimited(reader) {
+        if (!(reader instanceof $Reader))
+            reader = new $Reader(reader);
+        return this.decode(reader, reader.uint32());
+    };
+
+    /**
+     * Verifies a XmsgOssDownloadSimpleReq message.
+     * @function verify
+     * @memberof XmsgOssDownloadSimpleReq
+     * @static
+     * @param {Object.<string,*>} message Plain object to verify
+     * @returns {string|null} `null` if valid, otherwise the reason why it is not
+     */
+    XmsgOssDownloadSimpleReq.verify = function verify(message) {
+        if (typeof message !== "object" || message === null)
+            return "object expected";
+        if (message.oid != null && message.hasOwnProperty("oid"))
+            if (!$util.isString(message.oid))
+                return "oid: string expected";
+        if (message.cgt != null && message.hasOwnProperty("cgt"))
+            if (!$util.isString(message.cgt))
+                return "cgt: string expected";
+        if (message.offset != null && message.hasOwnProperty("offset"))
+            if (!$util.isInteger(message.offset) && !(message.offset && $util.isInteger(message.offset.low) && $util.isInteger(message.offset.high)))
+                return "offset: integer|Long expected";
+        if (message.len != null && message.hasOwnProperty("len"))
+            if (!$util.isInteger(message.len) && !(message.len && $util.isInteger(message.len.low) && $util.isInteger(message.len.high)))
+                return "len: integer|Long expected";
+        if (message.ext != null && message.hasOwnProperty("ext")) {
+            if (!$util.isObject(message.ext))
+                return "ext: object expected";
+            var key = Object.keys(message.ext);
+            for (var i = 0; i < key.length; ++i)
+                if (!$util.isString(message.ext[key[i]]))
+                    return "ext: string{k:string} expected";
+        }
+        return null;
+    };
+
+    /**
+     * Creates a XmsgOssDownloadSimpleReq message from a plain object. Also converts values to their respective internal types.
+     * @function fromObject
+     * @memberof XmsgOssDownloadSimpleReq
+     * @static
+     * @param {Object.<string,*>} object Plain object
+     * @returns {XmsgOssDownloadSimpleReq} XmsgOssDownloadSimpleReq
+     */
+    XmsgOssDownloadSimpleReq.fromObject = function fromObject(object) {
+        if (object instanceof $root.XmsgOssDownloadSimpleReq)
+            return object;
+        var message = new $root.XmsgOssDownloadSimpleReq();
+        if (object.oid != null)
+            message.oid = String(object.oid);
+        if (object.cgt != null)
+            message.cgt = String(object.cgt);
+        if (object.offset != null)
+            if ($util.Long)
+                (message.offset = $util.Long.fromValue(object.offset)).unsigned = true;
+            else if (typeof object.offset === "string")
+                message.offset = parseInt(object.offset, 10);
+            else if (typeof object.offset === "number")
+                message.offset = object.offset;
+            else if (typeof object.offset === "object")
+                message.offset = new $util.LongBits(object.offset.low >>> 0, object.offset.high >>> 0).toNumber(true);
+        if (object.len != null)
+            if ($util.Long)
+                (message.len = $util.Long.fromValue(object.len)).unsigned = true;
+            else if (typeof object.len === "string")
+                message.len = parseInt(object.len, 10);
+            else if (typeof object.len === "number")
+                message.len = object.len;
+            else if (typeof object.len === "object")
+                message.len = new $util.LongBits(object.len.low >>> 0, object.len.high >>> 0).toNumber(true);
+        if (object.ext) {
+            if (typeof object.ext !== "object")
+                throw TypeError(".XmsgOssDownloadSimpleReq.ext: object expected");
+            message.ext = {};
+            for (var keys = Object.keys(object.ext), i = 0; i < keys.length; ++i)
+                message.ext[keys[i]] = String(object.ext[keys[i]]);
+        }
+        return message;
+    };
+
+    /**
+     * Creates a plain object from a XmsgOssDownloadSimpleReq message. Also converts values to other types if specified.
+     * @function toObject
+     * @memberof XmsgOssDownloadSimpleReq
+     * @static
+     * @param {XmsgOssDownloadSimpleReq} message XmsgOssDownloadSimpleReq
+     * @param {$protobuf.IConversionOptions} [options] Conversion options
+     * @returns {Object.<string,*>} Plain object
+     */
+    XmsgOssDownloadSimpleReq.toObject = function toObject(message, options) {
+        if (!options)
+            options = {};
+        var object = {};
+        if (options.objects || options.defaults)
+            object.ext = {};
+        if (options.defaults) {
+            object.oid = "";
+            object.cgt = "";
+            if ($util.Long) {
+                var long = new $util.Long(0, 0, true);
+                object.offset = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : long;
+            } else
+                object.offset = options.longs === String ? "0" : 0;
+            if ($util.Long) {
+                var long = new $util.Long(0, 0, true);
+                object.len = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : long;
+            } else
+                object.len = options.longs === String ? "0" : 0;
+        }
+        if (message.oid != null && message.hasOwnProperty("oid"))
+            object.oid = message.oid;
+        if (message.cgt != null && message.hasOwnProperty("cgt"))
+            object.cgt = message.cgt;
+        if (message.offset != null && message.hasOwnProperty("offset"))
+            if (typeof message.offset === "number")
+                object.offset = options.longs === String ? String(message.offset) : message.offset;
+            else
+                object.offset = options.longs === String ? $util.Long.prototype.toString.call(message.offset) : options.longs === Number ? new $util.LongBits(message.offset.low >>> 0, message.offset.high >>> 0).toNumber(true) : message.offset;
+        if (message.len != null && message.hasOwnProperty("len"))
+            if (typeof message.len === "number")
+                object.len = options.longs === String ? String(message.len) : message.len;
+            else
+                object.len = options.longs === String ? $util.Long.prototype.toString.call(message.len) : options.longs === Number ? new $util.LongBits(message.len.low >>> 0, message.len.high >>> 0).toNumber(true) : message.len;
+        var keys2;
+        if (message.ext && (keys2 = Object.keys(message.ext)).length) {
+            object.ext = {};
+            for (var j = 0; j < keys2.length; ++j)
+                object.ext[keys2[j]] = message.ext[keys2[j]];
+        }
+        return object;
+    };
+
+    /**
+     * Converts this XmsgOssDownloadSimpleReq to JSON.
+     * @function toJSON
+     * @memberof XmsgOssDownloadSimpleReq
+     * @instance
+     * @returns {Object.<string,*>} JSON object
+     */
+    XmsgOssDownloadSimpleReq.prototype.toJSON = function toJSON() {
+        return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+    };
+
+    return XmsgOssDownloadSimpleReq;
+})();
+
+$root.XmsgOssDownloadSimpleRsp = (function() {
+
+    /**
+     * Properties of a XmsgOssDownloadSimpleRsp.
+     * @exports IXmsgOssDownloadSimpleRsp
+     * @interface IXmsgOssDownloadSimpleRsp
+     * @property {string|null} [objName] XmsgOssDownloadSimpleRsp objName
+     * @property {number|Long|null} [objSize] XmsgOssDownloadSimpleRsp objSize
+     * @property {string|null} [hashVal] XmsgOssDownloadSimpleRsp hashVal
+     * @property {number|Long|null} [gts] XmsgOssDownloadSimpleRsp gts
+     * @property {Object.<string,string>|null} [ext] XmsgOssDownloadSimpleRsp ext
+     */
+
+    /**
+     * Constructs a new XmsgOssDownloadSimpleRsp.
+     * @exports XmsgOssDownloadSimpleRsp
+     * @classdesc Represents a XmsgOssDownloadSimpleRsp.
+     * @implements IXmsgOssDownloadSimpleRsp
+     * @constructor
+     * @param {IXmsgOssDownloadSimpleRsp=} [properties] Properties to set
+     */
+    function XmsgOssDownloadSimpleRsp(properties) {
+        this.ext = {};
+        if (properties)
+            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                if (properties[keys[i]] != null)
+                    this[keys[i]] = properties[keys[i]];
+    }
+
+    /**
+     * XmsgOssDownloadSimpleRsp objName.
+     * @member {string} objName
+     * @memberof XmsgOssDownloadSimpleRsp
+     * @instance
+     */
+    XmsgOssDownloadSimpleRsp.prototype.objName = "";
+
+    /**
+     * XmsgOssDownloadSimpleRsp objSize.
+     * @member {number|Long} objSize
+     * @memberof XmsgOssDownloadSimpleRsp
+     * @instance
+     */
+    XmsgOssDownloadSimpleRsp.prototype.objSize = $util.Long ? $util.Long.fromBits(0,0,true) : 0;
+
+    /**
+     * XmsgOssDownloadSimpleRsp hashVal.
+     * @member {string} hashVal
+     * @memberof XmsgOssDownloadSimpleRsp
+     * @instance
+     */
+    XmsgOssDownloadSimpleRsp.prototype.hashVal = "";
+
+    /**
+     * XmsgOssDownloadSimpleRsp gts.
+     * @member {number|Long} gts
+     * @memberof XmsgOssDownloadSimpleRsp
+     * @instance
+     */
+    XmsgOssDownloadSimpleRsp.prototype.gts = $util.Long ? $util.Long.fromBits(0,0,true) : 0;
+
+    /**
+     * XmsgOssDownloadSimpleRsp ext.
+     * @member {Object.<string,string>} ext
+     * @memberof XmsgOssDownloadSimpleRsp
+     * @instance
+     */
+    XmsgOssDownloadSimpleRsp.prototype.ext = $util.emptyObject;
+
+    /**
+     * Creates a new XmsgOssDownloadSimpleRsp instance using the specified properties.
+     * @function create
+     * @memberof XmsgOssDownloadSimpleRsp
+     * @static
+     * @param {IXmsgOssDownloadSimpleRsp=} [properties] Properties to set
+     * @returns {XmsgOssDownloadSimpleRsp} XmsgOssDownloadSimpleRsp instance
+     */
+    XmsgOssDownloadSimpleRsp.create = function create(properties) {
+        return new XmsgOssDownloadSimpleRsp(properties);
+    };
+
+    /**
+     * Encodes the specified XmsgOssDownloadSimpleRsp message. Does not implicitly {@link XmsgOssDownloadSimpleRsp.verify|verify} messages.
+     * @function encode
+     * @memberof XmsgOssDownloadSimpleRsp
+     * @static
+     * @param {IXmsgOssDownloadSimpleRsp} message XmsgOssDownloadSimpleRsp message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    XmsgOssDownloadSimpleRsp.encode = function encode(message, writer) {
+        if (!writer)
+            writer = $Writer.create();
+        if (message.objName != null && message.hasOwnProperty("objName"))
+            writer.uint32(/* id 1, wireType 2 =*/10).string(message.objName);
+        if (message.objSize != null && message.hasOwnProperty("objSize"))
+            writer.uint32(/* id 2, wireType 0 =*/16).uint64(message.objSize);
+        if (message.hashVal != null && message.hasOwnProperty("hashVal"))
+            writer.uint32(/* id 3, wireType 2 =*/26).string(message.hashVal);
+        if (message.gts != null && message.hasOwnProperty("gts"))
+            writer.uint32(/* id 4, wireType 0 =*/32).uint64(message.gts);
+        if (message.ext != null && message.hasOwnProperty("ext"))
+            for (var keys = Object.keys(message.ext), i = 0; i < keys.length; ++i)
+                writer.uint32(/* id 5, wireType 2 =*/42).fork().uint32(/* id 1, wireType 2 =*/10).string(keys[i]).uint32(/* id 2, wireType 2 =*/18).string(message.ext[keys[i]]).ldelim();
+        return writer;
+    };
+
+    /**
+     * Encodes the specified XmsgOssDownloadSimpleRsp message, length delimited. Does not implicitly {@link XmsgOssDownloadSimpleRsp.verify|verify} messages.
+     * @function encodeDelimited
+     * @memberof XmsgOssDownloadSimpleRsp
+     * @static
+     * @param {IXmsgOssDownloadSimpleRsp} message XmsgOssDownloadSimpleRsp message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    XmsgOssDownloadSimpleRsp.encodeDelimited = function encodeDelimited(message, writer) {
+        return this.encode(message, writer).ldelim();
+    };
+
+    /**
+     * Decodes a XmsgOssDownloadSimpleRsp message from the specified reader or buffer.
+     * @function decode
+     * @memberof XmsgOssDownloadSimpleRsp
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @param {number} [length] Message length if known beforehand
+     * @returns {XmsgOssDownloadSimpleRsp} XmsgOssDownloadSimpleRsp
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    XmsgOssDownloadSimpleRsp.decode = function decode(reader, length) {
+        if (!(reader instanceof $Reader))
+            reader = $Reader.create(reader);
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.XmsgOssDownloadSimpleRsp(), key;
+        while (reader.pos < end) {
+            var tag = reader.uint32();
+            switch (tag >>> 3) {
+            case 1:
+                message.objName = reader.string();
+                break;
+            case 2:
+                message.objSize = reader.uint64();
+                break;
+            case 3:
+                message.hashVal = reader.string();
+                break;
+            case 4:
+                message.gts = reader.uint64();
+                break;
+            case 5:
+                reader.skip().pos++;
+                if (message.ext === $util.emptyObject)
+                    message.ext = {};
+                key = reader.string();
+                reader.pos++;
+                message.ext[key] = reader.string();
+                break;
+            default:
+                reader.skipType(tag & 7);
+                break;
+            }
+        }
+        return message;
+    };
+
+    /**
+     * Decodes a XmsgOssDownloadSimpleRsp message from the specified reader or buffer, length delimited.
+     * @function decodeDelimited
+     * @memberof XmsgOssDownloadSimpleRsp
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @returns {XmsgOssDownloadSimpleRsp} XmsgOssDownloadSimpleRsp
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    XmsgOssDownloadSimpleRsp.decodeDelimited = function decodeDelimited(reader) {
+        if (!(reader instanceof $Reader))
+            reader = new $Reader(reader);
+        return this.decode(reader, reader.uint32());
+    };
+
+    /**
+     * Verifies a XmsgOssDownloadSimpleRsp message.
+     * @function verify
+     * @memberof XmsgOssDownloadSimpleRsp
+     * @static
+     * @param {Object.<string,*>} message Plain object to verify
+     * @returns {string|null} `null` if valid, otherwise the reason why it is not
+     */
+    XmsgOssDownloadSimpleRsp.verify = function verify(message) {
+        if (typeof message !== "object" || message === null)
+            return "object expected";
+        if (message.objName != null && message.hasOwnProperty("objName"))
+            if (!$util.isString(message.objName))
+                return "objName: string expected";
+        if (message.objSize != null && message.hasOwnProperty("objSize"))
+            if (!$util.isInteger(message.objSize) && !(message.objSize && $util.isInteger(message.objSize.low) && $util.isInteger(message.objSize.high)))
+                return "objSize: integer|Long expected";
+        if (message.hashVal != null && message.hasOwnProperty("hashVal"))
+            if (!$util.isString(message.hashVal))
+                return "hashVal: string expected";
+        if (message.gts != null && message.hasOwnProperty("gts"))
+            if (!$util.isInteger(message.gts) && !(message.gts && $util.isInteger(message.gts.low) && $util.isInteger(message.gts.high)))
+                return "gts: integer|Long expected";
+        if (message.ext != null && message.hasOwnProperty("ext")) {
+            if (!$util.isObject(message.ext))
+                return "ext: object expected";
+            var key = Object.keys(message.ext);
+            for (var i = 0; i < key.length; ++i)
+                if (!$util.isString(message.ext[key[i]]))
+                    return "ext: string{k:string} expected";
+        }
+        return null;
+    };
+
+    /**
+     * Creates a XmsgOssDownloadSimpleRsp message from a plain object. Also converts values to their respective internal types.
+     * @function fromObject
+     * @memberof XmsgOssDownloadSimpleRsp
+     * @static
+     * @param {Object.<string,*>} object Plain object
+     * @returns {XmsgOssDownloadSimpleRsp} XmsgOssDownloadSimpleRsp
+     */
+    XmsgOssDownloadSimpleRsp.fromObject = function fromObject(object) {
+        if (object instanceof $root.XmsgOssDownloadSimpleRsp)
+            return object;
+        var message = new $root.XmsgOssDownloadSimpleRsp();
+        if (object.objName != null)
+            message.objName = String(object.objName);
+        if (object.objSize != null)
+            if ($util.Long)
+                (message.objSize = $util.Long.fromValue(object.objSize)).unsigned = true;
+            else if (typeof object.objSize === "string")
+                message.objSize = parseInt(object.objSize, 10);
+            else if (typeof object.objSize === "number")
+                message.objSize = object.objSize;
+            else if (typeof object.objSize === "object")
+                message.objSize = new $util.LongBits(object.objSize.low >>> 0, object.objSize.high >>> 0).toNumber(true);
+        if (object.hashVal != null)
+            message.hashVal = String(object.hashVal);
+        if (object.gts != null)
+            if ($util.Long)
+                (message.gts = $util.Long.fromValue(object.gts)).unsigned = true;
+            else if (typeof object.gts === "string")
+                message.gts = parseInt(object.gts, 10);
+            else if (typeof object.gts === "number")
+                message.gts = object.gts;
+            else if (typeof object.gts === "object")
+                message.gts = new $util.LongBits(object.gts.low >>> 0, object.gts.high >>> 0).toNumber(true);
+        if (object.ext) {
+            if (typeof object.ext !== "object")
+                throw TypeError(".XmsgOssDownloadSimpleRsp.ext: object expected");
+            message.ext = {};
+            for (var keys = Object.keys(object.ext), i = 0; i < keys.length; ++i)
+                message.ext[keys[i]] = String(object.ext[keys[i]]);
+        }
+        return message;
+    };
+
+    /**
+     * Creates a plain object from a XmsgOssDownloadSimpleRsp message. Also converts values to other types if specified.
+     * @function toObject
+     * @memberof XmsgOssDownloadSimpleRsp
+     * @static
+     * @param {XmsgOssDownloadSimpleRsp} message XmsgOssDownloadSimpleRsp
+     * @param {$protobuf.IConversionOptions} [options] Conversion options
+     * @returns {Object.<string,*>} Plain object
+     */
+    XmsgOssDownloadSimpleRsp.toObject = function toObject(message, options) {
+        if (!options)
+            options = {};
+        var object = {};
+        if (options.objects || options.defaults)
+            object.ext = {};
+        if (options.defaults) {
+            object.objName = "";
+            if ($util.Long) {
+                var long = new $util.Long(0, 0, true);
+                object.objSize = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : long;
+            } else
+                object.objSize = options.longs === String ? "0" : 0;
+            object.hashVal = "";
+            if ($util.Long) {
+                var long = new $util.Long(0, 0, true);
+                object.gts = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : long;
+            } else
+                object.gts = options.longs === String ? "0" : 0;
+        }
+        if (message.objName != null && message.hasOwnProperty("objName"))
+            object.objName = message.objName;
+        if (message.objSize != null && message.hasOwnProperty("objSize"))
+            if (typeof message.objSize === "number")
+                object.objSize = options.longs === String ? String(message.objSize) : message.objSize;
+            else
+                object.objSize = options.longs === String ? $util.Long.prototype.toString.call(message.objSize) : options.longs === Number ? new $util.LongBits(message.objSize.low >>> 0, message.objSize.high >>> 0).toNumber(true) : message.objSize;
+        if (message.hashVal != null && message.hasOwnProperty("hashVal"))
+            object.hashVal = message.hashVal;
+        if (message.gts != null && message.hasOwnProperty("gts"))
+            if (typeof message.gts === "number")
+                object.gts = options.longs === String ? String(message.gts) : message.gts;
+            else
+                object.gts = options.longs === String ? $util.Long.prototype.toString.call(message.gts) : options.longs === Number ? new $util.LongBits(message.gts.low >>> 0, message.gts.high >>> 0).toNumber(true) : message.gts;
+        var keys2;
+        if (message.ext && (keys2 = Object.keys(message.ext)).length) {
+            object.ext = {};
+            for (var j = 0; j < keys2.length; ++j)
+                object.ext[keys2[j]] = message.ext[keys2[j]];
+        }
+        return object;
+    };
+
+    /**
+     * Converts this XmsgOssDownloadSimpleRsp to JSON.
+     * @function toJSON
+     * @memberof XmsgOssDownloadSimpleRsp
+     * @instance
+     * @returns {Object.<string,*>} JSON object
+     */
+    XmsgOssDownloadSimpleRsp.prototype.toJSON = function toJSON() {
+        return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+    };
+
+    return XmsgOssDownloadSimpleRsp;
+})();
+
+$root.XmsgOssUsrObjInfoQueryReq = (function() {
+
+    /**
+     * Properties of a XmsgOssUsrObjInfoQueryReq.
+     * @exports IXmsgOssUsrObjInfoQueryReq
+     * @interface IXmsgOssUsrObjInfoQueryReq
+     * @property {number|Long|null} [sts] XmsgOssUsrObjInfoQueryReq sts
+     * @property {number|Long|null} [ets] XmsgOssUsrObjInfoQueryReq ets
+     * @property {number|null} [page] XmsgOssUsrObjInfoQueryReq page
+     * @property {number|null} [pageSize] XmsgOssUsrObjInfoQueryReq pageSize
+     */
+
+    /**
+     * Constructs a new XmsgOssUsrObjInfoQueryReq.
+     * @exports XmsgOssUsrObjInfoQueryReq
+     * @classdesc Represents a XmsgOssUsrObjInfoQueryReq.
+     * @implements IXmsgOssUsrObjInfoQueryReq
+     * @constructor
+     * @param {IXmsgOssUsrObjInfoQueryReq=} [properties] Properties to set
+     */
+    function XmsgOssUsrObjInfoQueryReq(properties) {
+        if (properties)
+            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                if (properties[keys[i]] != null)
+                    this[keys[i]] = properties[keys[i]];
+    }
+
+    /**
+     * XmsgOssUsrObjInfoQueryReq sts.
+     * @member {number|Long} sts
+     * @memberof XmsgOssUsrObjInfoQueryReq
+     * @instance
+     */
+    XmsgOssUsrObjInfoQueryReq.prototype.sts = $util.Long ? $util.Long.fromBits(0,0,true) : 0;
+
+    /**
+     * XmsgOssUsrObjInfoQueryReq ets.
+     * @member {number|Long} ets
+     * @memberof XmsgOssUsrObjInfoQueryReq
+     * @instance
+     */
+    XmsgOssUsrObjInfoQueryReq.prototype.ets = $util.Long ? $util.Long.fromBits(0,0,true) : 0;
+
+    /**
+     * XmsgOssUsrObjInfoQueryReq page.
+     * @member {number} page
+     * @memberof XmsgOssUsrObjInfoQueryReq
+     * @instance
+     */
+    XmsgOssUsrObjInfoQueryReq.prototype.page = 0;
+
+    /**
+     * XmsgOssUsrObjInfoQueryReq pageSize.
+     * @member {number} pageSize
+     * @memberof XmsgOssUsrObjInfoQueryReq
+     * @instance
+     */
+    XmsgOssUsrObjInfoQueryReq.prototype.pageSize = 0;
+
+    /**
+     * Creates a new XmsgOssUsrObjInfoQueryReq instance using the specified properties.
+     * @function create
+     * @memberof XmsgOssUsrObjInfoQueryReq
+     * @static
+     * @param {IXmsgOssUsrObjInfoQueryReq=} [properties] Properties to set
+     * @returns {XmsgOssUsrObjInfoQueryReq} XmsgOssUsrObjInfoQueryReq instance
+     */
+    XmsgOssUsrObjInfoQueryReq.create = function create(properties) {
+        return new XmsgOssUsrObjInfoQueryReq(properties);
+    };
+
+    /**
+     * Encodes the specified XmsgOssUsrObjInfoQueryReq message. Does not implicitly {@link XmsgOssUsrObjInfoQueryReq.verify|verify} messages.
+     * @function encode
+     * @memberof XmsgOssUsrObjInfoQueryReq
+     * @static
+     * @param {IXmsgOssUsrObjInfoQueryReq} message XmsgOssUsrObjInfoQueryReq message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    XmsgOssUsrObjInfoQueryReq.encode = function encode(message, writer) {
+        if (!writer)
+            writer = $Writer.create();
+        if (message.sts != null && message.hasOwnProperty("sts"))
+            writer.uint32(/* id 1, wireType 0 =*/8).uint64(message.sts);
+        if (message.ets != null && message.hasOwnProperty("ets"))
+            writer.uint32(/* id 2, wireType 0 =*/16).uint64(message.ets);
+        if (message.page != null && message.hasOwnProperty("page"))
+            writer.uint32(/* id 3, wireType 0 =*/24).uint32(message.page);
+        if (message.pageSize != null && message.hasOwnProperty("pageSize"))
+            writer.uint32(/* id 4, wireType 0 =*/32).uint32(message.pageSize);
+        return writer;
+    };
+
+    /**
+     * Encodes the specified XmsgOssUsrObjInfoQueryReq message, length delimited. Does not implicitly {@link XmsgOssUsrObjInfoQueryReq.verify|verify} messages.
+     * @function encodeDelimited
+     * @memberof XmsgOssUsrObjInfoQueryReq
+     * @static
+     * @param {IXmsgOssUsrObjInfoQueryReq} message XmsgOssUsrObjInfoQueryReq message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    XmsgOssUsrObjInfoQueryReq.encodeDelimited = function encodeDelimited(message, writer) {
+        return this.encode(message, writer).ldelim();
+    };
+
+    /**
+     * Decodes a XmsgOssUsrObjInfoQueryReq message from the specified reader or buffer.
+     * @function decode
+     * @memberof XmsgOssUsrObjInfoQueryReq
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @param {number} [length] Message length if known beforehand
+     * @returns {XmsgOssUsrObjInfoQueryReq} XmsgOssUsrObjInfoQueryReq
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    XmsgOssUsrObjInfoQueryReq.decode = function decode(reader, length) {
+        if (!(reader instanceof $Reader))
+            reader = $Reader.create(reader);
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.XmsgOssUsrObjInfoQueryReq();
+        while (reader.pos < end) {
+            var tag = reader.uint32();
+            switch (tag >>> 3) {
+            case 1:
+                message.sts = reader.uint64();
+                break;
+            case 2:
+                message.ets = reader.uint64();
+                break;
+            case 3:
+                message.page = reader.uint32();
+                break;
+            case 4:
+                message.pageSize = reader.uint32();
+                break;
+            default:
+                reader.skipType(tag & 7);
+                break;
+            }
+        }
+        return message;
+    };
+
+    /**
+     * Decodes a XmsgOssUsrObjInfoQueryReq message from the specified reader or buffer, length delimited.
+     * @function decodeDelimited
+     * @memberof XmsgOssUsrObjInfoQueryReq
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @returns {XmsgOssUsrObjInfoQueryReq} XmsgOssUsrObjInfoQueryReq
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    XmsgOssUsrObjInfoQueryReq.decodeDelimited = function decodeDelimited(reader) {
+        if (!(reader instanceof $Reader))
+            reader = new $Reader(reader);
+        return this.decode(reader, reader.uint32());
+    };
+
+    /**
+     * Verifies a XmsgOssUsrObjInfoQueryReq message.
+     * @function verify
+     * @memberof XmsgOssUsrObjInfoQueryReq
+     * @static
+     * @param {Object.<string,*>} message Plain object to verify
+     * @returns {string|null} `null` if valid, otherwise the reason why it is not
+     */
+    XmsgOssUsrObjInfoQueryReq.verify = function verify(message) {
+        if (typeof message !== "object" || message === null)
+            return "object expected";
+        if (message.sts != null && message.hasOwnProperty("sts"))
+            if (!$util.isInteger(message.sts) && !(message.sts && $util.isInteger(message.sts.low) && $util.isInteger(message.sts.high)))
+                return "sts: integer|Long expected";
+        if (message.ets != null && message.hasOwnProperty("ets"))
+            if (!$util.isInteger(message.ets) && !(message.ets && $util.isInteger(message.ets.low) && $util.isInteger(message.ets.high)))
+                return "ets: integer|Long expected";
+        if (message.page != null && message.hasOwnProperty("page"))
+            if (!$util.isInteger(message.page))
+                return "page: integer expected";
+        if (message.pageSize != null && message.hasOwnProperty("pageSize"))
+            if (!$util.isInteger(message.pageSize))
+                return "pageSize: integer expected";
+        return null;
+    };
+
+    /**
+     * Creates a XmsgOssUsrObjInfoQueryReq message from a plain object. Also converts values to their respective internal types.
+     * @function fromObject
+     * @memberof XmsgOssUsrObjInfoQueryReq
+     * @static
+     * @param {Object.<string,*>} object Plain object
+     * @returns {XmsgOssUsrObjInfoQueryReq} XmsgOssUsrObjInfoQueryReq
+     */
+    XmsgOssUsrObjInfoQueryReq.fromObject = function fromObject(object) {
+        if (object instanceof $root.XmsgOssUsrObjInfoQueryReq)
+            return object;
+        var message = new $root.XmsgOssUsrObjInfoQueryReq();
+        if (object.sts != null)
+            if ($util.Long)
+                (message.sts = $util.Long.fromValue(object.sts)).unsigned = true;
+            else if (typeof object.sts === "string")
+                message.sts = parseInt(object.sts, 10);
+            else if (typeof object.sts === "number")
+                message.sts = object.sts;
+            else if (typeof object.sts === "object")
+                message.sts = new $util.LongBits(object.sts.low >>> 0, object.sts.high >>> 0).toNumber(true);
+        if (object.ets != null)
+            if ($util.Long)
+                (message.ets = $util.Long.fromValue(object.ets)).unsigned = true;
+            else if (typeof object.ets === "string")
+                message.ets = parseInt(object.ets, 10);
+            else if (typeof object.ets === "number")
+                message.ets = object.ets;
+            else if (typeof object.ets === "object")
+                message.ets = new $util.LongBits(object.ets.low >>> 0, object.ets.high >>> 0).toNumber(true);
+        if (object.page != null)
+            message.page = object.page >>> 0;
+        if (object.pageSize != null)
+            message.pageSize = object.pageSize >>> 0;
+        return message;
+    };
+
+    /**
+     * Creates a plain object from a XmsgOssUsrObjInfoQueryReq message. Also converts values to other types if specified.
+     * @function toObject
+     * @memberof XmsgOssUsrObjInfoQueryReq
+     * @static
+     * @param {XmsgOssUsrObjInfoQueryReq} message XmsgOssUsrObjInfoQueryReq
+     * @param {$protobuf.IConversionOptions} [options] Conversion options
+     * @returns {Object.<string,*>} Plain object
+     */
+    XmsgOssUsrObjInfoQueryReq.toObject = function toObject(message, options) {
+        if (!options)
+            options = {};
+        var object = {};
+        if (options.defaults) {
+            if ($util.Long) {
+                var long = new $util.Long(0, 0, true);
+                object.sts = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : long;
+            } else
+                object.sts = options.longs === String ? "0" : 0;
+            if ($util.Long) {
+                var long = new $util.Long(0, 0, true);
+                object.ets = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : long;
+            } else
+                object.ets = options.longs === String ? "0" : 0;
+            object.page = 0;
+            object.pageSize = 0;
+        }
+        if (message.sts != null && message.hasOwnProperty("sts"))
+            if (typeof message.sts === "number")
+                object.sts = options.longs === String ? String(message.sts) : message.sts;
+            else
+                object.sts = options.longs === String ? $util.Long.prototype.toString.call(message.sts) : options.longs === Number ? new $util.LongBits(message.sts.low >>> 0, message.sts.high >>> 0).toNumber(true) : message.sts;
+        if (message.ets != null && message.hasOwnProperty("ets"))
+            if (typeof message.ets === "number")
+                object.ets = options.longs === String ? String(message.ets) : message.ets;
+            else
+                object.ets = options.longs === String ? $util.Long.prototype.toString.call(message.ets) : options.longs === Number ? new $util.LongBits(message.ets.low >>> 0, message.ets.high >>> 0).toNumber(true) : message.ets;
+        if (message.page != null && message.hasOwnProperty("page"))
+            object.page = message.page;
+        if (message.pageSize != null && message.hasOwnProperty("pageSize"))
+            object.pageSize = message.pageSize;
+        return object;
+    };
+
+    /**
+     * Converts this XmsgOssUsrObjInfoQueryReq to JSON.
+     * @function toJSON
+     * @memberof XmsgOssUsrObjInfoQueryReq
+     * @instance
+     * @returns {Object.<string,*>} JSON object
+     */
+    XmsgOssUsrObjInfoQueryReq.prototype.toJSON = function toJSON() {
+        return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+    };
+
+    return XmsgOssUsrObjInfoQueryReq;
+})();
+
+$root.XmsgOssUsrObjInfoQueryRsp = (function() {
+
+    /**
+     * Properties of a XmsgOssUsrObjInfoQueryRsp.
+     * @exports IXmsgOssUsrObjInfoQueryRsp
+     * @interface IXmsgOssUsrObjInfoQueryRsp
+     * @property {Array.<IXmsgOssUsrObjInfo>|null} [objInfo] XmsgOssUsrObjInfoQueryRsp objInfo
+     */
+
+    /**
+     * Constructs a new XmsgOssUsrObjInfoQueryRsp.
+     * @exports XmsgOssUsrObjInfoQueryRsp
+     * @classdesc Represents a XmsgOssUsrObjInfoQueryRsp.
+     * @implements IXmsgOssUsrObjInfoQueryRsp
+     * @constructor
+     * @param {IXmsgOssUsrObjInfoQueryRsp=} [properties] Properties to set
+     */
+    function XmsgOssUsrObjInfoQueryRsp(properties) {
+        this.objInfo = [];
+        if (properties)
+            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                if (properties[keys[i]] != null)
+                    this[keys[i]] = properties[keys[i]];
+    }
+
+    /**
+     * XmsgOssUsrObjInfoQueryRsp objInfo.
+     * @member {Array.<IXmsgOssUsrObjInfo>} objInfo
+     * @memberof XmsgOssUsrObjInfoQueryRsp
+     * @instance
+     */
+    XmsgOssUsrObjInfoQueryRsp.prototype.objInfo = $util.emptyArray;
+
+    /**
+     * Creates a new XmsgOssUsrObjInfoQueryRsp instance using the specified properties.
+     * @function create
+     * @memberof XmsgOssUsrObjInfoQueryRsp
+     * @static
+     * @param {IXmsgOssUsrObjInfoQueryRsp=} [properties] Properties to set
+     * @returns {XmsgOssUsrObjInfoQueryRsp} XmsgOssUsrObjInfoQueryRsp instance
+     */
+    XmsgOssUsrObjInfoQueryRsp.create = function create(properties) {
+        return new XmsgOssUsrObjInfoQueryRsp(properties);
+    };
+
+    /**
+     * Encodes the specified XmsgOssUsrObjInfoQueryRsp message. Does not implicitly {@link XmsgOssUsrObjInfoQueryRsp.verify|verify} messages.
+     * @function encode
+     * @memberof XmsgOssUsrObjInfoQueryRsp
+     * @static
+     * @param {IXmsgOssUsrObjInfoQueryRsp} message XmsgOssUsrObjInfoQueryRsp message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    XmsgOssUsrObjInfoQueryRsp.encode = function encode(message, writer) {
+        if (!writer)
+            writer = $Writer.create();
+        if (message.objInfo != null && message.objInfo.length)
+            for (var i = 0; i < message.objInfo.length; ++i)
+                $root.XmsgOssUsrObjInfo.encode(message.objInfo[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+        return writer;
+    };
+
+    /**
+     * Encodes the specified XmsgOssUsrObjInfoQueryRsp message, length delimited. Does not implicitly {@link XmsgOssUsrObjInfoQueryRsp.verify|verify} messages.
+     * @function encodeDelimited
+     * @memberof XmsgOssUsrObjInfoQueryRsp
+     * @static
+     * @param {IXmsgOssUsrObjInfoQueryRsp} message XmsgOssUsrObjInfoQueryRsp message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    XmsgOssUsrObjInfoQueryRsp.encodeDelimited = function encodeDelimited(message, writer) {
+        return this.encode(message, writer).ldelim();
+    };
+
+    /**
+     * Decodes a XmsgOssUsrObjInfoQueryRsp message from the specified reader or buffer.
+     * @function decode
+     * @memberof XmsgOssUsrObjInfoQueryRsp
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @param {number} [length] Message length if known beforehand
+     * @returns {XmsgOssUsrObjInfoQueryRsp} XmsgOssUsrObjInfoQueryRsp
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    XmsgOssUsrObjInfoQueryRsp.decode = function decode(reader, length) {
+        if (!(reader instanceof $Reader))
+            reader = $Reader.create(reader);
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.XmsgOssUsrObjInfoQueryRsp();
+        while (reader.pos < end) {
+            var tag = reader.uint32();
+            switch (tag >>> 3) {
+            case 1:
+                if (!(message.objInfo && message.objInfo.length))
+                    message.objInfo = [];
+                message.objInfo.push($root.XmsgOssUsrObjInfo.decode(reader, reader.uint32()));
+                break;
+            default:
+                reader.skipType(tag & 7);
+                break;
+            }
+        }
+        return message;
+    };
+
+    /**
+     * Decodes a XmsgOssUsrObjInfoQueryRsp message from the specified reader or buffer, length delimited.
+     * @function decodeDelimited
+     * @memberof XmsgOssUsrObjInfoQueryRsp
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @returns {XmsgOssUsrObjInfoQueryRsp} XmsgOssUsrObjInfoQueryRsp
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    XmsgOssUsrObjInfoQueryRsp.decodeDelimited = function decodeDelimited(reader) {
+        if (!(reader instanceof $Reader))
+            reader = new $Reader(reader);
+        return this.decode(reader, reader.uint32());
+    };
+
+    /**
+     * Verifies a XmsgOssUsrObjInfoQueryRsp message.
+     * @function verify
+     * @memberof XmsgOssUsrObjInfoQueryRsp
+     * @static
+     * @param {Object.<string,*>} message Plain object to verify
+     * @returns {string|null} `null` if valid, otherwise the reason why it is not
+     */
+    XmsgOssUsrObjInfoQueryRsp.verify = function verify(message) {
+        if (typeof message !== "object" || message === null)
+            return "object expected";
+        if (message.objInfo != null && message.hasOwnProperty("objInfo")) {
+            if (!Array.isArray(message.objInfo))
+                return "objInfo: array expected";
+            for (var i = 0; i < message.objInfo.length; ++i) {
+                var error = $root.XmsgOssUsrObjInfo.verify(message.objInfo[i]);
+                if (error)
+                    return "objInfo." + error;
+            }
+        }
+        return null;
+    };
+
+    /**
+     * Creates a XmsgOssUsrObjInfoQueryRsp message from a plain object. Also converts values to their respective internal types.
+     * @function fromObject
+     * @memberof XmsgOssUsrObjInfoQueryRsp
+     * @static
+     * @param {Object.<string,*>} object Plain object
+     * @returns {XmsgOssUsrObjInfoQueryRsp} XmsgOssUsrObjInfoQueryRsp
+     */
+    XmsgOssUsrObjInfoQueryRsp.fromObject = function fromObject(object) {
+        if (object instanceof $root.XmsgOssUsrObjInfoQueryRsp)
+            return object;
+        var message = new $root.XmsgOssUsrObjInfoQueryRsp();
+        if (object.objInfo) {
+            if (!Array.isArray(object.objInfo))
+                throw TypeError(".XmsgOssUsrObjInfoQueryRsp.objInfo: array expected");
+            message.objInfo = [];
+            for (var i = 0; i < object.objInfo.length; ++i) {
+                if (typeof object.objInfo[i] !== "object")
+                    throw TypeError(".XmsgOssUsrObjInfoQueryRsp.objInfo: object expected");
+                message.objInfo[i] = $root.XmsgOssUsrObjInfo.fromObject(object.objInfo[i]);
+            }
+        }
+        return message;
+    };
+
+    /**
+     * Creates a plain object from a XmsgOssUsrObjInfoQueryRsp message. Also converts values to other types if specified.
+     * @function toObject
+     * @memberof XmsgOssUsrObjInfoQueryRsp
+     * @static
+     * @param {XmsgOssUsrObjInfoQueryRsp} message XmsgOssUsrObjInfoQueryRsp
+     * @param {$protobuf.IConversionOptions} [options] Conversion options
+     * @returns {Object.<string,*>} Plain object
+     */
+    XmsgOssUsrObjInfoQueryRsp.toObject = function toObject(message, options) {
+        if (!options)
+            options = {};
+        var object = {};
+        if (options.arrays || options.defaults)
+            object.objInfo = [];
+        if (message.objInfo && message.objInfo.length) {
+            object.objInfo = [];
+            for (var j = 0; j < message.objInfo.length; ++j)
+                object.objInfo[j] = $root.XmsgOssUsrObjInfo.toObject(message.objInfo[j], options);
+        }
+        return object;
+    };
+
+    /**
+     * Converts this XmsgOssUsrObjInfoQueryRsp to JSON.
+     * @function toJSON
+     * @memberof XmsgOssUsrObjInfoQueryRsp
+     * @instance
+     * @returns {Object.<string,*>} JSON object
+     */
+    XmsgOssUsrObjInfoQueryRsp.prototype.toJSON = function toJSON() {
+        return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+    };
+
+    return XmsgOssUsrObjInfoQueryRsp;
+})();
+
+$root.XmsgOssUsrObjInfo = (function() {
+
+    /**
+     * Properties of a XmsgOssUsrObjInfo.
+     * @exports IXmsgOssUsrObjInfo
+     * @interface IXmsgOssUsrObjInfo
+     * @property {string|null} [oid] XmsgOssUsrObjInfo oid
+     * @property {string|null} [objName] XmsgOssUsrObjInfo objName
+     * @property {number|Long|null} [objSize] XmsgOssUsrObjInfo objSize
+     * @property {string|null} [hashVal] XmsgOssUsrObjInfo hashVal
+     * @property {number|Long|null} [gts] XmsgOssUsrObjInfo gts
+     */
+
+    /**
+     * Constructs a new XmsgOssUsrObjInfo.
+     * @exports XmsgOssUsrObjInfo
+     * @classdesc Represents a XmsgOssUsrObjInfo.
+     * @implements IXmsgOssUsrObjInfo
+     * @constructor
+     * @param {IXmsgOssUsrObjInfo=} [properties] Properties to set
+     */
+    function XmsgOssUsrObjInfo(properties) {
+        if (properties)
+            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                if (properties[keys[i]] != null)
+                    this[keys[i]] = properties[keys[i]];
+    }
+
+    /**
+     * XmsgOssUsrObjInfo oid.
+     * @member {string} oid
+     * @memberof XmsgOssUsrObjInfo
+     * @instance
+     */
+    XmsgOssUsrObjInfo.prototype.oid = "";
+
+    /**
+     * XmsgOssUsrObjInfo objName.
+     * @member {string} objName
+     * @memberof XmsgOssUsrObjInfo
+     * @instance
+     */
+    XmsgOssUsrObjInfo.prototype.objName = "";
+
+    /**
+     * XmsgOssUsrObjInfo objSize.
+     * @member {number|Long} objSize
+     * @memberof XmsgOssUsrObjInfo
+     * @instance
+     */
+    XmsgOssUsrObjInfo.prototype.objSize = $util.Long ? $util.Long.fromBits(0,0,true) : 0;
+
+    /**
+     * XmsgOssUsrObjInfo hashVal.
+     * @member {string} hashVal
+     * @memberof XmsgOssUsrObjInfo
+     * @instance
+     */
+    XmsgOssUsrObjInfo.prototype.hashVal = "";
+
+    /**
+     * XmsgOssUsrObjInfo gts.
+     * @member {number|Long} gts
+     * @memberof XmsgOssUsrObjInfo
+     * @instance
+     */
+    XmsgOssUsrObjInfo.prototype.gts = $util.Long ? $util.Long.fromBits(0,0,true) : 0;
+
+    /**
+     * Creates a new XmsgOssUsrObjInfo instance using the specified properties.
+     * @function create
+     * @memberof XmsgOssUsrObjInfo
+     * @static
+     * @param {IXmsgOssUsrObjInfo=} [properties] Properties to set
+     * @returns {XmsgOssUsrObjInfo} XmsgOssUsrObjInfo instance
+     */
+    XmsgOssUsrObjInfo.create = function create(properties) {
+        return new XmsgOssUsrObjInfo(properties);
+    };
+
+    /**
+     * Encodes the specified XmsgOssUsrObjInfo message. Does not implicitly {@link XmsgOssUsrObjInfo.verify|verify} messages.
+     * @function encode
+     * @memberof XmsgOssUsrObjInfo
+     * @static
+     * @param {IXmsgOssUsrObjInfo} message XmsgOssUsrObjInfo message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    XmsgOssUsrObjInfo.encode = function encode(message, writer) {
+        if (!writer)
+            writer = $Writer.create();
+        if (message.oid != null && message.hasOwnProperty("oid"))
+            writer.uint32(/* id 1, wireType 2 =*/10).string(message.oid);
+        if (message.objName != null && message.hasOwnProperty("objName"))
+            writer.uint32(/* id 2, wireType 2 =*/18).string(message.objName);
+        if (message.objSize != null && message.hasOwnProperty("objSize"))
+            writer.uint32(/* id 3, wireType 0 =*/24).uint64(message.objSize);
+        if (message.hashVal != null && message.hasOwnProperty("hashVal"))
+            writer.uint32(/* id 4, wireType 2 =*/34).string(message.hashVal);
+        if (message.gts != null && message.hasOwnProperty("gts"))
+            writer.uint32(/* id 5, wireType 0 =*/40).uint64(message.gts);
+        return writer;
+    };
+
+    /**
+     * Encodes the specified XmsgOssUsrObjInfo message, length delimited. Does not implicitly {@link XmsgOssUsrObjInfo.verify|verify} messages.
+     * @function encodeDelimited
+     * @memberof XmsgOssUsrObjInfo
+     * @static
+     * @param {IXmsgOssUsrObjInfo} message XmsgOssUsrObjInfo message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    XmsgOssUsrObjInfo.encodeDelimited = function encodeDelimited(message, writer) {
+        return this.encode(message, writer).ldelim();
+    };
+
+    /**
+     * Decodes a XmsgOssUsrObjInfo message from the specified reader or buffer.
+     * @function decode
+     * @memberof XmsgOssUsrObjInfo
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @param {number} [length] Message length if known beforehand
+     * @returns {XmsgOssUsrObjInfo} XmsgOssUsrObjInfo
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    XmsgOssUsrObjInfo.decode = function decode(reader, length) {
+        if (!(reader instanceof $Reader))
+            reader = $Reader.create(reader);
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.XmsgOssUsrObjInfo();
+        while (reader.pos < end) {
+            var tag = reader.uint32();
+            switch (tag >>> 3) {
+            case 1:
+                message.oid = reader.string();
+                break;
+            case 2:
+                message.objName = reader.string();
+                break;
+            case 3:
+                message.objSize = reader.uint64();
+                break;
+            case 4:
+                message.hashVal = reader.string();
+                break;
+            case 5:
+                message.gts = reader.uint64();
+                break;
+            default:
+                reader.skipType(tag & 7);
+                break;
+            }
+        }
+        return message;
+    };
+
+    /**
+     * Decodes a XmsgOssUsrObjInfo message from the specified reader or buffer, length delimited.
+     * @function decodeDelimited
+     * @memberof XmsgOssUsrObjInfo
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @returns {XmsgOssUsrObjInfo} XmsgOssUsrObjInfo
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    XmsgOssUsrObjInfo.decodeDelimited = function decodeDelimited(reader) {
+        if (!(reader instanceof $Reader))
+            reader = new $Reader(reader);
+        return this.decode(reader, reader.uint32());
+    };
+
+    /**
+     * Verifies a XmsgOssUsrObjInfo message.
+     * @function verify
+     * @memberof XmsgOssUsrObjInfo
+     * @static
+     * @param {Object.<string,*>} message Plain object to verify
+     * @returns {string|null} `null` if valid, otherwise the reason why it is not
+     */
+    XmsgOssUsrObjInfo.verify = function verify(message) {
+        if (typeof message !== "object" || message === null)
+            return "object expected";
+        if (message.oid != null && message.hasOwnProperty("oid"))
+            if (!$util.isString(message.oid))
+                return "oid: string expected";
+        if (message.objName != null && message.hasOwnProperty("objName"))
+            if (!$util.isString(message.objName))
+                return "objName: string expected";
+        if (message.objSize != null && message.hasOwnProperty("objSize"))
+            if (!$util.isInteger(message.objSize) && !(message.objSize && $util.isInteger(message.objSize.low) && $util.isInteger(message.objSize.high)))
+                return "objSize: integer|Long expected";
+        if (message.hashVal != null && message.hasOwnProperty("hashVal"))
+            if (!$util.isString(message.hashVal))
+                return "hashVal: string expected";
+        if (message.gts != null && message.hasOwnProperty("gts"))
+            if (!$util.isInteger(message.gts) && !(message.gts && $util.isInteger(message.gts.low) && $util.isInteger(message.gts.high)))
+                return "gts: integer|Long expected";
+        return null;
+    };
+
+    /**
+     * Creates a XmsgOssUsrObjInfo message from a plain object. Also converts values to their respective internal types.
+     * @function fromObject
+     * @memberof XmsgOssUsrObjInfo
+     * @static
+     * @param {Object.<string,*>} object Plain object
+     * @returns {XmsgOssUsrObjInfo} XmsgOssUsrObjInfo
+     */
+    XmsgOssUsrObjInfo.fromObject = function fromObject(object) {
+        if (object instanceof $root.XmsgOssUsrObjInfo)
+            return object;
+        var message = new $root.XmsgOssUsrObjInfo();
+        if (object.oid != null)
+            message.oid = String(object.oid);
+        if (object.objName != null)
+            message.objName = String(object.objName);
+        if (object.objSize != null)
+            if ($util.Long)
+                (message.objSize = $util.Long.fromValue(object.objSize)).unsigned = true;
+            else if (typeof object.objSize === "string")
+                message.objSize = parseInt(object.objSize, 10);
+            else if (typeof object.objSize === "number")
+                message.objSize = object.objSize;
+            else if (typeof object.objSize === "object")
+                message.objSize = new $util.LongBits(object.objSize.low >>> 0, object.objSize.high >>> 0).toNumber(true);
+        if (object.hashVal != null)
+            message.hashVal = String(object.hashVal);
+        if (object.gts != null)
+            if ($util.Long)
+                (message.gts = $util.Long.fromValue(object.gts)).unsigned = true;
+            else if (typeof object.gts === "string")
+                message.gts = parseInt(object.gts, 10);
+            else if (typeof object.gts === "number")
+                message.gts = object.gts;
+            else if (typeof object.gts === "object")
+                message.gts = new $util.LongBits(object.gts.low >>> 0, object.gts.high >>> 0).toNumber(true);
+        return message;
+    };
+
+    /**
+     * Creates a plain object from a XmsgOssUsrObjInfo message. Also converts values to other types if specified.
+     * @function toObject
+     * @memberof XmsgOssUsrObjInfo
+     * @static
+     * @param {XmsgOssUsrObjInfo} message XmsgOssUsrObjInfo
+     * @param {$protobuf.IConversionOptions} [options] Conversion options
+     * @returns {Object.<string,*>} Plain object
+     */
+    XmsgOssUsrObjInfo.toObject = function toObject(message, options) {
+        if (!options)
+            options = {};
+        var object = {};
+        if (options.defaults) {
+            object.oid = "";
+            object.objName = "";
+            if ($util.Long) {
+                var long = new $util.Long(0, 0, true);
+                object.objSize = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : long;
+            } else
+                object.objSize = options.longs === String ? "0" : 0;
+            object.hashVal = "";
+            if ($util.Long) {
+                var long = new $util.Long(0, 0, true);
+                object.gts = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : long;
+            } else
+                object.gts = options.longs === String ? "0" : 0;
+        }
+        if (message.oid != null && message.hasOwnProperty("oid"))
+            object.oid = message.oid;
+        if (message.objName != null && message.hasOwnProperty("objName"))
+            object.objName = message.objName;
+        if (message.objSize != null && message.hasOwnProperty("objSize"))
+            if (typeof message.objSize === "number")
+                object.objSize = options.longs === String ? String(message.objSize) : message.objSize;
+            else
+                object.objSize = options.longs === String ? $util.Long.prototype.toString.call(message.objSize) : options.longs === Number ? new $util.LongBits(message.objSize.low >>> 0, message.objSize.high >>> 0).toNumber(true) : message.objSize;
+        if (message.hashVal != null && message.hasOwnProperty("hashVal"))
+            object.hashVal = message.hashVal;
+        if (message.gts != null && message.hasOwnProperty("gts"))
+            if (typeof message.gts === "number")
+                object.gts = options.longs === String ? String(message.gts) : message.gts;
+            else
+                object.gts = options.longs === String ? $util.Long.prototype.toString.call(message.gts) : options.longs === Number ? new $util.LongBits(message.gts.low >>> 0, message.gts.high >>> 0).toNumber(true) : message.gts;
+        return object;
+    };
+
+    /**
+     * Converts this XmsgOssUsrObjInfo to JSON.
+     * @function toJSON
+     * @memberof XmsgOssUsrObjInfo
+     * @instance
+     * @returns {Object.<string,*>} JSON object
+     */
+    XmsgOssUsrObjInfo.prototype.toJSON = function toJSON() {
+        return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+    };
+
+    return XmsgOssUsrObjInfo;
+})();
+
+$root.XmsgClientTokenInfo = (function() {
+
+    /**
+     * Properties of a XmsgClientTokenInfo.
+     * @exports IXmsgClientTokenInfo
+     * @interface IXmsgClientTokenInfo
+     * @property {string|null} [cgt] XmsgClientTokenInfo cgt
+     * @property {string|null} [token] XmsgClientTokenInfo token
+     * @property {string|null} [alg] XmsgClientTokenInfo alg
+     * @property {string|null} [slat] XmsgClientTokenInfo slat
+     * @property {string|null} [plat] XmsgClientTokenInfo plat
+     * @property {string|null} [did] XmsgClientTokenInfo did
+     * @property {string|null} [sign] XmsgClientTokenInfo sign
+     */
+
+    /**
+     * Constructs a new XmsgClientTokenInfo.
+     * @exports XmsgClientTokenInfo
+     * @classdesc Represents a XmsgClientTokenInfo.
+     * @implements IXmsgClientTokenInfo
+     * @constructor
+     * @param {IXmsgClientTokenInfo=} [properties] Properties to set
+     */
+    function XmsgClientTokenInfo(properties) {
+        if (properties)
+            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                if (properties[keys[i]] != null)
+                    this[keys[i]] = properties[keys[i]];
+    }
+
+    /**
+     * XmsgClientTokenInfo cgt.
+     * @member {string} cgt
+     * @memberof XmsgClientTokenInfo
+     * @instance
+     */
+    XmsgClientTokenInfo.prototype.cgt = "";
+
+    /**
+     * XmsgClientTokenInfo token.
+     * @member {string} token
+     * @memberof XmsgClientTokenInfo
+     * @instance
+     */
+    XmsgClientTokenInfo.prototype.token = "";
+
+    /**
+     * XmsgClientTokenInfo alg.
+     * @member {string} alg
+     * @memberof XmsgClientTokenInfo
+     * @instance
+     */
+    XmsgClientTokenInfo.prototype.alg = "";
+
+    /**
+     * XmsgClientTokenInfo slat.
+     * @member {string} slat
+     * @memberof XmsgClientTokenInfo
+     * @instance
+     */
+    XmsgClientTokenInfo.prototype.slat = "";
+
+    /**
+     * XmsgClientTokenInfo plat.
+     * @member {string} plat
+     * @memberof XmsgClientTokenInfo
+     * @instance
+     */
+    XmsgClientTokenInfo.prototype.plat = "";
+
+    /**
+     * XmsgClientTokenInfo did.
+     * @member {string} did
+     * @memberof XmsgClientTokenInfo
+     * @instance
+     */
+    XmsgClientTokenInfo.prototype.did = "";
+
+    /**
+     * XmsgClientTokenInfo sign.
+     * @member {string} sign
+     * @memberof XmsgClientTokenInfo
+     * @instance
+     */
+    XmsgClientTokenInfo.prototype.sign = "";
+
+    /**
+     * Creates a new XmsgClientTokenInfo instance using the specified properties.
+     * @function create
+     * @memberof XmsgClientTokenInfo
+     * @static
+     * @param {IXmsgClientTokenInfo=} [properties] Properties to set
+     * @returns {XmsgClientTokenInfo} XmsgClientTokenInfo instance
+     */
+    XmsgClientTokenInfo.create = function create(properties) {
+        return new XmsgClientTokenInfo(properties);
+    };
+
+    /**
+     * Encodes the specified XmsgClientTokenInfo message. Does not implicitly {@link XmsgClientTokenInfo.verify|verify} messages.
+     * @function encode
+     * @memberof XmsgClientTokenInfo
+     * @static
+     * @param {IXmsgClientTokenInfo} message XmsgClientTokenInfo message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    XmsgClientTokenInfo.encode = function encode(message, writer) {
+        if (!writer)
+            writer = $Writer.create();
+        if (message.cgt != null && message.hasOwnProperty("cgt"))
+            writer.uint32(/* id 1, wireType 2 =*/10).string(message.cgt);
+        if (message.token != null && message.hasOwnProperty("token"))
+            writer.uint32(/* id 2, wireType 2 =*/18).string(message.token);
+        if (message.alg != null && message.hasOwnProperty("alg"))
+            writer.uint32(/* id 3, wireType 2 =*/26).string(message.alg);
+        if (message.slat != null && message.hasOwnProperty("slat"))
+            writer.uint32(/* id 4, wireType 2 =*/34).string(message.slat);
+        if (message.plat != null && message.hasOwnProperty("plat"))
+            writer.uint32(/* id 5, wireType 2 =*/42).string(message.plat);
+        if (message.did != null && message.hasOwnProperty("did"))
+            writer.uint32(/* id 6, wireType 2 =*/50).string(message.did);
+        if (message.sign != null && message.hasOwnProperty("sign"))
+            writer.uint32(/* id 7, wireType 2 =*/58).string(message.sign);
+        return writer;
+    };
+
+    /**
+     * Encodes the specified XmsgClientTokenInfo message, length delimited. Does not implicitly {@link XmsgClientTokenInfo.verify|verify} messages.
+     * @function encodeDelimited
+     * @memberof XmsgClientTokenInfo
+     * @static
+     * @param {IXmsgClientTokenInfo} message XmsgClientTokenInfo message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    XmsgClientTokenInfo.encodeDelimited = function encodeDelimited(message, writer) {
+        return this.encode(message, writer).ldelim();
+    };
+
+    /**
+     * Decodes a XmsgClientTokenInfo message from the specified reader or buffer.
+     * @function decode
+     * @memberof XmsgClientTokenInfo
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @param {number} [length] Message length if known beforehand
+     * @returns {XmsgClientTokenInfo} XmsgClientTokenInfo
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    XmsgClientTokenInfo.decode = function decode(reader, length) {
+        if (!(reader instanceof $Reader))
+            reader = $Reader.create(reader);
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.XmsgClientTokenInfo();
+        while (reader.pos < end) {
+            var tag = reader.uint32();
+            switch (tag >>> 3) {
+            case 1:
+                message.cgt = reader.string();
+                break;
+            case 2:
+                message.token = reader.string();
+                break;
+            case 3:
+                message.alg = reader.string();
+                break;
+            case 4:
+                message.slat = reader.string();
+                break;
+            case 5:
+                message.plat = reader.string();
+                break;
+            case 6:
+                message.did = reader.string();
+                break;
+            case 7:
+                message.sign = reader.string();
+                break;
+            default:
+                reader.skipType(tag & 7);
+                break;
+            }
+        }
+        return message;
+    };
+
+    /**
+     * Decodes a XmsgClientTokenInfo message from the specified reader or buffer, length delimited.
+     * @function decodeDelimited
+     * @memberof XmsgClientTokenInfo
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @returns {XmsgClientTokenInfo} XmsgClientTokenInfo
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    XmsgClientTokenInfo.decodeDelimited = function decodeDelimited(reader) {
+        if (!(reader instanceof $Reader))
+            reader = new $Reader(reader);
+        return this.decode(reader, reader.uint32());
+    };
+
+    /**
+     * Verifies a XmsgClientTokenInfo message.
+     * @function verify
+     * @memberof XmsgClientTokenInfo
+     * @static
+     * @param {Object.<string,*>} message Plain object to verify
+     * @returns {string|null} `null` if valid, otherwise the reason why it is not
+     */
+    XmsgClientTokenInfo.verify = function verify(message) {
+        if (typeof message !== "object" || message === null)
+            return "object expected";
+        if (message.cgt != null && message.hasOwnProperty("cgt"))
+            if (!$util.isString(message.cgt))
+                return "cgt: string expected";
+        if (message.token != null && message.hasOwnProperty("token"))
+            if (!$util.isString(message.token))
+                return "token: string expected";
+        if (message.alg != null && message.hasOwnProperty("alg"))
+            if (!$util.isString(message.alg))
+                return "alg: string expected";
+        if (message.slat != null && message.hasOwnProperty("slat"))
+            if (!$util.isString(message.slat))
+                return "slat: string expected";
+        if (message.plat != null && message.hasOwnProperty("plat"))
+            if (!$util.isString(message.plat))
+                return "plat: string expected";
+        if (message.did != null && message.hasOwnProperty("did"))
+            if (!$util.isString(message.did))
+                return "did: string expected";
+        if (message.sign != null && message.hasOwnProperty("sign"))
+            if (!$util.isString(message.sign))
+                return "sign: string expected";
+        return null;
+    };
+
+    /**
+     * Creates a XmsgClientTokenInfo message from a plain object. Also converts values to their respective internal types.
+     * @function fromObject
+     * @memberof XmsgClientTokenInfo
+     * @static
+     * @param {Object.<string,*>} object Plain object
+     * @returns {XmsgClientTokenInfo} XmsgClientTokenInfo
+     */
+    XmsgClientTokenInfo.fromObject = function fromObject(object) {
+        if (object instanceof $root.XmsgClientTokenInfo)
+            return object;
+        var message = new $root.XmsgClientTokenInfo();
+        if (object.cgt != null)
+            message.cgt = String(object.cgt);
+        if (object.token != null)
+            message.token = String(object.token);
+        if (object.alg != null)
+            message.alg = String(object.alg);
+        if (object.slat != null)
+            message.slat = String(object.slat);
+        if (object.plat != null)
+            message.plat = String(object.plat);
+        if (object.did != null)
+            message.did = String(object.did);
+        if (object.sign != null)
+            message.sign = String(object.sign);
+        return message;
+    };
+
+    /**
+     * Creates a plain object from a XmsgClientTokenInfo message. Also converts values to other types if specified.
+     * @function toObject
+     * @memberof XmsgClientTokenInfo
+     * @static
+     * @param {XmsgClientTokenInfo} message XmsgClientTokenInfo
+     * @param {$protobuf.IConversionOptions} [options] Conversion options
+     * @returns {Object.<string,*>} Plain object
+     */
+    XmsgClientTokenInfo.toObject = function toObject(message, options) {
+        if (!options)
+            options = {};
+        var object = {};
+        if (options.defaults) {
+            object.cgt = "";
+            object.token = "";
+            object.alg = "";
+            object.slat = "";
+            object.plat = "";
+            object.did = "";
+            object.sign = "";
+        }
+        if (message.cgt != null && message.hasOwnProperty("cgt"))
+            object.cgt = message.cgt;
+        if (message.token != null && message.hasOwnProperty("token"))
+            object.token = message.token;
+        if (message.alg != null && message.hasOwnProperty("alg"))
+            object.alg = message.alg;
+        if (message.slat != null && message.hasOwnProperty("slat"))
+            object.slat = message.slat;
+        if (message.plat != null && message.hasOwnProperty("plat"))
+            object.plat = message.plat;
+        if (message.did != null && message.hasOwnProperty("did"))
+            object.did = message.did;
+        if (message.sign != null && message.hasOwnProperty("sign"))
+            object.sign = message.sign;
+        return object;
+    };
+
+    /**
+     * Converts this XmsgClientTokenInfo to JSON.
+     * @function toJSON
+     * @memberof XmsgClientTokenInfo
+     * @instance
+     * @returns {Object.<string,*>} JSON object
+     */
+    XmsgClientTokenInfo.prototype.toJSON = function toJSON() {
+        return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+    };
+
+    return XmsgClientTokenInfo;
+})();
+
 $root.XmsgImHlrAttachSimpleReq = (function() {
 
     /**
@@ -14194,6 +16399,496 @@ $root.XmsgImAuthSimpleRsp = (function() {
     return XmsgImAuthSimpleRsp;
 })();
 
+$root.XmsgImAuthRegSimpleReq = (function() {
+
+    /**
+     * Properties of a XmsgImAuthRegSimpleReq.
+     * @exports IXmsgImAuthRegSimpleReq
+     * @interface IXmsgImAuthRegSimpleReq
+     * @property {string|null} [usr] XmsgImAuthRegSimpleReq usr
+     * @property {string|null} [salt] XmsgImAuthRegSimpleReq salt
+     * @property {string|null} [pwd] XmsgImAuthRegSimpleReq pwd
+     * @property {IXmsgImClientDeviceInfo|null} [dev] XmsgImAuthRegSimpleReq dev
+     */
+
+    /**
+     * Constructs a new XmsgImAuthRegSimpleReq.
+     * @exports XmsgImAuthRegSimpleReq
+     * @classdesc Represents a XmsgImAuthRegSimpleReq.
+     * @implements IXmsgImAuthRegSimpleReq
+     * @constructor
+     * @param {IXmsgImAuthRegSimpleReq=} [properties] Properties to set
+     */
+    function XmsgImAuthRegSimpleReq(properties) {
+        if (properties)
+            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                if (properties[keys[i]] != null)
+                    this[keys[i]] = properties[keys[i]];
+    }
+
+    /**
+     * XmsgImAuthRegSimpleReq usr.
+     * @member {string} usr
+     * @memberof XmsgImAuthRegSimpleReq
+     * @instance
+     */
+    XmsgImAuthRegSimpleReq.prototype.usr = "";
+
+    /**
+     * XmsgImAuthRegSimpleReq salt.
+     * @member {string} salt
+     * @memberof XmsgImAuthRegSimpleReq
+     * @instance
+     */
+    XmsgImAuthRegSimpleReq.prototype.salt = "";
+
+    /**
+     * XmsgImAuthRegSimpleReq pwd.
+     * @member {string} pwd
+     * @memberof XmsgImAuthRegSimpleReq
+     * @instance
+     */
+    XmsgImAuthRegSimpleReq.prototype.pwd = "";
+
+    /**
+     * XmsgImAuthRegSimpleReq dev.
+     * @member {IXmsgImClientDeviceInfo|null|undefined} dev
+     * @memberof XmsgImAuthRegSimpleReq
+     * @instance
+     */
+    XmsgImAuthRegSimpleReq.prototype.dev = null;
+
+    /**
+     * Creates a new XmsgImAuthRegSimpleReq instance using the specified properties.
+     * @function create
+     * @memberof XmsgImAuthRegSimpleReq
+     * @static
+     * @param {IXmsgImAuthRegSimpleReq=} [properties] Properties to set
+     * @returns {XmsgImAuthRegSimpleReq} XmsgImAuthRegSimpleReq instance
+     */
+    XmsgImAuthRegSimpleReq.create = function create(properties) {
+        return new XmsgImAuthRegSimpleReq(properties);
+    };
+
+    /**
+     * Encodes the specified XmsgImAuthRegSimpleReq message. Does not implicitly {@link XmsgImAuthRegSimpleReq.verify|verify} messages.
+     * @function encode
+     * @memberof XmsgImAuthRegSimpleReq
+     * @static
+     * @param {IXmsgImAuthRegSimpleReq} message XmsgImAuthRegSimpleReq message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    XmsgImAuthRegSimpleReq.encode = function encode(message, writer) {
+        if (!writer)
+            writer = $Writer.create();
+        if (message.usr != null && message.hasOwnProperty("usr"))
+            writer.uint32(/* id 1, wireType 2 =*/10).string(message.usr);
+        if (message.salt != null && message.hasOwnProperty("salt"))
+            writer.uint32(/* id 2, wireType 2 =*/18).string(message.salt);
+        if (message.pwd != null && message.hasOwnProperty("pwd"))
+            writer.uint32(/* id 3, wireType 2 =*/26).string(message.pwd);
+        if (message.dev != null && message.hasOwnProperty("dev"))
+            $root.XmsgImClientDeviceInfo.encode(message.dev, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
+        return writer;
+    };
+
+    /**
+     * Encodes the specified XmsgImAuthRegSimpleReq message, length delimited. Does not implicitly {@link XmsgImAuthRegSimpleReq.verify|verify} messages.
+     * @function encodeDelimited
+     * @memberof XmsgImAuthRegSimpleReq
+     * @static
+     * @param {IXmsgImAuthRegSimpleReq} message XmsgImAuthRegSimpleReq message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    XmsgImAuthRegSimpleReq.encodeDelimited = function encodeDelimited(message, writer) {
+        return this.encode(message, writer).ldelim();
+    };
+
+    /**
+     * Decodes a XmsgImAuthRegSimpleReq message from the specified reader or buffer.
+     * @function decode
+     * @memberof XmsgImAuthRegSimpleReq
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @param {number} [length] Message length if known beforehand
+     * @returns {XmsgImAuthRegSimpleReq} XmsgImAuthRegSimpleReq
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    XmsgImAuthRegSimpleReq.decode = function decode(reader, length) {
+        if (!(reader instanceof $Reader))
+            reader = $Reader.create(reader);
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.XmsgImAuthRegSimpleReq();
+        while (reader.pos < end) {
+            var tag = reader.uint32();
+            switch (tag >>> 3) {
+            case 1:
+                message.usr = reader.string();
+                break;
+            case 2:
+                message.salt = reader.string();
+                break;
+            case 3:
+                message.pwd = reader.string();
+                break;
+            case 4:
+                message.dev = $root.XmsgImClientDeviceInfo.decode(reader, reader.uint32());
+                break;
+            default:
+                reader.skipType(tag & 7);
+                break;
+            }
+        }
+        return message;
+    };
+
+    /**
+     * Decodes a XmsgImAuthRegSimpleReq message from the specified reader or buffer, length delimited.
+     * @function decodeDelimited
+     * @memberof XmsgImAuthRegSimpleReq
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @returns {XmsgImAuthRegSimpleReq} XmsgImAuthRegSimpleReq
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    XmsgImAuthRegSimpleReq.decodeDelimited = function decodeDelimited(reader) {
+        if (!(reader instanceof $Reader))
+            reader = new $Reader(reader);
+        return this.decode(reader, reader.uint32());
+    };
+
+    /**
+     * Verifies a XmsgImAuthRegSimpleReq message.
+     * @function verify
+     * @memberof XmsgImAuthRegSimpleReq
+     * @static
+     * @param {Object.<string,*>} message Plain object to verify
+     * @returns {string|null} `null` if valid, otherwise the reason why it is not
+     */
+    XmsgImAuthRegSimpleReq.verify = function verify(message) {
+        if (typeof message !== "object" || message === null)
+            return "object expected";
+        if (message.usr != null && message.hasOwnProperty("usr"))
+            if (!$util.isString(message.usr))
+                return "usr: string expected";
+        if (message.salt != null && message.hasOwnProperty("salt"))
+            if (!$util.isString(message.salt))
+                return "salt: string expected";
+        if (message.pwd != null && message.hasOwnProperty("pwd"))
+            if (!$util.isString(message.pwd))
+                return "pwd: string expected";
+        if (message.dev != null && message.hasOwnProperty("dev")) {
+            var error = $root.XmsgImClientDeviceInfo.verify(message.dev);
+            if (error)
+                return "dev." + error;
+        }
+        return null;
+    };
+
+    /**
+     * Creates a XmsgImAuthRegSimpleReq message from a plain object. Also converts values to their respective internal types.
+     * @function fromObject
+     * @memberof XmsgImAuthRegSimpleReq
+     * @static
+     * @param {Object.<string,*>} object Plain object
+     * @returns {XmsgImAuthRegSimpleReq} XmsgImAuthRegSimpleReq
+     */
+    XmsgImAuthRegSimpleReq.fromObject = function fromObject(object) {
+        if (object instanceof $root.XmsgImAuthRegSimpleReq)
+            return object;
+        var message = new $root.XmsgImAuthRegSimpleReq();
+        if (object.usr != null)
+            message.usr = String(object.usr);
+        if (object.salt != null)
+            message.salt = String(object.salt);
+        if (object.pwd != null)
+            message.pwd = String(object.pwd);
+        if (object.dev != null) {
+            if (typeof object.dev !== "object")
+                throw TypeError(".XmsgImAuthRegSimpleReq.dev: object expected");
+            message.dev = $root.XmsgImClientDeviceInfo.fromObject(object.dev);
+        }
+        return message;
+    };
+
+    /**
+     * Creates a plain object from a XmsgImAuthRegSimpleReq message. Also converts values to other types if specified.
+     * @function toObject
+     * @memberof XmsgImAuthRegSimpleReq
+     * @static
+     * @param {XmsgImAuthRegSimpleReq} message XmsgImAuthRegSimpleReq
+     * @param {$protobuf.IConversionOptions} [options] Conversion options
+     * @returns {Object.<string,*>} Plain object
+     */
+    XmsgImAuthRegSimpleReq.toObject = function toObject(message, options) {
+        if (!options)
+            options = {};
+        var object = {};
+        if (options.defaults) {
+            object.usr = "";
+            object.salt = "";
+            object.pwd = "";
+            object.dev = null;
+        }
+        if (message.usr != null && message.hasOwnProperty("usr"))
+            object.usr = message.usr;
+        if (message.salt != null && message.hasOwnProperty("salt"))
+            object.salt = message.salt;
+        if (message.pwd != null && message.hasOwnProperty("pwd"))
+            object.pwd = message.pwd;
+        if (message.dev != null && message.hasOwnProperty("dev"))
+            object.dev = $root.XmsgImClientDeviceInfo.toObject(message.dev, options);
+        return object;
+    };
+
+    /**
+     * Converts this XmsgImAuthRegSimpleReq to JSON.
+     * @function toJSON
+     * @memberof XmsgImAuthRegSimpleReq
+     * @instance
+     * @returns {Object.<string,*>} JSON object
+     */
+    XmsgImAuthRegSimpleReq.prototype.toJSON = function toJSON() {
+        return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+    };
+
+    return XmsgImAuthRegSimpleReq;
+})();
+
+$root.XmsgImAuthRegSimpleRsp = (function() {
+
+    /**
+     * Properties of a XmsgImAuthRegSimpleRsp.
+     * @exports IXmsgImAuthRegSimpleRsp
+     * @interface IXmsgImAuthRegSimpleRsp
+     * @property {string|null} [cgt] XmsgImAuthRegSimpleRsp cgt
+     * @property {Object.<string,string>|null} [ext] XmsgImAuthRegSimpleRsp ext
+     */
+
+    /**
+     * Constructs a new XmsgImAuthRegSimpleRsp.
+     * @exports XmsgImAuthRegSimpleRsp
+     * @classdesc Represents a XmsgImAuthRegSimpleRsp.
+     * @implements IXmsgImAuthRegSimpleRsp
+     * @constructor
+     * @param {IXmsgImAuthRegSimpleRsp=} [properties] Properties to set
+     */
+    function XmsgImAuthRegSimpleRsp(properties) {
+        this.ext = {};
+        if (properties)
+            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                if (properties[keys[i]] != null)
+                    this[keys[i]] = properties[keys[i]];
+    }
+
+    /**
+     * XmsgImAuthRegSimpleRsp cgt.
+     * @member {string} cgt
+     * @memberof XmsgImAuthRegSimpleRsp
+     * @instance
+     */
+    XmsgImAuthRegSimpleRsp.prototype.cgt = "";
+
+    /**
+     * XmsgImAuthRegSimpleRsp ext.
+     * @member {Object.<string,string>} ext
+     * @memberof XmsgImAuthRegSimpleRsp
+     * @instance
+     */
+    XmsgImAuthRegSimpleRsp.prototype.ext = $util.emptyObject;
+
+    /**
+     * Creates a new XmsgImAuthRegSimpleRsp instance using the specified properties.
+     * @function create
+     * @memberof XmsgImAuthRegSimpleRsp
+     * @static
+     * @param {IXmsgImAuthRegSimpleRsp=} [properties] Properties to set
+     * @returns {XmsgImAuthRegSimpleRsp} XmsgImAuthRegSimpleRsp instance
+     */
+    XmsgImAuthRegSimpleRsp.create = function create(properties) {
+        return new XmsgImAuthRegSimpleRsp(properties);
+    };
+
+    /**
+     * Encodes the specified XmsgImAuthRegSimpleRsp message. Does not implicitly {@link XmsgImAuthRegSimpleRsp.verify|verify} messages.
+     * @function encode
+     * @memberof XmsgImAuthRegSimpleRsp
+     * @static
+     * @param {IXmsgImAuthRegSimpleRsp} message XmsgImAuthRegSimpleRsp message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    XmsgImAuthRegSimpleRsp.encode = function encode(message, writer) {
+        if (!writer)
+            writer = $Writer.create();
+        if (message.cgt != null && message.hasOwnProperty("cgt"))
+            writer.uint32(/* id 1, wireType 2 =*/10).string(message.cgt);
+        if (message.ext != null && message.hasOwnProperty("ext"))
+            for (var keys = Object.keys(message.ext), i = 0; i < keys.length; ++i)
+                writer.uint32(/* id 2, wireType 2 =*/18).fork().uint32(/* id 1, wireType 2 =*/10).string(keys[i]).uint32(/* id 2, wireType 2 =*/18).string(message.ext[keys[i]]).ldelim();
+        return writer;
+    };
+
+    /**
+     * Encodes the specified XmsgImAuthRegSimpleRsp message, length delimited. Does not implicitly {@link XmsgImAuthRegSimpleRsp.verify|verify} messages.
+     * @function encodeDelimited
+     * @memberof XmsgImAuthRegSimpleRsp
+     * @static
+     * @param {IXmsgImAuthRegSimpleRsp} message XmsgImAuthRegSimpleRsp message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    XmsgImAuthRegSimpleRsp.encodeDelimited = function encodeDelimited(message, writer) {
+        return this.encode(message, writer).ldelim();
+    };
+
+    /**
+     * Decodes a XmsgImAuthRegSimpleRsp message from the specified reader or buffer.
+     * @function decode
+     * @memberof XmsgImAuthRegSimpleRsp
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @param {number} [length] Message length if known beforehand
+     * @returns {XmsgImAuthRegSimpleRsp} XmsgImAuthRegSimpleRsp
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    XmsgImAuthRegSimpleRsp.decode = function decode(reader, length) {
+        if (!(reader instanceof $Reader))
+            reader = $Reader.create(reader);
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.XmsgImAuthRegSimpleRsp(), key;
+        while (reader.pos < end) {
+            var tag = reader.uint32();
+            switch (tag >>> 3) {
+            case 1:
+                message.cgt = reader.string();
+                break;
+            case 2:
+                reader.skip().pos++;
+                if (message.ext === $util.emptyObject)
+                    message.ext = {};
+                key = reader.string();
+                reader.pos++;
+                message.ext[key] = reader.string();
+                break;
+            default:
+                reader.skipType(tag & 7);
+                break;
+            }
+        }
+        return message;
+    };
+
+    /**
+     * Decodes a XmsgImAuthRegSimpleRsp message from the specified reader or buffer, length delimited.
+     * @function decodeDelimited
+     * @memberof XmsgImAuthRegSimpleRsp
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @returns {XmsgImAuthRegSimpleRsp} XmsgImAuthRegSimpleRsp
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    XmsgImAuthRegSimpleRsp.decodeDelimited = function decodeDelimited(reader) {
+        if (!(reader instanceof $Reader))
+            reader = new $Reader(reader);
+        return this.decode(reader, reader.uint32());
+    };
+
+    /**
+     * Verifies a XmsgImAuthRegSimpleRsp message.
+     * @function verify
+     * @memberof XmsgImAuthRegSimpleRsp
+     * @static
+     * @param {Object.<string,*>} message Plain object to verify
+     * @returns {string|null} `null` if valid, otherwise the reason why it is not
+     */
+    XmsgImAuthRegSimpleRsp.verify = function verify(message) {
+        if (typeof message !== "object" || message === null)
+            return "object expected";
+        if (message.cgt != null && message.hasOwnProperty("cgt"))
+            if (!$util.isString(message.cgt))
+                return "cgt: string expected";
+        if (message.ext != null && message.hasOwnProperty("ext")) {
+            if (!$util.isObject(message.ext))
+                return "ext: object expected";
+            var key = Object.keys(message.ext);
+            for (var i = 0; i < key.length; ++i)
+                if (!$util.isString(message.ext[key[i]]))
+                    return "ext: string{k:string} expected";
+        }
+        return null;
+    };
+
+    /**
+     * Creates a XmsgImAuthRegSimpleRsp message from a plain object. Also converts values to their respective internal types.
+     * @function fromObject
+     * @memberof XmsgImAuthRegSimpleRsp
+     * @static
+     * @param {Object.<string,*>} object Plain object
+     * @returns {XmsgImAuthRegSimpleRsp} XmsgImAuthRegSimpleRsp
+     */
+    XmsgImAuthRegSimpleRsp.fromObject = function fromObject(object) {
+        if (object instanceof $root.XmsgImAuthRegSimpleRsp)
+            return object;
+        var message = new $root.XmsgImAuthRegSimpleRsp();
+        if (object.cgt != null)
+            message.cgt = String(object.cgt);
+        if (object.ext) {
+            if (typeof object.ext !== "object")
+                throw TypeError(".XmsgImAuthRegSimpleRsp.ext: object expected");
+            message.ext = {};
+            for (var keys = Object.keys(object.ext), i = 0; i < keys.length; ++i)
+                message.ext[keys[i]] = String(object.ext[keys[i]]);
+        }
+        return message;
+    };
+
+    /**
+     * Creates a plain object from a XmsgImAuthRegSimpleRsp message. Also converts values to other types if specified.
+     * @function toObject
+     * @memberof XmsgImAuthRegSimpleRsp
+     * @static
+     * @param {XmsgImAuthRegSimpleRsp} message XmsgImAuthRegSimpleRsp
+     * @param {$protobuf.IConversionOptions} [options] Conversion options
+     * @returns {Object.<string,*>} Plain object
+     */
+    XmsgImAuthRegSimpleRsp.toObject = function toObject(message, options) {
+        if (!options)
+            options = {};
+        var object = {};
+        if (options.objects || options.defaults)
+            object.ext = {};
+        if (options.defaults)
+            object.cgt = "";
+        if (message.cgt != null && message.hasOwnProperty("cgt"))
+            object.cgt = message.cgt;
+        var keys2;
+        if (message.ext && (keys2 = Object.keys(message.ext)).length) {
+            object.ext = {};
+            for (var j = 0; j < keys2.length; ++j)
+                object.ext[keys2[j]] = message.ext[keys2[j]];
+        }
+        return object;
+    };
+
+    /**
+     * Converts this XmsgImAuthRegSimpleRsp to JSON.
+     * @function toJSON
+     * @memberof XmsgImAuthRegSimpleRsp
+     * @instance
+     * @returns {Object.<string,*>} JSON object
+     */
+    XmsgImAuthRegSimpleRsp.prototype.toJSON = function toJSON() {
+        return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+    };
+
+    return XmsgImAuthRegSimpleRsp;
+})();
+
 $root.XmsgImClientDeviceInfo = (function() {
 
     /**
@@ -14783,496 +17478,6 @@ $root.XmsgImClientServiceAddress = (function() {
     };
 
     return XmsgImClientServiceAddress;
-})();
-
-$root.XmsgImAuthRegSimpleReq = (function() {
-
-    /**
-     * Properties of a XmsgImAuthRegSimpleReq.
-     * @exports IXmsgImAuthRegSimpleReq
-     * @interface IXmsgImAuthRegSimpleReq
-     * @property {string|null} [usr] XmsgImAuthRegSimpleReq usr
-     * @property {string|null} [salt] XmsgImAuthRegSimpleReq salt
-     * @property {string|null} [pwd] XmsgImAuthRegSimpleReq pwd
-     * @property {IXmsgImClientDeviceInfo|null} [dev] XmsgImAuthRegSimpleReq dev
-     */
-
-    /**
-     * Constructs a new XmsgImAuthRegSimpleReq.
-     * @exports XmsgImAuthRegSimpleReq
-     * @classdesc Represents a XmsgImAuthRegSimpleReq.
-     * @implements IXmsgImAuthRegSimpleReq
-     * @constructor
-     * @param {IXmsgImAuthRegSimpleReq=} [properties] Properties to set
-     */
-    function XmsgImAuthRegSimpleReq(properties) {
-        if (properties)
-            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                if (properties[keys[i]] != null)
-                    this[keys[i]] = properties[keys[i]];
-    }
-
-    /**
-     * XmsgImAuthRegSimpleReq usr.
-     * @member {string} usr
-     * @memberof XmsgImAuthRegSimpleReq
-     * @instance
-     */
-    XmsgImAuthRegSimpleReq.prototype.usr = "";
-
-    /**
-     * XmsgImAuthRegSimpleReq salt.
-     * @member {string} salt
-     * @memberof XmsgImAuthRegSimpleReq
-     * @instance
-     */
-    XmsgImAuthRegSimpleReq.prototype.salt = "";
-
-    /**
-     * XmsgImAuthRegSimpleReq pwd.
-     * @member {string} pwd
-     * @memberof XmsgImAuthRegSimpleReq
-     * @instance
-     */
-    XmsgImAuthRegSimpleReq.prototype.pwd = "";
-
-    /**
-     * XmsgImAuthRegSimpleReq dev.
-     * @member {IXmsgImClientDeviceInfo|null|undefined} dev
-     * @memberof XmsgImAuthRegSimpleReq
-     * @instance
-     */
-    XmsgImAuthRegSimpleReq.prototype.dev = null;
-
-    /**
-     * Creates a new XmsgImAuthRegSimpleReq instance using the specified properties.
-     * @function create
-     * @memberof XmsgImAuthRegSimpleReq
-     * @static
-     * @param {IXmsgImAuthRegSimpleReq=} [properties] Properties to set
-     * @returns {XmsgImAuthRegSimpleReq} XmsgImAuthRegSimpleReq instance
-     */
-    XmsgImAuthRegSimpleReq.create = function create(properties) {
-        return new XmsgImAuthRegSimpleReq(properties);
-    };
-
-    /**
-     * Encodes the specified XmsgImAuthRegSimpleReq message. Does not implicitly {@link XmsgImAuthRegSimpleReq.verify|verify} messages.
-     * @function encode
-     * @memberof XmsgImAuthRegSimpleReq
-     * @static
-     * @param {IXmsgImAuthRegSimpleReq} message XmsgImAuthRegSimpleReq message or plain object to encode
-     * @param {$protobuf.Writer} [writer] Writer to encode to
-     * @returns {$protobuf.Writer} Writer
-     */
-    XmsgImAuthRegSimpleReq.encode = function encode(message, writer) {
-        if (!writer)
-            writer = $Writer.create();
-        if (message.usr != null && message.hasOwnProperty("usr"))
-            writer.uint32(/* id 1, wireType 2 =*/10).string(message.usr);
-        if (message.salt != null && message.hasOwnProperty("salt"))
-            writer.uint32(/* id 2, wireType 2 =*/18).string(message.salt);
-        if (message.pwd != null && message.hasOwnProperty("pwd"))
-            writer.uint32(/* id 3, wireType 2 =*/26).string(message.pwd);
-        if (message.dev != null && message.hasOwnProperty("dev"))
-            $root.XmsgImClientDeviceInfo.encode(message.dev, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
-        return writer;
-    };
-
-    /**
-     * Encodes the specified XmsgImAuthRegSimpleReq message, length delimited. Does not implicitly {@link XmsgImAuthRegSimpleReq.verify|verify} messages.
-     * @function encodeDelimited
-     * @memberof XmsgImAuthRegSimpleReq
-     * @static
-     * @param {IXmsgImAuthRegSimpleReq} message XmsgImAuthRegSimpleReq message or plain object to encode
-     * @param {$protobuf.Writer} [writer] Writer to encode to
-     * @returns {$protobuf.Writer} Writer
-     */
-    XmsgImAuthRegSimpleReq.encodeDelimited = function encodeDelimited(message, writer) {
-        return this.encode(message, writer).ldelim();
-    };
-
-    /**
-     * Decodes a XmsgImAuthRegSimpleReq message from the specified reader or buffer.
-     * @function decode
-     * @memberof XmsgImAuthRegSimpleReq
-     * @static
-     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-     * @param {number} [length] Message length if known beforehand
-     * @returns {XmsgImAuthRegSimpleReq} XmsgImAuthRegSimpleReq
-     * @throws {Error} If the payload is not a reader or valid buffer
-     * @throws {$protobuf.util.ProtocolError} If required fields are missing
-     */
-    XmsgImAuthRegSimpleReq.decode = function decode(reader, length) {
-        if (!(reader instanceof $Reader))
-            reader = $Reader.create(reader);
-        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.XmsgImAuthRegSimpleReq();
-        while (reader.pos < end) {
-            var tag = reader.uint32();
-            switch (tag >>> 3) {
-            case 1:
-                message.usr = reader.string();
-                break;
-            case 2:
-                message.salt = reader.string();
-                break;
-            case 3:
-                message.pwd = reader.string();
-                break;
-            case 4:
-                message.dev = $root.XmsgImClientDeviceInfo.decode(reader, reader.uint32());
-                break;
-            default:
-                reader.skipType(tag & 7);
-                break;
-            }
-        }
-        return message;
-    };
-
-    /**
-     * Decodes a XmsgImAuthRegSimpleReq message from the specified reader or buffer, length delimited.
-     * @function decodeDelimited
-     * @memberof XmsgImAuthRegSimpleReq
-     * @static
-     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-     * @returns {XmsgImAuthRegSimpleReq} XmsgImAuthRegSimpleReq
-     * @throws {Error} If the payload is not a reader or valid buffer
-     * @throws {$protobuf.util.ProtocolError} If required fields are missing
-     */
-    XmsgImAuthRegSimpleReq.decodeDelimited = function decodeDelimited(reader) {
-        if (!(reader instanceof $Reader))
-            reader = new $Reader(reader);
-        return this.decode(reader, reader.uint32());
-    };
-
-    /**
-     * Verifies a XmsgImAuthRegSimpleReq message.
-     * @function verify
-     * @memberof XmsgImAuthRegSimpleReq
-     * @static
-     * @param {Object.<string,*>} message Plain object to verify
-     * @returns {string|null} `null` if valid, otherwise the reason why it is not
-     */
-    XmsgImAuthRegSimpleReq.verify = function verify(message) {
-        if (typeof message !== "object" || message === null)
-            return "object expected";
-        if (message.usr != null && message.hasOwnProperty("usr"))
-            if (!$util.isString(message.usr))
-                return "usr: string expected";
-        if (message.salt != null && message.hasOwnProperty("salt"))
-            if (!$util.isString(message.salt))
-                return "salt: string expected";
-        if (message.pwd != null && message.hasOwnProperty("pwd"))
-            if (!$util.isString(message.pwd))
-                return "pwd: string expected";
-        if (message.dev != null && message.hasOwnProperty("dev")) {
-            var error = $root.XmsgImClientDeviceInfo.verify(message.dev);
-            if (error)
-                return "dev." + error;
-        }
-        return null;
-    };
-
-    /**
-     * Creates a XmsgImAuthRegSimpleReq message from a plain object. Also converts values to their respective internal types.
-     * @function fromObject
-     * @memberof XmsgImAuthRegSimpleReq
-     * @static
-     * @param {Object.<string,*>} object Plain object
-     * @returns {XmsgImAuthRegSimpleReq} XmsgImAuthRegSimpleReq
-     */
-    XmsgImAuthRegSimpleReq.fromObject = function fromObject(object) {
-        if (object instanceof $root.XmsgImAuthRegSimpleReq)
-            return object;
-        var message = new $root.XmsgImAuthRegSimpleReq();
-        if (object.usr != null)
-            message.usr = String(object.usr);
-        if (object.salt != null)
-            message.salt = String(object.salt);
-        if (object.pwd != null)
-            message.pwd = String(object.pwd);
-        if (object.dev != null) {
-            if (typeof object.dev !== "object")
-                throw TypeError(".XmsgImAuthRegSimpleReq.dev: object expected");
-            message.dev = $root.XmsgImClientDeviceInfo.fromObject(object.dev);
-        }
-        return message;
-    };
-
-    /**
-     * Creates a plain object from a XmsgImAuthRegSimpleReq message. Also converts values to other types if specified.
-     * @function toObject
-     * @memberof XmsgImAuthRegSimpleReq
-     * @static
-     * @param {XmsgImAuthRegSimpleReq} message XmsgImAuthRegSimpleReq
-     * @param {$protobuf.IConversionOptions} [options] Conversion options
-     * @returns {Object.<string,*>} Plain object
-     */
-    XmsgImAuthRegSimpleReq.toObject = function toObject(message, options) {
-        if (!options)
-            options = {};
-        var object = {};
-        if (options.defaults) {
-            object.usr = "";
-            object.salt = "";
-            object.pwd = "";
-            object.dev = null;
-        }
-        if (message.usr != null && message.hasOwnProperty("usr"))
-            object.usr = message.usr;
-        if (message.salt != null && message.hasOwnProperty("salt"))
-            object.salt = message.salt;
-        if (message.pwd != null && message.hasOwnProperty("pwd"))
-            object.pwd = message.pwd;
-        if (message.dev != null && message.hasOwnProperty("dev"))
-            object.dev = $root.XmsgImClientDeviceInfo.toObject(message.dev, options);
-        return object;
-    };
-
-    /**
-     * Converts this XmsgImAuthRegSimpleReq to JSON.
-     * @function toJSON
-     * @memberof XmsgImAuthRegSimpleReq
-     * @instance
-     * @returns {Object.<string,*>} JSON object
-     */
-    XmsgImAuthRegSimpleReq.prototype.toJSON = function toJSON() {
-        return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-    };
-
-    return XmsgImAuthRegSimpleReq;
-})();
-
-$root.XmsgImAuthRegSimpleRsp = (function() {
-
-    /**
-     * Properties of a XmsgImAuthRegSimpleRsp.
-     * @exports IXmsgImAuthRegSimpleRsp
-     * @interface IXmsgImAuthRegSimpleRsp
-     * @property {string|null} [cgt] XmsgImAuthRegSimpleRsp cgt
-     * @property {Object.<string,string>|null} [ext] XmsgImAuthRegSimpleRsp ext
-     */
-
-    /**
-     * Constructs a new XmsgImAuthRegSimpleRsp.
-     * @exports XmsgImAuthRegSimpleRsp
-     * @classdesc Represents a XmsgImAuthRegSimpleRsp.
-     * @implements IXmsgImAuthRegSimpleRsp
-     * @constructor
-     * @param {IXmsgImAuthRegSimpleRsp=} [properties] Properties to set
-     */
-    function XmsgImAuthRegSimpleRsp(properties) {
-        this.ext = {};
-        if (properties)
-            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                if (properties[keys[i]] != null)
-                    this[keys[i]] = properties[keys[i]];
-    }
-
-    /**
-     * XmsgImAuthRegSimpleRsp cgt.
-     * @member {string} cgt
-     * @memberof XmsgImAuthRegSimpleRsp
-     * @instance
-     */
-    XmsgImAuthRegSimpleRsp.prototype.cgt = "";
-
-    /**
-     * XmsgImAuthRegSimpleRsp ext.
-     * @member {Object.<string,string>} ext
-     * @memberof XmsgImAuthRegSimpleRsp
-     * @instance
-     */
-    XmsgImAuthRegSimpleRsp.prototype.ext = $util.emptyObject;
-
-    /**
-     * Creates a new XmsgImAuthRegSimpleRsp instance using the specified properties.
-     * @function create
-     * @memberof XmsgImAuthRegSimpleRsp
-     * @static
-     * @param {IXmsgImAuthRegSimpleRsp=} [properties] Properties to set
-     * @returns {XmsgImAuthRegSimpleRsp} XmsgImAuthRegSimpleRsp instance
-     */
-    XmsgImAuthRegSimpleRsp.create = function create(properties) {
-        return new XmsgImAuthRegSimpleRsp(properties);
-    };
-
-    /**
-     * Encodes the specified XmsgImAuthRegSimpleRsp message. Does not implicitly {@link XmsgImAuthRegSimpleRsp.verify|verify} messages.
-     * @function encode
-     * @memberof XmsgImAuthRegSimpleRsp
-     * @static
-     * @param {IXmsgImAuthRegSimpleRsp} message XmsgImAuthRegSimpleRsp message or plain object to encode
-     * @param {$protobuf.Writer} [writer] Writer to encode to
-     * @returns {$protobuf.Writer} Writer
-     */
-    XmsgImAuthRegSimpleRsp.encode = function encode(message, writer) {
-        if (!writer)
-            writer = $Writer.create();
-        if (message.cgt != null && message.hasOwnProperty("cgt"))
-            writer.uint32(/* id 1, wireType 2 =*/10).string(message.cgt);
-        if (message.ext != null && message.hasOwnProperty("ext"))
-            for (var keys = Object.keys(message.ext), i = 0; i < keys.length; ++i)
-                writer.uint32(/* id 2, wireType 2 =*/18).fork().uint32(/* id 1, wireType 2 =*/10).string(keys[i]).uint32(/* id 2, wireType 2 =*/18).string(message.ext[keys[i]]).ldelim();
-        return writer;
-    };
-
-    /**
-     * Encodes the specified XmsgImAuthRegSimpleRsp message, length delimited. Does not implicitly {@link XmsgImAuthRegSimpleRsp.verify|verify} messages.
-     * @function encodeDelimited
-     * @memberof XmsgImAuthRegSimpleRsp
-     * @static
-     * @param {IXmsgImAuthRegSimpleRsp} message XmsgImAuthRegSimpleRsp message or plain object to encode
-     * @param {$protobuf.Writer} [writer] Writer to encode to
-     * @returns {$protobuf.Writer} Writer
-     */
-    XmsgImAuthRegSimpleRsp.encodeDelimited = function encodeDelimited(message, writer) {
-        return this.encode(message, writer).ldelim();
-    };
-
-    /**
-     * Decodes a XmsgImAuthRegSimpleRsp message from the specified reader or buffer.
-     * @function decode
-     * @memberof XmsgImAuthRegSimpleRsp
-     * @static
-     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-     * @param {number} [length] Message length if known beforehand
-     * @returns {XmsgImAuthRegSimpleRsp} XmsgImAuthRegSimpleRsp
-     * @throws {Error} If the payload is not a reader or valid buffer
-     * @throws {$protobuf.util.ProtocolError} If required fields are missing
-     */
-    XmsgImAuthRegSimpleRsp.decode = function decode(reader, length) {
-        if (!(reader instanceof $Reader))
-            reader = $Reader.create(reader);
-        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.XmsgImAuthRegSimpleRsp(), key;
-        while (reader.pos < end) {
-            var tag = reader.uint32();
-            switch (tag >>> 3) {
-            case 1:
-                message.cgt = reader.string();
-                break;
-            case 2:
-                reader.skip().pos++;
-                if (message.ext === $util.emptyObject)
-                    message.ext = {};
-                key = reader.string();
-                reader.pos++;
-                message.ext[key] = reader.string();
-                break;
-            default:
-                reader.skipType(tag & 7);
-                break;
-            }
-        }
-        return message;
-    };
-
-    /**
-     * Decodes a XmsgImAuthRegSimpleRsp message from the specified reader or buffer, length delimited.
-     * @function decodeDelimited
-     * @memberof XmsgImAuthRegSimpleRsp
-     * @static
-     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-     * @returns {XmsgImAuthRegSimpleRsp} XmsgImAuthRegSimpleRsp
-     * @throws {Error} If the payload is not a reader or valid buffer
-     * @throws {$protobuf.util.ProtocolError} If required fields are missing
-     */
-    XmsgImAuthRegSimpleRsp.decodeDelimited = function decodeDelimited(reader) {
-        if (!(reader instanceof $Reader))
-            reader = new $Reader(reader);
-        return this.decode(reader, reader.uint32());
-    };
-
-    /**
-     * Verifies a XmsgImAuthRegSimpleRsp message.
-     * @function verify
-     * @memberof XmsgImAuthRegSimpleRsp
-     * @static
-     * @param {Object.<string,*>} message Plain object to verify
-     * @returns {string|null} `null` if valid, otherwise the reason why it is not
-     */
-    XmsgImAuthRegSimpleRsp.verify = function verify(message) {
-        if (typeof message !== "object" || message === null)
-            return "object expected";
-        if (message.cgt != null && message.hasOwnProperty("cgt"))
-            if (!$util.isString(message.cgt))
-                return "cgt: string expected";
-        if (message.ext != null && message.hasOwnProperty("ext")) {
-            if (!$util.isObject(message.ext))
-                return "ext: object expected";
-            var key = Object.keys(message.ext);
-            for (var i = 0; i < key.length; ++i)
-                if (!$util.isString(message.ext[key[i]]))
-                    return "ext: string{k:string} expected";
-        }
-        return null;
-    };
-
-    /**
-     * Creates a XmsgImAuthRegSimpleRsp message from a plain object. Also converts values to their respective internal types.
-     * @function fromObject
-     * @memberof XmsgImAuthRegSimpleRsp
-     * @static
-     * @param {Object.<string,*>} object Plain object
-     * @returns {XmsgImAuthRegSimpleRsp} XmsgImAuthRegSimpleRsp
-     */
-    XmsgImAuthRegSimpleRsp.fromObject = function fromObject(object) {
-        if (object instanceof $root.XmsgImAuthRegSimpleRsp)
-            return object;
-        var message = new $root.XmsgImAuthRegSimpleRsp();
-        if (object.cgt != null)
-            message.cgt = String(object.cgt);
-        if (object.ext) {
-            if (typeof object.ext !== "object")
-                throw TypeError(".XmsgImAuthRegSimpleRsp.ext: object expected");
-            message.ext = {};
-            for (var keys = Object.keys(object.ext), i = 0; i < keys.length; ++i)
-                message.ext[keys[i]] = String(object.ext[keys[i]]);
-        }
-        return message;
-    };
-
-    /**
-     * Creates a plain object from a XmsgImAuthRegSimpleRsp message. Also converts values to other types if specified.
-     * @function toObject
-     * @memberof XmsgImAuthRegSimpleRsp
-     * @static
-     * @param {XmsgImAuthRegSimpleRsp} message XmsgImAuthRegSimpleRsp
-     * @param {$protobuf.IConversionOptions} [options] Conversion options
-     * @returns {Object.<string,*>} Plain object
-     */
-    XmsgImAuthRegSimpleRsp.toObject = function toObject(message, options) {
-        if (!options)
-            options = {};
-        var object = {};
-        if (options.objects || options.defaults)
-            object.ext = {};
-        if (options.defaults)
-            object.cgt = "";
-        if (message.cgt != null && message.hasOwnProperty("cgt"))
-            object.cgt = message.cgt;
-        var keys2;
-        if (message.ext && (keys2 = Object.keys(message.ext)).length) {
-            object.ext = {};
-            for (var j = 0; j < keys2.length; ++j)
-                object.ext[keys2[j]] = message.ext[keys2[j]];
-        }
-        return object;
-    };
-
-    /**
-     * Converts this XmsgImAuthRegSimpleRsp to JSON.
-     * @function toJSON
-     * @memberof XmsgImAuthRegSimpleRsp
-     * @instance
-     * @returns {Object.<string,*>} JSON object
-     */
-    XmsgImAuthRegSimpleRsp.prototype.toJSON = function toJSON() {
-        return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-    };
-
-    return XmsgImAuthRegSimpleRsp;
 })();
 
 $root.XmsgImHlrOtherUsrInfoQueryReq = (function() {
@@ -18226,7 +20431,7 @@ $root.XmsgImHlrUsrDatPri = (function() {
      * @exports IXmsgImHlrUsrDatPri
      * @interface IXmsgImHlrUsrDatPri
      * @property {boolean|null} [enable] XmsgImHlrUsrDatPri enable
-     * @property {Uint8Array|null} [ext] XmsgImHlrUsrDatPri ext
+     * @property {Object.<string,string>|null} [info] XmsgImHlrUsrDatPri info
      */
 
     /**
@@ -18238,6 +20443,7 @@ $root.XmsgImHlrUsrDatPri = (function() {
      * @param {IXmsgImHlrUsrDatPri=} [properties] Properties to set
      */
     function XmsgImHlrUsrDatPri(properties) {
+        this.info = {};
         if (properties)
             for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                 if (properties[keys[i]] != null)
@@ -18253,12 +20459,12 @@ $root.XmsgImHlrUsrDatPri = (function() {
     XmsgImHlrUsrDatPri.prototype.enable = false;
 
     /**
-     * XmsgImHlrUsrDatPri ext.
-     * @member {Uint8Array} ext
+     * XmsgImHlrUsrDatPri info.
+     * @member {Object.<string,string>} info
      * @memberof XmsgImHlrUsrDatPri
      * @instance
      */
-    XmsgImHlrUsrDatPri.prototype.ext = $util.newBuffer([]);
+    XmsgImHlrUsrDatPri.prototype.info = $util.emptyObject;
 
     /**
      * Creates a new XmsgImHlrUsrDatPri instance using the specified properties.
@@ -18286,8 +20492,9 @@ $root.XmsgImHlrUsrDatPri = (function() {
             writer = $Writer.create();
         if (message.enable != null && message.hasOwnProperty("enable"))
             writer.uint32(/* id 1, wireType 0 =*/8).bool(message.enable);
-        if (message.ext != null && message.hasOwnProperty("ext"))
-            writer.uint32(/* id 5, wireType 2 =*/42).bytes(message.ext);
+        if (message.info != null && message.hasOwnProperty("info"))
+            for (var keys = Object.keys(message.info), i = 0; i < keys.length; ++i)
+                writer.uint32(/* id 2, wireType 2 =*/18).fork().uint32(/* id 1, wireType 2 =*/10).string(keys[i]).uint32(/* id 2, wireType 2 =*/18).string(message.info[keys[i]]).ldelim();
         return writer;
     };
 
@@ -18318,15 +20525,20 @@ $root.XmsgImHlrUsrDatPri = (function() {
     XmsgImHlrUsrDatPri.decode = function decode(reader, length) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
-        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.XmsgImHlrUsrDatPri();
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.XmsgImHlrUsrDatPri(), key;
         while (reader.pos < end) {
             var tag = reader.uint32();
             switch (tag >>> 3) {
             case 1:
                 message.enable = reader.bool();
                 break;
-            case 5:
-                message.ext = reader.bytes();
+            case 2:
+                reader.skip().pos++;
+                if (message.info === $util.emptyObject)
+                    message.info = {};
+                key = reader.string();
+                reader.pos++;
+                message.info[key] = reader.string();
                 break;
             default:
                 reader.skipType(tag & 7);
@@ -18366,9 +20578,14 @@ $root.XmsgImHlrUsrDatPri = (function() {
         if (message.enable != null && message.hasOwnProperty("enable"))
             if (typeof message.enable !== "boolean")
                 return "enable: boolean expected";
-        if (message.ext != null && message.hasOwnProperty("ext"))
-            if (!(message.ext && typeof message.ext.length === "number" || $util.isString(message.ext)))
-                return "ext: buffer expected";
+        if (message.info != null && message.hasOwnProperty("info")) {
+            if (!$util.isObject(message.info))
+                return "info: object expected";
+            var key = Object.keys(message.info);
+            for (var i = 0; i < key.length; ++i)
+                if (!$util.isString(message.info[key[i]]))
+                    return "info: string{k:string} expected";
+        }
         return null;
     };
 
@@ -18386,11 +20603,13 @@ $root.XmsgImHlrUsrDatPri = (function() {
         var message = new $root.XmsgImHlrUsrDatPri();
         if (object.enable != null)
             message.enable = Boolean(object.enable);
-        if (object.ext != null)
-            if (typeof object.ext === "string")
-                $util.base64.decode(object.ext, message.ext = $util.newBuffer($util.base64.length(object.ext)), 0);
-            else if (object.ext.length)
-                message.ext = object.ext;
+        if (object.info) {
+            if (typeof object.info !== "object")
+                throw TypeError(".XmsgImHlrUsrDatPri.info: object expected");
+            message.info = {};
+            for (var keys = Object.keys(object.info), i = 0; i < keys.length; ++i)
+                message.info[keys[i]] = String(object.info[keys[i]]);
+        }
         return message;
     };
 
@@ -18407,20 +20626,18 @@ $root.XmsgImHlrUsrDatPri = (function() {
         if (!options)
             options = {};
         var object = {};
-        if (options.defaults) {
+        if (options.objects || options.defaults)
+            object.info = {};
+        if (options.defaults)
             object.enable = false;
-            if (options.bytes === String)
-                object.ext = "";
-            else {
-                object.ext = [];
-                if (options.bytes !== Array)
-                    object.ext = $util.newBuffer(object.ext);
-            }
-        }
         if (message.enable != null && message.hasOwnProperty("enable"))
             object.enable = message.enable;
-        if (message.ext != null && message.hasOwnProperty("ext"))
-            object.ext = options.bytes === String ? $util.base64.encode(message.ext, 0, message.ext.length) : options.bytes === Array ? Array.prototype.slice.call(message.ext) : message.ext;
+        var keys2;
+        if (message.info && (keys2 = Object.keys(message.info)).length) {
+            object.info = {};
+            for (var j = 0; j < keys2.length; ++j)
+                object.info[keys2[j]] = message.info[keys2[j]];
+        }
         return object;
     };
 

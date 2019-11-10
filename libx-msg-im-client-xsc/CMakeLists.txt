@@ -12,7 +12,7 @@ ELSE ()
 ENDIF()
 #
 INCLUDE_DIRECTORIES(../libmisc-cpp)
-INCLUDE_DIRECTORIES(../libxsc-proto-client-cpp)
+INCLUDE_DIRECTORIES(../libxsc-proto-cpp)
 #
 ADD_COMPILE_OPTIONS(-std=c++11 -fPIC -Wall)
 ADD_DEFINITIONS(-Wno-builtin-macro-redefined)
