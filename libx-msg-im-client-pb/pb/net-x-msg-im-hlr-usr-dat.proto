@@ -35,13 +35,14 @@ message XmsgImHlrUsrDatPri
 {
     bool enable = 1; 
     map<string, string> info = 2; 
+    uint64 sysEventVerRead = 3; 
 }
 
 message XmsgImHlrUsrDatPub
 {
-    map<string, string> info = 1; 
+    string name = 1; 
+    map<string, string> info = 2; 
 }
-
 
 message XmsgImHlrUsrInfoQueryReq
 {
@@ -52,7 +53,6 @@ message XmsgImHlrUsrInfoQueryRsp
 {
     map<string, string> info = 1; 
 }
-
 message XmsgImHlrUsrInfoUpdateReq
 {
     map<string, string> info = 1; 

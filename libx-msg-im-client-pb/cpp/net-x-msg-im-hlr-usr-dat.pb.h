@@ -390,6 +390,12 @@ class XmsgImHlrUsrDatPri : public ::google::protobuf::Message /* @@protoc_insert
   ::google::protobuf::Map< ::std::string, ::std::string >*
       mutable_info();
 
+  // uint64 sysEventVerRead = 3;
+  void clear_syseventverread();
+  static const int kSysEventVerReadFieldNumber = 3;
+  ::google::protobuf::uint64 syseventverread() const;
+  void set_syseventverread(::google::protobuf::uint64 value);
+
   // bool enable = 1;
   void clear_enable();
   static const int kEnableFieldNumber = 1;
@@ -406,6 +412,7 @@ class XmsgImHlrUsrDatPri : public ::google::protobuf::Message /* @@protoc_insert
       ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
       ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
       0 > info_;
+  ::google::protobuf::uint64 syseventverread_;
   bool enable_;
   mutable int _cached_size_;
   friend struct ::protobuf_net_2dx_2dmsg_2dim_2dhlr_2dusr_2ddat_2eproto::TableStruct;
@@ -517,14 +524,28 @@ class XmsgImHlrUsrDatPub : public ::google::protobuf::Message /* @@protoc_insert
 
   // accessors -------------------------------------------------------
 
-  // map<string, string> info = 1;
+  // map<string, string> info = 2;
   int info_size() const;
   void clear_info();
-  static const int kInfoFieldNumber = 1;
+  static const int kInfoFieldNumber = 2;
   const ::google::protobuf::Map< ::std::string, ::std::string >&
       info() const;
   ::google::protobuf::Map< ::std::string, ::std::string >*
       mutable_info();
+
+  // string name = 1;
+  void clear_name();
+  static const int kNameFieldNumber = 1;
+  const ::std::string& name() const;
+  void set_name(const ::std::string& value);
+  #if LANG_CXX11
+  void set_name(::std::string&& value);
+  #endif
+  void set_name(const char* value);
+  void set_name(const char* value, size_t size);
+  ::std::string* mutable_name();
+  ::std::string* release_name();
+  void set_allocated_name(::std::string* name);
 
   // @@protoc_insertion_point(class_scope:XmsgImHlrUsrDatPub)
  private:
@@ -536,6 +557,7 @@ class XmsgImHlrUsrDatPub : public ::google::protobuf::Message /* @@protoc_insert
       ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
       ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
       0 > info_;
+  ::google::protobuf::internal::ArenaStringPtr name_;
   mutable int _cached_size_;
   friend struct ::protobuf_net_2dx_2dmsg_2dim_2dhlr_2dusr_2ddat_2eproto::TableStruct;
   friend void ::protobuf_net_2dx_2dmsg_2dim_2dhlr_2dusr_2ddat_2eproto::InitDefaultsXmsgImHlrUsrDatPubImpl();
@@ -1300,13 +1322,80 @@ XmsgImHlrUsrDatPri::mutable_info() {
   return info_.MutableMap();
 }
 
+// uint64 sysEventVerRead = 3;
+inline void XmsgImHlrUsrDatPri::clear_syseventverread() {
+  syseventverread_ = GOOGLE_ULONGLONG(0);
+}
+inline ::google::protobuf::uint64 XmsgImHlrUsrDatPri::syseventverread() const {
+  // @@protoc_insertion_point(field_get:XmsgImHlrUsrDatPri.sysEventVerRead)
+  return syseventverread_;
+}
+inline void XmsgImHlrUsrDatPri::set_syseventverread(::google::protobuf::uint64 value) {
+  
+  syseventverread_ = value;
+  // @@protoc_insertion_point(field_set:XmsgImHlrUsrDatPri.sysEventVerRead)
+}
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------
 
 // XmsgImHlrUsrDatPub
 
-// map<string, string> info = 1;
+// string name = 1;
+inline void XmsgImHlrUsrDatPub::clear_name() {
+  name_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& XmsgImHlrUsrDatPub::name() const {
+  // @@protoc_insertion_point(field_get:XmsgImHlrUsrDatPub.name)
+  return name_.GetNoArena();
+}
+inline void XmsgImHlrUsrDatPub::set_name(const ::std::string& value) {
+  
+  name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:XmsgImHlrUsrDatPub.name)
+}
+#if LANG_CXX11
+inline void XmsgImHlrUsrDatPub::set_name(::std::string&& value) {
+  
+  name_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:XmsgImHlrUsrDatPub.name)
+}
+#endif
+inline void XmsgImHlrUsrDatPub::set_name(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:XmsgImHlrUsrDatPub.name)
+}
+inline void XmsgImHlrUsrDatPub::set_name(const char* value, size_t size) {
+  
+  name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:XmsgImHlrUsrDatPub.name)
+}
+inline ::std::string* XmsgImHlrUsrDatPub::mutable_name() {
+  
+  // @@protoc_insertion_point(field_mutable:XmsgImHlrUsrDatPub.name)
+  return name_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* XmsgImHlrUsrDatPub::release_name() {
+  // @@protoc_insertion_point(field_release:XmsgImHlrUsrDatPub.name)
+  
+  return name_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void XmsgImHlrUsrDatPub::set_allocated_name(::std::string* name) {
+  if (name != NULL) {
+    
+  } else {
+    
+  }
+  name_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), name);
+  // @@protoc_insertion_point(field_set_allocated:XmsgImHlrUsrDatPub.name)
+}
+
+// map<string, string> info = 2;
 inline int XmsgImHlrUsrDatPub::info_size() const {
   return info_.size();
 }

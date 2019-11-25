@@ -1,0 +1,111 @@
+/*
+  Copyright 2019 www.dev5.cn, Inc. dev5@qq.com
+ 
+  This file is part of X-MSG-IM.
+ 
+  X-MSG-IM is free software: you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+
+  X-MSG-IM is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+ 
+  You should have received a copy of the GNU Affero General Public License
+  along with X-MSG-IM.  If not, see <https://www.gnu.org/licenses/>.
+ */
+syntax = "proto3";
+
+option java_package = "x.msg.pb";
+option java_outer_classname = "XmsgImHlrContractsPb";
+message XmsgImHlrContractsAddDirectlyReq
+{
+    string cgt = 1; 
+    map<string, string> info = 2; 
+}
+
+message XmsgImHlrContractsAddDirectlyRsp
+{
+    map<string, string> ext = 1; 
+}
+message XmsgImHlrContractsAddReq
+{
+    string cgt = 1; 
+}
+
+message XmsgImHlrContractsAddRsp
+{
+    uint64 ver = 1; 
+    map<string, string> ext = 2; 
+}
+message XmsgImHlrContractsAddNotice
+{
+    string cgt = 1; 
+    map<string, string> info = 2; 
+    uint64 ver = 3; 
+    uint64 gts = 4; 
+}
+message XmsgImHlrContractsAddReplyReq
+{
+    uint64 ver = 1; 
+    string oper = 2; 
+    string desc = 3; 
+    map<string, string> info = 4; 
+}
+
+message XmsgImHlrContractsAddReplyRsp
+{
+    map<string, string> ext = 1; 
+}
+message XmsgImHlrContractsAddReplyNotice
+{
+    string cgt = 1; 
+    string oper = 2; 
+    string desc = 3; 
+    uint64 ver = 4; 
+    map<string, string> ext = 5; 
+}
+message XmsgImHlrContractsDelReq
+{
+    string cgt = 1; 
+    map<string, string> ext = 2; 
+}
+
+message XmsgImHlrContractsDelRsp
+{
+    map<string, string> ext = 1; 
+}
+message XmsgImHlrContractsDelNotice
+{
+    string cgt = 1; 
+}
+message XmsgImHlrContractsUpdateInfoReq
+{
+    string cgt = 1; 
+    map<string, string> upsert = 2; 
+    repeated string remove = 3; 
+}
+
+message XmsgImHlrContractsUpdateInfoRsp
+{
+    map<string, string> ext = 1; 
+}
+message XmsgImHlrContractsSearchReq
+{
+    string keyword = 1; 
+    map<string, string> hint = 2; 
+}
+
+message XmsgImHlrContractsSearchRsp
+{
+    repeated XmsgImHlrContractsSearchRst rst = 1; 
+}
+
+message XmsgImHlrContractsSearchRst
+{
+    string cgt = 1; 
+    string name = 2; 
+    map<string, string> info = 3; 
+}

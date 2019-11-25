@@ -29,10 +29,13 @@
 #include "cpp/net-x-msg-im-group-msg.pb.h"
 #include "cpp/net-x-msg-im-group-usr.pb.h"
 #include "cpp/net-x-msg-im-hlr-auth.pb.h"
+#include "cpp/net-x-msg-im-hlr-contacts.pb.h"
 #include "cpp/net-x-msg-im-hlr-group.pb.h"
 #include "cpp/net-x-msg-im-hlr-other-usr.pb.h"
 #include "cpp/net-x-msg-im-hlr-usr-dat.pb.h"
+#include "cpp/net-x-msg-im-hlr-usr-event.pb.h"
 #include "cpp/net-x-msg-im-org.pb.h"
+#include "cpp/net-x-msg-oss.pb.h"
 #include "cpp/sdk-x-msg-im-client-event.pb.h"
 
 using namespace google::protobuf;
