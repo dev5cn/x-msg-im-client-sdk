@@ -6,7 +6,7 @@ LINK_LIBRARIES(x-msg-im-client-db)
 LINK_LIBRARIES(x-msg-im-client-core)
 LINK_LIBRARIES(x-msg-im-client-pb-lite)
 LINK_LIBRARIES(x-msg-im-client-xsc)
-LINK_LIBRARIES(xsc-proto-client-cpp)
+LINK_LIBRARIES(xsc-proto-cpp)
 LINK_LIBRARIES(misc-cpp)
 LINK_LIBRARIES(libprotobuf.a)
 #
