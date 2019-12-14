@@ -1,21 +1,14 @@
-/*
-  Copyright 2019 www.dev5.cn, Inc. dev5@qq.com
- 
-  This file is part of X-MSG-IM.
- 
-  X-MSG-IM is free software: you can redistribute it and/or modify
-  it under the terms of the GNU General Public License as published by
-  the Free Software Foundation, either version 3 of the License, or
-  (at your option) any later version.
-
-  X-MSG-IM is distributed in the hope that it will be useful,
-  but WITHOUT ANY WARRANTY; without even the implied warranty of
-  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-  GNU General Public License for more details.
- 
-  You should have received a copy of the GNU Affero General Public License
-  along with X-MSG-IM.  If not, see <https://www.gnu.org/licenses/>.
- */
+//=====================================================================
+//
+// KCP - A Better ARQ Protocol Implementation
+// skywind3000 (at) gmail.com, 2010-2011
+//  
+// Features:
+// + Average RTT reduce 30% - 40% vs traditional ARQ like tcp.
+// + Maximum RTT reduce three times vs tcp.
+// + Lightweight, distributed as a single source file.
+//
+//=====================================================================
 #ifndef __IKCP_H__
 #define __IKCP_H__
 
@@ -24,6 +17,9 @@
 #include <assert.h>
 
 
+//=====================================================================
+// 32BIT INTEGER DEFINITION 
+//=====================================================================
 #ifndef __INTEGER_32_BITS__
 #define __INTEGER_32_BITS__
 #if defined(_WIN64) || defined(WIN64) || defined(__amd64__) || \
@@ -60,6 +56,9 @@
 #endif
 
 
+//=====================================================================
+// Integer Definition
+//=====================================================================
 #ifndef __IINT8_DEFINED
 #define __IINT8_DEFINED
 typedef char IINT8;
@@ -129,6 +128,9 @@ typedef unsigned long long IUINT64;
 #endif
 
 
+//=====================================================================
+// QUEUE DEFINITION                                                  
+//=====================================================================
 #ifndef __IQUEUE_DEF__
 #define __IQUEUE_DEF__
 
@@ -139,6 +141,9 @@ struct IQUEUEHEAD {
 typedef struct IQUEUEHEAD iqueue_head;
 
 
+//---------------------------------------------------------------------
+// queue init                                                         
+//---------------------------------------------------------------------
 #define IQUEUE_HEAD_INIT(name) { &(name), &(name) }
 #define IQUEUE_HEAD(name) \
 	struct IQUEUEHEAD name = IQUEUE_HEAD_INIT(name)
@@ -154,6 +159,9 @@ typedef struct IQUEUEHEAD iqueue_head;
 #define IQUEUE_ENTRY(ptr, type, member) ICONTAINEROF(ptr, type, member)
 
 
+//---------------------------------------------------------------------
+// queue operation                     
+//---------------------------------------------------------------------
 #define IQUEUE_ADD(node, head) ( \
 	(node)->prev = (head), (node)->next = (head)->next, \
 	(head)->next->prev = (node), (head)->next = (node))
@@ -216,6 +224,9 @@ typedef struct IQUEUEHEAD iqueue_head;
 #endif
 
 
+//---------------------------------------------------------------------
+// BYTE ORDER & ALIGNMENT
+//---------------------------------------------------------------------
 #ifndef IWORDS_BIG_ENDIAN
     #ifdef _BIG_ENDIAN_
         #if _BIG_ENDIAN_
@@ -250,6 +261,9 @@ typedef struct IQUEUEHEAD iqueue_head;
 #endif
 
 
+//=====================================================================
+// SEGMENT
+//=====================================================================
 struct IKCPSEG
 {
 	struct IQUEUEHEAD node;
@@ -269,6 +283,9 @@ struct IKCPSEG
 };
 
 
+//---------------------------------------------------------------------
+// IKCPCB
+//---------------------------------------------------------------------
 struct IKCPCB
 {
 	IUINT32 conv, mtu, mss, state;
@@ -319,41 +336,74 @@ typedef struct IKCPCB ikcpcb;
 extern "C" {
 #endif
 
+//---------------------------------------------------------------------
+// interface
+//---------------------------------------------------------------------
 
+// create a new kcp control object, 'conv' must equal in two endpoint
+// from the same connection. 'user' will be passed to the output callback
+// output callback can be setup like this: 'kcp->output = my_udp_output'
 ikcpcb* ikcp_create(IUINT32 conv, void *user);
 
+// release kcp control object
 void ikcp_release(ikcpcb *kcp);
 
+// set output callback, which will be invoked by kcp
 void ikcp_setoutput(ikcpcb *kcp, int (*output)(const char *buf, int len, 
 	ikcpcb *kcp, void *user));
 
+// user/upper level recv: returns size, returns below zero for EAGAIN
 int ikcp_recv(ikcpcb *kcp, char *buffer, int len);
 
+// user/upper level send, returns below zero for error
 int ikcp_send(ikcpcb *kcp, const char *buffer, int len);
 
+// update state (call it repeatedly, every 10ms-100ms), or you can ask 
+// ikcp_check when to call it again (without ikcp_input/_send calling).
+// 'current' - current timestamp in millisec. 
 void ikcp_update(ikcpcb *kcp, IUINT32 current);
 
+// Determine when should you invoke ikcp_update:
+// returns when you should invoke ikcp_update in millisec, if there 
+// is no ikcp_input/_send calling. you can call ikcp_update in that
+// time, instead of call update repeatly.
+// Important to reduce unnacessary ikcp_update invoking. use it to 
+// schedule ikcp_update (eg. implementing an epoll-like mechanism, 
+// or optimize ikcp_update when handling massive kcp connections)
 IUINT32 ikcp_check(const ikcpcb *kcp, IUINT32 current);
 
+// when you received a low level packet (eg. UDP packet), call it
 int ikcp_input(ikcpcb *kcp, const char *data, long size);
 
+// flush pending data
 void ikcp_flush(ikcpcb *kcp);
 
+// check the size of next message in the recv queue
 int ikcp_peeksize(const ikcpcb *kcp);
 
+// change MTU size, default is 1400
 int ikcp_setmtu(ikcpcb *kcp, int mtu);
 
+// set maximum window size: sndwnd=32, rcvwnd=32 by default
 int ikcp_wndsize(ikcpcb *kcp, int sndwnd, int rcvwnd);
 
+// get how many packet is waiting to be sent
 int ikcp_waitsnd(const ikcpcb *kcp);
 
+// fastest: ikcp_nodelay(kcp, 1, 20, 2, 1)
+// nodelay: 0:disable(default), 1:enable
+// interval: internal update timer interval in millisec, default is 100ms 
+// resend: 0:disable fast resend(default), 1:enable fast resend
+// nc: 0:normal congestion control(default), 1:disable congestion control
 int ikcp_nodelay(ikcpcb *kcp, int nodelay, int interval, int resend, int nc);
 
 
 void ikcp_log(ikcpcb *kcp, int mask, const char *fmt, ...);
 
+// setup allocator
 void ikcp_allocator(void* (*new_malloc)(size_t), void (*new_free)(void*));
 
+// read conv
 IUINT32 ikcp_getconv(const void *ptr);
 
 
