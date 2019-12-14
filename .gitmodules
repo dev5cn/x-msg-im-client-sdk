@@ -7,3 +7,6 @@
 [submodule "libxsc-proto-cpp"]
 	path = libxsc-proto-cpp
 	url = https://github.com/dev5cn/libxsc-proto-cpp
+[submodule "libxsc-cpp"]
+	path = libxsc-cpp
+	url = https://github.com/dev5cn/libxsc-cpp
