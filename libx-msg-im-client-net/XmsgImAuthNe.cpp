@@ -185,7 +185,11 @@ bool XmsgImAuthNe::evnMsg(shared_ptr<XmsgImClientNetApi> netApi, shared_ptr<XscP
 		if (pdu->transm.trans->dat != NULL) 
 		{
 			trans->endMsg = XmsgImTrans::newPbMsg(pdu->transm.trans->msg, pdu->transm.trans->dat, pdu->transm.trans->dlen);
-			LOG_ERROR("can not reflect a pb message from dat, msg: %s, x-msg-im-auth: %s", pdu->transm.trans->msg.c_str(), netApi->xmsgImAuthXscChannel->getAddress().c_str())
+			if (trans->endMsg == nullptr) 
+			{
+				LOG_ERROR("can not reflect a pb message from dat, msg: %s, x-msg-im-auth: %s", pdu->transm.trans->msg.c_str(), netApi->xmsgImAuthXscChannel->getAddress().c_str())
+				return false;
+			}
 		}
 	}
 	XmsgImClientCore::instance()->future([netApi, trans]

@@ -82,7 +82,7 @@ public class Main
 	/** 用户channel global title. */
 	public static String cgt = null;
 	/** 文件服务地址. */
-	public static String fileService = null;
+	public static String ossService = null;
 	/** 是否首次附着. */
 	public static boolean firstAttach = true;
 

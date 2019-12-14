@@ -17,12 +17,14 @@ INCLUDE_DIRECTORIES(../libxsc-proto-cpp)
 ADD_COMPILE_OPTIONS(-std=c++11 -fPIC -Wall)
 ADD_DEFINITIONS(-Wno-builtin-macro-redefined)
 SET(CMAKE_CXX_FLAGS $ENV{CXX_FLAGS})
+SET(CMAKE_C_FLAGS $ENV{CXX_FLAGS})
 #
 FILE(GLOB SRC0 "./*.cpp")
 FILE(GLOB SRC1 "./*/*.cpp")
+FILE(GLOB SRC2 "./*/*.c")
 #
 PROJECT(x-msg-im-client-xsc)
 #
-ADD_LIBRARY(x-msg-im-client-xsc STATIC ${SRC0} ${SRC1})
+ADD_LIBRARY(x-msg-im-client-xsc STATIC ${SRC0} ${SRC1} ${SRC2})
 INCLUDE(./__file__.cmake)
 REDEFINE_FILE_MACRO(x-msg-im-client-xsc)

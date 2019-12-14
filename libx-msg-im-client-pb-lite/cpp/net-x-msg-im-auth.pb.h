@@ -61,8 +61,8 @@ void InitDefaultsXmsgImClientDeviceInfo_ExtEntry_DoNotUseImpl();
 void InitDefaultsXmsgImClientDeviceInfo_ExtEntry_DoNotUse();
 void InitDefaultsXmsgImClientDeviceInfoImpl();
 void InitDefaultsXmsgImClientDeviceInfo();
-void InitDefaultsXmsgImClientServiceAddress_ExtEntry_DoNotUseImpl();
-void InitDefaultsXmsgImClientServiceAddress_ExtEntry_DoNotUse();
+void InitDefaultsXmsgImClientServiceAddress_HostEntry_DoNotUseImpl();
+void InitDefaultsXmsgImClientServiceAddress_HostEntry_DoNotUse();
 void InitDefaultsXmsgImClientServiceAddressImpl();
 void InitDefaultsXmsgImClientServiceAddress();
 inline void InitDefaults() {
@@ -74,7 +74,7 @@ inline void InitDefaults() {
   InitDefaultsXmsgImAuthRegSimpleRsp();
   InitDefaultsXmsgImClientDeviceInfo_ExtEntry_DoNotUse();
   InitDefaultsXmsgImClientDeviceInfo();
-  InitDefaultsXmsgImClientServiceAddress_ExtEntry_DoNotUse();
+  InitDefaultsXmsgImClientServiceAddress_HostEntry_DoNotUse();
   InitDefaultsXmsgImClientServiceAddress();
 }
 }  // namespace protobuf_net_2dx_2dmsg_2dim_2dauth_2eproto
@@ -105,9 +105,9 @@ extern XmsgImClientDeviceInfo_ExtEntry_DoNotUseDefaultTypeInternal _XmsgImClient
 class XmsgImClientServiceAddress;
 class XmsgImClientServiceAddressDefaultTypeInternal;
 extern XmsgImClientServiceAddressDefaultTypeInternal _XmsgImClientServiceAddress_default_instance_;
-class XmsgImClientServiceAddress_ExtEntry_DoNotUse;
-class XmsgImClientServiceAddress_ExtEntry_DoNotUseDefaultTypeInternal;
-extern XmsgImClientServiceAddress_ExtEntry_DoNotUseDefaultTypeInternal _XmsgImClientServiceAddress_ExtEntry_DoNotUse_default_instance_;
+class XmsgImClientServiceAddress_HostEntry_DoNotUse;
+class XmsgImClientServiceAddress_HostEntry_DoNotUseDefaultTypeInternal;
+extern XmsgImClientServiceAddress_HostEntry_DoNotUseDefaultTypeInternal _XmsgImClientServiceAddress_HostEntry_DoNotUse_default_instance_;
 
 // ===================================================================
 
@@ -374,17 +374,17 @@ class XmsgImAuthSimpleRsp : public ::google::protobuf::Message /* @@protoc_inser
   const ::google::protobuf::RepeatedPtrField< ::XmsgImClientServiceAddress >&
       apaddr() const;
 
-  // repeated .XmsgImClientServiceAddress fsAddr = 5;
-  int fsaddr_size() const;
-  void clear_fsaddr();
-  static const int kFsAddrFieldNumber = 5;
-  const ::XmsgImClientServiceAddress& fsaddr(int index) const;
-  ::XmsgImClientServiceAddress* mutable_fsaddr(int index);
-  ::XmsgImClientServiceAddress* add_fsaddr();
+  // repeated .XmsgImClientServiceAddress ossAddr = 5;
+  int ossaddr_size() const;
+  void clear_ossaddr();
+  static const int kOssAddrFieldNumber = 5;
+  const ::XmsgImClientServiceAddress& ossaddr(int index) const;
+  ::XmsgImClientServiceAddress* mutable_ossaddr(int index);
+  ::XmsgImClientServiceAddress* add_ossaddr();
   ::google::protobuf::RepeatedPtrField< ::XmsgImClientServiceAddress >*
-      mutable_fsaddr();
+      mutable_ossaddr();
   const ::google::protobuf::RepeatedPtrField< ::XmsgImClientServiceAddress >&
-      fsaddr() const;
+      ossaddr() const;
 
   // map<string, string> ext = 8;
   int ext_size() const;
@@ -448,7 +448,7 @@ class XmsgImAuthSimpleRsp : public ::google::protobuf::Message /* @@protoc_inser
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::RepeatedPtrField< ::XmsgImClientServiceAddress > apaddr_;
-  ::google::protobuf::RepeatedPtrField< ::XmsgImClientServiceAddress > fsaddr_;
+  ::google::protobuf::RepeatedPtrField< ::XmsgImClientServiceAddress > ossaddr_;
   ::google::protobuf::internal::MapField<
       XmsgImAuthSimpleRsp_ExtEntry_DoNotUse,
       ::std::string, ::std::string,
@@ -930,21 +930,21 @@ class XmsgImClientDeviceInfo : public ::google::protobuf::Message /* @@protoc_in
 };
 // -------------------------------------------------------------------
 
-class XmsgImClientServiceAddress_ExtEntry_DoNotUse : public ::google::protobuf::internal::MapEntry<XmsgImClientServiceAddress_ExtEntry_DoNotUse, 
+class XmsgImClientServiceAddress_HostEntry_DoNotUse : public ::google::protobuf::internal::MapEntry<XmsgImClientServiceAddress_HostEntry_DoNotUse, 
     ::std::string, ::std::string,
     ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
     ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
     0 > {
 public:
-  typedef ::google::protobuf::internal::MapEntry<XmsgImClientServiceAddress_ExtEntry_DoNotUse, 
+  typedef ::google::protobuf::internal::MapEntry<XmsgImClientServiceAddress_HostEntry_DoNotUse, 
     ::std::string, ::std::string,
     ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
     ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
     0 > SuperType;
-  XmsgImClientServiceAddress_ExtEntry_DoNotUse();
-  XmsgImClientServiceAddress_ExtEntry_DoNotUse(::google::protobuf::Arena* arena);
-  void MergeFrom(const XmsgImClientServiceAddress_ExtEntry_DoNotUse& other);
-  static const XmsgImClientServiceAddress_ExtEntry_DoNotUse* internal_default_instance() { return reinterpret_cast<const XmsgImClientServiceAddress_ExtEntry_DoNotUse*>(&_XmsgImClientServiceAddress_ExtEntry_DoNotUse_default_instance_); }
+  XmsgImClientServiceAddress_HostEntry_DoNotUse();
+  XmsgImClientServiceAddress_HostEntry_DoNotUse(::google::protobuf::Arena* arena);
+  void MergeFrom(const XmsgImClientServiceAddress_HostEntry_DoNotUse& other);
+  static const XmsgImClientServiceAddress_HostEntry_DoNotUse* internal_default_instance() { return reinterpret_cast<const XmsgImClientServiceAddress_HostEntry_DoNotUse*>(&_XmsgImClientServiceAddress_HostEntry_DoNotUse_default_instance_); }
   void MergeFrom(const ::google::protobuf::Message& other) PROTOBUF_FINAL;
   ::google::protobuf::Metadata GetMetadata() const;
 };
@@ -1034,60 +1034,18 @@ class XmsgImClientServiceAddress : public ::google::protobuf::Message /* @@proto
 
   // accessors -------------------------------------------------------
 
-  // repeated string proto = 4;
-  int proto_size() const;
-  void clear_proto();
-  static const int kProtoFieldNumber = 4;
-  const ::std::string& proto(int index) const;
-  ::std::string* mutable_proto(int index);
-  void set_proto(int index, const ::std::string& value);
-  #if LANG_CXX11
-  void set_proto(int index, ::std::string&& value);
-  #endif
-  void set_proto(int index, const char* value);
-  void set_proto(int index, const char* value, size_t size);
-  ::std::string* add_proto();
-  void add_proto(const ::std::string& value);
-  #if LANG_CXX11
-  void add_proto(::std::string&& value);
-  #endif
-  void add_proto(const char* value);
-  void add_proto(const char* value, size_t size);
-  const ::google::protobuf::RepeatedPtrField< ::std::string>& proto() const;
-  ::google::protobuf::RepeatedPtrField< ::std::string>* mutable_proto();
-
-  // map<string, string> ext = 5;
-  int ext_size() const;
-  void clear_ext();
-  static const int kExtFieldNumber = 5;
+  // map<string, string> host = 2;
+  int host_size() const;
+  void clear_host();
+  static const int kHostFieldNumber = 2;
   const ::google::protobuf::Map< ::std::string, ::std::string >&
-      ext() const;
+      host() const;
   ::google::protobuf::Map< ::std::string, ::std::string >*
-      mutable_ext();
+      mutable_host();
 
-  // string ip = 1;
-  void clear_ip();
-  static const int kIpFieldNumber = 1;
-  const ::std::string& ip() const;
-  void set_ip(const ::std::string& value);
-  #if LANG_CXX11
-  void set_ip(::std::string&& value);
-  #endif
-  void set_ip(const char* value);
-  void set_ip(const char* value, size_t size);
-  ::std::string* mutable_ip();
-  ::std::string* release_ip();
-  void set_allocated_ip(::std::string* ip);
-
-  // uint32 port = 2;
-  void clear_port();
-  static const int kPortFieldNumber = 2;
-  ::google::protobuf::uint32 port() const;
-  void set_port(::google::protobuf::uint32 value);
-
-  // uint32 weight = 3;
+  // uint32 weight = 1;
   void clear_weight();
-  static const int kWeightFieldNumber = 3;
+  static const int kWeightFieldNumber = 1;
   ::google::protobuf::uint32 weight() const;
   void set_weight(::google::protobuf::uint32 value);
 
@@ -1095,15 +1053,12 @@ class XmsgImClientServiceAddress : public ::google::protobuf::Message /* @@proto
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::google::protobuf::RepeatedPtrField< ::std::string> proto_;
   ::google::protobuf::internal::MapField<
-      XmsgImClientServiceAddress_ExtEntry_DoNotUse,
+      XmsgImClientServiceAddress_HostEntry_DoNotUse,
       ::std::string, ::std::string,
       ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
       ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
-      0 > ext_;
-  ::google::protobuf::internal::ArenaStringPtr ip_;
-  ::google::protobuf::uint32 port_;
+      0 > host_;
   ::google::protobuf::uint32 weight_;
   mutable int _cached_size_;
   friend struct ::protobuf_net_2dx_2dmsg_2dim_2dauth_2eproto::TableStruct;
@@ -1485,34 +1440,34 @@ XmsgImAuthSimpleRsp::apaddr() const {
   return apaddr_;
 }
 
-// repeated .XmsgImClientServiceAddress fsAddr = 5;
-inline int XmsgImAuthSimpleRsp::fsaddr_size() const {
-  return fsaddr_.size();
+// repeated .XmsgImClientServiceAddress ossAddr = 5;
+inline int XmsgImAuthSimpleRsp::ossaddr_size() const {
+  return ossaddr_.size();
 }
-inline void XmsgImAuthSimpleRsp::clear_fsaddr() {
-  fsaddr_.Clear();
+inline void XmsgImAuthSimpleRsp::clear_ossaddr() {
+  ossaddr_.Clear();
 }
-inline const ::XmsgImClientServiceAddress& XmsgImAuthSimpleRsp::fsaddr(int index) const {
-  // @@protoc_insertion_point(field_get:XmsgImAuthSimpleRsp.fsAddr)
-  return fsaddr_.Get(index);
+inline const ::XmsgImClientServiceAddress& XmsgImAuthSimpleRsp::ossaddr(int index) const {
+  // @@protoc_insertion_point(field_get:XmsgImAuthSimpleRsp.ossAddr)
+  return ossaddr_.Get(index);
 }
-inline ::XmsgImClientServiceAddress* XmsgImAuthSimpleRsp::mutable_fsaddr(int index) {
-  // @@protoc_insertion_point(field_mutable:XmsgImAuthSimpleRsp.fsAddr)
-  return fsaddr_.Mutable(index);
+inline ::XmsgImClientServiceAddress* XmsgImAuthSimpleRsp::mutable_ossaddr(int index) {
+  // @@protoc_insertion_point(field_mutable:XmsgImAuthSimpleRsp.ossAddr)
+  return ossaddr_.Mutable(index);
 }
-inline ::XmsgImClientServiceAddress* XmsgImAuthSimpleRsp::add_fsaddr() {
-  // @@protoc_insertion_point(field_add:XmsgImAuthSimpleRsp.fsAddr)
-  return fsaddr_.Add();
+inline ::XmsgImClientServiceAddress* XmsgImAuthSimpleRsp::add_ossaddr() {
+  // @@protoc_insertion_point(field_add:XmsgImAuthSimpleRsp.ossAddr)
+  return ossaddr_.Add();
 }
 inline ::google::protobuf::RepeatedPtrField< ::XmsgImClientServiceAddress >*
-XmsgImAuthSimpleRsp::mutable_fsaddr() {
-  // @@protoc_insertion_point(field_mutable_list:XmsgImAuthSimpleRsp.fsAddr)
-  return &fsaddr_;
+XmsgImAuthSimpleRsp::mutable_ossaddr() {
+  // @@protoc_insertion_point(field_mutable_list:XmsgImAuthSimpleRsp.ossAddr)
+  return &ossaddr_;
 }
 inline const ::google::protobuf::RepeatedPtrField< ::XmsgImClientServiceAddress >&
-XmsgImAuthSimpleRsp::fsaddr() const {
-  // @@protoc_insertion_point(field_list:XmsgImAuthSimpleRsp.fsAddr)
-  return fsaddr_;
+XmsgImAuthSimpleRsp::ossaddr() const {
+  // @@protoc_insertion_point(field_list:XmsgImAuthSimpleRsp.ossAddr)
+  return ossaddr_;
 }
 
 // string cgt = 7;
@@ -2065,74 +2020,7 @@ XmsgImClientDeviceInfo::mutable_ext() {
 
 // XmsgImClientServiceAddress
 
-// string ip = 1;
-inline void XmsgImClientServiceAddress::clear_ip() {
-  ip_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline const ::std::string& XmsgImClientServiceAddress::ip() const {
-  // @@protoc_insertion_point(field_get:XmsgImClientServiceAddress.ip)
-  return ip_.GetNoArena();
-}
-inline void XmsgImClientServiceAddress::set_ip(const ::std::string& value) {
-  
-  ip_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:XmsgImClientServiceAddress.ip)
-}
-#if LANG_CXX11
-inline void XmsgImClientServiceAddress::set_ip(::std::string&& value) {
-  
-  ip_.SetNoArena(
-    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:XmsgImClientServiceAddress.ip)
-}
-#endif
-inline void XmsgImClientServiceAddress::set_ip(const char* value) {
-  GOOGLE_DCHECK(value != NULL);
-  
-  ip_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:XmsgImClientServiceAddress.ip)
-}
-inline void XmsgImClientServiceAddress::set_ip(const char* value, size_t size) {
-  
-  ip_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:XmsgImClientServiceAddress.ip)
-}
-inline ::std::string* XmsgImClientServiceAddress::mutable_ip() {
-  
-  // @@protoc_insertion_point(field_mutable:XmsgImClientServiceAddress.ip)
-  return ip_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline ::std::string* XmsgImClientServiceAddress::release_ip() {
-  // @@protoc_insertion_point(field_release:XmsgImClientServiceAddress.ip)
-  
-  return ip_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline void XmsgImClientServiceAddress::set_allocated_ip(::std::string* ip) {
-  if (ip != NULL) {
-    
-  } else {
-    
-  }
-  ip_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ip);
-  // @@protoc_insertion_point(field_set_allocated:XmsgImClientServiceAddress.ip)
-}
-
-// uint32 port = 2;
-inline void XmsgImClientServiceAddress::clear_port() {
-  port_ = 0u;
-}
-inline ::google::protobuf::uint32 XmsgImClientServiceAddress::port() const {
-  // @@protoc_insertion_point(field_get:XmsgImClientServiceAddress.port)
-  return port_;
-}
-inline void XmsgImClientServiceAddress::set_port(::google::protobuf::uint32 value) {
-  
-  port_ = value;
-  // @@protoc_insertion_point(field_set:XmsgImClientServiceAddress.port)
-}
-
-// uint32 weight = 3;
+// uint32 weight = 1;
 inline void XmsgImClientServiceAddress::clear_weight() {
   weight_ = 0u;
 }
@@ -2146,91 +2034,22 @@ inline void XmsgImClientServiceAddress::set_weight(::google::protobuf::uint32 va
   // @@protoc_insertion_point(field_set:XmsgImClientServiceAddress.weight)
 }
 
-// repeated string proto = 4;
-inline int XmsgImClientServiceAddress::proto_size() const {
-  return proto_.size();
+// map<string, string> host = 2;
+inline int XmsgImClientServiceAddress::host_size() const {
+  return host_.size();
 }
-inline void XmsgImClientServiceAddress::clear_proto() {
-  proto_.Clear();
-}
-inline const ::std::string& XmsgImClientServiceAddress::proto(int index) const {
-  // @@protoc_insertion_point(field_get:XmsgImClientServiceAddress.proto)
-  return proto_.Get(index);
-}
-inline ::std::string* XmsgImClientServiceAddress::mutable_proto(int index) {
-  // @@protoc_insertion_point(field_mutable:XmsgImClientServiceAddress.proto)
-  return proto_.Mutable(index);
-}
-inline void XmsgImClientServiceAddress::set_proto(int index, const ::std::string& value) {
-  // @@protoc_insertion_point(field_set:XmsgImClientServiceAddress.proto)
-  proto_.Mutable(index)->assign(value);
-}
-#if LANG_CXX11
-inline void XmsgImClientServiceAddress::set_proto(int index, ::std::string&& value) {
-  // @@protoc_insertion_point(field_set:XmsgImClientServiceAddress.proto)
-  proto_.Mutable(index)->assign(std::move(value));
-}
-#endif
-inline void XmsgImClientServiceAddress::set_proto(int index, const char* value) {
-  GOOGLE_DCHECK(value != NULL);
-  proto_.Mutable(index)->assign(value);
-  // @@protoc_insertion_point(field_set_char:XmsgImClientServiceAddress.proto)
-}
-inline void XmsgImClientServiceAddress::set_proto(int index, const char* value, size_t size) {
-  proto_.Mutable(index)->assign(
-    reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_set_pointer:XmsgImClientServiceAddress.proto)
-}
-inline ::std::string* XmsgImClientServiceAddress::add_proto() {
-  // @@protoc_insertion_point(field_add_mutable:XmsgImClientServiceAddress.proto)
-  return proto_.Add();
-}
-inline void XmsgImClientServiceAddress::add_proto(const ::std::string& value) {
-  proto_.Add()->assign(value);
-  // @@protoc_insertion_point(field_add:XmsgImClientServiceAddress.proto)
-}
-#if LANG_CXX11
-inline void XmsgImClientServiceAddress::add_proto(::std::string&& value) {
-  proto_.Add(std::move(value));
-  // @@protoc_insertion_point(field_add:XmsgImClientServiceAddress.proto)
-}
-#endif
-inline void XmsgImClientServiceAddress::add_proto(const char* value) {
-  GOOGLE_DCHECK(value != NULL);
-  proto_.Add()->assign(value);
-  // @@protoc_insertion_point(field_add_char:XmsgImClientServiceAddress.proto)
-}
-inline void XmsgImClientServiceAddress::add_proto(const char* value, size_t size) {
-  proto_.Add()->assign(reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_add_pointer:XmsgImClientServiceAddress.proto)
-}
-inline const ::google::protobuf::RepeatedPtrField< ::std::string>&
-XmsgImClientServiceAddress::proto() const {
-  // @@protoc_insertion_point(field_list:XmsgImClientServiceAddress.proto)
-  return proto_;
-}
-inline ::google::protobuf::RepeatedPtrField< ::std::string>*
-XmsgImClientServiceAddress::mutable_proto() {
-  // @@protoc_insertion_point(field_mutable_list:XmsgImClientServiceAddress.proto)
-  return &proto_;
-}
-
-// map<string, string> ext = 5;
-inline int XmsgImClientServiceAddress::ext_size() const {
-  return ext_.size();
-}
-inline void XmsgImClientServiceAddress::clear_ext() {
-  ext_.Clear();
+inline void XmsgImClientServiceAddress::clear_host() {
+  host_.Clear();
 }
 inline const ::google::protobuf::Map< ::std::string, ::std::string >&
-XmsgImClientServiceAddress::ext() const {
-  // @@protoc_insertion_point(field_map:XmsgImClientServiceAddress.ext)
-  return ext_.GetMap();
+XmsgImClientServiceAddress::host() const {
+  // @@protoc_insertion_point(field_map:XmsgImClientServiceAddress.host)
+  return host_.GetMap();
 }
 inline ::google::protobuf::Map< ::std::string, ::std::string >*
-XmsgImClientServiceAddress::mutable_ext() {
-  // @@protoc_insertion_point(field_mutable_map:XmsgImClientServiceAddress.ext)
-  return ext_.MutableMap();
+XmsgImClientServiceAddress::mutable_host() {
+  // @@protoc_insertion_point(field_mutable_map:XmsgImClientServiceAddress.host)
+  return host_.MutableMap();
 }
 
 #ifdef __GNUC__

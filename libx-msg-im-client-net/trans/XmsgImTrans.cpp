@@ -63,7 +63,7 @@ shared_ptr<Message> XmsgImTrans::newPbMsg(const Descriptor* desc)
 	if (pt == NULL)
 	{
 		LOG_ERROR("can`t not found message type stub for this desc, pb name: %s", desc->name().c_str())
-		return NULL;
+		return nullptr;
 	}
 	Message* m = pt->New();
 	shared_ptr<Message> x;
@@ -90,7 +90,7 @@ shared_ptr<Message> XmsgImTrans::newPbMsg(const string& name, uchar* dat, uint l
 	if (desc == NULL)
 	{
 		LOG_ERROR("can not found descriptor for name: %s", name.c_str());
-		return NULL;
+		return nullptr;
 	}
 	return XmsgImTrans::newPbMsg(desc, dat, len);
 }
@@ -101,7 +101,7 @@ shared_ptr<Message> XmsgImTrans::newPbMsg(const string& name)
 	if (desc == NULL)
 	{
 		LOG_ERROR("can not found descriptor for name: %s", name.c_str());
-		return NULL;
+		return nullptr;
 	}
 	return XmsgImTrans::newPbMsg(desc);
 }

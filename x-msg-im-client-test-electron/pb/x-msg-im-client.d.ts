@@ -7349,8 +7349,8 @@ export class XmsgImAuthSimpleRsp implements IXmsgImAuthSimpleRsp {
     /** XmsgImAuthSimpleRsp apAddr. */
     public apAddr: IXmsgImClientServiceAddress[];
 
-    /** XmsgImAuthSimpleRsp fsAddr. */
-    public fsAddr: IXmsgImClientServiceAddress[];
+    /** XmsgImAuthSimpleRsp ossAddr. */
+    public ossAddr: IXmsgImClientServiceAddress[];
 
     /** XmsgImAuthSimpleRsp cgt. */
     public cgt: string;
@@ -7708,20 +7708,11 @@ export class XmsgImClientServiceAddress implements IXmsgImClientServiceAddress {
      */
     constructor(properties?: IXmsgImClientServiceAddress);
 
-    /** XmsgImClientServiceAddress ip. */
-    public ip: string;
-
-    /** XmsgImClientServiceAddress port. */
-    public port: number;
-
     /** XmsgImClientServiceAddress weight. */
     public weight: number;
 
-    /** XmsgImClientServiceAddress proto. */
-    public proto: string[];
-
-    /** XmsgImClientServiceAddress ext. */
-    public ext: { [k: string]: string };
+    /** XmsgImClientServiceAddress host. */
+    public host: { [k: string]: string };
 
     /**
      * Creates a new XmsgImClientServiceAddress instance using the specified properties.

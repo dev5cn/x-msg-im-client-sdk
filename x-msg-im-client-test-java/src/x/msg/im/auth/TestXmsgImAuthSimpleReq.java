@@ -56,7 +56,7 @@ public class TestXmsgImAuthSimpleReq
 			XmsgImAuthSimpleRsp authRsp = Misc.get(rsp);
 			Main.secret = Crypto.aesDec2Str(Crypto.sha256StrLowerCase((req.getSalt() + Crypto.sha256StrLowerCase(Main.pwd))), authRsp.getSecret());
 			Log.info("auth with x-msg-im-auth successful, secret: %s, rsp(%s): %s", Main.secret, rsp.getDescriptorForType().getName(), Misc.pb2str(rsp));
-			Main.fileService = authRsp.getFsAddr(0).getIp() + ":" + authRsp.getFsAddr(0).getPort();
+			Main.ossService = authRsp.getOssAddr(0).getHostMap().get("http");
 			Main.cgt = authRsp.getCgt();
 			Main.token = authRsp.getToken();
 			TestXmsgImHlrAttachSimpleReq.test(Main.token);

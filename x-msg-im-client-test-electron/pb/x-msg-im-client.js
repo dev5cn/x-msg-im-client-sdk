@@ -18213,7 +18213,7 @@ $root.XmsgImAuthSimpleRsp = (function() {
      * @property {string|null} [secret] XmsgImAuthSimpleRsp secret
      * @property {number|Long|null} [expired] XmsgImAuthSimpleRsp expired
      * @property {Array.<IXmsgImClientServiceAddress>|null} [apAddr] XmsgImAuthSimpleRsp apAddr
-     * @property {Array.<IXmsgImClientServiceAddress>|null} [fsAddr] XmsgImAuthSimpleRsp fsAddr
+     * @property {Array.<IXmsgImClientServiceAddress>|null} [ossAddr] XmsgImAuthSimpleRsp ossAddr
      * @property {string|null} [cgt] XmsgImAuthSimpleRsp cgt
      * @property {Object.<string,string>|null} [ext] XmsgImAuthSimpleRsp ext
      */
@@ -18228,7 +18228,7 @@ $root.XmsgImAuthSimpleRsp = (function() {
      */
     function XmsgImAuthSimpleRsp(properties) {
         this.apAddr = [];
-        this.fsAddr = [];
+        this.ossAddr = [];
         this.ext = {};
         if (properties)
             for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
@@ -18269,12 +18269,12 @@ $root.XmsgImAuthSimpleRsp = (function() {
     XmsgImAuthSimpleRsp.prototype.apAddr = $util.emptyArray;
 
     /**
-     * XmsgImAuthSimpleRsp fsAddr.
-     * @member {Array.<IXmsgImClientServiceAddress>} fsAddr
+     * XmsgImAuthSimpleRsp ossAddr.
+     * @member {Array.<IXmsgImClientServiceAddress>} ossAddr
      * @memberof XmsgImAuthSimpleRsp
      * @instance
      */
-    XmsgImAuthSimpleRsp.prototype.fsAddr = $util.emptyArray;
+    XmsgImAuthSimpleRsp.prototype.ossAddr = $util.emptyArray;
 
     /**
      * XmsgImAuthSimpleRsp cgt.
@@ -18325,9 +18325,9 @@ $root.XmsgImAuthSimpleRsp = (function() {
         if (message.apAddr != null && message.apAddr.length)
             for (var i = 0; i < message.apAddr.length; ++i)
                 $root.XmsgImClientServiceAddress.encode(message.apAddr[i], writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
-        if (message.fsAddr != null && message.fsAddr.length)
-            for (var i = 0; i < message.fsAddr.length; ++i)
-                $root.XmsgImClientServiceAddress.encode(message.fsAddr[i], writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
+        if (message.ossAddr != null && message.ossAddr.length)
+            for (var i = 0; i < message.ossAddr.length; ++i)
+                $root.XmsgImClientServiceAddress.encode(message.ossAddr[i], writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
         if (message.cgt != null && message.hasOwnProperty("cgt"))
             writer.uint32(/* id 7, wireType 2 =*/58).string(message.cgt);
         if (message.ext != null && message.hasOwnProperty("ext"))
@@ -18382,9 +18382,9 @@ $root.XmsgImAuthSimpleRsp = (function() {
                 message.apAddr.push($root.XmsgImClientServiceAddress.decode(reader, reader.uint32()));
                 break;
             case 5:
-                if (!(message.fsAddr && message.fsAddr.length))
-                    message.fsAddr = [];
-                message.fsAddr.push($root.XmsgImClientServiceAddress.decode(reader, reader.uint32()));
+                if (!(message.ossAddr && message.ossAddr.length))
+                    message.ossAddr = [];
+                message.ossAddr.push($root.XmsgImClientServiceAddress.decode(reader, reader.uint32()));
                 break;
             case 7:
                 message.cgt = reader.string();
@@ -18450,13 +18450,13 @@ $root.XmsgImAuthSimpleRsp = (function() {
                     return "apAddr." + error;
             }
         }
-        if (message.fsAddr != null && message.hasOwnProperty("fsAddr")) {
-            if (!Array.isArray(message.fsAddr))
-                return "fsAddr: array expected";
-            for (var i = 0; i < message.fsAddr.length; ++i) {
-                var error = $root.XmsgImClientServiceAddress.verify(message.fsAddr[i]);
+        if (message.ossAddr != null && message.hasOwnProperty("ossAddr")) {
+            if (!Array.isArray(message.ossAddr))
+                return "ossAddr: array expected";
+            for (var i = 0; i < message.ossAddr.length; ++i) {
+                var error = $root.XmsgImClientServiceAddress.verify(message.ossAddr[i]);
                 if (error)
-                    return "fsAddr." + error;
+                    return "ossAddr." + error;
             }
         }
         if (message.cgt != null && message.hasOwnProperty("cgt"))
@@ -18508,14 +18508,14 @@ $root.XmsgImAuthSimpleRsp = (function() {
                 message.apAddr[i] = $root.XmsgImClientServiceAddress.fromObject(object.apAddr[i]);
             }
         }
-        if (object.fsAddr) {
-            if (!Array.isArray(object.fsAddr))
-                throw TypeError(".XmsgImAuthSimpleRsp.fsAddr: array expected");
-            message.fsAddr = [];
-            for (var i = 0; i < object.fsAddr.length; ++i) {
-                if (typeof object.fsAddr[i] !== "object")
-                    throw TypeError(".XmsgImAuthSimpleRsp.fsAddr: object expected");
-                message.fsAddr[i] = $root.XmsgImClientServiceAddress.fromObject(object.fsAddr[i]);
+        if (object.ossAddr) {
+            if (!Array.isArray(object.ossAddr))
+                throw TypeError(".XmsgImAuthSimpleRsp.ossAddr: array expected");
+            message.ossAddr = [];
+            for (var i = 0; i < object.ossAddr.length; ++i) {
+                if (typeof object.ossAddr[i] !== "object")
+                    throw TypeError(".XmsgImAuthSimpleRsp.ossAddr: object expected");
+                message.ossAddr[i] = $root.XmsgImClientServiceAddress.fromObject(object.ossAddr[i]);
             }
         }
         if (object.cgt != null)
@@ -18545,7 +18545,7 @@ $root.XmsgImAuthSimpleRsp = (function() {
         var object = {};
         if (options.arrays || options.defaults) {
             object.apAddr = [];
-            object.fsAddr = [];
+            object.ossAddr = [];
         }
         if (options.objects || options.defaults)
             object.ext = {};
@@ -18573,10 +18573,10 @@ $root.XmsgImAuthSimpleRsp = (function() {
             for (var j = 0; j < message.apAddr.length; ++j)
                 object.apAddr[j] = $root.XmsgImClientServiceAddress.toObject(message.apAddr[j], options);
         }
-        if (message.fsAddr && message.fsAddr.length) {
-            object.fsAddr = [];
-            for (var j = 0; j < message.fsAddr.length; ++j)
-                object.fsAddr[j] = $root.XmsgImClientServiceAddress.toObject(message.fsAddr[j], options);
+        if (message.ossAddr && message.ossAddr.length) {
+            object.ossAddr = [];
+            for (var j = 0; j < message.ossAddr.length; ++j)
+                object.ossAddr[j] = $root.XmsgImClientServiceAddress.toObject(message.ossAddr[j], options);
         }
         if (message.cgt != null && message.hasOwnProperty("cgt"))
             object.cgt = message.cgt;
@@ -19375,11 +19375,8 @@ $root.XmsgImClientServiceAddress = (function() {
      * Properties of a XmsgImClientServiceAddress.
      * @exports IXmsgImClientServiceAddress
      * @interface IXmsgImClientServiceAddress
-     * @property {string|null} [ip] XmsgImClientServiceAddress ip
-     * @property {number|null} [port] XmsgImClientServiceAddress port
      * @property {number|null} [weight] XmsgImClientServiceAddress weight
-     * @property {Array.<string>|null} [proto] XmsgImClientServiceAddress proto
-     * @property {Object.<string,string>|null} [ext] XmsgImClientServiceAddress ext
+     * @property {Object.<string,string>|null} [host] XmsgImClientServiceAddress host
      */
 
     /**
@@ -19391,29 +19388,12 @@ $root.XmsgImClientServiceAddress = (function() {
      * @param {IXmsgImClientServiceAddress=} [properties] Properties to set
      */
     function XmsgImClientServiceAddress(properties) {
-        this.proto = [];
-        this.ext = {};
+        this.host = {};
         if (properties)
             for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                 if (properties[keys[i]] != null)
                     this[keys[i]] = properties[keys[i]];
     }
-
-    /**
-     * XmsgImClientServiceAddress ip.
-     * @member {string} ip
-     * @memberof XmsgImClientServiceAddress
-     * @instance
-     */
-    XmsgImClientServiceAddress.prototype.ip = "";
-
-    /**
-     * XmsgImClientServiceAddress port.
-     * @member {number} port
-     * @memberof XmsgImClientServiceAddress
-     * @instance
-     */
-    XmsgImClientServiceAddress.prototype.port = 0;
 
     /**
      * XmsgImClientServiceAddress weight.
@@ -19424,20 +19404,12 @@ $root.XmsgImClientServiceAddress = (function() {
     XmsgImClientServiceAddress.prototype.weight = 0;
 
     /**
-     * XmsgImClientServiceAddress proto.
-     * @member {Array.<string>} proto
+     * XmsgImClientServiceAddress host.
+     * @member {Object.<string,string>} host
      * @memberof XmsgImClientServiceAddress
      * @instance
      */
-    XmsgImClientServiceAddress.prototype.proto = $util.emptyArray;
-
-    /**
-     * XmsgImClientServiceAddress ext.
-     * @member {Object.<string,string>} ext
-     * @memberof XmsgImClientServiceAddress
-     * @instance
-     */
-    XmsgImClientServiceAddress.prototype.ext = $util.emptyObject;
+    XmsgImClientServiceAddress.prototype.host = $util.emptyObject;
 
     /**
      * Creates a new XmsgImClientServiceAddress instance using the specified properties.
@@ -19463,18 +19435,11 @@ $root.XmsgImClientServiceAddress = (function() {
     XmsgImClientServiceAddress.encode = function encode(message, writer) {
         if (!writer)
             writer = $Writer.create();
-        if (message.ip != null && message.hasOwnProperty("ip"))
-            writer.uint32(/* id 1, wireType 2 =*/10).string(message.ip);
-        if (message.port != null && message.hasOwnProperty("port"))
-            writer.uint32(/* id 2, wireType 0 =*/16).uint32(message.port);
         if (message.weight != null && message.hasOwnProperty("weight"))
-            writer.uint32(/* id 3, wireType 0 =*/24).uint32(message.weight);
-        if (message.proto != null && message.proto.length)
-            for (var i = 0; i < message.proto.length; ++i)
-                writer.uint32(/* id 4, wireType 2 =*/34).string(message.proto[i]);
-        if (message.ext != null && message.hasOwnProperty("ext"))
-            for (var keys = Object.keys(message.ext), i = 0; i < keys.length; ++i)
-                writer.uint32(/* id 5, wireType 2 =*/42).fork().uint32(/* id 1, wireType 2 =*/10).string(keys[i]).uint32(/* id 2, wireType 2 =*/18).string(message.ext[keys[i]]).ldelim();
+            writer.uint32(/* id 1, wireType 0 =*/8).uint32(message.weight);
+        if (message.host != null && message.hasOwnProperty("host"))
+            for (var keys = Object.keys(message.host), i = 0; i < keys.length; ++i)
+                writer.uint32(/* id 2, wireType 2 =*/18).fork().uint32(/* id 1, wireType 2 =*/10).string(keys[i]).uint32(/* id 2, wireType 2 =*/18).string(message.host[keys[i]]).ldelim();
         return writer;
     };
 
@@ -19510,26 +19475,15 @@ $root.XmsgImClientServiceAddress = (function() {
             var tag = reader.uint32();
             switch (tag >>> 3) {
             case 1:
-                message.ip = reader.string();
-                break;
-            case 2:
-                message.port = reader.uint32();
-                break;
-            case 3:
                 message.weight = reader.uint32();
                 break;
-            case 4:
-                if (!(message.proto && message.proto.length))
-                    message.proto = [];
-                message.proto.push(reader.string());
-                break;
-            case 5:
+            case 2:
                 reader.skip().pos++;
-                if (message.ext === $util.emptyObject)
-                    message.ext = {};
+                if (message.host === $util.emptyObject)
+                    message.host = {};
                 key = reader.string();
                 reader.pos++;
-                message.ext[key] = reader.string();
+                message.host[key] = reader.string();
                 break;
             default:
                 reader.skipType(tag & 7);
@@ -19566,29 +19520,16 @@ $root.XmsgImClientServiceAddress = (function() {
     XmsgImClientServiceAddress.verify = function verify(message) {
         if (typeof message !== "object" || message === null)
             return "object expected";
-        if (message.ip != null && message.hasOwnProperty("ip"))
-            if (!$util.isString(message.ip))
-                return "ip: string expected";
-        if (message.port != null && message.hasOwnProperty("port"))
-            if (!$util.isInteger(message.port))
-                return "port: integer expected";
         if (message.weight != null && message.hasOwnProperty("weight"))
             if (!$util.isInteger(message.weight))
                 return "weight: integer expected";
-        if (message.proto != null && message.hasOwnProperty("proto")) {
-            if (!Array.isArray(message.proto))
-                return "proto: array expected";
-            for (var i = 0; i < message.proto.length; ++i)
-                if (!$util.isString(message.proto[i]))
-                    return "proto: string[] expected";
-        }
-        if (message.ext != null && message.hasOwnProperty("ext")) {
-            if (!$util.isObject(message.ext))
-                return "ext: object expected";
-            var key = Object.keys(message.ext);
+        if (message.host != null && message.hasOwnProperty("host")) {
+            if (!$util.isObject(message.host))
+                return "host: object expected";
+            var key = Object.keys(message.host);
             for (var i = 0; i < key.length; ++i)
-                if (!$util.isString(message.ext[key[i]]))
-                    return "ext: string{k:string} expected";
+                if (!$util.isString(message.host[key[i]]))
+                    return "host: string{k:string} expected";
         }
         return null;
     };
@@ -19605,25 +19546,14 @@ $root.XmsgImClientServiceAddress = (function() {
         if (object instanceof $root.XmsgImClientServiceAddress)
             return object;
         var message = new $root.XmsgImClientServiceAddress();
-        if (object.ip != null)
-            message.ip = String(object.ip);
-        if (object.port != null)
-            message.port = object.port >>> 0;
         if (object.weight != null)
             message.weight = object.weight >>> 0;
-        if (object.proto) {
-            if (!Array.isArray(object.proto))
-                throw TypeError(".XmsgImClientServiceAddress.proto: array expected");
-            message.proto = [];
-            for (var i = 0; i < object.proto.length; ++i)
-                message.proto[i] = String(object.proto[i]);
-        }
-        if (object.ext) {
-            if (typeof object.ext !== "object")
-                throw TypeError(".XmsgImClientServiceAddress.ext: object expected");
-            message.ext = {};
-            for (var keys = Object.keys(object.ext), i = 0; i < keys.length; ++i)
-                message.ext[keys[i]] = String(object.ext[keys[i]]);
+        if (object.host) {
+            if (typeof object.host !== "object")
+                throw TypeError(".XmsgImClientServiceAddress.host: object expected");
+            message.host = {};
+            for (var keys = Object.keys(object.host), i = 0; i < keys.length; ++i)
+                message.host[keys[i]] = String(object.host[keys[i]]);
         }
         return message;
     };
@@ -19641,31 +19571,17 @@ $root.XmsgImClientServiceAddress = (function() {
         if (!options)
             options = {};
         var object = {};
-        if (options.arrays || options.defaults)
-            object.proto = [];
         if (options.objects || options.defaults)
-            object.ext = {};
-        if (options.defaults) {
-            object.ip = "";
-            object.port = 0;
+            object.host = {};
+        if (options.defaults)
             object.weight = 0;
-        }
-        if (message.ip != null && message.hasOwnProperty("ip"))
-            object.ip = message.ip;
-        if (message.port != null && message.hasOwnProperty("port"))
-            object.port = message.port;
         if (message.weight != null && message.hasOwnProperty("weight"))
             object.weight = message.weight;
-        if (message.proto && message.proto.length) {
-            object.proto = [];
-            for (var j = 0; j < message.proto.length; ++j)
-                object.proto[j] = message.proto[j];
-        }
         var keys2;
-        if (message.ext && (keys2 = Object.keys(message.ext)).length) {
-            object.ext = {};
+        if (message.host && (keys2 = Object.keys(message.host)).length) {
+            object.host = {};
             for (var j = 0; j < keys2.length; ++j)
-                object.ext[keys2[j]] = message.ext[keys2[j]];
+                object.host[keys2[j]] = message.host[keys2[j]];
         }
         return object;
     };

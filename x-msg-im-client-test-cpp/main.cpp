@@ -30,6 +30,44 @@ int main(int argc, char **argv)
 {
 	Log::setRecord();
 	XmsgImClientSdk::instance()->init(); /* sdk初始化. */
+	//
+	auto netApi = XmsgImClientNetApi::newApi("127.0.0.1:8070"); /* 通过指定的接入地址构造一个网络层的api实例. */
+	netApi->subEvn([](shared_ptr<Message> evn) /* 订阅网络层api实例上的事件, 包括本地事件与网络通知. */
+	{
+		LOG_INFO("got a net-api event, msg: %s, dat: %s", evn->GetDescriptor()->name().c_str(), evn->ShortDebugString().c_str()) /* 在sdk线程中. */
+	});
+	//
+	netApi->subReq([](SptrXitp trans, shared_ptr<Message> req) /* 订阅网络api实例上的网络请求(需要回送响应). */
+	{
+		LOG_INFO("got a net-api network request, msg: %s, dat: %s", req->GetDescriptor()->name().c_str(), req->ShortDebugString().c_str()) /* 在sdk线程中. */
+		trans->end(RET_SUCCESS); /* 可在任意线程中结束. */
+	});
+	//
+	shared_ptr<XmsgImAuthSimpleReq> req(new XmsgImAuthSimpleReq()); /* 鉴权. */
+	req->set_usr("usr000000");
+	req->set_salt(Crypto::gen0aAkey256().c_str());
+	req->set_sign(Crypto::sha256ToHexStrLowerCase(req->usr() + req->salt() + Crypto::sha256ToHexStrLowerCase("password")));
+	auto dev = req->mutable_dev();
+	dev->set_plat("linux");
+	dev->set_did("0.0.0.0");
+	dev->set_ver("0.0.0");
+	netApi->future(req, [req](int ret, const string& desc, shared_ptr<Message> rsp)
+	{
+		if(ret != RET_SUCCESS) /* 在sdk线程中. */
+		{
+			LOG_ERROR("auth with x-msg-im-auth failed, ret: %04X, desc: %s", ret, desc.c_str())
+			return;
+		}
+		LOG_INFO("auth with x-msg-im-auth successful, req: %s, rsp: %s", req->ShortDebugString().c_str(), rsp->ShortDebugString().c_str())
+	});
+	Misc::hold(); /* 阻塞当前线程. */
+	return EXIT_SUCCESS;
+}
+
+int mainx(int argc, char **argv)
+{
+	Log::setRecord();
+	XmsgImClientSdk::instance()->init(); /* sdk初始化. */
 	if (!XmsgImClientDbApi::openGlobal("./db/")) /* 在./db/目录下创建并打开全局数据库. */
 	{
 		LOG_FAULT("create global database failed")
@@ -80,6 +118,7 @@ int main(int argc, char **argv)
 		}
 	});
 	Misc::hold();
+	return EXIT_SUCCESS;
 }
 
 int main4net(int argc, char **argv)

@@ -22,6 +22,7 @@
 
 #include "XscChannel.h"
 #include "XscChannelTrans.h"
+#include "rudp/XscRudpChannel.h"
 #include "tcp/XscTcpChannel.h"
 
 #endif 

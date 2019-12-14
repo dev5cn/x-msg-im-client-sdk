@@ -64,17 +64,11 @@ void XscTcpChannel::svc()
 			this->exec = this->evnTry(++tryTimes);
 			if (this->exec)
 			{
-				LOG_ERROR("can not connect to remote host: %s:%d, elap: %dms, we will try it again in 2 seconds", 
-						this->host.c_str(),
-						this->port,
-						DateMisc::elap(sts))
+				LOG_ERROR("can not connect to remote host: %s:%d, elap: %dms, we will try it again in 2 seconds", this->host.c_str(), this->port, DateMisc::elap(sts))
 				Misc::sleep(2000L);
 				continue;
 			}
-			LOG_ERROR("can not connect to remote host: %s:%d, elap: %dms, we will exit xsc tcp channel thread", 
-					this->host.c_str(),
-					this->port,
-					DateMisc::elap(sts))
+			LOG_ERROR("can not connect to remote host: %s:%d, elap: %dms, we will exit xsc tcp channel thread", this->host.c_str(), this->port, DateMisc::elap(sts))
 			continue;
 		}
 		tryTimes = 0;
@@ -93,7 +87,7 @@ void XscTcpChannel::svc()
 
 bool XscTcpChannel::loop()
 {
-	struct timeval val = { 0, 1000 * 1000 * 1 }; 
+	struct timeval val = { 1, 0 }; 
 	fd_set rset;
 	fd_set sset;
 	FD_ZERO(&rset);
@@ -122,7 +116,7 @@ bool XscTcpChannel::loop()
 		return this->evnRecv();
 	if (FD_ISSET(this->sock, &sset))
 		return this->evnSend();
-	LOG_INFO("xsc channel exception, host: %s:%d", this->host.c_str(), this->port)
+	LOG_INFO("xsc rudp channel exception, host: %s:%d", this->host.c_str(), this->port)
 	return false;
 }
 
@@ -321,6 +315,7 @@ bool XscTcpChannel::send(uchar* buf, int len)
 
 void XscTcpChannel::close()
 {
+	this->clear();
 	this->status = XSC_CHANNEL_STATUS_LOST;
 	if (this->sock < 1)
 		return;
@@ -332,6 +327,7 @@ void XscTcpChannel::close()
 
 void XscTcpChannel::closeSlient()
 {
+	this->clear();
 	this->status = XSC_CHANNEL_STATUS_LOST;
 	if (this->sock < 1)
 		return;
@@ -343,7 +339,7 @@ void XscTcpChannel::closeSlient()
 void XscTcpChannel::evnDida(ullong now)
 {
 	this->heartbeat(now);
-	this->checkTimeoutInitTrans(now, 10 );
+	this->checkTimeoutInitTrans(now, 15 );
 }
 
 bool XscTcpChannel::evnTry(int tryTimes )

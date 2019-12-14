@@ -55,12 +55,13 @@ public:
 	virtual void closeSlient() = 0; 
 	virtual void evnDida(ullong now) = 0; 
 	virtual bool evnTry(int tryTimes ) = 0; 
-	virtual bool evnMsg(shared_ptr<XscProtoPdu> pdu) = 0; 
 	virtual void evnEstab() = 0; 
+	virtual bool evnMsg(shared_ptr<XscProtoPdu> pdu) = 0; 
 	virtual bool evnClose() = 0; 
 	virtual string toString() = 0;
 private:
 	int mtu; 
+	ullong lastCheckInitTransTs; 
 	atomic_int tidGen; 
 	unordered_map<uint , shared_ptr<XscChannelTrans>> initTrans; 
 	unordered_map<uint , shared_ptr<XscChannelTrans>> passTrans; 

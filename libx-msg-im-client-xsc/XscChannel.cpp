@@ -24,7 +24,8 @@ XscChannel::XscChannel(int mtu)
 	this->status = XSC_CHANNEL_STATUS_LOST;
 	this->exec = true;
 	this->mtu = mtu;
-	this->tidGen.store(1);
+	this->lastCheckInitTransTs = 0ULL;
+	this->tidGen.store(Crypto::randomInt());
 }
 
 int XscChannel::getMtu()
@@ -83,8 +84,16 @@ shared_ptr<XscChannelTrans> XscChannel::removePassTrans(uint stid)
 
 void XscChannel::checkTimeoutInitTrans(ullong now , int sec )
 {
+	if (this->lastCheckInitTransTs + 2 * DateMisc::sec > now) 
+		return;
+	this->lastCheckInitTransTs = now;
 	list<shared_ptr<XscChannelTrans>> tmp;
 	this->initTransMutex.lock();
+	if (this->initTrans.empty()) 
+	{
+		this->initTransMutex.unlock();
+		return;
+	}
 	for (auto it = this->initTrans.begin(); it != this->initTrans.end();)
 	{
 		if (it->second->gts + (ullong) (sec * 1000L) > now) 

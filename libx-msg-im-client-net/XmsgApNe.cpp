@@ -90,22 +90,53 @@ bool XmsgApNe::openXscChannel(shared_ptr<XmsgImClientNetApi> netApi)
 		LOG_ERROR("may be x-msg-ap address list is empty")
 		return false;
 	}
-	netApi->xmsgApXscChannel = XscTcpChannel::open(xmsgApAddr->ip().c_str(), xmsgApAddr->port(), [netApi](int tryCount)
+	auto rudp = xmsgApAddr->host().find("rudp");
+	if (rudp != xmsgApAddr->host().end())
 	{
-		return XmsgApNe::evnTry(netApi, tryCount);
-	}, [netApi]
+		string ip;
+		int port;
+		Net::str2ipAndPort(rudp->second.c_str(), &ip, &port);
+		netApi->xmsgApXscChannel = XscRudpChannel::open(ip.c_str(), port, [netApi](int tryCount)
+		{
+			return XmsgApNe::evnTry(netApi, tryCount);
+		}, [netApi]
+		{
+			XmsgApNe::evnEstab(netApi);
+		}, [netApi](shared_ptr<XscProtoPdu> pdu)
+		{
+			return XmsgApNe::evnMsg(netApi, pdu);
+		}, [netApi]
+		{
+			return XmsgApNe::evnClose(netApi);
+		});
+		string addr;
+		SPRINTF_STRING(&addr, "%s:%d", ip.c_str(), port)
+		netApi->xmsgApXscChannel->setAddress(addr.c_str());
+		return true;
+	}
+	auto tcp = xmsgApAddr->host().find("tcp");
+	if (tcp != xmsgApAddr->host().end())
 	{
-		XmsgApNe::evnEstab(netApi);
-	}, [netApi](shared_ptr<XscProtoPdu> pdu)
-	{
-		return XmsgApNe::evnMsg(netApi, pdu);
-	}, [netApi]
-	{
-		return XmsgApNe::evnClose(netApi);
-	});
-	string addr;
-	SPRINTF_STRING(&addr, "%s:%d", xmsgApAddr->ip().c_str(), xmsgApAddr->port())
-	netApi->xmsgApXscChannel->setAddress(addr.c_str());
+		string ip;
+		int port;
+		Net::str2ipAndPort(tcp->second.c_str(), &ip, &port);
+		netApi->xmsgApXscChannel = XscTcpChannel::open(ip.c_str(), port, [netApi](int tryCount)
+		{
+			return XmsgApNe::evnTry(netApi, tryCount);
+		}, [netApi]
+		{
+			XmsgApNe::evnEstab(netApi);
+		}, [netApi](shared_ptr<XscProtoPdu> pdu)
+		{
+			return XmsgApNe::evnMsg(netApi, pdu);
+		}, [netApi]
+		{
+			return XmsgApNe::evnClose(netApi);
+		});
+		string addr;
+		SPRINTF_STRING(&addr, "%s:%d", ip.c_str(), port)
+		netApi->xmsgApXscChannel->setAddress(addr.c_str());
+	}
 	return true;
 }
 
